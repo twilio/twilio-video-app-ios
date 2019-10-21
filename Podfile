@@ -12,5 +12,13 @@ target 'Video-Twilio' do
   pod 'Firebase/Analytics', '~> 4.10'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
-end
 
+  target 'Video-TwilioTests' do
+    pod 'Nimble'
+    pod 'Quick'
+  end
+
+  target 'Video-Community' do
+    # Identical to Video-Twilio
+  end
+end

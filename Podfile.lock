@@ -48,6 +48,8 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Nimble (8.0.4)
+  - Quick (2.2.0)
   - TwilioVideo (3.0.0)
 
 DEPENDENCIES:
@@ -55,6 +57,8 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Google
   - HockeySDK (~> 5.1)
+  - Nimble
+  - Quick
   - TwilioVideo
 
 SPEC REPOS:
@@ -70,6 +74,8 @@ SPEC REPOS:
     - GTMSessionFetcher
     - HockeySDK
     - nanopb
+    - Nimble
+    - Quick
     - TwilioVideo
 
 SPEC CHECKSUMS:
@@ -84,8 +90,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 9998112441979eef59dfa235f808cd097465b064
 
-PODFILE CHECKSUM: d0905e9500686a56d9382089cc1b42244700dd12
+PODFILE CHECKSUM: 9bad927c5131d8dd43b53472163da25006811486
 
 COCOAPODS: 1.8.3

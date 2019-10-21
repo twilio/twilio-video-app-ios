@@ -26,7 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -36,6 +38,15 @@
             ReferencedContainer = "container:VideoApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "241282361E36A6AB002198BE"
+            BuildableName = "Video-Twilio.app"
+            BlueprintName = "Video-Twilio"
+            ReferencedContainer = "container:VideoApp.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -44,6 +55,16 @@
                BlueprintIdentifier = "2412824F1E36A6AB002198BE"
                BuildableName = "VideoAppTests.xctest"
                BlueprintName = "VideoAppTests"
+               ReferencedContainer = "container:VideoApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DC4E4E2B2357A73900C5D313"
+               BuildableName = "Video-TwilioTests.xctest"
+               BlueprintName = "Video-TwilioTests"
                ReferencedContainer = "container:VideoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -27,10 +27,9 @@ typedef NSString *const TwilioVideoAppAPITopology NS_STRING_ENUM;
 FOUNDATION_EXPORT TwilioVideoAppAPITopology kTwilioVideoAppAPITopologyP2P;
 FOUNDATION_EXPORT TwilioVideoAppAPITopology kTwilioVideoAppAPITopologyGroup;
 
-
 @interface TwilioVideoAppAPI : NSObject
 
-+ (void)retrieveAccessTokenForIdentity:(NSString *)identity
+- (void)retrieveAccessTokenForIdentity:(NSString *)identity
                               roomName:(NSString *)roomName
                              authToken:(NSString *)authToken
                            environment:(TwilioVideoAppAPIEnvironment)environment

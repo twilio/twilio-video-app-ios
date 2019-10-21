@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class LocalMediaController;
+@protocol TwilioAccessTokenService;
 
 @interface RoomViewController : UIViewController
 
 @property (nonatomic, strong, nonnull) LocalMediaController *localMediaController;
-@property (nonatomic, copy, nonnull) NSString *identity;
 @property (nonatomic, copy, nonnull) NSString *roomName;
+@property (nonatomic, strong, nonnull) id <TwilioAccessTokenService> twilioAccessTokenService;
 
 @end

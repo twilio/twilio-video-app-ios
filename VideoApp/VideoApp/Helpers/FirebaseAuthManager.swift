@@ -10,10 +10,24 @@ import Firebase
 import GoogleSignIn
 import UIKit
 
-class FirebaseAuthManager: NSObject {
+protocol FirebaseAuthManagerProtocol {
+    var currentUserDisplayName: String { get }
+    func getIDToken(completion: @escaping (String?, Error?) -> Void)
+}
 
-    @objc class func currentUserDisplayName () -> String {
-        guard let currentUser = Auth.auth().currentUser else {
+class FirebaseAuthManager: NSObject, FirebaseAuthManagerProtocol {
+    private let auth = Auth.auth()
+
+    func getIDToken(completion: @escaping (String?, Error?) -> Void) {
+        guard let currentUser = auth.currentUser else { completion(nil, nil); return }
+
+        currentUser.getIDTokenForcingRefresh(true) { token, error in
+            completion(token, error)
+        }
+    }
+    
+    @objc var currentUserDisplayName: String {
+        guard let currentUser = auth.currentUser else {
             return "Unknown"
         }
 
