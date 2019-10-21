@@ -20,3 +20,7 @@
 ### Video-Twilio scheme
 
 1. Copy `VideoApp/VideoApp/CredentialsStore/Credentials.json.example` to `VideoApp/VideoApp/Credentials/TwilioCredentials.json` and add correct value for `hockey_app_identifier`. 
+
+## Tests
+
+Use [Swift Mock Generator](https://github.com/seanhenry/SwiftMockGeneratorForXcode) to create mocks for unit tests.
