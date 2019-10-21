@@ -1,0 +1,64 @@
+//
+//  EmailPasswordLoginViewController.swift
+//  VideoApp
+//
+//  Created by Ryan Payne on 7/17/18.
+//  Copyright © 2018 Twilio, Inc. All rights reserved.
+//
+
+import UIKit
+
+class EmailPasswordLoginViewController: UIViewController {
+
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        emailTextField.addTarget(self, action: #selector(EmailPasswordLoginViewController.login(_:)), for: .editingDidEndOnExit)
+        passwordTextField.addTarget(self, action: #selector(EmailPasswordLoginViewController.login(_:)), for: .editingDidEndOnExit)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emailTextField.becomeFirstResponder()
+    }
+
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func login(_ sender: Any) {
+        guard let emailAddress = emailTextField.text, emailAddress != "" else {
+            emailTextField.becomeFirstResponder()
+            return
+        }
+
+        guard let password = passwordTextField.text, password != "" else {
+            passwordTextField.becomeFirstResponder()
+            return
+        }
+
+        FirebaseAuthManager.authenticate(email: emailAddress, password: password, window: self.view.window!)
+    }
+}
+
+// MARK: UITextFieldDelegate
+extension EmailPasswordLoginViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else {
+            return false
+        }
+
+        return text != ""
+    }
+}
+
