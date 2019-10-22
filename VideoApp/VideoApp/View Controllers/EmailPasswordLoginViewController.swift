@@ -47,7 +47,11 @@ class EmailPasswordLoginViewController: UIViewController {
             return
         }
 
-        FirebaseAuthManager.authenticate(email: emailAddress, password: password, window: self.view.window!)
+        AuthStore.shared.signIn(email: emailAddress, password: password) { [weak self] error in
+            guard let window = self?.view.window else { return }
+            
+            AuthFlow(window: window).didSignIn(error: error, isValidEmail: true)
+        }
     }
 }
 

@@ -13,8 +13,6 @@
 #import "RoomViewController.h"
 #import "VariableAlphaToggleButton.h"
 #import "VideoApp-Swift.h"
-@import Firebase;
-@import GoogleSignIn;
 @import TwilioVideo;
 
 @interface LobbyViewController () <LocalMediaControllerDelegate>
@@ -73,7 +71,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    self.loggedInUser.text = [FirebaseAuthManager new].currentUserDisplayName;
+    self.loggedInUser.text = AuthStore.shared.userDisplayName;
     self.audioToggleButton.selected = !self.localMediaController.localAudioTrack;
     self.videoToggleButton.selected = !self.localMediaController.localVideoTrack;
     [self updateVideoUI:!self.localMediaController.localVideoTrack];
@@ -169,7 +167,7 @@
     }];
 
     UIAlertAction *signOutAction = [UIAlertAction actionWithTitle:@"Sign Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        [self signOut];
+        [AuthStore.shared signOut];
     }];
 
     BOOL currentVp8Simulcast = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsEnableVp8SimulcastKey];
@@ -221,18 +219,6 @@
     [self.localMediaController flipCamera];
 }
 
-- (void)signOut {
-    NSError *signOutError;
-    BOOL status = [[FIRAuth auth] signOut:&signOutError];
-    if (!status) {
-        NSLog(@"Error signing out: %@", signOutError);
-        return;
-    }
-
-    [[GIDSignIn sharedInstance] signOut];
-    [[GIDSignIn sharedInstance] disconnect];
-}
-
 - (IBAction)joinRoomButtonPressed:(id)sender {
     if ([self.roomTextField.text isEqualToString:@""]) {
         [self.roomTextField becomeFirstResponder];
@@ -247,7 +233,6 @@
         self.roomViewController = segue.destinationViewController;
         self.roomViewController.roomName = self.roomTextField.text;
         self.roomViewController.localMediaController = self.localMediaController;
-        self.roomViewController.twilioAccessTokenService = [[TwilioAccessTokenServiceFactory new] makeTwilioAccessTokenService];
     }
 }
 

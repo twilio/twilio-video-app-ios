@@ -1,24 +1,24 @@
 //
-//  TwilioAccessTokenServiceFactory.swift
+//  AuthStoreFactory.swift
 //  VideoApp
 //
-//  Created by Tim Rozum on 10/17/19.
+//  Created by Tim Rozum on 10/24/19.
 //  Copyright © 2019 Twilio, Inc. All rights reserved.
 //
 
 import Foundation
 
-@objc class TwilioAccessTokenServiceFactory: NSObject {
-    @objc func makeTwilioAccessTokenService() -> TwilioAccessTokenService {
+class AuthStoreFactory {
+    func makeAuthStore() -> AuthStoreEverything {
         switch gCurrentAppEnvironment {
         case .twilio, .internal:
-            return FirebaseTwilioAccessTokenService(
+            return AhoyAuthStore(
                 api: TwilioVideoAppAPI(),
                 appSettingsStore: AppSettingsStore(userDefaults: .standard),
-                firebaseAuthManager: FirebaseAuthManager()
+                firebaseAuthStore: FirebaseAuthStore()
             )
         case .community:
-            return CommunityTwilioAccessTokenService()
+            return CommunityAuthStore()
         @unknown default:
             fatalError()
         }

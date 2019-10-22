@@ -11,21 +11,21 @@ import Nimble
 
 @testable import VideoApp
 
-class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
+class AhoyAuthStoreSpec: QuickSpec {
     override func spec() {
-        var sut: FirebaseTwilioAccessTokenService!
+        var sut: AhoyAuthStore!
         var mockAPI: MockTwilioVideoAppAPI!
         var mockAppSettingsStore: MockAppSettingsStore!
-        var mockFirebaseAuthManager: MockFirebaseAuthManager!
+        var mockFirebaseAuthStore: MockFirebaseAuthStore!
         
         beforeEach {
             mockAPI = MockTwilioVideoAppAPI()
             mockAppSettingsStore = MockAppSettingsStore()
-            mockFirebaseAuthManager = MockFirebaseAuthManager()
-            sut = FirebaseTwilioAccessTokenService(
+            mockFirebaseAuthStore = MockFirebaseAuthStore()
+            sut = AhoyAuthStore(
                 api: mockAPI,
                 appSettingsStore: mockAppSettingsStore,
-                firebaseAuthManager: mockFirebaseAuthManager
+                firebaseAuthStore: mockFirebaseAuthStore
             )
         }
 
@@ -45,12 +45,12 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                 appSettings: AppSettings = .stub(),
                 twilioResult: (String?, Error?) = (nil, nil)
             ) {
-                mockFirebaseAuthManager.stubbedGetIDTokenCompletionResult = firebaseResult
-                mockFirebaseAuthManager.stubbedCurrentUserDisplayName = firebaseDisplayName
+                mockFirebaseAuthStore.stubbedFetchAccessTokenCompletionResult = firebaseResult
+                mockFirebaseAuthStore.stubbedUserDisplayName = firebaseDisplayName
                 mockAppSettingsStore.stubbedAppSettings = appSettings
                 mockAPI.stubbedRetrieveAccessTokenCompletionBlockResult = twilioResult
 
-                sut.fetchAccessToken(roomName: roomName) { accessToken, error in
+                sut.fetchTwilioAccessToken(roomName: roomName) { accessToken, error in
                     invokedCompletionCount += 1
                     invokedCompletionParameters = (accessToken, error)
                 }
@@ -60,7 +60,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                 it("is called once") {
                     fetchAccessToken()
                     
-                    expect(mockFirebaseAuthManager.invokedGetIDTokenCount).to(equal(1))
+                    expect(mockFirebaseAuthStore.invokedFetchAccessTokenCount).to(equal(1))
                 }
                 
                 context("when Firebase token is nil") {

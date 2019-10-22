@@ -1,60 +1,44 @@
 //
-//  FirebaseAuthManager.swift
+//  AuthFlow.swift
 //  VideoApp
 //
-//  Created by Ryan Payne on 7/18/18.
-//  Copyright © 2018 Twilio, Inc. All rights reserved.
+//  Created by Tim Rozum on 10/22/19.
+//  Copyright © 2019 Twilio, Inc. All rights reserved.
 //
 
-import Firebase
-import GoogleSignIn
 import UIKit
+import Firebase
 
-protocol FirebaseAuthManagerProtocol {
-    var currentUserDisplayName: String { get }
-    func getIDToken(completion: @escaping (String?, Error?) -> Void)
-}
-
-class FirebaseAuthManager: NSObject, FirebaseAuthManagerProtocol {
-    private let auth = Auth.auth()
-
-    func getIDToken(completion: @escaping (String?, Error?) -> Void) {
-        guard let currentUser = auth.currentUser else { completion(nil, nil); return }
-
-        currentUser.getIDTokenForcingRefresh(true) { token, error in
-            completion(token, error)
-        }
+@objc class AuthFlow: NSObject {
+    private let window: UIWindow
+    
+    @objc init(window: UIWindow) {
+        self.window = window
     }
     
-    @objc var currentUserDisplayName: String {
-        guard let currentUser = auth.currentUser else {
-            return "Unknown"
+    private func showSignIn() {
+        guard let rootViewController = window.rootViewController else {
+            return
         }
-
-        guard let displayName = currentUser.displayName else {
-            guard let email = currentUser.email else {
-                return "Unknown"
-            }
-
-            return email
-        }
-
-        return displayName
-    }
-
-    class func authenticate(email: String, password: String, window: UIWindow) {
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            handleAuthenticationResponse(user: user, error: error, window: window)
+        if let navigationController = rootViewController as? UINavigationController {
+            navigationController.popToRootViewController(animated: true)
+            navigationController.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
         }
     }
 
-    @objc class func authenticate(credential: AuthCredential, window: UIWindow) {
-        Auth.auth().signIn(with: credential) { (user, error) in
-            handleAuthenticationResponse(user: user, error: error, window: window)
+    private func showInvalidEmail() {
+        let alertController = UIAlertController(title: "Unauthorized",
+                                                message: "Only users with a Twilio email address are authorized to use this application.",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Okay", style: .default) { (action) in
         }
+        alertController.addAction(okAction)
+        window.rootViewController?.presentedViewController?.present(alertController,
+                                                                          animated: true,
+                                                                          completion: nil)
     }
 
-    private class func loginWasSuccessful(window: UIWindow) {
+    private func showLobby() {
         guard let navigationVC = window.rootViewController as? UINavigationController else {
             return
         }
@@ -78,12 +62,7 @@ class FirebaseAuthManager: NSObject, FirebaseAuthManagerProtocol {
         }
     }
 
-    private class func handleAuthenticationResponse(user: User?, error: Error?, window: UIWindow) {
-        guard let error = error else {
-            loginWasSuccessful(window: window)
-            return
-        }
-
+    private func showError(error: Error) {
         guard let errorCode = AuthErrorCode(rawValue: error._code) else {
             return
         }
@@ -128,5 +107,23 @@ class FirebaseAuthManager: NSObject, FirebaseAuthManagerProtocol {
         }
 
         topController.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension AuthFlow: AuthStoreWritingDelegate {
+    func didSignIn(error: Error?, isValidEmail: Bool) {
+        if isValidEmail {
+            if let error = error {
+                showError(error: error)
+            } else {
+                showLobby()
+            }
+        } else {
+            showInvalidEmail()
+        }
+    }
+    
+    func didSignOut() {
+        showSignIn()
     }
 }

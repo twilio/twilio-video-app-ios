@@ -76,7 +76,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
     self.statsViewController = (StatsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"statsViewController"];
     [self.statsViewController addAsSwipeableViewToParentViewController:self];
 
-    self.mainLabel.text = [FirebaseAuthManager new].currentUserDisplayName;
+    self.mainLabel.text = AuthStore.shared.userDisplayName;
     self.joiningRoomLabel.text = self.roomName;
 
     self.remoteParticipantLabelView.layer.cornerRadius = self.remoteParticipantLabelView.bounds.size.width / 2.0;
@@ -110,7 +110,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 - (void)fetchAccessToken {
     typeof(self) __weak weakSelf = self;
 
-    [self.twilioAccessTokenService fetchAccessTokenWithRoomName:self.roomName completion:^(NSString *accessToken, NSError *error) {
+    [AuthStore.shared fetchTwilioAccessTokenWithRoomName:self.roomName completion:^(NSString *accessToken, NSError *error) {
         typeof(self) __strong strongSelf = weakSelf;
 
         if (accessToken != nil) {

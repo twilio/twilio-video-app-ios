@@ -7,21 +7,18 @@
 //
 
 import UIKit
-import Firebase
-import GoogleSignIn
 import TwilioVideo
 
 // Ensure that iOS 13 specific code is not called anywhere else unless the OS is available
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
-    // UIWindowScene delegate
-
+    var authFlow: AuthStoreWritingDelegate?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         print(#function)
-        GIDSignIn.sharedInstance()?.delegate = self
+        authFlow = AuthFlow(window: window!)
+        AuthStore.shared.delegate = authFlow
 
         // The `window` property will automatically be loaded with the storyboard's initial view controller.
         guard let navigationVC = self.window?.rootViewController as? UINavigationController else {
@@ -43,11 +40,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         for context in URLContexts {
-            if GIDSignIn.sharedInstance()!.handle(context.url,
-                                                  sourceApplication: context.options.sourceApplication,
-                                                  annotation: context.options.annotation) {
-                break
-            }
+            let didOpenURL = AuthStore.shared.openURL(
+                context.url,
+                sourceApplication: context.options.sourceApplication,
+                annotation: context.options.annotation
+            )
+            
+            if didOpenURL { break }
         }
     }
 
@@ -67,7 +66,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
-        if Auth.auth().currentUser != nil || GIDSignIn.sharedInstance()?.hasAuthInKeychain() == true {
+        
+        if AuthStore.shared.isSignedIn {
             navigationVC.topViewController?.performSegue(withIdentifier: "lobbySegue", sender: self)
         } else {
             navigationVC.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
@@ -93,49 +93,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("Window scene did update. prev: \(previousCoordinateSpace) \(previousInterfaceOrientation) \(previousTraitCollection)")
 
         UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
-    }
-
-}
-
-@available(iOS 13.0, *)
-extension SceneDelegate : GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard let theError = error else {
-            let auth = user.authentication!
-
-            // Validate that the email address is indeed a twilio.com email address, else fail!
-            if let email = user?.profile?.email,
-                !email.hasSuffix("twilio.com") {
-                let alertController = UIAlertController(title: "Unauthorized",
-                                                        message: "Only users with a Twilio email address are authorized to use this application.",
-                                                        preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Okay", style: .default) { (action) in
-                }
-                alertController.addAction(okAction)
-                self.window?.rootViewController?.presentedViewController?.present(alertController,
-                                                                                  animated: true,
-                                                                                  completion: nil)
-                GIDSignIn.sharedInstance()?.disconnect()
-                return
-            }
-
-            let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-            FirebaseAuthManager.authenticate(credential: credential, window: self.window!)
-            return
-        }
-
-        print("An authentication error occurred: \(theError)")
-    }
-
-    func sign(_ signIn: GIDSignIn!,
-              didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-        guard let rootViewController = self.window?.rootViewController else {
-            return
-        }
-        if let navigationController = rootViewController as? UINavigationController {
-            navigationController.popToRootViewController(animated: true)
-            navigationController.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
-        }
     }
 }
