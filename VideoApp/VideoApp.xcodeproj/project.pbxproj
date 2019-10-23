@@ -127,7 +127,7 @@
 		DCE9B06D235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */; };
 		DCE9B06E235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */; };
 		DCE9B071235A5282008E5B5B /* InternalCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B06F235A5282008E5B5B /* InternalCredentials.json */; };
-		DCE9B080235E34BB008E5B5B /* CommunityCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B07F235E34BB008E5B5B /* CommunityCredentials.json */; };
+		DCE9B07E235E2380008E5B5B /* CommunityCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B07D235E2380008E5B5B /* CommunityCredentials.json */; };
 		E79FE7DB28C3BBBE4440D1F3 /* Pods_Video_Twilio_Video_TwilioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -250,8 +250,8 @@
 		DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
 		DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyAppIdentifierFactory.swift; sourceTree = "<group>"; };
 		DCE9B06F235A5282008E5B5B /* InternalCredentials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InternalCredentials.json; sourceTree = "<group>"; };
-		DCE9B073235A5355008E5B5B /* CommunityCredentials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CommunityCredentials.json; sourceTree = "<group>"; };
-		DCE9B07F235E34BB008E5B5B /* CommunityCredentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CommunityCredentials.json; sourceTree = "<group>"; };
+		DCE9B073235A5355008E5B5B /* Credentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credentials.json.example; sourceTree = "<group>"; };
+		DCE9B07D235E2380008E5B5B /* CommunityCredentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CommunityCredentials.json; sourceTree = "<group>"; };
 		E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -527,7 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				24491F771E37D6DE00028B24 /* GoogleService-Info.plist */,
-				DCE9B07F235E34BB008E5B5B /* CommunityCredentials.json */,
+				DCE9B07D235E2380008E5B5B /* CommunityCredentials.json */,
 				DCE9B06F235A5282008E5B5B /* InternalCredentials.json */,
 				DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */,
 			);
@@ -540,7 +540,7 @@
 				DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */,
 				DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */,
 				DCE9B063235A494F008E5B5B /* Credentials.swift */,
-				DCE9B073235A5355008E5B5B /* CommunityCredentials.json */,
+				DCE9B073235A5355008E5B5B /* Credentials.json.example */,
 			);
 			path = CredentialsStore;
 			sourceTree = "<group>";
@@ -723,7 +723,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE9B080235E34BB008E5B5B /* CommunityCredentials.json in Resources */,
+				DCE9B07E235E2380008E5B5B /* CommunityCredentials.json in Resources */,
 				4B00127E1FBA52E5004A587E /* LaunchScreen.storyboard in Resources */,
 				4B0012801FBA52E5004A587E /* GoogleService-Info.plist in Resources */,
 				4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */,
