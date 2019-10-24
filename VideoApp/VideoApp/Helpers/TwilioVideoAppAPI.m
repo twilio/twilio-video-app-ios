@@ -46,7 +46,7 @@ static NSString *const kTwilioVideoAppAPIErrorDomain                        = @"
 
 @implementation TwilioVideoAppAPI
 
-+ (void)retrieveAccessTokenForIdentity:(NSString *)identity
+- (void)retrieveAccessTokenForIdentity:(NSString *)identity
                               roomName:(NSString *)roomName
                              authToken:(NSString *)authToken
                            environment:(TwilioVideoAppAPIEnvironment)environment

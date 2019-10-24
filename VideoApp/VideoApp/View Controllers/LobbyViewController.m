@@ -73,7 +73,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    self.loggedInUser.text = [FirebaseAuthManager currentUserDisplayName];
+    self.loggedInUser.text = [FirebaseAuthManager new].currentUserDisplayName;
     self.audioToggleButton.selected = !self.localMediaController.localAudioTrack;
     self.videoToggleButton.selected = !self.localMediaController.localVideoTrack;
     [self updateVideoUI:!self.localMediaController.localVideoTrack];
@@ -245,9 +245,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"roomSegue"]) {
         self.roomViewController = segue.destinationViewController;
-        self.roomViewController.identity = [FirebaseAuthManager currentUserDisplayName];
         self.roomViewController.roomName = self.roomTextField.text;
         self.roomViewController.localMediaController = self.localMediaController;
+        self.roomViewController.twilioAccessTokenService = [[TwilioAccessTokenServiceFactory new] makeTwilioAccessTokenService];
     }
 }
 

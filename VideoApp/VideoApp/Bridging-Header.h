@@ -2,7 +2,7 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import "AppDelegate.h"
 #import "LobbyViewController.h"
-#import "LoginViewController.h"
+#import "SettingsKeyConstants.h"
+#import "TwilioVideoAppAPI.h"
 #import "VideoAppEnvironment.h"
