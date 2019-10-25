@@ -9,7 +9,7 @@
 import Foundation
 
 @objc protocol AuthStoreWritingDelegate: AnyObject {
-    func didSignIn(error: Error?, isValidEmail: Bool)
+    func didSignIn(error: Error?)
     func didSignOut()
 }
 

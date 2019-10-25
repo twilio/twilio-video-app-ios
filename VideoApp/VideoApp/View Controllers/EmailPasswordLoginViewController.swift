@@ -50,7 +50,7 @@ class EmailPasswordLoginViewController: UIViewController {
         AuthStore.shared.signIn(email: emailAddress, password: password) { [weak self] error in
             guard let window = self?.view.window else { return }
             
-            AuthFlow(window: window).didSignIn(error: error, isValidEmail: true)
+            AuthFlow(window: window).didSignIn(error: error)
         }
     }
 }

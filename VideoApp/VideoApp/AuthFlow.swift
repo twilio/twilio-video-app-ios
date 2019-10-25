@@ -26,18 +26,6 @@ import Firebase
         }
     }
 
-    private func showInvalidEmail() {
-        let alertController = UIAlertController(title: "Unauthorized",
-                                                message: "Only users with a Twilio email address are authorized to use this application.",
-                                                preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Okay", style: .default) { (action) in
-        }
-        alertController.addAction(okAction)
-        window.rootViewController?.presentedViewController?.present(alertController,
-                                                                          animated: true,
-                                                                          completion: nil)
-    }
-
     private func showLobby() {
         guard let navigationVC = window.rootViewController as? UINavigationController else {
             return
@@ -111,15 +99,11 @@ import Firebase
 }
 
 extension AuthFlow: AuthStoreWritingDelegate {
-    func didSignIn(error: Error?, isValidEmail: Bool) {
-        if isValidEmail {
-            if let error = error {
-                showError(error: error)
-            } else {
-                showLobby()
-            }
+    func didSignIn(error: Error?) {
+        if let error = error {
+            showError(error: error)
         } else {
-            showInvalidEmail()
+            showLobby()
         }
     }
     

@@ -59,12 +59,6 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
 extension FirebaseAuthStore: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard error == nil, let authentication = user.authentication else { return }
-
-        guard user.profile.email.hasSuffix("@twilio.com") else {
-            googleSignIn.disconnect()
-            delegate?.didSignIn(error: nil, isValidEmail: false)
-            return
-        }
         
         let credential = GoogleAuthProvider.credential(
             withIDToken: authentication.idToken,
@@ -72,7 +66,7 @@ extension FirebaseAuthStore: GIDSignInDelegate {
         )
 
         firebaseAuth.signIn(with: credential) { [weak self] _, error in
-            self?.delegate?.didSignIn(error: error, isValidEmail: true)
+            self?.delegate?.didSignIn(error: error)
         }
     }
     
