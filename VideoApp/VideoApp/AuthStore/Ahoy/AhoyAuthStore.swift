@@ -46,15 +46,15 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        firebaseAuthStore.fetchAccessToken { [weak self] token, error in
-            guard let self = self, let token = token else { completion(nil, error); return }
+        firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
+            guard let self = self, let accessToken = accessToken else { completion(nil, error); return }
             
             let appSettings = self.appSettingsStore.appSettings
             
             self.api.retrieveAccessToken(
                 forIdentity: self.userDisplayName,
                 roomName: roomName,
-                authToken: token,
+                authToken: accessToken,
                 environment: appSettings.environment,
                 topology: appSettings.topology
             ) { accessToken, error in
