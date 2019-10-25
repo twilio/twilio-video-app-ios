@@ -1,5 +1,5 @@
 //
-//  FirebaseTwilioAccessTokenServiceSpec.swift
+//  AhoyAuthStoreSpec.swift
 //  Video-TwilioTests
 //
 //  Created by Tim Rozum on 10/16/19.
