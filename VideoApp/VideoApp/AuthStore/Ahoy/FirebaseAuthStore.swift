@@ -19,7 +19,7 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
     private var googleSignIn: GIDSignIn { return GIDSignIn.sharedInstance() }
     
     var isSignedIn: Bool {
-        return firebaseAuth.currentUser != nil || googleSignIn.hasAuthInKeychain()
+        return firebaseAuth.currentUser != nil
     }
 
     var userDisplayName: String {
