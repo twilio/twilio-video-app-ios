@@ -16,8 +16,8 @@ aliases:
 
       # Credentials
       mkdir -p VideoApp/VideoApp/Credentials || true
-      $GOOGLE_SERVICE_INFO_PLIST | base64 -Di > VideoApp/VideoApp/Credentials/GoogleService-Info.plist
-      $TWILIO_CREDENTIALS | base64 -Di > VideoApp/VideoApp/Credentials/TwilioCredentials.json
+      $GOOGLE_SERVICE_INFO_PLIST | base64 --decode > VideoApp/VideoApp/Credentials/GoogleService-Info.plist
+      $TWILIO_CREDENTIALS | base64 --decode > VideoApp/VideoApp/Credentials/TwilioCredentials.json
 
   - &log-hw-info
     name: Log HW info
