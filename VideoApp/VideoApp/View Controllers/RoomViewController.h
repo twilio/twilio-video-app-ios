@@ -15,6 +15,5 @@
 
 @property (nonatomic, strong, nonnull) LocalMediaController *localMediaController;
 @property (nonatomic, copy, nonnull) NSString *roomName;
-@property (nonatomic, strong, nonnull) id <TwilioAccessTokenService> twilioAccessTokenService;
 
 @end

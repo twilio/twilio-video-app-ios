@@ -1,5 +1,5 @@
 //
-//  FirebaseTwilioAccessTokenServiceSpec.swift
+//  AhoyAuthStoreSpec.swift
 //  Video-TwilioTests
 //
 //  Created by Tim Rozum on 10/16/19.
@@ -11,25 +11,25 @@ import Nimble
 
 @testable import VideoApp
 
-class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
+class AhoyAuthStoreSpec: QuickSpec {
     override func spec() {
-        var sut: FirebaseTwilioAccessTokenService!
+        var sut: AhoyAuthStore!
         var mockAPI: MockTwilioVideoAppAPI!
         var mockAppSettingsStore: MockAppSettingsStore!
-        var mockFirebaseAuthManager: MockFirebaseAuthManager!
+        var mockFirebaseAuthStore: MockFirebaseAuthStore!
         
         beforeEach {
             mockAPI = MockTwilioVideoAppAPI()
             mockAppSettingsStore = MockAppSettingsStore()
-            mockFirebaseAuthManager = MockFirebaseAuthManager()
-            sut = FirebaseTwilioAccessTokenService(
+            mockFirebaseAuthStore = MockFirebaseAuthStore()
+            sut = AhoyAuthStore(
                 api: mockAPI,
                 appSettingsStore: mockAppSettingsStore,
-                firebaseAuthManager: mockFirebaseAuthManager
+                firebaseAuthStore: mockFirebaseAuthStore
             )
         }
 
-        describe("fetchAccessToken") {
+        describe("fetchTwilioAccessToken") {
             var invokedCompletionCount = 0
             var invokedCompletionParameters: (accessToken: String?, error: Error?)?
 
@@ -38,35 +38,35 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                 invokedCompletionParameters = nil
             }
             
-            func fetchAccessToken(
+            func fetchTwilioAccessToken(
                 roomName: String = "",
                 firebaseResult: (String?, Error?) = (nil, nil),
                 firebaseDisplayName: String = "",
                 appSettings: AppSettings = .stub(),
                 twilioResult: (String?, Error?) = (nil, nil)
             ) {
-                mockFirebaseAuthManager.stubbedGetIDTokenCompletionResult = firebaseResult
-                mockFirebaseAuthManager.stubbedCurrentUserDisplayName = firebaseDisplayName
+                mockFirebaseAuthStore.stubbedFetchAccessTokenCompletionResult = firebaseResult
+                mockFirebaseAuthStore.stubbedUserDisplayName = firebaseDisplayName
                 mockAppSettingsStore.stubbedAppSettings = appSettings
                 mockAPI.stubbedRetrieveAccessTokenCompletionBlockResult = twilioResult
 
-                sut.fetchAccessToken(roomName: roomName) { accessToken, error in
+                sut.fetchTwilioAccessToken(roomName: roomName) { accessToken, error in
                     invokedCompletionCount += 1
                     invokedCompletionParameters = (accessToken, error)
                 }
             }
             
-            describe("getIDToken") {
+            describe("fetchAccessToken") {
                 it("is called once") {
-                    fetchAccessToken()
+                    fetchTwilioAccessToken()
                     
-                    expect(mockFirebaseAuthManager.invokedGetIDTokenCount).to(equal(1))
+                    expect(mockFirebaseAuthStore.invokedFetchAccessTokenCount).to(equal(1))
                 }
                 
-                context("when Firebase token is nil") {
+                context("when Firebase accessToken is nil") {
                     context("when Firebase error is nil") {
-                        it("calls completion with nil token and nil error") {
-                            fetchAccessToken(firebaseResult: (nil, nil))
+                        it("calls completion with nil accessToken and nil error") {
+                            fetchTwilioAccessToken(firebaseResult: (nil, nil))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(beNil())
@@ -75,10 +75,10 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                     }
 
                     context("when Firebase error is not nil") {
-                        it("calls completion with nil token and Firebase error") {
+                        it("calls completion with nil accessToken and Firebase error") {
                             let error = NSError()
                             
-                            fetchAccessToken(firebaseResult: (nil, error))
+                            fetchTwilioAccessToken(firebaseResult: (nil, error))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(beNil())
@@ -87,9 +87,9 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                     }
                 }
                 
-                context("when Firebase token is not nil") {
+                context("when Firebase accesstoken is not nil") {
                     it("calls retrieveAccessToken") {
-                        fetchAccessToken(firebaseResult: ("", nil))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil))
                         
                         expect(mockAPI.invokedRetrieveAccessTokenCount).to(equal(1))
                     }
@@ -99,7 +99,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
             describe("retrieveAccessToken") {
                 context("when currentUserDisplayName is foo") {
                     it("is called with foo identity") {
-                        fetchAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "foo")
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "foo")
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("foo"))
                     }
@@ -107,7 +107,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                 
                 context("when currentUserDisplayName is bar") {
                     it("is called with bar identity") {
-                        fetchAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "bar")
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "bar")
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("bar"))
                     }
@@ -115,7 +115,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
 
                 context("when roomName is foo") {
                     it("is called with foo roomName") {
-                        fetchAccessToken(roomName: "foo", firebaseResult: ("", nil))
+                        fetchTwilioAccessToken(roomName: "foo", firebaseResult: ("", nil))
                         
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.roomName).to(equal("foo"))
                     }
@@ -123,23 +123,23 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                 
                 context("when roomName is bar") {
                     it("is called with bar roomName") {
-                        fetchAccessToken(roomName: "bar", firebaseResult: ("", nil))
+                        fetchTwilioAccessToken(roomName: "bar", firebaseResult: ("", nil))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.roomName).to(equal("bar"))
                     }
                 }
 
-                context("when Firebase token is foo") {
-                    it("is called with foo token") {
-                        fetchAccessToken(firebaseResult: ("foo", nil))
+                context("when Firebase accessToken is foo") {
+                    it("is called with foo authToken") {
+                        fetchTwilioAccessToken(firebaseResult: ("foo", nil))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.authToken).to(equal("foo"))
                     }
                 }
 
                 context("when Firebase token is bar") {
-                    it("is called with bar token") {
-                        fetchAccessToken(firebaseResult: ("bar", nil))
+                    it("is called with bar authToken") {
+                        fetchTwilioAccessToken(firebaseResult: ("bar", nil))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.authToken).to(equal("bar"))
                     }
@@ -147,7 +147,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
 
                 context("when environment is production") {
                     it("is called with production environment") {
-                        fetchAccessToken(firebaseResult: ("", nil), appSettings: .stub(environment: .production))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(environment: .production))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.production))
                     }
@@ -155,7 +155,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
 
                 context("when environment is development") {
                     it("is called with development environment") {
-                        fetchAccessToken(firebaseResult: ("", nil), appSettings: .stub(environment: .development))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(environment: .development))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.development))
                     }
@@ -163,7 +163,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
 
                 context("when topology is group") {
                     it("is called with group topology") {
-                        fetchAccessToken(firebaseResult: ("", nil), appSettings: .stub(topology: .group))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(topology: .group))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.topology).to(equal(.group))
                     }
@@ -171,7 +171,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
 
                 context("when topology is P2P") {
                     it("is called with P2P topology") {
-                        fetchAccessToken(firebaseResult: ("", nil), appSettings: .stub(topology: .P2P))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(topology: .P2P))
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.topology).to(equal(.P2P))
                     }
@@ -180,7 +180,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                 describe("completion") {
                     context("when Twilio accessToken is foo") {
                         it("calls completion with foo accessToken") {
-                            fetchAccessToken(firebaseResult: ("", nil), twilioResult: ("foo", nil))
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), twilioResult: ("foo", nil))
 
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(equal("foo"))
@@ -189,7 +189,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                     
                     context("when Twilio accessToken is nil") {
                         it("calls completion with nil accessToken") {
-                            fetchAccessToken(firebaseResult: ("", nil), twilioResult: (nil, nil))
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), twilioResult: (nil, nil))
 
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(beNil())
@@ -199,7 +199,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
                     context("when error is not nil") {
                         it("calls completion with Twilio error") {
                             let error = NSError()
-                            fetchAccessToken(firebaseResult: ("", nil), twilioResult: (nil, error))
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), twilioResult: (nil, error))
 
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.error).to(be(error))
@@ -208,7 +208,7 @@ class FirebaseTwilioAccessTokenServiceSpec: QuickSpec {
 
                     context("when error is nil") {
                         it("calls completion with nil error") {
-                            fetchAccessToken(firebaseResult: ("", nil), twilioResult: (nil, nil))
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), twilioResult: (nil, nil))
 
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.error).to(beNil())
