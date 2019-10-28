@@ -6,17 +6,18 @@ aliases:
     name: Secrets!!!
     command: |
       # Untar secrets
-      openssl aes-256-cbc -K $encrypted_120cc09cf48f_key -iv $encrypted_120cc09cf48f_iv -in secrets.tar.enc -out secrets.tar -d
-      tar -xvf secrets.tar
+      # openssl aes-256-cbc -K $encrypted_120cc09cf48f_key -iv $encrypted_120cc09cf48f_iv -in secrets.tar.enc -out secrets.tar -d
+      # tar -xvf secrets.tar
 
       # Xcode Signing
-      ./Scripts/ci/configure-keychain.sh
-      mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles || true
-      cp secrets/Provisioning\ Profiles/*.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+      # ./Scripts/ci/configure-keychain.sh
+      # mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles || true
+      # cp secrets/Provisioning\ Profiles/*.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
-      # Video-Twilio Credentials
+      # Credentials
       mkdir -p VideoApp/VideoApp/Credentials || true
-      cp secrets/TwilioCredentials.json VideoApp/VideoApp/Credentials/TwilioCredentials.json
+      $GOOGLE_SERVICE_INFO_PLIST | base64 -di > VideoApp/VideoApp/Credentials/GoogleService-Info.plist
+      $TWILIO_CREDENTIALS | base64 -di > VideoApp/VideoApp/Credentials/TwilioCredentials.json
 
   - &log-hw-info
     name: Log HW info
