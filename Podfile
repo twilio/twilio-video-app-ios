@@ -18,6 +18,10 @@ target 'Video-Twilio' do
     pod 'Quick'
   end
 
+  target 'Video-Internal' do
+    # Identical to Video-Twilio
+  end
+
   target 'Video-Community' do
     # Identical to Video-Twilio
   end
