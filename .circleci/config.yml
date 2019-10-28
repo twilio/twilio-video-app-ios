@@ -124,7 +124,7 @@ aliases:
 
 jobs:
   # Debug build of VideoApp-Twilio
-  video-app-twilio-debug:
+  build:
     <<: *macos-defaults
     steps:
       - run: *log-hw-info
