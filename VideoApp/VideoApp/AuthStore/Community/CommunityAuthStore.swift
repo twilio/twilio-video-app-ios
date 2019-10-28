@@ -30,6 +30,8 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
+        let accessToken = "TWILIO_ACCESS_TOKEN"
         
+        completion(accessToken, nil)
     }
 }
