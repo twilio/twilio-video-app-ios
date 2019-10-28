@@ -137,7 +137,7 @@ jobs:
       - run: *install-brew-deps
       - save-cache: *save-cache-brew-deps
       # - restore-cache: *restore-video-app-carthage-deps-cache
-      - run: *install-video-app-deps
+      # - run: *install-video-app-deps
       # - save-cache: *save-video-app-carthage-deps-cache
       - run: *secrets
       - run:
@@ -149,4 +149,3 @@ jobs:
       - CONFIGURATION=Debug
       - IOS_APP=VideoApp-Twilio
 
-      
