@@ -102,10 +102,10 @@ xcodebuild \
   -configuration "Debug" \
   -sdk iphonesimulator \
   -parallelizeTargets \
-  -quiet \
   ONLY_ACTIVE_ARCH=YES \
   BITCODE_GENERATION_MODE=${BITCODE_MODE} \
-  build
+  test \
+| xcpretty \
 
 # If we are running in a CI environment, upload the artifacts to AWS
 # if [ "${TWILIO_CI}" = "true" ]; then
