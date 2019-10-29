@@ -52,10 +52,10 @@ jobs:
     environment:
       - CONFIGURATION=Debug
       - IOS_APP=VideoApp-Twilio
-  build_video_community:
-      - run:
-          command: Scripts/build-app.sh
-          no_output_timeout: 30m
-    environment:
-      - CONFIGURATION=Debug
-      - IOS_APP=VideoApp-Community
+  # build_video_community:
+  #     - run:
+  #         command: Scripts/build-app.sh
+  #         no_output_timeout: 30m
+  #   environment:
+  #     - CONFIGURATION=Debug
+  #     - IOS_APP=VideoApp-Community
