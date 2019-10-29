@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # source `dirname $0`/env.sh
-pushd ${BASE_DIR}
+pushd "$(pwd)"
 
 # Check to see if IOS_APP is set, if not, crash and burn
 if [ "${IOS_APP}" = "RTCRoomsDemo" ]; then
