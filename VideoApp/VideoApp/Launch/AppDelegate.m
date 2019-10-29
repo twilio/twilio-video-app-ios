@@ -24,7 +24,7 @@ const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
 #endif
 
 @interface AppDelegate ()
-@property (nonatomic, strong) id <AuthStoreWritingDelegate> authFlow;
+@property (nonatomic, strong) id <LaunchFlow> launchFlow;
 @end
 
 @implementation AppDelegate
@@ -65,12 +65,15 @@ const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
     }
 
     [AuthStore.shared start];
-    self.authFlow = [[AuthFlow alloc] initWithWindow:self.window];
-    AuthStore.shared.delegate = self.authFlow;
 
-    UINavigationController *navigationVC = (UINavigationController *)self.window.rootViewController;
-    navigationVC.barHideOnSwipeGestureRecognizer.enabled = NO;
-    navigationVC.hidesBarsOnSwipe = NO;
+    if (@available(iOS 13, *)) {
+        // Do nothing because SceneDelegate will handle it
+    } else {
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        
+        self.launchFlow = [[[LaunchFlowFactory alloc] init] makeLaunchFlowWithWindow: self.window];
+        [self.launchFlow start];
+    }
 
     return YES;
 }
@@ -94,6 +97,12 @@ const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
     } else {
         [navigationController.topViewController performSegueWithIdentifier:@"loginSegue" sender:self];
     }
+}
+
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options API_AVAILABLE(ios(13)) {
+    UISceneConfiguration* configuration = [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+    configuration.delegateClass = SceneDelegate.class;
+    return configuration;
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {

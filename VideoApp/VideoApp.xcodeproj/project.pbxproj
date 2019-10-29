@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2412823C1E36A6AB002198BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412823B1E36A6AB002198BE /* main.m */; };
 		2412823F1E36A6AB002198BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412823E1E36A6AB002198BE /* AppDelegate.m */; };
 		241282421E36A6AB002198BE /* LobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 241282411E36A6AB002198BE /* LobbyViewController.m */; };
 		241282451E36A6AB002198BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
@@ -61,7 +60,6 @@
 		4B0012301FBA52C4004A587E /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A598521ECCE069003466B4 /* RoundButton.m */; };
 		4B0012311FBA52C4004A587E /* SettingsKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */; };
 		4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */; };
-		4B0012331FBA52C4004A587E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412823B1E36A6AB002198BE /* main.m */; };
 		4B0012411FBA52C4004A587E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
 		4B0012431FBA52C4004A587E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
 		4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
@@ -81,7 +79,6 @@
 		4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A598521ECCE069003466B4 /* RoundButton.m */; };
 		4B00126E1FBA52E5004A587E /* SettingsKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */; };
 		4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */; };
-		4B0012701FBA52E5004A587E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412823B1E36A6AB002198BE /* main.m */; };
 		4B00127E1FBA52E5004A587E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
 		4B0012801FBA52E5004A587E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
 		4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
@@ -111,6 +108,15 @@
 		DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */; };
 		DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */; };
 		DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */; };
+		DC8AA8CB236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
+		DC8AA8CC236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
+		DC8AA8CD236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
+		DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */; };
+		DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */; };
+		DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */; };
+		DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */; };
+		DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */; };
+		DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -123,6 +129,12 @@
 		DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
+		DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
+		DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
+		DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
+		DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
+		DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
+		DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCE9B05F235A4909008E5B5B /* TwilioCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */; };
 		DCE9B064235A494F008E5B5B /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B063235A494F008E5B5B /* Credentials.swift */; };
 		DCE9B065235A494F008E5B5B /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B063235A494F008E5B5B /* Credentials.swift */; };
@@ -151,7 +163,6 @@
 /* Begin PBXFileReference section */
 		05FE9D8FE25C13BB6ADB4F3B /* Pods-Video-Twilio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.release.xcconfig"; sourceTree = "<group>"; };
 		241282371E36A6AB002198BE /* Video-Twilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Twilio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2412823B1E36A6AB002198BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2412823D1E36A6AB002198BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2412823E1E36A6AB002198BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		241282401E36A6AB002198BE /* LobbyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LobbyViewController.h; sourceTree = "<group>"; };
@@ -229,10 +240,15 @@
 		DC6EABC62358F5F50064E9E0 /* StubAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAppSettings.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStore.swift; sourceTree = "<group>"; };
+		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
+		DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSceneDelegate.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
+		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
+		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TwilioCredentials.json; sourceTree = "<group>"; };
 		DCE9B063235A494F008E5B5B /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
@@ -306,10 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				24480A451EF07716003BCF00 /* Video.entitlements */,
-				2412823D1E36A6AB002198BE /* AppDelegate.h */,
-				2412823E1E36A6AB002198BE /* AppDelegate.m */,
-				8AC49999232A18D2005A4B35 /* SceneDelegate.swift */,
 				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
+				DC7790CA236B6B3800973B86 /* Launch */,
 				248CD8B91EC6605500A0AF0F /* ExportOptions */,
 				24693EEA1E393F1B00F21DDC /* Helpers */,
 				24A723E41ECE1CBD00486E7A /* Models */,
@@ -334,7 +348,6 @@
 			children = (
 				24C5217720FFAD030018E2D8 /* Bridging-Header.h */,
 				2412824B1E36A6AB002198BE /* Info.plist */,
-				2412823B1E36A6AB002198BE /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -504,6 +517,21 @@
 				DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */,
 			);
 			path = Specs;
+			sourceTree = "<group>";
+		};
+		DC7790CA236B6B3800973B86 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				2412823D1E36A6AB002198BE /* AppDelegate.h */,
+				2412823E1E36A6AB002198BE /* AppDelegate.m */,
+				DCA80B27236B821E009141C9 /* LaunchFlow.swift */,
+				DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */,
+				DC8AA8CA236795FA006C06D5 /* main.swift */,
+				8AC49999232A18D2005A4B35 /* SceneDelegate.swift */,
+				DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */,
+				DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		DC8AA8BA236267B2006C06D5 /* Core */ = {
@@ -1051,7 +1079,9 @@
 			files = (
 				24693EE91E3934B200F21DDC /* SplashViewController.m in Sources */,
 				DCE9B06C235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */,
+				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
+				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DCE9B068235A4A19008E5B5B /* CredentialsStore.swift in Sources */,
 				DCE9B064235A494F008E5B5B /* Credentials.swift in Sources */,
 				DC4E4E2323577EE500C5D313 /* AppSettings.swift in Sources */,
@@ -1075,13 +1105,15 @@
 				24ED8B0421C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				24C239F61EDF263800AA9419 /* RemoteParticipantUIModel.m in Sources */,
 				2412823F1E36A6AB002198BE /* AppDelegate.m in Sources */,
+				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
+				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
 				24A598531ECCE069003466B4 /* RoundButton.m in Sources */,
 				244B45DD1ECB528C000B2415 /* SettingsKeyConstants.m in Sources */,
 				24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */,
-				2412823C1E36A6AB002198BE /* main.m in Sources */,
+				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999A232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -1093,7 +1125,9 @@
 			files = (
 				4B0012241FBA52C4004A587E /* SplashViewController.m in Sources */,
 				DCE9B06D235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */,
+				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
+				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DCE9B069235A4A19008E5B5B /* CredentialsStore.swift in Sources */,
 				DCE9B065235A494F008E5B5B /* Credentials.swift in Sources */,
 				DC4E4E2423577EE500C5D313 /* AppSettings.swift in Sources */,
@@ -1117,13 +1151,15 @@
 				24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00122D1FBA52C4004A587E /* RemoteParticipantUIModel.m in Sources */,
 				4B00122E1FBA52C4004A587E /* AppDelegate.m in Sources */,
+				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
+				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				4B0012301FBA52C4004A587E /* RoundButton.m in Sources */,
 				4B0012311FBA52C4004A587E /* SettingsKeyConstants.m in Sources */,
 				4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */,
-				4B0012331FBA52C4004A587E /* main.m in Sources */,
+				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -1135,7 +1171,9 @@
 			files = (
 				4B0012611FBA52E5004A587E /* SplashViewController.m in Sources */,
 				DCE9B06E235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */,
+				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
+				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DCE9B06A235A4A19008E5B5B /* CredentialsStore.swift in Sources */,
 				DCE9B066235A494F008E5B5B /* Credentials.swift in Sources */,
 				DC4E4E2523577EE500C5D313 /* AppSettings.swift in Sources */,
@@ -1159,13 +1197,15 @@
 				24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00126A1FBA52E5004A587E /* RemoteParticipantUIModel.m in Sources */,
 				4B00126B1FBA52E5004A587E /* AppDelegate.m in Sources */,
+				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
+				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */,
 				4B00126E1FBA52E5004A587E /* SettingsKeyConstants.m in Sources */,
 				4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */,
-				4B0012701FBA52E5004A587E /* main.m in Sources */,
+				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);

@@ -13,25 +13,20 @@ import TwilioVideo
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    var authFlow: AuthStoreWritingDelegate?
+    var launchFlow: LaunchFlow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        print(#function)
-        authFlow = AuthFlow(window: window!)
-        AuthStore.shared.delegate = authFlow
+        let windowScene = scene as! UIWindowScene
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
 
-        // The `window` property will automatically be loaded with the storyboard's initial view controller.
-        guard let navigationVC = self.window?.rootViewController as? UINavigationController else {
-            return
-        }
-        // Despite the header doc claims, it is possible for recognizer to be triggered on iOS 13 even when hidesBarOnSwipe == false.
-        navigationVC.barHideOnSwipeGestureRecognizer.isEnabled = false
-        navigationVC.hidesBarsOnSwipe = false
-
+        launchFlow = LaunchFlowFactory().makeLaunchFlow(window: window!)
+        launchFlow?.start()
+        
         if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
             if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
                 // TODO: Deep linking support.
-                if let lobby = navigationVC.topViewController as? LobbyViewController {
+                if let lobby = (window?.rootViewController as? UINavigationController)?.topViewController as? LobbyViewController {
                     lobby.handleDeepLinkedURL(userActivity.webpageURL)
                 }
             }
