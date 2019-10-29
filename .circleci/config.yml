@@ -5,19 +5,7 @@ aliases:
   - &secrets
     name: Secrets!!!
     command: |
-      # Untar secrets
-      # openssl aes-256-cbc -K $encrypted_120cc09cf48f_key -iv $encrypted_120cc09cf48f_iv -in secrets.tar.enc -out secrets.tar -d
-      # tar -xvf secrets.tar
-
-      # Xcode Signing
-      # ./Scripts/ci/configure-keychain.sh
-      # mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles || true
-      # cp secrets/Provisioning\ Profiles/*.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
-
-      # Credentials
       mkdir -p VideoApp/VideoApp/Credentials || true
-      # $GOOGLE_SERVICE_INFO_PLIST | base64 --decode > VideoApp/VideoApp/Credentials/GoogleService-Info.plist
-      # $TWILIO_CREDENTIALS | base64 --decode > VideoApp/VideoApp/Credentials/TwilioCredentials.json
       base64 -D <<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
       base64 -D <<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
 
@@ -26,18 +14,7 @@ aliases:
     command: |
       sysctl hw
 
-  - &git-user-config
-    name: Git User Config
-    command: |
-      git config --global user.email "twilio-sdk-build@twilio.com"
-      git config --global user.name "twilio-sdk-build"
-
   - &macos-defaults
-    macos:
-      xcode: "11.0.0"
-
-  # TODO: Use 11.1.0 once the beta images are available.
-  - &macos-beta
     macos:
       xcode: "11.0.0"
 
@@ -48,34 +25,6 @@ aliases:
       echo "system" > .ruby-version
       chruby system
 
-  # N-1 stable release.
-  # TODO: Use Xcode 10.3.0 once issues with TVIVideoViewTests not producing frames are resolved. (ISDK-2640)
-  - &macos-minus
-    macos:
-      xcode: "10.1.0"
-
-  - &macos-large
-    resource_class: large
-
-  # This is not currently being used, but chose to leave it here as reference for future usage.
-  - &install-simulators
-    name: Install simulators
-    command: |
-      sudo gem install xcode-install
-      xcrun simctl list
-      echo "" | xcversion simulators --no-progress --install='iOS 9.3'
-      xcrun simctl list
-
-  - &simulator-warming
-    name: Warm up simulators
-    command: |
-      xcrun instruments -w "iPhone 8 Plus (12.1) [" || true
-
-  - &simulator-warming-beta
-    name: Warm up simulators
-    command: |
-      xcrun instruments -w "iPhone 8 Plus (13.0) [" || true
-  
   - &install-brew-deps
     name: Install awscli, carthage and maven via Homebrew
     command: Scripts/ci/install-brew-deps.sh
@@ -148,9 +97,9 @@ jobs:
           command: |
             bundle exec pod install
       - run: *reset-ruby
-      - restore-cache: *restore-cache-brew-deps
-      - run: *install-brew-deps
-      - save-cache: *save-cache-brew-deps
+      # - restore-cache: *restore-cache-brew-deps
+      # - run: *install-brew-deps
+      # - save-cache: *save-cache-brew-deps
       # - restore-cache: *restore-video-app-carthage-deps-cache
       # - run: *install-video-app-deps
       # - save-cache: *save-video-app-carthage-deps-cache
