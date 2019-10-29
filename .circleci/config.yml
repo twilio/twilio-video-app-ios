@@ -25,29 +25,6 @@ aliases:
       echo "system" > .ruby-version
       chruby system
 
-  - &install-brew-deps
-    name: Install awscli, carthage and maven via Homebrew
-    command: Scripts/ci/install-brew-deps.sh
-      
-  # Homebrew dependencies cache
-  - &brew-deps-cache-key
-    key: brew-deps-{{ checksum "Scripts/ci/install-brew-deps.sh" }}
-  - &restore-cache-brew-deps
-    <<: *brew-deps-cache-key
-    name: Restoring Homebrew dependencies from the cache
-  - &save-cache-brew-deps
-    <<: *brew-deps-cache-key
-    name: Saving Homebrew dependencies to the cache
-    paths:
-      # Minimal cache of the dependencies installed via Homebrew.
-      # `brew link` will be used to restore the symlinks.
-      - /usr/local/Cellar/maven
-      - /usr/local/Cellar/awscli
-      - /usr/local/Cellar/openssl
-      - /usr/local/Cellar/python
-      - /usr/local/Cellar/readline
-      - /usr/local/Cellar/sqlite
-
   # Filters
   - &build-filter
     branches:
@@ -61,14 +38,6 @@ aliases:
         # All temporary work should be in a branch starting with WIP/
         - /WIP\/.*/
         # This is the collection of our "special" branches that we only build with snapshots
-        - master
-        - "1.0"
-        - "2.0"
-        - /feature\/.*/
-
-  - &snapshot-filter
-    branches:
-      only:
         - master
         - "1.0"
         - "2.0"
@@ -97,12 +66,6 @@ jobs:
           command: |
             bundle exec pod install
       - run: *reset-ruby
-      # - restore-cache: *restore-cache-brew-deps
-      # - run: *install-brew-deps
-      # - save-cache: *save-cache-brew-deps
-      # - restore-cache: *restore-video-app-carthage-deps-cache
-      # - run: *install-video-app-deps
-      # - save-cache: *save-video-app-carthage-deps-cache
       - run: *secrets
       - run:
           command: chruby system
