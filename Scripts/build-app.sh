@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-source `dirname $0`/env.sh
+# source `dirname $0`/env.sh
 pushd ${BASE_DIR}
 
 # Check to see if IOS_APP is set, if not, crash and burn
@@ -63,19 +63,19 @@ fi
 # fi
 
 WORKSPACE=VideoApp.xcworkspace
-ARCHIVE_PATH="${ARCHIVE_DIR}/${APP_SCHEME}.xcarchive"
+# ARCHIVE_PATH="${ARCHIVE_DIR}/${APP_SCHEME}.xcarchive"
 
 # pushd "${APP_DIR}"
 #   ./Scripts/carthage-dependencies.sh
 # popd
 
 BITCODE_MODE=marker
-if [ "${CONFIGURATION}" = "Release" ]; then
-  BITCODE_MODE=bitcode
-fi
+# if [ "${CONFIGURATION}" = "Release" ]; then
+#   BITCODE_MODE=bitcode
+# fi
 
-mkdir -p ${ARCHIVE_PATH}
-mkdir -p ${IPA_DIR}
+# mkdir -p ${ARCHIVE_PATH}
+# mkdir -p ${IPA_DIR}
 
 # xcodebuild \
 #   -workspace ${WORKSPACE} \
@@ -99,12 +99,11 @@ mkdir -p ${IPA_DIR}
 xcodebuild \
   -workspace ${WORKSPACE} \
   -scheme ${APP_SCHEME} \
-  -derivedDataPath ${DERIVED_DATA_DIR} \
-  -configuration ${CONFIGURATION} \
+  -configuration "Debug" \
   -sdk iphonesimulator \
   -parallelizeTargets \
-  ${TWILIO_XCODE_QUIET_ON_CI} \
-  ONLY_ACTIVE_ARCH=NO \
+  -quiet \
+  ONLY_ACTIVE_ARCH=YES \
   BITCODE_GENERATION_MODE=${BITCODE_MODE} \
   build
 
