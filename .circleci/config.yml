@@ -9,21 +9,9 @@ aliases:
       base64 -D <<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
       base64 -D <<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
 
-  - &log-hw-info
-    name: Log HW info
-    command: |
-      sysctl hw
-
   - &macos-defaults
     macos:
       xcode: "11.0.0"
-
-  # Reset Ruby
-  - &reset-ruby
-    name: Reset to system ruby
-    command: |
-      echo "system" > .ruby-version
-      chruby system
 
   # Filters
   - &build-filter
@@ -44,19 +32,11 @@ aliases:
         - /feature\/.*/
 
 jobs:
-  # Debug build of VideoApp-Twilio
-  build:
+  build_and_test_video_twilio:
     <<: *macos-defaults
     steps:
-      - run: *log-hw-info
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
+      - run: bundle install --path vendor/bundle
       - run:
           name: Fetch CocoaPods Specs
           command: |
@@ -65,14 +45,17 @@ jobs:
           name: Install CocoaPods
           command: |
             bundle exec pod install
-      - run: *reset-ruby
       - run: *secrets
-      - run:
-          command: chruby system
       - run:
           command: Scripts/build-app.sh
           no_output_timeout: 30m
     environment:
       - CONFIGURATION=Debug
       - IOS_APP=VideoApp-Twilio
-
+  build_video_community:
+      - run:
+          command: Scripts/build-app.sh
+          no_output_timeout: 30m
+    environment:
+      - CONFIGURATION=Debug
+      - IOS_APP=VideoApp-Community
