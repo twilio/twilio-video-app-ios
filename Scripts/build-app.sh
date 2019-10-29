@@ -101,6 +101,7 @@ xcodebuild \
   -scheme ${APP_SCHEME} \
   -configuration "Debug" \
   -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
   -parallelizeTargets \
   ONLY_ACTIVE_ARCH=YES \
   BITCODE_GENERATION_MODE=${BITCODE_MODE} \

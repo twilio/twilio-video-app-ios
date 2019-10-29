@@ -140,9 +140,12 @@ jobs:
           paths:
             - vendor/bundle
       - run:
-          name: Install CocoaPods
+          name: Fetch CocoaPods Specs
           command: |
             curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - run:
+          name: Install CocoaPods
+          command: |
             bundle exec pod install
       - run: *reset-ruby
       - restore-cache: *restore-cache-brew-deps
