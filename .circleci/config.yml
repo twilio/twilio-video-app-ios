@@ -146,7 +146,7 @@ jobs:
       - run:
           command: chruby system
       - run:
-          command: ./Scripts/build-app.sh
+          command: Scripts/build-app.sh
           no_output_timeout: 30m
     environment:
       - CONFIGURATION=Debug
