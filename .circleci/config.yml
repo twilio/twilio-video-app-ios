@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 # Yaml Defines
 aliases:
@@ -13,30 +13,30 @@ aliases:
     macos:
       xcode: "11.0.0"
 
-  # Filters
-  - &build-filter
+  - &pr-filters
     branches:
       ignore:
-        # All temporary work should be in a branch starting with WIP/
+        - master
         - /WIP\/.*/
 
-  - &pr-filter
-    branches:
-      ignore:
-        # All temporary work should be in a branch starting with WIP/
-        - /WIP\/.*/
-        # This is the collection of our "special" branches that we only build with snapshots
-        - master
-        - "1.0"
-        - "2.0"
-        - /feature\/.*/
+commands:
+  install_credentials:
+    description: Install credentials
+    steps:
+      - run:
+          name: Install credentials
+          command: |
+            mkdir -p VideoApp/VideoApp/Credentials || true
+            base64 -D <<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
+            base64 -D <<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
+
 
 jobs:
   build_and_test_video_twilio:
     <<: *macos-defaults
     steps:
       - checkout
-      - run: *secrets
+      - install_credentials
       - run: 
           name: Install gems  
           command: bundle install --path vendor/bundle
@@ -49,6 +49,7 @@ jobs:
           command: |
             bundle exec pod install
       - run:
+          name: "Test"
           command: Scripts/build-app.sh
           no_output_timeout: 30m
     environment:
@@ -58,7 +59,7 @@ jobs:
     <<: *macos-defaults
     steps:
       - checkout
-      - run: *secrets
+      - install_credentials
       - run: 
           name: Install gems  
           command: bundle install --path vendor/bundle
@@ -71,13 +72,14 @@ jobs:
           command: |
             bundle exec pod install
       - run:
+          name: "Test"
           command: Scripts/build-app-community.sh
           no_output_timeout: 30m
   build_video_internal:
     <<: *macos-defaults
     steps:
       - checkout
-      - run: *secrets
+      - install_credentials
       - run: 
           name: Install gems  
           command: bundle install --path vendor/bundle
@@ -90,13 +92,17 @@ jobs:
           command: |
             bundle exec pod install
       - run:
+          name: "Test"
           command: Scripts/build-app-internal.sh
           no_output_timeout: 30m
 
 workflows:
-  version: 2
+  version: 2.1
   build-deploy:
     jobs:
       - build_and_test_video_twilio
+          filters: *pr-filters
       - build_video_community
+          filters: *pr-filters
       - build_video_internal
+          filters: *pr-filters
