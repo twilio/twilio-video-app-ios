@@ -73,7 +73,7 @@ jobs:
       - run:
           command: Scripts/build-app-community.sh
           no_output_timeout: 30m
-  build_video_community:
+  build_video_internal:
     <<: *macos-defaults
     steps:
       - checkout
