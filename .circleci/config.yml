@@ -1,6 +1,5 @@
 version: 2.1
 
-# Yaml Defines
 aliases:
   - &pr-filters
     branches:
@@ -67,7 +66,7 @@ commands:
               -sdk iphonesimulator \
               -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
               test \
-            | xcpretty \
+            | xcpretty
 
 jobs:
   build_and_test_video_twilio:
@@ -90,7 +89,7 @@ jobs:
           scheme: "Video-Internal"
 
 workflows:
-  version: 2.1 # change to 2
+  version: 2
   build-and-test:
     jobs:
       - build_and_test_video_twilio
