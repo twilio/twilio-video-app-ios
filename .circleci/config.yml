@@ -57,6 +57,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install CocoaPods
+          command: |
+            bundle exec pod install
+      - run: *secrets
+      - run:
           command: Scripts/build-app-community.sh
           no_output_timeout: 30m
 
