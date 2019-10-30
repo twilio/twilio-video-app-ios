@@ -35,6 +35,18 @@ commands:
           name: Install CocoaPods
           command: |
             bundle exec pod install
+  build:
+    description: Build
+    steps:
+      - run:
+        name: Build
+        command: |
+          xcodebuild \
+            -workspace VideoApp.xcworkspace \
+            -scheme "Video-Internal" \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
+          | xcpretty
 
 jobs:
   build_and_test_video_twilio:
@@ -60,10 +72,7 @@ jobs:
     executor: macos_executor
     steps:
       - setup_steps
-      - run:
-          name: "Test"
-          command: Scripts/build-app-internal.sh
-          no_output_timeout: 30m
+      - build
 
 workflows:
   version: 2.1
