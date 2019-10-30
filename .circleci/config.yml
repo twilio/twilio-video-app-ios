@@ -19,6 +19,11 @@ aliases:
         - master
         - /WIP\/.*/
 
+executors:
+  macos_executor:
+    macos:
+      xcode: "11.0.0"
+
 commands:
   install_credentials:
     description: Install credentials
@@ -33,7 +38,7 @@ commands:
 
 jobs:
   build_and_test_video_twilio:
-    <<: *macos-defaults
+    executor: macos_executor
     steps:
       - checkout
       - install_credentials
@@ -56,7 +61,7 @@ jobs:
       - CONFIGURATION=Debug
       - IOS_APP=VideoApp-Twilio
   build_video_community:
-    <<: *macos-defaults
+    executor: macos_executor
     steps:
       - checkout
       - install_credentials
@@ -76,7 +81,7 @@ jobs:
           command: Scripts/build-app-community.sh
           no_output_timeout: 30m
   build_video_internal:
-    <<: *macos-defaults
+    executor: macos_executor
     steps:
       - checkout
       - install_credentials
