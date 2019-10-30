@@ -73,25 +73,25 @@ jobs:
       - run:
           command: Scripts/build-app-community.sh
           no_output_timeout: 30m
-  build_video_internal:
-    <<: *macos-defaults
-    steps:
-      - checkout
-      - run: *secrets
-      - run: 
-          name: Install gems  
-          commande: bundle install --path vendor/bundle
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run:
-          name: Install CocoaPods
-          command: |
-            bundle exec pod install
-      - run:
-          command: Scripts/build-app-internal.sh
-          no_output_timeout: 30m
+  # build_video_internal:
+  #   <<: *macos-defaults
+  #   steps:
+  #     - checkout
+  #     - run: *secrets
+  #     - run: 
+  #         name: Install gems  
+  #         commande: bundle install --path vendor/bundle
+  #     - run:
+  #         name: Fetch CocoaPods Specs
+  #         command: |
+  #           curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+  #     - run:
+  #         name: Install CocoaPods
+  #         command: |
+  #           bundle exec pod install
+  #     - run:
+  #         command: Scripts/build-app-internal.sh
+  #         no_output_timeout: 30m
 
 workflows:
   version: 2
@@ -99,4 +99,4 @@ workflows:
     jobs:
       - build_and_test_video_twilio
       - build_video_community
-      - build_video_internal
+      # - build_video_internal
