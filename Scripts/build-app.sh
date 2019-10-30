@@ -4,14 +4,7 @@
 pushd "$(pwd)"
 
 # Check to see if IOS_APP is set, if not, crash and burn
-if [ "${IOS_APP}" = "RTCRoomsDemo" ]; then
-  echo "Building RTCRoomsDemo"
-  APP_DIR="RTCRoomsDemo-iOS"
-  APP_SCHEME="RTCRoomsDemo"
-  PROJECT_FILE="RTCRoomsDemo-iOS/RTCRoomsDemo.xcodeproj/project.pbxproj"
-  SCHEME_FILE="RTCRoomsDemo-iOS/RTCRoomsDemo.xcodeproj/xcshareddata/xcschemes/RTCRoomsDemo.xcscheme"
-  EXPORT_OPTIONS_PLIST="RTCRoomsDemo-iOS/RTCRoomsDemo/ExportOptions/enterprise.plist"
-elif [ "${IOS_APP}" = "VideoApp-Internal" ]; then
+if [ "${IOS_APP}" = "VideoApp-Internal" ]; then
   echo "Building VideoApp"
   APP_DIR="VideoApp"
   APP_SCHEME="Video-Internal"
@@ -22,6 +15,13 @@ elif [ "${IOS_APP}" = "VideoApp-Twilio" ]; then
   echo "Building VideoApp"
   APP_DIR="VideoApp"
   APP_SCHEME="Video-Twilio"
+  PROJECT_FILE="VideoApp/VideoApp.xcodeproj/project.pbxproj"
+  SCHEME_FILE="VideoApp/VideoApp.xcodeproj/xcshareddata/xcschemes/Video-Twilio.xcscheme"
+  # EXPORT_OPTIONS_PLIST="VideoApp/VideoApp/ExportOptions/enterprise.plist"
+elif [ "${IOS_APP}" = "VideoApp-Community" ]; then
+  echo "Building VideoApp"
+  APP_DIR="VideoApp"
+  APP_SCHEME="Video-Community"
   PROJECT_FILE="VideoApp/VideoApp.xcodeproj/project.pbxproj"
   SCHEME_FILE="VideoApp/VideoApp.xcodeproj/xcshareddata/xcschemes/Video-Twilio.xcscheme"
   # EXPORT_OPTIONS_PLIST="VideoApp/VideoApp/ExportOptions/enterprise.plist"
