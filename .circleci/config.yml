@@ -37,7 +37,7 @@ commands:
           name: Install CocoaPods
           command: |
             bundle exec pod install
-  build_stuff:
+  build:
     description: Build
     parameters:
       scheme:
@@ -52,30 +52,41 @@ commands:
               -sdk iphonesimulator \
               -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
             | xcpretty
+  build_and_test:
+    description: Build and test
+    parameters:
+      scheme:
+        type: string
+    steps:
+      - run:
+          name: Build and test
+          command: |
+            xcodebuild \
+              -workspace VideoApp.xcworkspace \
+              -scheme << parameters.scheme >> \
+              -sdk iphonesimulator \
+              -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
+              test \
+            | xcpretty \
 
 jobs:
   build_and_test_video_twilio:
     executor: macos_executor
     steps:
       - setup_steps
-      - run:
-          name: "Test"
-          command: Scripts/build-app.sh
-          no_output_timeout: 30m
-    environment:
-      - CONFIGURATION=Debug
-      - IOS_APP=VideoApp-Twilio
+      - build_and_test:
+          scheme: "Video-Twilio"
   build_video_community:
     executor: macos_executor
     steps:
       - setup_steps
-      - build_stuff:
+      - build:
           scheme: "Video-Community"
   build_video_internal:
     executor: macos_executor
     steps:
       - setup_steps
-      - build_stuff:
+      - build:
           scheme: "Video-Internal"
 
 workflows:
