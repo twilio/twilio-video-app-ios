@@ -3,7 +3,7 @@ version: 2
 # Yaml Defines
 aliases:
   - &secrets
-    name: Secrets!!!
+    name: Install credentials
     command: |
       mkdir -p VideoApp/VideoApp/Credentials || true
       base64 -D <<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
@@ -36,7 +36,10 @@ jobs:
     <<: *macos-defaults
     steps:
       - checkout
-      - run: bundle install --path vendor/bundle
+      - run: *secrets
+      - run: 
+          name: Install gems  
+          commande: bundle install --path vendor/bundle
       - run:
           name: Fetch CocoaPods Specs
           command: |
@@ -45,7 +48,6 @@ jobs:
           name: Install CocoaPods
           command: |
             bundle exec pod install
-      - run: *secrets
       - run:
           command: Scripts/build-app.sh
           no_output_timeout: 30m
@@ -56,13 +58,39 @@ jobs:
     <<: *macos-defaults
     steps:
       - checkout
+      - run: *secrets
+      - run: 
+          name: Install gems  
+          commande: bundle install --path vendor/bundle
+      - run:
+          name: Fetch CocoaPods Specs
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run:
           name: Install CocoaPods
           command: |
             bundle exec pod install
-      - run: *secrets
       - run:
           command: Scripts/build-app-community.sh
+          no_output_timeout: 30m
+  build_video_community:
+    <<: *macos-defaults
+    steps:
+      - checkout
+      - run: *secrets
+      - run: 
+          name: Install gems  
+          commande: bundle install --path vendor/bundle
+      - run:
+          name: Fetch CocoaPods Specs
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - run:
+          name: Install CocoaPods
+          command: |
+            bundle exec pod install
+      - run:
+          command: Scripts/build-app-internal.sh
           no_output_timeout: 30m
 
 workflows:
@@ -70,6 +98,5 @@ workflows:
   build-deploy:
     jobs:
       - build_and_test_video_twilio
-      - build_video_community:
-          requires:
-            - build_and_test_video_twilio
+      - build_video_community
+      - build_video_internal
