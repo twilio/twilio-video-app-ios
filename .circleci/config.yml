@@ -24,6 +24,8 @@ commands:
             mkdir -p VideoApp/VideoApp/Credentials || true
             base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
             base64 -D \<<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
+            base64 -D \<<< $INTERNAL_CREDENTIALS -o VideoApp/VideoApp/Credentials/InternalCredentials.json
+            base64 -D \<<< $COMMUNITY_CREDENTIALS -o VideoApp/VideoApp/Credentials/CommunityCredentials.json
       - run: 
           name: Install gems  
           command: bundle install --path vendor/bundle
@@ -75,7 +77,7 @@ jobs:
       - build_stuff
 
 workflows:
-  version: 2.1
+  version: 2.1 # change to 2
   build-and-test:
     jobs:
       - build_and_test_video_twilio
