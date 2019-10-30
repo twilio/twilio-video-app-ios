@@ -55,6 +55,7 @@ jobs:
   build_video_community:
     <<: *macos-defaults
     steps:
+      - checkout
       - run:
           command: Scripts/build-app.sh
           no_output_timeout: 30m
@@ -68,3 +69,5 @@ workflows:
     jobs:
       - build_and_test_video_twilio
       - build_video_community
+          requires:
+            build_and_test_video_twilio
