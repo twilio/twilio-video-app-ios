@@ -76,9 +76,9 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_and_test_twilio_app
+      - build_and_test_twilio_app:
           filters: *build_and_test_filters
-      - build_community_app
+      - build_community_app:
           filters: *build_and_test_filters
-      - build_internal_app
+      - build_internal_app:
           filters: *build_and_test_filters
