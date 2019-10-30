@@ -68,6 +68,6 @@ workflows:
   build-deploy:
     jobs:
       - build_and_test_video_twilio
-      - build_video_community
+      - build_video_community:
           requires:
             build_and_test_video_twilio
