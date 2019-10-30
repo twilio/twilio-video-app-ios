@@ -13,7 +13,7 @@ executors:
       xcode: "11.0.0"
 
 commands:
-  setup_steps:
+  common_setup:
     description: Setup steps
     steps:
       - checkout
@@ -30,27 +30,20 @@ commands:
           command: bundle install --path vendor/bundle
       - run:
           name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+          command: curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run:
           name: Install CocoaPods
-          command: |
-            bundle exec pod install
+          command: bundle exec pod install
   build:
     description: Build
     parameters:
       scheme:
         type: string
     steps:
+      - common_setup
       - run:
           name: Build
-          command: |
-            xcodebuild \
-              -workspace VideoApp.xcworkspace \
-              -scheme << parameters.scheme >> \
-              -sdk iphonesimulator \
-              -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
-            | xcpretty
+          command: xcodebuild -workspace VideoApp.xcworkspace -scheme << parameters.scheme >> -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' | xcpretty
   build_and_test:
     description: Build and test
     parameters:
@@ -59,32 +52,25 @@ commands:
     steps:
       - run:
           name: Build and test
-          command: |
-            xcodebuild \
-              -workspace VideoApp.xcworkspace \
-              -scheme << parameters.scheme >> \
-              -sdk iphonesimulator \
-              -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' \
-              test \
-            | xcpretty
+          command: xcodebuild -workspace VideoApp.xcworkspace -scheme << parameters.scheme >> -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' test | xcpretty
 
 jobs:
   build_and_test_video_twilio:
     executor: macos_executor
     steps:
-      - setup_steps
+      - common_setup
       - build_and_test:
           scheme: "Video-Twilio"
   build_video_community:
     executor: macos_executor
     steps:
-      - setup_steps
+      # - common_setup
       - build:
           scheme: "Video-Community"
   build_video_internal:
     executor: macos_executor
     steps:
-      - setup_steps
+      # - common_setup
       - build:
           scheme: "Video-Internal"
 
