@@ -57,11 +57,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: Scripts/build-app.sh
+          command: Scripts/build-app-community.sh
           no_output_timeout: 30m
-    environment:
-      - CONFIGURATION=Debug
-      - IOS_APP=VideoApp-Community
 
 workflows:
   version: 2
