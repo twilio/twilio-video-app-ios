@@ -2,17 +2,6 @@ version: 2.1
 
 # Yaml Defines
 aliases:
-  - &secrets
-    name: Install credentials
-    command: |
-      mkdir -p VideoApp/VideoApp/Credentials || true
-      base64 -D <<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
-      base64 -D <<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
-
-  - &macos-defaults
-    macos:
-      xcode: "11.0.0"
-
   - &pr-filters
     branches:
       ignore:
@@ -25,23 +14,16 @@ executors:
       xcode: "11.0.0"
 
 commands:
-  install_credentials:
-    description: Install credentials
+  setup_steps:
+    description: Setup steps
     steps:
+      - checkout
       - run:
           name: Install credentials
           command: |
             mkdir -p VideoApp/VideoApp/Credentials || true
             base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
             base64 -D \<<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
-
-
-jobs:
-  build_and_test_video_twilio:
-    executor: macos_executor
-    steps:
-      - checkout
-      - install_credentials
       - run: 
           name: Install gems  
           command: bundle install --path vendor/bundle
@@ -53,6 +35,12 @@ jobs:
           name: Install CocoaPods
           command: |
             bundle exec pod install
+
+jobs:
+  build_and_test_video_twilio:
+    executor: macos_executor
+    steps:
+      - setup_steps
       - run:
           name: "Test"
           command: Scripts/build-app.sh
@@ -63,19 +51,7 @@ jobs:
   build_video_community:
     executor: macos_executor
     steps:
-      - checkout
-      - install_credentials
-      - run: 
-          name: Install gems  
-          command: bundle install --path vendor/bundle
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run:
-          name: Install CocoaPods
-          command: |
-            bundle exec pod install
+      - setup_steps
       - run:
           name: "Test"
           command: Scripts/build-app-community.sh
@@ -83,19 +59,7 @@ jobs:
   build_video_internal:
     executor: macos_executor
     steps:
-      - checkout
-      - install_credentials
-      - run: 
-          name: Install gems  
-          command: bundle install --path vendor/bundle
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run:
-          name: Install CocoaPods
-          command: |
-            bundle exec pod install
+      - setup_steps
       - run:
           name: "Test"
           command: Scripts/build-app-internal.sh
@@ -103,7 +67,7 @@ jobs:
 
 workflows:
   version: 2.1
-  build-deploy:
+  build-and-test:
     jobs:
       - build_and_test_video_twilio
       - build_video_community
