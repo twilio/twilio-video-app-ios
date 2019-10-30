@@ -27,8 +27,8 @@ commands:
           name: Install credentials
           command: |
             mkdir -p VideoApp/VideoApp/Credentials || true
-            base64 -D <<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
-            base64 -D <<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
+            base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
+            base64 -D \<<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
 
 
 jobs:
