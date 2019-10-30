@@ -1,7 +1,7 @@
 version: 2.1
 
 aliases:
-  - &pr-filters
+  - &build_and_test_filters
     branches:
       ignore:
         - master
@@ -50,34 +50,35 @@ commands:
       scheme:
         type: string
     steps:
+      - common_setup
       - run:
           name: Build and test
           command: xcodebuild -workspace VideoApp.xcworkspace -scheme << parameters.scheme >> -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0' test | xcpretty
 
 jobs:
-  build_and_test_video_twilio:
+  build_and_test_twilio_app:
     executor: macos_executor
     steps:
-      - common_setup
       - build_and_test:
           scheme: "Video-Twilio"
-  build_video_community:
+  build_community_app:
     executor: macos_executor
     steps:
-      # - common_setup
       - build:
           scheme: "Video-Community"
-  build_video_internal:
+  build_internal_app:
     executor: macos_executor
     steps:
-      # - common_setup
       - build:
           scheme: "Video-Internal"
 
 workflows:
   version: 2
-  build-and-test:
+  build_and_test:
     jobs:
-      - build_and_test_video_twilio
-      - build_video_community
-      - build_video_internal
+      - build_and_test_twilio_app
+          filters: *build_and_test_filters
+      - build_community_app
+          filters: *build_and_test_filters
+      - build_internal_app
+          filters: *build_and_test_filters
