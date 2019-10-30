@@ -70,4 +70,4 @@ workflows:
       - build_and_test_video_twilio
       - build_video_community:
           requires:
-            build_and_test_video_twilio
+            - build_and_test_video_twilio
