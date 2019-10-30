@@ -53,6 +53,8 @@ jobs:
       - CONFIGURATION=Debug
       - IOS_APP=VideoApp-Twilio
   build_video_community:
+    <<: *macos-defaults
+    steps:
       - run:
           command: Scripts/build-app.sh
           no_output_timeout: 30m
