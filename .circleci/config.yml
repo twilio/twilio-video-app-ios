@@ -25,10 +25,12 @@ commands:
             base64 -D \<<< $INTERNAL_CREDENTIALS -o VideoApp/VideoApp/Credentials/InternalCredentials.json
             base64 -D \<<< $COMMUNITY_CREDENTIALS -o VideoApp/VideoApp/Credentials/CommunityCredentials.json
       - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path vendor/bundle
+          key: v1-gems-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install gems  
+          command: bundle install --path vendor/bundle
       - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          key: v1-gems-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
       - run:
