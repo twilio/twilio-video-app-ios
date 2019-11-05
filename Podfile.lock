@@ -1,4 +1,7 @@
 PODS:
+  - AppCenter/Core (2.5.1)
+  - AppCenter/Distribute (2.5.1):
+    - AppCenter/Core
   - Firebase/Analytics (4.13.0):
     - Firebase/Core
   - Firebase/Auth (4.13.0):
@@ -40,9 +43,6 @@ PODS:
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
   - GTMSessionFetcher/Core (1.2.2)
-  - HockeySDK (5.1.4):
-    - HockeySDK/DefaultLib (= 5.1.4)
-  - HockeySDK/DefaultLib (5.1.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -53,16 +53,17 @@ PODS:
   - TwilioVideo (3.0.0)
 
 DEPENDENCIES:
+  - AppCenter/Distribute
   - Firebase/Analytics (~> 4.10)
   - FirebaseUI/Auth
   - FirebaseUI/Google
-  - HockeySDK (~> 5.1)
   - Nimble
   - Quick
   - TwilioVideo
 
 SPEC REPOS:
   trunk:
+    - AppCenter
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -72,13 +73,13 @@ SPEC REPOS:
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMSessionFetcher
-    - HockeySDK
     - nanopb
     - Nimble
     - Quick
     - TwilioVideo
 
 SPEC CHECKSUMS:
+  AppCenter: fddcbac6e4baae3d93a196ceb0bfe0e4ce407dec
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
@@ -88,12 +89,11 @@ SPEC CHECKSUMS:
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
-  HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 9998112441979eef59dfa235f808cd097465b064
 
-PODFILE CHECKSUM: 803e6c6e3402d38e5c7b1332426e34fea7bfcb57
+PODFILE CHECKSUM: eed6d1d715ca6306c1aa43451f97d84589cf96fb
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4
