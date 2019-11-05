@@ -9,10 +9,10 @@
 import UIKit
 import Firebase
 
-@objc class AuthFlow: NSObject {
+class AuthFlow {
     private let window: UIWindow
     
-    @objc init(window: UIWindow) {
+    init(window: UIWindow) {
         self.window = window
     }
     
