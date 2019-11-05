@@ -4,10 +4,10 @@
 
 ### General
 
-1. Install correct version of [CocoaPods](http://guides.cocoapods.org/using/getting-started.html). The required version is specified at the bottom of Podfile.lock.
-2. Run `pod install`.
-3. Create `VideoApp/VideoApp/Credentials/` directory.
-4. Download `GoogleService-Info.plist` from [Firebase Console](https://firebase.google.com/docs/ios/setup#add-config-file) and copy to `VideoApp/VideoApp/Credentials/`.
+1. Install [Bundler](https://bundler.io/).
+1. Run `bundle exec pod install`.
+1. Create `VideoApp/VideoApp/Credentials/` directory.
+1. Download `GoogleService-Info.plist` from [Firebase Console](https://firebase.google.com/docs/ios/setup#add-config-file) and copy to `VideoApp/VideoApp/Credentials/`.
 
 ### Video-Community Scheme
 
