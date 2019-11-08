@@ -7,6 +7,7 @@
 //
 
 #import "TwilioVideoAppAPI.h"
+#import "VideoAppEnvironment.h"
 
 // Infrastructure Environment
 TwilioVideoAppAPIEnvironment kTwilioVideoAppAPIEnvironmentProduction        = @"prod";
