@@ -9,5 +9,5 @@
 import Foundation
 
 struct Credentials: Codable {
-    let hockeyAppIdentifier: String?
+    let appCenterAppSecret: String?
 }

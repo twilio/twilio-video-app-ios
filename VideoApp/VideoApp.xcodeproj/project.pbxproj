@@ -135,6 +135,11 @@
 		DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
+		DCAEBEE02374EC2600141D2D /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */; };
+		DCAEBEE12374EC2600141D2D /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */; };
+		DCAEBEE22374EC2600141D2D /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */; };
+		DCE965BB237492410002EC78 /* Video_InternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* Video_InternalTests.swift */; };
+		DCE965C9237498F50002EC78 /* Video_CommunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */; };
 		DCE9B05F235A4909008E5B5B /* TwilioCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */; };
 		DCE9B064235A494F008E5B5B /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B063235A494F008E5B5B /* Credentials.swift */; };
 		DCE9B065235A494F008E5B5B /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B063235A494F008E5B5B /* Credentials.swift */; };
@@ -142,9 +147,6 @@
 		DCE9B068235A4A19008E5B5B /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */; };
 		DCE9B069235A4A19008E5B5B /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */; };
 		DCE9B06A235A4A19008E5B5B /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */; };
-		DCE9B06C235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */; };
-		DCE9B06D235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */; };
-		DCE9B06E235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */; };
 		DCE9B071235A5282008E5B5B /* InternalCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B06F235A5282008E5B5B /* InternalCredentials.json */; };
 		DCE9B07E235E2380008E5B5B /* CommunityCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B07D235E2380008E5B5B /* CommunityCredentials.json */; };
 		E79FE7DB28C3BBBE4440D1F3 /* Pods_Video_Twilio_Video_TwilioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */; };
@@ -157,6 +159,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 241282361E36A6AB002198BE;
 			remoteInfo = "Video-Twilio";
+		};
+		DCE965BD237492410002EC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2412822F1E36A6AB002198BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B0012221FBA52C4004A587E;
+			remoteInfo = "Video-Internal";
+		};
+		DCE965CB237498F50002EC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2412822F1E36A6AB002198BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B00125F1FBA52E5004A587E;
+			remoteInfo = "Video-Community";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -185,7 +201,6 @@
 		24693EE81E3934B200F21DDC /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TVILocalVideoTrack+Mirroring.h"; sourceTree = "<group>"; };
 		246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TVILocalVideoTrack+Mirroring.m"; sourceTree = "<group>"; };
-		248CD8BC1EC6609500A0AF0F /* enterprise.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
 		248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
 		248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
 		24927E2D1ECC9E44006510E3 /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
@@ -249,10 +264,16 @@
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
+		DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
+		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE965BA237492410002EC78 /* Video_InternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_InternalTests.swift; sourceTree = "<group>"; };
+		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCE965C6237498F50002EC78 /* Video-CommunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-CommunityTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_CommunityTests.swift; sourceTree = "<group>"; };
+		DCE965CA237498F50002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TwilioCredentials.json; sourceTree = "<group>"; };
 		DCE9B063235A494F008E5B5B /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
-		DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyAppIdentifierFactory.swift; sourceTree = "<group>"; };
 		DCE9B06F235A5282008E5B5B /* InternalCredentials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InternalCredentials.json; sourceTree = "<group>"; };
 		DCE9B073235A5355008E5B5B /* Credentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credentials.json.example; sourceTree = "<group>"; };
 		DCE9B07D235E2380008E5B5B /* CommunityCredentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CommunityCredentials.json; sourceTree = "<group>"; };
@@ -293,6 +314,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCE965B5237492410002EC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE965C3237498F50002EC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -300,7 +335,9 @@
 			isa = PBXGroup;
 			children = (
 				241282391E36A6AB002198BE /* VideoApp */,
-				DC4E4E2D2357A73900C5D313 /* VideoAppTests */,
+				DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */,
+				DCE965C7237498F50002EC78 /* Video-CommunityTests */,
+				DCE965B9237492410002EC78 /* Video-InternalTests */,
 				24F2990C1E37AF86001A389B /* Frameworks */,
 				241282381E36A6AB002198BE /* Products */,
 				5D24F42A53DEB8839B3BDD30 /* Pods */,
@@ -314,6 +351,8 @@
 				4B00124E1FBA52C4004A587E /* Video-Internal.app */,
 				4B00128B1FBA52E5004A587E /* Video-Community.app */,
 				DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */,
+				DCE965B8237492410002EC78 /* Video-InternalTests.xctest */,
+				DCE965C6237498F50002EC78 /* Video-CommunityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,13 +363,13 @@
 				24480A451EF07716003BCF00 /* Video.entitlements */,
 				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
 				DC7790CA236B6B3800973B86 /* Launch */,
-				248CD8B91EC6605500A0AF0F /* ExportOptions */,
 				24693EEA1E393F1B00F21DDC /* Helpers */,
 				24A723E41ECE1CBD00486E7A /* Models */,
 				24491F791E37F89F00028B24 /* View Controllers */,
 				24A723E81ECE1D2A00486E7A /* Views */,
 				24491F7A1E37F8B200028B24 /* UI Resources */,
 				DC4E4E2723578DF200C5D313 /* AppSettingsStore */,
+				DCAEBEDE2374EC0800141D2D /* AppCenterStore */,
 				DCA53946235F534400CA26FB /* AuthStore */,
 				DCE9B062235A491A008E5B5B /* CredentialsStore */,
 				DCE9B05D235A46EA008E5B5B /* Credentials */,
@@ -399,14 +438,6 @@
 				24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		248CD8B91EC6605500A0AF0F /* ExportOptions */ = {
-			isa = PBXGroup;
-			children = (
-				248CD8BC1EC6609500A0AF0F /* enterprise.plist */,
-			);
-			path = ExportOptions;
 			sourceTree = "<group>";
 		};
 		24A598541ECCE0AA003466B4 /* Custom Controls */ = {
@@ -482,7 +513,7 @@
 			path = AppSettingsStore;
 			sourceTree = "<group>";
 		};
-		DC4E4E2D2357A73900C5D313 /* VideoAppTests */ = {
+		DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */ = {
 			isa = PBXGroup;
 			children = (
 				DC6EABCB235907280064E9E0 /* Specs */,
@@ -490,7 +521,7 @@
 				DC6EABCA235907130064E9E0 /* Stubs */,
 				DC4E4E302357A73900C5D313 /* Info.plist */,
 			);
-			path = VideoAppTests;
+			path = "Video-TwilioTests";
 			sourceTree = "<group>";
 		};
 		DC4E4E362357B03100C5D313 /* Mocks */ = {
@@ -570,6 +601,32 @@
 			path = AuthStore;
 			sourceTree = "<group>";
 		};
+		DCAEBEDE2374EC0800141D2D /* AppCenterStore */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */,
+			);
+			path = AppCenterStore;
+			sourceTree = "<group>";
+		};
+		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCE965BA237492410002EC78 /* Video_InternalTests.swift */,
+				DCE965BC237492410002EC78 /* Info.plist */,
+			);
+			path = "Video-InternalTests";
+			sourceTree = "<group>";
+		};
+		DCE965C7237498F50002EC78 /* Video-CommunityTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */,
+				DCE965CA237498F50002EC78 /* Info.plist */,
+			);
+			path = "Video-CommunityTests";
+			sourceTree = "<group>";
+		};
 		DCE9B05D235A46EA008E5B5B /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,7 +641,6 @@
 		DCE9B062235A491A008E5B5B /* CredentialsStore */ = {
 			isa = PBXGroup;
 			children = (
-				DCE9B06B235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift */,
 				DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */,
 				DCE9B063235A494F008E5B5B /* Credentials.swift */,
 				DCE9B073235A5355008E5B5B /* Credentials.json.example */,
@@ -676,13 +732,49 @@
 			productReference = DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DCE965B7237492410002EC78 /* Video-InternalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE965C1237492410002EC78 /* Build configuration list for PBXNativeTarget "Video-InternalTests" */;
+			buildPhases = (
+				DCE965B4237492410002EC78 /* Sources */,
+				DCE965B5237492410002EC78 /* Frameworks */,
+				DCE965B6237492410002EC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCE965BE237492410002EC78 /* PBXTargetDependency */,
+			);
+			name = "Video-InternalTests";
+			productName = "Video-InternalTests";
+			productReference = DCE965B8237492410002EC78 /* Video-InternalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCE965C5237498F50002EC78 /* Video-CommunityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE965CF237498F50002EC78 /* Build configuration list for PBXNativeTarget "Video-CommunityTests" */;
+			buildPhases = (
+				DCE965C2237498F50002EC78 /* Sources */,
+				DCE965C3237498F50002EC78 /* Frameworks */,
+				DCE965C4237498F50002EC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCE965CC237498F50002EC78 /* PBXTargetDependency */,
+			);
+			name = "Video-CommunityTests";
+			productName = "Video-CommunityTests";
+			productReference = DCE965C6237498F50002EC78 /* Video-CommunityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2412822F1E36A6AB002198BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Twilio, Inc.";
 				TargetAttributes = {
@@ -715,14 +807,23 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 241282361E36A6AB002198BE;
 					};
+					DCE965B7237492410002EC78 = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4B0012221FBA52C4004A587E;
+					};
+					DCE965C5237498F50002EC78 = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4B00125F1FBA52E5004A587E;
+					};
 				};
 			};
 			buildConfigurationList = 241282321E36A6AB002198BE /* Build configuration list for PBXProject "VideoApp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -735,6 +836,8 @@
 				4B0012221FBA52C4004A587E /* Video-Internal */,
 				4B00125F1FBA52E5004A587E /* Video-Community */,
 				DC4E4E2B2357A73900C5D313 /* Video-TwilioTests */,
+				DCE965B7237492410002EC78 /* Video-InternalTests */,
+				DCE965C5237498F50002EC78 /* Video-CommunityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -783,6 +886,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCE965B6237492410002EC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE965C4237498F50002EC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -817,17 +934,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -841,17 +958,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -893,17 +1010,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1009,17 +1126,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1078,7 +1195,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24693EE91E3934B200F21DDC /* SplashViewController.m in Sources */,
-				DCE9B06C235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -1107,6 +1223,7 @@
 				2412823F1E36A6AB002198BE /* AppDelegate.m in Sources */,
 				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
+				DCAEBEE02374EC2600141D2D /* AppCenterStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
@@ -1124,7 +1241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0012241FBA52C4004A587E /* SplashViewController.m in Sources */,
-				DCE9B06D235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -1153,6 +1269,7 @@
 				4B00122E1FBA52C4004A587E /* AppDelegate.m in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
+				DCAEBEE12374EC2600141D2D /* AppCenterStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
@@ -1170,7 +1287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0012611FBA52E5004A587E /* SplashViewController.m in Sources */,
-				DCE9B06E235A4FB9008E5B5B /* HockeyAppIdentifierFactory.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -1199,6 +1315,7 @@
 				4B00126B1FBA52E5004A587E /* AppDelegate.m in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
+				DCAEBEE22374EC2600141D2D /* AppCenterStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
@@ -1223,6 +1340,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCE965B4237492410002EC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE965BB237492410002EC78 /* Video_InternalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE965C2237498F50002EC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE965C9237498F50002EC78 /* Video_CommunityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1230,6 +1363,16 @@
 			isa = PBXTargetDependency;
 			target = 241282361E36A6AB002198BE /* Video-Twilio */;
 			targetProxy = DC4E4E312357A73900C5D313 /* PBXContainerItemProxy */;
+		};
+		DCE965BE237492410002EC78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B0012221FBA52C4004A587E /* Video-Internal */;
+			targetProxy = DCE965BD237492410002EC78 /* PBXContainerItemProxy */;
+		};
+		DCE965CC237498F50002EC78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B00125F1FBA52E5004A587E /* Video-Community */;
+			targetProxy = DCE965CB237498F50002EC78 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1579,7 +1722,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = VideoAppTests/Info.plist;
+				INFOPLIST_FILE = "Video-TwilioTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1604,7 +1747,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = VideoAppTests/Info.plist;
+				INFOPLIST_FILE = "Video-TwilioTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioTests";
@@ -1613,6 +1756,98 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Twilio.app/Video-Twilio";
+			};
+			name = Release;
+		};
+		DCE965BF237492410002EC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Video-InternalTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-InternalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Internal.app/Video-Internal";
+			};
+			name = Debug;
+		};
+		DCE965C0237492410002EC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Video-InternalTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-InternalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Internal.app/Video-Internal";
+			};
+			name = Release;
+		};
+		DCE965CD237498F50002EC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Video-CommunityTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-CommunityTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Community.app/Video-Community";
+			};
+			name = Debug;
+		};
+		DCE965CE237498F50002EC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Video-CommunityTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-CommunityTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Community.app/Video-Community";
 			};
 			name = Release;
 		};
@@ -1660,6 +1895,24 @@
 			buildConfigurations = (
 				DC4E4E342357A73900C5D313 /* Debug */,
 				DC4E4E352357A73900C5D313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCE965C1237492410002EC78 /* Build configuration list for PBXNativeTarget "Video-InternalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE965BF237492410002EC78 /* Debug */,
+				DCE965C0237492410002EC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCE965CF237498F50002EC78 /* Build configuration list for PBXNativeTarget "Video-CommunityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE965CD237498F50002EC78 /* Debug */,
+				DCE965CE237498F50002EC78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

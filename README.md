@@ -5,6 +5,7 @@
 ### General
 
 1. Install [Bundler](https://bundler.io/).
+1. Run 'bundle install`.
 1. Run `bundle exec pod install`.
 1. Create `VideoApp/VideoApp/Credentials/` directory.
 1. Download `GoogleService-Info.plist` from [Firebase Console](https://firebase.google.com/docs/ios/setup#add-config-file) and copy to `VideoApp/VideoApp/Credentials/`.

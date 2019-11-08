@@ -13,7 +13,6 @@
 #import "LobbyViewController.h"
 #import "VideoApp-Swift.h"
 @import TwilioVideo;
-@import HockeySDK;
 
 #if APP_TYPE_TWILIO
 const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentTwilio;
@@ -32,13 +31,7 @@ const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #ifndef DEBUG
-    NSString *hockeyAppIdentifier = [[HockeyAppIdentifierFactory new] makeHockeyAppIdentifier];
-
-    if (hockeyAppIdentifier != nil) {
-        [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:hockeyAppIdentifier];
-        [[BITHockeyManager sharedHockeyManager] startManager];
-        [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
-    }
+    [[AppCenterStore new] start];
 #endif
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kSettingsSelectedEnvironmentKey : kTwilioVideoAppAPIEnvironmentProduction,

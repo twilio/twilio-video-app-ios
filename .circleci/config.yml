@@ -1,7 +1,7 @@
 version: 2.1
 
 aliases:
-  - &build_and_test_filters
+  - &test_filters
     branches:
       ignore:
         - master
@@ -10,7 +10,7 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "11.1.0"
+      xcode: "11.2.0"
 
 commands:
   setup:
@@ -21,14 +21,14 @@ commands:
           command: |
             mkdir -p VideoApp/VideoApp/Credentials || true
             base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
-            base64 -D \<<< $TWILIO_CREDENTIALS -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
-            base64 -D \<<< $INTERNAL_CREDENTIALS -o VideoApp/VideoApp/Credentials/InternalCredentials.json
-            base64 -D \<<< $COMMUNITY_CREDENTIALS -o VideoApp/VideoApp/Credentials/CommunityCredentials.json
+            base64 -D \<<< $TWILIO_CREDENTIALS_JSON -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
+            base64 -D \<<< $INTERNAL_CREDENTIALS_JSON -o VideoApp/VideoApp/Credentials/InternalCredentials.json
+            base64 -D \<<< $COMMUNITY_CREDENTIALS_JSON -o VideoApp/VideoApp/Credentials/CommunityCredentials.json
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install gems  
-          command: bundle install --path vendor/bundle
+          command: bundle check || bundle install --path vendor/bundle
       - save_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
           paths:
@@ -36,52 +36,58 @@ commands:
       - run:
           name: Fetch CocoaPods specs
           command: curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run:
-          name: Install CocoaPods
-          command: bundle exec pod install
-  build:
+  test:
     parameters:
       scheme:
         type: string
     steps:
       - setup
       - run:
-          name: Build
-          command: xcodebuild -workspace VideoApp.xcworkspace -scheme << parameters.scheme >> -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1' | xcpretty
-  build_and_test:
-    parameters:
-      scheme:
-        type: string
+          name: Test
+          command: bundle exec fastlane test scheme:<< parameters.scheme >>
+  beta:
     steps:
       - setup
       - run:
-          name: Build and test
-          command: xcodebuild -workspace VideoApp.xcworkspace -scheme << parameters.scheme >> -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1' test | xcpretty
+          name: Setup code signing
+          command: sh .circleci/setup_code_signing.sh
+      - run:
+          name: Deploy to App Center
+          command: bundle exec fastlane beta
 
 jobs:
-  build_and_test_twilio_app:
+  test_twilio_app:
     executor: macos_executor
     steps:
-      - build_and_test:
+      - test:
           scheme: Video-Twilio
-  build_community_app:
+  test_community_app:
     executor: macos_executor
     steps:
-      - build:
+      - test:
           scheme: Video-Community
-  build_internal_app:
+  test_internal_app:
     executor: macos_executor
     steps:
-      - build:
+      - test:
           scheme: Video-Internal
+  deploy_internal_app_beta:
+    executor: macos_executor
+    steps:
+      - beta
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_and_test_twilio_app:
-          filters: *build_and_test_filters
-      - build_community_app:
-          filters: *build_and_test_filters
-      - build_internal_app:
-          filters: *build_and_test_filters
+      - test_twilio_app:
+          filters: *test_filters
+      - test_community_app:
+          filters: *test_filters
+      - test_internal_app:
+          filters: *test_filters
+      - deploy_internal_app_beta:
+          filters:
+            branches:
+              only:
+                - master
