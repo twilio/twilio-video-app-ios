@@ -360,40 +360,28 @@
 		241282391E36A6AB002198BE /* VideoApp */ = {
 			isa = PBXGroup;
 			children = (
-				24480A451EF07716003BCF00 /* Video.entitlements */,
-				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
-				DC7790CA236B6B3800973B86 /* Launch */,
-				24693EEA1E393F1B00F21DDC /* Helpers */,
-				24A723E41ECE1CBD00486E7A /* Models */,
-				24491F791E37F89F00028B24 /* View Controllers */,
-				24A723E81ECE1D2A00486E7A /* Views */,
-				24491F7A1E37F8B200028B24 /* UI Resources */,
-				DC4E4E2723578DF200C5D313 /* AppSettingsStore */,
-				DCAEBEDE2374EC0800141D2D /* AppCenterStore */,
-				DCA53946235F534400CA26FB /* AuthStore */,
-				DCE9B062235A491A008E5B5B /* CredentialsStore */,
+				24693EEA1E393F1B00F21DDC /* API */,
 				DCE9B05D235A46EA008E5B5B /* Credentials */,
-				2412823A1E36A6AB002198BE /* Supporting Files */,
-				244B45DB1ECB528C000B2415 /* SettingsKeyConstants.h */,
-				244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */,
-				4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */,
+				DC7790CA236B6B3800973B86 /* Launch */,
+				24A723E41ECE1CBD00486E7A /* Models */,
+				DCAEBEE32376011D00141D2D /* Stores */,
+				DCAEBEE42376049700141D2D /* Storyboards */,
+				DCAEBEEB2376252F00141D2D /* Video */,
+				24491F791E37F89F00028B24 /* ViewControllers */,
+				24A723E81ECE1D2A00486E7A /* Views */,
+				241282461E36A6AB002198BE /* Assets.xcassets */,
+				24C5217720FFAD030018E2D8 /* Bridging-Header.h */,
+				2412824B1E36A6AB002198BE /* Info.plist */,
+				24480A451EF07716003BCF00 /* Video.entitlements */,
 				4B2286F11FBBA476000DFD48 /* VideoApp-PrefixHeader.pch */,
 			);
 			path = VideoApp;
 			sourceTree = "<group>";
 		};
-		2412823A1E36A6AB002198BE /* Supporting Files */ = {
+		24491F791E37F89F00028B24 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				24C5217720FFAD030018E2D8 /* Bridging-Header.h */,
-				2412824B1E36A6AB002198BE /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		24491F791E37F89F00028B24 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
+				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
 				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
 				241282401E36A6AB002198BE /* LobbyViewController.h */,
 				241282411E36A6AB002198BE /* LobbyViewController.m */,
@@ -406,58 +394,26 @@
 				24A723E11ECE1C8500486E7A /* StatsViewController.h */,
 				24A723E21ECE1C8500486E7A /* StatsViewController.m */,
 			);
-			path = "View Controllers";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		24491F7A1E37F8B200028B24 /* UI Resources */ = {
+		24693EEA1E393F1B00F21DDC /* API */ = {
 			isa = PBXGroup;
 			children = (
-				24A598541ECCE0AA003466B4 /* Custom Controls */,
-				241282461E36A6AB002198BE /* Assets.xcassets */,
-				241282481E36A6AB002198BE /* LaunchScreen.storyboard */,
-				241282431E36A6AB002198BE /* Main.storyboard */,
-			);
-			path = "UI Resources";
-			sourceTree = "<group>";
-		};
-		24693EEA1E393F1B00F21DDC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				24A5984B1ECCC4D4003466B4 /* LocalMediaController.h */,
-				24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */,
-				24ED8AF221C42BB3007BD8E7 /* LocalMediaController+Internal.h */,
-				243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */,
-				246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */,
-				246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */,
-				243CDB4922665F1800637B6B /* TwilioColors.swift */,
 				242D1C15217662B700DB63E5 /* TwilioVideoAppAPI.h */,
 				242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */,
 				DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */,
-				24ED8AFC21C450D1007BD8E7 /* VideoAppCamera.h */,
-				24ED8B0221C451AD007BD8E7 /* VideoAppCameraSource.h */,
-				24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */,
 			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		24A598541ECCE0AA003466B4 /* Custom Controls */ = {
-			isa = PBXGroup;
-			children = (
-				24A598511ECCE069003466B4 /* RoundButton.h */,
-				24A598521ECCE069003466B4 /* RoundButton.m */,
-				24CF99DA1ECF36E8007C8631 /* VariableAlphaToggleButton.h */,
-				24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */,
-			);
-			path = "Custom Controls";
+			path = API;
 			sourceTree = "<group>";
 		};
 		24A723E41ECE1CBD00486E7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				24A723E51ECE1CBD00486E7A /* StatsUIModel.h */,
-				24A723E61ECE1CBD00486E7A /* StatsUIModel.m */,
 				24C239F41EDF263800AA9419 /* RemoteParticipantUIModel.h */,
 				24C239F51EDF263800AA9419 /* RemoteParticipantUIModel.m */,
+				24A723E51ECE1CBD00486E7A /* StatsUIModel.h */,
+				24A723E61ECE1CBD00486E7A /* StatsUIModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,8 +423,13 @@
 			children = (
 				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
 				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
+				24A598511ECCE069003466B4 /* RoundButton.h */,
+				24A598521ECCE069003466B4 /* RoundButton.m */,
 				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
 				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
+				243CDB4922665F1800637B6B /* TwilioColors.swift */,
+				24CF99DA1ECF36E8007C8631 /* VariableAlphaToggleButton.h */,
+				24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */,
 				248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */,
 				248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */,
 			);
@@ -504,13 +465,16 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
-		DC4E4E2723578DF200C5D313 /* AppSettingsStore */ = {
+		DC4E4E2723578DF200C5D313 /* AppSettings */ = {
 			isa = PBXGroup;
 			children = (
 				DC4E4E2223577EE500C5D313 /* AppSettings.swift */,
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
+				244B45DB1ECB528C000B2415 /* SettingsKeyConstants.h */,
+				244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */,
+				4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */,
 			);
-			path = AppSettingsStore;
+			path = AppSettings;
 			sourceTree = "<group>";
 		};
 		DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */ = {
@@ -591,22 +555,58 @@
 			path = Ahoy;
 			sourceTree = "<group>";
 		};
-		DCA53946235F534400CA26FB /* AuthStore */ = {
+		DCA53946235F534400CA26FB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				DC8AA8BA236267B2006C06D5 /* Core */,
 				DC8AA8BC236267C2006C06D5 /* Ahoy */,
 				DC8AA8BB236267B8006C06D5 /* Community */,
+				DC8AA8BA236267B2006C06D5 /* Core */,
 			);
-			path = AuthStore;
+			path = Auth;
 			sourceTree = "<group>";
 		};
-		DCAEBEDE2374EC0800141D2D /* AppCenterStore */ = {
+		DCAEBEDE2374EC0800141D2D /* AppCenter */ = {
 			isa = PBXGroup;
 			children = (
 				DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */,
 			);
-			path = AppCenterStore;
+			path = AppCenter;
+			sourceTree = "<group>";
+		};
+		DCAEBEE32376011D00141D2D /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBEDE2374EC0800141D2D /* AppCenter */,
+				DC4E4E2723578DF200C5D313 /* AppSettings */,
+				DCA53946235F534400CA26FB /* Auth */,
+				DCE9B062235A491A008E5B5B /* Credentials */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		DCAEBEE42376049700141D2D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				241282481E36A6AB002198BE /* LaunchScreen.storyboard */,
+				241282431E36A6AB002198BE /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DCAEBEEB2376252F00141D2D /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				24A5984B1ECCC4D4003466B4 /* LocalMediaController.h */,
+				24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */,
+				24ED8AF221C42BB3007BD8E7 /* LocalMediaController+Internal.h */,
+				243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */,
+				246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */,
+				246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */,
+				24ED8AFC21C450D1007BD8E7 /* VideoAppCamera.h */,
+				24ED8B0221C451AD007BD8E7 /* VideoAppCameraSource.h */,
+				24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
@@ -630,22 +630,22 @@
 		DCE9B05D235A46EA008E5B5B /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
-				24491F771E37D6DE00028B24 /* GoogleService-Info.plist */,
 				DCE9B07D235E2380008E5B5B /* CommunityCredentials.json */,
+				24491F771E37D6DE00028B24 /* GoogleService-Info.plist */,
 				DCE9B06F235A5282008E5B5B /* InternalCredentials.json */,
 				DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */,
 			);
 			path = Credentials;
 			sourceTree = "<group>";
 		};
-		DCE9B062235A491A008E5B5B /* CredentialsStore */ = {
+		DCE9B062235A491A008E5B5B /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
-				DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */,
-				DCE9B063235A494F008E5B5B /* Credentials.swift */,
 				DCE9B073235A5355008E5B5B /* Credentials.json.example */,
+				DCE9B063235A494F008E5B5B /* Credentials.swift */,
+				DCE9B067235A4A19008E5B5B /* CredentialsStore.swift */,
 			);
-			path = CredentialsStore;
+			path = Credentials;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
