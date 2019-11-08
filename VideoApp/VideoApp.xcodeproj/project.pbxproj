@@ -24,7 +24,6 @@
 		24491F781E37D6DE00028B24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
 		24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24491F7C1E37F8F000028B24 /* LoginViewController.m */; };
 		244B45DD1ECB528C000B2415 /* SettingsKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */; };
-		24693EE91E3934B200F21DDC /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24693EE81E3934B200F21DDC /* SplashViewController.m */; };
 		246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
 		246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
 		246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
@@ -45,7 +44,6 @@
 		24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */; };
 		24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */; };
 		32BD0B3476F7C1A3D75FD8EF /* Pods_Video_Twilio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */; };
-		4B0012241FBA52C4004A587E /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24693EE81E3934B200F21DDC /* SplashViewController.m */; };
 		4B0012251FBA52C4004A587E /* LocalMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */; };
 		4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
 		4B0012271FBA52C4004A587E /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */; };
@@ -64,7 +62,6 @@
 		4B0012431FBA52C4004A587E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
 		4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
 		4B0012461FBA52C4004A587E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
-		4B0012611FBA52E5004A587E /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24693EE81E3934B200F21DDC /* SplashViewController.m */; };
 		4B0012621FBA52E5004A587E /* LocalMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */; };
 		4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
 		4B0012641FBA52E5004A587E /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */; };
@@ -197,8 +194,6 @@
 		24491F7C1E37F8F000028B24 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		244B45DB1ECB528C000B2415 /* SettingsKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsKeyConstants.h; sourceTree = "<group>"; };
 		244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsKeyConstants.m; sourceTree = "<group>"; };
-		24693EE71E3934B200F21DDC /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
-		24693EE81E3934B200F21DDC /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TVILocalVideoTrack+Mirroring.h"; sourceTree = "<group>"; };
 		246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TVILocalVideoTrack+Mirroring.m"; sourceTree = "<group>"; };
 		248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -387,8 +382,6 @@
 				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
 				24927E2D1ECC9E44006510E3 /* RoomViewController.h */,
 				24927E2E1ECC9E44006510E3 /* RoomViewController.m */,
-				24693EE71E3934B200F21DDC /* SplashViewController.h */,
-				24693EE81E3934B200F21DDC /* SplashViewController.m */,
 				24A723E11ECE1C8500486E7A /* StatsViewController.h */,
 				24A723E21ECE1C8500486E7A /* StatsViewController.m */,
 			);
@@ -1192,7 +1185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24693EE91E3934B200F21DDC /* SplashViewController.m in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -1238,7 +1230,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0012241FBA52C4004A587E /* SplashViewController.m in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -1284,7 +1275,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0012611FBA52E5004A587E /* SplashViewController.m in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
