@@ -86,14 +86,9 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
 
-    if (@available(iOS 11.0, *)) {
-        UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
-        CGFloat height = guide.layoutFrame.origin.y + 108;
-        self.containerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), height);
-    } else {
-        // TODO: This does not account for double-height status bars possible on iOS 9.x and 10.x
-        self.containerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 128);
-    }
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    CGFloat height = guide.layoutFrame.origin.y + 108;
+    self.containerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), height);
 }
 
 - (void)viewSafeAreaInsetsDidChange {

@@ -50,7 +50,7 @@ static const CGFloat kVideoAppCameraSourceAdjustmentFactor = 1.2;
 
 - (void)createCameraSource {
     TVICameraSourceOptions *options = [TVICameraSourceOptions optionsWithBlock:^(TVICameraSourceOptionsBuilder * _Nonnull builder) {
-        if (@available(iOS 13.0, *)) {
+        if (@available(iOS 13, *)) {
             UIWindowScene *keyScene = [UIApplication sharedApplication].keyWindow.windowScene;
             builder.orientationTracker = [TVIUserInterfaceTracker trackerWithScene:keyScene];
         }

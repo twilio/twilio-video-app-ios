@@ -9,8 +9,7 @@
 import UIKit
 import TwilioVideo
 
-// Ensure that iOS 13 specific code is not called anywhere else unless the OS is available
-@available(iOS 13.0, *)
+@available(iOS 13, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var launchFlow: LaunchFlow?

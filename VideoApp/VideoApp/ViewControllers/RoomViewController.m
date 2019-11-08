@@ -566,19 +566,14 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
     self.videoCollectionView.hidden = NO;
     [self refreshVideoViews];
-
-    if (@available(iOS 11.0, *)) {
-        [self setNeedsUpdateOfHomeIndicatorAutoHidden];
-    }
+    [self setNeedsUpdateOfHomeIndicatorAutoHidden];
 }
 
 - (void)room:(TVIRoom *)room didFailToConnectWithError:(NSError *)error {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     [self handleRoomError:error onConnect:YES];
     self.room = nil;
-    if (@available(iOS 11.0, *)) {
-        [self setNeedsUpdateOfHomeIndicatorAutoHidden];
-    }
+    [self setNeedsUpdateOfHomeIndicatorAutoHidden];
 }
 
 - (void)room:(TVIRoom *)room didDisconnectWithError:(NSError *)error {
@@ -595,10 +590,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
     }
 
     self.room = nil;
-    
-    if (@available(iOS 11.0, *)) {
-        [self setNeedsUpdateOfHomeIndicatorAutoHidden];
-    }
+    [self setNeedsUpdateOfHomeIndicatorAutoHidden];
 
     if (error) {
         [self handleRoomError:error onConnect:NO];
