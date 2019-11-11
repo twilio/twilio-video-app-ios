@@ -471,8 +471,8 @@
 		DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */ = {
 			isa = PBXGroup;
 			children = (
-				DC6EABCB235907280064E9E0 /* Specs */,
 				DC4E4E362357B03100C5D313 /* Mocks */,
+				DC6EABCB235907280064E9E0 /* Specs */,
 				DC6EABCA235907130064E9E0 /* Stubs */,
 				DC4E4E302357A73900C5D313 /* Info.plist */,
 			);
@@ -603,8 +603,8 @@
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCE965BA237492410002EC78 /* Video_InternalTests.swift */,
 				DCE965BC237492410002EC78 /* Info.plist */,
+				DCE965BA237492410002EC78 /* Video_InternalTests.swift */,
 			);
 			path = "Video-InternalTests";
 			sourceTree = "<group>";
@@ -612,8 +612,8 @@
 		DCE965C7237498F50002EC78 /* Video-CommunityTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */,
 				DCE965CA237498F50002EC78 /* Info.plist */,
+				DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */,
 			);
 			path = "Video-CommunityTests";
 			sourceTree = "<group>";

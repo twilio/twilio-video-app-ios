@@ -437,7 +437,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
     // Update the selected UI.
     if (clearsSelection) {
-        // TODO: Should we try to select another Track from the same Participant?
+        // Should we try to select another Track from the same Participant?
         // We can't leave the selected model dangling with a stale object, so return to local video.
         [self updateVideoUIForSelectedParticipantUIModel:nil];
         [self refreshLocalParticipantVideoView];
@@ -558,7 +558,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
     [self rebuildRemoteParticipantUIModels];
 
-    // TODO: Select the screen Track automatically.
+    // Select the screen Track automatically?
     RemoteParticipantUIModel *model = [self.remoteParticipantUIModels firstObject];
     if (model) {
         [self updateVideoUIForSelectedParticipantUIModel:model];
@@ -866,7 +866,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
             trackCount = 1;
             for (TVILocalVideoTrackStats *localVideoTrackStats in statsReport.localVideoTrackStats) {
-                // RCP: Todo: Figure out a way to tell whether local video tracks are camera or screen capture...
+                // Figure out a way to tell whether local video tracks are camera or screen capture?
                 NSString *trackName = @"Local Video Track";
 
                 if ([statsReport.localVideoTrackStats count] > 1) {

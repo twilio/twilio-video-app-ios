@@ -36,6 +36,6 @@ import TwilioVideo
             return nil
         }
 
-        return UIImage.init(named: indicatorImageName)
+        return UIImage(named: indicatorImageName)
     }
 }

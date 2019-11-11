@@ -30,9 +30,8 @@ class AuthFlow {
         guard let navigationVC = window.rootViewController as? UINavigationController else {
             return
         }
-        // TODO: This logic should live in SceneDelegate or AppDelegate as a completion block.
-        assert(Auth.auth().currentUser != nil)
-        if #available(iOS 13.0, *) {
+
+        if #available(iOS 13, *) {
             navigationVC.dismiss(animated: true) {
                 navigationVC.popToRootViewController(animated: true)
                 navigationVC.viewControllers.first?.performSegue(withIdentifier: "lobbySegue", sender: self)

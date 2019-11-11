@@ -106,8 +106,6 @@ static const CGFloat kVideoAppCameraSourceAdjustmentFactor = 1.2;
                                                                                               NSError *error) {
         if (!error) {
             [weakSelf.localMediaController videoCaptureStarted];
-        } else {
-            // TODO: LOG THE ERROR HERE
         }
     }];
 }

@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
             if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-                // TODO: Deep linking support.
                 if let lobby = (window?.rootViewController as? UINavigationController)?.topViewController as? LobbyViewController {
                     lobby.handleDeepLinkedURL(userActivity.webpageURL)
                 }
