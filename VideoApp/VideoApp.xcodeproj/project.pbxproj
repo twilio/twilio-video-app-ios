@@ -135,6 +135,9 @@
 		DCAEBEE02374EC2600141D2D /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */; };
 		DCAEBEE12374EC2600141D2D /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */; };
 		DCAEBEE22374EC2600141D2D /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */; };
+		DCAEBEFA237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
+		DCAEBEFB237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
+		DCAEBEFC237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
 		DCE965BB237492410002EC78 /* Video_InternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* Video_InternalTests.swift */; };
 		DCE965C9237498F50002EC78 /* Video_CommunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */; };
 		DCE9B05F235A4909008E5B5B /* TwilioCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DCE9B05E235A4909008E5B5B /* TwilioCredentials.json */; };
@@ -259,6 +262,7 @@
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCAEBEDF2374EC2600141D2D /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
+		DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAppEnvironment.m; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* Video_InternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_InternalTests.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -464,6 +468,7 @@
 				244B45DB1ECB528C000B2415 /* SettingsKeyConstants.h */,
 				244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */,
 				4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */,
+				DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */,
 			);
 			path = AppSettings;
 			sourceTree = "<group>";
@@ -1198,6 +1203,7 @@
 				24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */,
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCAEBEFA237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
@@ -1243,6 +1249,7 @@
 				4B0012281FBA52C4004A587E /* LoginViewController.m in Sources */,
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCAEBEFB237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
@@ -1288,6 +1295,7 @@
 				4B0012651FBA52E5004A587E /* LoginViewController.m in Sources */,
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCAEBEFC237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,

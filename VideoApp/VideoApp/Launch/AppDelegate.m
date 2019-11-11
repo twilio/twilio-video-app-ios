@@ -22,14 +22,6 @@
 #import "VideoApp-Swift.h"
 @import TwilioVideo;
 
-#if APP_TYPE_TWILIO
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentTwilio;
-#elif APP_TYPE_INTERNAL
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentInternal;
-#elif APP_TYPE_COMMUNITY
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
-#endif
-
 @interface AppDelegate ()
 @property (nonatomic, strong) id <LaunchFlow> launchFlow;
 @end
