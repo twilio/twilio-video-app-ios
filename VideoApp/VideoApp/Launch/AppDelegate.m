@@ -77,8 +77,6 @@ const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     if (navigationController.viewControllers.count != 1) {
         return;

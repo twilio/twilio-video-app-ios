@@ -22,11 +22,6 @@ class EmailPasswordLoginViewController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(EmailPasswordLoginViewController.login(_:)), for: .editingDidEndOnExit)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         emailTextField.becomeFirstResponder()

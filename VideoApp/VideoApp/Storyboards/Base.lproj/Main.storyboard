@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xk-MB-jpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762.39999999999998" y="-198.35082458770617"/>
+            <point key="canvasLocation" x="-762" y="-391"/>
         </scene>
         <!--Email Password Login View Controller-->
         <scene sceneID="IPG-c7-4Lq">
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tq-A4-mjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="-198.35082458770617"/>
+            <point key="canvasLocation" x="71" y="-391"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7OW-t9-SG6">
@@ -770,7 +770,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuS-AJ-Sbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.8" y="449.32533733133437"/>
+            <point key="canvasLocation" x="71" y="450"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="uCs-td-OOk">
@@ -890,7 +890,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="922" y="450"/>
+            <point key="canvasLocation" x="897" y="450"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1rQ-RV-Zxs">
@@ -905,7 +905,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rg1-8h-WBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2449" y="36"/>
+            <point key="canvasLocation" x="-2516" y="36"/>
         </scene>
     </scenes>
     <resources>

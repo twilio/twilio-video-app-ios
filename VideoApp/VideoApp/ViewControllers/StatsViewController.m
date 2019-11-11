@@ -81,11 +81,6 @@ static const CGFloat kAnimationDuration = 0.35;
     [self displayStatsUnavailableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)addAsSwipeableViewToParentViewController:(UIViewController *)parentViewController {
     if (parentViewController != nil) {
         UIView *parentView = parentViewController.view;
@@ -149,7 +144,7 @@ static const CGFloat kAnimationDuration = 0.35;
 
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        // RCP: This sucks... You get a noticable flicker when these are applied..
+        // You get a noticable flicker when these are applied.
         // But because they way they currently are calculated, the values necessary are only
         // known after the rotation has completed. Still looking for a better solution, but this
         // gets more accurate handling for rotation than we had prior.

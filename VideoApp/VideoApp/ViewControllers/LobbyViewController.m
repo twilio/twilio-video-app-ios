@@ -112,10 +112,6 @@
     self.flipCameraButton.enabled = !isMuted;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (IBAction)toggleAudioPressed:(id)sender {
     if (self.localMediaController.localAudioTrack) {
         [self.localMediaController destroyLocalAudioTrack];

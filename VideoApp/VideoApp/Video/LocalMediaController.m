@@ -35,7 +35,7 @@
 - (void)setLocalParticipant:(TVILocalParticipant *)localParticipant {
     _localParticipant = localParticipant;
 
-    // VIDEOAPP-277: So there is the potential for a race condition when we destroy the audio/video track after it has
+    // This should be improved. There is the potential for a race condition when we destroy the audio/video track after it has
     // been added to the connect options but before the Room connects and the local participant has been set here. The
     // similar issue can happen if you initially join the room with no audio track and then add one before the local
     // participant has been set here.
