@@ -1537,7 +1537,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twilio.VideoApp;
 				PRODUCT_MODULE_NAME = VideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1570,7 +1570,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twilio.VideoApp;
 				PRODUCT_MODULE_NAME = VideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1603,7 +1603,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app-internal";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twilio.VideoAppInternal;
 				PRODUCT_MODULE_NAME = VideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1636,7 +1636,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app-internal";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twilio.VideoAppInternal;
 				PRODUCT_MODULE_NAME = VideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1669,7 +1669,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app-community";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twilio.VideoAppCommunity;
 				PRODUCT_MODULE_NAME = VideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1702,7 +1702,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app-community";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twilio.VideoAppCommunity;
 				PRODUCT_MODULE_NAME = VideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
