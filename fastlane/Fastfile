@@ -21,7 +21,7 @@ platform :ios do
         signingStyle: "manual",
         signingCertificate: "iPhone Distribution: Twilio, Inc.",
         provisioningProfiles: {
-          "com.twilio.video-app-internal" => "VideoApp-Internal-Distribution"
+          "com.twilio.VideoAppInternal" => "VideoAppInternal-Distribution"
         }
       }
     ) 
