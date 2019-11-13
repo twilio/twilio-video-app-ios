@@ -8,7 +8,6 @@ target 'Video-Twilio' do
   project 'VideoApp/VideoApp.xcodeproj'
 
   pod 'TwilioVideo'
-  pod 'AppCenter/Distribute'
   pod 'Firebase/Analytics', '~> 4.10'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'

@@ -30,10 +30,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#ifndef DEBUG
-    [[AppCenterStore new] start];
-#endif
-
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kSettingsSelectedEnvironmentKey : kTwilioVideoAppAPIEnvironmentProduction,
                                                                kSettingsSelectedTopologyKey : kTwilioVideoAppAPITopologyGroup,
                                                                kSettingsEnableStatsCollectionKey : @(YES),
