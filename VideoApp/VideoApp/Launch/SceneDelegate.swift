@@ -1,16 +1,23 @@
 //
-//  SceneDelegate.swift
-//  VideoApp
+//  Copyright (C) 2019 Twilio, Inc.
 //
-//  Created by Chris Eagleston on 9/11/19.
-//  Copyright © 2019 Twilio, Inc. All rights reserved.
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 import UIKit
 import TwilioVideo
 
-// Ensure that iOS 13 specific code is not called anywhere else unless the OS is available
-@available(iOS 13.0, *)
+@available(iOS 13, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var launchFlow: LaunchFlow?
@@ -25,7 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
             if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-                // TODO: Deep linking support.
                 if let lobby = (window?.rootViewController as? UINavigationController)?.topViewController as? LobbyViewController {
                     lobby.handleDeepLinkedURL(userActivity.webpageURL)
                 }
