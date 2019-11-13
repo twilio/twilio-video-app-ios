@@ -1,7 +1,4 @@
 PODS:
-  - AppCenter/Core (2.5.1)
-  - AppCenter/Distribute (2.5.1):
-    - AppCenter/Core
   - Firebase/Analytics (4.13.0):
     - Firebase/Core
   - Firebase/Auth (4.13.0):
@@ -53,7 +50,6 @@ PODS:
   - TwilioVideo (3.0.0)
 
 DEPENDENCIES:
-  - AppCenter/Distribute
   - Firebase/Analytics (~> 4.10)
   - FirebaseUI/Auth
   - FirebaseUI/Google
@@ -63,7 +59,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AppCenter
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -79,7 +74,6 @@ SPEC REPOS:
     - TwilioVideo
 
 SPEC CHECKSUMS:
-  AppCenter: fddcbac6e4baae3d93a196ceb0bfe0e4ce407dec
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
@@ -94,6 +88,6 @@ SPEC CHECKSUMS:
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 9998112441979eef59dfa235f808cd097465b064
 
-PODFILE CHECKSUM: eed6d1d715ca6306c1aa43451f97d84589cf96fb
+PODFILE CHECKSUM: 269505805d28bfd9e6996ce41c393e2c74d1708e
 
 COCOAPODS: 1.8.4
