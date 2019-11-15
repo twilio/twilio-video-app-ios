@@ -1,6 +1,6 @@
 ## Twilio iOS Video App
 
-This app is a sample video conferencing app that uses [Twilio's Programmable Video SDK](https://www.twilio.com/docs/video/ios). Twilio uses the app internally for testing. The open source app can be easily configured by external developers to try out real-time video and audio features. The project is mostly Objective-C but we are converting to Swift!
+This app is a sample video conferencing app that uses [Twilio's Programmable Video SDK](https://www.twilio.com/docs/video/ios). Twilio uses the app internally for testing. The open source app can be easily configured by external developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
 
 ![room](https://user-images.githubusercontent.com/1930363/68900838-f2e1f100-06f1-11ea-8ac6-7c154fa5ee2f.png)
 
@@ -56,7 +56,7 @@ The `Video-Twilio` and `Video-Internal` schemes are for use by Twilio employees 
 
 For each device:
 
-1. Repeat steps to generate a Twilio access token and run. 
+1. Repeat steps to [generate a Twilio access token](#generate-twilio-access-token) and [run](#run). 
 1. Enter a room name.
 1. Tap `Join`.
 
@@ -69,7 +69,7 @@ Follow the [Getting Started](#getting-started) instructions above except:
 1. Always use `bundle exec pod install` to [install dependencies](#install-dependencies) so that everyone uses the same version of CocoaPods.
 1. Skip [Configure Signing](#configure-signing).
 1. Skip [Generate Twilio Access Token](#generate-twilio-access-token).
-1. Download [GoogleService-Info.plist](https://console.firebase.google.com/m/mobilesdk/projects/285008367772/clients/android%3Acom.twilio.video.app/artifacts/2?param=%5B%22getArtifactRequest%22%2Cnull%2C%22android%3Acom.twilio.video.app%22%2C%222%22%2C%22285008367772%22%5D&authuser=0) from Firebase Console and copy to `VideoApp/VideoApp/Credentials/`.
+1. [Download GoogleService-Info.plist](https://console.firebase.google.com/m/mobilesdk/projects/285008367772/clients/android%3Acom.twilio.video.app/artifacts/2?param=%5B%22getArtifactRequest%22%2Cnull%2C%22android%3Acom.twilio.video.app%22%2C%222%22%2C%22285008367772%22%5D&authuser=0) from Firebase Console and copy to `VideoApp/VideoApp/Credentials/`.
 1. To [run the app](#run) use `Video-Twilio` or `Video-Internal` scheme.
 
 ## Unit Tests
