@@ -84,10 +84,6 @@ Follow the [Getting Started](#getting-started) instructions above except:
 
 1. Running tests `⌘U` will crash if the app was run `⌘R` on the device previously. See issue [#12](https://github.com/twilio/twilio-video-app-ios/issues/12) for a workaround and more details.
 
-## Contribute
-
-Check out the [CONTRIBUTING](CONTRIBUTING.md) file for information on how to help with this app.
-
 ## License
 
 Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
