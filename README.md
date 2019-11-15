@@ -52,7 +52,7 @@ This manual process for generating a Twilio access token minimizes setup but it 
 
 The `Video-Twilio` and `Video-Internal` schemes are for use by Twilio employees only.
 
-### Start video conference
+### Start Video Conference
 
 For each device:
 
