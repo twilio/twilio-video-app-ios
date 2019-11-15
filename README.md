@@ -67,8 +67,8 @@ This section is for Twilio employees only.
 Follow the [Getting Started](#getting-started) instructions above except:
 
 1. Always use `bundle exec pod install` to install pod dependencies so that everyone uses the same version of CocoaPods.
-1. Skip Configure Signing.
-1. Skip Generate Twilio Access Token.
+1. Skip [Configure Signing](#configure-signing).
+1. Skip [Generate Twilio Access Token](#generate-twilio-access-token).
 1. Download [GoogleService-Info.plist](https://console.firebase.google.com/m/mobilesdk/projects/285008367772/clients/android%3Acom.twilio.video.app/artifacts/2?param=%5B%22getArtifactRequest%22%2Cnull%2C%22android%3Acom.twilio.video.app%22%2C%222%22%2C%22285008367772%22%5D&authuser=0) from Firebase Console and copy to `VideoApp/VideoApp/Credentials/`.
 1. To run the app use `Video-Twilio` or `Video-Internal` scheme.
 
