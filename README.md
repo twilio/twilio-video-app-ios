@@ -64,7 +64,7 @@ For each device:
 
 This section is for Twilio employees only.
 
-Follow the [Getting Started](#getting-started) instructions above except:
+Follow the [Getting Started](#getting-started) instructions except:
 
 1. Always use `bundle exec pod install` to [install dependencies](#install-dependencies) so that everyone uses the same version of CocoaPods.
 1. Skip [Configure Signing](#configure-signing).
