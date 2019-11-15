@@ -57,7 +57,7 @@ For each device:
 
 ## For Twilions
 
-Twilio employees should follow the instructions below for internal testing instead of [Getting Started](#getting-started).
+Twilio employees should these instructions for internal testing instead of [Getting Started](#getting-started).
 
 ### Install Dependencies
 
