@@ -23,8 +23,12 @@ iOS Deployment Target | Xcode Version | Swift Language Version
 
 ### Install Dependencies
 
-1. Run `gem install bundler` to install [Bundler](https://bundler.io/).
-1. Run `bundle install` to install the required version of [CocoaPods](https://cocoapods.org).
+If you already have [CocoaPods](https://cocoapods.org) installed you can probably just run `pod install` and skip to the next section. 
+
+If you do not have a compatible version of CocoaPods installed use [Bundler](https://bundler.io/):
+
+1. Run `gem install bundler` to install Bundler.
+1. Run `bundle install` to install the required version of CocoaPods.
 1. Run `bundle exec pod install` to install pod dependencies.
 
 ### Configure Signing
@@ -38,11 +42,15 @@ iOS Deployment Target | Xcode Version | Swift Language Version
 1. Use the Twilio Console to [generate a Twilio Access Token](https://www.twilio.com/docs/video/tutorials/user-identity-access-tokens#generate-in-console). It is not necessary to enter a room name.
 1. Replace `TWILIO_ACCESS_TOKEN` in [CommunityAuthStore.swift](https://github.com/twilio/twilio-video-app-ios/blob/master/VideoApp/VideoApp/Stores/Auth/Community/CommunityAuthStore.swift) with your Twilio access token.
 
+This manual process for generating a Twilio access token minimizes setup but it is only useful for testing. To automate generation of Twilio access tokens for a production app see [User Identify & Access Tokens](https://www.twilio.com/docs/video/tutorials/user-identity-access-tokens) documentation.
+
 ### Run
 
 1. In Xcode use the [scheme menu](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/BuildingYourApp.html) to select the `Video-Community` scheme. 
 1. In Xcode use the [scheme menu](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/BuildingYourApp.html) to select a destination. Not all features work in the simulator so select a device for best results.
 1. Run `⌘R` the app.
+
+The `Video-Twilio` and `Video-Internal` schemes are for use by Twilio employees only.
 
 ### Start video conference
 
@@ -51,6 +59,18 @@ For each device:
 1. Repeat steps to generate a Twilio access token and run. 
 1. Enter a room name.
 1. Tap `Join`.
+
+## For Twilions
+
+This section is for Twilio employees only.
+
+Follow the [Getting Started](#getting-started) instructions above except:
+
+1. Always use `bundle exec pod install` to install pod dependencies so that everyone uses the same version of CocoaPods.
+1. Skip Configure Signing.
+1. Skip Generate Twilio Access Token.
+1. Download [GoogleService-Info.plist](https://console.firebase.google.com/m/mobilesdk/projects/285008367772/clients/android%3Acom.twilio.video.app/artifacts/2?param=%5B%22getArtifactRequest%22%2Cnull%2C%22android%3Acom.twilio.video.app%22%2C%222%22%2C%22285008367772%22%5D&authuser=0) from Firebase Console and copy to `VideoApp/VideoApp/Credentials/`.
+1. To run the app use `Video-Twilio` or `Video-Internal` scheme.
 
 ## Unit Tests
 
