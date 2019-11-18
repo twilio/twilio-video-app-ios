@@ -50,12 +50,14 @@ class AhoyAuthStoreSpec: QuickSpec {
                 roomName: String = "",
                 firebaseResult: (String?, Error?) = (nil, nil),
                 firebaseDisplayName: String = "",
-                appSettings: AppSettings = .stub(),
+                userIdentitySetting: String = "",
+                topologySetting: Topology = .group,
                 twilioResult: (String?, Error?) = (nil, nil)
             ) {
                 mockFirebaseAuthStore.stubbedFetchAccessTokenCompletionResult = firebaseResult
                 mockFirebaseAuthStore.stubbedUserDisplayName = firebaseDisplayName
-                mockAppSettingsStore.stubbedAppSettings = appSettings
+                mockAppSettingsStore.stubbedUserIdentity = userIdentitySetting
+                mockAppSettingsStore.stubbedTopology = topologySetting
                 mockAPI.stubbedRetrieveAccessTokenCompletionBlockResult = twilioResult
 
                 sut.fetchTwilioAccessToken(roomName: roomName) { accessToken, error in
@@ -105,19 +107,39 @@ class AhoyAuthStoreSpec: QuickSpec {
             }
             
             describe("retrieveAccessToken") {
-                context("when currentUserDisplayName is foo") {
-                    it("is called with foo identity") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "foo")
+                context("when userDisplayName is foo") {
+                    context("when userIdentity setting is empty") {
+                        it("is called with foo identity") {
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "foo", userIdentitySetting: "")
 
-                        expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("foo"))
+                            expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("foo"))
+                        }
+                    }
+
+                    context("when userIdentity setting is bar") {
+                        it("is called with bar identity") {
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "foo", userIdentitySetting: "bar")
+
+                            expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("bar"))
+                        }
                     }
                 }
-                
-                context("when currentUserDisplayName is bar") {
-                    it("is called with bar identity") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "bar")
 
-                        expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("bar"))
+                context("when userDisplayName is bar") {
+                    context("when userIdentity setting is empty") {
+                        it("is called with bar identity") {
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "bar", userIdentitySetting: "")
+
+                            expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("bar"))
+                        }
+                    }
+
+                    context("when userIdentity setting is foo") {
+                        it("is called with foo identity") {
+                            fetchTwilioAccessToken(firebaseResult: ("", nil), firebaseDisplayName: "bar", userIdentitySetting: "foo")
+
+                            expect(mockAPI.invokedRetrieveAccessTokenParameters?.identity).to(equal("foo"))
+                        }
                     }
                 }
 
@@ -153,25 +175,15 @@ class AhoyAuthStoreSpec: QuickSpec {
                     }
                 }
 
-                context("when environment is production") {
-                    it("is called with production environment") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(environment: .production))
+                it("is called with production environment") {
+                    fetchTwilioAccessToken(firebaseResult: ("", nil))
 
-                        expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.production))
-                    }
-                }
-
-                context("when environment is development") {
-                    it("is called with development environment") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(environment: .development))
-
-                        expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.development))
-                    }
+                    expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.production))
                 }
 
                 context("when topology is group") {
                     it("is called with group topology") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(topology: .group))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), topologySetting: .group)
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.topology).to(equal(.group))
                     }
@@ -179,7 +191,7 @@ class AhoyAuthStoreSpec: QuickSpec {
 
                 context("when topology is P2P") {
                     it("is called with P2P topology") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), appSettings: .stub(topology: .P2P))
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), topologySetting: .peerToPeer)
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.topology).to(equal(.P2P))
                     }

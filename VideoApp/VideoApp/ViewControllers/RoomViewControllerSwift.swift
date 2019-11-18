@@ -14,10 +14,9 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
+import Foundation
 
-FOUNDATION_EXPORT NSString *const kSettingsEnableStatsCollectionKey;
-FOUNDATION_EXPORT NSString *const kSettingsEnableVp8SimulcastKey;
-FOUNDATION_EXPORT NSString *const kSettingsForceTurnRelay;
-FOUNDATION_EXPORT NSString *const kSettingsSelectedEnvironmentKey;
-FOUNDATION_EXPORT NSString *const kSettingsSelectedTopologyKey;
+@objc class RoomViewControllerSwift: NSObject {
+    @objc static var enableVP8Simulcast: Bool { AppSettingsStore(userDefaults: .standard).videoCodec == .vp8Simulcast }
+    @objc static var forceTURNMediaRelay: Bool { AppSettingsStore(userDefaults: .standard).isTURNMediaRelayOn }
+}

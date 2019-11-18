@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct AppSettings {
-    let environment: TwilioVideoAppAPIEnvironment
-    let topology: TwilioVideoAppAPITopology
+struct SelectOptionSegueSender {
+    let viewModelFactory: SelectOptionViewModelFactory
+    let indexPath: IndexPath
 }

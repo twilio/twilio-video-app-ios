@@ -23,18 +23,18 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
     var isSignedIn: Bool { return firebaseAuthStore.isSignedIn }
     var userDisplayName: String { return firebaseAuthStore.userDisplayName }
-    private let firebaseAuthStore: FirebaseAuthStoreWriting
     private let api: TwilioVideoAppAPIProtocol
-    private let appSettingsStore: AppSettingsStoreReading
-    
+    private let appSettingsStore: AppSettingsStoreWriting
+    private let firebaseAuthStore: FirebaseAuthStoreWriting
+
     init(
         api: TwilioVideoAppAPIProtocol,
-        appSettingsStore: AppSettingsStoreReading,
+        appSettingsStore: AppSettingsStoreWriting,
         firebaseAuthStore: FirebaseAuthStoreWriting
     ) {
-        self.firebaseAuthStore = firebaseAuthStore
         self.api = api
         self.appSettingsStore = appSettingsStore
+        self.firebaseAuthStore = firebaseAuthStore
     }
     
     func start() {
@@ -57,17 +57,24 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
             guard let self = self, let accessToken = accessToken else { completion(nil, error); return }
             
-            let appSettings = self.appSettingsStore.appSettings
-            
             self.api.retrieveAccessToken(
-                forIdentity: self.userDisplayName,
+                forIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
                 roomName: roomName,
                 authToken: accessToken,
-                environment: appSettings.environment,
-                topology: appSettings.topology
+                environment: .production,
+                topology: self.appSettingsStore.topology.apiTopology
             ) { accessToken, error in
                 completion(accessToken, error)
             }
+        }
+    }
+}
+
+private extension Topology {
+    var apiTopology: TwilioVideoAppAPITopology {
+        switch self {
+        case .group: return .group
+        case .peerToPeer: return .P2P
         }
     }
 }

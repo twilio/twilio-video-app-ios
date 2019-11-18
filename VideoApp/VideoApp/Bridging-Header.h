@@ -4,6 +4,5 @@
 
 #import "AppDelegate.h"
 #import "LobbyViewController.h"
-#import "SettingsKeyConstants.h"
 #import "TwilioVideoAppAPI.h"
 #import "VideoAppEnvironment.h"

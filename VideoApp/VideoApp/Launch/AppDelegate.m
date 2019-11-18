@@ -16,7 +16,6 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "SettingsKeyConstants.h"
 #import "TwilioVideoAppAPI.h"
 #import "LobbyViewController.h"
 #import "VideoApp-Swift.h"
@@ -30,12 +29,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kSettingsSelectedEnvironmentKey : kTwilioVideoAppAPIEnvironmentProduction,
-                                                               kSettingsSelectedTopologyKey : kTwilioVideoAppAPITopologyGroup,
-                                                               kSettingsEnableStatsCollectionKey : @(YES),
-                                                               kSettingsEnableVp8SimulcastKey : @(NO),
-                                                               kSettingsForceTurnRelay : @(NO)}];
-
     [TwilioVideoSDK setLogLevel:TVILogLevelInfo];
 
     NSLog(@"Twilio Video App Version: %@", [self applicationVersionString]);

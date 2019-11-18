@@ -16,7 +16,6 @@
 
 #import "LobbyViewController.h"
 #import "TwilioVideoAppAPI.h"
-#import "SettingsKeyConstants.h"
 #import "LocalMediaController.h"
 #import "RoomViewController.h"
 #import "VariableAlphaToggleButton.h"
@@ -33,7 +32,6 @@
 @property (nonatomic, weak) IBOutlet UITextField *roomTextField;
 @property (nonatomic, weak) IBOutlet VariableAlphaToggleButton *audioToggleButton;
 @property (nonatomic, weak) IBOutlet VariableAlphaToggleButton *videoToggleButton;
-@property (nonatomic, weak) IBOutlet UIButton *settingsButton;
 @property (nonatomic, weak) IBOutlet UIButton *flipCameraButton;
 
 @property (nonatomic, weak) RoomViewController *roomViewController;
@@ -79,7 +77,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    self.loggedInUser.text = AuthStore.shared.userDisplayName;
+    self.loggedInUser.text = LobbyViewControllerSwift.userDisplayName;
     self.audioToggleButton.selected = !self.localMediaController.localAudioTrack;
     self.videoToggleButton.selected = !self.localMediaController.localVideoTrack;
     [self updateVideoUI:!self.localMediaController.localVideoTrack];
@@ -141,79 +139,6 @@
     [self updateVideoUI:!self.localMediaController.localVideoTrack];
 }
 
-- (IBAction)settingsButtonPressed:(id)sender {
-    NSString *currentTopology = [[NSUserDefaults standardUserDefaults] stringForKey:kSettingsSelectedTopologyKey];
-    NSString *newTopology = nil;
-
-    if ([currentTopology isEqualToString:kTwilioVideoAppAPITopologyGroup]) {
-        newTopology = kTwilioVideoAppAPITopologyP2P;
-    } else {
-        newTopology = kTwilioVideoAppAPITopologyGroup;
-    }
-
-    UIAlertAction *changeTopologyAction = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"Use %@ Topology", newTopology]
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:^(UIAlertAction *action) {
-        [[NSUserDefaults standardUserDefaults] setValue:newTopology forKey:kSettingsSelectedTopologyKey];
-    }];
-
-    BOOL currentStatsState = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsEnableStatsCollectionKey];
-
-    UIAlertAction *toggleStatsCollectionAction = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ Stats Collection", currentStatsState ? @"Disable" : @"Enable"]
-                                                                          style:UIAlertActionStyleDefault
-                                                                        handler:^(UIAlertAction *action) {
-        [[NSUserDefaults standardUserDefaults] setBool:!currentStatsState forKey:kSettingsEnableStatsCollectionKey];
-    }];
-
-    UIAlertAction *signOutAction = [UIAlertAction actionWithTitle:@"Sign Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        [AuthStore.shared signOut];
-    }];
-
-    BOOL currentVp8Simulcast = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsEnableVp8SimulcastKey];
-
-    UIAlertAction *toggleVp8SimulCast = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ VP8 Simulcast", currentVp8Simulcast ? @"Disable" : @"Enable"]
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:^(UIAlertAction *action) {
-        [[NSUserDefaults standardUserDefaults] setBool:!currentVp8Simulcast forKey:kSettingsEnableVp8SimulcastKey];
-    }];
-
-    BOOL currentForceRelay = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsForceTurnRelay];
-
-    UIAlertAction *toggleForceRelay = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ TURN Relay", currentForceRelay ? @"Disable" : @"Enable"]
-                                                                 style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction *action) {
-                                                                   [[NSUserDefaults standardUserDefaults] setBool:!currentForceRelay forKey:kSettingsForceTurnRelay];
-                                                               }];
-
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}];
-
-
-    NSDictionary* plistDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *version = [NSString stringWithFormat:@"Twilio Video v%@ (%@)", [TwilioVideoSDK sdkVersion], plistDict[@"CFBundleVersion"]];
-
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"VideoApp Settings"
-                                                                             message:version
-                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
-    [alertController addAction:changeTopologyAction];
-    [alertController addAction:toggleStatsCollectionAction];
-    [alertController addAction:toggleVp8SimulCast];
-    [alertController addAction:toggleForceRelay];
-
-    [alertController addAction:signOutAction];
-    [alertController addAction:cancelAction];
-
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        if ([sender isKindOfClass:[UIBarButtonItem class]]) {
-            alertController.popoverPresentationController.barButtonItem = sender;
-        } else if ([sender isKindOfClass:[UIView class]]) {
-            alertController.popoverPresentationController.sourceView = sender;
-            alertController.popoverPresentationController.sourceRect = ((UIView *)sender).bounds;
-        }
-    }
-
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
 - (IBAction)flipCameraPressed:(id)sender {
     [self.localMediaController flipCamera];
 }
@@ -232,6 +157,8 @@
         self.roomViewController = segue.destinationViewController;
         self.roomViewController.roomName = self.roomTextField.text;
         self.roomViewController.localMediaController = self.localMediaController;
+    } else if ([segue.identifier isEqualToString:@"showSettings"]) {
+        [LobbyViewControllerSwift prepareForShowSettingsSegue:segue];
     }
 }
 

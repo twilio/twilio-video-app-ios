@@ -17,7 +17,6 @@
 #import "RoomViewController.h"
 #import "TwilioVideoAppAPI.h"
 #import "LocalMediaController.h"
-#import "SettingsKeyConstants.h"
 #import "VariableAlphaToggleButton.h"
 #import "RoundButton.h"
 #import "StatsViewController.h"
@@ -62,7 +61,6 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
 @property (nonatomic, weak) StatsViewController *statsViewController;
 @property (nonatomic, assign) BOOL shoudldCollectStats;
-@property (nonatomic, assign) BOOL shouldEnableVp8Simulcast;
 @property (nonatomic, strong) NSTimer *statsTimer;
 @property (nonatomic, strong) NSOperationQueue *statsProcessingQueue;
 
@@ -78,7 +76,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.shoudldCollectStats = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsEnableStatsCollectionKey];
+    self.shoudldCollectStats = YES;
 
     // Stats view controller
     self.statsViewController = (StatsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"statsViewController"];
@@ -168,8 +166,6 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 }
 
 - (void)joinRoomWithAccessToken:(NSString *)accessToken {
-    BOOL enableVp8Simulcast = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsEnableVp8SimulcastKey];
-    BOOL forceTurnRelay = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsForceTurnRelay];
     TVIConnectOptions *options = [TVIConnectOptions optionsWithToken:accessToken
                                                                block:^(TVIConnectOptionsBuilder *builder) {
                                                                    builder.roomName = self.roomName;
@@ -178,7 +174,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                    builder.audioTracks = self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[];
                                                                    builder.videoTracks = self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[];
 
-                                                                   if (enableVp8Simulcast) {
+                                                                   if (RoomViewControllerSwift.enableVP8Simulcast) {
                                                                        builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
                                                                    } else {
                                                                        builder.preferredVideoCodecs = @[[TVIH264Codec new]];
@@ -186,7 +182,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                                                                                            videoBitrate:1200];
                                                                    }
 
-                                                                   if (forceTurnRelay) {
+                                                                   if (RoomViewControllerSwift.forceTURNMediaRelay) {
                                                                        builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
                                                                            builder.abortOnIceServersTimeout = YES;
                                                                            builder.iceServersTimeout = 30;

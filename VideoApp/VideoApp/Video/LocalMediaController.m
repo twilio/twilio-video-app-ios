@@ -15,7 +15,6 @@
 //
 
 #import "LocalMediaController.h"
-#import "SettingsKeyConstants.h"
 #import "VideoAppCamera.h"
 #import "VideoAppCameraSource.h"
 

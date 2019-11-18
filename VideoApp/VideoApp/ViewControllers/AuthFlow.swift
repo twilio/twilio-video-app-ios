@@ -29,8 +29,10 @@ class AuthFlow {
             return
         }
         if let navigationController = rootViewController as? UINavigationController {
-            navigationController.popToRootViewController(animated: true)
-            navigationController.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
+            navigationController.dismiss(animated: true) {
+                navigationController.popToRootViewController(animated: true)
+                navigationController.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
+            }
         }
     }
 
