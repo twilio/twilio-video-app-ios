@@ -58,6 +58,16 @@
                ReferencedContainer = "container:VideoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DC044678238DD55C0072F597"
+               BuildableName = "Video-TwilioUITests.xctest"
+               BlueprintName = "Video-TwilioUITests"
+               ReferencedContainer = "container:VideoApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

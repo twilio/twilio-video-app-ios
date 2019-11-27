@@ -82,6 +82,7 @@
 		8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
 		AE0CFB3237FBE318B731B713 /* Pods_Video_Twilio_Video_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */; };
 		C5FC580267C650371E9AB56B /* Pods_Video_Twilio_Video_Internal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */; };
+		DC04467C238DD55C0072F597 /* EmailSignInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */; };
 		DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
 		DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
 		DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
@@ -271,6 +272,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DC04467E238DD55C0072F597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2412822F1E36A6AB002198BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 241282361E36A6AB002198BE;
+			remoteInfo = "Video-Twilio";
+		};
 		DC4E4E312357A73900C5D313 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2412822F1E36A6AB002198BE /* Project object */;
@@ -356,6 +364,9 @@
 		B3AB78B22F2DA8EBE6CE00CE /* Pods-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Community/Pods-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
 		C4E1D6D09E2DE36C2CD37979 /* Pods-Video-Twilio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.debug.xcconfig"; sourceTree = "<group>"; };
 		CECDDB77E7A9B03648F91095 /* Pods-Video-Twilio-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
+		DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInUITests.swift; sourceTree = "<group>"; };
+		DC04467D238DD55C0072F597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC044683238EF6C20072F597 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModel.swift; sourceTree = "<group>"; };
 		DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
@@ -458,6 +469,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC044676238DD55C0072F597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC4E4E292357A73900C5D313 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +506,7 @@
 			children = (
 				241282391E36A6AB002198BE /* VideoApp */,
 				DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */,
+				DC04467A238DD55C0072F597 /* Video-TwilioUITests */,
 				DCE965C7237498F50002EC78 /* Video-CommunityTests */,
 				DCE965B9237492410002EC78 /* Video-InternalTests */,
 				24F2990C1E37AF86001A389B /* Frameworks */,
@@ -505,6 +524,7 @@
 				DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */,
 				DCE965B8237492410002EC78 /* Video-InternalTests.xctest */,
 				DCE965C6237498F50002EC78 /* Video-CommunityTests.xctest */,
+				DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -625,6 +645,15 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		DC04467A238DD55C0072F597 /* Video-TwilioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */,
+				DC04467D238DD55C0072F597 /* Info.plist */,
+			);
+			path = "Video-TwilioUITests";
 			sourceTree = "<group>";
 		};
 		DC04468F238F1E2D0072F597 /* User */ = {
@@ -953,6 +982,24 @@
 			productReference = 4B00128B1FBA52E5004A587E /* Video-Community.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DC044678238DD55C0072F597 /* Video-TwilioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC044682238DD55C0072F597 /* Build configuration list for PBXNativeTarget "Video-TwilioUITests" */;
+			buildPhases = (
+				DC044675238DD55C0072F597 /* Sources */,
+				DC044676238DD55C0072F597 /* Frameworks */,
+				DC044677238DD55C0072F597 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC04467F238DD55C0072F597 /* PBXTargetDependency */,
+			);
+			name = "Video-TwilioUITests";
+			productName = "Video-TwilioUITests";
+			productReference = DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		DC4E4E2B2357A73900C5D313 /* Video-TwilioTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC4E4E332357A73900C5D313 /* Build configuration list for PBXNativeTarget "Video-TwilioTests" */;
@@ -1044,6 +1091,11 @@
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
+					DC044678238DD55C0072F597 = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 241282361E36A6AB002198BE;
+					};
 					DC4E4E2B2357A73900C5D313 = {
 						CreatedOnToolsVersion = 11.0;
 						ProvisioningStyle = Automatic;
@@ -1080,6 +1132,7 @@
 				DC4E4E2B2357A73900C5D313 /* Video-TwilioTests */,
 				DCE965B7237492410002EC78 /* Video-InternalTests */,
 				DCE965C5237498F50002EC78 /* Video-CommunityTests */,
+				DC044678238DD55C0072F597 /* Video-TwilioUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1130,6 +1183,13 @@
 				DC44C2BF238704FB00205174 /* RightDetailCell.xib in Resources */,
 				4B0012831FBA52E5004A587E /* Main.storyboard in Resources */,
 				DCAEBF19238331A800141D2D /* SwitchCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC044677238DD55C0072F597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1679,6 +1739,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC044675238DD55C0072F597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC04467C238DD55C0072F597 /* EmailSignInUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC4E4E282357A73900C5D313 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1711,6 +1779,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DC04467F238DD55C0072F597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 241282361E36A6AB002198BE /* Video-Twilio */;
+			targetProxy = DC04467E238DD55C0072F597 /* PBXContainerItemProxy */;
+		};
 		DC4E4E322357A73900C5D313 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 241282361E36A6AB002198BE /* Video-Twilio */;
@@ -2059,6 +2132,52 @@
 			};
 			name = Release;
 		};
+		DC044680238DD55C0072F597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Video-TwilioUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Video-Twilio";
+			};
+			name = Debug;
+		};
+		DC044681238DD55C0072F597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Video-TwilioUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Video-Twilio";
+			};
+			name = Release;
+		};
 		DC4E4E342357A73900C5D313 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B18CDAA6CE26C50150300CC2 /* Pods-Video-Twilio-Video-TwilioTests.debug.xcconfig */;
@@ -2234,6 +2353,15 @@
 			buildConfigurations = (
 				4B0012891FBA52E5004A587E /* Debug */,
 				4B00128A1FBA52E5004A587E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC044682238DD55C0072F597 /* Build configuration list for PBXNativeTarget "Video-TwilioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC044680238DD55C0072F597 /* Debug */,
+				DC044681238DD55C0072F597 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
