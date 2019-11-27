@@ -77,7 +77,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    self.loggedInUser.text = LobbyViewControllerSwift.userDisplayName;
+    self.loggedInUser.text = SwiftToObjc.userDisplayName;
     self.audioToggleButton.selected = !self.localMediaController.localAudioTrack;
     self.videoToggleButton.selected = !self.localMediaController.localVideoTrack;
     [self updateVideoUI:!self.localMediaController.localVideoTrack];

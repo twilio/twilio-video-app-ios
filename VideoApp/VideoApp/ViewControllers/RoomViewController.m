@@ -82,7 +82,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
     self.statsViewController = (StatsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"statsViewController"];
     [self.statsViewController addAsSwipeableViewToParentViewController:self];
 
-    self.mainLabel.text = AuthStore.shared.userDisplayName;
+    self.mainLabel.text = SwiftToObjc.userDisplayName;
     self.joiningRoomLabel.text = self.roomName;
 
     self.remoteParticipantLabelView.layer.cornerRadius = self.remoteParticipantLabelView.bounds.size.width / 2.0;

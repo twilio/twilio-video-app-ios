@@ -91,6 +91,17 @@
 		DC04468C238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */; };
 		DC04468D238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */; };
 		DC04468E238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */; };
+		DC044691238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
+		DC044692238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
+		DC044693238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
+		DC044695238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
+		DC044696238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
+		DC044697238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
+		DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
+		DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
+		DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
+		DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
+		DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469E238F29F50072F597 /* MockAuthStore.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -348,6 +359,11 @@
 		DC044683238EF6C20072F597 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModel.swift; sourceTree = "<group>"; };
 		DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
+		DC044690238F1E3C0072F597 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		DC044694238F1FAA0072F597 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DC044698238F20130072F597 /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
+		DC04469C238F29500072F597 /* UserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreSpec.swift; sourceTree = "<group>"; };
+		DC04469E238F29F50072F597 /* MockAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthStore.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -611,10 +627,20 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		DC04468F238F1E2D0072F597 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DC044694238F1FAA0072F597 /* User.swift */,
+				DC044690238F1E3C0072F597 /* UserStore.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
+				DC044698238F20130072F597 /* SwiftToObjc.swift */,
 				243CDB4922665F1800637B6B /* TwilioColors.swift */,
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
 				DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */,
@@ -649,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */,
+				DC04469E238F29F50072F597 /* MockAuthStore.swift */,
 				DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */,
 				DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */,
 			);
@@ -659,6 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */,
+				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -720,6 +748,7 @@
 				DCF4614F23859B9A00DD8FEA /* AppInfo */,
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
+				DC04468F238F1E2D0072F597 /* User */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -1411,6 +1440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC044691238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -1471,10 +1501,12 @@
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DC044695238F1FAA0072F597 /* User.swift in Sources */,
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
 				24A598531ECCE069003466B4 /* RoundButton.m in Sources */,
 				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
 				DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
+				DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -1489,6 +1521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -1549,10 +1582,12 @@
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				4B0012301FBA52C4004A587E /* RoundButton.m in Sources */,
 				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
+				DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -1567,6 +1602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -1627,10 +1663,12 @@
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */,
 				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
+				DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -1646,7 +1684,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */,
+				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
 				DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */,
+				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
 				DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */,
 				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
 			);

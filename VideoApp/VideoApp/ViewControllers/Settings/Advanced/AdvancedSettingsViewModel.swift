@@ -29,7 +29,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                     ),
                     .editableText(
                         title: "User Identity",
-                        text: appSettingsStore.userIdentity.nilIfEmpty ?? authStore.userDisplayName,
+                        text: userStore.user.displayName,
                         viewModelFactory: editIdentityViewModalFactory
                     )
                 ]
@@ -37,17 +37,17 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         ]
     }
     private let appSettingsStore: AppSettingsStoreWriting
-    private let authStore: AuthStoreReading
+    private let userStore: UserStoreReading
     private let editIdentityViewModalFactory: EditTextViewModelFactory
     private let selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     
     init(appSettingsStore: AppSettingsStoreWriting,
-         authStore: AuthStoreReading,
+         userStore: UserStoreReading,
          editIdentityViewModalFactory: EditTextViewModelFactory,
          selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
-        self.authStore = authStore
+        self.userStore = userStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
         self.selectAPIEnvironmentViewModelFactory = selectAPIEnvironmentViewModelFactory
     }

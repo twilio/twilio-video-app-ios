@@ -17,10 +17,6 @@
 import UIKit
 
 @objc class LobbyViewControllerSwift: NSObject {
-    @objc static var userDisplayName: String {
-        AppSettingsStore(userDefaults: .standard).userIdentity.nilIfEmpty ?? AuthStore.shared.userDisplayName
-    }
-    
     @objc static func prepareForShowSettingsSegue(_ segue: UIStoryboardSegue) {
         let navigationController = segue.destination as! UINavigationController
         let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
