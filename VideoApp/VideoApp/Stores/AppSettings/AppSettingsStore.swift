@@ -17,6 +17,7 @@
 import Foundation
 
 protocol AppSettingsStoreWriting: AnyObject {
+    var apiEnvironment: APIEnvironment { get set }
     var videoCodec: VideoCodec { get set }
     var topology: Topology { get set }
     var userIdentity: String { get set }
@@ -25,12 +26,23 @@ protocol AppSettingsStoreWriting: AnyObject {
 
 class AppSettingsStore: AppSettingsStoreWriting {
     private enum Keys {
+        static let apiEnvironment = "apiEnvironmentSetting"
         static let videoCodec = "videoCodecSetting"
         static let topology = "topologySetting"
         static let userIdentity = "userIdentitySetting"
         static let isTURNMediaRelayOn = "isTURNMediaRelayOnSetting"
     }
 
+    var apiEnvironment: APIEnvironment {
+        get {
+            guard let rawAPIEnvironment = userDefaults.string(forKey: Keys.apiEnvironment), let apiEnvironment = APIEnvironment(rawValue: rawAPIEnvironment) else {
+                return .production
+            }
+            
+            return apiEnvironment
+        }
+        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.apiEnvironment) }
+    }
     var videoCodec: VideoCodec {
         get {
             guard let rawVideoCodec = userDefaults.string(forKey: Keys.videoCodec), let videoCodec = VideoCodec(rawValue: rawVideoCodec) else {

@@ -22,6 +22,11 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         [
             .init(
                 rows: [
+                    .optionList(
+                        title: "Environment",
+                        selectedOption: appSettingsStore.apiEnvironment.title,
+                        viewModelFactory: selectAPIEnvironmentViewModelFactory
+                    ),
                     .editableText(
                         title: "User Identity",
                         text: appSettingsStore.userIdentity.nilIfEmpty ?? authStore.userDisplayName,
@@ -34,13 +39,16 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreReading
     private let editIdentityViewModalFactory: EditTextViewModelFactory
+    private let selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     
     init(appSettingsStore: AppSettingsStoreWriting,
          authStore: AuthStoreReading,
-         editIdentityViewModalFactory: EditTextViewModelFactory
+         editIdentityViewModalFactory: EditTextViewModelFactory,
+         selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.authStore = authStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
+        self.selectAPIEnvironmentViewModelFactory = selectAPIEnvironmentViewModelFactory
     }
 }

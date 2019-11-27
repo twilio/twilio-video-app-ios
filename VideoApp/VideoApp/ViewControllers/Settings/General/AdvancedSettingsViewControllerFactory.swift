@@ -23,7 +23,8 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
         viewController.viewModel = AdvancedSettingsViewModel(
             appSettingsStore: AppSettingsStore(userDefaults: .standard),
             authStore: AuthStore.shared,
-            editIdentityViewModalFactory: EditUserIdentityViewModelFactory()
+            editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
+            selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory()
         )
         return viewController
     }

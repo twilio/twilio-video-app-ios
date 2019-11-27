@@ -51,12 +51,14 @@ class AhoyAuthStoreSpec: QuickSpec {
                 firebaseResult: (String?, Error?) = (nil, nil),
                 firebaseDisplayName: String = "",
                 userIdentitySetting: String = "",
+                apiEnvironmentSetting: APIEnvironment = .production,
                 topologySetting: Topology = .group,
                 twilioResult: (String?, Error?) = (nil, nil)
             ) {
                 mockFirebaseAuthStore.stubbedFetchAccessTokenCompletionResult = firebaseResult
                 mockFirebaseAuthStore.stubbedUserDisplayName = firebaseDisplayName
                 mockAppSettingsStore.stubbedUserIdentity = userIdentitySetting
+                mockAppSettingsStore.stubbedApiEnvironment = apiEnvironmentSetting
                 mockAppSettingsStore.stubbedTopology = topologySetting
                 mockAPI.stubbedRetrieveAccessTokenCompletionBlockResult = twilioResult
 
@@ -175,12 +177,22 @@ class AhoyAuthStoreSpec: QuickSpec {
                     }
                 }
 
-                it("is called with production environment") {
-                    fetchTwilioAccessToken(firebaseResult: ("", nil))
+                context("when apiEnvironment is production") {
+                    it("is called with production environment") {
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), apiEnvironmentSetting: .production)
 
-                    expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.production))
+                        expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.production))
+                    }
                 }
+                
+                context("when apiEnvironment is development") {
+                    it("is called with development environment") {
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), apiEnvironmentSetting: .development)
 
+                        expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.development))
+                    }
+                }
+                
                 context("when topology is group") {
                     it("is called with group topology") {
                         fetchTwilioAccessToken(firebaseResult: ("", nil), topologySetting: .group)
