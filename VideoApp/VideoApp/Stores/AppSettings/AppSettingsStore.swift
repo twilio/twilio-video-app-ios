@@ -16,21 +16,64 @@
 
 import Foundation
 
-protocol AppSettingsStoreReading {
-    var appSettings: AppSettings { get }
+protocol AppSettingsStoreWriting: AnyObject {
+    var apiEnvironment: APIEnvironment { get set }
+    var videoCodec: VideoCodec { get set }
+    var topology: Topology { get set }
+    var userIdentity: String { get set }
+    var isTURNMediaRelayOn: Bool { get set }
 }
 
-class AppSettingsStore: AppSettingsStoreReading {
+class AppSettingsStore: AppSettingsStoreWriting {
+    private enum Keys {
+        static let apiEnvironment = "apiEnvironmentSetting"
+        static let videoCodec = "videoCodecSetting"
+        static let topology = "topologySetting"
+        static let userIdentity = "userIdentitySetting"
+        static let isTURNMediaRelayOn = "isTURNMediaRelayOnSetting"
+    }
+
+    var apiEnvironment: APIEnvironment {
+        get {
+            guard let rawAPIEnvironment = userDefaults.string(forKey: Keys.apiEnvironment), let apiEnvironment = APIEnvironment(rawValue: rawAPIEnvironment) else {
+                return .production
+            }
+            
+            return apiEnvironment
+        }
+        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.apiEnvironment) }
+    }
+    var videoCodec: VideoCodec {
+        get {
+            guard let rawVideoCodec = userDefaults.string(forKey: Keys.videoCodec), let videoCodec = VideoCodec(rawValue: rawVideoCodec) else {
+                return .h264
+            }
+            
+            return videoCodec
+        }
+        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.videoCodec) }
+    }
+    var topology: Topology {
+        get {
+            guard let rawTopology = userDefaults.string(forKey: Keys.topology), let topology = Topology(rawValue: rawTopology) else {
+                return .group
+            }
+            
+            return topology
+        }
+        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.topology) }
+    }
+    var userIdentity: String {
+        get { userDefaults.string(forKey: Keys.userIdentity) ?? "" }
+        set { userDefaults.setValue(newValue, forKey: Keys.userIdentity) }
+    }
+    var isTURNMediaRelayOn: Bool {
+        get { userDefaults.bool(forKey: Keys.isTURNMediaRelayOn) }
+        set { userDefaults.setValue(newValue, forKey: Keys.isTURNMediaRelayOn) }
+    }
     private let userDefaults: UserDefaults
     
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
-    }
-    
-    var appSettings: AppSettings {
-        let environment = TwilioVideoAppAPIEnvironment(rawValue: userDefaults.string(forKey: kSettingsSelectedEnvironmentKey)!)
-        let topology = TwilioVideoAppAPITopology(rawValue: userDefaults.string(forKey: kSettingsSelectedTopologyKey)!)
-        
-        return AppSettings(environment: environment, topology: topology)
     }
 }

@@ -317,7 +317,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rof-39-ksx"/>
+                                    <segue destination="LfN-ah-df2" kind="presentation" identifier="showSettings" id="hSD-GJ-KAh"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLa-Ap-CMh" userLabel="Line">
@@ -400,7 +400,6 @@
                         <outlet property="loggedInUser" destination="3lB-l1-eHH" id="zIy-hB-2g4"/>
                         <outlet property="noVideoImage" destination="Aul-ZZ-CEb" id="Q7G-sa-dvC"/>
                         <outlet property="roomTextField" destination="d96-2z-6r8" id="zHC-L0-1FX"/>
-                        <outlet property="settingsButton" destination="I8b-lu-qjO" id="pLN-4D-CDl"/>
                         <outlet property="videoToggleButton" destination="VHq-hM-JN4" id="TAB-NQ-3Hm"/>
                         <outlet property="youLabel" destination="NKj-ok-koK" id="GYY-pQ-SZJ"/>
                         <segue destination="HNa-RJ-vcm" kind="show" identifier="roomSegue" animates="NO" id="k0D-SG-DDn"/>
@@ -891,6 +890,90 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="897" y="450"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="JYB-aD-ZXg">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingsController" id="PPP-5k-Y6L" customClass="SettingsViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="L6j-2F-xis">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="PPP-5k-Y6L" id="t0a-dT-LeE"/>
+                            <outlet property="delegate" destination="PPP-5k-Y6L" id="nG8-3H-TLq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="YY2-Ac-NZU">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="nf3-bX-fer">
+                            <connections>
+                                <action selector="doneTap:" destination="PPP-5k-Y6L" id="rAv-Jd-KkH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="4dP-Y7-2J9" kind="show" identifier="editText" id="H7U-AC-i7w"/>
+                        <segue destination="XDr-Tf-4Yd" kind="show" identifier="selectOption" id="i43-Qy-sDl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQ0-Sv-S54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191" y="1649"/>
+        </scene>
+        <!--Edit Text-->
+        <scene sceneID="pWR-4e-hCf">
+            <objects>
+                <tableViewController id="4dP-Y7-2J9" customClass="EditTextViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="GDd-BA-gvW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="4dP-Y7-2J9" id="12M-Ka-NZO"/>
+                            <outlet property="delegate" destination="4dP-Y7-2J9" id="YaA-rb-b4i"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Text" id="zM0-9j-yMq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3A-G4-hfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1303" y="1256"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="GWF-HR-Ptl">
+            <objects>
+                <tableViewController id="XDr-Tf-4Yd" customClass="SelectOptionViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="rhL-OH-fcl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="XDr-Tf-4Yd" id="HAL-3L-JJa"/>
+                            <outlet property="delegate" destination="XDr-Tf-4Yd" id="vP1-On-h6Q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Options" id="gL1-fH-qip"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJ8-gP-Z6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1303" y="2068"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f3T-pt-STw">
+            <objects>
+                <navigationController id="LfN-ah-df2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fXC-Iz-gGq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PPP-5k-Y6L" kind="relationship" relationship="rootViewController" id="HzD-nL-gcR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYf-5k-BIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762" y="1649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1rQ-RV-Zxs">

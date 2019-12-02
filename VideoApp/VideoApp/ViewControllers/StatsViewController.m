@@ -15,7 +15,6 @@
 //
 
 #import "StatsViewController.h"
-#import "SettingsKeyConstants.h"
 #import "StatsUIModel.h"
 
 #import "HeaderTableViewCell.h"
@@ -84,7 +83,7 @@ static const CGFloat kAnimationDuration = 0.35;
                                                                multiplier:1.0
                                                                  constant:-(self.disabledView.frame.size.height / 2)];
 
-    self.statCollectionEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kSettingsEnableStatsCollectionKey];
+    self.statCollectionEnabled = YES;
 
     [self displayStatsUnavailableView];
 }

@@ -23,7 +23,6 @@
 		243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */; };
 		24491F781E37D6DE00028B24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
 		24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24491F7C1E37F8F000028B24 /* LoginViewController.m */; };
-		244B45DD1ECB528C000B2415 /* SettingsKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */; };
 		246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
 		246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
 		246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
@@ -56,7 +55,6 @@
 		4B00122E1FBA52C4004A587E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412823E1E36A6AB002198BE /* AppDelegate.m */; };
 		4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */; };
 		4B0012301FBA52C4004A587E /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A598521ECCE069003466B4 /* RoundButton.m */; };
-		4B0012311FBA52C4004A587E /* SettingsKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */; };
 		4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */; };
 		4B0012411FBA52C4004A587E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
 		4B0012431FBA52C4004A587E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
@@ -74,7 +72,6 @@
 		4B00126B1FBA52E5004A587E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412823E1E36A6AB002198BE /* AppDelegate.m */; };
 		4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */; };
 		4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A598521ECCE069003466B4 /* RoundButton.m */; };
-		4B00126E1FBA52E5004A587E /* SettingsKeyConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */; };
 		4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */; };
 		4B00127E1FBA52E5004A587E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
 		4B0012801FBA52E5004A587E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24491F771E37D6DE00028B24 /* GoogleService-Info.plist */; };
@@ -85,20 +82,72 @@
 		8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
 		AE0CFB3237FBE318B731B713 /* Pods_Video_Twilio_Video_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */; };
 		C5FC580267C650371E9AB56B /* Pods_Video_Twilio_Video_Internal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */; };
+		DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
+		DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
+		DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
+		DC044688238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */; };
+		DC044689238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */; };
+		DC04468A238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */; };
+		DC04468C238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */; };
+		DC04468D238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */; };
+		DC04468E238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */; };
+		DC044691238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
+		DC044692238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
+		DC044693238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
+		DC044695238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
+		DC044696238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
+		DC044697238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
+		DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
+		DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
+		DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
+		DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
+		DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469E238F29F50072F597 /* MockAuthStore.swift */; };
+		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
+		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
+		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
+		DC44C2BD238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
+		DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
+		DC44C2BF238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
+		DC44C2C223870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
+		DC44C2C323870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
+		DC44C2C423870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
+		DC44C2C523870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
+		DC44C2C623870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
+		DC44C2C723870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
+		DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
+		DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
+		DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
+		DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
+		DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
+		DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
+		DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
+		DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
+		DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
+		DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
+		DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
+		DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
+		DC44C2EE2387790100205174 /* RoomViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */; };
+		DC44C2EF2387790100205174 /* RoomViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */; };
+		DC44C2F02387790100205174 /* RoomViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */; };
+		DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
+		DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
+		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
+		DC45688A2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */; };
+		DC45688B2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */; };
+		DC45688C2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */; };
 		DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
 		DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
 		DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
 		DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
-		DC4E4E2323577EE500C5D313 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* AppSettings.swift */; };
-		DC4E4E2423577EE500C5D313 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* AppSettings.swift */; };
-		DC4E4E2523577EE500C5D313 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* AppSettings.swift */; };
+		DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
+		DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
+		DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
 		DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */; };
 		DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */; };
 		DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */; };
 		DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */; };
-		DC6EABC72358F5F50064E9E0 /* StubAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABC62358F5F50064E9E0 /* StubAppSettings.swift */; };
 		DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
@@ -135,8 +184,89 @@
 		DCAEBEFA237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
 		DCAEBEFB237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
 		DCAEBEFC237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
+		DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
+		DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
+		DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
+		DCAEBF17238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
+		DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
+		DCAEBF19238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
+		DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */; };
+		DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */; };
+		DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */; };
+		DCAEBF1F2383342C00141D2D /* DestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */; };
+		DCAEBF202383342C00141D2D /* DestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */; };
+		DCAEBF212383342C00141D2D /* DestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */; };
+		DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF2E2383560500141D2D /* EditTextCell.swift */; };
+		DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF2E2383560500141D2D /* EditTextCell.swift */; };
+		DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF2E2383560500141D2D /* EditTextCell.swift */; };
+		DCAEBF332383560500141D2D /* EditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF2F2383560500141D2D /* EditTextCell.xib */; };
+		DCAEBF342383560500141D2D /* EditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF2F2383560500141D2D /* EditTextCell.xib */; };
+		DCAEBF352383560500141D2D /* EditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF2F2383560500141D2D /* EditTextCell.xib */; };
+		DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF362383581F00141D2D /* EditTextViewController.swift */; };
+		DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF362383581F00141D2D /* EditTextViewController.swift */; };
+		DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF362383581F00141D2D /* EditTextViewController.swift */; };
+		DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */; };
+		DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */; };
+		DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */; };
+		DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
+		DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
+		DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
+		DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */; };
+		DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */; };
+		DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */; };
+		DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */; };
+		DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */; };
+		DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */; };
+		DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
+		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
+		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCE965BB237492410002EC78 /* Video_InternalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* Video_InternalTests.swift */; };
 		DCE965C9237498F50002EC78 /* Video_CommunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */; };
+		DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
+		DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
+		DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
+		DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */; };
+		DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */; };
+		DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */; };
+		DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
+		DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
+		DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
+		DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
+		DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
+		DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
+		DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
+		DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
+		DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
+		DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
+		DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
+		DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
+		DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
+		DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
+		DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
+		DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
+		DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
+		DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
+		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
+		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
+		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
+		DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
+		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
+		DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
+		DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615423859BB800DD8FEA /* AppInfoStore.swift */; };
+		DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615423859BB800DD8FEA /* AppInfoStore.swift */; };
+		DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615423859BB800DD8FEA /* AppInfoStore.swift */; };
+		DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461582385A51700DD8FEA /* SettingsViewController.swift */; };
+		DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461582385A51700DD8FEA /* SettingsViewController.swift */; };
+		DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461582385A51700DD8FEA /* SettingsViewController.swift */; };
+		DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */; };
+		DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */; };
+		DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */; };
+		DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */; };
+		DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */; };
+		DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */; };
+		DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */; };
+		DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */; };
+		DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */; };
 		E79FE7DB28C3BBBE4440D1F3 /* Pods_Video_Twilio_Video_TwilioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -183,8 +313,6 @@
 		24491F771E37D6DE00028B24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24491F7B1E37F8F000028B24 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		24491F7C1E37F8F000028B24 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		244B45DB1ECB528C000B2415 /* SettingsKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsKeyConstants.h; sourceTree = "<group>"; };
-		244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsKeyConstants.m; sourceTree = "<group>"; };
 		246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TVILocalVideoTrack+Mirroring.h"; sourceTree = "<group>"; };
 		246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TVILocalVideoTrack+Mirroring.m"; sourceTree = "<group>"; };
 		248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -228,16 +356,34 @@
 		B3AB78B22F2DA8EBE6CE00CE /* Pods-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Community/Pods-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
 		C4E1D6D09E2DE36C2CD37979 /* Pods-Video-Twilio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.debug.xcconfig"; sourceTree = "<group>"; };
 		CECDDB77E7A9B03648F91095 /* Pods-Video-Twilio-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
+		DC044683238EF6C20072F597 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModel.swift; sourceTree = "<group>"; };
+		DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
+		DC044690238F1E3C0072F597 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		DC044694238F1FAA0072F597 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DC044698238F20130072F597 /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
+		DC04469C238F29500072F597 /* UserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreSpec.swift; sourceTree = "<group>"; };
+		DC04469E238F29F50072F597 /* MockAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthStore.swift; sourceTree = "<group>"; };
+		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
+		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
+		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
+		DC44C2C123870D0800205174 /* BasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicCell.xib; sourceTree = "<group>"; };
+		DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellHelpers.swift; sourceTree = "<group>"; };
+		DC44C2E123875C4F00205174 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
+		DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionSegueSender.swift; sourceTree = "<group>"; };
+		DC44C2E923876B4700205174 /* EditTextSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextSegueSender.swift; sourceTree = "<group>"; };
+		DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerSwift.swift; sourceTree = "<group>"; };
+		DC4568852385D5490069BB5A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewControllerSwift.swift; sourceTree = "<group>"; };
 		DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioVideoAppAPIProtocol.swift; sourceTree = "<group>"; };
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
-		DC4E4E2223577EE500C5D313 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		DC4E4E2223577EE500C5D313 /* Topology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topology.swift; sourceTree = "<group>"; };
 		DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStoreSpec.swift; sourceTree = "<group>"; };
 		DC4E4E302357A73900C5D313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
 		DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTwilioVideoAppAPI.swift; sourceTree = "<group>"; };
-		DC6EABC62358F5F50064E9E0 /* StubAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAppSettings.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -250,12 +396,39 @@
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAppEnvironment.m; sourceTree = "<group>"; };
+		DCAEBF12238331A800141D2D /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		DCAEBF13238331A800141D2D /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonCell.swift; sourceTree = "<group>"; };
+		DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DestructiveButtonCell.xib; sourceTree = "<group>"; };
+		DCAEBF2E2383560500141D2D /* EditTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextCell.swift; sourceTree = "<group>"; };
+		DCAEBF2F2383560500141D2D /* EditTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTextCell.xib; sourceTree = "<group>"; };
+		DCAEBF362383581F00141D2D /* EditTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextViewController.swift; sourceTree = "<group>"; };
+		DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
+		DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewModel.swift; sourceTree = "<group>"; };
+		DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModel.swift; sourceTree = "<group>"; };
+		DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModel.swift; sourceTree = "<group>"; };
+		DCAEBF5223849C1C00141D2D /* VideoCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCodec.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* Video_InternalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_InternalTests.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE965C6237498F50002EC78 /* Video-CommunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-CommunityTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965C8237498F50002EC78 /* Video_CommunityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video_CommunityTests.swift; sourceTree = "<group>"; };
 		DCE965CA237498F50002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextViewModel.swift; sourceTree = "<group>"; };
+		DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIUserdentityViewModel.swift; sourceTree = "<group>"; };
+		DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserIdentityViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHelpers.swift; sourceTree = "<group>"; };
+		DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModelFactory.swift; sourceTree = "<group>"; };
+		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
+		DCF461582385A51700DD8FEA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsViewModel.swift; sourceTree = "<group>"; };
+		DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsViewModel.swift; sourceTree = "<group>"; };
+		DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Internal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -341,6 +514,7 @@
 			children = (
 				24693EEA1E393F1B00F21DDC /* API */,
 				DCE9B05D235A46EA008E5B5B /* Credentials */,
+				DC44C2CC23871C2000205174 /* Helpers */,
 				DC7790CA236B6B3800973B86 /* Launch */,
 				24A723E41ECE1CBD00486E7A /* Models */,
 				DCAEBEE32376011D00141D2D /* Stores */,
@@ -363,10 +537,13 @@
 				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
 				241282401E36A6AB002198BE /* LobbyViewController.h */,
 				241282411E36A6AB002198BE /* LobbyViewController.m */,
+				DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */,
 				24491F7B1E37F8F000028B24 /* LoginViewController.h */,
 				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
 				24927E2D1ECC9E44006510E3 /* RoomViewController.h */,
 				24927E2E1ECC9E44006510E3 /* RoomViewController.m */,
+				DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */,
+				DCAEBF4B2384880300141D2D /* Settings */,
 				24A723E11ECE1C8500486E7A /* StatsViewController.h */,
 				24A723E21ECE1C8500486E7A /* StatsViewController.m */,
 			);
@@ -397,13 +574,22 @@
 		24A723E81ECE1D2A00486E7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC44C2C023870D0800205174 /* BasicCell.swift */,
+				DC44C2C123870D0800205174 /* BasicCell.xib */,
+				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
+				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
 				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
 				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
+				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
+				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
 				24A598511ECCE069003466B4 /* RoundButton.h */,
 				24A598521ECCE069003466B4 /* RoundButton.m */,
+				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
+				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
+				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
+				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
 				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
 				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
-				243CDB4922665F1800637B6B /* TwilioColors.swift */,
 				24CF99DA1ECF36E8007C8631 /* VariableAlphaToggleButton.h */,
 				24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */,
 				248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */,
@@ -441,13 +627,34 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		DC04468F238F1E2D0072F597 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DC044694238F1FAA0072F597 /* User.swift */,
+				DC044690238F1E3C0072F597 /* UserStore.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DC44C2CC23871C2000205174 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
+				DC044698238F20130072F597 /* SwiftToObjc.swift */,
+				243CDB4922665F1800637B6B /* TwilioColors.swift */,
+				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
+				DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DC4E4E2723578DF200C5D313 /* AppSettings */ = {
 			isa = PBXGroup;
 			children = (
-				DC4E4E2223577EE500C5D313 /* AppSettings.swift */,
+				DC044683238EF6C20072F597 /* APIEnvironment.swift */,
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
-				244B45DB1ECB528C000B2415 /* SettingsKeyConstants.h */,
-				244B45DC1ECB528C000B2415 /* SettingsKeyConstants.m */,
+				DC4E4E2223577EE500C5D313 /* Topology.swift */,
+				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
 				4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */,
 				DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */,
 			);
@@ -459,7 +666,6 @@
 			children = (
 				DC4E4E362357B03100C5D313 /* Mocks */,
 				DC6EABCB235907280064E9E0 /* Specs */,
-				DC6EABCA235907130064E9E0 /* Stubs */,
 				DC4E4E302357A73900C5D313 /* Info.plist */,
 			);
 			path = "Video-TwilioTests";
@@ -469,24 +675,18 @@
 			isa = PBXGroup;
 			children = (
 				DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */,
+				DC04469E238F29F50072F597 /* MockAuthStore.swift */,
 				DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */,
 				DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		DC6EABCA235907130064E9E0 /* Stubs */ = {
-			isa = PBXGroup;
-			children = (
-				DC6EABC62358F5F50064E9E0 /* StubAppSettings.swift */,
-			);
-			path = Stubs;
-			sourceTree = "<group>";
-		};
 		DC6EABCB235907280064E9E0 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
 				DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */,
+				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -545,8 +745,10 @@
 		DCAEBEE32376011D00141D2D /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				DCF4614F23859B9A00DD8FEA /* AppInfo */,
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
+				DC04468F238F1E2D0072F597 /* User */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -576,6 +778,83 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		DCAEBF4B2384880300141D2D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF51238488CC00141D2D /* Advanced */,
+				DCAEBF4E2384887B00141D2D /* Core */,
+				DCAEBF50238488C500141D2D /* General */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DCAEBF4C2384881100141D2D /* SelectOption */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */,
+				DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */,
+			);
+			path = SelectOption;
+			sourceTree = "<group>";
+		};
+		DCAEBF4D2384886200141D2D /* EditText */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF362383581F00141D2D /* EditTextViewController.swift */,
+				DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */,
+			);
+			path = EditText;
+			sourceTree = "<group>";
+		};
+		DCAEBF4E2384887B00141D2D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF4D2384886200141D2D /* EditText */,
+				DCAEBF4C2384881100141D2D /* SelectOption */,
+				DCAEBF4F2384889800141D2D /* Settings */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DCAEBF4F2384889800141D2D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2E923876B4700205174 /* EditTextSegueSender.swift */,
+				DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */,
+				DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */,
+				DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */,
+				DCF461582385A51700DD8FEA /* SettingsViewController.swift */,
+				DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */,
+				DC4568852385D5490069BB5A /* ViewControllerFactory.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DCAEBF50238488C500141D2D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */,
+				DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */,
+				DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */,
+				DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */,
+				DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */,
+				DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		DCAEBF51238488CC00141D2D /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */,
+				DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */,
+				DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */,
+				DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */,
+				DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */,
+			);
+			path = Advanced;
+			sourceTree = "<group>";
+		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +879,15 @@
 				24491F771E37D6DE00028B24 /* GoogleService-Info.plist */,
 			);
 			path = Credentials;
+			sourceTree = "<group>";
+		};
+		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4615023859BA400DD8FEA /* AppInfo.swift */,
+				DCF4615423859BB800DD8FEA /* AppInfoStore.swift */,
+			);
+			path = AppInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -801,10 +1089,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCAEBF1F2383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				2412824A1E36A6AB002198BE /* LaunchScreen.storyboard in Resources */,
 				24491F781E37D6DE00028B24 /* GoogleService-Info.plist in Resources */,
+				DCAEBF332383560500141D2D /* EditTextCell.xib in Resources */,
+				DC44C2C523870D0800205174 /* BasicCell.xib in Resources */,
 				241282471E36A6AB002198BE /* Assets.xcassets in Resources */,
+				DC44C2BD238704FB00205174 /* RightDetailCell.xib in Resources */,
 				241282451E36A6AB002198BE /* Main.storyboard in Resources */,
+				DCAEBF17238331A800141D2D /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,10 +1105,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCAEBF202383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				4B0012411FBA52C4004A587E /* LaunchScreen.storyboard in Resources */,
 				4B0012431FBA52C4004A587E /* GoogleService-Info.plist in Resources */,
+				DCAEBF342383560500141D2D /* EditTextCell.xib in Resources */,
+				DC44C2C623870D0800205174 /* BasicCell.xib in Resources */,
 				4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */,
+				DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */,
 				4B0012461FBA52C4004A587E /* Main.storyboard in Resources */,
+				DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,10 +1121,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCAEBF212383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				4B00127E1FBA52E5004A587E /* LaunchScreen.storyboard in Resources */,
 				4B0012801FBA52E5004A587E /* GoogleService-Info.plist in Resources */,
+				DCAEBF352383560500141D2D /* EditTextCell.xib in Resources */,
+				DC44C2C723870D0800205174 /* BasicCell.xib in Resources */,
 				4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */,
+				DC44C2BF238704FB00205174 /* RightDetailCell.xib in Resources */,
 				4B0012831FBA52E5004A587E /* Main.storyboard in Resources */,
+				DCAEBF19238331A800141D2D /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,40 +1440,78 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC044691238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
+				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
+				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
+				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
-				DC4E4E2323577EE500C5D313 /* AppSettings.swift in Sources */,
+				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
+				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
 				24A5984D1ECCC4D4003466B4 /* LocalMediaController.m in Sources */,
+				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
+				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
 				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
 				248D94A71ED3176000FC8A94 /* VideoCollectionViewCell.m in Sources */,
 				242D1C16217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */,
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCAEBEFA237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
+				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
+				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
+				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
+				DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
+				DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
+				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
+				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
+				DC45688A2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */,
+				DC04468C238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
+				DC44C2EE2387790100205174 /* RoomViewControllerSwift.swift in Sources */,
+				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DC044688238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				241282421E36A6AB002198BE /* LobbyViewController.m in Sources */,
+				DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				24927E2F1ECC9E44006510E3 /* RoomViewController.m in Sources */,
+				DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */,
+				DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
+				DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */,
 				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
+				DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0421C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				24C239F61EDF263800AA9419 /* RemoteParticipantUIModel.m in Sources */,
+				DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
+				DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
+				DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */,
 				2412823F1E36A6AB002198BE /* AppDelegate.m in Sources */,
 				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DC044695238F1FAA0072F597 /* User.swift in Sources */,
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
 				24A598531ECCE069003466B4 /* RoundButton.m in Sources */,
-				244B45DD1ECB528C000B2415 /* SettingsKeyConstants.m in Sources */,
+				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
+				DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
+				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
+				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
+				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999A232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -1180,40 +1521,78 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
+				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
+				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
+				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
-				DC4E4E2423577EE500C5D313 /* AppSettings.swift in Sources */,
+				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
+				DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */,
 				4B0012251FBA52C4004A587E /* LocalMediaController.m in Sources */,
+				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
+				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
 				4B0012271FBA52C4004A587E /* VideoCollectionViewCell.m in Sources */,
 				242D1C17217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				4B0012281FBA52C4004A587E /* LoginViewController.m in Sources */,
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCAEBEFB237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
+				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
+				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
+				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
+				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
+				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
+				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
+				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
+				DC45688B2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */,
+				DC04468D238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
+				DC44C2EF2387790100205174 /* RoomViewControllerSwift.swift in Sources */,
+				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DC044689238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				4B00122A1FBA52C4004A587E /* LobbyViewController.m in Sources */,
+				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				4B00122B1FBA52C4004A587E /* RoomViewController.m in Sources */,
+				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
+				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
+				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
+				DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00122D1FBA52C4004A587E /* RemoteParticipantUIModel.m in Sources */,
+				DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
+				DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
+				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
 				4B00122E1FBA52C4004A587E /* AppDelegate.m in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				4B0012301FBA52C4004A587E /* RoundButton.m in Sources */,
-				4B0012311FBA52C4004A587E /* SettingsKeyConstants.m in Sources */,
+				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
+				DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
+				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
+				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
+				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -1223,40 +1602,78 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
+				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
+				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
+				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
-				DC4E4E2523577EE500C5D313 /* AppSettings.swift in Sources */,
+				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
+				DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */,
 				4B0012621FBA52E5004A587E /* LocalMediaController.m in Sources */,
+				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
+				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				4B0012641FBA52E5004A587E /* VideoCollectionViewCell.m in Sources */,
 				242D1C18217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				4B0012651FBA52E5004A587E /* LoginViewController.m in Sources */,
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCAEBEFC237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
+				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
+				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
+				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
+				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
+				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
+				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
+				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
+				DC45688C2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */,
+				DC04468E238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
+				DC44C2F02387790100205174 /* RoomViewControllerSwift.swift in Sources */,
+				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DC04468A238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				4B0012671FBA52E5004A587E /* LobbyViewController.m in Sources */,
+				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				4B0012681FBA52E5004A587E /* RoomViewController.m in Sources */,
+				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
+				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
+				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
+				DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00126A1FBA52E5004A587E /* RemoteParticipantUIModel.m in Sources */,
+				DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
+				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
+				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
 				4B00126B1FBA52E5004A587E /* AppDelegate.m in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */,
-				4B00126E1FBA52E5004A587E /* SettingsKeyConstants.m in Sources */,
+				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
+				DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
+				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
+				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
+				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -1266,9 +1683,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6EABC72358F5F50064E9E0 /* StubAppSettings.swift in Sources */,
 				DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */,
+				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
 				DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */,
+				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
 				DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */,
 				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
 			);

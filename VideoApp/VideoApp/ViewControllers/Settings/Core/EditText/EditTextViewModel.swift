@@ -14,10 +14,10 @@
 //  limitations under the License.
 //
 
-#import "SettingsKeyConstants.h"
+import Foundation
 
-NSString *const kSettingsEnableStatsCollectionKey = @"enableStatsPref";
-NSString *const kSettingsEnableVp8SimulcastKey = @"enableVp8Pref";
-NSString *const kSettingsForceTurnRelay = @"forceTurnRelayPref";
-NSString *const kSettingsSelectedEnvironmentKey = @"selectedEnvironmentPref";
-NSString *const kSettingsSelectedTopologyKey = @"selectedTopologyPref";
+protocol EditTextViewModel: AnyObject {
+    var title: String { get }
+    var placeholder: String { get }
+    var text: String { get set }
+}

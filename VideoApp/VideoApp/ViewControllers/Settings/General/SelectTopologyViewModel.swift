@@ -14,13 +14,18 @@
 //  limitations under the License.
 //
 
-@testable import VideoApp
+import Foundation
 
-extension AppSettings {
-    static func stub(
-        environment: TwilioVideoAppAPIEnvironment = .production,
-        topology: TwilioVideoAppAPITopology = .group
-    ) -> AppSettings {
-        return .init(environment: environment, topology: topology)
+class SelectTopologyViewModel: SelectOptionViewModel {
+    let title = "Topology"
+    let options = Topology.allCases.map { $0.title }
+    var selectedIndex: Int {
+        get { Topology.allCases.firstIndex(of: appSettingsStore.topology) ?? 0 }
+        set { appSettingsStore.topology = Topology.allCases[newValue] }
+    }
+    private let appSettingsStore: AppSettingsStoreWriting
+    
+    init(appSettingsStore: AppSettingsStoreWriting) {
+        self.appSettingsStore = appSettingsStore
     }
 }
