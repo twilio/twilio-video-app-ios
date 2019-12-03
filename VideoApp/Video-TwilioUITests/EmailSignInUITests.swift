@@ -29,11 +29,11 @@ class EmailSignInUITests: XCTestCase {
         
         let emailTextField = app.textFields["emailTextField"]
         emailTextField.tap()
-        emailTextField.typeText("trozum+uitest@twilio.com")
+        emailTextField.typeText(CredentialsStore().credentials.emailSignInTestAccount.email)
         
         let passwordTextField = app.secureTextFields["passwordTextField"]
         passwordTextField.tap()
-        passwordTextField.typeText("password")
+        passwordTextField.typeText(CredentialsStore().credentials.emailSignInTestAccount.password)
         
         app.buttons["signInButton"].tap()
 
