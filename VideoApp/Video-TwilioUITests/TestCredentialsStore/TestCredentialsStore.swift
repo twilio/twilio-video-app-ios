@@ -16,11 +16,13 @@
 
 import Foundation
 
-struct Credentials: Codable {
-    struct Account: Codable {
-        let email: String
-        let password: String
+class TestCredentialsStore {
+    var testCredentials: TestCredentials {
+        let bundle = Bundle(for: type(of: self))
+        let url = bundle.url(forResource: "TestCredentials", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try! jsonDecoder.decode(TestCredentials.self, from: data)
     }
-    
-    let emailSignInTestAccount: Account
 }

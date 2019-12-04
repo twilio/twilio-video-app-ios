@@ -38,5 +38,4 @@ fastlane/report.xml
 fastlane/test_output
 
 # Credentials
-VideoApp/VideoApp/Credentials/
-VideoApp/Video-TwilioUITests/Credentials.json
+Credentials/

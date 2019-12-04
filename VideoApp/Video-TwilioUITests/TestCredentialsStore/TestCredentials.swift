@@ -16,16 +16,11 @@
 
 import Foundation
 
-class CredentialsStore {
-    private let jsonDecoder = JSONDecoder()
-
-    var credentials: Credentials {
-        let bundle = Bundle(for: type(of: self))
-        let url = bundle.url(forResource: "Credentials", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        let credentials = try! jsonDecoder.decode(Credentials.self, from: data)
-
-        return credentials
+struct TestCredentials: Codable {
+    struct EmailSignInUser: Codable {
+        let email: String
+        let password: String
     }
+    
+    let emailSignInUser: EmailSignInUser
 }

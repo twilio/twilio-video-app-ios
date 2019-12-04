@@ -25,3 +25,9 @@ target 'Video-Twilio' do
     # Identical to Video-Twilio
   end
 end
+
+target 'Video-TwilioUITests' do
+  project 'VideoApp/VideoApp.xcodeproj'
+
+  pod 'Nimble'
+end

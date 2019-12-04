@@ -14,37 +14,29 @@
 //  limitations under the License.
 //
 
+import Nimble
 import XCTest
 
-class EmailSignInUITests: XCTestCase {
-    override func setUp() {
-        continueAfterFailure = false
-    }
-
+class EmailSignInUITests: UITestCase {
     func testSignIn() {
-        let app = XCUIApplication()
-        app.launch()
+        let testCredentials = TestCredentialsStore().testCredentials
 
         app.buttons["emailSignInButton"].tap()
-        
+
         let emailTextField = app.textFields["emailTextField"]
         emailTextField.tap()
-        emailTextField.typeText(CredentialsStore().credentials.emailSignInTestAccount.email)
-        
+        emailTextField.typeText(testCredentials.emailSignInUser.email)
+
         let passwordTextField = app.secureTextFields["passwordTextField"]
         passwordTextField.tap()
-        passwordTextField.typeText(CredentialsStore().credentials.emailSignInTestAccount.password)
-        
-        app.buttons["signInButton"].tap()
+        passwordTextField.typeText(testCredentials.emailSignInUser.password)
 
-        let settingsButton = app.buttons["settingsButton"]
-        expectation(for: NSPredicate(format: "exists == 1"), evaluatedWith: settingsButton, handler: nil)
-        waitForExpectations(timeout: 5, handler: nil)
-        
-        XCTAssert(app.staticTexts["userNameLabel"].label == "trozum+uitest@twilio.com")
-        
-        settingsButton.tap()
-        
+        app.buttons["submitButton"].tap()
+
+        expect(self.app.staticTexts["userNameLabel"].label).toEventually(equal(testCredentials.emailSignInUser.email))
+
+        app.buttons["settingsButton"].tap()
+
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     }
 }

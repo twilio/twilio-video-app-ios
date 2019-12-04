@@ -137,7 +137,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJl-b4-oUI">
                                 <rect key="frame" x="203" y="289" width="94" height="48"/>
                                 <color key="backgroundColor" red="0.63921568630000003" green="0.1333333333" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="signInButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="submitButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="L73-wV-wer"/>
                                 </constraints>
