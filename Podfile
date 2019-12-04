@@ -26,6 +26,7 @@ target 'Video-Twilio' do
   end
 end
 
+# Don't inherit pods like other targets for good black box testing
 target 'Video-TwilioUITests' do
   project 'VideoApp/VideoApp.xcodeproj'
 

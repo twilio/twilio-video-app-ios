@@ -151,7 +151,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.16862745100000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <accessibility key="accessibilityConfiguration" identifier="lobbyView"/>
                         <constraints>
                             <constraint firstItem="Axn-ed-SSN" firstAttribute="top" secondItem="Egl-h7-xAE" secondAttribute="bottom" constant="-3" id="Asf-S3-T1I"/>
                             <constraint firstItem="Axn-ed-SSN" firstAttribute="width" secondItem="Kra-TT-7Ah" secondAttribute="width" id="Ild-Q9-mXy"/>
