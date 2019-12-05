@@ -1,4 +1,4 @@
-## Twilio iOS Video App
+# Twilio iOS Video App
 
 This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). Twilio uses the app internally for testing. The open source app can be easily configured by external developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
 

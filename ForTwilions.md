@@ -1,4 +1,4 @@
-## For Twilions
+# For Twilions
 
 Twilio employees should follow these instructions for internal testing.
 
@@ -23,5 +23,5 @@ Twilio employees should follow these instructions for internal testing.
 
 ## UI Tests
 
-- Use the `Video-TwilioTests` target. 
+- Use the `Video-TwilioUITests` target. 
 - Use [Nimble](https://github.com/Quick/Quick) for assertions.
