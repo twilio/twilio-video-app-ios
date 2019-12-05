@@ -58,7 +58,7 @@ jobs:
     executor: macos_executor
     steps:
       - test:
-          scheme: Video-Twilio
+          scheme: Video-TwilioUITests
   test_community_app:
     executor: macos_executor
     steps:
