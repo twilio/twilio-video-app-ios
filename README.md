@@ -55,13 +55,17 @@ For each device:
 1. Enter a room name.
 1. Tap `Join`.
 
-## Unit Tests
+## Tests
 
-### How to Test
+### Unit Tests
 
 - Use the `Video-TwilioTests` target. 
 - Use [Quick and Nimble](https://github.com/Quick/Quick) to write unit tests.
 - Use [Swift Mock Generator](https://github.com/seanhenry/SwiftMockGeneratorForXcode) to create mocks.
+
+### UI Tests
+
+UI tests require credentials that are only available to Twilio employees.
 
 ### Known Issues
 
