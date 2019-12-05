@@ -59,10 +59,12 @@ For each device:
 
 ### Unit Tests
 
-- Use `Video-Twilio` scheme.
-- Use `Video-TwilioTests` target.
-- Use [Quick and Nimble](https://github.com/Quick/Quick) to write unit tests.
-- Use [Swift Mock Generator](https://github.com/seanhenry/SwiftMockGeneratorForXcode) to create mocks.
+For unit tests use:
+
+- `Video-Twilio` scheme.
+- `Video-TwilioTests` target.
+- [Quick and Nimble](https://github.com/Quick/Quick) to write unit tests.
+- [Swift Mock Generator](https://github.com/seanhenry/SwiftMockGeneratorForXcode) to create mocks.
 
 ### UI Tests
 

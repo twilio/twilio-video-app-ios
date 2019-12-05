@@ -23,6 +23,8 @@ Twilio employees should follow these instructions for internal testing.
 
 ## UI Tests
 
-- Use `Video-TwilioUITests` scheme.
-- Use `Video-TwilioUITests` target. 
-- Use [Nimble](https://github.com/Quick/Quick) for assertions.
+For UI tests use:
+
+- `Video-TwilioUITests` scheme.
+- `Video-TwilioUITests` target. 
+- [Nimble](https://github.com/Quick/Quick) for assertions.
