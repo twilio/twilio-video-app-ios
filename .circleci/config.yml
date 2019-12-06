@@ -19,11 +19,9 @@ commands:
       - run:
           name: Install credentials
           command: |
-            mkdir -p VideoApp/VideoApp/Credentials || true
-            base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o VideoApp/VideoApp/Credentials/GoogleService-Info.plist
-            base64 -D \<<< $TWILIO_CREDENTIALS_JSON -o VideoApp/VideoApp/Credentials/TwilioCredentials.json
-            base64 -D \<<< $INTERNAL_CREDENTIALS_JSON -o VideoApp/VideoApp/Credentials/InternalCredentials.json
-            base64 -D \<<< $COMMUNITY_CREDENTIALS_JSON -o VideoApp/VideoApp/Credentials/CommunityCredentials.json
+            mkdir -p Credentials || true
+            base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o Credentials/GoogleService-Info.plist
+            base64 -D \<<< $TEST_CREDENTIALS_JSON -o Credentials/TestCredentials.json
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
@@ -60,7 +58,7 @@ jobs:
     executor: macos_executor
     steps:
       - test:
-          scheme: Video-Twilio
+          scheme: Video-TwilioUITests
   test_community_app:
     executor: macos_executor
     steps:

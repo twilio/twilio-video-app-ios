@@ -25,3 +25,10 @@ target 'Video-Twilio' do
     # Identical to Video-Twilio
   end
 end
+
+# Don't inherit pods like other targets for good black box testing
+target 'Video-TwilioUITests' do
+  project 'VideoApp/VideoApp.xcodeproj'
+
+  pod 'Nimble'
+end
