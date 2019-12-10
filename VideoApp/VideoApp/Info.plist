@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>firebase_crashlytics_collection_enabled</key>
+	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -23,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.285008367772-sicp85rhlnke78hufdlt29d8ds1av6bs</string>
+				<string>com.googleusercontent.apps.285008367772-vak0a7utphkn8j4o401gcdsm9ee7oibf</string>
 			</array>
 		</dict>
 	</array>

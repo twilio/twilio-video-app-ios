@@ -1,12 +1,11 @@
 platform :ios, '11.0'
-
 use_frameworks!
-
 workspace 'VideoApp'
 
 target 'Video-Twilio' do
   project 'VideoApp/VideoApp.xcodeproj'
 
+  pod 'Crashlytics', '3.14.0'
   pod 'TwilioVideo'
   pod 'Firebase/Analytics', '~> 4.10'
   pod 'FirebaseUI/Auth'

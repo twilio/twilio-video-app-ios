@@ -16,7 +16,7 @@ platform :ios do
       scheme: "Video-Internal",
       export_options: {
         method: "enterprise",
-        compileBitcode: true,
+        compileBitcode: false,
         thinning: "<none>",
         signingStyle: "manual",
         signingCertificate: "iPhone Distribution: Twilio, Inc.",
@@ -25,6 +25,8 @@ platform :ios do
         }
       }
     ) 
+
+    upload_symbols_to_crashlytics()
 
     appcenter_upload(
       api_token: ENV["APP_CENTER_API_KEY"],
