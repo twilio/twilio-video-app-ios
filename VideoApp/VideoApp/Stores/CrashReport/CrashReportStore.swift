@@ -27,9 +27,9 @@ import Crashlytics
     private var crashlytics: Crashlytics?
     
     func start() {
-        // https://firebase.googleblog.com/2019/03/crashlytics-versions.html
         guard gCurrentAppEnvironment == .internal else { return }
         
+        // https://firebase.googleblog.com/2019/03/crashlytics-versions.html
         #if !DEBUG
         Fabric.with([Crashlytics.self])
         crashlytics = Crashlytics.sharedInstance()
