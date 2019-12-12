@@ -33,21 +33,32 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         viewModelFactory: editIdentityViewModalFactory
                     )
                 ]
+            ),
+            .init(
+                rows: [
+                    .push(
+                        title: "Developer",
+                        viewControllerFactory: DeveloperSettingsViewControllerFactory()
+                    )
+                ]
             )
         ]
     }
     private let appSettingsStore: AppSettingsStoreWriting
     private let userStore: UserStoreReading
+    private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
     private let selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     
     init(appSettingsStore: AppSettingsStoreWriting,
          userStore: UserStoreReading,
+         crashReportStore: CrashReportStoreWriting,
          editIdentityViewModalFactory: EditTextViewModelFactory,
          selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
+        self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
         self.selectAPIEnvironmentViewModelFactory = selectAPIEnvironmentViewModelFactory
     }

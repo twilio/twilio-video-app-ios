@@ -16,18 +16,11 @@
 
 import UIKit
 
-class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
+class DeveloperSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        let appSettingsStore = AppSettingsStore(userDefaults: .standard)
-        viewController.viewModel = AdvancedSettingsViewModel(
-            appSettingsStore: appSettingsStore,
-            userStore: UserStore(appSettingsStore: appSettingsStore, authStore: AuthStore.shared),
-            crashReportStore: CrashReportStore.shared,
-            editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
-            selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory()
-        )
+        viewController.viewModel = DeveloperSettingsViewModel(crashReportStore: CrashReportStore.shared)
         return viewController
     }
 }

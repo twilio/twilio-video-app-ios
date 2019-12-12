@@ -29,6 +29,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AuthStore.shared start];
+    [CrashReportStore.shared start];
     [TwilioVideoSDK setLogLevel:TVILogLevelInfo];
 
     NSLog(@"Twilio Video App Version: %@", [self applicationVersionString]);
@@ -45,8 +47,6 @@
             NSLog(@"Twilio Video App Environment: Community");
             break;
     }
-
-    [AuthStore.shared start];
 
     if (@available(iOS 13, *)) {
         // Do nothing because SceneDelegate will handle it

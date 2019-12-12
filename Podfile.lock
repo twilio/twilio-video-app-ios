@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
   - Firebase/Analytics (4.13.0):
     - Firebase/Core
   - Firebase/Auth (4.13.0):
@@ -50,6 +53,7 @@ PODS:
   - TwilioVideo (3.0.0)
 
 DEPENDENCIES:
+  - Crashlytics (= 3.14.0)
   - Firebase/Analytics (~> 4.10)
   - FirebaseUI/Auth
   - FirebaseUI/Google
@@ -59,6 +63,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -74,6 +80,8 @@ SPEC REPOS:
     - TwilioVideo
 
 SPEC CHECKSUMS:
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
@@ -88,6 +96,6 @@ SPEC CHECKSUMS:
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 9998112441979eef59dfa235f808cd097465b064
 
-PODFILE CHECKSUM: e943ef8a6e77253e5e228e539a63d16a9fbc5ba5
+PODFILE CHECKSUM: 4066c7ddc47b7099774a95a9281e86a74429b6be
 
 COCOAPODS: 1.8.4

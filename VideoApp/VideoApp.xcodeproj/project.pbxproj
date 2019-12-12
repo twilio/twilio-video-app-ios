@@ -108,6 +108,15 @@
 		DC0446AC239848A90072F597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0446AA239848A90072F597 /* GoogleService-Info.plist */; };
 		DC0446AE23984BF90072F597 /* TestCredentials.json.example in Resources */ = {isa = PBXBuildFile; fileRef = DC0446AD23984BF90072F597 /* TestCredentials.json.example */; };
 		DC0446B2239855090072F597 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B1239855090072F597 /* UITestCase.swift */; };
+		DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
+		DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
+		DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
+		DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
+		DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
+		DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
+		DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
+		DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
+		DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -388,6 +397,9 @@
 		DC0446AA239848A90072F597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Credentials/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC0446AD23984BF90072F597 /* TestCredentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestCredentials.json.example; sourceTree = "<group>"; };
 		DC0446B1239855090072F597 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
+		DC0446B723A182980072F597 /* CrashReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportStore.swift; sourceTree = "<group>"; };
+		DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewModel.swift; sourceTree = "<group>"; };
+		DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -711,6 +723,23 @@
 			path = UITestCase;
 			sourceTree = "<group>";
 		};
+		DC0446B623A182780072F597 /* CrashReport */ = {
+			isa = PBXGroup;
+			children = (
+				DC0446B723A182980072F597 /* CrashReportStore.swift */,
+			);
+			path = CrashReport;
+			sourceTree = "<group>";
+		};
+		DC0446C923A2EDFB0072F597 /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */,
+				DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +852,7 @@
 				DCF4614F23859B9A00DD8FEA /* AppInfo */,
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
+				DC0446B623A182780072F597 /* CrashReport */,
 				DC04468F238F1E2D0072F597 /* User */,
 			);
 			path = Stores;
@@ -858,6 +888,7 @@
 			children = (
 				DCAEBF51238488CC00141D2D /* Advanced */,
 				DCAEBF4E2384887B00141D2D /* Core */,
+				DC0446C923A2EDFB0072F597 /* Developer */,
 				DCAEBF50238488C500141D2D /* General */,
 			);
 			path = Settings;
@@ -998,6 +1029,7 @@
 				4B0012401FBA52C4004A587E /* Resources */,
 				01EF4628CA377DFEB0B1E9E6 /* [CP] Embed Pods Frameworks */,
 				3F2802B0738EDB0C0DA6E5CF /* [CP] Copy Pods Resources */,
+				DC0446B423A02E660072F597 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1582,6 +1614,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC0446B423A02E660072F597 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1601,6 +1651,8 @@
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
+				DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
+				DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				24A5984D1ECCC4D4003466B4 /* LocalMediaController.m in Sources */,
 				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
@@ -1608,6 +1660,7 @@
 				248D94A71ED3176000FC8A94 /* VideoCollectionViewCell.m in Sources */,
 				242D1C16217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */,
+				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
@@ -1682,6 +1735,8 @@
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */,
+				DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
+				DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				4B0012251FBA52C4004A587E /* LocalMediaController.m in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
@@ -1689,6 +1744,7 @@
 				4B0012271FBA52C4004A587E /* VideoCollectionViewCell.m in Sources */,
 				242D1C17217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				4B0012281FBA52C4004A587E /* LoginViewController.m in Sources */,
+				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
@@ -1763,6 +1819,8 @@
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */,
+				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
+				DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				4B0012621FBA52E5004A587E /* LocalMediaController.m in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
@@ -1770,6 +1828,7 @@
 				4B0012641FBA52E5004A587E /* VideoCollectionViewCell.m in Sources */,
 				242D1C18217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				4B0012651FBA52E5004A587E /* LoginViewController.m in Sources */,
+				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
@@ -1945,7 +2004,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1965,6 +2023,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PACKAGE_ROOT = "$(SRCROOT)/..";
 				SCRIPTS_DIR = "$(PACKAGE_ROOT)/Scripts";
 				SDKROOT = iphoneos;
@@ -2004,7 +2063,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2017,6 +2075,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "";
 				PACKAGE_ROOT = "$(SRCROOT)/..";
 				SCRIPTS_DIR = "$(PACKAGE_ROOT)/Scripts";
 				SDKROOT = iphoneos;
