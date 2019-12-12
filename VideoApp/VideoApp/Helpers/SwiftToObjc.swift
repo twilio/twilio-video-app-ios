@@ -17,7 +17,21 @@
 import Foundation
 
 @objc class SwiftToObjc: NSObject {
+    @objc static var enableVP8Simulcast: Bool { AppSettingsStore(userDefaults: .standard).videoCodec == .vp8Simulcast }
+    @objc static var forceTURNMediaRelay: Bool { AppSettingsStore(userDefaults: .standard).isTURNMediaRelayOn }
     @objc static var userDisplayName: String {
         UserStore(appSettingsStore: AppSettingsStore(userDefaults: .standard), authStore: AuthStore.shared).user.displayName
+    }
+
+    @objc static func prepareForShowSettingsSegue(_ segue: UIStoryboardSegue) {
+        let navigationController = segue.destination as! UINavigationController
+        let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
+        settingsViewController.viewModel = GeneralSettingsViewModel(
+            appInfoStore: AppInfoStore(bundle: Bundle.main),
+            appSettingsStore: AppSettingsStore(userDefaults: .standard),
+            authStore: AuthStore.shared,
+            selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
+            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
+        )
     }
 }

@@ -171,7 +171,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                    builder.audioTracks = self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[];
                                                                    builder.videoTracks = self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[];
 
-                                                                   if (RoomViewControllerSwift.enableVP8Simulcast) {
+                                                                   if (SwiftToObjc.enableVP8Simulcast) {
                                                                        builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
                                                                    } else {
                                                                        builder.preferredVideoCodecs = @[[TVIH264Codec new]];
@@ -179,7 +179,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                                                                                            videoBitrate:1200];
                                                                    }
 
-                                                                   if (RoomViewControllerSwift.forceTURNMediaRelay) {
+                                                                   if (SwiftToObjc.forceTURNMediaRelay) {
                                                                        builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
                                                                            builder.abortOnIceServersTimeout = YES;
                                                                            builder.iceServersTimeout = 30;

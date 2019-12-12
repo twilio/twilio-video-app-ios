@@ -135,15 +135,9 @@
 		DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
 		DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
 		DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
-		DC44C2EE2387790100205174 /* RoomViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */; };
-		DC44C2EF2387790100205174 /* RoomViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */; };
-		DC44C2F02387790100205174 /* RoomViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */; };
 		DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
-		DC45688A2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */; };
-		DC45688B2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */; };
-		DC45688C2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */; };
 		DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
 		DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
 		DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
@@ -400,9 +394,7 @@
 		DC44C2E123875C4F00205174 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionSegueSender.swift; sourceTree = "<group>"; };
 		DC44C2E923876B4700205174 /* EditTextSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextSegueSender.swift; sourceTree = "<group>"; };
-		DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerSwift.swift; sourceTree = "<group>"; };
 		DC4568852385D5490069BB5A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewControllerSwift.swift; sourceTree = "<group>"; };
 		DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioVideoAppAPIProtocol.swift; sourceTree = "<group>"; };
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
 		DC4E4E2223577EE500C5D313 /* Topology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topology.swift; sourceTree = "<group>"; };
@@ -702,7 +694,6 @@
 			children = (
 				241282401E36A6AB002198BE /* LobbyViewController.h */,
 				241282411E36A6AB002198BE /* LobbyViewController.m */,
-				DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */,
 			);
 			path = Lobby;
 			sourceTree = "<group>";
@@ -712,7 +703,6 @@
 			children = (
 				24927E2D1ECC9E44006510E3 /* RoomViewController.h */,
 				24927E2E1ECC9E44006510E3 /* RoomViewController.m */,
-				DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1704,10 +1694,8 @@
 				DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DC45688A2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */,
 				DC04468C238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
-				DC44C2EE2387790100205174 /* RoomViewControllerSwift.swift in Sources */,
 				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DC044688238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */,
@@ -1786,10 +1774,8 @@
 				DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DC45688B2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */,
 				DC04468D238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
-				DC44C2EF2387790100205174 /* RoomViewControllerSwift.swift in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DC044689238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
@@ -1868,10 +1854,8 @@
 				DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DC45688C2385D5A40069BB5A /* LobbyViewControllerSwift.swift in Sources */,
 				DC04468E238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
-				DC44C2F02387790100205174 /* RoomViewControllerSwift.swift in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DC04468A238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,

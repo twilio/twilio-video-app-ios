@@ -158,7 +158,7 @@
         self.roomViewController.roomName = self.roomTextField.text;
         self.roomViewController.localMediaController = self.localMediaController;
     } else if ([segue.identifier isEqualToString:@"showSettings"]) {
-        [LobbyViewControllerSwift prepareForShowSettingsSegue:segue];
+        [SwiftToObjc prepareForShowSettingsSegue:segue];
     }
 }
 
