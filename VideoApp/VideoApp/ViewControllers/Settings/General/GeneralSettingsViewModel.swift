@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import Foundation
+import TwilioVideo
 
 class GeneralSettingsViewModel: SettingsViewModel {
     let title = "Settings"
@@ -23,8 +23,12 @@ class GeneralSettingsViewModel: SettingsViewModel {
             SettingsViewModelSection(
                 rows: [
                     .info(
-                        title: "Version",
+                        title: "App Version",
                         detail: appInfoStore.appInfo.version
+                    ),
+                    .info(
+                        title: "SDK Version",
+                        detail: TwilioVideoSDK.sdkVersion()
                     )
                 ]
             ),
