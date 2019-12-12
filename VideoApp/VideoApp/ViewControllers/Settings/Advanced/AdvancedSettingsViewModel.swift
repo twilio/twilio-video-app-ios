@@ -36,9 +36,9 @@ class AdvancedSettingsViewModel: SettingsViewModel {
             ),
             .init(
                 rows: [
-                    .destructiveButton(
-                        title: "Test Crash Report",
-                        tapHandler: { self.crashReportStore.crash() }
+                    .push(
+                        title: "Developer",
+                        viewControllerFactory: DeveloperSettingsViewControllerFactory()
                     )
                 ]
             )

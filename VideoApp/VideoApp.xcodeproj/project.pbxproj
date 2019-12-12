@@ -111,6 +111,12 @@
 		DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
+		DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
+		DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
+		DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
+		DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
+		DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
+		DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -392,6 +398,8 @@
 		DC0446AD23984BF90072F597 /* TestCredentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestCredentials.json.example; sourceTree = "<group>"; };
 		DC0446B1239855090072F597 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		DC0446B723A182980072F597 /* CrashReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportStore.swift; sourceTree = "<group>"; };
+		DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewModel.swift; sourceTree = "<group>"; };
+		DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -723,6 +731,15 @@
 			path = CrashReport;
 			sourceTree = "<group>";
 		};
+		DC0446C923A2EDFB0072F597 /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */,
+				DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +888,7 @@
 			children = (
 				DCAEBF51238488CC00141D2D /* Advanced */,
 				DCAEBF4E2384887B00141D2D /* Core */,
+				DC0446C923A2EDFB0072F597 /* Developer */,
 				DCAEBF50238488C500141D2D /* General */,
 			);
 			path = Settings;
@@ -1633,6 +1651,8 @@
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
+				DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
+				DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				24A5984D1ECCC4D4003466B4 /* LocalMediaController.m in Sources */,
 				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
@@ -1715,6 +1735,8 @@
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */,
+				DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
+				DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				4B0012251FBA52C4004A587E /* LocalMediaController.m in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
@@ -1797,6 +1819,8 @@
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */,
+				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
+				DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				4B0012621FBA52E5004A587E /* LocalMediaController.m in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
