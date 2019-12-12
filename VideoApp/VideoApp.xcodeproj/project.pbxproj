@@ -571,19 +571,11 @@
 		24491F791E37F89F00028B24 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
-				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
-				241282401E36A6AB002198BE /* LobbyViewController.h */,
-				241282411E36A6AB002198BE /* LobbyViewController.m */,
-				DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */,
-				24491F7B1E37F8F000028B24 /* LoginViewController.h */,
-				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
-				24927E2D1ECC9E44006510E3 /* RoomViewController.h */,
-				24927E2E1ECC9E44006510E3 /* RoomViewController.m */,
-				DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */,
+				DC0446C323A2D5D10072F597 /* Lobby */,
+				DC0446C423A2D5E70072F597 /* Room */,
 				DCAEBF4B2384880300141D2D /* Settings */,
-				24A723E11ECE1C8500486E7A /* StatsViewController.h */,
-				24A723E21ECE1C8500486E7A /* StatsViewController.m */,
+				DC0446C623A2D6DC0072F597 /* SignIn */,
+				DC0446C523A2D6180072F597 /* Stats */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -612,26 +604,8 @@
 		24A723E81ECE1D2A00486E7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DC44C2C023870D0800205174 /* BasicCell.swift */,
-				DC44C2C123870D0800205174 /* BasicCell.xib */,
-				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
-				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
-				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
-				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
-				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
-				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
-				24A598511ECCE069003466B4 /* RoundButton.h */,
-				24A598521ECCE069003466B4 /* RoundButton.m */,
-				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
-				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
-				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
-				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
-				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
-				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
-				24CF99DA1ECF36E8007C8631 /* VariableAlphaToggleButton.h */,
-				24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */,
-				248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */,
-				248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */,
+				DC0446C823A2D7E50072F597 /* Buttons */,
+				DC0446C723A2D7720072F597 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -721,6 +695,80 @@
 				DC0446B723A182980072F597 /* CrashReportStore.swift */,
 			);
 			path = CrashReport;
+			sourceTree = "<group>";
+		};
+		DC0446C323A2D5D10072F597 /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				241282401E36A6AB002198BE /* LobbyViewController.h */,
+				241282411E36A6AB002198BE /* LobbyViewController.m */,
+				DC4568892385D5A40069BB5A /* LobbyViewControllerSwift.swift */,
+			);
+			path = Lobby;
+			sourceTree = "<group>";
+		};
+		DC0446C423A2D5E70072F597 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				24927E2D1ECC9E44006510E3 /* RoomViewController.h */,
+				24927E2E1ECC9E44006510E3 /* RoomViewController.m */,
+				DC44C2ED2387790100205174 /* RoomViewControllerSwift.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		DC0446C523A2D6180072F597 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				24A723E11ECE1C8500486E7A /* StatsViewController.h */,
+				24A723E21ECE1C8500486E7A /* StatsViewController.m */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		DC0446C623A2D6DC0072F597 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
+				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
+				24491F7B1E37F8F000028B24 /* LoginViewController.h */,
+				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		DC0446C723A2D7720072F597 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2C023870D0800205174 /* BasicCell.swift */,
+				DC44C2C123870D0800205174 /* BasicCell.xib */,
+				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
+				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
+				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
+				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
+				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
+				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
+				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
+				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
+				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
+				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
+				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
+				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
+				248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */,
+				248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DC0446C823A2D7E50072F597 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				24A598511ECCE069003466B4 /* RoundButton.h */,
+				24A598521ECCE069003466B4 /* RoundButton.m */,
+				24CF99DA1ECF36E8007C8631 /* VariableAlphaToggleButton.h */,
+				24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		DC44C2CC23871C2000205174 /* Helpers */ = {
