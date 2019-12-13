@@ -16,8 +16,14 @@
 
 import Foundation
 
-class SelectVideoCodecViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectVideoCodecViewModel(appSettingsStore: AppSettingsStore.shared)
-    }
+protocol NotificationCenterProtocol {
+    @discardableResult func addObserver(
+        forName name: NSNotification.Name?,
+        object obj: Any?,
+        queue: OperationQueue?,
+        using block: @escaping (Notification) -> Void
+    ) -> NSObjectProtocol
+    func post(name aName: NSNotification.Name, object anObject: Any?)
 }
+
+extension NotificationCenter: NotificationCenterProtocol {}

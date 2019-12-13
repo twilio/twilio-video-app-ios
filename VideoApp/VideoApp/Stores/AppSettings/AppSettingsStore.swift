@@ -22,59 +22,33 @@ protocol AppSettingsStoreWriting: AnyObject {
     var topology: Topology { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
+    func start()
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
-    static let didChangeNotification = UserDefaults.didChangeNotification
-    private enum Keys {
-        static let apiEnvironment = "apiEnvironmentSetting"
-        static let videoCodec = "videoCodecSetting"
-        static let topology = "topologySetting"
-        static let userIdentity = "userIdentitySetting"
-        static let isTURNMediaRelayOn = "isTURNMediaRelayOnSetting"
+    @Storage(key: makeKey("apiEnvironment"), defaultValue: APIEnvironment.production) var apiEnvironment: APIEnvironment
+    @Storage(key: makeKey("videoCodec"), defaultValue: VideoCodec.h264) var videoCodec: VideoCodec
+    @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
+    @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
+    @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
+
+    static var shared: AppSettingsStoreWriting = AppSettingsStore(notificationCenter: NotificationCenter.default, queue: DispatchQueue.main)
+    private let notificationCenter: NotificationCenterProtocol
+    private let queue: DispatchQueueProtocol
+    
+    private static func makeKey(_ appSetting: String) -> String {
+        return appSetting + "AppSetting"
+    }
+    
+    init(notificationCenter: NotificationCenterProtocol, queue: DispatchQueueProtocol) {
+        self.notificationCenter = notificationCenter
+        self.queue = queue
     }
 
-    var apiEnvironment: APIEnvironment {
-        get {
-            guard let rawAPIEnvironment = userDefaults.string(forKey: Keys.apiEnvironment), let apiEnvironment = APIEnvironment(rawValue: rawAPIEnvironment) else {
-                return .production
-            }
-            
-            return apiEnvironment
+    func start() {
+        notificationCenter.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
+            // Main queue for UI and async to prevent simultaneous access crash
+            self?.queue.async { self?.notificationCenter.post(name: .appSettingDidChange, object: self) }
         }
-        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.apiEnvironment) }
-    }
-    var videoCodec: VideoCodec {
-        get {
-            guard let rawVideoCodec = userDefaults.string(forKey: Keys.videoCodec), let videoCodec = VideoCodec(rawValue: rawVideoCodec) else {
-                return .h264
-            }
-            
-            return videoCodec
-        }
-        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.videoCodec) }
-    }
-    var topology: Topology {
-        get {
-            guard let rawTopology = userDefaults.string(forKey: Keys.topology), let topology = Topology(rawValue: rawTopology) else {
-                return .group
-            }
-            
-            return topology
-        }
-        set { userDefaults.setValue(newValue.rawValue, forKey: Keys.topology) }
-    }
-    var userIdentity: String {
-        get { userDefaults.string(forKey: Keys.userIdentity) ?? "" }
-        set { userDefaults.setValue(newValue, forKey: Keys.userIdentity) }
-    }
-    var isTURNMediaRelayOn: Bool {
-        get { userDefaults.bool(forKey: Keys.isTURNMediaRelayOn) }
-        set { userDefaults.setValue(newValue, forKey: Keys.isTURNMediaRelayOn) }
-    }
-    private let userDefaults: UserDefaults
-    
-    init(userDefaults: UserDefaults) {
-        self.userDefaults = userDefaults
     }
 }

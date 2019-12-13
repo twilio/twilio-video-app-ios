@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum Topology: String, CaseIterable {
+enum Topology: String, CaseIterable, Codable {
     case group
     case peerToPeer
     

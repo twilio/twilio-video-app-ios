@@ -18,9 +18,6 @@ import Foundation
 
 class EditUserIdentityViewModelFactory: EditTextViewModelFactory {
     func makeEditTextViewModel() -> EditTextViewModel {
-        EditUserIdentityViewModel(
-            appSettingsStore: AppSettingsStore(userDefaults: .standard),
-            authStore: AuthStore.shared
-        )
+        EditUserIdentityViewModel(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared)
     }
 }

@@ -29,6 +29,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [SwiftToObjc startAppSettingsStore];
     [AuthStore.shared start];
     [CrashReportStore.shared start];
     [TwilioVideoSDK setLogLevel:TVILogLevelInfo];

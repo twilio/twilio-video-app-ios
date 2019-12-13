@@ -73,7 +73,7 @@
     [self.localMediaController createLocalAudioTrack];
     [self.localMediaController createLocalVideoTrack];
     
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(refresh) name:SwiftToObjc.AppSettingsStoreDidChangeNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(refresh) name:SwiftToObjc.appSettingsStoreDidChangeNotificationName object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

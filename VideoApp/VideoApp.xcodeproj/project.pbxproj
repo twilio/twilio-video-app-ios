@@ -117,6 +117,18 @@
 		DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
 		DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
 		DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
+		DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446DA23A40E3E0072F597 /* Storage.swift */; };
+		DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446DA23A40E3E0072F597 /* Storage.swift */; };
+		DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446DA23A40E3E0072F597 /* Storage.swift */; };
+		DC1C2F7E23A445740044FB4D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F7D23A445740044FB4D /* Notifications.swift */; };
+		DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F7D23A445740044FB4D /* Notifications.swift */; };
+		DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F7D23A445740044FB4D /* Notifications.swift */; };
+		DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */; };
+		DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */; };
+		DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */; };
+		DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
+		DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
+		DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -394,6 +406,10 @@
 		DC0446B723A182980072F597 /* CrashReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportStore.swift; sourceTree = "<group>"; };
 		DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewModel.swift; sourceTree = "<group>"; };
 		DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		DC0446DA23A40E3E0072F597 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		DC1C2F7D23A445740044FB4D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueProtocol.swift; sourceTree = "<group>"; };
+		DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -781,6 +797,9 @@
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */,
+				DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */,
+				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
 				DC044698238F20130072F597 /* SwiftToObjc.swift */,
 				243CDB4922665F1800637B6B /* TwilioColors.swift */,
@@ -795,6 +814,7 @@
 			children = (
 				DC044683238EF6C20072F597 /* APIEnvironment.swift */,
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
+				DC0446DA23A40E3E0072F597 /* Storage.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
 				4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */,
@@ -1678,6 +1698,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC044691238F1E3C0072F597 /* UserStore.swift in Sources */,
+				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -1687,6 +1708,7 @@
 				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
 				DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
@@ -1733,6 +1755,7 @@
 				24C239F61EDF263800AA9419 /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
+				DC1C2F7E23A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */,
 				2412823F1E36A6AB002198BE /* AppDelegate.m in Sources */,
 				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
@@ -1748,6 +1771,7 @@
 				24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
+				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
@@ -1760,6 +1784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
+				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -1769,6 +1794,7 @@
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */,
 				DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
@@ -1815,6 +1841,7 @@
 				4B00122D1FBA52C4004A587E /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
+				DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
 				4B00122E1FBA52C4004A587E /* AppDelegate.m in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
@@ -1830,6 +1857,7 @@
 				4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
+				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */,
@@ -1842,6 +1870,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
+				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -1851,6 +1880,7 @@
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */,
 				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
@@ -1897,6 +1927,7 @@
 				4B00126A1FBA52E5004A587E /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
+				DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
 				4B00126B1FBA52E5004A587E /* AppDelegate.m in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
@@ -1912,6 +1943,7 @@
 				4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
+				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */,
