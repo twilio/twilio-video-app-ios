@@ -25,6 +25,7 @@ protocol AppSettingsStoreWriting: AnyObject {
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
+    static let didChangeNotification = UserDefaults.didChangeNotification
     private enum Keys {
         static let apiEnvironment = "apiEnvironmentSetting"
         static let videoCodec = "videoCodecSetting"

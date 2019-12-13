@@ -72,11 +72,17 @@
     [self.localMediaController addDelegate:self];
     [self.localMediaController createLocalAudioTrack];
     [self.localMediaController createLocalVideoTrack];
+    
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(refresh) name:SwiftToObjc.AppSettingsStoreDidChangeNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    [self refresh];
+}
+
+- (void)refresh {
     self.loggedInUser.text = SwiftToObjc.userDisplayName;
     self.audioToggleButton.selected = !self.localMediaController.localAudioTrack;
     self.videoToggleButton.selected = !self.localMediaController.localVideoTrack;

@@ -17,6 +17,7 @@
 import Foundation
 
 @objc class SwiftToObjc: NSObject {
+    @objc static var AppSettingsStoreDidChangeNotification: NSNotification.Name { AppSettingsStore.didChangeNotification }
     @objc static var enableVP8Simulcast: Bool { AppSettingsStore(userDefaults: .standard).videoCodec == .vp8Simulcast }
     @objc static var forceTURNMediaRelay: Bool { AppSettingsStore(userDefaults: .standard).isTURNMediaRelayOn }
     @objc static var userDisplayName: String {
