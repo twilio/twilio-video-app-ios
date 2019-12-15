@@ -117,4 +117,10 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             return stubbedIsTURNMediaRelayOn
         }
     }
+    var invokedStart = false
+    var invokedStartCount = 0
+    func start() {
+        invokedStart = true
+        invokedStartCount += 1
+    }
 }
