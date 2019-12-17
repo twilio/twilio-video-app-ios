@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum VideoCodec: String, CaseIterable {
+enum VideoCodec: String, CaseIterable, Codable {
     case h264
     case vp8Simulcast
     

@@ -60,7 +60,6 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 @property (nonatomic, strong) TVIRoom *room;
 
 @property (nonatomic, weak) StatsViewController *statsViewController;
-@property (nonatomic, assign) BOOL shoudldCollectStats;
 @property (nonatomic, strong) NSTimer *statsTimer;
 @property (nonatomic, strong) NSOperationQueue *statsProcessingQueue;
 
@@ -75,8 +74,6 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.shoudldCollectStats = YES;
 
     // Stats view controller
     self.statsViewController = (StatsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"statsViewController"];
@@ -174,7 +171,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                    builder.audioTracks = self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[];
                                                                    builder.videoTracks = self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[];
 
-                                                                   if (RoomViewControllerSwift.enableVP8Simulcast) {
+                                                                   if (SwiftToObjc.enableVP8Simulcast) {
                                                                        builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
                                                                    } else {
                                                                        builder.preferredVideoCodecs = @[[TVIH264Codec new]];
@@ -182,7 +179,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                                                                                            videoBitrate:1200];
                                                                    }
 
-                                                                   if (RoomViewControllerSwift.forceTURNMediaRelay) {
+                                                                   if (SwiftToObjc.forceTURNMediaRelay) {
                                                                        builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
                                                                            builder.abortOnIceServersTimeout = YES;
                                                                            builder.iceServersTimeout = 30;
@@ -551,8 +548,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
         participant.delegate = self;
     }
 
-    // If we are supposed to be collecting stats, and we aren't yet, we should kick off stats gathering.
-    if (self.shoudldCollectStats && self.statsTimer == nil) {
+    if (self.statsTimer == nil) {
         self.statsProcessingQueue = [[NSOperationQueue alloc] init];
         self.statsProcessingQueue.maxConcurrentOperationCount = 1;
 

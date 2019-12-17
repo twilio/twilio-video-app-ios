@@ -18,6 +18,6 @@ import Foundation
 
 class SelectTopologyViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectTopologyViewModel(appSettingsStore: AppSettingsStore(userDefaults: .standard))
+        SelectTopologyViewModel(appSettingsStore: AppSettingsStore.shared)
     }
 }

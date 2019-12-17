@@ -26,7 +26,10 @@ class SettingsViewController: UITableViewController {
 
         [BasicCell.self, RightDetailCell.self, SwitchCell.self, DestructiveButtonCell.self].forEach { tableView.register($0) }
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         if !(navigationController?.viewControllers.first === self) {
+            navigationItem.largeTitleDisplayMode = .never
             navigationItem.rightBarButtonItem = nil
         }
     }

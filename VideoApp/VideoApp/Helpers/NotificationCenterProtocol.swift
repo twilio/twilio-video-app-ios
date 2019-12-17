@@ -16,7 +16,14 @@
 
 import Foundation
 
-@objc class RoomViewControllerSwift: NSObject {
-    @objc static var enableVP8Simulcast: Bool { AppSettingsStore(userDefaults: .standard).videoCodec == .vp8Simulcast }
-    @objc static var forceTURNMediaRelay: Bool { AppSettingsStore(userDefaults: .standard).isTURNMediaRelayOn }
+protocol NotificationCenterProtocol {
+    @discardableResult func addObserver(
+        forName name: NSNotification.Name?,
+        object obj: Any?,
+        queue: OperationQueue?,
+        using block: @escaping (Notification) -> Void
+    ) -> NSObjectProtocol
+    func post(name aName: NSNotification.Name, object anObject: Any?)
 }
+
+extension NotificationCenter: NotificationCenterProtocol {}

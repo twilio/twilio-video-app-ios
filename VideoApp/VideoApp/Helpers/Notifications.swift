@@ -16,8 +16,6 @@
 
 import Foundation
 
-class SelectVideoCodecViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectVideoCodecViewModel(appSettingsStore: AppSettingsStore.shared)
-    }
+extension Notification.Name {
+    static let appSettingDidChange = Notification.Name("AppSettingDidChange")
 }

@@ -17,7 +17,26 @@
 import Foundation
 
 @objc class SwiftToObjc: NSObject {
+    @objc static var appSettingsStoreDidChangeNotificationName: String { Notification.Name.appSettingDidChange.rawValue }
+    @objc static var enableVP8Simulcast: Bool { AppSettingsStore.shared.videoCodec == .vp8Simulcast }
+    @objc static var forceTURNMediaRelay: Bool { AppSettingsStore.shared.isTURNMediaRelayOn }
     @objc static var userDisplayName: String {
-        UserStore(appSettingsStore: AppSettingsStore(userDefaults: .standard), authStore: AuthStore.shared).user.displayName
+        UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared).user.displayName
+    }
+
+    @objc static func prepareForShowSettingsSegue(_ segue: UIStoryboardSegue) {
+        let navigationController = segue.destination as! UINavigationController
+        let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
+        settingsViewController.viewModel = GeneralSettingsViewModel(
+            appInfoStore: AppInfoStore(bundle: Bundle.main),
+            appSettingsStore: AppSettingsStore.shared,
+            authStore: AuthStore.shared,
+            selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
+            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
+        )
+    }
+    
+    @objc static func startAppSettingsStore() {
+        AppSettingsStore.shared.start()
     }
 }

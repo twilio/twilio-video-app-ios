@@ -16,8 +16,20 @@
 
 import Foundation
 
-class SelectVideoCodecViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectVideoCodecViewModel(appSettingsStore: AppSettingsStore.shared)
+protocol DispatchQueueProtocol {
+    func async(
+        group: DispatchGroup?,
+        qos: DispatchQoS,
+        flags: DispatchWorkItemFlags,
+        execute work: @escaping @convention(block) () -> Void
+    )
+    func async(execute work: @escaping @convention(block) () -> Void)
+}
+
+extension DispatchQueueProtocol {
+    func async(execute work: @escaping @convention(block) () -> Void) {
+        async(group: nil, qos: .default, flags: .noQoS, execute: work)
     }
 }
+
+extension DispatchQueue: DispatchQueueProtocol {}

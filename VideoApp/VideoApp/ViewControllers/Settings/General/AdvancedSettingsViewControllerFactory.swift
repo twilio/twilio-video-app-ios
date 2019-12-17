@@ -20,10 +20,9 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        let appSettingsStore = AppSettingsStore(userDefaults: .standard)
         viewController.viewModel = AdvancedSettingsViewModel(
-            appSettingsStore: appSettingsStore,
-            userStore: UserStore(appSettingsStore: appSettingsStore, authStore: AuthStore.shared),
+            appSettingsStore: AppSettingsStore.shared,
+            userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
             crashReportStore: CrashReportStore.shared,
             editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
             selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory()

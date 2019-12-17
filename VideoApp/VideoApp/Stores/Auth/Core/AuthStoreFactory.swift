@@ -22,7 +22,7 @@ class AuthStoreFactory {
         case .twilio, .internal:
             return AhoyAuthStore(
                 api: TwilioVideoAppAPI(),
-                appSettingsStore: AppSettingsStore(userDefaults: .standard),
+                appSettingsStore: AppSettingsStore.shared,
                 firebaseAuthStore: FirebaseAuthStore()
             )
         case .community:
