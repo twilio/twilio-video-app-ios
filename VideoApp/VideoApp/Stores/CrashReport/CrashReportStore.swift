@@ -23,11 +23,16 @@ import Crashlytics
 }
 
 @objc class CrashReportStore: NSObject, CrashReportStoreWriting {
-    @objc static let shared: CrashReportStoreWriting = CrashReportStore()
+    @objc static let shared: CrashReportStoreWriting = CrashReportStore(appInfoStore: AppInfoStoreFactory().makeAppInfoStore())
+    private let appInfoStore: AppInfoStoreReading
     private var crashlytics: Crashlytics?
     
+    init(appInfoStore: AppInfoStoreReading) {
+        self.appInfoStore = appInfoStore
+    }
+    
     func start() {
-        guard gCurrentAppEnvironment == .internal else { return }
+        guard appInfoStore.appInfo.targetName == .videoInternal else { return }
         
         // https://firebase.googleblog.com/2019/03/crashlytics-versions.html
         #if !DEBUG

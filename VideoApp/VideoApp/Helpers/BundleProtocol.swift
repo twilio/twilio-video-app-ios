@@ -14,17 +14,10 @@
 //  limitations under the License.
 //
 
-#ifndef VideoAppEnvironment_h
-#define VideoAppEnvironment_h
+import Foundation
 
-#import <Foundation/Foundation.h>
+protocol BundleProtocol {
+    func object(forInfoDictionaryKey key: String) -> Any?
+}
 
-typedef NS_ENUM(NSUInteger, VideoAppEnvironment) {
-    VideoAppEnvironmentTwilio = 0,
-    VideoAppEnvironmentInternal,
-    VideoAppEnvironmentCommunity
-};
-
-extern const VideoAppEnvironment gCurrentAppEnvironment;
-
-#endif /* VideoAppEnvironment_h */
+extension Bundle: BundleProtocol {}

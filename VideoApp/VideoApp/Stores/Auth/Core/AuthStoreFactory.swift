@@ -18,17 +18,15 @@ import Foundation
 
 class AuthStoreFactory {
     func makeAuthStore() -> AuthStoreEverything {
-        switch gCurrentAppEnvironment {
-        case .twilio, .internal:
+        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.targetName {
+        case .videoTwilio, .videoInternal:
             return AhoyAuthStore(
                 api: TwilioVideoAppAPI(),
                 appSettingsStore: AppSettingsStore.shared,
                 firebaseAuthStore: FirebaseAuthStore()
             )
-        case .community:
+        case .videoCommunity:
             return CommunityAuthStore()
-        @unknown default:
-            fatalError()
         }
     }
 }

@@ -129,6 +129,12 @@
 		DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
 		DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
 		DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
+		DC1C2F8E23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
+		DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
+		DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
+		DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
+		DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
+		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -202,9 +208,6 @@
 		DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
-		DCAEBEFA237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
-		DCAEBEFB237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
-		DCAEBEFC237A1EA600141D2D /* VideoAppEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */; };
 		DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
 		DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
 		DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
@@ -371,7 +374,6 @@
 		2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B00124E1FBA52C4004A587E /* Video-Internal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Internal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B00128B1FBA52E5004A587E /* Video-Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Community.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAppEnvironment.h; sourceTree = "<group>"; };
 		4F66C3D4CD6DB108A8F8EB06 /* Pods-Video-Twilio-Video-Internal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Internal.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal.release.xcconfig"; sourceTree = "<group>"; };
 		6A619E930BB6631879D05D9C /* Pods-Video-TwilioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-TwilioUITests.release.xcconfig"; path = "Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BF86F7A57DAC623A7A9F61B /* Pods-Video-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Community.debug.xcconfig"; path = "Target Support Files/Pods-Video-Community/Pods-Video-Community.debug.xcconfig"; sourceTree = "<group>"; };
@@ -410,6 +412,8 @@
 		DC1C2F7D23A445740044FB4D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
+		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
+		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -439,7 +443,6 @@
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
-		DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAppEnvironment.m; sourceTree = "<group>"; };
 		DCAEBF12238331A800141D2D /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		DCAEBF13238331A800141D2D /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonCell.swift; sourceTree = "<group>"; };
@@ -797,6 +800,7 @@
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */,
 				DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */,
 				DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */,
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
@@ -817,8 +821,6 @@
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
-				4B2286F01FBB9EE1000DFD48 /* VideoAppEnvironment.h */,
-				DCAEBEF9237A1EA600141D2D /* VideoAppEnvironment.m */,
 			);
 			path = AppSettings;
 			sourceTree = "<group>";
@@ -1050,6 +1052,7 @@
 			children = (
 				DCF4615023859BA400DD8FEA /* AppInfo.swift */,
 				DCF4615423859BB800DD8FEA /* AppInfoStore.swift */,
+				DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */,
 			);
 			path = AppInfo;
 			sourceTree = "<group>";
@@ -1707,6 +1710,8 @@
 				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
+				DC1C2F8E23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -1724,7 +1729,6 @@
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
-				DCAEBEFA237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
@@ -1793,6 +1797,8 @@
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
+				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -1810,7 +1816,6 @@
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
-				DCAEBEFB237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
@@ -1879,6 +1884,8 @@
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
+				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -1896,7 +1903,6 @@
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
-				DCAEBEFC237A1EA600141D2D /* VideoAppEnvironment.m in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
@@ -2163,7 +2169,6 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					APP_TYPE_TWILIO,
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
@@ -2196,10 +2201,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					APP_TYPE_TWILIO,
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;
@@ -2231,7 +2233,6 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					APP_TYPE_INTERNAL,
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
@@ -2264,10 +2265,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					APP_TYPE_INTERNAL,
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;
@@ -2299,7 +2297,6 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					APP_TYPE_COMMUNITY,
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
@@ -2332,10 +2329,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					APP_TYPE_COMMUNITY,
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;

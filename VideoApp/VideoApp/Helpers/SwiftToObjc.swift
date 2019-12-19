@@ -17,6 +17,13 @@
 import Foundation
 
 @objc class SwiftToObjc: NSObject {
+    @objc static var appEnvironment: String {
+        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.targetName {
+        case .videoTwilio: return "production"
+        case .videoInternal: return "internal"
+        case .videoCommunity: return "community"
+        }
+    }
     @objc static var appSettingsStoreDidChangeNotificationName: String { Notification.Name.appSettingDidChange.rawValue }
     @objc static var enableVP8Simulcast: Bool { AppSettingsStore.shared.videoCodec == .vp8Simulcast }
     @objc static var forceTURNMediaRelay: Bool { AppSettingsStore.shared.isTURNMediaRelayOn }
@@ -28,7 +35,7 @@ import Foundation
         let navigationController = segue.destination as! UINavigationController
         let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
         settingsViewController.viewModel = GeneralSettingsViewModel(
-            appInfoStore: AppInfoStore(bundle: Bundle.main),
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
             appSettingsStore: AppSettingsStore.shared,
             authStore: AuthStore.shared,
             selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),

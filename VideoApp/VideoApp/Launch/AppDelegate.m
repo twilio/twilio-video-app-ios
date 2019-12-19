@@ -37,18 +37,6 @@
     NSLog(@"Twilio Video App Version: %@", [self applicationVersionString]);
     NSLog(@"Twilio Video SDK Version: %@", [TwilioVideoSDK sdkVersion]);
 
-    switch (gCurrentAppEnvironment) {
-        case VideoAppEnvironmentTwilio:
-            NSLog(@"Twilio Video App Environment: Twilio");
-            break;
-        case VideoAppEnvironmentInternal:
-            NSLog(@"Twilio Video App Environment: Internal");
-            break;
-        case VideoAppEnvironmentCommunity:
-            NSLog(@"Twilio Video App Environment: Community");
-            break;
-    }
-
     if (@available(iOS 13, *)) {
         // Do nothing because SceneDelegate will handle it
     } else {

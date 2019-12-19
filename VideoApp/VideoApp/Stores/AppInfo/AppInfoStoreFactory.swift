@@ -14,12 +14,10 @@
 //  limitations under the License.
 //
 
-#import "VideoAppEnvironment.h"
+import Foundation
 
-#if APP_TYPE_TWILIO
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentTwilio;
-#elif APP_TYPE_INTERNAL
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentInternal;
-#elif APP_TYPE_COMMUNITY
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
-#endif
+class AppInfoStoreFactory {
+    func makeAppInfoStore() -> AppInfoStoreReading {
+        AppInfoStore(bundle: Bundle.main)
+    }
+}
