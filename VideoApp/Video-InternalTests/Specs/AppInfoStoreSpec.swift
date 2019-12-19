@@ -14,8 +14,19 @@
 //  limitations under the License.
 //
 
-import XCTest
+import Nimble
+import Quick
 
-class Video_CommunityTests: XCTestCase {
-    // Need at least one test file to prevent Xcode issues
+@testable import VideoApp
+
+class AppInfoStoreSpec: QuickSpec {
+    override func spec() {
+        describe("appInfo") {
+            describe("targetName") {
+                it("is videoInternal") {
+                    expect(AppInfoStore(bundle: Bundle.main).appInfo.targetName).to(equal(.videoInternal))
+                }
+            }
+        }
+    }
 }
