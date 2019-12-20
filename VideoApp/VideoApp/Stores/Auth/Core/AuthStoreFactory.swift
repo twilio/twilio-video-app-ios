@@ -18,7 +18,7 @@ import Foundation
 
 class AuthStoreFactory {
     func makeAuthStore() -> AuthStoreEverything {
-        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.targetName {
+        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio, .videoInternal:
             return AhoyAuthStore(
                 api: TwilioVideoAppAPI(),

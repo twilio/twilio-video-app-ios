@@ -34,9 +34,9 @@ class AppInfoStoreSpec: QuickSpec {
                 }
             }
             
-            describe("targetName") {
+            describe("target") {
                 it("is videoTwilio") {
-                    expect(sut.appInfo.targetName).to(equal(.videoTwilio))
+                    expect(sut.appInfo.target).to(equal(.videoTwilio))
                 }
             }
         }

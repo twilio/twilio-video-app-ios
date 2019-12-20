@@ -32,7 +32,7 @@ import Crashlytics
     }
     
     func start() {
-        guard appInfoStore.appInfo.targetName == .videoInternal else { return }
+        guard appInfoStore.appInfo.target == .videoInternal else { return }
         
         // https://firebase.googleblog.com/2019/03/crashlytics-versions.html
         #if !DEBUG

@@ -24,7 +24,7 @@ class AppInfoStore: AppInfoStoreReading {
     var appInfo: AppInfo {
         AppInfo(
             version: bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String,
-            targetName: AppInfo.TargetName(rawValue: bundle.object(forInfoDictionaryKey: "TargetName") as! String)!
+            target: AppInfo.Target(rawValue: bundle.object(forInfoDictionaryKey: "TargetName") as! String)!
         )
     }
     private let bundle: BundleProtocol

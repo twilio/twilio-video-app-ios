@@ -22,9 +22,9 @@ import Quick
 class AppInfoStoreSpec: QuickSpec {
     override func spec() {
         describe("appInfo") {
-            describe("targetName") {
+            describe("target") {
                 it("is videoInternal") {
-                    expect(AppInfoStore(bundle: Bundle.main).appInfo.targetName).to(equal(.videoInternal))
+                    expect(AppInfoStore(bundle: Bundle.main).appInfo.target).to(equal(.videoInternal))
                 }
             }
         }

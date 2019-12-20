@@ -18,7 +18,7 @@ import Foundation
 
 @objc class SwiftToObjc: NSObject {
     @objc static var appEnvironment: String {
-        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.targetName {
+        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio: return "production"
         case .videoInternal: return "internal"
         case .videoCommunity: return "community"
