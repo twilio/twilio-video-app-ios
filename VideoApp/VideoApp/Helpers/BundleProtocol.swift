@@ -14,8 +14,10 @@
 //  limitations under the License.
 //
 
-import XCTest
+import Foundation
 
-class Video_InternalTests: XCTestCase {
-    // Need at least one test file to prevent Xcode issues
+protocol BundleProtocol {
+    func object(forInfoDictionaryKey key: String) -> Any?
 }
+
+extension Bundle: BundleProtocol {}

@@ -14,6 +14,14 @@ target 'Video-Twilio' do
   target 'Video-TwilioTests' do
     pod 'Nimble'
     pod 'Quick'
+
+    target 'Video-InternalTests' do
+      # Identical to Video-TwilioTests
+    end
+
+    target 'Video-CommunityTests' do
+      # Identical to Video-TwilioTests
+    end
   end
 
   target 'Video-Internal' do

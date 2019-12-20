@@ -52,7 +52,7 @@ class GeneralSettingsViewModel: SettingsViewModel {
             )
         ]
 
-        if gCurrentAppEnvironment == .internal {
+        if appInfoStore.appInfo.target == .videoInternal {
             sections.append(
                 SettingsViewModelSection(
                     rows: [

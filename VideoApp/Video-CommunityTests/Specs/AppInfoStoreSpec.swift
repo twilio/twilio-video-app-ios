@@ -14,17 +14,19 @@
 //  limitations under the License.
 //
 
-#ifndef VideoAppEnvironment_h
-#define VideoAppEnvironment_h
+import Nimble
+import Quick
 
-#import <Foundation/Foundation.h>
+@testable import VideoApp
 
-typedef NS_ENUM(NSUInteger, VideoAppEnvironment) {
-    VideoAppEnvironmentTwilio = 0,
-    VideoAppEnvironmentInternal,
-    VideoAppEnvironmentCommunity
-};
-
-extern const VideoAppEnvironment gCurrentAppEnvironment;
-
-#endif /* VideoAppEnvironment_h */
+class AppInfoStoreSpec: QuickSpec {
+    override func spec() {
+        describe("appInfo") {
+            describe("target") {
+                it("is videoCommunity") {
+                    expect(AppInfoStore(bundle: Bundle.main).appInfo.target).to(equal(.videoCommunity))
+                }
+            }
+        }
+    }
+}

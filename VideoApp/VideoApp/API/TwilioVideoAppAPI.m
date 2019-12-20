@@ -15,17 +15,12 @@
 //
 
 #import "TwilioVideoAppAPI.h"
-#import "VideoAppEnvironment.h"
+#import "VideoApp-Swift.h"
 
 // Infrastructure Environment
 TwilioVideoAppAPIEnvironment kTwilioVideoAppAPIEnvironmentProduction        = @"prod";
 TwilioVideoAppAPIEnvironment kTwilioVideoAppAPIEnvironmentStaging           = @"stage";
 TwilioVideoAppAPIEnvironment kTwilioVideoAppAPIEnvironmentDevelopment       = @"dev";
-
-// App Environment
-TwilioVideoAppAPIAppEnvironment kTwilioVideoAppAPIAppEnvironmentTwilio      = @"production";
-TwilioVideoAppAPIAppEnvironment kTwilioVideoAppAPIAppEnvironmentInternal    = @"internal";
-TwilioVideoAppAPIAppEnvironment kTwilioVideoAppAPIAppEnvironmentCommunity   = @"community";
 
 // Topology
 TwilioVideoAppAPITopology kTwilioVideoAppAPITopologyP2P                     = @"peer-to-peer";
@@ -67,7 +62,7 @@ static NSString *const kTwilioVideoAppAPIErrorDomain                        = @"
 
     NSDictionary<NSString *, NSString *> *params = @{ kTwilioVideoAppAPIIdentityKey : identity,
                                                       kTwilioVideoAppAPIRoomNameKey : roomName,
-                                                      kTwilioVideoAppAPIAppEnvironmentKey : [TwilioVideoAppAPI appEnvironmentString],
+                                                      kTwilioVideoAppAPIAppEnvironmentKey : [SwiftToObjc appEnvironment],
                                                       kTwilioVideoAppAPITopologyKey : topology
                                                     };
 
@@ -96,28 +91,6 @@ static NSString *const kTwilioVideoAppAPIErrorDomain                        = @"
         }
         completionBlock(accessToken, error);
     }] resume];
-}
-
-#pragma mark - Internal methods
-+ (NSString *)appEnvironmentString {
-    NSString *appEnvironmentString;
-
-    switch (gCurrentAppEnvironment) {
-        case VideoAppEnvironmentTwilio:
-            appEnvironmentString = kTwilioVideoAppAPIAppEnvironmentTwilio;
-            break;
-        case VideoAppEnvironmentInternal:
-            appEnvironmentString = kTwilioVideoAppAPIAppEnvironmentInternal;
-            break;
-        case VideoAppEnvironmentCommunity:
-            appEnvironmentString = kTwilioVideoAppAPIAppEnvironmentCommunity;
-            break;
-        default:
-            appEnvironmentString = kTwilioVideoAppAPIAppEnvironmentTwilio;
-            break;
-    }
-
-    return appEnvironmentString;
 }
 
 + (NSString *)hostForEnvironment:(TwilioVideoAppAPIEnvironment)environment {

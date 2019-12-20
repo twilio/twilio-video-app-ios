@@ -14,12 +14,19 @@
 //  limitations under the License.
 //
 
-#import "VideoAppEnvironment.h"
+import Nimble
+import Quick
 
-#if APP_TYPE_TWILIO
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentTwilio;
-#elif APP_TYPE_INTERNAL
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentInternal;
-#elif APP_TYPE_COMMUNITY
-const VideoAppEnvironment gCurrentAppEnvironment = VideoAppEnvironmentCommunity;
-#endif
+@testable import VideoApp
+
+class AppInfoStoreSpec: QuickSpec {
+    override func spec() {
+        describe("appInfo") {
+            describe("target") {
+                it("is videoInternal") {
+                    expect(AppInfoStore(bundle: Bundle.main).appInfo.target).to(equal(.videoInternal))
+                }
+            }
+        }
+    }
+}

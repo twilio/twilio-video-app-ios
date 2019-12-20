@@ -17,5 +17,12 @@
 import Foundation
 
 struct AppInfo {
+    enum Target: String, Equatable {
+        case videoTwilio = "Video-Twilio"
+        case videoInternal = "Video-Internal"
+        case videoCommunity = "Video-Community"
+    }
+    
     let version: String
+    let target: Target
 }

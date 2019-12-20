@@ -14,8 +14,10 @@
 //  limitations under the License.
 //
 
-import XCTest
+import Foundation
 
-class Video_CommunityTests: XCTestCase {
-    // Need at least one test file to prevent Xcode issues
+class AppInfoStoreFactory {
+    func makeAppInfoStore() -> AppInfoStoreReading {
+        AppInfoStore(bundle: Bundle.main)
+    }
 }

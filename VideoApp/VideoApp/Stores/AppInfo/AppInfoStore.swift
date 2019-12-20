@@ -22,11 +22,14 @@ protocol AppInfoStoreReading: AnyObject {
 
 class AppInfoStore: AppInfoStoreReading {
     var appInfo: AppInfo {
-        AppInfo(version: bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")
+        AppInfo(
+            version: bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String,
+            target: AppInfo.Target(rawValue: bundle.object(forInfoDictionaryKey: "TargetName") as! String)!
+        )
     }
-    private let bundle: Bundle
+    private let bundle: BundleProtocol
 
-    init(bundle: Bundle) {
+    init(bundle: BundleProtocol) {
         self.bundle = bundle
     }
 }
