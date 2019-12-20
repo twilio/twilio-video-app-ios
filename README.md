@@ -51,7 +51,7 @@ The `Video-Twilio` and `Video-Internal` schemes use authentication that is only 
 
 For each device:
 
-1. Repeat steps to [generate a Twilio access token](#generate-twilio-access-token) and [run](#run). 
+1. Repeat steps to [generate a Twilio access token](#generate-twilio-access-token) (use a different identity) and [run](#run). 
 1. Enter a room name.
 1. Tap `Join`.
 
