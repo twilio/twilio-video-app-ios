@@ -202,6 +202,18 @@
 		DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
 		DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
 		DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
+		DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3E23BA926E0045018F /* VideoStore.swift */; };
+		DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3E23BA926E0045018F /* VideoStore.swift */; };
+		DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3E23BA926E0045018F /* VideoStore.swift */; };
+		DC8EAE4323BA96C00045018F /* URLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */; };
+		DC8EAE4423BA96C00045018F /* URLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */; };
+		DC8EAE4523BA96C00045018F /* URLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */; };
+		DC8EAE4823BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
+		DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
+		DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
+		DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
+		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
+		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -457,6 +469,10 @@
 		DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStoresFactory.swift; sourceTree = "<group>"; };
 		DC8EAE3623BA75C00045018F /* LaunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStore.swift; sourceTree = "<group>"; };
 		DC8EAE3A23BA88850045018F /* URLOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpening.swift; sourceTree = "<group>"; };
+		DC8EAE3E23BA926E0045018F /* VideoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStore.swift; sourceTree = "<group>"; };
+		DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpenerFactory.swift; sourceTree = "<group>"; };
+		DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserving.swift; sourceTree = "<group>"; };
+		DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserverFactory.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -897,7 +913,10 @@
 				8AC49999232A18D2005A4B35 /* SceneDelegate.swift */,
 				DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */,
 				DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */,
+				DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */,
 				DC8EAE3A23BA88850045018F /* URLOpening.swift */,
+				DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */,
+				DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -944,6 +963,14 @@
 			path = Specs;
 			sourceTree = "<group>";
 		};
+		DC8EAE4623BA9EE50045018F /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				DC8EAE3E23BA926E0045018F /* VideoStore.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		DCA53946235F534400CA26FB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +989,7 @@
 				DCA53946235F534400CA26FB /* Auth */,
 				DC0446B623A182780072F597 /* CrashReport */,
 				DC04468F238F1E2D0072F597 /* User */,
+				DC8EAE4623BA9EE50045018F /* Video */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -1910,6 +1938,7 @@
 				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F8E23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DC8EAE4823BA9F390045018F /* WindowSceneObserving.swift in Sources */,
 				DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
@@ -1921,6 +1950,7 @@
 				24A5984D1ECCC4D4003466B4 /* LocalMediaController.m in Sources */,
 				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
+				DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */,
 				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
 				248D94A71ED3176000FC8A94 /* VideoCollectionViewCell.m in Sources */,
@@ -1955,6 +1985,7 @@
 				DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */,
 				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
+				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0421C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				24C239F61EDF263800AA9419 /* RemoteParticipantUIModel.m in Sources */,
@@ -1973,6 +2004,7 @@
 				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
 				DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */,
+				DC8EAE4323BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -2000,6 +2032,7 @@
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */,
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
@@ -2011,6 +2044,7 @@
 				4B0012251FBA52C4004A587E /* LocalMediaController.m in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
+				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
 				4B0012271FBA52C4004A587E /* VideoCollectionViewCell.m in Sources */,
@@ -2045,6 +2079,7 @@
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
+				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00122D1FBA52C4004A587E /* RemoteParticipantUIModel.m in Sources */,
@@ -2063,6 +2098,7 @@
 				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */,
+				DC8EAE4423BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -2090,6 +2126,7 @@
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */,
 				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
@@ -2101,6 +2138,7 @@
 				4B0012621FBA52E5004A587E /* LocalMediaController.m in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
+				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				4B0012641FBA52E5004A587E /* VideoCollectionViewCell.m in Sources */,
@@ -2135,6 +2173,7 @@
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
+				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00126A1FBA52E5004A587E /* RemoteParticipantUIModel.m in Sources */,
@@ -2153,6 +2192,7 @@
 				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */,
+				DC8EAE4523BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */,
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,

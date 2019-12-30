@@ -16,17 +16,7 @@
 
 import Foundation
 
-protocol LaunchStoresFactory: AnyObject {
-    func makeLaunchStores() -> [LaunchStore]
-}
-
-class LaunchStoresFactoryImpl: LaunchStoresFactory {
-    func makeLaunchStores() -> [LaunchStore] {
-        return [
-            AppSettingsStore.shared,
-            AuthStore.shared,
-            CrashReportStore.shared,
-            VideoStore()
-        ]
-    }
+@available(iOS 13, *)
+protocol WindowSceneObserving: AnyObject {
+    func interfaceOrientationDidChange(windowScene: UIWindowScene)
 }

@@ -14,19 +14,18 @@
 //  limitations under the License.
 //
 
-import Foundation
+import TwilioVideo
+import UIKit
 
-protocol LaunchStoresFactory: AnyObject {
-    func makeLaunchStores() -> [LaunchStore]
-}
+protocol VideoStoreWriting: LaunchStore, WindowSceneObserving {}
 
-class LaunchStoresFactoryImpl: LaunchStoresFactory {
-    func makeLaunchStores() -> [LaunchStore] {
-        return [
-            AppSettingsStore.shared,
-            AuthStore.shared,
-            CrashReportStore.shared,
-            VideoStore()
-        ]
+class VideoStore: VideoStoreWriting {
+    func start() {
+        TwilioVideoSDK.setLogLevel(.info)
+    }
+    
+    @available(iOS 13, *)
+    func interfaceOrientationDidChange(windowScene: UIWindowScene) {
+        UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
     }
 }

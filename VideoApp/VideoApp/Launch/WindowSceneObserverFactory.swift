@@ -16,17 +16,14 @@
 
 import Foundation
 
-protocol LaunchStoresFactory: AnyObject {
-    func makeLaunchStores() -> [LaunchStore]
+@available(iOS 13, *)
+protocol WindowSceneObserverFactory: AnyObject {
+    func makeWindowSceneObserver() -> WindowSceneObserving
 }
 
-class LaunchStoresFactoryImpl: LaunchStoresFactory {
-    func makeLaunchStores() -> [LaunchStore] {
-        return [
-            AppSettingsStore.shared,
-            AuthStore.shared,
-            CrashReportStore.shared,
-            VideoStore()
-        ]
+@available(iOS 13, *)
+class WindowSceneObserverFactoryImpl: WindowSceneObserverFactory {
+    func makeWindowSceneObserver() -> WindowSceneObserving {
+        return VideoStore()
     }
 }

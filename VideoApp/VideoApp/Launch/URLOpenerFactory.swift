@@ -16,17 +16,12 @@
 
 import Foundation
 
-protocol LaunchStoresFactory: AnyObject {
-    func makeLaunchStores() -> [LaunchStore]
+protocol URLOpenerFactory: AnyObject {
+    func makeURLOpener() -> URLOpening
 }
 
-class LaunchStoresFactoryImpl: LaunchStoresFactory {
-    func makeLaunchStores() -> [LaunchStore] {
-        return [
-            AppSettingsStore.shared,
-            AuthStore.shared,
-            CrashReportStore.shared,
-            VideoStore()
-        ]
+class URLOpenerFactoryImpl: URLOpenerFactory {
+    func makeURLOpener() -> URLOpening {
+        return AuthStore.shared
     }
 }

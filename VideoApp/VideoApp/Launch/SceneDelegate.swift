@@ -15,14 +15,14 @@
 //
 
 import UIKit
-import TwilioVideo
 
 @available(iOS 13, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var launchFlow: LaunchFlow?
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
-    var urlOpener: URLOpening = AuthStore.shared
+    var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
     var window: UIWindow?
+    var windowSceneObserverFactory: WindowSceneObserverFactory = WindowSceneObserverFactoryImpl()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let windowScene = scene as! UIWindowScene
@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         URLContexts.forEach { context in
-            urlOpener.openURL(
+            urlOpenerFactory.makeURLOpener().openURL(
                 context.url,
                 sourceApplication: context.options.sourceApplication,
                 annotation: context.options.annotation
@@ -48,6 +48,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation,
         traitCollection previousTraitCollection: UITraitCollection
     ) {
-        UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
+        windowSceneObserverFactory.makeWindowSceneObserver().interfaceOrientationDidChange(windowScene: windowScene)
     }
 }

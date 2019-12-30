@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
     var launchFlow: LaunchFlow?
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
-    var urlOpener: URLOpening = AuthStore.shared
+    var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
     var window: UIWindow?
 
     func application(
@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
-
-        TwilioVideoSDK.setLogLevel(.info)
 
         if #available(iOS 13, *) {
             // Do nothing because SceneDelegate will handle it
@@ -55,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return urlOpener.openURL(
+        return urlOpenerFactory.makeURLOpener().openURL(
             url,
             sourceApplication: options[.sourceApplication] as? String,
             annotation: options[.sourceApplication]
