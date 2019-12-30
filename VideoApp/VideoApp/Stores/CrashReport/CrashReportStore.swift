@@ -18,7 +18,6 @@ import Fabric
 import Crashlytics
 
 protocol CrashReportStoreWriting: LaunchStore {
-    func start()
     func crash()
 }
 

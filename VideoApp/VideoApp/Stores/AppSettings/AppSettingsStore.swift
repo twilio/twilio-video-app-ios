@@ -22,7 +22,6 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var topology: Topology { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
-    func start()
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {

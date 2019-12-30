@@ -18,9 +18,9 @@ import TwilioVideo
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
     var launchFlow: LaunchFlow?
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
+    var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
     var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
     var window: UIWindow?
 

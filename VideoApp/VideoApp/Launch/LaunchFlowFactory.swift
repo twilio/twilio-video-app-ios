@@ -25,7 +25,8 @@ class LaunchFlowFactoryImpl: LaunchFlowFactory {
         return LaunchFlowImpl(
             window: window,
             authFlow: AuthFlow(window: window),
-            authStore: AuthStore.shared
+            authStore: AuthStore.shared,
+            notificationCenter: NotificationCenter.default
         )
     }
 }

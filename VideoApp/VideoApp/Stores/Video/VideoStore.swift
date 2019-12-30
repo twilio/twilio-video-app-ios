@@ -15,9 +15,8 @@
 //
 
 import TwilioVideo
-import UIKit
 
-protocol VideoStoreWriting: LaunchStore, WindowSceneObserving {}
+protocol VideoStoreWriting: LaunchStore, WindowSceneObserving { }
 
 class VideoStore: VideoStoreWriting {
     func start() {

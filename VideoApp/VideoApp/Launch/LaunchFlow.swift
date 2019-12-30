@@ -24,11 +24,18 @@ import UIKit
     private let window: UIWindow
     private let authFlow: AuthStoreWritingDelegate
     private let authStore: AuthStoreWriting
+    private let notificationCenter: NotificationCenterProtocol
     
-    init(window: UIWindow, authFlow: AuthStoreWritingDelegate, authStore: AuthStoreWriting) {
+    init(
+        window: UIWindow,
+        authFlow: AuthStoreWritingDelegate,
+        authStore: AuthStoreWriting,
+        notificationCenter: NotificationCenterProtocol
+    ) {
         self.window = window
         self.authFlow = authFlow
         self.authStore = authStore
+        self.notificationCenter = notificationCenter
     }
     
     func start() {
@@ -41,21 +48,12 @@ import UIKit
         let navigationController = window.rootViewController as! UINavigationController
         navigationController.barHideOnSwipeGestureRecognizer.isEnabled = false
         navigationController.hidesBarsOnSwipe = false
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleApplicationDidBecomeActive),
-            name: UIApplication.didBecomeActiveNotification,
-            object: nil
-        )
-    }
-    
-    @objc func handleApplicationDidBecomeActive() {
-        let navigationController = UIApplication.shared.windows[0].rootViewController as? UINavigationController
-        
-        guard navigationController?.viewControllers.count == 1 else { return }
 
-        let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
-        navigationController?.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
+        notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { _ in
+            guard navigationController.viewControllers.count == 1 else { return }
+
+            let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
+            navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
+        }
     }
 }
