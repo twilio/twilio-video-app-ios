@@ -21,12 +21,11 @@ protocol AuthStoreWritingDelegate: AnyObject {
     func didSignOut()
 }
 
-protocol AuthStoreWriting: AuthStoreReading, LaunchStore {
+protocol AuthStoreWriting: AuthStoreReading, LaunchStore, URLOpening {
     var delegate: AuthStoreWritingDelegate? { get set }
     func start()
     func signIn(email: String, password: String, completion: @escaping (Error?) -> Void)
     func signOut()
-    func openURL(_ url: URL, sourceApplication: String?, annotation: Any?) -> Bool
 }
 
 protocol AuthStoreReading: AnyObject {

@@ -199,6 +199,9 @@
 		DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
 		DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
 		DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
+		DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
+		DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
+		DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -453,6 +456,7 @@
 		DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStoresFactory.swift; sourceTree = "<group>"; };
 		DC8EAE3623BA75C00045018F /* LaunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStore.swift; sourceTree = "<group>"; };
+		DC8EAE3A23BA88850045018F /* URLOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpening.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -893,6 +897,7 @@
 				8AC49999232A18D2005A4B35 /* SceneDelegate.swift */,
 				DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */,
 				DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */,
+				DC8EAE3A23BA88850045018F /* URLOpening.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -1962,6 +1967,7 @@
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044695238F1FAA0072F597 /* User.swift in Sources */,
+				DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */,
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
 				24A598531ECCE069003466B4 /* RoundButton.m in Sources */,
 				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
@@ -2051,6 +2057,7 @@
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
+				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				4B0012301FBA52C4004A587E /* RoundButton.m in Sources */,
 				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
@@ -2140,6 +2147,7 @@
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
+				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */,
 				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,

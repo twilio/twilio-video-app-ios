@@ -18,10 +18,11 @@ import TwilioVideo
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
     var launchFlow: LaunchFlow?
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
+    var urlOpener: URLOpening = AuthStore.shared
+    var window: UIWindow?
 
     func application(
         _ application: UIApplication,
@@ -34,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) {
             // Do nothing because SceneDelegate will handle it
         } else {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
-            self.launchFlow?.start()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
+            launchFlow?.start()
         }
 
         return true
@@ -54,10 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return AuthStore.shared.openURL(
+        return urlOpener.openURL(
             url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.sourceApplication]
+            sourceApplication: options[.sourceApplication] as? String,
+            annotation: options[.sourceApplication]
         )
     }
 }
