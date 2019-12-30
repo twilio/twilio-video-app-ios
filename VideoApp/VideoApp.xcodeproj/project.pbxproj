@@ -193,6 +193,12 @@
 		DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */; };
 		DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */; };
 		DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */; };
+		DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */; };
+		DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */; };
+		DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */; };
+		DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
+		DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
+		DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -445,6 +451,8 @@
 		DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSceneDelegate.swift; sourceTree = "<group>"; };
 		DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStoresFactory.swift; sourceTree = "<group>"; };
+		DC8EAE3623BA75C00045018F /* LaunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStore.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -877,6 +885,8 @@
 			isa = PBXGroup;
 			children = (
 				DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */,
+				DC8EAE3623BA75C00045018F /* LaunchStore.swift */,
+				DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */,
 				DCA80B27236B821E009141C9 /* LaunchFlow.swift */,
 				DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */,
 				DC8AA8CA236795FA006C06D5 /* main.swift */,
@@ -1887,6 +1897,7 @@
 				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
@@ -1897,6 +1908,7 @@
 				DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
+				DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
 				DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
@@ -1974,6 +1986,7 @@
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
@@ -1984,6 +1997,7 @@
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
+				DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */,
 				DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
@@ -2061,6 +2075,7 @@
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
@@ -2071,6 +2086,7 @@
 				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
+				DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */,
 				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,

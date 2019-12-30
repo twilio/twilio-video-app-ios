@@ -16,7 +16,7 @@
 
 import Foundation
 
-protocol AppSettingsStoreWriting: AnyObject {
+protocol AppSettingsStoreWriting: LaunchStore {
     var apiEnvironment: APIEnvironment { get set }
     var videoCodec: VideoCodec { get set }
     var topology: Topology { get set }

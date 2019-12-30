@@ -31,6 +31,10 @@ import Foundation
         UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared).user.displayName
     }
 
+    @objc static func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
+        AuthStore.shared.fetchTwilioAccessToken(roomName: roomName, completion: completion)
+    }
+
     @objc static func prepareForShowSettingsSegue(_ segue: UIStoryboardSegue) {
         let navigationController = segue.destination as! UINavigationController
         let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
@@ -41,9 +45,5 @@ import Foundation
             selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
             selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
         )
-    }
-    
-    @objc static func startAppSettingsStore() {
-        AppSettingsStore.shared.start()
     }
 }

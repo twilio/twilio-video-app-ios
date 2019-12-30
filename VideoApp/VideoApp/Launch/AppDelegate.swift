@@ -19,15 +19,17 @@ import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
+    var launchStores: [LaunchStore]!
     var launchFlow: LaunchFlow?
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        AppSettingsStore.shared.start()
-        AuthStore.shared.start()
-        CrashReportStore.shared.start()
+        launchStores = launchStoresFactory.MakeLaunchStores()
+        launchStores.forEach { $0.start() }
+
         TwilioVideoSDK.setLogLevel(.info)
 
         if #available(iOS 13, *) {
