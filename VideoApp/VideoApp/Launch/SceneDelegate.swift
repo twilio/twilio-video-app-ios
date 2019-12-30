@@ -55,38 +55,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return scene.userActivity
     }
 
-    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        print(#function)
-    }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        print(#function)
-
-        guard let navigationVC = self.window?.rootViewController as? UINavigationController,
-            navigationVC.viewControllers.count == 1 else {
-            return
-        }
-
-        
-        if AuthStore.shared.isSignedIn {
-            navigationVC.topViewController?.performSegue(withIdentifier: "lobbySegue", sender: self)
-        } else {
-            navigationVC.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
-        }
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        print(#function)
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        print(#function)
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        print(#function)
-    }
-
     func windowScene(_ windowScene: UIWindowScene,
                      didUpdate previousCoordinateSpace: UICoordinateSpace,
                      interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation,

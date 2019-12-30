@@ -52,15 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return configuration
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        let navigationController = window?.rootViewController as? UINavigationController
-        
-        guard navigationController?.viewControllers.count == 1 else { return }
-
-        let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
-        navigationController?.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
-    }
-
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return AuthStore.shared.openURL(
             url,
