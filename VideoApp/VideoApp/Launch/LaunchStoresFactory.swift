@@ -16,12 +16,12 @@
 
 import Foundation
 
-protocol LaunchStoresFactory {
-    func MakeLaunchStores() -> [LaunchStore]
+protocol LaunchStoresFactory: AnyObject {
+    func makeLaunchStores() -> [LaunchStore]
 }
 
 class LaunchStoresFactoryImpl: LaunchStoresFactory {
-    func MakeLaunchStores() -> [LaunchStore] {
+    func makeLaunchStores() -> [LaunchStore] {
         return [
             AppSettingsStore.shared,
             AuthStore.shared,

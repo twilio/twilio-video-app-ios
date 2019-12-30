@@ -20,15 +20,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
-    var launchStores: [LaunchStore]!
     var launchFlow: LaunchFlow?
+    var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        launchStores = launchStoresFactory.MakeLaunchStores()
-        launchStores.forEach { $0.start() }
+        launchStoresFactory.makeLaunchStores().forEach { $0.start() }
 
         TwilioVideoSDK.setLogLevel(.info)
 
@@ -36,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Do nothing because SceneDelegate will handle it
         } else {
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.launchFlow = LaunchFlowFactory().makeLaunchFlow(window: window!)
+            self.launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
             self.launchFlow?.start()
         }
 

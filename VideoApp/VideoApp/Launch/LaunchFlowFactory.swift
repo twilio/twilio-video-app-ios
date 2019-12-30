@@ -16,8 +16,12 @@
 
 import UIKit
 
-@objc class LaunchFlowFactory: NSObject {
-    @objc func makeLaunchFlow(window: UIWindow) -> LaunchFlow {
+protocol LaunchFlowFactory: AnyObject {
+    func makeLaunchFlow(window: UIWindow) -> LaunchFlow
+}
+
+class LaunchFlowFactoryImpl: LaunchFlowFactory {
+    func makeLaunchFlow(window: UIWindow) -> LaunchFlow {
         return LaunchFlowImpl(
             window: window,
             authFlow: AuthFlow(window: window),

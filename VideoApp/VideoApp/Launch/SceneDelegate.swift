@@ -21,22 +21,15 @@ import TwilioVideo
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var launchFlow: LaunchFlow?
-    
+    var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let windowScene = scene as! UIWindowScene
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
 
-        launchFlow = LaunchFlowFactory().makeLaunchFlow(window: window!)
+        launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
         launchFlow?.start()
-        
-        if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
-            if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-                if let lobby = (window?.rootViewController as? UINavigationController)?.topViewController as? LobbyViewController {
-                    lobby.handleDeepLinkedURL(userActivity.webpageURL)
-                }
-            }
-        }
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -51,16 +44,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
-    func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
-        return scene.userActivity
-    }
-
     func windowScene(_ windowScene: UIWindowScene,
                      didUpdate previousCoordinateSpace: UICoordinateSpace,
                      interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation,
                      traitCollection previousTraitCollection: UITraitCollection) {
-        print("Window scene did update. prev: \(previousCoordinateSpace) \(previousInterfaceOrientation) \(previousTraitCollection)")
-
         UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
     }
 }
