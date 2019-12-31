@@ -11,7 +11,7 @@ This app is a sample video conferencing app that uses the [Twilio Programmable V
 - [x] Switch between front and back camera
 - [x] Mute/unmute mic
 - [x] [Dominant speaker](https://www.twilio.com/docs/video/detecting-dominant-speaker) indicator
-- [x] [Network quality](https://www.twilio.com/docs/video/using-network-quality-api) level indicator
+- [x] [Network quality](https://www.twilio.com/docs/video/using-network-quality-api) indicator
 
 ## Requirements
 
@@ -51,7 +51,7 @@ The `Video-Twilio` and `Video-Internal` schemes use authentication that is only 
 
 For each device:
 
-1. Repeat steps to [generate a Twilio access token](#generate-twilio-access-token) (use a different identity) and [run](#run). 
+1. Use a different identity to [generate a Twilio access token](#generate-twilio-access-token) and [run](#run). 
 1. Enter a room name.
 1. Tap `Join`.
 
