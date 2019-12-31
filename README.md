@@ -1,6 +1,6 @@
 # Twilio iOS Video App
 
-This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). Twilio uses the app internally for testing. The open source app can be easily configured by external developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
+This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). The open source app can be easily configured by developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
 
 ![room](https://user-images.githubusercontent.com/1930363/68962658-502d7f00-0792-11ea-84d2-14c5c8a704b3.png)
 
@@ -10,8 +10,8 @@ This app is a sample video conferencing app that uses the [Twilio Programmable V
 - [x] Enable/disable camera
 - [x] Switch between front and back camera
 - [x] Mute/unmute mic
-- [x] Dominant speaker indicator
-- [x] Network quality level indicator
+- [x] [Dominant speaker](https://www.twilio.com/docs/video/detecting-dominant-speaker) indicator
+- [x] [Network quality](https://www.twilio.com/docs/video/using-network-quality-api) indicator
 
 ## Requirements
 
@@ -51,7 +51,7 @@ The `Video-Twilio` and `Video-Internal` schemes use authentication that is only 
 
 For each device:
 
-1. Repeat steps to [generate a Twilio access token](#generate-twilio-access-token) and [run](#run). 
+1. Use a different identity to [generate a Twilio access token](#generate-twilio-access-token) and [run](#run). 
 1. Enter a room name.
 1. Tap `Join`.
 
