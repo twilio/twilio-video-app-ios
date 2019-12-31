@@ -11,4 +11,4 @@ This initial release comes with the following features:
 - Show a Room’s dominant speaker in the primary video view
 - Show a participant’s network quality
 
-We look forward to collaborating with the communit!
+We look forward to collaborating with the community!
