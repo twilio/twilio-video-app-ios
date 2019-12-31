@@ -17,7 +17,7 @@
 #import "LoginViewController.h"
 @import GoogleSignIn;
 
-@interface LoginViewController() <GIDSignInUIDelegate>
+@interface LoginViewController()
 @property (weak, nonatomic) IBOutlet GIDSignInButton *googleSignInButton;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 
@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [GIDSignIn sharedInstance].uiDelegate = self;
+    GIDSignIn.sharedInstance.presentingViewController = self;
     self.googleSignInButton.style = kGIDSignInButtonStyleWide;
 }
 

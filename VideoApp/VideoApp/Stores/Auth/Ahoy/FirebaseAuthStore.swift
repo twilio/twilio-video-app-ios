@@ -54,7 +54,6 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
     }
 
     func openURL(_ url: URL) -> Bool {
-        return googleSignIn.handle(<#T##url: URL!##URL!#>, sourceApplication: <#T##String!#>, annotation: <#T##Any!#>)
         return googleSignIn.handle(url)
     }
     

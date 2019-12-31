@@ -33,13 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        URLContexts.forEach { context in
-            urlOpenerFactory.makeURLOpener().openURL(
-                context.url,
-                sourceApplication: context.options.sourceApplication,
-                annotation: context.options.annotation
-            )
-        }
+        URLContexts.forEach { urlOpenerFactory.makeURLOpener().openURL($0.url) }
     }
 
     func windowScene(
