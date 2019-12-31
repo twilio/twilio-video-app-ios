@@ -175,6 +175,12 @@
 		DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */; };
 		DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */; };
 		DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */; };
+		DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
+		DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
+		DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
+		DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */; };
+		DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */; };
+		DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */; };
 		DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
@@ -461,6 +467,12 @@
 		DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
 		DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTwilioVideoAppAPI.swift; sourceTree = "<group>"; };
+		DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpenerFactory.swift; sourceTree = "<group>"; };
+		DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpener.swift; sourceTree = "<group>"; };
+		DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStoresFactory.swift; sourceTree = "<group>"; };
+		DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStore.swift; sourceTree = "<group>"; };
+		DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchFlowFactory.swift; sourceTree = "<group>"; };
+		DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchFlow.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -888,7 +900,13 @@
 				DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */,
 				DC04469E238F29F50072F597 /* MockAuthStore.swift */,
 				DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */,
+				DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */,
+				DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */,
+				DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */,
+				DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */,
 				DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */,
+				DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */,
+				DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -2248,12 +2266,18 @@
 			files = (
 				DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */,
 				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
+				DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */,
 				DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */,
 				DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */,
 				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
 				DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */,
+				DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */,
 				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
+				DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */,
 				DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */,
+				DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */,
+				DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */,
+				DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
