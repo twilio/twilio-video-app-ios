@@ -34,9 +34,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>${PRODUCT_NAME} uses your camera to capture video which is shared with other room participants.</string>
+	<string>${PRODUCT_NAME} uses your camera to capture video which is shared with other Room participants.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>${PRODUCT_NAME} uses your microphone to capture audio which is shared with other room participants.</string>
+	<string>${PRODUCT_NAME} uses your microphone to capture audio which is shared with other Room participants.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
