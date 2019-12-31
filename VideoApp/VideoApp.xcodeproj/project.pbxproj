@@ -214,6 +214,7 @@
 		DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
+		DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -473,6 +474,7 @@
 		DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpenerFactory.swift; sourceTree = "<group>"; };
 		DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserving.swift; sourceTree = "<group>"; };
 		DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserverFactory.swift; sourceTree = "<group>"; };
+		DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -895,6 +897,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */,
+				DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */,
 				DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */,
 				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
@@ -2226,6 +2229,7 @@
 				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
 				DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */,
 				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
+				DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

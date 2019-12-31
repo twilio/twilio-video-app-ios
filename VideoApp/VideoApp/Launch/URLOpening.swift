@@ -17,5 +17,5 @@
 import Foundation
 
 protocol URLOpening: AnyObject {
-    @discardableResult func openURL(_ url: URL, sourceApplication: String?, annotation: Any?) -> Bool
+    @discardableResult func openURL(_ url: URL) -> Bool
 }
