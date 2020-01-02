@@ -37,7 +37,7 @@ iOS Deployment Target | Xcode Version | Swift Language Version
 1. Use the Twilio Console to [generate a Twilio Access Token](https://www.twilio.com/docs/video/tutorials/user-identity-access-tokens#generate-in-console). It is not necessary to enter a room name.
 1. Replace `TWILIO_ACCESS_TOKEN` in [CommunityAuthStore.swift](https://github.com/twilio/twilio-video-app-ios/blob/master/VideoApp/VideoApp/Stores/Auth/Community/CommunityAuthStore.swift) with your Twilio access token.
 
-Twilio access tokens are valid for one hour. Repeat the steps above to refresh an expired Twilio access token.
+Twilio access tokens generated with Twilio Console are valid for one hour. Repeat the steps above to refresh an expired Twilio access token.
 
 This manual process for generating a Twilio access token minimizes setup but it is only useful for testing. To automate generation of Twilio access tokens for a production app see [User Identify & Access Tokens documentation](https://www.twilio.com/docs/video/tutorials/user-identity-access-tokens).
 
