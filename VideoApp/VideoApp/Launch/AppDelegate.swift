@@ -14,7 +14,6 @@
 //  limitations under the License.
 //
 
-import TwilioVideo
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
