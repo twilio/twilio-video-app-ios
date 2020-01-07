@@ -17,13 +17,12 @@
 import Fabric
 import Crashlytics
 
-@objc protocol CrashReportStoreWriting: AnyObject {
-    func start()
+protocol CrashReportStoreWriting: LaunchStore {
     func crash()
 }
 
-@objc class CrashReportStore: NSObject, CrashReportStoreWriting {
-    @objc static let shared: CrashReportStoreWriting = CrashReportStore(appInfoStore: AppInfoStoreFactory().makeAppInfoStore())
+class CrashReportStore: NSObject, CrashReportStoreWriting {
+    static let shared: CrashReportStoreWriting = CrashReportStore(appInfoStore: AppInfoStoreFactory().makeAppInfoStore())
     private let appInfoStore: AppInfoStoreReading
     private var crashlytics: Crashlytics?
     

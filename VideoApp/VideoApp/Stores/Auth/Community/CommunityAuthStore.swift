@@ -33,7 +33,7 @@ class CommunityAuthStore: AuthStoreEverything {
 
     }
 
-    func openURL(_ url: URL, sourceApplication: String?, annotation: Any?) -> Bool {
+    func openURL(_ url: URL) -> Bool {
         return false
     }
 

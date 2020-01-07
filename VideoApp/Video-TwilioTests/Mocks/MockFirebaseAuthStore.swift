@@ -63,12 +63,6 @@ class MockFirebaseAuthStore: FirebaseAuthStoreWriting {
             completion(result.0, result.1)
         }
     }
-    var invokedStart = false
-    var invokedStartCount = 0
-    func start() {
-        invokedStart = true
-        invokedStartCount += 1
-    }
     var invokedSignIn = false
     var invokedSignInCount = 0
     var invokedSignInParameters: (email: String, password: String)?
@@ -89,16 +83,22 @@ class MockFirebaseAuthStore: FirebaseAuthStoreWriting {
         invokedSignOut = true
         invokedSignOutCount += 1
     }
+    var invokedStart = false
+    var invokedStartCount = 0
+    func start() {
+        invokedStart = true
+        invokedStartCount += 1
+    }
     var invokedOpenURL = false
     var invokedOpenURLCount = 0
-    var invokedOpenURLParameters: (url: URL, sourceApplication: String?, annotation: Any?)?
-    var invokedOpenURLParametersList = [(url: URL, sourceApplication: String?, annotation: Any?)]()
+    var invokedOpenURLParameters: (url: URL, Void)?
+    var invokedOpenURLParametersList = [(url: URL, Void)]()
     var stubbedOpenURLResult: Bool! = false
-    func openURL(_ url: URL, sourceApplication: String?, annotation: Any?) -> Bool {
+    func openURL(_ url: URL) -> Bool {
         invokedOpenURL = true
         invokedOpenURLCount += 1
-        invokedOpenURLParameters = (url, sourceApplication, annotation)
-        invokedOpenURLParametersList.append((url, sourceApplication, annotation))
+        invokedOpenURLParameters = (url, ())
+        invokedOpenURLParametersList.append((url, ()))
         return stubbedOpenURLResult
     }
 }

@@ -14,19 +14,19 @@
 //  limitations under the License.
 //
 
-import UIKit
+@testable import VideoApp
 
-protocol LaunchFlowFactory: AnyObject {
-    func makeLaunchFlow(window: UIWindow) -> LaunchFlow
-}
-
-class LaunchFlowFactoryImpl: LaunchFlowFactory {
+class MockLaunchFlowFactory: LaunchFlowFactory {
+    var invokedMakeLaunchFlow = false
+    var invokedMakeLaunchFlowCount = 0
+    var invokedMakeLaunchFlowParameters: (window: UIWindow, Void)?
+    var invokedMakeLaunchFlowParametersList = [(window: UIWindow, Void)]()
+    var stubbedMakeLaunchFlowResult: LaunchFlow!
     func makeLaunchFlow(window: UIWindow) -> LaunchFlow {
-        return LaunchFlowImpl(
-            window: window,
-            authFlow: AuthFlow(window: window),
-            authStore: AuthStore.shared,
-            notificationCenter: NotificationCenter.default
-        )
+        invokedMakeLaunchFlow = true
+        invokedMakeLaunchFlowCount += 1
+        invokedMakeLaunchFlowParameters = (window, ())
+        invokedMakeLaunchFlowParametersList.append((window, ()))
+        return stubbedMakeLaunchFlowResult
     }
 }

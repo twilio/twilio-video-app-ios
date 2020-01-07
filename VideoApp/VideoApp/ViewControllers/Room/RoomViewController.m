@@ -113,7 +113,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 - (void)fetchAccessToken {
     typeof(self) __weak weakSelf = self;
 
-    [AuthStore.shared fetchTwilioAccessTokenWithRoomName:self.roomName completion:^(NSString *accessToken, NSError *error) {
+    [SwiftToObjc fetchTwilioAccessTokenWithRoomName:self.roomName completion:^(NSString *accessToken, NSError *error) {
         typeof(self) __strong strongSelf = weakSelf;
 
         if (accessToken != nil) {

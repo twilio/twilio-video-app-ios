@@ -8,7 +8,7 @@ platform :ios do
   end
 
   lane :test do |options|
-    scan(scheme: options[:scheme], device: "iPhone 11 (13.2)")
+    scan(scheme: options[:scheme], device: "iPhone 11", prelaunch_simulator: true)
   end
 
   lane :beta do

@@ -53,8 +53,8 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
         googleSignIn.disconnect()
     }
 
-    func openURL(_ url: URL, sourceApplication: String?, annotation: Any?) -> Bool {
-        return googleSignIn.handle(url, sourceApplication: sourceApplication, annotation: annotation)
+    func openURL(_ url: URL) -> Bool {
+        return googleSignIn.handle(url)
     }
     
     func fetchAccessToken(completion: @escaping (String?, Error?) -> Void) {

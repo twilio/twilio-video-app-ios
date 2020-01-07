@@ -14,27 +14,15 @@
 //  limitations under the License.
 //
 
-#import "LoginViewController.h"
-@import GoogleSignIn;
+@testable import VideoApp
 
-@interface LoginViewController()
-@property (weak, nonatomic) IBOutlet GIDSignInButton *googleSignInButton;
-@property (weak, nonatomic) IBOutlet UIButton *signInButton;
-
-@end
-
-@implementation LoginViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    GIDSignIn.sharedInstance.presentingViewController = self;
-    self.googleSignInButton.style = kGIDSignInButtonStyleWide;
+class MockURLOpenerFactory: URLOpenerFactory {
+    var invokedMakeURLOpener = false
+    var invokedMakeURLOpenerCount = 0
+    var stubbedMakeURLOpenerResult: URLOpening!
+    func makeURLOpener() -> URLOpening {
+        invokedMakeURLOpener = true
+        invokedMakeURLOpenerCount += 1
+        return stubbedMakeURLOpenerResult
+    }
 }
-
-- (BOOL)isModalInPresentation {
-    // Swiping to dismiss the LoginViewController is not desirable, even when it is presented modally on an iPad.
-    return YES;
-}
-
-@end

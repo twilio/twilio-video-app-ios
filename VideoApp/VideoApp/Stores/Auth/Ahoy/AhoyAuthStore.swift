@@ -49,8 +49,8 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         firebaseAuthStore.signOut()
     }
 
-    func openURL(_ url: URL, sourceApplication: String?, annotation: Any?) -> Bool {
-        return firebaseAuthStore.openURL(url, sourceApplication: sourceApplication, annotation: annotation)
+    func openURL(_ url: URL) -> Bool {
+        return firebaseAuthStore.openURL(url)
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {

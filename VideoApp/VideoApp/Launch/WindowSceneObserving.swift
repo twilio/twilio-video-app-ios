@@ -14,10 +14,9 @@
 //  limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-@end
+@available(iOS 13, *)
+protocol WindowSceneObserving: AnyObject {
+    func interfaceOrientationDidChange(windowScene: UIWindowScene)
+}
