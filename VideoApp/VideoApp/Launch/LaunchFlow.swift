@@ -49,11 +49,7 @@ import UIKit
         navigationController.barHideOnSwipeGestureRecognizer.isEnabled = false
         navigationController.hidesBarsOnSwipe = false
 
-        notificationCenter.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { _ in
-            guard navigationController.viewControllers.count == 1 else { return }
-
-            let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
-            navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
-        }
+        let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
+        navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }
