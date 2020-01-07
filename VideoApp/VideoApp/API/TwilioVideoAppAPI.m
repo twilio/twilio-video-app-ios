@@ -62,7 +62,7 @@ static NSString *const kTwilioVideoAppAPIErrorDomain                        = @"
 
     NSDictionary<NSString *, NSString *> *params = @{ kTwilioVideoAppAPIIdentityKey : identity,
                                                       kTwilioVideoAppAPIRoomNameKey : roomName,
-                                                      kTwilioVideoAppAPIAppEnvironmentKey : [SwiftToObjc appEnvironment],
+                                                      kTwilioVideoAppAPIAppEnvironmentKey : @"production",
                                                       kTwilioVideoAppAPITopologyKey : topology
                                                     };
 

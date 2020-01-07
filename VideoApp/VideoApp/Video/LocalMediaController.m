@@ -72,7 +72,7 @@
 #pragma mark - Audio Management
 - (void)createLocalAudioTrack {
     if (self.localAudioTrack == nil) {
-        self.localAudioTrack = [TVILocalAudioTrack trackWithOptions:[TVIAudioOptions options] enabled:YES name:@"Microphone"];
+        self.localAudioTrack = [TVILocalAudioTrack trackWithOptions:[TVIAudioOptions options] enabled:YES name:@"microphone"];
 
         if (!self.localAudioTrack) {
             NSLog(@"Failed to create audio track");

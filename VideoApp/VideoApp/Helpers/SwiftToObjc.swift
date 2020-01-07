@@ -17,13 +17,6 @@
 import Foundation
 
 @objc class SwiftToObjc: NSObject {
-    @objc static var appEnvironment: String {
-        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
-        case .videoTwilio: return "production"
-        case .videoInternal: return "internal"
-        case .videoCommunity: return "community"
-        }
-    }
     @objc static var appSettingsStoreDidChangeNotificationName: String { Notification.Name.appSettingDidChange.rawValue }
     @objc static var enableVP8Simulcast: Bool { AppSettingsStore.shared.videoCodec == .vp8Simulcast }
     @objc static var forceTURNMediaRelay: Bool { AppSettingsStore.shared.isTURNMediaRelayOn }
