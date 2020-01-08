@@ -41,7 +41,7 @@ commands:
           name: Test
           command: bundle exec fastlane test scheme:<< parameters.scheme >>
       - store_artifacts:
-          path: "~/Library/Logs/"
+          path: "~/Library/Logs/scan"
   beta:
     steps:
       - setup
