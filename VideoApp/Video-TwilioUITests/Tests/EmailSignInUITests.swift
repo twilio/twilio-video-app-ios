@@ -21,6 +21,8 @@ class EmailSignInUITests: UITestCase {
     func testSignIn() {
         let testCredentials = TestCredentialsStore().testCredentials
         
+        print("UI test: \(String(describing: app))")
+        
         app.buttons["emailSignInButton"].tap()
 
         let emailTextField = app.textFields["emailTextField"]
