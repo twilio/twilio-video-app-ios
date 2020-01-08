@@ -42,7 +42,7 @@ commands:
           command: bundle exec fastlane test scheme:<< parameters.scheme >>
       - store_artifacts:
           path: "~/Library/Logs/scan"
-          destination: "scan-file"
+          destination: "scan"
   beta:
     steps:
       - setup
@@ -54,6 +54,7 @@ commands:
           command: bundle exec fastlane beta
       - store_artifacts:
           path: "~/Library/Logs/gym"
+          destination: "gym"
 
 jobs:
   test_twilio_app:
