@@ -20,7 +20,7 @@ import XCTest
 class EmailSignInUITests: UITestCase {
     func testSignIn() {
         let testCredentials = TestCredentialsStore().testCredentials
-
+        
         app.buttons["emailSignInButton"].tap()
 
         let emailTextField = app.textFields["emailTextField"]
