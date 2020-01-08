@@ -51,6 +51,8 @@ commands:
       - run:
           name: Deploy to App Center
           command: bundle exec fastlane beta
+      - store_artifacts:
+          path: "~/Library/Logs"
 
 jobs:
   test_twilio_app:
@@ -84,7 +86,9 @@ workflows:
       - test_internal_app:
           filters: *test_filters
       - deploy_internal_app_beta:
-          filters:
-            branches:
-              only:
-                - master
+          filters: *test_filters
+      # - deploy_internal_app_beta:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master

@@ -20,8 +20,6 @@ import XCTest
 class EmailSignInUITests: UITestCase {
     func testSignIn() {
         let testCredentials = TestCredentialsStore().testCredentials
-
-        print("tcr app: \(String(describing: app))")
         
         app.buttons["emailSignInButton"].tap()
 
