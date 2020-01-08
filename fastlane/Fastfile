@@ -32,7 +32,7 @@ platform :ios do
       api_token: ENV["APP_CENTER_API_KEY"],
       owner_name: ENV["APP_CENTER_OWNER_NAME"],
       app_name: "Ahoy-Video-App-Internal",
-      destinations: "*",
+      destinations: "Testers",
       file: "Video-Internal.ipa"
     )
   end
