@@ -6,7 +6,7 @@ target 'Video-Twilio' do
   project 'VideoApp/VideoApp.xcodeproj'
 
   pod 'Crashlytics', '3.14.0'
-  pod 'TwilioVideo', '3.0.0'
+  pod 'TwilioVideo', '~> 3.1'
   pod 'Firebase/Analytics', '6.14.0'
   pod 'FirebaseUI/Auth', '8.4.0'
   pod 'FirebaseUI/Google', '8.4.0'
