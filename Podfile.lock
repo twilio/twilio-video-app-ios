@@ -102,16 +102,16 @@ PODS:
   - nanopb/encode (0.3.9011)
   - Nimble (8.0.5)
   - Quick (2.2.0)
-  - TwilioVideo (3.0.0)
+  - TwilioVideo (3.1.0)
 
 DEPENDENCIES:
   - Crashlytics (= 3.14.0)
-  - Firebase/Analytics
-  - FirebaseUI/Auth
-  - FirebaseUI/Google
+  - Firebase/Analytics (= 6.14.0)
+  - FirebaseUI/Auth (= 8.4.0)
+  - FirebaseUI/Google (= 8.4.0)
   - Nimble
   - Quick
-  - TwilioVideo (= 3.0.0)
+  - TwilioVideo (~> 3.1)
 
 SPEC REPOS:
   trunk:
@@ -162,8 +162,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  TwilioVideo: 9998112441979eef59dfa235f808cd097465b064
+  TwilioVideo: 29a68bf91236464fb9770bd1cde77514f0ef4ed5
 
-PODFILE CHECKSUM: 8186fa699d555fc35412a9f728b97968b4d721f6
+PODFILE CHECKSUM: e1f2741804311ae73300590192e0766c11f959df
 
 COCOAPODS: 1.8.4
