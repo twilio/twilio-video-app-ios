@@ -26,8 +26,7 @@ class LaunchStoresFactoryImpl: LaunchStoresFactory {
             AppSettingsStore.shared,
             AuthStore.shared,
             CrashReportStore.shared,
-            VideoStore(),
-            AppCenterStore()
+            VideoStore()
         ]
     }
 }
