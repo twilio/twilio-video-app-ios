@@ -36,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
             launchFlow?.start()
         }
-
-        AppCenterStore().start()
         
         return true
     }
