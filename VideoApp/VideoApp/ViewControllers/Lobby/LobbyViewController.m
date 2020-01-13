@@ -51,7 +51,7 @@
     [super viewDidLoad];
 
     // Tweak up the UI
-    self.roomTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"RoomTCR"
+    self.roomTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Room"
                                                                                attributes:@{ NSForegroundColorAttributeName: [UIColor lightGrayColor] }];
 
     [self.roomTextField addTarget:self

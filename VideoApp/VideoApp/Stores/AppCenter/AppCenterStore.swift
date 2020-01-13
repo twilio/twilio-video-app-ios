@@ -21,6 +21,8 @@ class AppCenterStore: LaunchStore {
     func start() {
         guard let appSecret = CredentialsStore().credentials.appCenterAppSecret else { return }
         
+        #if !DEBUG
         MSAppCenter.start(appSecret, withServices: [MSDistribute.self])
+        #endif
     }
 }
