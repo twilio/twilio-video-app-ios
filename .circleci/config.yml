@@ -22,6 +22,7 @@ commands:
             mkdir -p Credentials || true
             base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o Credentials/GoogleService-Info.plist
             base64 -D \<<< $INTERNAL_CREDENTIALS_JSON -o Credentials/InternalCredentials.json
+            base64 -D \<<< $INTERNAL_INFO_PLIST -o VideoApp/VideoApp/Info.plist
             base64 -D \<<< $TEST_CREDENTIALS_JSON -o Credentials/TestCredentials.json
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
