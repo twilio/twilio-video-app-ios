@@ -5,6 +5,7 @@ workspace 'VideoApp'
 target 'Video-Twilio' do
   project 'VideoApp/VideoApp.xcodeproj'
 
+  pod 'AppCenter/Distribute', '2.5.3'
   pod 'Crashlytics', '3.14.0'
   pod 'TwilioVideo', '~> 3.1'
   pod 'Firebase/Analytics', '6.14.0'
