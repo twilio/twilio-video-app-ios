@@ -24,6 +24,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.285008367772-vak0a7utphkn8j4o401gcdsm9ee7oibf</string>
+				<string>appcenter-APP_CENTER_APP_SECRET_PLACEHOLDER</string>
 			</array>
 		</dict>
 	</array>
