@@ -514,6 +514,7 @@
 		DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserverFactory.swift; sourceTree = "<group>"; };
 		DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		DC9A4C8123CE627900D37CEC /* Credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Credentials.json; sourceTree = "<group>"; };
+		DC9A4C8523CE6AEB00D37CEC /* Credentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credentials.json.example; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -982,6 +983,7 @@
 		DC85CA4F23CCD3C700BF016F /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
+				DC9A4C8523CE6AEB00D37CEC /* Credentials.json.example */,
 				DC85CA5023CCD3D800BF016F /* Credentials.swift */,
 				DC85CA5423CCD40000BF016F /* CredentialsStore.swift */,
 				DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */,

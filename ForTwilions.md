@@ -14,6 +14,7 @@ Twilio employees should follow these instructions for internal testing.
 
 1. Make `Credentials` directory.
 1. Download [GoogleService-Info.plist](https://console.firebase.google.com/m/mobilesdk/projects/285008367772/clients/ios%3Acom.twilio.video-app/artifacts/1?param=%5B%22getArtifactRequest%22%2Cnull%2C%22ios%3Acom.twilio.video-app%22%2C%221%22%2C%22285008367772%22%5D&authuser=0) from Firebase Console and copy to `Credentials`.
+1. Copy `VideoApp/VideoApp/Stores/Credentials/Credentials.json.example` to `Credentials/Credentials.json` and insert correct value for `app_center_app_secret`.
 1. Copy `VideoApp/Video-TwilioUITests/TestCredentialsStore/TestCredentials.json.example` to `Credentials/TestCredentials.json` and insert correct values for `email_sign_in_user`.
 
 ### Run
