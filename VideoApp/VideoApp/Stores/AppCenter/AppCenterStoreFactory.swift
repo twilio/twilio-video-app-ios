@@ -18,6 +18,9 @@ import Foundation
 
 class AppCenterStoreFactory {
     func makeAppCenterStore() -> AppCenterStoreWriting {
-        return AppCenterStore(credentialsStore: CredentialsStoreFactory().makeCredentialsStore())
+        return AppCenterStore(
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
+            credentialsStore: CredentialsStoreFactory().makeCredentialsStore()
+        )
     }
 }

@@ -20,17 +20,19 @@ import AppCenterDistribute
 protocol AppCenterStoreWriting: LaunchStore { }
 
 class AppCenterStore: AppCenterStoreWriting {
+    private let appInfoStore: AppInfoStoreReading
     private let credentialsStore: CredentialsStoreReading
     
-    init(credentialsStore: CredentialsStoreReading) {
+    init(appInfoStore: AppInfoStoreReading, credentialsStore: CredentialsStoreReading) {
+        self.appInfoStore = appInfoStore
         self.credentialsStore = credentialsStore
     }
     
     func start() {
-        guard let appSecret = credentialsStore.credentials.appCenterAppSecret else { return }
+        guard appInfoStore.appInfo.target == .videoInternal else { return }
         
         #if !DEBUG
-        MSAppCenter.start(appSecret, withServices: [MSDistribute.self])
+        MSAppCenter.start(credentialsStore.credentials.appCenterAppSecret, withServices: [MSDistribute.self])
         #endif
     }
 }

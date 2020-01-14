@@ -22,7 +22,7 @@ protocol CredentialsStoreReading: AnyObject {
 
 class CredentialsStore: CredentialsStoreReading {
     var credentials: Credentials {
-        let url = bundle.url(forResource: "InternalCredentials", withExtension: "json")!
+        let url = bundle.url(forResource: "Credentials", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         return try! jsonDecoder.decode(Credentials.self, from: data)

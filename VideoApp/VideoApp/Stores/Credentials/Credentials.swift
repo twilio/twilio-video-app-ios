@@ -17,5 +17,5 @@
 import Foundation
 
 struct Credentials: Codable {
-    let appCenterAppSecret: String?
+    let appCenterAppSecret: String
 }
