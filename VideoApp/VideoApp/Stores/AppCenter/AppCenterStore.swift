@@ -17,9 +17,17 @@
 import AppCenter
 import AppCenterDistribute
 
-class AppCenterStore: LaunchStore {
+protocol AppCenterStoreWriting: LaunchStore { }
+
+class AppCenterStore: AppCenterStoreWriting {
+    private let credentialsStore: CredentialsStoreReading
+    
+    init(credentialsStore: CredentialsStoreReading) {
+        self.credentialsStore = credentialsStore
+    }
+    
     func start() {
-        guard let appSecret = CredentialsStore().credentials.appCenterAppSecret else { return }
+        guard let appSecret = credentialsStore.credentials.appCenterAppSecret else { return }
         
         #if !DEBUG
         MSAppCenter.start(appSecret, withServices: [MSDistribute.self])

@@ -27,7 +27,7 @@ class LaunchStoresFactoryImpl: LaunchStoresFactory {
             AuthStore.shared,
             CrashReportStore.shared,
             VideoStore(),
-            AppCenterStore()
+            AppCenterStoreFactory().makeAppCenterStore()
         ]
     }
 }

@@ -16,27 +16,24 @@
 
 import Foundation
 
-class CredentialsStore {
-    private let bundle = Bundle.main
-    private let jsonDecoder = JSONDecoder()
-    private let appInfoStore: AppInfoStoreReading = AppInfoStoreFactory().makeAppInfoStore()
-
-    var credentials: Credentials {
-        let url = bundle.url(forResource: appInfoStore.appInfo.target.credentialsResource, withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        let credentials = try! jsonDecoder.decode(Credentials.self, from: data)
-
-        return credentials
-    }
+protocol CredentialsStoreReading: AnyObject {
+    var credentials: Credentials { get }
 }
 
-private extension AppInfo.Target {
-    var credentialsResource: String {
-        switch self {
-        case .videoTwilio: return "TwilioCredentials"
-        case .videoInternal: return "InternalCredentials"
-        case .videoCommunity: return "CommunityCredentials"
-        }
+class CredentialsStore: CredentialsStoreReading {
+    var credentials: Credentials {
+        let url = bundle.url(forResource: "InternalCredentials", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try! jsonDecoder.decode(Credentials.self, from: data)
+    }
+    private let bundle: BundleProtocol
+    private let jsonDecoder: JSONDecoderProtocol
+    private let appInfoStore: AppInfoStoreReading
+
+    init(bundle: BundleProtocol, jsonDecoder: JSONDecoderProtocol, appInfoStore: AppInfoStoreReading) {
+        self.bundle = bundle
+        self.jsonDecoder = jsonDecoder
+        self.appInfoStore = appInfoStore
     }
 }

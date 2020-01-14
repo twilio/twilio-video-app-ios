@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,14 +16,9 @@
 
 import Foundation
 
-protocol NotificationCenterProtocol: AnyObject {
-    @discardableResult func addObserver(
-        forName name: NSNotification.Name?,
-        object obj: Any?,
-        queue: OperationQueue?,
-        using block: @escaping (Notification) -> Void
-    ) -> NSObjectProtocol
-    func post(name aName: NSNotification.Name, object anObject: Any?)
+protocol JSONDecoderProtocol: AnyObject {
+    var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy { get set }
+    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable
 }
 
-extension NotificationCenter: NotificationCenterProtocol {}
+extension JSONDecoder: JSONDecoderProtocol { }

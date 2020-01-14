@@ -192,6 +192,15 @@
 		DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
 		DC85CA5E23CCDADA00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
 		DC85CA5F23CCDADB00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
+		DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
+		DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
+		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
+		DC85CA6523CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
+		DC85CA6623CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
+		DC85CA6723CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
+		DC85CA6923CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */; };
+		DC85CA6A23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */; };
+		DC85CA6B23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */; };
 		DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
@@ -488,6 +497,9 @@
 		DC85CA5423CCD40000BF016F /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
 		DC85CA5A23CCDACC00BF016F /* InternalCredentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InternalCredentials.json; sourceTree = "<group>"; };
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
+		DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderProtocol.swift; sourceTree = "<group>"; };
+		DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -876,6 +888,7 @@
 			children = (
 				DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */,
 				DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */,
+				DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */,
 				DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */,
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
@@ -961,6 +974,7 @@
 			isa = PBXGroup;
 			children = (
 				DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */,
+				DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */,
 			);
 			path = AppCenter;
 			sourceTree = "<group>";
@@ -970,6 +984,7 @@
 			children = (
 				DC85CA5023CCD3D800BF016F /* Credentials.swift */,
 				DC85CA5423CCD40000BF016F /* CredentialsStore.swift */,
+				DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */,
 			);
 			path = Credentials;
 			sourceTree = "<group>";
@@ -2027,6 +2042,7 @@
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2054,6 +2070,7 @@
 				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DC85CA6523CE519500BF016F /* JSONDecoderProtocol.swift in Sources */,
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2091,6 +2108,7 @@
 				DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
+				DC85CA6923CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2124,6 +2142,7 @@
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2151,6 +2170,7 @@
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DC85CA6623CE519500BF016F /* JSONDecoderProtocol.swift in Sources */,
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2188,6 +2208,7 @@
 				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
+				DC85CA6A23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2221,6 +2242,7 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2248,6 +2270,7 @@
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DC85CA6723CE519500BF016F /* JSONDecoderProtocol.swift in Sources */,
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2285,6 +2308,7 @@
 				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
+				DC85CA6B23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2596,7 +2620,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.10;
+				MARKETING_VERSION = 0.1.11;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -2627,7 +2651,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/VideoApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.10;
+				MARKETING_VERSION = 0.1.11;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
