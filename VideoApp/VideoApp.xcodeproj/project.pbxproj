@@ -965,13 +965,13 @@
 			path = AppCenter;
 			sourceTree = "<group>";
 		};
-		DC85CA4F23CCD3C700BF016F /* CredentialsStore */ = {
+		DC85CA4F23CCD3C700BF016F /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
 				DC85CA5023CCD3D800BF016F /* Credentials.swift */,
 				DC85CA5423CCD40000BF016F /* CredentialsStore.swift */,
 			);
-			path = CredentialsStore;
+			path = Credentials;
 			sourceTree = "<group>";
 		};
 		DC8AA8BA236267B2006C06D5 /* Core */ = {
@@ -1042,7 +1042,7 @@
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
 				DC0446B623A182780072F597 /* CrashReport */,
-				DC85CA4F23CCD3C700BF016F /* CredentialsStore */,
+				DC85CA4F23CCD3C700BF016F /* Credentials */,
 				DC04468F238F1E2D0072F597 /* User */,
 				DC8EAE4623BA9EE50045018F /* Video */,
 			);
