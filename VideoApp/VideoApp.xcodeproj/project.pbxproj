@@ -1241,6 +1241,7 @@
 				01EF4628CA377DFEB0B1E9E6 /* [CP] Embed Pods Frameworks */,
 				3F2802B0738EDB0C0DA6E5CF /* [CP] Copy Pods Resources */,
 				DC0446B423A02E660072F597 /* Crashlytics */,
+				DC9A4C8623CF7CA400D37CEC /* App Center URL Scheme */,
 			);
 			buildRules = (
 			);
@@ -2008,6 +2009,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		DC9A4C8623CF7CA400D37CEC /* App Center URL Scheme */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "App Center URL Scheme";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Scripts/app-center-url-scheme.sh\"\n";
 		};
 		FF01EB7FB507DA5BB103F0F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
