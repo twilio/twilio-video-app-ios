@@ -228,7 +228,6 @@
 		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
-		DC9A4C8823D0BC2C00D37CEC /* Credentials.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -1432,7 +1431,6 @@
 				4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */,
 				DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */,
 				DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */,
-				DC9A4C8823D0BC2C00D37CEC /* Credentials.xcconfig in Resources */,
 				4B0012461FBA52C4004A587E /* Main.storyboard in Resources */,
 				DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */,
 			);
