@@ -182,12 +182,6 @@
 		DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */; };
 		DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */; };
 		DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */; };
-		DC85CA5123CCD3D800BF016F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA5023CCD3D800BF016F /* Credentials.swift */; };
-		DC85CA5223CCD3D800BF016F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA5023CCD3D800BF016F /* Credentials.swift */; };
-		DC85CA5323CCD3D800BF016F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA5023CCD3D800BF016F /* Credentials.swift */; };
-		DC85CA5523CCD40000BF016F /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA5423CCD40000BF016F /* CredentialsStore.swift */; };
-		DC85CA5623CCD40000BF016F /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA5423CCD40000BF016F /* CredentialsStore.swift */; };
-		DC85CA5723CCD40000BF016F /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA5423CCD40000BF016F /* CredentialsStore.swift */; };
 		DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
 		DC85CA5E23CCDADA00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
 		DC85CA5F23CCDADB00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
@@ -197,9 +191,6 @@
 		DC85CA6523CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
 		DC85CA6623CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
 		DC85CA6723CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
-		DC85CA6923CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */; };
-		DC85CA6A23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */; };
-		DC85CA6B23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */; };
 		DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
@@ -240,7 +231,6 @@
 		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
-		DC9A4C8223CE627900D37CEC /* Credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C8123CE627900D37CEC /* Credentials.json */; };
 		DC9A4C8823D0BC2C00D37CEC /* Credentials.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -500,12 +490,9 @@
 		DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchFlow.swift; sourceTree = "<group>"; };
 		DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
-		DC85CA5023CCD3D800BF016F /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		DC85CA5423CCD40000BF016F /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
 		DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderProtocol.swift; sourceTree = "<group>"; };
-		DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -520,8 +507,6 @@
 		DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserving.swift; sourceTree = "<group>"; };
 		DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserverFactory.swift; sourceTree = "<group>"; };
 		DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
-		DC9A4C8123CE627900D37CEC /* Credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Credentials.json; sourceTree = "<group>"; };
-		DC9A4C8523CE6AEB00D37CEC /* Credentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credentials.json.example; sourceTree = "<group>"; };
 		DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Credentials.xcconfig; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
@@ -996,17 +981,6 @@
 			path = AppCenter;
 			sourceTree = "<group>";
 		};
-		DC85CA4F23CCD3C700BF016F /* Credentials */ = {
-			isa = PBXGroup;
-			children = (
-				DC9A4C8523CE6AEB00D37CEC /* Credentials.json.example */,
-				DC85CA5023CCD3D800BF016F /* Credentials.swift */,
-				DC85CA5423CCD40000BF016F /* CredentialsStore.swift */,
-				DC85CA6823CE5B4B00BF016F /* CredentialsStoreFactory.swift */,
-			);
-			path = Credentials;
-			sourceTree = "<group>";
-		};
 		DC8AA8BA236267B2006C06D5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -1075,7 +1049,6 @@
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
 				DC0446B623A182780072F597 /* CrashReport */,
-				DC85CA4F23CCD3C700BF016F /* Credentials */,
 				DC04468F238F1E2D0072F597 /* User */,
 				DC8EAE4623BA9EE50045018F /* Video */,
 			);
@@ -1206,7 +1179,6 @@
 		DCE9B05D235A46EA008E5B5B /* Credentials */ = {
 			isa = PBXGroup;
 			children = (
-				DC9A4C8123CE627900D37CEC /* Credentials.json */,
 				DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */,
 				DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */,
 			);
@@ -1482,7 +1454,6 @@
 				DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */,
 				DC9A4C8823D0BC2C00D37CEC /* Credentials.xcconfig in Resources */,
 				4B0012461FBA52C4004A587E /* Main.storyboard in Resources */,
-				DC9A4C8223CE627900D37CEC /* Credentials.json in Resources */,
 				DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2114,7 +2085,6 @@
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
-				DC85CA5123CCD3D800BF016F /* Credentials.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -2147,7 +2117,6 @@
 				DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
-				DC85CA6923CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2160,7 +2129,6 @@
 				DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				DC8EAE4323BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */,
-				DC85CA5523CCD40000BF016F /* CredentialsStore.swift in Sources */,
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
@@ -2214,7 +2182,6 @@
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
-				DC85CA5223CCD3D800BF016F /* Credentials.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -2247,7 +2214,6 @@
 				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
-				DC85CA6A23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2260,7 +2226,6 @@
 				DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				DC8EAE4423BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				4B0012321FBA52C4004A587E /* VariableAlphaToggleButton.m in Sources */,
-				DC85CA5623CCD40000BF016F /* CredentialsStore.swift in Sources */,
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
@@ -2314,7 +2279,6 @@
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
-				DC85CA5323CCD3D800BF016F /* Credentials.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -2347,7 +2311,6 @@
 				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
-				DC85CA6B23CE5B4B00BF016F /* CredentialsStoreFactory.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2360,7 +2323,6 @@
 				DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */,
 				DC8EAE4523BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				4B00126F1FBA52E5004A587E /* VariableAlphaToggleButton.m in Sources */,
-				DC85CA5723CCD40000BF016F /* CredentialsStore.swift in Sources */,
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,

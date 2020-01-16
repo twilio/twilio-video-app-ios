@@ -21,7 +21,6 @@ commands:
           command: |
             mkdir -p Credentials || true
             base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o Credentials/GoogleService-Info.plist
-            base64 -D \<<< $CREDENTIALS_JSON -o Credentials/Credentials.json
             base64 -D \<<< $CREDENTIALS_XCCONFIG -o Credentials/Credentials.xcconfig
             base64 -D \<<< $TEST_CREDENTIALS_JSON -o Credentials/TestCredentials.json
       - restore_cache:
