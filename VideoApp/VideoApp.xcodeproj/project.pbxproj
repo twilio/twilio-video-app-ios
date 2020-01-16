@@ -188,9 +188,6 @@
 		DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
-		DC85CA6523CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
-		DC85CA6623CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
-		DC85CA6723CE519500BF016F /* JSONDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */; };
 		DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
@@ -492,7 +489,6 @@
 		DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
-		DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderProtocol.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8BD23627D15006C06D5 /* FirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -890,7 +886,6 @@
 			children = (
 				DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */,
 				DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */,
-				DC85CA6423CE519500BF016F /* JSONDecoderProtocol.swift */,
 				DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */,
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
@@ -2080,7 +2075,6 @@
 				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
-				DC85CA6523CE519500BF016F /* JSONDecoderProtocol.swift in Sources */,
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2177,7 +2171,6 @@
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
-				DC85CA6623CE519500BF016F /* JSONDecoderProtocol.swift in Sources */,
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2274,7 +2267,6 @@
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
-				DC85CA6723CE519500BF016F /* JSONDecoderProtocol.swift in Sources */,
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
