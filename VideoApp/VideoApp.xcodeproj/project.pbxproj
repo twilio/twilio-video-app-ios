@@ -241,6 +241,7 @@
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
 		DC9A4C8223CE627900D37CEC /* Credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C8123CE627900D37CEC /* Credentials.json */; };
+		DC9A4C8823D0BC2C00D37CEC /* Credentials.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -377,8 +378,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045A4E61EAA4C6E7BD38BB5F /* Pods-Video-Twilio.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.custom.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.custom.xcconfig"; sourceTree = "<group>"; };
 		05FE9D8FE25C13BB6ADB4F3B /* Pods-Video-Twilio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.release.xcconfig"; sourceTree = "<group>"; };
 		09DA89059C9FC51D558EB8D4 /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig"; sourceTree = "<group>"; };
+		158DEC7B5ABF7D4CD320B28C /* Pods-Video-Twilio-Video-Community.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.custom.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.custom.xcconfig"; sourceTree = "<group>"; };
 		1FB1306CB055161D792FB7EB /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		241282371E36A6AB002198BE /* Video-Twilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Twilio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		241282401E36A6AB002198BE /* LobbyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LobbyViewController.h; sourceTree = "<group>"; };
@@ -424,11 +427,15 @@
 		24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAppCameraSource.m; sourceTree = "<group>"; };
 		2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B7A8FEA91C4F11C6503CC7 /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		388688AFC357F39362B7C42E /* Pods-Video-TwilioUITests.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-TwilioUITests.custom.xcconfig"; path = "Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests.custom.xcconfig"; sourceTree = "<group>"; };
+		3C98F5BCE5B1F3C0695591EF /* Pods-Video-Twilio-Video-TwilioTests.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests.custom.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests.custom.xcconfig"; sourceTree = "<group>"; };
 		4B00124E1FBA52C4004A587E /* Video-Internal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Internal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B00128B1FBA52E5004A587E /* Video-Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Community.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F66C3D4CD6DB108A8F8EB06 /* Pods-Video-Twilio-Video-Internal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Internal.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal.release.xcconfig"; sourceTree = "<group>"; };
 		6A619E930BB6631879D05D9C /* Pods-Video-TwilioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-TwilioUITests.release.xcconfig"; path = "Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7B9E1215884AC9C6C75A059B /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.custom.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.custom.xcconfig"; sourceTree = "<group>"; };
 		7BF86F7A57DAC623A7A9F61B /* Pods-Video-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Community.debug.xcconfig"; path = "Target Support Files/Pods-Video-Community/Pods-Video-Community.debug.xcconfig"; sourceTree = "<group>"; };
+		808991999A620C45952F1E75 /* Pods-Video-Twilio-Video-Internal.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Internal.custom.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal.custom.xcconfig"; sourceTree = "<group>"; };
 		8A14E433CF4662B19E44A3BE /* Pods-Video-Twilio-Video-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC49999232A18D2005A4B35 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		97650562A7ED4405DB1FC500 /* Pods-Video-Twilio-Video-Internal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Internal.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -515,6 +522,7 @@
 		DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		DC9A4C8123CE627900D37CEC /* Credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Credentials.json; sourceTree = "<group>"; };
 		DC9A4C8523CE6AEB00D37CEC /* Credentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credentials.json.example; sourceTree = "<group>"; };
+		DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Credentials.xcconfig; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -557,6 +565,7 @@
 		E500D96C3DB0CE83932C6D4D /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig"; sourceTree = "<group>"; };
 		E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Internal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A97F7D5951648699B3DCED /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.custom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.custom.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.custom.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -743,6 +752,13 @@
 				09DA89059C9FC51D558EB8D4 /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig */,
 				33B7A8FEA91C4F11C6503CC7 /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig */,
 				E500D96C3DB0CE83932C6D4D /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig */,
+				045A4E61EAA4C6E7BD38BB5F /* Pods-Video-Twilio.custom.xcconfig */,
+				158DEC7B5ABF7D4CD320B28C /* Pods-Video-Twilio-Video-Community.custom.xcconfig */,
+				808991999A620C45952F1E75 /* Pods-Video-Twilio-Video-Internal.custom.xcconfig */,
+				3C98F5BCE5B1F3C0695591EF /* Pods-Video-Twilio-Video-TwilioTests.custom.xcconfig */,
+				E8A97F7D5951648699B3DCED /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.custom.xcconfig */,
+				7B9E1215884AC9C6C75A059B /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.custom.xcconfig */,
+				388688AFC357F39362B7C42E /* Pods-Video-TwilioUITests.custom.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -1191,6 +1207,7 @@
 			isa = PBXGroup;
 			children = (
 				DC9A4C8123CE627900D37CEC /* Credentials.json */,
+				DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */,
 				DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */,
 			);
 			name = Credentials;
@@ -1463,6 +1480,7 @@
 				4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */,
 				DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */,
 				DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */,
+				DC9A4C8823D0BC2C00D37CEC /* Credentials.xcconfig in Resources */,
 				4B0012461FBA52C4004A587E /* Main.storyboard in Resources */,
 				DC9A4C8223CE627900D37CEC /* Credentials.json in Resources */,
 				DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */,
@@ -2659,7 +2677,7 @@
 		};
 		4B00124D1FBA52C4004A587E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F66C3D4CD6DB108A8F8EB06 /* Pods-Video-Twilio-Video-Internal.release.xcconfig */;
+			baseConfigurationReference = DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

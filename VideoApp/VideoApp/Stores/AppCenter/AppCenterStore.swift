@@ -21,18 +21,16 @@ protocol AppCenterStoreWriting: LaunchStore { }
 
 class AppCenterStore: AppCenterStoreWriting {
     private let appInfoStore: AppInfoStoreReading
-    private let credentialsStore: CredentialsStoreReading
     
-    init(appInfoStore: AppInfoStoreReading, credentialsStore: CredentialsStoreReading) {
+    init(appInfoStore: AppInfoStoreReading) {
         self.appInfoStore = appInfoStore
-        self.credentialsStore = credentialsStore
     }
     
     func start() {
         guard appInfoStore.appInfo.target == .videoInternal else { return }
         
         #if !DEBUG
-        MSAppCenter.start(credentialsStore.credentials.appCenterAppSecret, withServices: [MSDistribute.self])
+        MSAppCenter.start(appInfoStore.appInfo.appCenterAppSecret, withServices: [MSDistribute.self])
         #endif
     }
 }

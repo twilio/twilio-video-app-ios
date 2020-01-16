@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppCenterAppSecret</key>
+	<string>$(APP_CENTER_APP_SECRET)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,7 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.285008367772-vak0a7utphkn8j4o401gcdsm9ee7oibf</string>
-				<string>appcenter-APP_CENTER_APP_SECRET_PLACEHOLDER</string>
+				<string>appcenter-$(APP_CENTER_APP_SECRET)</string>
 			</array>
 		</dict>
 	</array>

@@ -23,6 +23,7 @@ struct AppInfo {
         case videoCommunity = "Video-Community"
     }
     
+    let appCenterAppSecret: String
     let version: String
     let target: Target
 }
