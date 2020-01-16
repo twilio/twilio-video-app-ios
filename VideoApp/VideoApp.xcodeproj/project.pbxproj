@@ -2026,7 +2026,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash -l";
-			shellScript = "\"${SRCROOT}/../Scripts/app-center-url-scheme.rb\"\n";
+			shellScript = "#\"${SRCROOT}/../Scripts/app-center-url-scheme.rb\"\n";
 		};
 		FF01EB7FB507DA5BB103F0F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

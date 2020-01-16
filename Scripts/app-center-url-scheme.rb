@@ -18,7 +18,3 @@ text = File.read(INFO_PLIST_FILE)
 replace = text.gsub("APP_CENTER_APP_SECRET_PLACEHOLDER", app_center_app_secret)
 File.open(INFO_PLIST_FILE, "w") {|file| file.puts replace}
 
-
-
-# File.open(INFO_PLIST_FILE, ‘r+’) { |f| newstr = f.read.gsub
-#     ('APP_CENTER_APP_SECRET_PLACEHOLDER', app_center_app_secret); f.rewind; f.puts(newstr) }
