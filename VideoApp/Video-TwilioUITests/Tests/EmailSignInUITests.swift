@@ -19,21 +19,21 @@ import XCTest
 
 class EmailSignInUITests: UITestCase {
     func testSignIn() {
-        let testCredentials = TestCredentialsStore().testCredentials
+        let testSecrets = TestSecretsStore().testSecrets
         
         app.buttons["emailSignInButton"].tap()
 
         let emailTextField = app.textFields["emailTextField"]
         emailTextField.tap()
-        emailTextField.typeText(testCredentials.emailSignInUser.email)
+        emailTextField.typeText(testSecrets.emailSignInUser.email)
 
         let passwordTextField = app.secureTextFields["passwordTextField"]
         passwordTextField.tap()
-        passwordTextField.typeText(testCredentials.emailSignInUser.password)
+        passwordTextField.typeText(testSecrets.emailSignInUser.password)
 
         app.buttons["submitButton"].tap()
 
-        expect(self.app.staticTexts["userNameLabel"].label).toEventually(equal(testCredentials.emailSignInUser.email))
+        expect(self.app.staticTexts["userNameLabel"].label).toEventually(equal(testSecrets.emailSignInUser.email))
 
         app.buttons["settingsButton"].tap()
 

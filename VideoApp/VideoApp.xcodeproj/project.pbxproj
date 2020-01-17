@@ -100,10 +100,8 @@
 		DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044698238F20130072F597 /* SwiftToObjc.swift */; };
 		DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
 		DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469E238F29F50072F597 /* MockAuthStore.swift */; };
-		DC0446A1239716530072F597 /* TestCredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestCredentialsStore.swift */; };
-		DC0446A3239716860072F597 /* TestCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestCredentials.swift */; };
-		DC0446A92398439E0072F597 /* TestCredentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DC0446A82398439E0072F597 /* TestCredentials.json */; };
-		DC0446AE23984BF90072F597 /* TestCredentials.json.example in Resources */ = {isa = PBXBuildFile; fileRef = DC0446AD23984BF90072F597 /* TestCredentials.json.example */; };
+		DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestSecretsStore.swift */; };
+		DC0446A3239716860072F597 /* TestSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestSecrets.swift */; };
 		DC0446B2239855090072F597 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B1239855090072F597 /* UITestCase.swift */; };
 		DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
@@ -228,6 +226,7 @@
 		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
+		DC9A4C9223D161A200D37CEC /* TestSecrets.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C9123D161A200D37CEC /* TestSecrets.json */; };
 		DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */; };
@@ -440,10 +439,8 @@
 		DC044698238F20130072F597 /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
 		DC04469C238F29500072F597 /* UserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreSpec.swift; sourceTree = "<group>"; };
 		DC04469E238F29F50072F597 /* MockAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthStore.swift; sourceTree = "<group>"; };
-		DC0446A0239716530072F597 /* TestCredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCredentialsStore.swift; sourceTree = "<group>"; };
-		DC0446A2239716860072F597 /* TestCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCredentials.swift; sourceTree = "<group>"; };
-		DC0446A82398439E0072F597 /* TestCredentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestCredentials.json; path = ../../../Credentials/TestCredentials.json; sourceTree = "<group>"; };
-		DC0446AD23984BF90072F597 /* TestCredentials.json.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestCredentials.json.example; sourceTree = "<group>"; };
+		DC0446A0239716530072F597 /* TestSecretsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecretsStore.swift; sourceTree = "<group>"; };
+		DC0446A2239716860072F597 /* TestSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecrets.swift; sourceTree = "<group>"; };
 		DC0446B1239855090072F597 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		DC0446B723A182980072F597 /* CrashReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportStore.swift; sourceTree = "<group>"; };
 		DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -496,7 +493,8 @@
 		DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserving.swift; sourceTree = "<group>"; };
 		DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSceneObserverFactory.swift; sourceTree = "<group>"; };
 		DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
-		DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Credentials.xcconfig; sourceTree = "<group>"; };
+		DC9A4C8723D0BC2C00D37CEC /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		DC9A4C9123D161A200D37CEC /* TestSecrets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestSecrets.json; path = ../../../IOSVideoAppSecrets/TestSecrets.json; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* AhoyAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -633,8 +631,8 @@
 			isa = PBXGroup;
 			children = (
 				24693EEA1E393F1B00F21DDC /* API */,
-				DCE9B05D235A46EA008E5B5B /* Credentials */,
 				DC44C2CC23871C2000205174 /* Helpers */,
+				DCE9B05D235A46EA008E5B5B /* IOSVideoAppSecrets */,
 				DC7790CA236B6B3800973B86 /* Launch */,
 				24A723E41ECE1CBD00486E7A /* Models */,
 				DCAEBEE32376011D00141D2D /* Stores */,
@@ -733,7 +731,7 @@
 		DC04467A238DD55C0072F597 /* Video-TwilioUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DC0446A7239843470072F597 /* TestCredentialsStore */,
+				DC0446A7239843470072F597 /* TestSecretsStore */,
 				DC0446A62398433A0072F597 /* Tests */,
 				DC0446AF239854E20072F597 /* UITestCase */,
 				DC04467D238DD55C0072F597 /* Info.plist */,
@@ -758,15 +756,14 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		DC0446A7239843470072F597 /* TestCredentialsStore */ = {
+		DC0446A7239843470072F597 /* TestSecretsStore */ = {
 			isa = PBXGroup;
 			children = (
-				DC0446A82398439E0072F597 /* TestCredentials.json */,
-				DC0446AD23984BF90072F597 /* TestCredentials.json.example */,
-				DC0446A2239716860072F597 /* TestCredentials.swift */,
-				DC0446A0239716530072F597 /* TestCredentialsStore.swift */,
+				DC9A4C9123D161A200D37CEC /* TestSecrets.json */,
+				DC0446A2239716860072F597 /* TestSecrets.swift */,
+				DC0446A0239716530072F597 /* TestSecretsStore.swift */,
 			);
-			path = TestCredentialsStore;
+			path = TestSecretsStore;
 			sourceTree = "<group>";
 		};
 		DC0446AF239854E20072F597 /* UITestCase */ = {
@@ -1156,14 +1153,14 @@
 			path = "Video-CommunityTests";
 			sourceTree = "<group>";
 		};
-		DCE9B05D235A46EA008E5B5B /* Credentials */ = {
+		DCE9B05D235A46EA008E5B5B /* IOSVideoAppSecrets */ = {
 			isa = PBXGroup;
 			children = (
-				DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */,
+				DC9A4C8723D0BC2C00D37CEC /* Secrets.xcconfig */,
 				DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */,
 			);
-			name = Credentials;
-			path = ../../Credentials;
+			name = IOSVideoAppSecrets;
+			path = ../../IOSVideoAppSecrets;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -1455,8 +1452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0446AE23984BF90072F597 /* TestCredentials.json.example in Resources */,
-				DC0446A92398439E0072F597 /* TestCredentials.json in Resources */,
+				DC9A4C9223D161A200D37CEC /* TestSecrets.json in Resources */,
 				DC85CA5E23CCDADA00BF016F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2294,9 +2290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0446A3239716860072F597 /* TestCredentials.swift in Sources */,
+				DC0446A3239716860072F597 /* TestSecrets.swift in Sources */,
 				DC0446B2239855090072F597 /* UITestCase.swift in Sources */,
-				DC0446A1239716530072F597 /* TestCredentialsStore.swift in Sources */,
+				DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */,
 				DC04467C238DD55C0072F597 /* EmailSignInUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2596,7 +2592,7 @@
 		};
 		4B00124D1FBA52C4004A587E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC9A4C8723D0BC2C00D37CEC /* Credentials.xcconfig */;
+			baseConfigurationReference = DC9A4C8723D0BC2C00D37CEC /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
