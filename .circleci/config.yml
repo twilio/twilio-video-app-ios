@@ -85,8 +85,7 @@ workflows:
       - test_internal_app:
           filters: *test_filters
       - deploy_internal_app_beta:
-          filters: *test_filters
-          # filters:
-          #   branches:
-          #     only:
-          #       - master
+          filters:
+            branches:
+              only:
+                - master
