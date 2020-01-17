@@ -38,4 +38,4 @@ playground.xcworkspace
 /fastlane/test_output
 
 # Secrets
-/IOSVideoAppSecrets/
+IOSVideoAppSecrets
