@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,16 +14,23 @@
 //  limitations under the License.
 //
 
-import Foundation
+import AppCenter
+import AppCenterDistribute
 
-protocol NotificationCenterProtocol: AnyObject {
-    @discardableResult func addObserver(
-        forName name: NSNotification.Name?,
-        object obj: Any?,
-        queue: OperationQueue?,
-        using block: @escaping (Notification) -> Void
-    ) -> NSObjectProtocol
-    func post(name aName: NSNotification.Name, object anObject: Any?)
+protocol AppCenterStoreWriting: LaunchStore { }
+
+class AppCenterStore: AppCenterStoreWriting {
+    private let appInfoStore: AppInfoStoreReading
+    
+    init(appInfoStore: AppInfoStoreReading) {
+        self.appInfoStore = appInfoStore
+    }
+    
+    func start() {
+        guard appInfoStore.appInfo.target == .videoInternal else { return }
+        
+        #if !DEBUG
+        MSAppCenter.start(appInfoStore.appInfo.appCenterAppSecret, withServices: [MSDistribute.self])
+        #endif
+    }
 }
-
-extension NotificationCenter: NotificationCenterProtocol {}

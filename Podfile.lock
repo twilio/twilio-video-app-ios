@@ -4,6 +4,9 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.3.0)
   - AppAuth/Core (1.3.0)
   - AppAuth/ExternalUserAgent (1.3.0)
+  - AppCenter/Core (2.5.3)
+  - AppCenter/Distribute (2.5.3):
+    - AppCenter/Core
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -105,6 +108,7 @@ PODS:
   - TwilioVideo (3.1.0)
 
 DEPENDENCIES:
+  - AppCenter/Distribute (= 2.5.3)
   - Crashlytics (= 3.14.0)
   - Firebase/Analytics (= 6.14.0)
   - FirebaseUI/Auth (= 8.4.0)
@@ -116,6 +120,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
+    - AppCenter
     - Crashlytics
     - Fabric
     - Firebase
@@ -141,6 +146,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
+  AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 0219bb4782eb1406f1b9b0628a2e625484ce910d
@@ -164,6 +170,6 @@ SPEC CHECKSUMS:
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 29a68bf91236464fb9770bd1cde77514f0ef4ed5
 
-PODFILE CHECKSUM: e1f2741804311ae73300590192e0766c11f959df
+PODFILE CHECKSUM: 1fa24da8d4c8602b96374ee1c599ad5ae6bbf1d0
 
 COCOAPODS: 1.8.4

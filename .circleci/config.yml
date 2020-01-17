@@ -17,11 +17,8 @@ commands:
     steps:
       - checkout
       - run:
-          name: Install credentials
-          command: |
-            mkdir -p Credentials || true
-            base64 -D \<<< $GOOGLE_SERVICE_INFO_PLIST -o Credentials/GoogleService-Info.plist
-            base64 -D \<<< $TEST_CREDENTIALS_JSON -o Credentials/TestCredentials.json
+          name: Install secrets
+          command: base64 -D \<<< $SECRETS_TAR | tar -x
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
@@ -88,7 +85,8 @@ workflows:
       - test_internal_app:
           filters: *test_filters
       - deploy_internal_app_beta:
-          filters:
-            branches:
-              only:
-                - master
+          filters: *test_filters
+          # filters:
+          #   branches:
+          #     only:
+          #       - master

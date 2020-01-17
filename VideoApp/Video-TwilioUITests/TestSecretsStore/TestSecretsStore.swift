@@ -16,14 +16,13 @@
 
 import Foundation
 
-protocol NotificationCenterProtocol: AnyObject {
-    @discardableResult func addObserver(
-        forName name: NSNotification.Name?,
-        object obj: Any?,
-        queue: OperationQueue?,
-        using block: @escaping (Notification) -> Void
-    ) -> NSObjectProtocol
-    func post(name aName: NSNotification.Name, object anObject: Any?)
+class TestSecretsStore {
+    var testSecrets: TestSecrets {
+        let bundle = Bundle(for: type(of: self))
+        let url = bundle.url(forResource: "TestSecrets", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try! jsonDecoder.decode(TestSecrets.self, from: data)
+    }
 }
-
-extension NotificationCenter: NotificationCenterProtocol {}

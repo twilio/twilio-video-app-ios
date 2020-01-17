@@ -31,11 +31,11 @@ timeline.xctimeline
 playground.xcworkspace
 
 # CocoaPods
-Pods/
+/Pods/
 
 # fastlane
-fastlane/report.xml
-fastlane/test_output
+/fastlane/report.xml
+/fastlane/test_output
 
-# Credentials
-Credentials/
+# Secrets
+IOSVideoAppSecrets*

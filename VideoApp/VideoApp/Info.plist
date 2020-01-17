@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TargetName</key>
-	<string>$(TARGET_NAME)</string>
+	<key>AppCenterAppSecret</key>
+	<string>$(APP_CENTER_APP_SECRET)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -26,17 +26,20 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.285008367772-vak0a7utphkn8j4o401gcdsm9ee7oibf</string>
+				<string>appcenter-$(APP_CENTER_APP_SECRET)</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>${PRODUCT_NAME} uses your camera to capture video which is shared with other Room participants.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>${PRODUCT_NAME} uses your microphone to capture audio which is shared with other Room participants.</string>
+	<key>TargetName</key>
+	<string>$(TARGET_NAME)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

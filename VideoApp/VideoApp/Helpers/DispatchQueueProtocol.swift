@@ -16,7 +16,7 @@
 
 import Foundation
 
-protocol DispatchQueueProtocol {
+protocol DispatchQueueProtocol: AnyObject {
     func async(
         group: DispatchGroup?,
         qos: DispatchQoS,

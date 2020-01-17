@@ -16,7 +16,7 @@
 
 import Foundation
 
-protocol BundleProtocol {
+protocol BundleProtocol: AnyObject {
     func object(forInfoDictionaryKey key: String) -> Any?
 }
 
