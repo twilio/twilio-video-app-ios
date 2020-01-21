@@ -39,3 +39,9 @@ playground.xcworkspace
 
 # Secrets
 IOSVideoAppSecrets*
+
+# CI
+/.bundle/
+/Apple Worldwide Developer Relations Certification Authority.cer
+/Certificates.p12
+/vendor/
