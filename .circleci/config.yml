@@ -42,9 +42,6 @@ commands:
           destination: "scan"
   beta:
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "b6:08:f4:42:d4:b7:0a:ca:28:f5:9d:bd:5e:01:17:b0"
       - setup
       - run:
           name: Setup code signing
