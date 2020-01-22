@@ -33,7 +33,13 @@ class AppInfoStoreSpec: QuickSpec {
                     expect(sut.appInfo.version.isEmpty).to(beFalse())
                 }
             }
-            
+
+            describe("build") {
+                it("is not empty") {
+                    expect(sut.appInfo.build.isEmpty).to(beFalse())
+                }
+            }
+
             describe("target") {
                 it("is videoTwilio") {
                     expect(sut.appInfo.target).to(equal(.videoTwilio))

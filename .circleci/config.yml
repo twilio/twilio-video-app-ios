@@ -78,16 +78,14 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      # - test_twilio_app:
-      #     filters: *test_filters
-      # - test_community_app:
-      #     filters: *test_filters
-      # - test_internal_app:
-      #     filters: *test_filters
-      - deploy_internal_app_beta:
+      - test_twilio_app:
           filters: *test_filters
-          # filters:
-          #   branches:
-          #     only:
-          #       - master
- 
+      - test_community_app:
+          filters: *test_filters
+      - test_internal_app:
+          filters: *test_filters
+      - deploy_internal_app_beta:
+          filters:
+            branches:
+              only:
+                - master
