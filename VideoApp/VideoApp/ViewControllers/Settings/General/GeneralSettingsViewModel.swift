@@ -24,7 +24,7 @@ class GeneralSettingsViewModel: SettingsViewModel {
                 rows: [
                     .info(
                         title: "App Version",
-                        detail: appInfoStore.appInfo.version
+                        detail: "\(appInfoStore.appInfo.version) (\(appInfoStore.appInfo.build))"
                     ),
                     .info(
                         title: "SDK Version",

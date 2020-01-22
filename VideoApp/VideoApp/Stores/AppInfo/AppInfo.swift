@@ -25,5 +25,6 @@ struct AppInfo {
     
     let appCenterAppSecret: String
     let version: String
+    let build: String
     let target: Target
 }
