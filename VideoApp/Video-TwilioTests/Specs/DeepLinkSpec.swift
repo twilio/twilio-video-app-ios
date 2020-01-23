@@ -21,7 +21,7 @@ import Quick
 
 class DeepLinkSpec: QuickSpec {
     override func spec() {
-        fdescribe("init") {
+        describe("init") {
             context("when path is /room/foo") {
                 it("returns room with foo roomName") {
                     expect(DeepLink(url: URL(string: "https://www.twilio.com/room/foo")!)).to(equal(.room(roomName: "foo")))
