@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum DeepLink {
+enum DeepLink: Equatable {
     case room(roomName: String)
 
     init?(url: URL) {
