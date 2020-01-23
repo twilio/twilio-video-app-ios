@@ -36,6 +36,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         URLContexts.forEach { urlOpenerFactory.makeURLOpener().openURL($0.url) }
     }
 
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        guard let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) else { return }
+
+        print(deepLink)
+    }
+
     func windowScene(
         _ windowScene: UIWindowScene,
         didUpdate previousCoordinateSpace: UICoordinateSpace,

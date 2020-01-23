@@ -281,6 +281,9 @@
 		DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
+		DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
+		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
+		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -513,6 +516,7 @@
 		DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF5223849C1C00141D2D /* VideoCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCodec.swift; sourceTree = "<group>"; };
+		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1021,6 +1025,7 @@
 		DCAEBEE32376011D00141D2D /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				DCD7674923DA334600A2939C /* DeepLink */,
 				DC85CA4A23CCD37F00BF016F /* AppCenter */,
 				DCF4614F23859B9A00DD8FEA /* AppInfo */,
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
@@ -1133,6 +1138,14 @@
 				DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */,
 			);
 			path = Advanced;
+			sourceTree = "<group>";
+		};
+		DCD7674923DA334600A2939C /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7674A23DA336600A2939C /* DeepLink.swift */,
+			);
+			path = DeepLink;
 			sourceTree = "<group>";
 		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
@@ -2089,6 +2102,7 @@
 				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
+				DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999A232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -2185,6 +2199,7 @@
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
+				DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -2281,6 +2296,7 @@
 				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
+				DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */,
 				8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -2634,7 +2650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
@@ -2670,7 +2686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
