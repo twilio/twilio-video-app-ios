@@ -25,6 +25,7 @@ class AppInfoStore: AppInfoStoreReading {
         AppInfo(
             appCenterAppSecret: bundle.object(forInfoDictionaryKey: "AppCenterAppSecret") as! String,
             version: bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String,
+            build: bundle.object(forInfoDictionaryKey: "CFBundleVersion") as! String,
             target: AppInfo.Target(rawValue: bundle.object(forInfoDictionaryKey: "TargetName") as! String)!
         )
     }
