@@ -294,6 +294,7 @@
 		DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
+		DCD7675E23DF63F500A2939C /* RoomDeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675D23DF63F500A2939C /* RoomDeepLinkTests.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -531,6 +532,7 @@
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
 		DCD7675523DF554A00A2939C /* UserActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityStore.swift; sourceTree = "<group>"; };
 		DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityStoreFactory.swift; sourceTree = "<group>"; };
+		DCD7675D23DF63F500A2939C /* RoomDeepLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDeepLinkTests.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */,
+				DCD7675D23DF63F500A2939C /* RoomDeepLinkTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -2342,6 +2345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0446A3239716860072F597 /* TestSecrets.swift in Sources */,
+				DCD7675E23DF63F500A2939C /* RoomDeepLinkTests.swift in Sources */,
 				DC0446B2239855090072F597 /* UITestCase.swift in Sources */,
 				DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */,
 				DC04467C238DD55C0072F597 /* EmailSignInUITests.swift in Sources */,
