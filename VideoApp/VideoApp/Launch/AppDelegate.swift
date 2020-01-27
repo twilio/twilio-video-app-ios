@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
     var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
+    var userActivityStoreFactory: UserActivityStoreFactory = UserActivityStoreFactoryImpl()
     var window: UIWindow?
 
     func application(
@@ -60,9 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         continue userActivity: NSUserActivity,
         restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
     ) -> Bool {
-        guard let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) else { return false }
-
-        print(deepLink)
-        return true
+        return userActivityStoreFactory.makeUserActivityStore().continueUserActivity(userActivity)
     }
 }

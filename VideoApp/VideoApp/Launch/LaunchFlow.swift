@@ -16,11 +16,11 @@
 
 import UIKit
 
-@objc protocol LaunchFlow {
+protocol LaunchFlow {
     func start()
 }
 
-@objc class LaunchFlowImpl: NSObject, LaunchFlow {
+class LaunchFlowImpl: LaunchFlow {
     private let window: UIWindow
     private let authFlow: AuthStoreWritingDelegate
     private let authStore: AuthStoreWriting
@@ -51,5 +51,9 @@ import UIKit
 
         let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
         navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
+        
+        DeepLinkStore.shared.didReceiveDeepLink = { [weak self] in
+            self?.start()
+        }
     }
 }
