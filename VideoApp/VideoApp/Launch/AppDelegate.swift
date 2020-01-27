@@ -54,4 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return urlOpenerFactory.makeURLOpener().openURL(url)
     }
+
+    func application(
+        _ application: UIApplication,
+        continue userActivity: NSUserActivity,
+        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
+    ) -> Bool {
+        guard let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) else { return false }
+
+        print(deepLink)
+        return true
+    }
 }
