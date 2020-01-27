@@ -15,15 +15,12 @@
 //
 
 import Nimble
-import XCTest
 
-let app = XCUIApplication()
-
-class UITestCase: XCTestCase {
-    override func setUp() {
-        continueAfterFailure = false
-        Nimble.AsyncDefaults.Timeout = 5
-        app.launch()
-        expect(app.exists).toEventually(beTrue())
+class AuthTests: UITestCase {
+    func test_emailSignIn_withValidCredentials_shouldDisplayUserNameOnLobbyScreen() {
+        let emailSignInUser = TestSecretsStore().testSecrets.emailSignInUser
+        AuthActivities.signIn(email: emailSignInUser.email, password: emailSignInUser.password)
+        expect(app.staticTexts["userNameLabel"].label).toEventually(equal(emailSignInUser.email))
+        AuthActivities.signOut()
     }
 }

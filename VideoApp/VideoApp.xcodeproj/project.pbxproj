@@ -79,7 +79,7 @@
 		AE0CFB3237FBE318B731B713 /* Pods_Video_Twilio_Video_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */; };
 		B9C6EDCF2651C8C600E239F6 /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ADEE0522D37947FC5C015A /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework */; };
 		C5FC580267C650371E9AB56B /* Pods_Video_Twilio_Video_Internal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */; };
-		DC04467C238DD55C0072F597 /* EmailSignInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */; };
+		DC04467C238DD55C0072F597 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04467B238DD55C0072F597 /* AuthTests.swift */; };
 		DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
 		DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
 		DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* APIEnvironment.swift */; };
@@ -294,7 +294,9 @@
 		DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
-		DCD7675E23DF63F500A2939C /* RoomDeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675D23DF63F500A2939C /* RoomDeepLinkTests.swift */; };
+		DCD7675E23DF63F500A2939C /* DeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */; };
+		DCD7676223DF923700A2939C /* AuthActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676123DF923700A2939C /* AuthActivities.swift */; };
+		DCD7676423DF9CC000A2939C /* DeepLinkActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -443,7 +445,7 @@
 		C4E1D6D09E2DE36C2CD37979 /* Pods-Video-Twilio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.debug.xcconfig"; sourceTree = "<group>"; };
 		CECDDB77E7A9B03648F91095 /* Pods-Video-Twilio-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
 		DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInUITests.swift; sourceTree = "<group>"; };
+		DC04467B238DD55C0072F597 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 		DC04467D238DD55C0072F597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC044683238EF6C20072F597 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIEnvironmentViewModel.swift; sourceTree = "<group>"; };
@@ -532,7 +534,9 @@
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
 		DCD7675523DF554A00A2939C /* UserActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityStore.swift; sourceTree = "<group>"; };
 		DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityStoreFactory.swift; sourceTree = "<group>"; };
-		DCD7675D23DF63F500A2939C /* RoomDeepLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDeepLinkTests.swift; sourceTree = "<group>"; };
+		DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkTests.swift; sourceTree = "<group>"; };
+		DCD7676123DF923700A2939C /* AuthActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthActivities.swift; sourceTree = "<group>"; };
+		DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkActivities.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -751,8 +755,9 @@
 		DC04467A238DD55C0072F597 /* Video-TwilioUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DC0446A7239843470072F597 /* TestSecretsStore */,
+				DCD7675F23DF91DC00A2939C /* Activities */,
 				DC0446A62398433A0072F597 /* Tests */,
+				DC0446A7239843470072F597 /* TestSecretsStore */,
 				DC0446AF239854E20072F597 /* UITestCase */,
 				DC04467D238DD55C0072F597 /* Info.plist */,
 			);
@@ -771,8 +776,8 @@
 		DC0446A62398433A0072F597 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DC04467B238DD55C0072F597 /* EmailSignInUITests.swift */,
-				DCD7675D23DF63F500A2939C /* RoomDeepLinkTests.swift */,
+				DC04467B238DD55C0072F597 /* AuthTests.swift */,
+				DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1175,6 +1180,15 @@
 				DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */,
 			);
 			path = UserActivity;
+			sourceTree = "<group>";
+		};
+		DCD7675F23DF91DC00A2939C /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7676123DF923700A2939C /* AuthActivities.swift */,
+				DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */,
+			);
+			path = Activities;
 			sourceTree = "<group>";
 		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
@@ -2345,10 +2359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0446A3239716860072F597 /* TestSecrets.swift in Sources */,
-				DCD7675E23DF63F500A2939C /* RoomDeepLinkTests.swift in Sources */,
+				DCD7675E23DF63F500A2939C /* DeepLinkTests.swift in Sources */,
 				DC0446B2239855090072F597 /* UITestCase.swift in Sources */,
+				DCD7676423DF9CC000A2939C /* DeepLinkActivities.swift in Sources */,
 				DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */,
-				DC04467C238DD55C0072F597 /* EmailSignInUITests.swift in Sources */,
+				DCD7676223DF923700A2939C /* AuthActivities.swift in Sources */,
+				DC04467C238DD55C0072F597 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

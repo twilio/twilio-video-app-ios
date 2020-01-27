@@ -15,20 +15,19 @@
 //
 
 import Nimble
-import XCTest
 
-class RoomDeepLinkTests: UITestCase {
-    func testWhenSignedIn() {
+class DeepLinkTests: UITestCase {
+    func test_roomDeepLink_withUserSignedIn_shouldNavigateToRoomScreenAndSetRoomName() {
         AuthActivities.signIn()
         DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo")
-        expect(self.app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
+        expect(app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
         AuthActivities.signOut()
     }
 
-    func testWhenSignedOut() {
+    func test_roomDeepLink_withUserSignedOut_shouldRequireUserToSignInAndNavigateToRoomScreenAndSetRoomName() {
         DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo")
         AuthActivities.signIn()
-        expect(self.app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
+        expect(app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
         AuthActivities.signOut()
     }
 }

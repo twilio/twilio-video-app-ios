@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2020 Twilio, Inc.
+//  Copyright (C) 2019 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -17,18 +17,11 @@
 import Nimble
 import XCTest
 
-class RoomDeepLinkTests: UITestCase {
-    func testWhenSignedIn() {
-        AuthActivities.signIn()
-        DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo")
-        expect(self.app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
-        AuthActivities.signOut()
-    }
-
-    func testWhenSignedOut() {
-        DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo")
-        AuthActivities.signIn()
-        expect(self.app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
+class EmailSignInTests: UITestCase {
+    func testSignIn() {
+        let emailSignInUser = TestSecretsStore().testSecrets.emailSignInUser
+        AuthActivities.signIn(email: emailSignInUser.email, password: emailSignInUser.password)
+        expect(self.app.staticTexts["userNameLabel"].label).toEventually(equal(emailSignInUser.email))
         AuthActivities.signOut()
     }
 }
