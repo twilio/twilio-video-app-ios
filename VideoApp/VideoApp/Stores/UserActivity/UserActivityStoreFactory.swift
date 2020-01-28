@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,15 +14,14 @@
 //  limitations under the License.
 //
 
-import Nimble
-import XCTest
+import Foundation
 
-let app = XCUIApplication()
+protocol UserActivityStoreFactory: AnyObject {
+    func makeUserActivityStore() -> UserActivityStoreWriting
+}
 
-class UITestCase: XCTestCase {
-    override func setUp() {
-        continueAfterFailure = false
-        Nimble.AsyncDefaults.Timeout = 5
-        app.launch()
+class UserActivityStoreFactoryImpl: UserActivityStoreFactory {
+    func makeUserActivityStore() -> UserActivityStoreWriting {
+        return UserActivityStore(deepLinkStore: DeepLinkStore.shared)
     }
 }

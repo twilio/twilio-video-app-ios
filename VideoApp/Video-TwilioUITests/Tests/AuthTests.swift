@@ -14,13 +14,13 @@
 //  limitations under the License.
 //
 
-import Foundation
+import Nimble
 
-struct TestCredentials: Codable {
-    struct EmailSignInUser: Codable {
-        let email: String
-        let password: String
+class AuthTests: UITestCase {
+    func test_emailSignIn_withValidCredentials_shouldDisplayUserNameOnLobbyScreen() {
+        let emailSignInUser = TestSecretsStore().testSecrets.emailSignInUser
+        AuthActivities.signIn(email: emailSignInUser.email, password: emailSignInUser.password)
+        expect(app.staticTexts["userNameLabel"].label).toEventually(equal(emailSignInUser.email))
+        AuthActivities.signOut()
     }
-    
-    let emailSignInUser: EmailSignInUser
 }

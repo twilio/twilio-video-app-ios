@@ -23,6 +23,13 @@ import Foundation
     @objc static var userDisplayName: String {
         UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared).user.displayName
     }
+    @objc static var roomNameFromDeepLink: String? {
+        guard let deepLink = DeepLinkStore.shared.consumeDeepLink() else { return nil }
+        
+        switch deepLink {
+        case let .room(roomName): return roomName
+        }
+    }
 
     @objc static func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
         AuthStore.shared.fetchTwilioAccessToken(roomName: roomName, completion: completion)

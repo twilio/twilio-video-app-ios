@@ -54,6 +54,8 @@
     self.roomTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Room"
                                                                                attributes:@{ NSForegroundColorAttributeName: [UIColor lightGrayColor] }];
 
+    self.roomTextField.text = [SwiftToObjc roomNameFromDeepLink];
+    
     [self.roomTextField addTarget:self
                            action:@selector(joinRoomButtonPressed:)
                  forControlEvents:UIControlEventEditingDidEndOnExit];

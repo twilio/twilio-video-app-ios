@@ -25,15 +25,18 @@ class AppDelegateSpec: QuickSpec {
         var mockLaunchFlowFactory: MockLaunchFlowFactory!
         var mockLaunchStoresFactory: MockLaunchStoresFactory!
         var mockURLOpenerFactory: MockURLOpenerFactory!
+        var mockUserActivityStoreFactory: MockUserActivityStoreFactory!
         
         beforeEach {
             mockLaunchFlowFactory = MockLaunchFlowFactory()
             mockLaunchStoresFactory = MockLaunchStoresFactory()
             mockURLOpenerFactory = MockURLOpenerFactory()
+            mockUserActivityStoreFactory = MockUserActivityStoreFactory()
             sut = AppDelegate()
             sut.launchFlowFactory = mockLaunchFlowFactory
             sut.launchStoresFactory = mockLaunchStoresFactory
             sut.urlOpenerFactory = mockURLOpenerFactory
+            sut.userActivityStoreFactory = mockUserActivityStoreFactory
         }
         
         describe("didFinishLaunchingWithOptions") {
@@ -105,6 +108,53 @@ class AppDelegateSpec: QuickSpec {
                         
                         expect(openURL()).to(beFalse())
                     }
+                }
+            }
+        }
+        
+        describe("continueUserActivity") {
+            var mockUserActivityStore: MockUserActivityStore!
+            
+            beforeEach {
+                mockUserActivityStore = MockUserActivityStore()
+                mockUserActivityStoreFactory.stubbedMakeUserActivityStoreResult = mockUserActivityStore
+            }
+            
+            @discardableResult func continueUserActivity(url: String = "https://www.foo.com") -> Bool {
+                let userActivity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb)
+                userActivity.webpageURL = URL(string: url)!
+                return sut.application(.shared, continue: userActivity) { _ in }
+            }
+            
+            context("when userActivity is foo") {
+                it("calls continueUserActivity with foo userActivity") {
+                    continueUserActivity(url: "https://www.foo.com")
+                    
+                    expect(mockUserActivityStore.invokedContinueUserActivityParameters?.userActivity.webpageURL?.absoluteString).to(equal("https://www.foo.com"))
+                }
+            }
+            
+            context("when userActivity is bar") {
+                it("calls continueUserActivity with bar userActivity") {
+                    continueUserActivity(url: "https://www.bar.com")
+                    
+                    expect(mockUserActivityStore.invokedContinueUserActivityParameters?.userActivity.webpageURL?.absoluteString).to(equal("https://www.bar.com"))
+                }
+            }
+            
+            context("when continueUserActivity returns true") {
+                it("returns true") {
+                    mockUserActivityStore.stubbedContinueUserActivityResult = true
+                    
+                    expect(continueUserActivity()).to(beTrue())
+                }
+            }
+            
+            context("when continueUserActivity returns false") {
+                it("returns false") {
+                    mockUserActivityStore.stubbedContinueUserActivityResult = false
+                    
+                    expect(continueUserActivity()).to(beFalse())
                 }
             }
         }

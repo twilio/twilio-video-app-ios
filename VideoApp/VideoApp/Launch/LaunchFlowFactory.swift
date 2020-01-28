@@ -26,6 +26,7 @@ class LaunchFlowFactoryImpl: LaunchFlowFactory {
             window: window,
             authFlow: AuthFlow(window: window),
             authStore: AuthStore.shared,
+            deepLinkStore: DeepLinkStore.shared,
             notificationCenter: NotificationCenter.default
         )
     }

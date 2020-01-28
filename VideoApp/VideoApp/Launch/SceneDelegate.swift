@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var launchFlow: LaunchFlow?
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
     var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
+    var userActivityStoreFactory: UserActivityStoreFactory = UserActivityStoreFactoryImpl()
     var window: UIWindow?
     var windowSceneObserverFactory: WindowSceneObserverFactory = WindowSceneObserverFactoryImpl()
 
@@ -30,6 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
         launchFlow?.start()
+
+        if let userActivity = connectionOptions.userActivities.first {
+            self.scene(scene, continue: userActivity)
+        }
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -37,9 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        guard let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) else { return }
-
-        print(deepLink)
+        userActivityStoreFactory.makeUserActivityStore().continueUserActivity(userActivity)
     }
 
     func windowScene(
