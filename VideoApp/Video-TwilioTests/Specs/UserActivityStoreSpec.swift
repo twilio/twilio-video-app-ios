@@ -40,7 +40,7 @@ class UserActivityStoreSpec: QuickSpec {
                 return sut.continueUserActivity(userActivity)
             }
 
-            context("when webpageURL is foo") {
+            context("when url is foo") {
                 it("calls cache with foo deepLink") {
                     continueUserActivity(url: "https://twilio-video-react.appspot.com/room/foo")
 
@@ -53,7 +53,7 @@ class UserActivityStoreSpec: QuickSpec {
                 }
             }
             
-            context("when webpageURL is nil") {
+            context("when url is nil") {
                 it("does not call cache") {
                     continueUserActivity(url: nil)
 

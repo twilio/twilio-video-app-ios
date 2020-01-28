@@ -74,7 +74,7 @@ class DeepLinkStoreSpec: QuickSpec {
                     expect(sut.deepLink).to(beNil())
                 }
                 
-                it("returns room") {
+                it("returns foo") {
                     expect(sut.consumeDeepLink()).to(equal(.room(roomName: "foo")))
                 }
             }

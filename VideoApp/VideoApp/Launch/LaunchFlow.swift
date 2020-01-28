@@ -24,17 +24,20 @@ class LaunchFlowImpl: LaunchFlow {
     private let window: UIWindow
     private let authFlow: AuthStoreWritingDelegate
     private let authStore: AuthStoreWriting
+    private let deepLinkStore: DeepLinkStoreWriting
     private let notificationCenter: NotificationCenterProtocol
     
     init(
         window: UIWindow,
         authFlow: AuthStoreWritingDelegate,
         authStore: AuthStoreWriting,
+        deepLinkStore: DeepLinkStoreWriting,
         notificationCenter: NotificationCenterProtocol
     ) {
         self.window = window
         self.authFlow = authFlow
         self.authStore = authStore
+        self.deepLinkStore = deepLinkStore
         self.notificationCenter = notificationCenter
     }
     
@@ -52,7 +55,7 @@ class LaunchFlowImpl: LaunchFlow {
         let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
         navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
         
-        DeepLinkStore.shared.didReceiveDeepLink = { [weak self] in
+        deepLinkStore.didReceiveDeepLink = { [weak self] in
             self?.start()
         }
     }
