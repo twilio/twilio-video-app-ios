@@ -297,6 +297,11 @@
 		DCD7675E23DF63F500A2939C /* DeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */; };
 		DCD7676223DF923700A2939C /* AuthActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676123DF923700A2939C /* AuthActivities.swift */; };
 		DCD7676423DF9CC000A2939C /* DeepLinkActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */; };
+		DCD7676623DFDA1700A2939C /* DeepLinkStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */; };
+		DCD7676823DFDEEA00A2939C /* UserActivityStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */; };
+		DCD7676A23DFE03F00A2939C /* MockDeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */; };
+		DCD7676C23DFE70700A2939C /* MockUserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */; };
+		DCD7676E23DFE74D00A2939C /* MockUserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -537,6 +542,11 @@
 		DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkTests.swift; sourceTree = "<group>"; };
 		DCD7676123DF923700A2939C /* AuthActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthActivities.swift; sourceTree = "<group>"; };
 		DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkActivities.swift; sourceTree = "<group>"; };
+		DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStoreSpec.swift; sourceTree = "<group>"; };
+		DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityStoreSpec.swift; sourceTree = "<group>"; };
+		DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeepLinkStore.swift; sourceTree = "<group>"; };
+		DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStore.swift; sourceTree = "<group>"; };
+		DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStoreFactory.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -932,6 +942,7 @@
 			children = (
 				DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */,
 				DC04469E238F29F50072F597 /* MockAuthStore.swift */,
+				DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */,
 				DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */,
 				DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */,
 				DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */,
@@ -940,6 +951,8 @@
 				DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */,
 				DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */,
 				DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */,
+				DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */,
+				DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -951,6 +964,8 @@
 				DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */,
 				DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
+				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
+				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
 				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
 			path = Specs;
@@ -2372,21 +2387,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD7676E23DFE74D00A2939C /* MockUserActivityStoreFactory.swift in Sources */,
 				DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */,
 				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
 				DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */,
 				DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */,
 				DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */,
 				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
+				DCD7676623DFDA1700A2939C /* DeepLinkStoreSpec.swift in Sources */,
 				DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */,
+				DCD7676823DFDEEA00A2939C /* UserActivityStoreSpec.swift in Sources */,
 				DCD7674F23DA350A00A2939C /* DeepLinkSpec.swift in Sources */,
 				DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */,
+				DCD7676C23DFE70700A2939C /* MockUserActivityStore.swift in Sources */,
 				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
 				DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */,
 				DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */,
 				DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */,
 				DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */,
 				DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */,
+				DCD7676A23DFE03F00A2939C /* MockDeepLinkStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ protocol DeepLinkStoreWriting: AnyObject {
 class DeepLinkStore: DeepLinkStoreWriting {
     static let shared: DeepLinkStoreWriting = DeepLinkStore()
     var didReceiveDeepLink: (() -> Void)?
-    private var deepLink: DeepLink?
+    var deepLink: DeepLink?
 
     func cache(deepLink: DeepLink) {
         self.deepLink = deepLink
