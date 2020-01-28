@@ -24,6 +24,5 @@ class UITestCase: XCTestCase {
         continueAfterFailure = false
         Nimble.AsyncDefaults.Timeout = 5
         app.launch()
-        expect(app.exists).toEventually(beTrue())
     }
 }

@@ -17,40 +17,46 @@
 import Nimble
 import XCTest
 
-// Inspired by https://blog.branch.io/ui-testing-universal-links-in-xcode-9/
 class DeepLinkActivities {
-    static func open(url: String) {
-        let messagesApp = XCUIApplication(bundleIdentifier: "com.apple.MobileSMS")
+    static func open(url: String, completion: () -> Void) {
+        let contactsApp = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
 
         XCTContext.runActivity(named: "Launch Messages app") { _ in
-            messagesApp.launch()
-            expect(messagesApp.exists).toEventually(beTrue())
-            
-            XCTContext.runActivity(named: "Tap continue on what's new screen") { _ in
-                let continueButton = messagesApp.buttons["Continue"]
-                if (continueButton.exists) {
-                    continueButton.tap()
-                }
+            contactsApp.launch()
+
+            XCTContext.runActivity(named: "Create new contact with URL") { _ in
+                contactsApp.navigationBars["Contacts"].buttons["Add"].tap()
+
+                let firstNameTextField = contactsApp.tables/*@START_MENU_TOKEN@*/.textFields["First name"]/*[[".cells.textFields[\"First name\"]",".textFields[\"First name\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+                firstNameTextField.tap()
+                firstNameTextField.typeText(url)
+
+                contactsApp.tables/*@START_MENU_TOKEN@*/.staticTexts["add url"]/*[[".cells[\"add url\"].staticTexts[\"add url\"]",".staticTexts[\"add url\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+                
+                let homepageTextField = contactsApp.tables.textFields["homepage"]
+                homepageTextField.tap()
+                homepageTextField.typeText(url)
+                
+                contactsApp.navigationBars["New Contact"].buttons["Done"].tap()
             }
-            
-            XCTContext.runActivity(named: "Tap cancel on new message screen") { _ in
-                let cancelButton = messagesApp.navigationBars.buttons["Cancel"]
-                if cancelButton.exists {
-                    cancelButton.tap()
-                }
-            }
+
+            contactsApp.tables.staticTexts[url].tap()
+            contactsApp.terminate()
         }
         
-        XCTContext.runActivity(named: "Tap URL") { _ in
-            messagesApp.cells.staticTexts["Kate Bell"].tap()
-            messagesApp.textFields["iMessage"].tap()
-            messagesApp.typeText("Deep link: \(url)")
-            messagesApp.buttons["sendButton"].tap()
-            sleep(2)
-            messagesApp.cells.links["com.apple.messages.URLBalloonProvider"].tap()
+        completion()
+
+        XCTContext.runActivity(named: "Launch Messages app") { _ in
+            contactsApp.launch()
+
+            XCTContext.runActivity(named: "Delete contact") { _ in
+                contactsApp.tables["ContactsListView"].staticTexts[url].tap()
+                contactsApp.navigationBars["CNContactView"].buttons["Edit"].tap()
+                contactsApp.tables/*@START_MENU_TOKEN@*/.staticTexts["Delete Contact"]/*[[".cells.staticTexts[\"Delete Contact\"]",".staticTexts[\"Delete Contact\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+                contactsApp.sheets.scrollViews.otherElements.buttons["Delete Contact"].tap()
+            }
+
+            contactsApp.terminate()
         }
-        
-        sleep(2)
-        messagesApp.terminate()
     }
 }
