@@ -42,6 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        print("TCR: \(userActivity)")
         userActivityStoreFactory.makeUserActivityStore().continueUserActivity(userActivity)
     }
 

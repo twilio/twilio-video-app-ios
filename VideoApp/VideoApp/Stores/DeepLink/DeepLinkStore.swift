@@ -28,6 +28,7 @@ class DeepLinkStore: DeepLinkStoreWriting {
     var deepLink: DeepLink?
 
     func cache(deepLink: DeepLink) {
+        print("TCR: cache \(deepLink)")
         self.deepLink = deepLink
         didReceiveDeepLink?()
     }

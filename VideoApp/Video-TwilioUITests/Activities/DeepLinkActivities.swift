@@ -21,7 +21,7 @@ class DeepLinkActivities {
     static func open(url: String, completion: () -> Void) {
         let contactsApp = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
 
-        XCTContext.runActivity(named: "Launch Messages app") { _ in
+        XCTContext.runActivity(named: "Launch Contacts app") { _ in
             contactsApp.launch()
 
             XCTContext.runActivity(named: "Create new contact with URL") { _ in
@@ -46,7 +46,7 @@ class DeepLinkActivities {
         
         completion()
 
-        XCTContext.runActivity(named: "Launch Messages app") { _ in
+        XCTContext.runActivity(named: "Launch Contacts app") { _ in
             contactsApp.launch()
 
             XCTContext.runActivity(named: "Delete contact") { _ in

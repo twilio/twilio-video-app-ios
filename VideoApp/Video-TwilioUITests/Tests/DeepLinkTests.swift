@@ -25,11 +25,11 @@ class DeepLinkTests: UITestCase {
         }
     }
 
-    func test_roomDeepLink_withUserSignedOut_shouldRequireUserToSignInAndNavigateToLobbyScreenAndSetRoomName() {
-        DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo") {
-            AuthActivities.signIn()
-            expect(app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
-            AuthActivities.signOut()
-        }
-    }
+//    func test_roomDeepLink_withUserSignedOut_shouldRequireUserToSignInAndNavigateToLobbyScreenAndSetRoomName() {
+//        DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo") {
+//            AuthActivities.signIn()
+//            expect(app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
+//            AuthActivities.signOut()
+//        }
+//    }
 }
