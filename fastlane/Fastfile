@@ -3,32 +3,12 @@ fastlane_version "2.28.3"
 default_platform :ios
 
 platform :ios do
-  # before_all do
-  #   cocoapods
-  # end
+  before_all do
+    cocoapods
+  end
 
   lane :test do |options|
-    scan(scheme: options[:scheme], device: "iPhone 11", prelaunch_simulator: true)
-  end
-
-  lane :build_for_test do |options|
-    cocoapods
-
-    scan(
-      scheme: options[:scheme], 
-      build_for_testing: true,
-      derived_data_path: "DerivedData",
-      device: "iPhone 11"
-    )
-  end
-
-  lane :run_ui_tests do |options|
-    scan(
-      scheme: options[:scheme], 
-      test_without_building: true,
-      derived_data_path: "DerivedData",
-      device: "iPhone 11"
-    )
+    scan(scheme: options[:scheme], device: "iPhone 11")
   end
 
   lane :beta do

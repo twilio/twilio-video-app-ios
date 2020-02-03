@@ -40,41 +40,6 @@ commands:
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
-  build_for_test:
-    parameters:
-      scheme:
-        type: string
-    steps:
-      - setup
-      - run:
-          name: Test
-          command: bundle exec fastlane build_for_test scheme:<< parameters.scheme >>
-      - persist_to_workspace:
-          root: DerivedData/
-          paths:
-            - "**/*"
-      - store_artifacts:
-          path: "~/Library/Logs/scan"
-          destination: "scan"
-  run_ui_tests:
-    parameters:
-      scheme:
-        type: string
-    steps:
-      - setup
-      - attach_workspace:
-          at: /tmp/workspace
-      - run:
-          name: Setup new DerivedData folder
-          command: |
-              mkdir DerivedData
-              cp -r /tmp/workspace/ DerivedData/
-      - run:
-          name: Test
-          command: bundle exec fastlane run_ui_tests scheme:<< parameters.scheme >>
-      - store_artifacts:
-          path: "~/Library/Logs/scan"
-          destination: "scan"
   beta:
     steps:
       - setup
@@ -93,7 +58,7 @@ jobs:
     executor: macos_executor
     steps:
       - test:
-          scheme: Video-TwilioUITests
+          scheme: Video-Twilio
   test_community_app:
     executor: macos_executor
     steps:
@@ -104,36 +69,30 @@ jobs:
     steps:
       - test:
           scheme: Video-Internal
+  run_ui_tests:
+    executor: macos_executor
+    steps:
+      - test:
+          scheme: Video-TwilioUITests
   deploy_internal_app_beta:
     executor: macos_executor
     steps:
       - beta
-  build_for_test:
-    executor: macos_executor
-    steps:
-      - build_for_test:
-          scheme: Video-Twilio
-  run_ui_tests:
-    executor: macos_executor
-    steps:
-      - run_ui_tests:
-          scheme: Video-TwilioUITests
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_for_test
+      - test_twilio_app:
+          filters: *test_filters
+      - test_community_app:
+          filters: *test_filters
+      - test_internal_app:
+          filters: *test_filters
       - run_ui_tests:
           filters: *test_filters
-          requires: 
-            - build_for_test
-      # - test_community_app:
-      #     filters: *test_filters
-      # - test_internal_app:
-      #     filters: *test_filters
-      # - deploy_internal_app_beta:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
+      - deploy_internal_app_beta:
+          filters:
+            branches:
+              only:
+                - master
