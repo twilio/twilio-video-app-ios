@@ -41,7 +41,7 @@ class DeepLinkActivities {
             }
 
             contactsApp.tables.staticTexts[url].tap()
-            contactsApp.terminate()
+//            contactsApp.terminate()
         }
         
         completion()
