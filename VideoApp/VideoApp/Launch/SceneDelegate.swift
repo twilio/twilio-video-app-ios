@@ -26,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var windowSceneObserverFactory: WindowSceneObserverFactory = WindowSceneObserverFactoryImpl()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        print("TCR: sceneWillConnectTo")
+
         let windowScene = scene as! UIWindowScene
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
