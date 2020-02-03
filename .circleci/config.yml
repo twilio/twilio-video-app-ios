@@ -49,6 +49,10 @@ commands:
       - run:
           name: Test
           command: bundle exec fastlane build_for_test scheme:<< parameters.scheme >>
+      - persist_to_workspace:
+          root: .
+          paths:
+            - fastlane_derived_data
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
@@ -58,6 +62,8 @@ commands:
         type: string
     steps:
       - setup
+      - attach_workspace:
+          at: *workspace
       - run:
           name: Test
           command: bundle exec fastlane run_ui_tests scheme:<< parameters.scheme >>
