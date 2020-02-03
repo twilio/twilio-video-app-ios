@@ -50,9 +50,9 @@ commands:
           name: Test
           command: bundle exec fastlane build_for_test scheme:<< parameters.scheme >>
       - persist_to_workspace:
-          root: .
+          root: DerivedData/
           paths:
-            - fastlane_derived_data
+            - "**/*"
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
@@ -63,7 +63,12 @@ commands:
     steps:
       - setup
       - attach_workspace:
-          at: .
+          at: /tmp/workspace
+      - run:
+          name: Setup new DerivedData folder
+          command: |
+              mkdir DerivedData
+              cp -r /tmp/workspace/ DerivedData/
       - run:
           name: Test
           command: bundle exec fastlane run_ui_tests scheme:<< parameters.scheme >>

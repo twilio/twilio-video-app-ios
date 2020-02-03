@@ -13,11 +13,11 @@ platform :ios do
 
   lane :build_for_test do |options|
     cocoapods
-    
+
     scan(
       scheme: options[:scheme], 
       build_for_testing: true,
-      derived_data_path: "fastlane_derived_data",
+      derived_data_path: "DerivedData",
       device: "iPhone 11"
     )
   end
@@ -26,7 +26,7 @@ platform :ios do
     scan(
       scheme: options[:scheme], 
       test_without_building: true,
-      derived_data_path: "fastlane_derived_data",
+      derived_data_path: "DerivedData",
       device: "iPhone 11"
     )
   end
