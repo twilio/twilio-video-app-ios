@@ -49,6 +49,8 @@ class DeepLinkActivities {
 
         XCTContext.runActivity(named: "Launch Contacts app") { _ in
             contactsApp.launch()
+            sleep(2)
+            print("TCR contacts: \(contactsApp)")
 
             XCTContext.runActivity(named: "Delete contact") { _ in
                 contactsApp.tables["ContactsListView"].staticTexts[url].tap()
