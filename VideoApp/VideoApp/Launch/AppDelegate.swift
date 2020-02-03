@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        print("TCR: app delegate didFinishLaunchWithOptions")
+        NSLog("TCR: app delegate didFinishLaunchWithOptions")
 
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
 
