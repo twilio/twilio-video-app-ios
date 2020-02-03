@@ -28,14 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        NSLog("TCR: app delegate didFinishLaunchWithOptions")
-
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
 
         if #available(iOS 13, *) {
             // Do nothing because SceneDelegate will handle it
         } else {
-            print("TCR: app delegate setup window")
             window = UIWindow(frame: UIScreen.main.bounds)
             launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
             launchFlow?.start()

@@ -26,8 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var windowSceneObserverFactory: WindowSceneObserverFactory = WindowSceneObserverFactoryImpl()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        print("TCR: sceneWillConnectTo")
-
         let windowScene = scene as! UIWindowScene
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
@@ -44,7 +42,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        print("TCR: \(userActivity)")
         userActivityStoreFactory.makeUserActivityStore().continueUserActivity(userActivity)
     }
 

@@ -17,10 +17,10 @@
 import Nimble
 
 class AuthTests: UITestCase {
-//    func test_emailSignIn_withValidCredentials_shouldDisplayUserNameOnLobbyScreen() {
-//        let emailSignInUser = TestSecretsStore().testSecrets.emailSignInUser
-//        AuthActivities.signIn(email: emailSignInUser.email, password: emailSignInUser.password)
-//        expect(app.staticTexts["userNameLabel"].label).toEventually(equal(emailSignInUser.email))
-//        AuthActivities.signOut()
-//    }
+    func test_emailSignIn_withValidCredentials_shouldDisplayUserNameOnLobbyScreen() {
+        let emailSignInUser = TestSecretsStore().testSecrets.emailSignInUser
+        AuthActivities.signIn(email: emailSignInUser.email, password: emailSignInUser.password)
+        expect(app.staticTexts["userNameLabel"].label).toEventually(equal(emailSignInUser.email))
+        AuthActivities.signOut()
+    }
 }
