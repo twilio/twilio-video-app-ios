@@ -40,6 +40,30 @@ commands:
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
+  build_for_test:
+    parameters:
+      scheme:
+        type: string
+    steps:
+      - setup
+      - run:
+          name: Test
+          command: bundle exec fastlane build_for_test scheme:<< parameters.scheme >>
+      - store_artifacts:
+          path: "~/Library/Logs/scan"
+          destination: "scan"
+  run_ui_tests:
+    parameters:
+      scheme:
+        type: string
+    steps:
+      - setup
+      - run:
+          name: Test
+          command: bundle exec fastlane run_ui_tests scheme:<< parameters.scheme >>
+      - store_artifacts:
+          path: "~/Library/Logs/scan"
+          destination: "scan"
   beta:
     steps:
       - setup
@@ -73,13 +97,26 @@ jobs:
     executor: macos_executor
     steps:
       - beta
+  build_for_test:
+    executor: macos_executor
+    steps:
+      - build_for_test:
+          scheme: Video-Twilio
+  run_ui_tests:
+    executor: macos_executor
+    steps:
+      - run_ui_tests:
+          scheme: Video-TwilioUITests
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - test_twilio_app:
+      - build_for_test
+      - run_ui_tests:
           filters: *test_filters
+          requires: 
+            - build_for_test
       # - test_community_app:
       #     filters: *test_filters
       # - test_internal_app:

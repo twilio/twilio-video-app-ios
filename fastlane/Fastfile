@@ -11,6 +11,24 @@ platform :ios do
     scan(scheme: options[:scheme], device: "iPhone 11", prelaunch_simulator: true)
   end
 
+  lane :build_for_test do |options|
+    scan(
+      scheme: options[:scheme], 
+      build_for_testing: true,
+      derived_data_path: "fastlane_derived_data",
+      device: "iPhone 11"
+    )
+  end
+
+  lane :run_ui_tests do |options|
+    scan(
+      scheme: options[:scheme], 
+      test_without_building: true,
+      derived_data_path: "fastlane_derived_data",
+      device: "iPhone 11"
+    )
+  end
+
   lane :beta do
     ensure_git_status_clean
     increment_build_number(xcodeproj: "VideoApp/VideoApp.xcodeproj")
