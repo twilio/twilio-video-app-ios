@@ -41,7 +41,8 @@ class DeepLinkActivities {
             }
 
             contactsApp.tables.staticTexts[url].tap()
-//            contactsApp.terminate()
+            sleep(2)
+            contactsApp.terminate()
         }
         
         completion()
@@ -56,6 +57,7 @@ class DeepLinkActivities {
                 contactsApp.sheets.scrollViews.otherElements.buttons["Delete Contact"].tap()
             }
 
+            sleep(2)
             contactsApp.terminate()
         }
     }
