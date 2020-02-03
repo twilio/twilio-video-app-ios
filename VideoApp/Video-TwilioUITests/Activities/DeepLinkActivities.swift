@@ -41,26 +41,18 @@ class DeepLinkActivities {
             }
 
             contactsApp.tables.staticTexts[url].tap()
-            sleep(2)
-            contactsApp.terminate()
         }
         
         completion()
 
         XCTContext.runActivity(named: "Launch Contacts app") { _ in
             contactsApp.launch()
-            sleep(2)
-            print("TCR contacts: \(contactsApp)")
 
             XCTContext.runActivity(named: "Delete contact") { _ in
-                contactsApp.tables["ContactsListView"].staticTexts[url].tap()
                 contactsApp.navigationBars["CNContactView"].buttons["Edit"].tap()
                 contactsApp.tables/*@START_MENU_TOKEN@*/.staticTexts["Delete Contact"]/*[[".cells.staticTexts[\"Delete Contact\"]",".staticTexts[\"Delete Contact\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
                 contactsApp.sheets.scrollViews.otherElements.buttons["Delete Contact"].tap()
             }
-
-            sleep(2)
-            contactsApp.terminate()
         }
     }
 }
