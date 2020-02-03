@@ -63,7 +63,7 @@ commands:
     steps:
       - setup
       - attach_workspace:
-          at: *workspace
+          at: .
       - run:
           name: Test
           command: bundle exec fastlane run_ui_tests scheme:<< parameters.scheme >>
