@@ -21,8 +21,8 @@
 
 // 640x480 squarish crop (1.13:1)
 static const CMVideoDimensions kVideoAppCameraSourceDimensions = (CMVideoDimensions){544, 480};
-// 1024x768 squarish crop (1.25:1)
-static const CMVideoDimensions kVideoAppCameraSourceSimulcastDimensions = (CMVideoDimensions){960, 768};
+// 1024x768 squarish crop (1.25:1) on most iPhones. 1280x720 squarish crop (1.25:1) on the iPhone X and models that don't have 1024x768.
+static const CMVideoDimensions kVideoAppCameraSourceSimulcastDimensions = (CMVideoDimensions){900, 720};
 
 static const int32_t kVideoAppCameraSourceFrameRate = 20;
 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4.
