@@ -27,7 +27,7 @@
 
 static const CGFloat kGapWidth = 0.15;
 static const CGFloat kAnimationDuration = 0.35;
-static const NSTimeInterval kStatsTimerInterval = 1.0;
+static const NSTimeInterval kStatsTimerInterval = 2.0;
 
 @interface StatsViewController () <UIGestureRecognizerDelegate>
 

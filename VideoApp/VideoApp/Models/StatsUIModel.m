@@ -22,8 +22,9 @@ static NSString *const kStatsUIModelTitleCodec = @"codec";
 static NSString *const kStatsUIModelTitlePacketLost = @"packets lost";
 static NSString *const kStatsUIModelTitleBytesSent = @"bytes sent";
 static NSString *const kStatsUIModelTitleBytesReceived = @"bytes received";
-static NSString *const kStatsUIModelTitleBitrateSent = @"bitrate sent";
-static NSString *const kStatsUIModelTitleBitrateReceived = @"bitrate received";
+static NSString *const kStatsUIModelTitleBitrateSent = @"send bitrate";
+static NSString *const kStatsUIModelTitleBitrateReceived = @"receive bitrate";
+static NSString *const kStatsUIModelTitleCpuAverage = @"cpu average";
 static NSString *const kStatsUIModelTitleRoundTripTime = @"round trip time";
 static NSString *const kStatsUIModelTitleJitter = @"jitter";
 static NSString *const kStatsUIModelTitleAudioLevel = @"audio level";
@@ -36,15 +37,16 @@ static NSString *const kStatsUIModelTitleLocalCandidatePort = @"local port";
 static NSString *const kStatsUIModelTitleLocalCandidateType = @"local type";
 static NSString *const kStatsUIModelTitleLocalCandidateProtocol = @"local protocol";
 static NSString *const kStatsUIModelTitleMediaRegion = @"media";
+static NSString *const kStatsUIModelTitleParticipantSignalingRegion = @"signaling";
 static NSString *const kStatsUIModelTitleRemoteCandidateIp = @"remote ip";
 static NSString *const kStatsUIModelTitleRemoteCandidatePort = @"remote port";
 static NSString *const kStatsUIModelTitleRemoteCandidateType = @"remote type";
 static NSString *const kStatsUIModelTitleRemoteCandidateProtocol = @"remote protocol";
-static NSString *const kStatsUIModelTitleParticipantSignalingRegion = @"signaling";
 static NSString *const kStatsUIModelTitleRelayProtocol = @"relay protocol";
+static NSString *const kStatsUIModelTitleReceiveBandwidth = @"receive bandwidth";
+static NSString *const kStatsUIModelTitleSendBandwidth = @"send bandwidth";
 static NSString *const kStatsUIModelTitleTransportId = @"transport id";
 static NSString *const kStatsUIModelTitleThermalState = @"thermal state";
-static NSString *const kStatsUIModelTitleCpuAverage = @"cpu average";
 
 @interface StatsUIModel ()
 
@@ -274,9 +276,19 @@ static NSString *const kStatsUIModelTitleCpuAverage = @"cpu average";
                                      [NSNumberFormatter localizedStringFromNumber:@(sentDelta)
                                                                       numberStyle:NSNumberFormatterDecimalStyle]]];
 
+        [_attributeTitles addObject:kStatsUIModelTitleSendBandwidth];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(round(icePairStats.availableOutgoingBitrate / 1000.0))
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
         [_attributeTitles addObject:kStatsUIModelTitleBitrateReceived];
         [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
                                      [NSNumberFormatter localizedStringFromNumber:@(receivedDelta)
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
+        [_attributeTitles addObject:kStatsUIModelTitleReceiveBandwidth];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(round(icePairStats.availableIncomingBitrate / 1000.0))
                                                                       numberStyle:NSNumberFormatterDecimalStyle]]];
 
         [_attributeTitles addObject:kStatsUIModelTitleBytesSent];
