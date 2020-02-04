@@ -22,6 +22,8 @@ static NSString *const kStatsUIModelTitleCodec = @"codec";
 static NSString *const kStatsUIModelTitlePacketLost = @"packets lost";
 static NSString *const kStatsUIModelTitleBytesSent = @"bytes sent";
 static NSString *const kStatsUIModelTitleBytesReceived = @"bytes received";
+static NSString *const kStatsUIModelTitleBitrateSent = @"bitrate sent";
+static NSString *const kStatsUIModelTitleBitrateReceived = @"bitrate received";
 static NSString *const kStatsUIModelTitleRoundTripTime = @"round trip time";
 static NSString *const kStatsUIModelTitleJitter = @"jitter";
 static NSString *const kStatsUIModelTitleAudioLevel = @"audio level";
@@ -212,6 +214,8 @@ static NSString *const kStatsUIModelTitleTransportId = @"transport id";
 - (instancetype)initWithIceCandidatePairStats:(TVIIceCandidatePairStats *)icePairStats
                                localCandidate:(TVIIceCandidateStats *)localCandidate
                               remoteCandidate:(TVIIceCandidateStats *)remoteCandidate
+                                lastPairStats:(TVIIceCandidatePairStats *)lastIcePairStats
+                                     lastDate:(NSDate *)lastDate
                                  connectionId:(NSString *)connectionId {
     self = [super init];
 
@@ -258,6 +262,20 @@ static NSString *const kStatsUIModelTitleTransportId = @"transport id";
 
         [_attributeTitles addObject:kStatsUIModelTitleRoundTripTime];
         [_attributeValues addObject:[NSString stringWithFormat:@"%0.1f ms", icePairStats.currentRoundTripTime]];
+
+        NSTimeInterval interval = lastDate ? -1.0 * [lastDate timeIntervalSinceNow] : 1.0;
+        int64_t sentDelta = (icePairStats.bytesSent - lastIcePairStats.bytesSent) * (8./(1000. * interval));
+        int64_t receivedDelta = (icePairStats.bytesReceived - lastIcePairStats.bytesReceived) * (8./(1000. * interval));
+
+        [_attributeTitles addObject:kStatsUIModelTitleBitrateSent];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(sentDelta)
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
+        [_attributeTitles addObject:kStatsUIModelTitleBitrateReceived];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(receivedDelta)
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
 
         [_attributeTitles addObject:kStatsUIModelTitleBytesSent];
         [_attributeValues addObject:[NSNumberFormatter localizedStringFromNumber:@(icePairStats.bytesSent)

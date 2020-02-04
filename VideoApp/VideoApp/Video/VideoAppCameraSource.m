@@ -17,10 +17,34 @@
 #import "VideoAppCameraSource.h"
 #import "LocalMediaController+Internal.h"
 #import "TVILocalVideoTrack+Mirroring.h"
+#import "VideoApp-Swift.h"
 
-static const int32_t kVideoAppCameraSourceMinWidth = 640;
-static const int32_t kVideoAppCameraSourceMinHeight = 480;
-static const CGFloat kVideoAppCameraSourceAdjustmentFactor = 1.2;
+static const CMVideoDimensions kVideoAppCameraSourceDimensions = (CMVideoDimensions){544, 480};
+static const CMVideoDimensions kVideoAppCameraSourceSimulcastDimensions = (CMVideoDimensions){832, 768};
+
+static const int32_t kVideoAppCameraSourceFrameRate = 20;
+// With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4.
+static const int32_t kVideoAppCameraSourceSimulcastFrameRate = 20;
+
+TVIVideoFormat *VideoAppCameraSourceSelectVideoFormatBySize(AVCaptureDevice *device, CMVideoDimensions targetSize) {
+    TVIVideoFormat *selectedFormat = nil;
+    // Ordered from smallest to largest.
+    NSOrderedSet<TVIVideoFormat *> *formats = [TVICameraSource supportedFormatsForDevice:device];
+
+    for (TVIVideoFormat *format in formats) {
+        if (format.pixelFormat != TVIPixelFormatYUV420BiPlanarFullRange) {
+            continue;
+        }
+        CMVideoDimensions dimensions = format.dimensions;
+
+        // Cropping might be used if there is not an exact match.
+        if (dimensions.width >= targetSize.width && dimensions.height >= targetSize.height) {
+            selectedFormat = format;
+            break;
+        }
+    }
+    return selectedFormat;
+}
 
 @interface VideoAppCameraSource () <TVICameraSourceDelegate>
 
@@ -62,6 +86,10 @@ static const CGFloat kVideoAppCameraSourceAdjustmentFactor = 1.2;
             UIWindowScene *keyScene = [UIApplication sharedApplication].keyWindow.windowScene;
             builder.orientationTracker = [TVIUserInterfaceTracker trackerWithScene:keyScene];
         }
+        // If a Group Room is being requested, take a best guess and remove rotation tags using hardware acceleration.
+        if ([SwiftToObjc isGroupTopology]) {
+            builder.rotationTags = TVICameraSourceOptionsRotationTagsRemove;
+        }
     }];
     self.cameraSource = [[TVICameraSource alloc] initWithOptions:options delegate:self];
 
@@ -79,26 +107,29 @@ static const CGFloat kVideoAppCameraSourceAdjustmentFactor = 1.2;
 
 - (void)startCameraSourceWithPosition:(AVCaptureDevicePosition)position {
     // Find a format and start capture.
-    TVIVideoFormat *preferredFormat = nil;
-    AVCaptureDevice *frontCamera = [TVICameraSource captureDeviceForPosition:position];
-    NSOrderedSet<TVIVideoFormat *> *supportedFormats = [TVICameraSource supportedFormatsForDevice:frontCamera];
-    for (TVIVideoFormat *format in supportedFormats) {
-        if (format.dimensions.width >= kVideoAppCameraSourceMinWidth &&
-            format.dimensions.height >= kVideoAppCameraSourceMinHeight) {
-            preferredFormat = format;
-            break;
-        }
+    AVCaptureDevice *camera = [TVICameraSource captureDeviceForPosition:position];
+    CMVideoDimensions dimensions;
+    CGFloat cropRatio;
+    int32_t frameRate;
+    if ([SwiftToObjc enableVP8Simulcast]) {
+        cropRatio = (CGFloat)kVideoAppCameraSourceSimulcastDimensions.width / (CGFloat)kVideoAppCameraSourceSimulcastDimensions.height;
+        dimensions = kVideoAppCameraSourceSimulcastDimensions;
+        frameRate = kVideoAppCameraSourceSimulcastFrameRate;
+    } else {
+        cropRatio = (CGFloat)kVideoAppCameraSourceDimensions.width / (CGFloat)kVideoAppCameraSourceDimensions.height;
+        dimensions = kVideoAppCameraSourceDimensions;
+        frameRate = kVideoAppCameraSourceFrameRate;
     }
-
-    NSLog(@"Supported formats were:\n%@", supportedFormats);
+    TVIVideoFormat *preferredFormat = VideoAppCameraSourceSelectVideoFormatBySize(camera, dimensions);
+    preferredFormat.frameRate = MIN(preferredFormat.frameRate, frameRate);
 
     CMVideoDimensions cropDimensions = preferredFormat.dimensions;
     if (cropDimensions.width > cropDimensions.height) {
-        cropDimensions.width = cropDimensions.height * kVideoAppCameraSourceAdjustmentFactor;
+        cropDimensions.width = cropDimensions.height * cropRatio;
     } else {
-        cropDimensions.height = cropDimensions.width * kVideoAppCameraSourceAdjustmentFactor;
+        cropDimensions.height = cropDimensions.width * cropRatio;
     }
-
+    
     TVIVideoFormat *outputFormat = [[TVIVideoFormat alloc] init];
     outputFormat.dimensions = cropDimensions;
     outputFormat.pixelFormat = preferredFormat.pixelFormat;
@@ -109,7 +140,7 @@ static const CGFloat kVideoAppCameraSourceAdjustmentFactor = 1.2;
     [self.cameraSource requestOutputFormat:outputFormat];
 
     typeof(self) __weak weakSelf = self;
-    [self.cameraSource startCaptureWithDevice:frontCamera format:preferredFormat completion:^(AVCaptureDevice *device,
+    [self.cameraSource startCaptureWithDevice:camera format:preferredFormat completion:^(AVCaptureDevice *device,
                                                                                               TVIVideoFormat *startFormat,
                                                                                               NSError *error) {
         if (!error) {
