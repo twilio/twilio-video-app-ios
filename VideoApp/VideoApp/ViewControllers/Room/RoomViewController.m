@@ -160,7 +160,7 @@
 
 - (void)joinRoomWithAccessToken:(NSString *)accessToken {
     // Allocate a higher bitrate for the simulcast track with 3 spatial layers.
-    int32_t videoBitrate = SwiftToObjc.enableVP8Simulcast ? 1800 : 1200;
+    int32_t videoBitrate = SwiftToObjc.enableVP8Simulcast ? 1600 : 1200;
     
     TVIConnectOptions *options = [TVIConnectOptions optionsWithToken:accessToken
                                                                block:^(TVIConnectOptionsBuilder *builder) {

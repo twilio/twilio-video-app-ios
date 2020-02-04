@@ -43,6 +43,8 @@ static NSString *const kStatsUIModelTitleRemoteCandidateProtocol = @"remote prot
 static NSString *const kStatsUIModelTitleParticipantSignalingRegion = @"signaling";
 static NSString *const kStatsUIModelTitleRelayProtocol = @"relay protocol";
 static NSString *const kStatsUIModelTitleTransportId = @"transport id";
+static NSString *const kStatsUIModelTitleThermalState = @"thermal state";
+static NSString *const kStatsUIModelTitleCpuAverage = @"cpu average";
 
 @interface StatsUIModel ()
 
@@ -309,6 +311,54 @@ static NSString *const kStatsUIModelTitleTransportId = @"transport id";
         }
     }
 
+    return self;
+}
+
+- (instancetype)initWithThermalState:(NSProcessInfoThermalState)state
+                         cpuAverages:(NSArray<NSNumber *> *)cpuAverages {
+    if (self != nil) {
+        _title = @"Process Info";
+        _localTrack = NO;
+        _audioTrack = NO;
+
+        _attributeTitles = [NSMutableArray new];
+        _attributeValues = [NSMutableArray new];
+
+        [_attributeTitles addObject:kStatsUIModelTitleThermalState];
+
+        NSString *value = nil;
+        switch (state) {
+            case NSProcessInfoThermalStateNominal:
+                value = @"🥒";
+                break;
+            case NSProcessInfoThermalStateFair:
+                value = @"🔥";
+                break;
+            case NSProcessInfoThermalStateSerious:
+                value = @"🔥🔥";
+                break;
+            case NSProcessInfoThermalStateCritical:
+                value = @"🔥🔥🔥";
+                break;
+            default:
+                break;
+        }
+
+        [_attributeValues addObject:value];
+
+        float totalAverage = 0;
+        for (int i = 0; i < [cpuAverages count]; i++) {
+            float average = [cpuAverages[i] floatValue] * 100.0;
+            [_attributeTitles addObject:[NSString stringWithFormat:@"cpu %d", i]];
+            [_attributeValues addObject:[NSString stringWithFormat:@"%0.1f %%", average]];
+            totalAverage += average;
+        }
+        if ([cpuAverages count] > 0) {
+            totalAverage /= (float)[cpuAverages count];
+            [_attributeTitles insertObject:kStatsUIModelTitleCpuAverage atIndex:1];
+            [_attributeValues insertObject:[NSString stringWithFormat:@"%0.1f %%", totalAverage] atIndex:1];
+        }
+    }
     return self;
 }
 

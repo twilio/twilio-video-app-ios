@@ -19,12 +19,14 @@
 #import "TVILocalVideoTrack+Mirroring.h"
 #import "VideoApp-Swift.h"
 
+// 640x480 squarish crop (1.13:1)
 static const CMVideoDimensions kVideoAppCameraSourceDimensions = (CMVideoDimensions){544, 480};
-static const CMVideoDimensions kVideoAppCameraSourceSimulcastDimensions = (CMVideoDimensions){832, 768};
+// 1024x768 squarish crop (1.25:1)
+static const CMVideoDimensions kVideoAppCameraSourceSimulcastDimensions = (CMVideoDimensions){960, 768};
 
 static const int32_t kVideoAppCameraSourceFrameRate = 20;
 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4.
-static const int32_t kVideoAppCameraSourceSimulcastFrameRate = 20;
+static const int32_t kVideoAppCameraSourceSimulcastFrameRate = 24;
 
 TVIVideoFormat *VideoAppCameraSourceSelectVideoFormatBySize(AVCaptureDevice *device, CMVideoDimensions targetSize) {
     TVIVideoFormat *selectedFormat = nil;

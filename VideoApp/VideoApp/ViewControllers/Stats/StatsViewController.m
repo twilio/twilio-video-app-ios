@@ -15,10 +15,14 @@
 //
 
 #import "StatsViewController.h"
-#import "StatsUIModel.h"
+
+#import <mach/mach.h>
+#import <mach/processor_info.h>
+#import <mach/mach_host.h>
 #import <TwilioVideo/TwilioVideo.h>
 
 #import "HeaderTableViewCell.h"
+#import "StatsUIModel.h"
 #import "TrackStatsTableViewCell.h"
 
 static const CGFloat kGapWidth = 0.15;
@@ -50,6 +54,9 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 @property (nonatomic, strong) NSOperationQueue *statsProcessingQueue;
 @property (nonatomic, strong) NSArray<StatsUIModel *> *statsUIModels;
 
+@property (nonatomic, assign, readonly) processor_info_array_t lastCpuInfo;
+@property (nonatomic, assign, readonly) mach_msg_type_number_t lastCpuInfoSize;
+@property (nonatomic, assign) NSProcessInfoThermalState lastThermalState;
 @property (nonatomic, strong) TVIIceCandidatePairStats *lastPairStats;
 @property (nonatomic, strong) NSDate *lastPairDate;
 
@@ -122,6 +129,21 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
     self.statCollectionEnabled = YES;
 
     [self displayStatsUnavailableView];
+
+    self.lastThermalState = NSProcessInfoThermalStateNominal;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(thermalStateDidChange:)
+                                                 name:NSProcessInfoThermalStateDidChangeNotification
+                                               object:nil];
+}
+
+- (void)dealloc {
+    if (_lastCpuInfo) {
+        vm_deallocate(mach_task_self(), (vm_address_t)_lastCpuInfo, _lastCpuInfoSize);
+        _lastCpuInfo = NULL;
+        _lastCpuInfoSize = 0;
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)addAsSwipeableViewToParentViewController:(UIViewController *)parentViewController {
@@ -422,6 +444,13 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
 #pragma mark - Stats
 
+- (void)thermalStateDidChange:(NSNotification *)note {
+    NSProcessInfoThermalState state = NSProcessInfo.processInfo.thermalState;
+    [self.statsProcessingQueue addOperationWithBlock:^{
+        self.lastThermalState = state;
+    }];
+}
+
 - (void)statsTimerFired {
     typeof(self) __weak weakSelf = self;
 
@@ -532,6 +561,11 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
         }
     }
 
+    NSArray *cpuAverages = [self measureCPUUsage];
+    StatsUIModel *processStatsModel = [[StatsUIModel alloc] initWithThermalState:self.lastThermalState
+                                                                     cpuAverages:cpuAverages];
+    [statsUIModels addObject:processStatsModel];
+
     [statsUIModels sortUsingComparator:^NSComparisonResult(StatsUIModel *obj1, StatsUIModel *obj2) {
         if (obj1.isLocalTrack) {
             if (!obj2.isLocalTrack) {
@@ -575,6 +609,41 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
     }
 
     return @"";
+}
+
+- (NSArray<NSNumber *> *)measureCPUUsage {
+    natural_t numCPUsU = 0U;
+    mach_msg_type_number_t numCpuInfo;
+    processor_info_array_t cpuInfo;
+    // On iOS devices specifying PROCESSOR_TEMPERATURE or PROCESSOR_PM_REGS_INFO results in a KERN_FAILURE error.
+    kern_return_t err = host_processor_info(mach_host_self(), PROCESSOR_CPU_LOAD_INFO, &numCPUsU, &cpuInfo, &numCpuInfo);
+    if (err != KERN_SUCCESS) {
+        return @[];
+    }
+    NSMutableArray *averageUsage = [NSMutableArray array];
+    for (unsigned i = 0U; i < numCPUsU; ++i) {
+        integer_t inUse, total;
+        float percentUsage;
+        unsigned index = CPU_STATE_MAX * i;
+        if (_lastCpuInfo) {
+            integer_t user = cpuInfo[index + CPU_STATE_USER] - _lastCpuInfo[index + CPU_STATE_USER];
+            integer_t system = cpuInfo[index + CPU_STATE_SYSTEM] - _lastCpuInfo[index + CPU_STATE_SYSTEM];
+            integer_t nice = cpuInfo[index + CPU_STATE_NICE] - _lastCpuInfo[index + CPU_STATE_NICE];
+            integer_t idle = cpuInfo[index + CPU_STATE_IDLE] - _lastCpuInfo[index + CPU_STATE_IDLE];
+
+            inUse = user + system + nice;
+            total = inUse + idle;
+            percentUsage = (float)inUse / (float)total;
+            [averageUsage addObject:@(percentUsage)];
+        }
+    }
+
+    if (_lastCpuInfo) {
+        vm_deallocate(mach_task_self(), (vm_address_t)_lastCpuInfo, _lastCpuInfoSize);
+    }
+    _lastCpuInfo = cpuInfo;
+    _lastCpuInfoSize = sizeof(integer_t) * numCpuInfo;
+    return [averageUsage copy];
 }
 
 @end
