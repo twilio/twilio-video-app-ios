@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC4E4E2B2357A73900C5D313"
-               BuildableName = "Video-TwilioTests.xctest"
-               BlueprintName = "Video-TwilioTests"
-               ReferencedContainer = "container:VideoApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "DC044678238DD55C0072F597"
                BuildableName = "Video-TwilioUITests.xctest"
                BlueprintName = "Video-TwilioUITests"

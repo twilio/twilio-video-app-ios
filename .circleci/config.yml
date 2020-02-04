@@ -58,7 +58,7 @@ jobs:
     executor: macos_executor
     steps:
       - test:
-          scheme: Video-TwilioUITests
+          scheme: Video-Twilio
   test_community_app:
     executor: macos_executor
     steps:
@@ -69,6 +69,11 @@ jobs:
     steps:
       - test:
           scheme: Video-Internal
+  run_ui_tests:
+    executor: macos_executor
+    steps:
+      - test:
+          scheme: Video-TwilioUITests
   deploy_internal_app_beta:
     executor: macos_executor
     steps:
@@ -83,6 +88,8 @@ workflows:
       - test_community_app:
           filters: *test_filters
       - test_internal_app:
+          filters: *test_filters
+      - run_ui_tests:
           filters: *test_filters
       - deploy_internal_app_beta:
           filters:
