@@ -37,9 +37,13 @@
 - (instancetype)initWithIceCandidatePairStats:(TVIIceCandidatePairStats *)icePairStats
                                localCandidate:(TVIIceCandidateStats *)localCandidate
                               remoteCandidate:(TVIIceCandidateStats *)remoteCandidate
+                                lastPairStats:(TVIIceCandidatePairStats *)lastIcePairStats
+                                     lastDate:(NSDate *)lastDate
                                  connectionId:(NSString *)connectionId;
 - (instancetype)initWithSignalingRegion:(NSString *)signalingRegion
                             mediaRegion:(NSString *)mediaRegion;
+- (instancetype)initWithThermalState:(NSProcessInfoThermalState)state
+                         cpuAverages:(NSArray<NSNumber *> *)cpu;
 
 - (instancetype)init __attribute__((unavailable("StatsUIModel must be created with a parameterized initializer.")));
 

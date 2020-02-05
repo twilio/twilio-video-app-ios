@@ -22,6 +22,9 @@ static NSString *const kStatsUIModelTitleCodec = @"codec";
 static NSString *const kStatsUIModelTitlePacketLost = @"packets lost";
 static NSString *const kStatsUIModelTitleBytesSent = @"bytes sent";
 static NSString *const kStatsUIModelTitleBytesReceived = @"bytes received";
+static NSString *const kStatsUIModelTitleBitrateSent = @"send bitrate";
+static NSString *const kStatsUIModelTitleBitrateReceived = @"receive bitrate";
+static NSString *const kStatsUIModelTitleCpuAverage = @"cpu average";
 static NSString *const kStatsUIModelTitleRoundTripTime = @"round trip time";
 static NSString *const kStatsUIModelTitleJitter = @"jitter";
 static NSString *const kStatsUIModelTitleAudioLevel = @"audio level";
@@ -34,13 +37,16 @@ static NSString *const kStatsUIModelTitleLocalCandidatePort = @"local port";
 static NSString *const kStatsUIModelTitleLocalCandidateType = @"local type";
 static NSString *const kStatsUIModelTitleLocalCandidateProtocol = @"local protocol";
 static NSString *const kStatsUIModelTitleMediaRegion = @"media";
+static NSString *const kStatsUIModelTitleParticipantSignalingRegion = @"signaling";
 static NSString *const kStatsUIModelTitleRemoteCandidateIp = @"remote ip";
 static NSString *const kStatsUIModelTitleRemoteCandidatePort = @"remote port";
 static NSString *const kStatsUIModelTitleRemoteCandidateType = @"remote type";
 static NSString *const kStatsUIModelTitleRemoteCandidateProtocol = @"remote protocol";
-static NSString *const kStatsUIModelTitleParticipantSignalingRegion = @"signaling";
 static NSString *const kStatsUIModelTitleRelayProtocol = @"relay protocol";
+static NSString *const kStatsUIModelTitleReceiveBandwidth = @"receive bandwidth";
+static NSString *const kStatsUIModelTitleSendBandwidth = @"send bandwidth";
 static NSString *const kStatsUIModelTitleTransportId = @"transport id";
+static NSString *const kStatsUIModelTitleThermalState = @"thermal state";
 
 @interface StatsUIModel ()
 
@@ -212,6 +218,8 @@ static NSString *const kStatsUIModelTitleTransportId = @"transport id";
 - (instancetype)initWithIceCandidatePairStats:(TVIIceCandidatePairStats *)icePairStats
                                localCandidate:(TVIIceCandidateStats *)localCandidate
                               remoteCandidate:(TVIIceCandidateStats *)remoteCandidate
+                                lastPairStats:(TVIIceCandidatePairStats *)lastIcePairStats
+                                     lastDate:(NSDate *)lastDate
                                  connectionId:(NSString *)connectionId {
     self = [super init];
 
@@ -259,6 +267,30 @@ static NSString *const kStatsUIModelTitleTransportId = @"transport id";
         [_attributeTitles addObject:kStatsUIModelTitleRoundTripTime];
         [_attributeValues addObject:[NSString stringWithFormat:@"%0.1f ms", icePairStats.currentRoundTripTime]];
 
+        NSTimeInterval interval = lastDate ? -1.0 * [lastDate timeIntervalSinceNow] : 1.0;
+        int64_t sentDelta = (icePairStats.bytesSent - lastIcePairStats.bytesSent) * (8./(1000. * interval));
+        int64_t receivedDelta = (icePairStats.bytesReceived - lastIcePairStats.bytesReceived) * (8./(1000. * interval));
+
+        [_attributeTitles addObject:kStatsUIModelTitleBitrateSent];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(sentDelta)
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
+        [_attributeTitles addObject:kStatsUIModelTitleSendBandwidth];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(round(icePairStats.availableOutgoingBitrate / 1000.0))
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
+        [_attributeTitles addObject:kStatsUIModelTitleBitrateReceived];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(receivedDelta)
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
+        [_attributeTitles addObject:kStatsUIModelTitleReceiveBandwidth];
+        [_attributeValues addObject:[NSString stringWithFormat:@"%@ Kbps",
+                                     [NSNumberFormatter localizedStringFromNumber:@(round(icePairStats.availableIncomingBitrate / 1000.0))
+                                                                      numberStyle:NSNumberFormatterDecimalStyle]]];
+
         [_attributeTitles addObject:kStatsUIModelTitleBytesSent];
         [_attributeValues addObject:[NSNumberFormatter localizedStringFromNumber:@(icePairStats.bytesSent)
                                                                      numberStyle:NSNumberFormatterDecimalStyle]];
@@ -291,6 +323,54 @@ static NSString *const kStatsUIModelTitleTransportId = @"transport id";
         }
     }
 
+    return self;
+}
+
+- (instancetype)initWithThermalState:(NSProcessInfoThermalState)state
+                         cpuAverages:(NSArray<NSNumber *> *)cpuAverages {
+    if (self != nil) {
+        _title = @"Process Info";
+        _localTrack = NO;
+        _audioTrack = NO;
+
+        _attributeTitles = [NSMutableArray new];
+        _attributeValues = [NSMutableArray new];
+
+        [_attributeTitles addObject:kStatsUIModelTitleThermalState];
+
+        NSString *value = nil;
+        switch (state) {
+            case NSProcessInfoThermalStateNominal:
+                value = @"🥒";
+                break;
+            case NSProcessInfoThermalStateFair:
+                value = @"🔥";
+                break;
+            case NSProcessInfoThermalStateSerious:
+                value = @"🔥🔥";
+                break;
+            case NSProcessInfoThermalStateCritical:
+                value = @"🔥🔥🔥";
+                break;
+            default:
+                break;
+        }
+
+        [_attributeValues addObject:value];
+
+        float totalAverage = 0;
+        for (int i = 0; i < [cpuAverages count]; i++) {
+            float average = [cpuAverages[i] floatValue] * 100.0;
+            [_attributeTitles addObject:[NSString stringWithFormat:@"cpu %d", i]];
+            [_attributeValues addObject:[NSString stringWithFormat:@"%0.1f %%", average]];
+            totalAverage += average;
+        }
+        if ([cpuAverages count] > 0) {
+            totalAverage /= (float)[cpuAverages count];
+            [_attributeTitles insertObject:kStatsUIModelTitleCpuAverage atIndex:1];
+            [_attributeValues insertObject:[NSString stringWithFormat:@"%0.1f %%", totalAverage] atIndex:1];
+        }
+    }
     return self;
 }
 

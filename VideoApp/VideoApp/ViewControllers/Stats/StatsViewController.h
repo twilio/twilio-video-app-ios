@@ -17,8 +17,11 @@
 #import <UIKit/UIKit.h>
 
 @class StatsUIModel;
+@class TVIRoom;
 
 @interface StatsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) TVIRoom *room;
 
 - (void)addAsSwipeableViewToParentViewController:(UIViewController *)parentViewController;
 

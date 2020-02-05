@@ -27,8 +27,6 @@
 
 @import TwilioVideo;
 
-static const NSTimeInterval kStatsTimerInterval = 1.0;
-
 @interface RoomViewController () <LocalMediaControllerDelegate,
                                   TVIRoomDelegate,
                                   TVILocalParticipantDelegate,
@@ -60,8 +58,6 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 @property (nonatomic, strong) TVIRoom *room;
 
 @property (nonatomic, weak) StatsViewController *statsViewController;
-@property (nonatomic, strong) NSTimer *statsTimer;
-@property (nonatomic, strong) NSOperationQueue *statsProcessingQueue;
 
 @property (nonatomic, strong) RemoteParticipantUIModel *selectedParticipantUIModel;
 @property (nonatomic, strong) NSMutableArray<RemoteParticipantUIModel *> *remoteParticipantUIModels;
@@ -163,6 +159,9 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 }
 
 - (void)joinRoomWithAccessToken:(NSString *)accessToken {
+    // Allocate a higher bitrate for the simulcast track with 3 spatial layers.
+    int32_t videoBitrate = SwiftToObjc.enableVP8Simulcast ? 1600 : 1200;
+    
     TVIConnectOptions *options = [TVIConnectOptions optionsWithToken:accessToken
                                                                block:^(TVIConnectOptionsBuilder *builder) {
                                                                    builder.roomName = self.roomName;
@@ -175,9 +174,9 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                        builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
                                                                    } else {
                                                                        builder.preferredVideoCodecs = @[[TVIH264Codec new]];
-                                                                       builder.encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0
-                                                                                                                                           videoBitrate:1200];
                                                                    }
+                                                                    builder.encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0
+                                                                                                                                        videoBitrate:videoBitrate];
 
                                                                    if (SwiftToObjc.forceTURNMediaRelay) {
                                                                        builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
@@ -189,6 +188,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
                                                                }];
     
     self.room = [TwilioVideoSDK connectWithOptions:options delegate:self];
+    self.statsViewController.room = self.room;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -254,10 +254,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 }
 
 - (IBAction)hangupPressed:(id)sender {
-    if (self.statsTimer != nil) {
-        [self.statsTimer invalidate];
-        self.statsTimer = nil;
-    }
+    self.statsViewController.room = nil;
 
     if (self.room) {
         [self.room disconnect];
@@ -548,13 +545,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
         participant.delegate = self;
     }
 
-    if (self.statsTimer == nil) {
-        self.statsProcessingQueue = [[NSOperationQueue alloc] init];
-        self.statsProcessingQueue.maxConcurrentOperationCount = 1;
-
-        self.statsTimer = [NSTimer timerWithTimeInterval:kStatsTimerInterval target:self selector:@selector(statsTimerFired) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:self.statsTimer forMode:NSRunLoopCommonModes];
-    }
+    self.statsViewController.room = room;
 
     [self rebuildRemoteParticipantUIModels];
 
@@ -580,14 +571,7 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
     NSLog(@"%s - Room sid: %@", __PRETTY_FUNCTION__, room.sid);
 
     self.localMediaController.localParticipant = nil;
-
-    if (self.statsTimer != nil) {
-        [self.statsTimer invalidate];
-        self.statsTimer = nil;
-
-        [self.statsProcessingQueue cancelAllOperations];
-        self.statsProcessingQueue = nil;
-    }
+    self.statsViewController.room = nil;
 
     self.room = nil;
     [self setNeedsUpdateOfHomeIndicatorAutoHidden];
@@ -812,159 +796,6 @@ static const NSTimeInterval kStatsTimerInterval = 1.0;
 
     VideoCollectionViewCell *cell = (VideoCollectionViewCell *)[self.videoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     cell.networkQualityLevel = networkQualityLevel;
-}
-
-#pragma mark - Stats
-
-- (void)statsTimerFired {
-    typeof(self) __weak weakSelf = self;
-
-    [self.room getStatsWithBlock:^(NSArray<TVIStatsReport *> * _Nonnull statsReports) {
-        [weakSelf.statsProcessingQueue addOperationWithBlock:^{
-            typeof(self) __strong strongSelf = weakSelf;
-
-            if (strongSelf) {
-                [strongSelf processStatsReports:statsReports];
-            }
-        }];
-    }];
-}
-
-- (void)processStatsReports:(NSArray<TVIStatsReport *> *)statsReports {
-    if ([statsReports count] == 0) {
-        [self.statsViewController updateStatsUIWithModels:nil];
-        return;
-    }
-
-    NSMutableArray<StatsUIModel *> *statsUIModels = [NSMutableArray new];
-    BOOL haveProcessedLocalTracks = NO;
-    NSInteger trackCount;
-
-    StatsUIModel *regions = [[StatsUIModel alloc] initWithSignalingRegion:self.room.localParticipant.signalingRegion
-                                                              mediaRegion:self.room.mediaRegion];
-    [statsUIModels addObject:regions];
-
-    for (TVIStatsReport *statsReport in statsReports) {
-        if (!haveProcessedLocalTracks) {
-            // Only get local tracks from the first stats report at this time
-            if ([statsReport.localAudioTrackStats count] > 0 || [statsReport.localVideoTrackStats count] > 0) {
-                haveProcessedLocalTracks = YES;
-            }
-
-            trackCount = 1;
-            for (TVILocalAudioTrackStats *localAudioTrackStats in statsReport.localAudioTrackStats) {
-                NSString *trackName = @"Local Audio Track";
-
-                if ([statsReport.localVideoTrackStats count] > 1) {
-                    trackName = [trackName stringByAppendingFormat:@" %zd", trackCount];
-                    trackCount++;
-                }
-
-                StatsUIModel *statsUIModel = [[StatsUIModel alloc] initWithLocalAudioTrackStats:localAudioTrackStats trackName:trackName];
-                [statsUIModels addObject:statsUIModel];
-            }
-
-            trackCount = 1;
-            for (TVILocalVideoTrackStats *localVideoTrackStats in statsReport.localVideoTrackStats) {
-                // Figure out a way to tell whether local video tracks are camera or screen capture?
-                NSString *trackName = @"Local Video Track";
-
-                if ([statsReport.localVideoTrackStats count] > 1) {
-                    trackName = [trackName stringByAppendingFormat:@" %zd", trackCount];
-                    trackCount++;
-                }
-
-                StatsUIModel *statsUIModel = [[StatsUIModel alloc] initWithLocalVideoTrackStats:localVideoTrackStats trackName:trackName];
-                [statsUIModels addObject:statsUIModel];
-            }
-        }
-
-        NSUInteger activePairs = 0;
-        for (TVIIceCandidatePairStats *pairStats in statsReport.iceCandidatePairStats) {
-            NSString *connectionId = activePairs == 0 ? @"Peer Connection" : statsReport.peerConnectionId;
-
-            if (pairStats.isActiveCandidatePair) {
-                activePairs++;
-
-                TVIIceCandidateStats *localCandidate = nil;
-                TVIIceCandidateStats *remoteCandidate = nil;
-                for (TVIIceCandidateStats *candidateStats in statsReport.iceCandidateStats) {
-                    if (candidateStats.isRemote && [candidateStats.transportId isEqualToString:pairStats.remoteCandidateId]) {
-                        remoteCandidate = candidateStats;
-                    } else if (!candidateStats.isRemote && [candidateStats.transportId isEqualToString:pairStats.localCandidateId]) {
-                        localCandidate = candidateStats;
-                    }
-
-                    if (localCandidate && remoteCandidate) {
-                        break;
-                    }
-                }
-                StatsUIModel *statsUIModel = [[StatsUIModel alloc] initWithIceCandidatePairStats:pairStats
-                                                                                  localCandidate:localCandidate
-                                                                                 remoteCandidate:remoteCandidate
-                                                                                    connectionId:connectionId];
-                [statsUIModels addObject:statsUIModel];
-            }
-        }
-
-        NSArray *participants = self.room.remoteParticipants;
-        
-        for (TVIRemoteAudioTrackStats *remoteAudioTrackStats in statsReport.remoteAudioTrackStats) {
-            NSString *trackName = [self trackNameForTrackSid:remoteAudioTrackStats.trackSid participants:participants];
-            StatsUIModel *statsUIModel = [[StatsUIModel alloc] initWithRemoteAudioTrackStats:remoteAudioTrackStats trackName:trackName];
-            [statsUIModels addObject:statsUIModel];
-        }
-
-        for (TVIRemoteVideoTrackStats *remoteVideoTrackStats in statsReport.remoteVideoTrackStats) {
-            NSString *trackName = [self trackNameForTrackSid:remoteVideoTrackStats.trackSid participants:participants];
-            StatsUIModel *statsUIModel = [[StatsUIModel alloc] initWithRemoteVideoTrackStats:remoteVideoTrackStats trackName:trackName];
-            [statsUIModels addObject:statsUIModel];
-        }
-    }
-
-    [statsUIModels sortUsingComparator:^NSComparisonResult(StatsUIModel *obj1, StatsUIModel *obj2) {
-        if (obj1.isLocalTrack) {
-            if (!obj2.isLocalTrack) {
-                return NSOrderedAscending;
-            } else {
-                return [obj1.title caseInsensitiveCompare:obj2.title];
-            }
-        } else {
-            return [obj1.title caseInsensitiveCompare:obj2.title];
-        }
-    }];
-
-    [self.statsViewController updateStatsUIWithModels:statsUIModels];
-}
-
-- (NSString *)trackNameForTrackSid:(NSString *)trackSid participants:(NSArray<TVIRemoteParticipant *> *)participants {
-    for (TVIParticipant *participant in participants) {
-        NSInteger trackCount;
-
-        trackCount = 1;
-        NSArray<TVIVideoTrackPublication *> *videoTrackPublications = [participant videoTracks];
-        for (TVIVideoTrackPublication *publication in videoTrackPublications) {
-            if ([publication.trackSid isEqualToString:trackSid]) {
-                return [NSString stringWithFormat:@"%@ Video Track %@",
-                        participant.identity,
-                        videoTrackPublications.count > 1 ? @(trackCount) : @""];
-            }
-            trackCount ++;
-        }
-
-        trackCount = 1;
-        NSArray<TVIAudioTrackPublication *> *audioTrackPublications = [participant audioTracks];
-        for (TVIAudioTrackPublication *publication in audioTrackPublications) {
-            if ([publication.trackSid isEqualToString:trackSid]) {
-                return [NSString stringWithFormat:@"%@ Audio Track %@",
-                        participant.identity,
-                        audioTrackPublications.count > 1 ? @(trackCount) : @""];
-            }
-            trackCount ++;
-        }
-    }
-
-    return @"";
 }
 
 @end

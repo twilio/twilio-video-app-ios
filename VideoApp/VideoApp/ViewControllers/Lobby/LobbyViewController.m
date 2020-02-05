@@ -75,12 +75,22 @@
     [self.localMediaController createLocalAudioTrack];
     [self.localMediaController createLocalVideoTrack];
     
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(refresh) name:SwiftToObjc.appSettingsStoreDidChangeNotificationName object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(handleSettingChange) name:SwiftToObjc.appSettingsStoreDidChangeNotificationName object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    [self refresh];
+}
+
+- (void)handleSettingChange {
+    // Restart local video so that resolution changes take place when video codec setting is changed.
+    if (self.localMediaController.localVideoTrack) {
+        [self.localMediaController destroyLocalVideoTrack];
+        [self.localMediaController createLocalVideoTrack];
+    }
+    
     [self refresh];
 }
 
