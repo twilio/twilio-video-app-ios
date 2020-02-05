@@ -164,28 +164,30 @@
     
     TVIConnectOptions *options = [TVIConnectOptions optionsWithToken:accessToken
                                                                block:^(TVIConnectOptionsBuilder *builder) {
-                                                                   builder.roomName = self.roomName;
-                                                                   builder.dominantSpeakerEnabled = YES;
-                                                                   builder.networkQualityEnabled = YES;
-                                                                   builder.audioTracks = self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[];
-                                                                   builder.videoTracks = self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[];
-
-                                                                   if (SwiftToObjc.enableVP8Simulcast) {
-                                                                       builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
-                                                                   } else {
-                                                                       builder.preferredVideoCodecs = @[[TVIH264Codec new]];
-                                                                   }
-                                                                    builder.encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0
-                                                                                                                                        videoBitrate:videoBitrate];
-
-                                                                   if (SwiftToObjc.forceTURNMediaRelay) {
-                                                                       builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
-                                                                           builder.abortOnIceServersTimeout = YES;
-                                                                           builder.iceServersTimeout = 30;
-                                                                           builder.transportPolicy = TVIIceTransportPolicyRelay;
-                                                                       }];
-                                                                   }
-                                                               }];
+        builder.roomName = self.roomName;
+        builder.dominantSpeakerEnabled = YES;
+        builder.networkQualityEnabled = YES;
+        builder.networkQualityConfiguration = [[TVINetworkQualityConfiguration alloc] initWithLocalVerbosity:TVINetworkQualityVerbosityMinimal
+                                                                                             remoteVerbosity:TVINetworkQualityVerbosityMinimal];
+        builder.audioTracks = self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[];
+        builder.videoTracks = self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[];
+        
+        if (SwiftToObjc.enableVP8Simulcast) {
+            builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
+        } else {
+            builder.preferredVideoCodecs = @[[TVIH264Codec new]];
+        }
+        builder.encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0
+                                                                            videoBitrate:videoBitrate];
+        
+        if (SwiftToObjc.forceTURNMediaRelay) {
+            builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
+                builder.abortOnIceServersTimeout = YES;
+                builder.iceServersTimeout = 30;
+                builder.transportPolicy = TVIIceTransportPolicyRelay;
+            }];
+        }
+    }];
     
     self.room = [TwilioVideoSDK connectWithOptions:options delegate:self];
     self.statsViewController.room = self.room;
@@ -769,6 +771,21 @@
         [self updateVideoUIForSelectedParticipantUIModel:self.selectedParticipantUIModel];
     }
     [self refreshParticipantVideoViews:participant];
+}
+
+- (void)remoteParticipant:(TVIRemoteParticipant *)participant networkQualityLevelDidChange:(TVINetworkQualityLevel)networkQualityLevel {
+    NSLog(@"Network Quality Level for RemoteParticipant: %zd", networkQualityLevel);
+
+    NSUInteger unselectedRemoteModelsIndex = [[self unselectedRemoteModels] indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        RemoteParticipantUIModel *remoteParticipantUIModel = obj;
+        return remoteParticipantUIModel.remoteParticipant.identity == participant.identity;
+    }];
+    
+    if (unselectedRemoteModelsIndex != NSNotFound) {
+        NSInteger row = unselectedRemoteModelsIndex + 1; // Add 1 for local participant at index 0
+        VideoCollectionViewCell *cell = (VideoCollectionViewCell *)[self.videoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+        cell.networkQualityLevel = networkQualityLevel;
+    }
 }
 
 #pragma mark - TVILocalParticipantDelegate
