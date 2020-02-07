@@ -780,12 +780,12 @@
     if ([participant isEqual:self.selectedParticipantUIModel.remoteParticipant]) {
         [self updateRemoteParticipantView:participant];
     } else {
-        NSUInteger unselectedRemoteModelsIndex = [[self unselectedRemoteModels] indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        NSUInteger index = [[self unselectedRemoteModels] indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
             return [participant isEqual:((RemoteParticipantUIModel *)obj).remoteParticipant];
         }];
 
-        if (unselectedRemoteModelsIndex != NSNotFound) {
-            NSInteger row = unselectedRemoteModelsIndex + 1; // Add 1 for local participant at index 0
+        if (index != NSNotFound) {
+            NSInteger row = index + 1; // Add 1 for local participant at index 0
             VideoCollectionViewCell *cell = (VideoCollectionViewCell *)[self.videoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
             cell.networkQualityLevel = networkQualityLevel;
         }
