@@ -48,6 +48,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *remoteParticipantLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *remoteParticipantMutedStateImage;
 @property (nonatomic, weak) IBOutlet UIImageView *remoteParticipantDominantSpeakerIndicatorImage;
+@property (weak, nonatomic) IBOutlet UIImageView *remoteParticipantNetworkQualityIndicator;
 
 @property (nonatomic, weak) IBOutlet VariableAlphaToggleButton *audioToggleButton;
 @property (nonatomic, weak) IBOutlet VariableAlphaToggleButton *videoToggleButton;
@@ -379,6 +380,8 @@
             self.remoteParticipantMutedStateImage.image = [UIImage imageNamed:@"audio-muted-white"];
         }
     }
+
+    self.remoteParticipantNetworkQualityIndicator.image = [NetworkQualityIndicator networkQualityIndicatorImageForLevel:participant.networkQualityLevel];
 }
 
 - (RemoteParticipantUIModel *)addRemoteParticipantModel:(TVIRemoteParticipant *)participant {
@@ -774,17 +777,18 @@
 }
 
 - (void)remoteParticipant:(TVIRemoteParticipant *)participant networkQualityLevelDidChange:(TVINetworkQualityLevel)networkQualityLevel {
-    NSLog(@"Network Quality Level for RemoteParticipant: %zd", networkQualityLevel);
+    if ([participant isEqual:self.selectedParticipantUIModel.remoteParticipant]) {
+        [self updateRemoteParticipantView:participant];
+    } else {
+        NSUInteger unselectedRemoteModelsIndex = [[self unselectedRemoteModels] indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            return [participant isEqual:obj];
+        }];
 
-    NSUInteger unselectedRemoteModelsIndex = [[self unselectedRemoteModels] indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        RemoteParticipantUIModel *remoteParticipantUIModel = obj;
-        return remoteParticipantUIModel.remoteParticipant.identity == participant.identity;
-    }];
-    
-    if (unselectedRemoteModelsIndex != NSNotFound) {
-        NSInteger row = unselectedRemoteModelsIndex + 1; // Add 1 for local participant at index 0
-        VideoCollectionViewCell *cell = (VideoCollectionViewCell *)[self.videoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-        cell.networkQualityLevel = networkQualityLevel;
+        if (unselectedRemoteModelsIndex != NSNotFound) {
+            NSInteger row = unselectedRemoteModelsIndex + 1; // Add 1 for local participant at index 0
+            VideoCollectionViewCell *cell = (VideoCollectionViewCell *)[self.videoCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            cell.networkQualityLevel = networkQualityLevel;
+        }
     }
 }
 

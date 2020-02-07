@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oqf-hp-6pe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oqf-hp-6pe">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -658,41 +658,60 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVx-DL-H08">
-                                <rect key="frame" x="16" y="80" width="48" height="48"/>
+                                <rect key="frame" x="16" y="80" width="55" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RCP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo4-C1-zkn">
-                                        <rect key="frame" x="0.0" y="8" width="48" height="21"/>
+                                        <rect key="frame" x="0.0" y="8" width="55" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-CB-zQ4">
-                                        <rect key="frame" x="18" y="28" width="12" height="12"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ug-u2-7cW">
+                                        <rect key="frame" x="8" y="26.5" width="42" height="20"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio-muted-white" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-CB-zQ4" userLabel="Mic Mute Image">
+                                                <rect key="frame" x="25" y="4" width="12" height="12"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="12" id="cyn-Cc-Fsk"/>
+                                                    <constraint firstAttribute="width" secondItem="fQa-CB-zQ4" secondAttribute="height" multiplier="1:1" id="vbn-9B-6kl"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="network-quality-level-0" translatesAutoresizingMaskIntoConstraints="NO" id="D8d-Bi-clM">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="lyC-dH-030"/>
+                                                    <constraint firstAttribute="width" constant="20" id="tgt-xQ-twt"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dominant_speaker_indicator" translatesAutoresizingMaskIntoConstraints="NO" id="dpX-T5-eSd" userLabel="Dominant Speaker Indicator Image">
+                                                <rect key="frame" x="25" y="4" width="12" height="12"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="dpX-T5-eSd" secondAttribute="height" multiplier="1:1" id="3U6-It-0vY"/>
+                                                    <constraint firstAttribute="width" constant="12" id="Dvn-Iz-S7M"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="12" id="cyn-Cc-Fsk"/>
-                                            <constraint firstAttribute="width" secondItem="fQa-CB-zQ4" secondAttribute="height" multiplier="1:1" id="vbn-9B-6kl"/>
+                                            <constraint firstItem="fQa-CB-zQ4" firstAttribute="leading" secondItem="D8d-Bi-clM" secondAttribute="trailing" constant="5" id="4Y0-gf-2pI"/>
+                                            <constraint firstItem="dpX-T5-eSd" firstAttribute="centerY" secondItem="D8d-Bi-clM" secondAttribute="centerY" id="Ask-5a-1Mo"/>
+                                            <constraint firstItem="dpX-T5-eSd" firstAttribute="leading" secondItem="D8d-Bi-clM" secondAttribute="trailing" constant="5" id="XxT-nr-N9e"/>
+                                            <constraint firstItem="D8d-Bi-clM" firstAttribute="leading" secondItem="3Ug-u2-7cW" secondAttribute="leading" id="aWh-DW-wT1"/>
+                                            <constraint firstItem="D8d-Bi-clM" firstAttribute="top" secondItem="3Ug-u2-7cW" secondAttribute="top" id="lHO-tO-aeF"/>
+                                            <constraint firstItem="fQa-CB-zQ4" firstAttribute="centerY" secondItem="D8d-Bi-clM" secondAttribute="centerY" id="nLx-Qg-YOQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="D8d-Bi-clM" secondAttribute="bottom" id="pfR-x6-mb0"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dominant_speaker_indicator" translatesAutoresizingMaskIntoConstraints="NO" id="dpX-T5-eSd" userLabel="Dominant Speaker Indicator Image">
-                                        <rect key="frame" x="18" y="28" width="12" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="dpX-T5-eSd" secondAttribute="height" multiplier="1:1" id="3U6-It-0vY"/>
-                                            <constraint firstAttribute="width" constant="12" id="Dvn-Iz-S7M"/>
-                                        </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="dpX-T5-eSd" firstAttribute="top" secondItem="Eo4-C1-zkn" secondAttribute="bottom" constant="-1" id="3Zg-e3-igT"/>
                                     <constraint firstItem="Eo4-C1-zkn" firstAttribute="leading" secondItem="sVx-DL-H08" secondAttribute="leading" id="7JU-pf-Nn6"/>
-                                    <constraint firstItem="dpX-T5-eSd" firstAttribute="width" secondItem="dpX-T5-eSd" secondAttribute="height" multiplier="1:1" id="83S-sz-jXA"/>
                                     <constraint firstItem="Eo4-C1-zkn" firstAttribute="top" secondItem="sVx-DL-H08" secondAttribute="top" constant="8" id="8MD-jJ-x6d"/>
-                                    <constraint firstAttribute="height" constant="48" id="8Nd-Aw-dnz"/>
-                                    <constraint firstItem="fQa-CB-zQ4" firstAttribute="top" secondItem="Eo4-C1-zkn" secondAttribute="bottom" constant="-1" id="RtG-ON-7fY"/>
-                                    <constraint firstItem="fQa-CB-zQ4" firstAttribute="centerX" secondItem="sVx-DL-H08" secondAttribute="centerX" id="WOl-6Z-CZk"/>
+                                    <constraint firstAttribute="height" constant="55" id="8Nd-Aw-dnz"/>
+                                    <constraint firstItem="3Ug-u2-7cW" firstAttribute="leading" secondItem="sVx-DL-H08" secondAttribute="leading" constant="8" id="LkB-O9-XrR"/>
+                                    <constraint firstItem="3Ug-u2-7cW" firstAttribute="top" secondItem="Eo4-C1-zkn" secondAttribute="bottom" constant="-2" id="OT2-tj-Ruk"/>
                                     <constraint firstAttribute="width" secondItem="sVx-DL-H08" secondAttribute="height" multiplier="1:1" id="dG8-n7-i5f"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Ug-u2-7cW" secondAttribute="trailing" constant="5" id="idR-9C-Rcb"/>
                                     <constraint firstAttribute="trailing" secondItem="Eo4-C1-zkn" secondAttribute="trailing" id="oxA-hn-CNX"/>
-                                    <constraint firstItem="dpX-T5-eSd" firstAttribute="centerX" secondItem="sVx-DL-H08" secondAttribute="centerX" id="pM9-ic-hbV"/>
                                 </constraints>
                             </view>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recording" translatesAutoresizingMaskIntoConstraints="NO" id="bMv-zJ-vdD">
@@ -769,14 +788,15 @@
                         <outlet property="remoteParticipantDominantSpeakerIndicatorImage" destination="dpX-T5-eSd" id="YdH-uO-xP0"/>
                         <outlet property="remoteParticipantLabel" destination="Eo4-C1-zkn" id="LeR-Jh-9Iv"/>
                         <outlet property="remoteParticipantLabelView" destination="sVx-DL-H08" id="RrR-tf-fqU"/>
-                        <outlet property="remoteParticipantMutedStateImage" destination="fQa-CB-zQ4" id="cum-db-R5T"/>
+                        <outlet property="remoteParticipantMutedStateImage" destination="fQa-CB-zQ4" id="aT0-ah-FKm"/>
+                        <outlet property="remoteParticipantNetworkQualityIndicator" destination="D8d-Bi-clM" id="0CU-Wb-gyQ"/>
                         <outlet property="videoCollectionView" destination="wU6-sZ-Ash" id="Gd8-rN-kzm"/>
                         <outlet property="videoToggleButton" destination="sqN-Vg-1NI" id="6xi-Va-rVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuS-AJ-Sbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="450"/>
+            <point key="canvasLocation" x="69.599999999999994" y="449.32533733133437"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="uCs-td-OOk">
