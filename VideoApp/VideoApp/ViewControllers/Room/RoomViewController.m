@@ -781,7 +781,7 @@
         [self updateRemoteParticipantView:participant];
     } else {
         NSUInteger unselectedRemoteModelsIndex = [[self unselectedRemoteModels] indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-            return [participant isEqual:obj];
+            return [participant isEqual:((RemoteParticipantUIModel *)obj).remoteParticipant];
         }];
 
         if (unselectedRemoteModelsIndex != NSNotFound) {
