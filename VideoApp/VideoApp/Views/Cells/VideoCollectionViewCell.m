@@ -110,6 +110,7 @@
         _remoteParticipantUIModel = remoteParticipantUIModel;
         _localParticipant = nil;
         self.dominantSpeaker = isDominantSpeaker;
+        self.networkQualityLevel = remoteParticipantUIModel.remoteParticipant.networkQualityLevel;
 
         TVIParticipant *remoteParticipant = _remoteParticipantUIModel.remoteParticipant;
 
