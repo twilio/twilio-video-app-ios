@@ -37,14 +37,6 @@
                BlueprintName = "Video-TwilioUITests"
                ReferencedContainer = "container:VideoApp.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "DeepLinkTests/test_roomDeepLink_withUserSignedIn_shouldNavigateToLobbyScreenAndSetRoomName()">
-               </Test>
-               <Test
-                  Identifier = "DeepLinkTests/test_roomDeepLink_withUserSignedOut_shouldRequireUserToSignInAndNavigateToLobbyScreenAndSetRoomName()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
