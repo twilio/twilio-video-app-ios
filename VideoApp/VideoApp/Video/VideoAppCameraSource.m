@@ -177,11 +177,11 @@ TVIVideoFormat *VideoAppCameraSourceSelectVideoFormatBySize(AVCaptureDevice *dev
 #pragma mark - TVICameraSourceDelegate
 
 - (void)cameraSourceInterruptionEnded:(TVICameraSource *)source {
-
+    [self.localMediaController cameraSourceInterruptionEnded];
 }
 
 - (void)cameraSourceWasInterrupted:(TVICameraSource *)source reason:(AVCaptureSessionInterruptionReason)reason {
-
+    [self.localMediaController cameraSourceWasInterrupted];
 }
 
 - (void)cameraSource:(TVICameraSource *)source didFailWithError:(NSError *)error {
