@@ -9,7 +9,7 @@ assignees: ''
 
 > #### Before Creating an Issue
 >
-> - If there is an issue specific to the `Video-Community` app report it here. If there is an issue or question related to the  video SDK please [create an SDK issue](https://github.com/twilio/twilio-video-ios/issues) instead.
+> - If there is an issue specific to the video app report it here. If there is an issue or question related to the  video SDK please [create an SDK issue](https://github.com/twilio/twilio-video-ios/issues) instead.
 > - Please do not share any 
 [Personally Identifiable Information](https://www.twilio.com/docs/glossary/what-is-personally-identifiable-information-pii) or sensitive information like API keys when creating an issue.
 
