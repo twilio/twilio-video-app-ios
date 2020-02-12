@@ -18,7 +18,7 @@ assignees: ''
 
 [Describe the problem you want to solve]
 
-#### Solution You Would LIke
+#### Solution You Would Like
 
 [What you want to happen]
 
