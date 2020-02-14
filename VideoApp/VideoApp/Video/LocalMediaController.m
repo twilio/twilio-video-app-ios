@@ -162,4 +162,16 @@
     }
 }
 
+- (void)cameraSourceWasInterrupted {
+    if (self.camera.localVideoTrack) {
+        [self.localParticipant unpublishVideoTrack:self.camera.localVideoTrack];
+    }
+}
+
+- (void)cameraSourceInterruptionEnded {
+    if (self.camera.localVideoTrack) {
+        [self.localParticipant publishVideoTrack:self.camera.localVideoTrack];
+    }
+}
+
 @end

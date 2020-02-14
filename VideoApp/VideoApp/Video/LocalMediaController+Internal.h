@@ -18,6 +18,8 @@
 
 @interface LocalMediaController (Internal)
 
+- (void)cameraSourceWasInterrupted;
+- (void)cameraSourceInterruptionEnded;
 - (void)videoCaptureStarted;
 
 @end
