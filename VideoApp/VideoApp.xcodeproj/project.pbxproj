@@ -171,6 +171,9 @@
 		DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */; };
 		DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */; };
 		DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */; };
+		DC82A34F23FC9AAA0081578C /* CodableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* CodableContainer.swift */; };
+		DC82A35023FC9AAA0081578C /* CodableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* CodableContainer.swift */; };
+		DC82A35123FC9AAA0081578C /* CodableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* CodableContainer.swift */; };
 		DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
 		DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
 		DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
@@ -491,6 +494,7 @@
 		DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
 		DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTwilioVideoAppAPI.swift; sourceTree = "<group>"; };
+		DC82A34E23FC9AAA0081578C /* CodableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableContainer.swift; sourceTree = "<group>"; };
 		DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpenerFactory.swift; sourceTree = "<group>"; };
 		DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpener.swift; sourceTree = "<group>"; };
 		DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStoresFactory.swift; sourceTree = "<group>"; };
@@ -920,6 +924,7 @@
 			children = (
 				DC044683238EF6C20072F597 /* APIEnvironment.swift */,
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
+				DC82A34E23FC9AAA0081578C /* CodableContainer.swift */,
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
@@ -2099,6 +2104,7 @@
 				DCD7675623DF554A00A2939C /* UserActivityStore.swift in Sources */,
 				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
+				DC82A34F23FC9AAA0081578C /* CodableContainer.swift in Sources */,
 				DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */,
 				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
@@ -2199,6 +2205,7 @@
 				DCD7675723DF554A00A2939C /* UserActivityStore.swift in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
+				DC82A35023FC9AAA0081578C /* CodableContainer.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
@@ -2299,6 +2306,7 @@
 				DCD7675823DF554B00A2939C /* UserActivityStore.swift in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
+				DC82A35123FC9AAA0081578C /* CodableContainer.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,

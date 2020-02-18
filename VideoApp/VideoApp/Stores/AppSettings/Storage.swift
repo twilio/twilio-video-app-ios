@@ -30,14 +30,17 @@ struct Storage<T: Codable> {
 
     var wrappedValue: T {
         get {
-            guard let data = userDefaults.object(forKey: key) as? Data, let value = try? JSONDecoder().decode(T.self, from: data) else {
-                return defaultValue
+            guard
+                let data = userDefaults.object(forKey: key) as? Data,
+                let container = try? JSONDecoder().decode(CodableContainer<T>.self, from: data)
+                else {
+                    return defaultValue
             }
-            
-            return value
+
+            return container.value
         }
         set {
-            let data = try? JSONEncoder().encode(newValue)
+            let data = try? JSONEncoder().encode(CodableContainer(value: newValue))
             userDefaults.set(data, forKey: key)
         }
     }
