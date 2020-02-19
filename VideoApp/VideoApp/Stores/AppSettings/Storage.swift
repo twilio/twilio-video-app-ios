@@ -32,7 +32,7 @@ struct Storage<T: Codable> {
         get {
             guard
                 let data = userDefaults.object(forKey: key) as? Data,
-                let container = try? JSONDecoder().decode(CodableContainer<T>.self, from: data)
+                let container = try? JSONDecoder().decode(JSONContainer<T>.self, from: data)
                 else {
                     return defaultValue
             }
@@ -40,7 +40,7 @@ struct Storage<T: Codable> {
             return container.value
         }
         set {
-            let data = try? JSONEncoder().encode(CodableContainer(value: newValue))
+            let data = try? JSONEncoder().encode(JSONContainer(value: newValue))
             userDefaults.set(data, forKey: key)
         }
     }
