@@ -25,20 +25,17 @@ class LaunchFlowImpl: LaunchFlow {
     private let authFlow: AuthStoreWritingDelegate
     private let authStore: AuthStoreWriting
     private let deepLinkStore: DeepLinkStoreWriting
-    private let notificationCenter: NotificationCenterProtocol
     
     init(
         window: UIWindow,
         authFlow: AuthStoreWritingDelegate,
         authStore: AuthStoreWriting,
-        deepLinkStore: DeepLinkStoreWriting,
-        notificationCenter: NotificationCenterProtocol
+        deepLinkStore: DeepLinkStoreWriting
     ) {
         self.window = window
         self.authFlow = authFlow
         self.authStore = authStore
         self.deepLinkStore = deepLinkStore
-        self.notificationCenter = notificationCenter
     }
     
     func start() {

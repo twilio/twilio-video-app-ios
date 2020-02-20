@@ -31,6 +31,10 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         title: "User Identity",
                         text: userStore.user.displayName,
                         viewModelFactory: editIdentityViewModalFactory
+                    ),
+                    .push(
+                        title: "SDK Log Levels",
+                        viewControllerFactory: sdkLogLevelSettingsViewControllerFactory
                     )
                 ]
             ),
@@ -38,7 +42,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                 rows: [
                     .push(
                         title: "Developer",
-                        viewControllerFactory: DeveloperSettingsViewControllerFactory()
+                        viewControllerFactory: developerSettingsViewControllerFactory
                     )
                 ]
             )
@@ -49,17 +53,23 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
     private let selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
+    private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
+    private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     
     init(appSettingsStore: AppSettingsStoreWriting,
          userStore: UserStoreReading,
          crashReportStore: CrashReportStoreWriting,
          editIdentityViewModalFactory: EditTextViewModelFactory,
-         selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
+         selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory,
+         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
+         sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
         self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
         self.selectAPIEnvironmentViewModelFactory = selectAPIEnvironmentViewModelFactory
+        self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
+        self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
     }
 }

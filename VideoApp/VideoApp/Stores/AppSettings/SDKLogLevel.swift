@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,19 +14,28 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-protocol LaunchFlowFactory: AnyObject {
-    func makeLaunchFlow(window: UIWindow) -> LaunchFlow
-}
-
-class LaunchFlowFactoryImpl: LaunchFlowFactory {
-    func makeLaunchFlow(window: UIWindow) -> LaunchFlow {
-        return LaunchFlowImpl(
-            window: window,
-            authFlow: AuthFlow(window: window),
-            authStore: AuthStore.shared,
-            deepLinkStore: DeepLinkStore.shared
-        )
+enum SDKLogLevel: String, CaseIterable, Codable {
+    case off
+    case fatal
+    case error
+    case warning
+    case info
+    case debug
+    case trace
+    case all
+    
+    var title: String {
+        switch self {
+        case .off: return "Off"
+        case .fatal: return "Fatal"
+        case .error: return "Error"
+        case .warning: return "Warning"
+        case .info: return "Info"
+        case .debug: return "Debug"
+        case .trace: return "Trace"
+        case .all: return "All"
+        }
     }
 }

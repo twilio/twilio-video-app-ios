@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,20 +14,18 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
+class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = AdvancedSettingsViewModel(
+        viewController.viewModel = SDKLogLevelSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
-            userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
-            crashReportStore: CrashReportStore.shared,
-            editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
-            selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory(),
-            developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
-            sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory()
+            selectCoreSDKLogLevelViewModelFactory: SelectCoreSDKLogLevelViewModelFactory(),
+            selectPlatformSDKLogLevelViewModelFactory: SelectPlatformSDKLogLevelViewModelFactory(),
+            selectSignalingSDKLogLevelViewModelFactory: SelectSignalingSDKLogLevelViewModelFactory(),
+            selectWebRTCSDKLogLevelViewModelFactory: SelectWebRTCSDKLogLevelViewModelFactory()
         )
         return viewController
     }
