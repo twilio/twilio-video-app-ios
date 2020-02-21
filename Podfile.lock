@@ -105,7 +105,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - Nimble (8.0.5)
   - Quick (2.2.0)
-  - TwilioVideo (3.2.1)
+  - TwilioVideo (3.2.2-rc1)
 
 DEPENDENCIES:
   - AppCenter/Distribute (= 2.5.3)
@@ -115,9 +115,11 @@ DEPENDENCIES:
   - FirebaseUI/Google (= 8.4.0)
   - Nimble
   - Quick
-  - TwilioVideo (~> 3.2)
+  - TwilioVideo (= 3.2.2-rc1)
 
 SPEC REPOS:
+  "git@github.com:twilio/cocoapod-specs-internal.git":
+    - TwilioVideo
   trunk:
     - AppAuth
     - AppCenter
@@ -142,7 +144,6 @@ SPEC REPOS:
     - nanopb
     - Nimble
     - Quick
-    - TwilioVideo
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
@@ -168,8 +169,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  TwilioVideo: f83a96797c36e8fbe093f43447acd6b5593cd214
+  TwilioVideo: 9e480267d19f55e6ace4a30805ed0bdc468c18eb
 
-PODFILE CHECKSUM: 6a39f7836df3dd614864b66e1191b0f7020ced86
+PODFILE CHECKSUM: e78d962fdccc3ca2422aa9b961d0ed22d29ea495
 
 COCOAPODS: 1.8.4
