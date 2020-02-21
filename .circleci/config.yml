@@ -30,7 +30,7 @@ commands:
             - vendor/bundle
       - run:
           name: Setup internal pod repo
-          commmand: ./circleci/setup_internal_pod_repo.sh
+          commmand: sh ./circleci/setup_internal_pod_repo.sh
   test:
     parameters:
       scheme:
