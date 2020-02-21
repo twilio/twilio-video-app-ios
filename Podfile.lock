@@ -105,7 +105,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - Nimble (8.0.5)
   - Quick (2.2.0)
-  - TwilioVideo (3.2.1)
+  - TwilioVideo (3.2.2)
 
 DEPENDENCIES:
   - AppCenter/Distribute (= 2.5.3)
@@ -168,8 +168,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  TwilioVideo: f83a96797c36e8fbe093f43447acd6b5593cd214
+  TwilioVideo: 996f6c2b06f7d3d49f5d4e7cd80a19b0d07f4625
 
-PODFILE CHECKSUM: 6a39f7836df3dd614864b66e1191b0f7020ced86
+PODFILE CHECKSUM: 36a3486594e8d261a346928a430473ee9f5d97ec
 
 COCOAPODS: 1.8.4
