@@ -18,7 +18,15 @@ commands:
       - checkout
       - run:
           name: Install secrets
-          command: base64 -D \<<< $SECRETS_TAR | tar -x
+          command: |
+            base64 -D \<<< $SECRETS_TAR | tar -x
+            chmod 600 .circleci/.netrc
+            cp .circleci/.netrc ~/.netrc
+            sed -i '' "s/BINTRAY_USERNAME/${BINTRAY_USERNAME}/g" ~/.netrc
+            sed -i '' "s/BINTRAY_PASSWORD/${BINTRAY_PASSWORD}/g" ~/.netrc
+      - run:
+          name: Setup internal pod repo
+          commmand: pod repo add cocoapod-specs-internal git@github.com:twilio/cocoapod-specs-internal.git
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
