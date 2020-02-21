@@ -1,4 +1,3 @@
-source 'git@github.com:twilio/cocoapod-specs-internal.git'
 source 'https://cdn.cocoapods.org/'
 
 platform :ios, '11.0'
@@ -8,7 +7,7 @@ workspace 'VideoApp'
 target 'Video-Twilio' do
   project 'VideoApp/VideoApp.xcodeproj'
 
-  pod 'TwilioVideo', '3.2.2-rc1'
+  pod 'TwilioVideo', '~> 3.2'
   pod 'AppCenter/Distribute', '2.5.3'
   pod 'Crashlytics', '3.14.0'
   pod 'Firebase/Analytics', '6.14.0'
