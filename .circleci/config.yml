@@ -28,6 +28,9 @@ commands:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+      - run:
+          name: Setup internal pod repo
+          command: sh .circleci/setup_internal_pod_repo.sh
   test:
     parameters:
       scheme:
