@@ -22,10 +22,10 @@ class SDKLogLevelSettingsViewModel: SettingsViewModel {
         [
             .init(
                 rows: [
-                    ("Core", \AppSettingsStoreWriting.coreSDKLogLevel),
-                    ("Platform", \AppSettingsStoreWriting.platformSDKLogLevel),
-                    ("Signaling", \AppSettingsStoreWriting.signalingSDKLogLevel),
-                    ("WebRTC", \AppSettingsStoreWriting.webRTCSDKLogLevel)
+                    ("Core", \.coreSDKLogLevel),
+                    ("Platform", \.platformSDKLogLevel),
+                    ("Signaling", \.signalingSDKLogLevel),
+                    ("WebRTC", \.webRTCSDKLogLevel)
                 ].map { sdkLogLevelOptionListFactory.makeSDKLogLevelOptionList(title: $0, keyPath: $1) }
             )
         ]
