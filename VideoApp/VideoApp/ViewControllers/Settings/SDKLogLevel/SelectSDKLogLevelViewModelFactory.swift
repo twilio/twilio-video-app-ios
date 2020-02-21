@@ -16,8 +16,16 @@
 
 import Foundation
 
-class SelectWebRTCSDKLogLevelViewModelFactory: SelectOptionViewModelFactory {
+class SelectSDKLogLevelViewModelFactory: SelectOptionViewModelFactory {
+    private let title: String
+    private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>
+
+    init(title: String, keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>) {
+        self.title = title
+        self.keyPath = keyPath
+    }
+    
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectWebRTCSDKLogLevelViewModel(appSettingsStore: AppSettingsStore.shared)
+        SelectSDKLogLevelViewModel(title: title, keyPath: keyPath, appSettingsStore: AppSettingsStore.shared)
     }
 }

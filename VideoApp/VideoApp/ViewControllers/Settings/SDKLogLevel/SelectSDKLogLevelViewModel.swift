@@ -16,11 +16,23 @@
 
 import Foundation
 
-class BaseSelectSDKLogLevelViewModel {
+class SelectSDKLogLevelViewModel: SelectOptionViewModel {
+    let title: String
     let options = SDKLogLevel.allCases.map { $0.title }
-    let appSettingsStore: AppSettingsStoreWriting
-    
-    init(appSettingsStore: AppSettingsStoreWriting) {
+    var selectedIndex: Int {
+        get { SDKLogLevel.allCases.firstIndex(of: appSettingsStore[keyPath: keyPath]) ?? 0 }
+        set { appSettingsStore[keyPath: keyPath] = SDKLogLevel.allCases[newValue] }
+    }
+    private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>
+    private let appSettingsStore: AppSettingsStoreWriting
+
+    init(
+        title: String,
+        keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>,
+        appSettingsStore: AppSettingsStoreWriting
+    ) {
+        self.title = title
+        self.keyPath = keyPath
         self.appSettingsStore = appSettingsStore
     }
 }

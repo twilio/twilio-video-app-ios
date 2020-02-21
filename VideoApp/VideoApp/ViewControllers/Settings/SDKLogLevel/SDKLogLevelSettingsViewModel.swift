@@ -22,46 +22,17 @@ class SDKLogLevelSettingsViewModel: SettingsViewModel {
         [
             .init(
                 rows: [
-                    .optionList(
-                        title: "Core",
-                        selectedOption: appSettingsStore.coreSDKLogLevel.title,
-                        viewModelFactory: selectCoreSDKLogLevelViewModelFactory
-                    ),
-                    .optionList(
-                        title: "Platform",
-                        selectedOption: appSettingsStore.platformSDKLogLevel.title,
-                        viewModelFactory: selectPlatformSDKLogLevelViewModelFactory
-                    ),
-                    .optionList(
-                        title: "Signaling",
-                        selectedOption: appSettingsStore.signalingSDKLogLevel.title,
-                        viewModelFactory: selectSignalingSDKLogLevelViewModelFactory
-                    ),
-                    .optionList(
-                        title: "WebRTC",
-                        selectedOption: appSettingsStore.webRTCSDKLogLevel.title,
-                        viewModelFactory: selectWebRTCSDKLogLevelViewModelFactory
-                    )
-                ]
+                    ("Core", \AppSettingsStoreWriting.coreSDKLogLevel),
+                    ("Platform", \AppSettingsStoreWriting.platformSDKLogLevel),
+                    ("Signaling", \AppSettingsStoreWriting.signalingSDKLogLevel),
+                    ("WebRTC", \AppSettingsStoreWriting.webRTCSDKLogLevel)
+                ].map { sdkLogLevelOptionListFactory.makeSDKLogLevelOptionList(title: $0, keyPath: $1) }
             )
         ]
     }
-    private let appSettingsStore: AppSettingsStoreWriting
-    private let selectCoreSDKLogLevelViewModelFactory: SelectCoreSDKLogLevelViewModelFactory
-    private let selectPlatformSDKLogLevelViewModelFactory: SelectPlatformSDKLogLevelViewModelFactory
-    private let selectSignalingSDKLogLevelViewModelFactory: SelectSignalingSDKLogLevelViewModelFactory
-    private let selectWebRTCSDKLogLevelViewModelFactory: SelectWebRTCSDKLogLevelViewModelFactory
+    private let sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory
 
-    init(appSettingsStore: AppSettingsStoreWriting,
-         selectCoreSDKLogLevelViewModelFactory: SelectCoreSDKLogLevelViewModelFactory,
-         selectPlatformSDKLogLevelViewModelFactory: SelectPlatformSDKLogLevelViewModelFactory,
-         selectSignalingSDKLogLevelViewModelFactory: SelectSignalingSDKLogLevelViewModelFactory,
-         selectWebRTCSDKLogLevelViewModelFactory: SelectWebRTCSDKLogLevelViewModelFactory
-    ) {
-        self.appSettingsStore = appSettingsStore
-        self.selectCoreSDKLogLevelViewModelFactory = selectCoreSDKLogLevelViewModelFactory
-        self.selectPlatformSDKLogLevelViewModelFactory = selectPlatformSDKLogLevelViewModelFactory
-        self.selectSignalingSDKLogLevelViewModelFactory = selectSignalingSDKLogLevelViewModelFactory
-        self.selectWebRTCSDKLogLevelViewModelFactory = selectWebRTCSDKLogLevelViewModelFactory
+    init(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory) {
+        self.sdkLogLevelOptionListFactory = sdkLogLevelOptionListFactory
     }
 }

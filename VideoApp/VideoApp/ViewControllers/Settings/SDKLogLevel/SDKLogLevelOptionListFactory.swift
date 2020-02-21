@@ -16,8 +16,15 @@
 
 import Foundation
 
-class SelectCoreSDKLogLevelViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectCoreSDKLogLevelViewModel(appSettingsStore: AppSettingsStore.shared)
+class SDKLogLevelOptionListFactory {
+    func makeSDKLogLevelOptionList(
+        title: String,
+        keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>
+    ) -> SettingsViewModelSection.Row {
+        .optionList(
+            title: title,
+            selectedOption: AppSettingsStore.shared[keyPath: keyPath].title,
+            viewModelFactory: SelectSDKLogLevelViewModelFactory(title: title, keyPath: keyPath)
+        )
     }
 }

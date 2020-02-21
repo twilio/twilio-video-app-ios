@@ -186,33 +186,15 @@
 		DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
-		DC82A36823FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36723FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift */; };
-		DC82A36923FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36723FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift */; };
-		DC82A36A23FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36723FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift */; };
-		DC82A36C23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36B23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift */; };
-		DC82A36D23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36B23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift */; };
-		DC82A36E23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36B23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift */; };
-		DC82A37023FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36F23FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift */; };
-		DC82A37123FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36F23FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift */; };
-		DC82A37223FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36F23FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift */; };
-		DC82A37423FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37323FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift */; };
-		DC82A37523FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37323FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift */; };
-		DC82A37623FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37323FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift */; };
-		DC82A37823FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37723FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift */; };
-		DC82A37923FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37723FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift */; };
-		DC82A37A23FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37723FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift */; };
-		DC82A37C23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37B23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift */; };
-		DC82A37D23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37B23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift */; };
-		DC82A37E23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37B23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift */; };
-		DC82A38023FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37F23FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift */; };
-		DC82A38123FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37F23FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift */; };
-		DC82A38223FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A37F23FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift */; };
-		DC82A38423FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38323FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift */; };
-		DC82A38523FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38323FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift */; };
-		DC82A38623FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38323FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift */; };
-		DC82A38823FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38723FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift */; };
-		DC82A38923FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38723FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift */; };
-		DC82A38A23FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38723FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift */; };
+		DC82A38C24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */; };
+		DC82A38D24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */; };
+		DC82A38E24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */; };
+		DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
+		DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
+		DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
+		DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
+		DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
+		DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
 		DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
 		DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
 		DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
@@ -538,15 +520,9 @@
 		DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewModel.swift; sourceTree = "<group>"; };
 		DC82A35F23FF23090081578C /* VideoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStoreFactory.swift; sourceTree = "<group>"; };
 		DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
-		DC82A36723FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoreSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
-		DC82A36B23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoreSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
-		DC82A36F23FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlatformSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
-		DC82A37323FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlatformSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
-		DC82A37723FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSignalingSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
-		DC82A37B23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSignalingSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
-		DC82A37F23FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWebRTCSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
-		DC82A38323FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWebRTCSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
-		DC82A38723FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSelectSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
+		DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
+		DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
+		DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelOptionListFactory.swift; sourceTree = "<group>"; };
 		DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpenerFactory.swift; sourceTree = "<group>"; };
 		DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpener.swift; sourceTree = "<group>"; };
 		DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStoresFactory.swift; sourceTree = "<group>"; };
@@ -1052,17 +1028,11 @@
 		DC82A35A23FDB8F80081578C /* SDKLogLevel */ = {
 			isa = PBXGroup;
 			children = (
-				DC82A38723FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift */,
+				DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */,
 				DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */,
 				DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */,
-				DC82A36723FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift */,
-				DC82A36B23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift */,
-				DC82A36F23FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift */,
-				DC82A37323FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift */,
-				DC82A37723FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift */,
-				DC82A37B23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift */,
-				DC82A37F23FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift */,
-				DC82A38323FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift */,
+				DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */,
+				DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */,
 			);
 			path = SDKLogLevel;
 			sourceTree = "<group>";
@@ -2158,11 +2128,9 @@
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DC82A37423FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift in Sources */,
-				DC82A37C23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift in Sources */,
+				DC82A38C24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
-				DC82A37823FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift in Sources */,
 				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2172,7 +2140,6 @@
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
-				DC82A36823FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift in Sources */,
 				DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
@@ -2198,12 +2165,9 @@
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
-				DC82A37023FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift in Sources */,
 				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
-				DC82A36C23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift in Sources */,
-				DC82A38023FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift in Sources */,
 				DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
@@ -2215,7 +2179,6 @@
 				DC044688238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				241282421E36A6AB002198BE /* LobbyViewController.m in Sources */,
-				DC82A38823FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift in Sources */,
 				DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				24927E2F1ECC9E44006510E3 /* RoomViewController.m in Sources */,
 				DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2224,6 +2187,8 @@
 				DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
+				DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
+				DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
 				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */,
@@ -2253,7 +2218,6 @@
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
-				DC82A38423FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
@@ -2272,11 +2236,9 @@
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DC82A37523FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift in Sources */,
-				DC82A37D23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift in Sources */,
+				DC82A38D24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
-				DC82A37923FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2286,7 +2248,6 @@
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
-				DC82A36923FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift in Sources */,
 				DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */,
@@ -2312,12 +2273,9 @@
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
-				DC82A37123FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
-				DC82A36D23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift in Sources */,
-				DC82A38123FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
@@ -2329,7 +2287,6 @@
 				DC044689238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				4B00122A1FBA52C4004A587E /* LobbyViewController.m in Sources */,
-				DC82A38923FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift in Sources */,
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				4B00122B1FBA52C4004A587E /* RoomViewController.m in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2338,6 +2295,8 @@
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
+				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
+				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */,
@@ -2367,7 +2326,6 @@
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
-				DC82A38523FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */,
@@ -2386,11 +2344,9 @@
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DC82A37623FF2F980081578C /* SelectPlatformSDKLogLevelViewModelFactory.swift in Sources */,
-				DC82A37E23FF2FB00081578C /* SelectSignalingSDKLogLevelViewModelFactory.swift in Sources */,
+				DC82A38E24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
-				DC82A37A23FF2FA90081578C /* SelectSignalingSDKLogLevelViewModel.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2400,7 +2356,6 @@
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
-				DC82A36A23FF2F4A0081578C /* SelectCoreSDKLogLevelViewModel.swift in Sources */,
 				DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
 				DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */,
@@ -2426,12 +2381,9 @@
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
-				DC82A37223FF2F8B0081578C /* SelectPlatformSDKLogLevelViewModel.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
-				DC82A36E23FF2F530081578C /* SelectCoreSDKLogLevelViewModelFactory.swift in Sources */,
-				DC82A38223FF2FBD0081578C /* SelectWebRTCSDKLogLevelViewModel.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
@@ -2443,7 +2395,6 @@
 				DC04468A238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				4B0012671FBA52E5004A587E /* LobbyViewController.m in Sources */,
-				DC82A38A23FF310B0081578C /* BaseSelectSDKLogLevelViewModel.swift in Sources */,
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				4B0012681FBA52E5004A587E /* RoomViewController.m in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2452,6 +2403,8 @@
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
+				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
+				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */,
@@ -2481,7 +2434,6 @@
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
-				DC82A38623FF2FC20081578C /* SelectWebRTCSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */,

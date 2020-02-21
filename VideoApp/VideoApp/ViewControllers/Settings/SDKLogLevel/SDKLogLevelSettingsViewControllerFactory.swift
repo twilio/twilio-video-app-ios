@@ -20,13 +20,7 @@ class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = SDKLogLevelSettingsViewModel(
-            appSettingsStore: AppSettingsStore.shared,
-            selectCoreSDKLogLevelViewModelFactory: SelectCoreSDKLogLevelViewModelFactory(),
-            selectPlatformSDKLogLevelViewModelFactory: SelectPlatformSDKLogLevelViewModelFactory(),
-            selectSignalingSDKLogLevelViewModelFactory: SelectSignalingSDKLogLevelViewModelFactory(),
-            selectWebRTCSDKLogLevelViewModelFactory: SelectWebRTCSDKLogLevelViewModelFactory()
-        )
+        viewController.viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
         return viewController
     }
 }
