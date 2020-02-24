@@ -19,12 +19,46 @@ import TwilioVideo
 protocol VideoStoreWriting: LaunchStore, WindowSceneObserving { }
 
 class VideoStore: VideoStoreWriting {
+    private let appSettingsStore: AppSettingsStoreWriting
+    private let notificationCenter: NotificationCenterProtocol
+        
+    init(appSettingsStore: AppSettingsStoreWriting, notificationCenter: NotificationCenterProtocol) {
+        self.appSettingsStore = appSettingsStore
+        self.notificationCenter = notificationCenter
+    }
+    
     func start() {
-        TwilioVideoSDK.setLogLevel(.info)
+        setLogLevels()
+        
+        notificationCenter.addObserver(forName: .appSettingDidChange, object: nil, queue: nil) { [weak self] _ in
+            self?.setLogLevels()
+        }
     }
     
     @available(iOS 13, *)
     func interfaceOrientationDidChange(windowScene: UIWindowScene) {
         UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
+    }
+
+    private func setLogLevels() {
+        TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.coreSDKLogLevel), module: .core)
+        TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.platformSDKLogLevel), module: .platform)
+        TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.signalingSDKLogLevel), module: .signaling)
+        TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.webRTCSDKLogLevel), module: .webRTC)
+    }
+}
+
+private extension TwilioVideoSDK.LogLevel {
+    init(sdkLogLevel: SDKLogLevel) {
+        switch sdkLogLevel {
+        case .off: self = .off
+        case .fatal: self = .fatal
+        case .error: self = .error
+        case .warning: self = .warning
+        case .info: self = .info
+        case .debug: self = .debug
+        case .trace: self = .trace
+        case .all: self = .all
+        }
     }
 }

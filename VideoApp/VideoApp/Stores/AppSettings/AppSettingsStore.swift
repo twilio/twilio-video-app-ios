@@ -22,6 +22,10 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var topology: Topology { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
+    var coreSDKLogLevel: SDKLogLevel { get set }
+    var platformSDKLogLevel: SDKLogLevel { get set }
+    var signalingSDKLogLevel: SDKLogLevel { get set }
+    var webRTCSDKLogLevel: SDKLogLevel { get set }
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
@@ -30,6 +34,10 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
+    @Storage(key: makeKey("coreSDKLogLevel"), defaultValue: SDKLogLevel.info) var coreSDKLogLevel: SDKLogLevel
+    @Storage(key: makeKey("platformSDKLogLevel"), defaultValue: SDKLogLevel.info) var platformSDKLogLevel: SDKLogLevel
+    @Storage(key: makeKey("signalingSDKLogLevel"), defaultValue: SDKLogLevel.error) var signalingSDKLogLevel: SDKLogLevel
+    @Storage(key: makeKey("webRTCSDKLogLevel"), defaultValue: SDKLogLevel.off) var webRTCSDKLogLevel: SDKLogLevel
 
     static var shared: AppSettingsStoreWriting = AppSettingsStore(notificationCenter: NotificationCenter.default, queue: DispatchQueue.main)
     private let notificationCenter: NotificationCenterProtocol

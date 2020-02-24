@@ -117,6 +117,86 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             return stubbedIsTURNMediaRelayOn
         }
     }
+    var invokedCoreSDKLogLevelSetter = false
+    var invokedCoreSDKLogLevelSetterCount = 0
+    var invokedCoreSDKLogLevel: SDKLogLevel?
+    var invokedCoreSDKLogLevelList = [SDKLogLevel]()
+    var invokedCoreSDKLogLevelGetter = false
+    var invokedCoreSDKLogLevelGetterCount = 0
+    var stubbedCoreSDKLogLevel: SDKLogLevel!
+    var coreSDKLogLevel: SDKLogLevel {
+        set {
+            invokedCoreSDKLogLevelSetter = true
+            invokedCoreSDKLogLevelSetterCount += 1
+            invokedCoreSDKLogLevel = newValue
+            invokedCoreSDKLogLevelList.append(newValue)
+        }
+        get {
+            invokedCoreSDKLogLevelGetter = true
+            invokedCoreSDKLogLevelGetterCount += 1
+            return stubbedCoreSDKLogLevel
+        }
+    }
+    var invokedPlatformSDKLogLevelSetter = false
+    var invokedPlatformSDKLogLevelSetterCount = 0
+    var invokedPlatformSDKLogLevel: SDKLogLevel?
+    var invokedPlatformSDKLogLevelList = [SDKLogLevel]()
+    var invokedPlatformSDKLogLevelGetter = false
+    var invokedPlatformSDKLogLevelGetterCount = 0
+    var stubbedPlatformSDKLogLevel: SDKLogLevel!
+    var platformSDKLogLevel: SDKLogLevel {
+        set {
+            invokedPlatformSDKLogLevelSetter = true
+            invokedPlatformSDKLogLevelSetterCount += 1
+            invokedPlatformSDKLogLevel = newValue
+            invokedPlatformSDKLogLevelList.append(newValue)
+        }
+        get {
+            invokedPlatformSDKLogLevelGetter = true
+            invokedPlatformSDKLogLevelGetterCount += 1
+            return stubbedPlatformSDKLogLevel
+        }
+    }
+    var invokedSignalingSDKLogLevelSetter = false
+    var invokedSignalingSDKLogLevelSetterCount = 0
+    var invokedSignalingSDKLogLevel: SDKLogLevel?
+    var invokedSignalingSDKLogLevelList = [SDKLogLevel]()
+    var invokedSignalingSDKLogLevelGetter = false
+    var invokedSignalingSDKLogLevelGetterCount = 0
+    var stubbedSignalingSDKLogLevel: SDKLogLevel!
+    var signalingSDKLogLevel: SDKLogLevel {
+        set {
+            invokedSignalingSDKLogLevelSetter = true
+            invokedSignalingSDKLogLevelSetterCount += 1
+            invokedSignalingSDKLogLevel = newValue
+            invokedSignalingSDKLogLevelList.append(newValue)
+        }
+        get {
+            invokedSignalingSDKLogLevelGetter = true
+            invokedSignalingSDKLogLevelGetterCount += 1
+            return stubbedSignalingSDKLogLevel
+        }
+    }
+    var invokedWebRTCSDKLogLevelSetter = false
+    var invokedWebRTCSDKLogLevelSetterCount = 0
+    var invokedWebRTCSDKLogLevel: SDKLogLevel?
+    var invokedWebRTCSDKLogLevelList = [SDKLogLevel]()
+    var invokedWebRTCSDKLogLevelGetter = false
+    var invokedWebRTCSDKLogLevelGetterCount = 0
+    var stubbedWebRTCSDKLogLevel: SDKLogLevel!
+    var webRTCSDKLogLevel: SDKLogLevel {
+        set {
+            invokedWebRTCSDKLogLevelSetter = true
+            invokedWebRTCSDKLogLevelSetterCount += 1
+            invokedWebRTCSDKLogLevel = newValue
+            invokedWebRTCSDKLogLevelList.append(newValue)
+        }
+        get {
+            invokedWebRTCSDKLogLevelGetter = true
+            invokedWebRTCSDKLogLevelGetterCount += 1
+            return stubbedWebRTCSDKLogLevel
+        }
+    }
     var invokedStart = false
     var invokedStartCount = 0
     func start() {

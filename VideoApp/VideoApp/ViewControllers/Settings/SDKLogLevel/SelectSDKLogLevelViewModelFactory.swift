@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,18 +16,16 @@
 
 import Foundation
 
-protocol LaunchStoresFactory: AnyObject {
-    func makeLaunchStores() -> [LaunchStore]
-}
+class SelectSDKLogLevelViewModelFactory: SelectOptionViewModelFactory {
+    private let title: String
+    private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>
 
-class LaunchStoresFactoryImpl: LaunchStoresFactory {
-    func makeLaunchStores() -> [LaunchStore] {
-        return [
-            AppSettingsStore.shared,
-            AuthStore.shared,
-            CrashReportStore.shared,
-            VideoStoreFactory().makeVideoStore(),
-            AppCenterStoreFactory().makeAppCenterStore()
-        ]
+    init(title: String, keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>) {
+        self.title = title
+        self.keyPath = keyPath
+    }
+    
+    func makeSelectOptionViewModel() -> SelectOptionViewModel {
+        SelectSDKLogLevelViewModel(title: title, keyPath: keyPath, appSettingsStore: AppSettingsStore.shared)
     }
 }
