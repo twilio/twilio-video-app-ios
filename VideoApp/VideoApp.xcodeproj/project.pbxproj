@@ -308,6 +308,18 @@
 		DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
+		DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
+		DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
+		DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
+		DCB7C1852405BD68009DEA70 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* TokenAPI.swift */; };
+		DCB7C1862405BD68009DEA70 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* TokenAPI.swift */; };
+		DCB7C1872405BD68009DEA70 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* TokenAPI.swift */; };
+		DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
+		DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
+		DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
+		DCB7C18E2405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
+		DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
+		DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
 		DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
@@ -570,6 +582,10 @@
 		DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF5223849C1C00141D2D /* VideoCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCodec.swift; sourceTree = "<group>"; };
+		DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponents.swift; sourceTree = "<group>"; };
+		DCB7C1842405BD68009DEA70 /* TokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
+		DCB7C1882405BE40009DEA70 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -1064,6 +1080,9 @@
 			isa = PBXGroup;
 			children = (
 				DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */,
+				DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */,
+				DCB7C1912405C1BC009DEA70 /* API */,
+				DCB7C18C2405C0A4009DEA70 /* Keychain */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1230,6 +1249,23 @@
 				DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */,
 			);
 			path = Advanced;
+			sourceTree = "<group>";
+		};
+		DCB7C18C2405C0A4009DEA70 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */,
+				DCB7C1882405BE40009DEA70 /* KeychainStore.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		DCB7C1912405C1BC009DEA70 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DCB7C1842405BD68009DEA70 /* TokenAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
@@ -2177,6 +2213,7 @@
 				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4E2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2190,6 +2227,7 @@
 				DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
+				DCB7C1852405BD68009DEA70 /* TokenAPI.swift in Sources */,
 				DC04468C238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
@@ -2197,6 +2235,7 @@
 				DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				241282421E36A6AB002198BE /* LobbyViewController.m in Sources */,
 				DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
+				DCB7C18E2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				24927E2F1ECC9E44006510E3 /* RoomViewController.m in Sources */,
 				DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
@@ -2220,6 +2259,7 @@
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044695238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2286,6 +2326,7 @@
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2299,6 +2340,7 @@
 				DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
+				DCB7C1862405BD68009DEA70 /* TokenAPI.swift in Sources */,
 				DC04468D238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
@@ -2306,6 +2348,7 @@
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				4B00122A1FBA52C4004A587E /* LobbyViewController.m in Sources */,
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
+				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				4B00122B1FBA52C4004A587E /* RoomViewController.m in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
@@ -2329,6 +2372,7 @@
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2395,6 +2439,7 @@
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */,
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
+				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
@@ -2408,6 +2453,7 @@
 				DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
+				DCB7C1872405BD68009DEA70 /* TokenAPI.swift in Sources */,
 				DC04468E238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
@@ -2415,6 +2461,7 @@
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				4B0012671FBA52E5004A587E /* LobbyViewController.m in Sources */,
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
+				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				4B0012681FBA52E5004A587E /* RoomViewController.m in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
@@ -2438,6 +2485,7 @@
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,

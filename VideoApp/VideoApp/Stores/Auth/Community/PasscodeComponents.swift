@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,17 +16,12 @@
 
 import Foundation
 
-class AuthStoreFactory {
-    func makeAuthStore() -> AuthStoreEverything {
-        switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
-        case .videoTwilio, .videoInternal:
-            return AhoyAuthStore(
-                api: TwilioVideoAppAPI(),
-                appSettingsStore: AppSettingsStore.shared,
-                firebaseAuthStore: FirebaseAuthStore()
-            )
-        case .videoCommunity:
-            return CommunityAuthStore(appSettingsStore: AppSettingsStore.shared, keychainStore: KeychainStore())
-        }
+struct PasscodeComponents {
+    let apiPasscode: String
+    let appID: String
+    
+    init(string: String) {
+        apiPasscode = String(string.prefix(6))
+        appID = String(string.dropFirst(6))
     }
 }
