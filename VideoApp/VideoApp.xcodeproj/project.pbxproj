@@ -195,6 +195,9 @@
 		DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
 		DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
 		DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
+		DC82A3982404950B0081578C /* PasscodeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */; };
+		DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */; };
+		DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */; };
 		DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
 		DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
 		DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
@@ -523,6 +526,7 @@
 		DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
 		DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
 		DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelOptionListFactory.swift; sourceTree = "<group>"; };
+		DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSignInViewController.swift; sourceTree = "<group>"; };
 		DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpenerFactory.swift; sourceTree = "<group>"; };
 		DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpener.swift; sourceTree = "<group>"; };
 		DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStoresFactory.swift; sourceTree = "<group>"; };
@@ -884,6 +888,7 @@
 				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
 				24491F7B1E37F8F000028B24 /* LoginViewController.h */,
 				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
+				DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -1611,6 +1616,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1620,6 +1626,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1661,6 +1668,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
@@ -1672,6 +1680,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
@@ -1783,6 +1792,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
@@ -1794,6 +1804,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
@@ -1883,6 +1894,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1892,6 +1904,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1957,6 +1970,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1966,6 +1980,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -2031,6 +2046,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
@@ -2042,6 +2058,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
@@ -2189,6 +2206,7 @@
 				DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
+				DC82A3982404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
 				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */,
@@ -2297,6 +2315,7 @@
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
+				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */,
@@ -2405,6 +2424,7 @@
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
+				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */,

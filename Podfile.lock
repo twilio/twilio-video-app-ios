@@ -98,6 +98,7 @@ PODS:
   - GTMSessionFetcher/Core (1.3.0)
   - GTMSessionFetcher/Full (1.3.0):
     - GTMSessionFetcher/Core (= 1.3.0)
+  - KeychainAccess (4.1.0)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -113,6 +114,7 @@ DEPENDENCIES:
   - Firebase/Analytics (= 6.14.0)
   - FirebaseUI/Auth (= 8.4.0)
   - FirebaseUI/Google (= 8.4.0)
+  - KeychainAccess
   - Nimble
   - Quick
   - TwilioVideo (~> 3.2)
@@ -139,6 +141,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - KeychainAccess
     - nanopb
     - Nimble
     - Quick
@@ -165,11 +168,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 29bd0d8f850efbd28cff6d99e8b7da1f8d236bcf
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 996f6c2b06f7d3d49f5d4e7cd80a19b0d07f4625
 
-PODFILE CHECKSUM: 36a3486594e8d261a346928a430473ee9f5d97ec
+PODFILE CHECKSUM: e7129e2048791b4d15ddc13ddf1128ce93f5653e
 
 COCOAPODS: 1.8.4

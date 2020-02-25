@@ -34,8 +34,6 @@ static NSString *const kTwilioVideoAppAPIIdentityKey                        = @"
 static NSString *const kTwilioVideoAppAPIRoomNameKey                        = @"roomName";
 static NSString *const kTwilioVideoAppAPIAppEnvironmentKey                  = @"appEnvironment";
 static NSString *const kTwilioVideoAppAPITopologyKey                        = @"topology";
-static NSString *const kTwilioVideoAppAPIRecordParticipantsOnConnectKey     = @"recordParticipantsOnConnect";
-static NSString *const kTwilioVideoAppAPITTLKey                             = @"ttl";
 static NSString *const kTwilioVideoAppAPIKeyKey                             = @"key";
 
 // Host info

@@ -25,17 +25,20 @@ class LaunchFlowImpl: LaunchFlow {
     private let authFlow: AuthStoreWritingDelegate
     private let authStore: AuthStoreWriting
     private let deepLinkStore: DeepLinkStoreWriting
+    private let appInfoStore: AppInfoStoreReading
     
     init(
         window: UIWindow,
         authFlow: AuthStoreWritingDelegate,
         authStore: AuthStoreWriting,
-        deepLinkStore: DeepLinkStoreWriting
+        deepLinkStore: DeepLinkStoreWriting,
+        appInfoStore: AppInfoStoreReading
     ) {
         self.window = window
         self.authFlow = authFlow
         self.authStore = authStore
         self.deepLinkStore = deepLinkStore
+        self.appInfoStore = appInfoStore
     }
     
     func start() {
@@ -49,7 +52,17 @@ class LaunchFlowImpl: LaunchFlow {
         navigationController.barHideOnSwipeGestureRecognizer.isEnabled = false
         navigationController.hidesBarsOnSwipe = false
 
-        let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
+        let segueIdentifier: String
+        
+        if AuthStore.shared.isSignedIn {
+            segueIdentifier = "lobbySegue"
+        } else {
+            switch appInfoStore.appInfo.target {
+            case .videoTwilio, .videoInternal: segueIdentifier = "loginSegue"
+            case .videoCommunity: segueIdentifier = "passcodeSignIn"
+            }
+        }
+        
         navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
         
         deepLinkStore.didReceiveDeepLink = { [weak self] in

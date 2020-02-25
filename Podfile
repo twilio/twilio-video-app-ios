@@ -13,6 +13,7 @@ target 'Video-Twilio' do
   pod 'Firebase/Analytics', '6.14.0'
   pod 'FirebaseUI/Auth', '8.4.0'
   pod 'FirebaseUI/Google', '8.4.0'
+  pod 'KeychainAccess'
 
   target 'Video-TwilioTests' do
     pod 'Nimble'

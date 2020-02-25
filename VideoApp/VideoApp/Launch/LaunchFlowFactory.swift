@@ -26,7 +26,8 @@ class LaunchFlowFactoryImpl: LaunchFlowFactory {
             window: window,
             authFlow: AuthFlow(window: window),
             authStore: AuthStore.shared,
-            deepLinkStore: DeepLinkStore.shared
+            deepLinkStore: DeepLinkStore.shared,
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore()
         )
     }
 }

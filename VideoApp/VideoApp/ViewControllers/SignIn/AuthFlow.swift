@@ -31,7 +31,16 @@ class AuthFlow {
         if let navigationController = rootViewController as? UINavigationController {
             navigationController.dismiss(animated: true) {
                 navigationController.popToRootViewController(animated: true)
-                navigationController.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
+
+                let segueIdentifier: String
+                
+                // Inject
+                switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
+                case .videoTwilio, .videoInternal: segueIdentifier = "loginSegue"
+                case .videoCommunity: segueIdentifier = "passcodeSignIn"
+                }
+
+                navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
             }
         }
     }

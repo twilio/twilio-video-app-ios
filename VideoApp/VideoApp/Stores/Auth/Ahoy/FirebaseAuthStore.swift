@@ -46,7 +46,11 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
             completion(error)
         }
     }
-    
+
+    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+
+    }
+
     func signOut() {
         try? firebaseAuth.signOut()
         googleSignIn.signOut()
