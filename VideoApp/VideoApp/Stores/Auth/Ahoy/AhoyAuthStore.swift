@@ -17,10 +17,7 @@
 import Foundation
 
 class AhoyAuthStore: NSObject, AuthStoreEverything {
-    var delegate: AuthStoreWritingDelegate? {
-        get { return firebaseAuthStore.delegate }
-        set { firebaseAuthStore.delegate = newValue }
-    }
+    weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { return firebaseAuthStore.isSignedIn }
     var userDisplayName: String { return firebaseAuthStore.userDisplayName }
     private let api: TwilioVideoAppAPIProtocol
@@ -38,6 +35,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
     
     func start() {
+        firebaseAuthStore.delegate = self
         firebaseAuthStore.start()
     }
     
@@ -71,6 +69,17 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
                 completion(accessToken, error)
             }
         }
+    }
+}
+
+extension AhoyAuthStore: AuthStoreWritingDelegate {
+    func didSignIn(error: Error?) {
+        delegate?.didSignIn(error: error)
+    }
+    
+    func didSignOut() {
+        appSettingsStore.reset()
+        delegate?.didSignOut()
     }
 }
 
