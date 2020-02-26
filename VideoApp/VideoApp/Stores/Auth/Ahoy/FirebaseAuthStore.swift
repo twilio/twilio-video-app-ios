@@ -47,7 +47,7 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
         }
     }
 
-    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, PasscodeAPIError>) -> Void) {
 
     }
 

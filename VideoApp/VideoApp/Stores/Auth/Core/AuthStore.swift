@@ -24,7 +24,7 @@ protocol AuthStoreWritingDelegate: AnyObject {
 protocol AuthStoreWriting: AuthStoreReading, LaunchStore, URLOpening {
     var delegate: AuthStoreWritingDelegate? { get set }
     func signIn(email: String, password: String, completion: @escaping (Error?) -> Void)
-    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, APIError>) -> Void)
+    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, PasscodeAPIError>) -> Void)
     func signOut()
 }
 

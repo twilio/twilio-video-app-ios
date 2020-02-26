@@ -21,12 +21,17 @@ class CommunityAuthStore: AuthStoreEverything {
     var isSignedIn: Bool { keychainStore.passcode != nil }
     var userDisplayName: String { appSettingsStore.userIdentity }
     private let appSettingsStore: AppSettingsStoreWriting
-    private let tokenService: PasscodeTokenService = PasscodeTokenService()
     private let keychainStore: KeychainStoreWriting
+    private let passcodeAPI: PasscodeAPIWriting
 
-    init(appSettingsStore: AppSettingsStoreWriting, keychainStore: KeychainStoreWriting) {
+    init(
+        appSettingsStore: AppSettingsStoreWriting,
+        keychainStore: KeychainStoreWriting,
+        passcodeAPI: PasscodeAPIWriting
+    ) {
         self.appSettingsStore = appSettingsStore
         self.keychainStore = keychainStore
+        self.passcodeAPI = passcodeAPI
     }
 
     func start() {
@@ -36,9 +41,9 @@ class CommunityAuthStore: AuthStoreEverything {
     func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
         
     }
-    
-    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, APIError>) -> Void) {
-        tokenService.getToken(
+
+    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, PasscodeAPIError>) -> Void) {
+        passcodeAPI.fetchTwilioAccessToken(
             passcode: passcode,
             userIdentity: name,
             roomName: UUID().uuidString
@@ -47,8 +52,8 @@ class CommunityAuthStore: AuthStoreEverything {
             
             switch result {
             case .success:
-                self.appSettingsStore.userIdentity = name
                 self.keychainStore.passcode = passcode
+                self.appSettingsStore.userIdentity = name
                 completion(.success(()))
             case let .failure(error):
                 completion(.failure(error))
@@ -58,7 +63,7 @@ class CommunityAuthStore: AuthStoreEverything {
 
     func signOut() {
         keychainStore.passcode = nil
-        appSettingsStore.userIdentity = ""
+        appSettingsStore.reset()
         delegate?.didSignOut()
     }
 
@@ -67,13 +72,13 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        tokenService.getToken(
-            passcode: keychainStore.passcode ?? "", // Change?
+        passcodeAPI.fetchTwilioAccessToken(
+            passcode: keychainStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
             roomName: roomName
         ) { result in
             switch result {
-            case let .success(token): completion(token.token, nil)
+            case let .success(token): completion(token, nil)
             case let .failure(error): completion(nil, error)
             }
         }
