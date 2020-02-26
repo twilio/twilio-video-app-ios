@@ -26,6 +26,7 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
             crashReportStore: CrashReportStore.shared,
             editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
             selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory(),
+            selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
             developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
             sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory()
         )

@@ -1235,8 +1235,6 @@
 			children = (
 				DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */,
 				DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */,
-				DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */,
-				DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */,
 				DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */,
 				DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */,
 			);
@@ -1251,6 +1249,8 @@
 				DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */,
 				DC044687238EF7DC0072F597 /* SelectAPIEnvironmentViewModel.swift */,
 				DC04468B238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift */,
+				DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */,
+				DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */,
 			);
 			path = Advanced;
 			sourceTree = "<group>";
