@@ -19,21 +19,25 @@ import UIKit
 class PasscodeSignInViewController: UIViewController {
     @IBOutlet weak var userIdentityTextField: UITextField!
     @IBOutlet weak var passcodeTextField: UITextField!
+    var authFlowFactory: AuthFlowFactory = AuthFlowFactoryImpl()
+    var authStore: AuthStoreWriting = AuthStore.shared
     
     // Validate input
     
     @IBAction func signInTap(_ sender: UIButton) {
-        AuthStore.shared.signIn(
+        authStore.signIn(
             name: userIdentityTextField.text ?? "",
             passcode: passcodeTextField.text ?? ""
         ) { [weak self] result in
-            guard let window = self?.view.window else { return }
+            guard let self = self, let window = self.view.window else { return }
 
+            let authFlow = self.authFlowFactory.makeAuthFlow(window: window)
+            
             switch result {
             case .success:
-                AuthFlow(window: window).didSignIn(error: nil)
+                authFlow.didSignIn(error: nil)
             case let .failure(error):
-                AuthFlow(window: window).didSignIn(error: error)
+                authFlow.didSignIn(error: error)
             }
         }
     }

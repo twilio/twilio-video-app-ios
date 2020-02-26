@@ -19,9 +19,11 @@ import Firebase
 
 class AuthFlow {
     private let window: UIWindow
-    
-    init(window: UIWindow) {
+    private let signInSegueIdentifierFactory: SignInSegueIdentifierFactory
+
+    init(window: UIWindow, signInSegueIdentifierFactory: SignInSegueIdentifierFactory) {
         self.window = window
+        self.signInSegueIdentifierFactory = signInSegueIdentifierFactory
     }
     
     private func showSignIn() {
@@ -31,16 +33,10 @@ class AuthFlow {
         if let navigationController = rootViewController as? UINavigationController {
             navigationController.dismiss(animated: true) {
                 navigationController.popToRootViewController(animated: true)
-
-                let segueIdentifier: String
-                
-                // Inject
-                switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
-                case .videoTwilio, .videoInternal: segueIdentifier = "loginSegue"
-                case .videoCommunity: segueIdentifier = "passcodeSignIn"
-                }
-
-                navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
+                navigationController.topViewController?.performSegue(
+                    withIdentifier: self.signInSegueIdentifierFactory.makeSignInSegueIdentifier(),
+                    sender: self
+                )
             }
         }
     }

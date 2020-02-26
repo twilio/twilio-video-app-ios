@@ -323,6 +323,12 @@
 		DCC7E3552406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
 		DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
 		DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
+		DCC7E3592407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
+		DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
+		DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
+		DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
+		DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
+		DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
 		DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
@@ -590,6 +596,8 @@
 		DCB7C1882405BE40009DEA70 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSegueIdentifierFactory.swift; sourceTree = "<group>"; };
+		DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowFactory.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -905,10 +913,12 @@
 			isa = PBXGroup;
 			children = (
 				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
+				DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */,
 				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
 				24491F7B1E37F8F000028B24 /* LoginViewController.h */,
 				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
 				DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */,
+				DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -2197,6 +2207,7 @@
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DC82A38C24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DCC7E3552406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
@@ -2276,6 +2287,7 @@
 				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
+				DCC7E3592407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2311,6 +2323,7 @@
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DC82A38D24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
@@ -2390,6 +2403,7 @@
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
+				DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2425,6 +2439,7 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DC82A38E24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
@@ -2504,6 +2519,7 @@
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
+				DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
