@@ -57,7 +57,9 @@ class PasscodeAPI: PasscodeAPIWriting {
                 } catch {
                     completion(.failure(.decodeError))
                 }
-            case .failure:
+            case let .failure(error):
+                guard !error.isReachabilityError else { completion(.failure(.notConnectedToInternet)); return }
+
                 guard let data = response.data else { completion(.failure(.decodeError)); return }
 
                 do {
@@ -78,5 +80,13 @@ private extension PasscodeAPIError {
         case .expired: self = .expiredPasscode
         case .unauthorized: self = .unauthorized
         }
+    }
+}
+
+private extension AFError {
+    var isReachabilityError: Bool {
+        guard let underlyingError = underlyingError, isSessionTaskError else { return false }
+
+        return (underlyingError as NSError).domain == NSURLErrorDomain && (underlyingError as NSError).code == NSURLErrorNotConnectedToInternet
     }
 }

@@ -88,9 +88,10 @@ class CommunityAuthStore: AuthStoreEverything {
 private extension AuthError {
     init(passcodeAPIError: PasscodeAPIError) {
         switch passcodeAPIError {
-        case .expiredPasscode: self = .expiredPasscode
-        case .unauthorized: self = .wrongPasscode
         case .decodeError: self = .unknown
+        case .expiredPasscode: self = .expiredPasscode
+        case .notConnectedToInternet: self = .networkError
+        case .unauthorized: self = .wrongPasscode
         }
     }
 }
