@@ -26,17 +26,18 @@ class AuthFlow {
     }
     
     private func showSignIn() {
-        guard let rootViewController = window.rootViewController else {
+        guard
+            let rootViewController = window.rootViewController,
+            let navigationController = rootViewController as? UINavigationController
+        else {
             return
         }
-        if let navigationController = rootViewController as? UINavigationController {
-            navigationController.dismiss(animated: true) {
-                navigationController.popToRootViewController(animated: true)
-                navigationController.topViewController?.performSegue(
-                    withIdentifier: self.signInSegueIdentifierFactory.makeSignInSegueIdentifier(),
-                    sender: self
-                )
-            }
+
+        let segueIdentifier = signInSegueIdentifierFactory.makeSignInSegueIdentifier()
+        
+        navigationController.dismiss(animated: true) {
+            navigationController.popToRootViewController(animated: true)
+            navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
         }
     }
 
