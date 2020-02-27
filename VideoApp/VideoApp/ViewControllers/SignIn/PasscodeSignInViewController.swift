@@ -28,17 +28,11 @@ class PasscodeSignInViewController: UIViewController {
         authStore.signIn(
             name: userIdentityTextField.text ?? "",
             passcode: passcodeTextField.text ?? ""
-        ) { [weak self] result in
+        ) { [weak self] error in
             guard let self = self, let window = self.view.window else { return }
 
             let authFlow = self.authFlowFactory.makeAuthFlow(window: window)
-            
-            switch result {
-            case .success:
-                authFlow.didSignIn(error: nil)
-            case let .failure(error):
-                authFlow.didSignIn(error: error)
-            }
+            authFlow.didSignIn(error: error)
         }
     }
 }

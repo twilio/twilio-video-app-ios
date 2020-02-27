@@ -64,42 +64,8 @@ class AuthFlow {
         }
     }
 
-    private func showError(error: Error) {
-        guard let errorCode = AuthErrorCode(rawValue: error._code) else {
-            return
-        }
-
-        var errorMessage: String
-
-        switch (errorCode) {
-        case .userDisabled:
-            // Indicates the user's account is disabled.
-            errorMessage = "The user account is disabled."
-            break
-        case .invalidEmail:
-            // Indicates the email address is malformed.
-            errorMessage = "The email address was malformed."
-            break
-        case .userNotFound:
-            // Indicates the user account was not found.
-            fallthrough
-        case .wrongPassword:
-            // Indicates the user attempted sign in with an incorrect password, if credential is of the type EmailPasswordAuthCredential.
-            errorMessage = "The email address or password was incorrect."
-            break
-        case .networkError:
-            // Indicates a network error occurred (such as a timeout, interrupted connection, or unreachable host). These types of
-            // errors are often recoverable with a retry. The NSUnderlyingError field in the NSError.userInfo dictionary will contain
-            // the error encountered.
-            errorMessage = "A network error occurred. Please try authenticating again."
-            break
-        default:
-            // Any other of the litany of errors that could occur
-            errorMessage = "An authentication error has occurred. Please try authenticating again."
-            break
-        }
-
-        let alertController = UIAlertController(title: "AuthenticationError", message: errorMessage, preferredStyle: .alert)
+    private func showError(error: AuthError) {
+        let alertController = UIAlertController(title: "Sign In Error", message: error.message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
         var topController = window.rootViewController!
@@ -113,7 +79,7 @@ class AuthFlow {
 }
 
 extension AuthFlow: AuthStoreWritingDelegate {
-    func didSignIn(error: Error?) {
+    func didSignIn(error: AuthError?) {
         if let error = error {
             showError(error: error)
         } else {
@@ -123,5 +89,19 @@ extension AuthFlow: AuthStoreWritingDelegate {
     
     func didSignOut() {
         showSignIn()
+    }
+}
+
+private extension AuthError {
+    var message: String {
+        switch self {
+        case .expiredPasscode: return "The passcode has expired."
+        case .wrongPasscode: return "The passcode is incorrect."
+        case .userDisabled: return "The user account is disabled."
+        case .invalidEmail: return "The email address was malformed."
+        case .wrongPassword: return "The email address or password was incorrect."
+        case .networkError: return "A network error occurred. Please try again."
+        case .other: return "An sign in error has occurred. Please try again."
+        }
     }
 }

@@ -39,11 +39,11 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         firebaseAuthStore.start()
     }
     
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         firebaseAuthStore.signIn(email: email, password: password, completion: completion)
     }
 
-    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, PasscodeAPIError>) -> Void) {
+    func signIn(name: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
         
     }
 
@@ -73,7 +73,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
 }
 
 extension AhoyAuthStore: AuthStoreWritingDelegate {
-    func didSignIn(error: Error?) {
+    func didSignIn(error: AuthError?) {
         delegate?.didSignIn(error: error)
     }
     

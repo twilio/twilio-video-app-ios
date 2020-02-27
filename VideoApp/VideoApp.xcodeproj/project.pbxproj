@@ -329,6 +329,9 @@
 		DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
 		DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
 		DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
+		DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
+		DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
+		DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
 		DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
@@ -598,6 +601,7 @@
 		DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSegueIdentifierFactory.swift; sourceTree = "<group>"; };
 		DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowFactory.swift; sourceTree = "<group>"; };
+		DCC7E36024082EB300431AC3 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -1085,6 +1089,7 @@
 		DC8AA8BA236267B2006C06D5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DCC7E36024082EB300431AC3 /* AuthError.swift */,
 				DCA5394B235F740200CA26FB /* AuthStore.swift */,
 				DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */,
 			);
@@ -2305,6 +2310,7 @@
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
+				DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */,
@@ -2421,6 +2427,7 @@
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
+				DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */,
@@ -2537,6 +2544,7 @@
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
+				DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */,

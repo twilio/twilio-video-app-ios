@@ -38,15 +38,15 @@ class CommunityAuthStore: AuthStoreEverything {
 
     }
 
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         
     }
 
-    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, PasscodeAPIError>) -> Void) {
+    func signIn(name: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
         passcodeAPI.fetchTwilioAccessToken(
             passcode: passcode,
             userIdentity: name,
-            roomName: UUID().uuidString
+            roomName: ""
         ) { [weak self] result in
             guard let self = self else { return }
             
@@ -54,9 +54,9 @@ class CommunityAuthStore: AuthStoreEverything {
             case .success:
                 self.keychainStore.passcode = passcode
                 self.appSettingsStore.userIdentity = name
-                completion(.success(()))
+                completion(nil)
             case let .failure(error):
-                completion(.failure(error))
+                completion(AuthError(passcodeAPIError: error))
             }
         }
     }
@@ -81,6 +81,16 @@ class CommunityAuthStore: AuthStoreEverything {
             case let .success(token): completion(token, nil)
             case let .failure(error): completion(nil, error)
             }
+        }
+    }
+}
+
+private extension AuthError {
+    init(passcodeAPIError: PasscodeAPIError) {
+        switch passcodeAPIError {
+        case .expiredPasscode: self = .expiredPasscode
+        case .unauthorized: self = .wrongPasscode
+        case .other: self = .other
         }
     }
 }

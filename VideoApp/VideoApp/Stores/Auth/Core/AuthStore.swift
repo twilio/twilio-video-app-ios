@@ -17,14 +17,14 @@
 import Foundation
 
 protocol AuthStoreWritingDelegate: AnyObject {
-    func didSignIn(error: Error?)
+    func didSignIn(error: AuthError?)
     func didSignOut()
 }
 
 protocol AuthStoreWriting: AuthStoreReading, LaunchStore, URLOpening {
     var delegate: AuthStoreWritingDelegate? { get set }
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void)
-    func signIn(name: String, passcode: String, completion: @escaping (Result<Void, PasscodeAPIError>) -> Void)
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void)
+    func signIn(name: String, passcode: String, completion: @escaping (AuthError?) -> Void)
     func signOut()
 }
 
