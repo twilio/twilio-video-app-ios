@@ -21,7 +21,7 @@ struct PasscodeComponents {
     let appID: String
     
     init(string: String) {
-        passcode = String(string.prefix(6))
+        passcode = string
         appID = String(string.dropFirst(6))
     }
 }
