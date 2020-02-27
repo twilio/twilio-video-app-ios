@@ -50,7 +50,7 @@ class PasscodeAPI: PasscodeAPIWriting {
         
         let error: Error
     }
-    
+
     private let session = Session()
 
     func fetchTwilioAccessToken(
@@ -66,22 +66,17 @@ class PasscodeAPI: PasscodeAPIWriting {
             userIdentity: userIdentity,
             roomName: roomName
         )
-        let jsonEncoder = JSONEncoder()
-        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
-        let jsonParameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
+        let encoder = JSONParameterEncoder(encoder: SnakeCaseJSONEncoder())
         
-        session.request(url, method: .post, parameters: parameters, encoder: jsonParameterEncoder).validate().response { response in
+        session.request(url, method: .post, parameters: parameters, encoder: encoder).validate().response { response in
+            let jsonDecoder = SnakeCaseJSONDecoder()
+
             switch response.result {
             case let .success(data):
-                let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let fetchTwilioAccessTokenResponse = try! jsonDecoder.decode(FetchTwilioAccessTokenResponse.self, from: data!)
                 completion(.success(fetchTwilioAccessTokenResponse.token))
             case .failure:
                 guard let data = response.data else { completion(.failure(.other)); return }
-
-                let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
                 do {
                     let errorResponse = try jsonDecoder.decode(ErrorResponse.self, from: data)
@@ -95,5 +90,19 @@ class PasscodeAPI: PasscodeAPIWriting {
                 }
             }
         }
+    }
+}
+
+class SnakeCaseJSONDecoder: JSONDecoder {
+    override init() {
+        super.init()
+        keyDecodingStrategy = .convertFromSnakeCase
+    }
+}
+
+class SnakeCaseJSONEncoder: JSONEncoder {
+    override init() {
+        super.init()
+        keyEncodingStrategy = .convertToSnakeCase
     }
 }
