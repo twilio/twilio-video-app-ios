@@ -25,32 +25,7 @@ protocol PasscodeAPIWriting: AnyObject {
     )
 }
 
-enum PasscodeAPIError: Error {
-    case expiredPasscode
-    case other
-    case unauthorized
-}
-
 class PasscodeAPI: PasscodeAPIWriting {
-    struct FetchTwilioAccessTokenParameters: Encodable {
-        let passcode: String
-        let userIdentity: String
-        let roomName: String
-    }
-
-    struct FetchTwilioAccessTokenResponse: Decodable {
-        let token: String
-    }
-
-    struct ErrorResponse: Decodable {
-        enum Error: String, Decodable {
-            case expired
-            case unauthorized
-        }
-        
-        let error: Error
-    }
-
     private let session = Session()
 
     func fetchTwilioAccessToken(
@@ -62,47 +37,46 @@ class PasscodeAPI: PasscodeAPIWriting {
         let passcodeComponents = PasscodeComponents(string: passcode)
         let url = "https://video-app-\(passcodeComponents.appID)-dev.twil.io/token"
         let parameters = FetchTwilioAccessTokenParameters(
-            passcode: passcodeComponents.apiPasscode,
+            passcode: passcodeComponents.passcode,
             userIdentity: userIdentity,
             roomName: roomName
         )
-        let encoder = JSONParameterEncoder(encoder: SnakeCaseJSONEncoder())
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+        let jsonParameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
         
-        session.request(url, method: .post, parameters: parameters, encoder: encoder).validate().response { response in
-            let jsonDecoder = SnakeCaseJSONDecoder()
+        session.request(url, method: .post, parameters: parameters, encoder: jsonParameterEncoder).validate().response { response in
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
             switch response.result {
             case let .success(data):
-                let fetchTwilioAccessTokenResponse = try! jsonDecoder.decode(FetchTwilioAccessTokenResponse.self, from: data!)
-                completion(.success(fetchTwilioAccessTokenResponse.token))
+                do {
+                    let fetchTwilioAccessTokenResponse = try jsonDecoder.decode(FetchTwilioAccessTokenResponse.self, from: data!)
+                    completion(.success(fetchTwilioAccessTokenResponse.token))
+                } catch {
+                    completion(.failure(.decodeError))
+                }
             case .failure:
-                guard let data = response.data else { completion(.failure(.other)); return }
+                guard let data = response.data else { completion(.failure(.decodeError)); return }
 
                 do {
                     let errorResponse = try jsonDecoder.decode(ErrorResponse.self, from: data)
 
-                    switch errorResponse.error {
-                    case .expired: completion(.failure(.expiredPasscode))
-                    case .unauthorized: completion(.failure(.unauthorized))
-                    }
+                    completion(.failure(PasscodeAPIError(responseError: errorResponse.error)))
                 } catch {
-                    completion(.failure(.other))
+                    completion(.failure(.decodeError))
                 }
             }
         }
     }
 }
 
-class SnakeCaseJSONDecoder: JSONDecoder {
-    override init() {
-        super.init()
-        keyDecodingStrategy = .convertFromSnakeCase
-    }
-}
-
-class SnakeCaseJSONEncoder: JSONEncoder {
-    override init() {
-        super.init()
-        keyEncodingStrategy = .convertToSnakeCase
+private extension PasscodeAPIError {
+    init(responseError: PasscodeAPI.ErrorResponse.Error) {
+        switch responseError {
+        case .expired: self = .expiredPasscode
+        case .unauthorized: self = .unauthorized
+        }
     }
 }

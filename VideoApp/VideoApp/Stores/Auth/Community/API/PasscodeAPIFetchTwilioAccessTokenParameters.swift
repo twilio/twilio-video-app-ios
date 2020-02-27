@@ -16,12 +16,10 @@
 
 import Foundation
 
-enum AuthError: Error {
-    case expiredPasscode
-    case wrongPasscode
-    case userDisabled
-    case invalidEmail
-    case wrongPassword
-    case networkError
-    case unknown
+extension PasscodeAPI {
+    struct FetchTwilioAccessTokenParameters: Encodable {
+        let passcode: String
+        let userIdentity: String
+        let roomName: String
+    }
 }

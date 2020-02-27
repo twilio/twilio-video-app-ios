@@ -16,12 +16,13 @@
 
 import Foundation
 
-enum AuthError: Error {
-    case expiredPasscode
-    case wrongPasscode
-    case userDisabled
-    case invalidEmail
-    case wrongPassword
-    case networkError
-    case unknown
+extension PasscodeAPI {
+    struct ErrorResponse: Decodable {
+        enum Error: String, Decodable {
+            case expired
+            case unauthorized
+        }
+        
+        let error: Error
+    }
 }

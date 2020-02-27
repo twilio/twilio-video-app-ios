@@ -16,12 +16,8 @@
 
 import Foundation
 
-enum AuthError: Error {
+enum PasscodeAPIError: Error {
     case expiredPasscode
-    case wrongPasscode
-    case userDisabled
-    case invalidEmail
-    case wrongPassword
-    case networkError
-    case unknown
+    case decodeError
+    case unauthorized
 }

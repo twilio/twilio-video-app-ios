@@ -90,7 +90,7 @@ private extension AuthError {
         switch passcodeAPIError {
         case .expiredPasscode: self = .expiredPasscode
         case .unauthorized: self = .wrongPasscode
-        case .other: self = .other
+        case .decodeError: self = .unknown
         }
     }
 }

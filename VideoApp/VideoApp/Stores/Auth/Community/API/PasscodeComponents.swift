@@ -17,11 +17,11 @@
 import Foundation
 
 struct PasscodeComponents {
-    let apiPasscode: String
+    let passcode: String
     let appID: String
     
     init(string: String) {
-        apiPasscode = String(string.prefix(6))
+        passcode = String(string.prefix(6))
         appID = String(string.dropFirst(6))
     }
 }

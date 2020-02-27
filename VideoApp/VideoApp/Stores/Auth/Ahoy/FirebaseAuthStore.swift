@@ -91,14 +91,14 @@ private extension AuthError {
     init?(firebaseAuthError: Error?) {
         guard let error = firebaseAuthError else { return nil }
         
-        guard let code = AuthErrorCode(rawValue: (error as NSError).code) else { self = .other; return }
+        guard let code = AuthErrorCode(rawValue: (error as NSError).code) else { self = .unknown; return }
         
         switch code {
         case .userDisabled: self = .userDisabled
         case .invalidEmail: self = .invalidEmail
         case .userNotFound, .wrongPassword: self = .wrongPassword
         case .networkError: self = .networkError
-        default: self = .other
+        default: self = .unknown
         }
     }
 }

@@ -94,13 +94,13 @@ extension AuthFlow: AuthStoreWritingDelegate {
 private extension AuthError {
     var message: String {
         switch self {
-        case .expiredPasscode: return "The passcode has expired."
+        case .expiredPasscode: return "The passcode is expired."
         case .wrongPasscode: return "The passcode is incorrect."
         case .userDisabled: return "The user account is disabled."
-        case .invalidEmail: return "The email address was malformed."
-        case .wrongPassword: return "The email address or password was incorrect."
+        case .invalidEmail: return "The email format is invalid."
+        case .wrongPassword: return "The email or password is incorrect."
         case .networkError: return "A network error occurred. Please try again."
-        case .other: return "A sign in error has occurred. Please try again."
+        case .unknown: return "An error occurred. Please try again."
         }
     }
 }
