@@ -23,7 +23,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="App code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYe-GN-WTo">
                                 <rect key="frame" x="20" y="263" width="374" height="30"/>
@@ -32,9 +32,9 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX1-TW-dVA">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX1-TW-dVA">
                                 <rect key="frame" x="20" y="333" width="374" height="48"/>
                                 <color key="backgroundColor" red="0.64296793937683105" green="0.12823647260665894" blue="0.15827658772468567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -91,6 +91,7 @@
                     <navigationItem key="navigationItem" title="Sign in" id="pBp-O1-Ias"/>
                     <connections>
                         <outlet property="passcodeTextField" destination="aYe-GN-WTo" id="xHa-ve-t9u"/>
+                        <outlet property="signInButton" destination="oX1-TW-dVA" id="bEE-WW-8s4"/>
                         <outlet property="userIdentityTextField" destination="JE7-HK-ASa" id="zSU-1a-YRm"/>
                     </connections>
                 </viewController>

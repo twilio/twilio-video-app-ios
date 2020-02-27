@@ -19,10 +19,18 @@ import UIKit
 class PasscodeSignInViewController: UIViewController {
     @IBOutlet weak var userIdentityTextField: UITextField!
     @IBOutlet weak var passcodeTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     var authFlowFactory: AuthFlowFactory = AuthFlowFactoryImpl()
     var authStore: AuthStoreWriting = AuthStore.shared
     
-    // Validate input
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        [userIdentityTextField, passcodeTextField].forEach {
+            $0?.delegate = self
+            $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        }
+    }
     
     @IBAction func signInTap(_ sender: UIButton) {
         authStore.signIn(
@@ -34,5 +42,16 @@ class PasscodeSignInViewController: UIViewController {
             let authFlow = self.authFlowFactory.makeAuthFlow(window: window)
             authFlow.didSignIn(error: error)
         }
+    }
+    
+    @objc private func editingChanged() {
+        signInButton.isEnabled = !(userIdentityTextField.text ?? "").isEmpty && !(passcodeTextField.text ?? "").isEmpty
+    }
+}
+
+extension PasscodeSignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -101,7 +101,7 @@ private extension AuthError {
         case .invalidEmail: return "The email address was malformed."
         case .wrongPassword: return "The email address or password was incorrect."
         case .networkError: return "A network error occurred. Please try again."
-        case .other: return "An sign in error has occurred. Please try again."
+        case .other: return "A sign in error has occurred. Please try again."
         }
     }
 }
