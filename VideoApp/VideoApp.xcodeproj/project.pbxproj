@@ -308,6 +308,7 @@
 		DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
+		DCB64B47240969B400E090BE /* PasscodeComponentsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */; };
 		DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
@@ -606,6 +607,7 @@
 		DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF5223849C1C00141D2D /* VideoCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCodec.swift; sourceTree = "<group>"; };
+		DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponentsSpec.swift; sourceTree = "<group>"; };
 		DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponents.swift; sourceTree = "<group>"; };
 		DCB7C1842405BD68009DEA70 /* PasscodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAPI.swift; sourceTree = "<group>"; };
 		DCB7C1882405BE40009DEA70 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
@@ -1055,6 +1057,7 @@
 				DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
 				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
+				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
 				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
 				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
@@ -2622,6 +2625,7 @@
 				DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */,
 				DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */,
 				DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */,
+				DCB64B47240969B400E090BE /* PasscodeComponentsSpec.swift in Sources */,
 				DCD7676A23DFE03F00A2939C /* MockDeepLinkStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
