@@ -22,40 +22,42 @@ class CommunityAuthStore: AuthStoreEverything {
     var userDisplayName: String { appSettingsStore.userIdentity }
     private let appSettingsStore: AppSettingsStoreWriting
     private let keychainStore: KeychainStoreWriting
-    private let passcodeAPI: PasscodeAPIWriting
+    private let api: APIConfiguring & APIRequesting
 
     init(
         appSettingsStore: AppSettingsStoreWriting,
         keychainStore: KeychainStoreWriting,
-        passcodeAPI: PasscodeAPIWriting
+        api: APIConfiguring & APIRequesting
     ) {
         self.appSettingsStore = appSettingsStore
         self.keychainStore = keychainStore
-        self.passcodeAPI = passcodeAPI
+        self.api = api
     }
 
     func start() {
-
+        guard let passcode = keychainStore.passcode else { return }
+        
+        configureAPI(passcode: passcode)
     }
 
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         
     }
 
-    func signIn(name: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
-        passcodeAPI.fetchTwilioAccessToken(
-            passcode: passcode,
-            userIdentity: name,
-            roomName: ""
-        ) { [weak self] result in
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+        configureAPI(passcode: passcode)
+        let request = FetchTwilioAccessTokenRequest(passcode: passcode, userIdentity: userIdentity, roomName: "")
+        
+        api.request(request) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success:
                 self.keychainStore.passcode = passcode
-                self.appSettingsStore.userIdentity = name
+                self.appSettingsStore.userIdentity = userIdentity
                 completion(nil)
             case let .failure(error):
+                self.api.config = nil
                 completion(AuthError(passcodeAPIError: error))
             }
         }
@@ -64,6 +66,7 @@ class CommunityAuthStore: AuthStoreEverything {
     func signOut() {
         keychainStore.passcode = nil
         appSettingsStore.reset()
+        api.config = nil
         delegate?.didSignOut()
     }
 
@@ -72,21 +75,28 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        passcodeAPI.fetchTwilioAccessToken(
+        let request = FetchTwilioAccessTokenRequest(
             passcode: keychainStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
-            roomName: roomName
-        ) { result in
+            roomName: ""
+        )
+        
+        api.request(request) { result in
             switch result {
-            case let .success(token): completion(token, nil)
+            case let .success(response): completion(response.token, nil)
             case let .failure(error): completion(nil, error)
             }
         }
     }
+    
+    private func configureAPI(passcode: String) {
+        let host = "video-app-\(PasscodeComponents(string: passcode).appID)-dev.twil.io"
+        api.config = APIConfig(host: host)
+    }
 }
 
 private extension AuthError {
-    init(passcodeAPIError: PasscodeAPIError) {
+    init(passcodeAPIError: APIError) {
         switch passcodeAPIError {
         case .decodeError: self = .unknown
         case .expiredPasscode: self = .expiredPasscode

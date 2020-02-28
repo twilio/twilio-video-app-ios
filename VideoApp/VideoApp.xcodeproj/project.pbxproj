@@ -309,12 +309,21 @@
 		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCB64B47240969B400E090BE /* PasscodeComponentsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */; };
+		DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B48240995A100E090BE /* APIHTTPMethod.swift */; };
+		DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B48240995A100E090BE /* APIHTTPMethod.swift */; };
+		DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B48240995A100E090BE /* APIHTTPMethod.swift */; };
+		DCB64B4F2409976F00E090BE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B4E2409976F00E090BE /* APIRequest.swift */; };
+		DCB64B502409976F00E090BE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B4E2409976F00E090BE /* APIRequest.swift */; };
+		DCB64B512409976F00E090BE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B4E2409976F00E090BE /* APIRequest.swift */; };
+		DCB64B552409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
+		DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
+		DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
 		DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
-		DCB7C1852405BD68009DEA70 /* PasscodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* PasscodeAPI.swift */; };
-		DCB7C1862405BD68009DEA70 /* PasscodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* PasscodeAPI.swift */; };
-		DCB7C1872405BD68009DEA70 /* PasscodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* PasscodeAPI.swift */; };
+		DCB7C1852405BD68009DEA70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* API.swift */; };
+		DCB7C1862405BD68009DEA70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* API.swift */; };
+		DCB7C1872405BD68009DEA70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* API.swift */; };
 		DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
 		DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
 		DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
@@ -333,18 +342,15 @@
 		DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
 		DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
 		DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
-		DCC7E36A24085AD800431AC3 /* PasscodeAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* PasscodeAPIError.swift */; };
-		DCC7E36B24085AD800431AC3 /* PasscodeAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* PasscodeAPIError.swift */; };
-		DCC7E36C24085AD800431AC3 /* PasscodeAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* PasscodeAPIError.swift */; };
-		DCC7E36E24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift */; };
-		DCC7E36F24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift */; };
-		DCC7E37024085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift */; };
-		DCC7E37224085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37124085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift */; };
-		DCC7E37324085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37124085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift */; };
-		DCC7E37424085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37124085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift */; };
-		DCC7E37624085BE200431AC3 /* PasscodeAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* PasscodeAPIErrorResponse.swift */; };
-		DCC7E37724085BE200431AC3 /* PasscodeAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* PasscodeAPIErrorResponse.swift */; };
-		DCC7E37824085BE200431AC3 /* PasscodeAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* PasscodeAPIErrorResponse.swift */; };
+		DCC7E36A24085AD800431AC3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* APIError.swift */; };
+		DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* APIError.swift */; };
+		DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* APIError.swift */; };
+		DCC7E36E24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift */; };
+		DCC7E36F24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift */; };
+		DCC7E37024085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift */; };
+		DCC7E37624085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
+		DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
+		DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
@@ -608,18 +614,20 @@
 		DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF5223849C1C00141D2D /* VideoCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCodec.swift; sourceTree = "<group>"; };
 		DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponentsSpec.swift; sourceTree = "<group>"; };
+		DCB64B48240995A100E090BE /* APIHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHTTPMethod.swift; sourceTree = "<group>"; };
+		DCB64B4E2409976F00E090BE /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		DCB64B542409BC4E00E090BE /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponents.swift; sourceTree = "<group>"; };
-		DCB7C1842405BD68009DEA70 /* PasscodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAPI.swift; sourceTree = "<group>"; };
+		DCB7C1842405BD68009DEA70 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DCB7C1882405BE40009DEA70 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSegueIdentifierFactory.swift; sourceTree = "<group>"; };
 		DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowFactory.swift; sourceTree = "<group>"; };
 		DCC7E36024082EB300431AC3 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
-		DCC7E36924085AD800431AC3 /* PasscodeAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAPIError.swift; sourceTree = "<group>"; };
-		DCC7E36D24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAPIFetchTwilioAccessTokenParameters.swift; sourceTree = "<group>"; };
-		DCC7E37124085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAPIFetchTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
-		DCC7E37524085BE200431AC3 /* PasscodeAPIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAPIErrorResponse.swift; sourceTree = "<group>"; };
+		DCC7E36924085AD800431AC3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		DCC7E36D24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
+		DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -783,9 +791,8 @@
 		24693EEA1E393F1B00F21DDC /* API */ = {
 			isa = PBXGroup;
 			children = (
-				242D1C15217662B700DB63E5 /* TwilioVideoAppAPI.h */,
-				242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */,
-				DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */,
+				DCB64B5224099DBF00E090BE /* Firebase */,
+				DCB7C1912405C1BC009DEA70 /* Passcode */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1119,8 +1126,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */,
-				DCB7C1912405C1BC009DEA70 /* API */,
-				DCB7C18C2405C0A4009DEA70 /* Keychain */,
+				DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1178,6 +1184,7 @@
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
 				DC0446B623A182780072F597 /* CrashReport */,
+				DCB7C18C2405C0A4009DEA70 /* Keychain */,
 				DC04468F238F1E2D0072F597 /* User */,
 				DCD7675423DF551B00A2939C /* UserActivity */,
 				DC8EAE4623BA9EE50045018F /* Video */,
@@ -1289,6 +1296,37 @@
 			path = Advanced;
 			sourceTree = "<group>";
 		};
+		DCB64B4C2409970A00E090BE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DCB7C1842405BD68009DEA70 /* API.swift */,
+				DCB64B542409BC4E00E090BE /* APIConfig.swift */,
+				DCC7E36924085AD800431AC3 /* APIError.swift */,
+				DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */,
+				DCB64B4E2409976F00E090BE /* APIRequest.swift */,
+				DCB64B48240995A100E090BE /* APIHTTPMethod.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DCB64B4D2409973600E090BE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DCC7E36D24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		DCB64B5224099DBF00E090BE /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				242D1C15217662B700DB63E5 /* TwilioVideoAppAPI.h */,
+				242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */,
+				DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		DCB7C18C2405C0A4009DEA70 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,17 +1336,13 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
-		DCB7C1912405C1BC009DEA70 /* API */ = {
+		DCB7C1912405C1BC009DEA70 /* Passcode */ = {
 			isa = PBXGroup;
 			children = (
-				DCB7C1842405BD68009DEA70 /* PasscodeAPI.swift */,
-				DCC7E36924085AD800431AC3 /* PasscodeAPIError.swift */,
-				DCC7E37524085BE200431AC3 /* PasscodeAPIErrorResponse.swift */,
-				DCC7E36D24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift */,
-				DCC7E37124085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift */,
-				DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */,
+				DCB64B4C2409970A00E090BE /* Core */,
+				DCB64B4D2409973600E090BE /* Requests */,
 			);
-			path = API;
+			path = Passcode;
 			sourceTree = "<group>";
 		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
@@ -2272,6 +2306,7 @@
 				DC8AA8BE23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
+				DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
@@ -2284,7 +2319,7 @@
 				DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DCB7C1852405BD68009DEA70 /* PasscodeAPI.swift in Sources */,
+				DCB7C1852405BD68009DEA70 /* API.swift in Sources */,
 				DC04468C238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
@@ -2296,8 +2331,9 @@
 				24927E2F1ECC9E44006510E3 /* RoomViewController.m in Sources */,
 				DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
-				DCC7E36A24085AD800431AC3 /* PasscodeAPIError.swift in Sources */,
+				DCC7E36A24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCB64B552409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
@@ -2305,13 +2341,12 @@
 				DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3982404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
-				DCC7E37224085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift in Sources */,
 				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044684238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0421C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				24C239F61EDF263800AA9419 /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
-				DCC7E36E24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift in Sources */,
+				DCC7E36E24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift in Sources */,
 				DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC1C2F7E23A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */,
@@ -2320,6 +2355,7 @@
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCC7E3592407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DCB64B4F2409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044695238F1FAA0072F597 /* User.swift in Sources */,
@@ -2327,7 +2363,7 @@
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
 				24A598531ECCE069003466B4 /* RoundButton.m in Sources */,
 				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DCC7E37624085BE200431AC3 /* PasscodeAPIErrorResponse.swift in Sources */,
+				DCC7E37624085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DC82A36023FF23090081578C /* VideoStoreFactory.swift in Sources */,
 				DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC82A35323FDB6890081578C /* SDKLogLevel.swift in Sources */,
@@ -2393,6 +2429,7 @@
 				DC8AA8BF23627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
+				DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
@@ -2405,7 +2442,7 @@
 				DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DCB7C1862405BD68009DEA70 /* PasscodeAPI.swift in Sources */,
+				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
 				DC04468D238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
@@ -2417,8 +2454,9 @@
 				4B00122B1FBA52C4004A587E /* RoomViewController.m in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
-				DCC7E36B24085AD800431AC3 /* PasscodeAPIError.swift in Sources */,
+				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
@@ -2426,13 +2464,12 @@
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
-				DCC7E37324085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00122D1FBA52C4004A587E /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
-				DCC7E36F24085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift in Sources */,
+				DCC7E36F24085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift in Sources */,
 				DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
@@ -2441,6 +2478,7 @@
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
@@ -2448,7 +2486,7 @@
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				4B0012301FBA52C4004A587E /* RoundButton.m in Sources */,
 				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DCC7E37724085BE200431AC3 /* PasscodeAPIErrorResponse.swift in Sources */,
+				DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DC82A36123FF23090081578C /* VideoStoreFactory.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC82A35423FDB6890081578C /* SDKLogLevel.swift in Sources */,
@@ -2514,6 +2552,7 @@
 				DC8AA8C023627D15006C06D5 /* FirebaseAuthStore.swift in Sources */,
 				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
+				DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
@@ -2526,7 +2565,7 @@
 				DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DCB7C1872405BD68009DEA70 /* PasscodeAPI.swift in Sources */,
+				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
 				DC04468E238F10B90072F597 /* SelectAPIEnvironmentViewModelFactory.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
@@ -2538,8 +2577,9 @@
 				4B0012681FBA52E5004A587E /* RoomViewController.m in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
-				DCC7E36C24085AD800431AC3 /* PasscodeAPIError.swift in Sources */,
+				DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
@@ -2547,13 +2587,12 @@
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
-				DCC7E37424085BB200431AC3 /* PasscodeAPIFetchTwilioAccessTokenResponse.swift in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* APIEnvironment.swift in Sources */,
 				24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00126A1FBA52E5004A587E /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
-				DCC7E37024085B7200431AC3 /* PasscodeAPIFetchTwilioAccessTokenParameters.swift in Sources */,
+				DCC7E37024085B7200431AC3 /* FetchTwilioAccessTokenRequest.swift in Sources */,
 				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
@@ -2562,6 +2601,7 @@
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
@@ -2569,7 +2609,7 @@
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */,
 				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DCC7E37824085BE200431AC3 /* PasscodeAPIErrorResponse.swift in Sources */,
+				DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DC82A36223FF23090081578C /* VideoStoreFactory.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC82A35523FDB6890081578C /* SDKLogLevel.swift in Sources */,

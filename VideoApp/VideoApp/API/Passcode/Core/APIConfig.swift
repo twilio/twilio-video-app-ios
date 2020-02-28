@@ -16,10 +16,6 @@
 
 import Foundation
 
-extension PasscodeAPI {
-    struct FetchTwilioAccessTokenParameters: Encodable {
-        let passcode: String
-        let userIdentity: String
-        let roomName: String
-    }
+struct APIConfig {
+    var host: String
 }

@@ -29,7 +29,7 @@ class AuthStoreFactory {
             return CommunityAuthStore(
                 appSettingsStore: AppSettingsStore.shared,
                 keychainStore: KeychainStore(),
-                passcodeAPI: PasscodeAPI()
+                api: API()
             )
         }
     }

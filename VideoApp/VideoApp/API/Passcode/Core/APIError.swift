@@ -16,13 +16,9 @@
 
 import Foundation
 
-extension PasscodeAPI {
-    struct ErrorResponse: Decodable {
-        enum Error: String, Decodable {
-            case expired
-            case unauthorized
-        }
-        
-        let error: Error
-    }
+enum APIError: Error {
+    case decodeError
+    case expiredPasscode
+    case notConnectedToInternet
+    case unauthorized
 }

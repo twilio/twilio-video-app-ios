@@ -34,7 +34,7 @@ class PasscodeSignInViewController: UIViewController {
     
     @IBAction func signInTap(_ sender: UIButton) {
         authStore.signIn(
-            name: userIdentityTextField.text ?? "",
+            userIdentity: userIdentityTextField.text ?? "",
             passcode: passcodeTextField.text ?? ""
         ) { [weak self] error in
             guard let self = self, let window = self.view.window else { return }

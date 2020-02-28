@@ -16,9 +16,6 @@
 
 import Foundation
 
-enum PasscodeAPIError: Error {
-    case decodeError
-    case expiredPasscode
-    case notConnectedToInternet
-    case unauthorized
+enum APIHTTPMethod {
+    case post
 }

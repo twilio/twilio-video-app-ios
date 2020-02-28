@@ -43,7 +43,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         firebaseAuthStore.signIn(email: email, password: password, completion: completion)
     }
 
-    func signIn(name: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
         
     }
 

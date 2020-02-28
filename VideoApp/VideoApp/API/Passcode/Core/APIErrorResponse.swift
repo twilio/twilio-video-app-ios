@@ -16,8 +16,11 @@
 
 import Foundation
 
-extension PasscodeAPI {
-    struct FetchTwilioAccessTokenResponse: Decodable {
-        let token: String
+struct APIErrorResponse: Decodable {
+    enum Error: String, Decodable {
+        case expired
+        case unauthorized
     }
+    
+    let error: Error
 }
