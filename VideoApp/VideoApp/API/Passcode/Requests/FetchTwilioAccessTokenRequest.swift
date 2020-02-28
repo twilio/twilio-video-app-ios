@@ -29,7 +29,7 @@ struct FetchTwilioAccessTokenRequest: APIRequest {
 
     let responseType = Response.self
     let path = "token"
-    let method = APIHTTPMethod.post // http
+    let method = APIHTTPMethod.post
     let parameters: Parameters
     
     init(passcode: String, userIdentity: String, roomName: String) {
