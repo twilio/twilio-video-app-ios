@@ -16,9 +16,7 @@
 
 import Foundation
 
-enum APIError: Error, Equatable {
-    case decodeError
-    case expiredPasscode
-    case notConnectedToInternet
-    case unauthorized
+struct FetchTwilioAccessTokenResponse: Decodable {
+    let token: String
 }
+

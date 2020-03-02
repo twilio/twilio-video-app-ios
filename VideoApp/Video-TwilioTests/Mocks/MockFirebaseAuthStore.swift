@@ -77,17 +77,17 @@ class MockFirebaseAuthStore: FirebaseAuthStoreWriting {
             completion(result.0)
         }
     }
-    var invokedSignInName = false
-    var invokedSignInNameCount = 0
-    var invokedSignInNameParameters: (name: String, passcode: String)?
-    var invokedSignInNameParametersList = [(name: String, passcode: String)]()
-    var stubbedSignInNameCompletionResult: (AuthError?, Void)?
-    func signIn(name: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
-        invokedSignInName = true
-        invokedSignInNameCount += 1
-        invokedSignInNameParameters = (name, passcode)
-        invokedSignInNameParametersList.append((name, passcode))
-        if let result = stubbedSignInNameCompletionResult {
+    var invokedSignInUserIdentity = false
+    var invokedSignInUserIdentityCount = 0
+    var invokedSignInUserIdentityParameters: (userIdentity: String, passcode: String)?
+    var invokedSignInUserIdentityParametersList = [(userIdentity: String, passcode: String)]()
+    var stubbedSignInUserIdentityCompletionResult: (AuthError?, Void)?
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+        invokedSignInUserIdentity = true
+        invokedSignInUserIdentityCount += 1
+        invokedSignInUserIdentityParameters = (userIdentity, passcode)
+        invokedSignInUserIdentityParametersList.append((userIdentity, passcode))
+        if let result = stubbedSignInUserIdentityCompletionResult {
             completion(result.0)
         }
     }

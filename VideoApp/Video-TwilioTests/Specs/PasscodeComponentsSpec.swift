@@ -23,7 +23,7 @@ class PasscodeComponentsSpec: QuickSpec {
     override func spec() {
         var sut: PasscodeComponents!
         
-        fdescribe("init") {
+        describe("init") {
             context("when string is 10 characters") {
                 beforeEach {
                     sut = PasscodeComponents(string: "2546985627")

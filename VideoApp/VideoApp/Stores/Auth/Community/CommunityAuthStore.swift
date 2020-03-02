@@ -58,7 +58,7 @@ class CommunityAuthStore: AuthStoreEverything {
                 completion(nil)
             case let .failure(error):
                 self.api.config = nil
-                completion(AuthError(passcodeAPIError: error))
+                completion(AuthError(apiError: error))
             }
         }
     }
@@ -78,7 +78,7 @@ class CommunityAuthStore: AuthStoreEverything {
         let request = FetchTwilioAccessTokenRequest(
             passcode: keychainStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
-            roomName: ""
+            roomName: roomName
         )
         
         api.request(request) { result in
@@ -92,16 +92,5 @@ class CommunityAuthStore: AuthStoreEverything {
     private func configureAPI(passcode: String) {
         let host = "video-app-\(PasscodeComponents(string: passcode).appID)-dev.twil.io"
         api.config = APIConfig(host: host)
-    }
-}
-
-private extension AuthError {
-    init(passcodeAPIError: APIError) {
-        switch passcodeAPIError {
-        case .decodeError: self = .unknown
-        case .expiredPasscode: self = .expiredPasscode
-        case .notConnectedToInternet: self = .networkError
-        case .unauthorized: self = .wrongPasscode
-        }
     }
 }

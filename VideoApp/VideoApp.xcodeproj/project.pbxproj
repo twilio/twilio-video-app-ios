@@ -266,6 +266,10 @@
 		DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
+		DCA6501F240D91C90038DEE1 /* FetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* FetchTwilioAccessTokenResponse.swift */; };
+		DCA65020240D91CA0038DEE1 /* FetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* FetchTwilioAccessTokenResponse.swift */; };
+		DCA65021240D91CA0038DEE1 /* FetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* FetchTwilioAccessTokenResponse.swift */; };
+		DCA65024240D92960038DEE1 /* StubFetchTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubFetchTwilioAccessTokenResponse.swift */; };
 		DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
 		DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
 		DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
@@ -318,6 +322,10 @@
 		DCB64B552409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
 		DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
 		DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
+		DCB64B59240D624600E090BE /* CommunityAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */; };
+		DCB64B5B240D638900E090BE /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5A240D638900E090BE /* MockAPI.swift */; };
+		DCB64B5D240D66C700E090BE /* MockKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */; };
+		DCB64B5F240D811900E090BE /* MockAuthStoreWritingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5E240D811900E090BE /* MockAuthStoreWritingDelegate.swift */; };
 		DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
@@ -599,6 +607,7 @@
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
+		DCA65023240D92960038DEE1 /* StubFetchTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubFetchTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCAEBF12238331A800141D2D /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
@@ -617,6 +626,11 @@
 		DCB64B48240995A100E090BE /* APIHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHTTPMethod.swift; sourceTree = "<group>"; };
 		DCB64B4E2409976F00E090BE /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		DCB64B542409BC4E00E090BE /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStoreSpec.swift; sourceTree = "<group>"; };
+		DCB64B5A240D638900E090BE /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainStore.swift; sourceTree = "<group>"; };
+		DCB64B5E240D811900E090BE /* MockAuthStoreWritingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthStoreWritingDelegate.swift; sourceTree = "<group>"; };
+		DCB64B61240D90CD00E090BE /* FetchTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
 		DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponents.swift; sourceTree = "<group>"; };
 		DCB7C1842405BD68009DEA70 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DCB7C1882405BE40009DEA70 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
@@ -1031,6 +1045,7 @@
 			children = (
 				DC4E4E362357B03100C5D313 /* Mocks */,
 				DC6EABCB235907280064E9E0 /* Specs */,
+				DCA65022240D926A0038DEE1 /* Stubs */,
 				DC4E4E302357A73900C5D313 /* Info.plist */,
 			);
 			path = "Video-TwilioTests";
@@ -1039,10 +1054,13 @@
 		DC4E4E362357B03100C5D313 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				DCB64B5A240D638900E090BE /* MockAPI.swift */,
 				DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */,
 				DC04469E238F29F50072F597 /* MockAuthStore.swift */,
+				DCB64B5E240D811900E090BE /* MockAuthStoreWritingDelegate.swift */,
 				DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */,
 				DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */,
+				DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */,
 				DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */,
 				DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */,
 				DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */,
@@ -1062,6 +1080,7 @@
 				DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */,
 				DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */,
 				DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */,
+				DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
 				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
 				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
@@ -1173,6 +1192,14 @@
 				DC8AA8BA236267B2006C06D5 /* Core */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		DCA65022240D926A0038DEE1 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				DCA65023240D92960038DEE1 /* StubFetchTwilioAccessTokenResponse.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		DCAEBEE32376011D00141D2D /* Stores */ = {
@@ -1327,6 +1354,14 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		DCB64B60240D909400E090BE /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				DCB64B61240D90CD00E090BE /* FetchTwilioAccessTokenResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		DCB7C18C2405C0A4009DEA70 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -1341,6 +1376,7 @@
 			children = (
 				DCB64B4C2409970A00E090BE /* Core */,
 				DCB64B4D2409973600E090BE /* Requests */,
+				DCB64B60240D909400E090BE /* Responses */,
 			);
 			path = Passcode;
 			sourceTree = "<group>";
@@ -2283,6 +2319,7 @@
 				DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
+				DCA65021240D91CA0038DEE1 /* FetchTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -2406,6 +2443,7 @@
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
+				DCA65020240D91CA0038DEE1 /* FetchTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -2529,6 +2567,7 @@
 				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
+				DCA6501F240D91C90038DEE1 /* FetchTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -2649,8 +2688,10 @@
 				DCD7676E23DFE74D00A2939C /* MockUserActivityStoreFactory.swift in Sources */,
 				DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */,
 				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
+				DCB64B5F240D811900E090BE /* MockAuthStoreWritingDelegate.swift in Sources */,
 				DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */,
 				DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */,
+				DCB64B5D240D66C700E090BE /* MockKeychainStore.swift in Sources */,
 				DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */,
 				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
 				DCD7676623DFDA1700A2939C /* DeepLinkStoreSpec.swift in Sources */,
@@ -2660,11 +2701,14 @@
 				DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */,
 				DCD7676C23DFE70700A2939C /* MockUserActivityStore.swift in Sources */,
 				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
+				DCB64B59240D624600E090BE /* CommunityAuthStoreSpec.swift in Sources */,
 				DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */,
 				DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */,
+				DCA65024240D92960038DEE1 /* StubFetchTwilioAccessTokenResponse.swift in Sources */,
 				DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */,
 				DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */,
 				DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */,
+				DCB64B5B240D638900E090BE /* MockAPI.swift in Sources */,
 				DCB64B47240969B400E090BE /* PasscodeComponentsSpec.swift in Sources */,
 				DCD7676A23DFE03F00A2939C /* MockDeepLinkStore.swift in Sources */,
 			);

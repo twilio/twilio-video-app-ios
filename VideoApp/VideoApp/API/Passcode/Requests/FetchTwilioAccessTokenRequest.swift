@@ -23,11 +23,7 @@ struct FetchTwilioAccessTokenRequest: APIRequest {
         let roomName: String
     }
 
-    struct Response: Decodable {
-        let token: String
-    }
-
-    let responseType = Response.self
+    let responseType = FetchTwilioAccessTokenResponse.self
     let path = "token"
     let method = APIHTTPMethod.post
     let parameters: Parameters

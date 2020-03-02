@@ -16,6 +16,6 @@
 
 import Foundation
 
-struct APIConfig {
+struct APIConfig: Equatable {
     var host: String
 }

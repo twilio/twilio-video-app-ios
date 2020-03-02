@@ -14,11 +14,10 @@
 //  limitations under the License.
 //
 
-import Foundation
+@testable import VideoApp
 
-enum APIError: Error, Equatable {
-    case decodeError
-    case expiredPasscode
-    case notConnectedToInternet
-    case unauthorized
+extension FetchTwilioAccessTokenResponse {
+    static func stub(token: String = "") -> FetchTwilioAccessTokenResponse {
+        .init(token: token)
+    }
 }
