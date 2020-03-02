@@ -23,11 +23,11 @@ struct CreateTwilioAccessTokenRequest: APIRequest {
         let roomName: String
     }
 
-    let responseType = CreateTwilioAccessTokenResponse.self
     let path = "token"
     let method = APIHTTPMethod.post
     let parameters: Parameters
-    
+    let responseType = CreateTwilioAccessTokenResponse.self
+
     init(passcode: String, userIdentity: String, roomName: String) {
         parameters = Parameters(
             passcode: PasscodeComponents(string: passcode).passcode,

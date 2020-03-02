@@ -90,7 +90,6 @@ extension FirebaseAuthStore: GIDSignInDelegate {
 private extension AuthError {
     init?(firebaseAuthError: Error?) {
         guard let error = firebaseAuthError else { return nil }
-        
         guard let code = AuthErrorCode(rawValue: (error as NSError).code) else { self = .unknown; return }
         
         switch code {

@@ -91,7 +91,8 @@ private extension AFError {
     var isNotConnectedToInternetError: Bool {
         guard let underlyingError = underlyingError, isSessionTaskError else { return false }
 
-        return (underlyingError as NSError).domain == NSURLErrorDomain && (underlyingError as NSError).code == NSURLErrorNotConnectedToInternet
+        let error = underlyingError as NSError
+        return error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet
     }
 }
 
