@@ -16,14 +16,14 @@
 
 import Foundation
 
-struct FetchTwilioAccessTokenRequest: APIRequest {
+struct CreateTwilioAccessTokenRequest: APIRequest {
     struct Parameters: Encodable {
         let passcode: String
         let userIdentity: String
         let roomName: String
     }
 
-    let responseType = FetchTwilioAccessTokenResponse.self
+    let responseType = CreateTwilioAccessTokenResponse.self
     let path = "token"
     let method = APIHTTPMethod.post
     let parameters: Parameters

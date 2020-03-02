@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct FetchTwilioAccessTokenResponse: Decodable {
+struct CreateTwilioAccessTokenResponse: Decodable {
     let token: String
 }
 
