@@ -28,14 +28,14 @@ iOS Deployment Target | Xcode Version | Swift Language Version
 The app requires a back-end to generate [Twilio access tokens](https://www.twilio.com/docs/video/tutorials/user-identity-access-tokens). Follow the instructions below to deploy a serverless back-end using [Twilio Functions](https://www.twilio.com/docs/runtime/functions).
 
 1. [Install Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart).
-1. Run `twilio plugins:install @twilio/labs/plugin-rtc`
-1. Run `twilio rtc:video:deploy-app --authentication passcode`
+1. Run `twilio plugins:install @twilio/labs/plugin-rtc`.
+1. Run `twilio rtc:video:deploy-app --authentication passcode`.
 1. The passcode that is output will be used later to [sign in to the app](#start-video-conference).
 
 The passcode will expire after one week. To generate a new passcode:
 
-1. Run `twilio rtc:video:delete-app`
-1. Run `twilio rtc:video:deploy-app --authentication passcode`
+1. Run `twilio rtc:video:delete-app`.
+1. Run `twilio rtc:video:deploy-app --authentication passcode`.
 
 ### Install Dependencies
 
