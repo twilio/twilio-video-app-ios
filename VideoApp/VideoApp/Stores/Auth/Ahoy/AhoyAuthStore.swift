@@ -44,7 +44,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
 
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
-        
+        print("Passcode sign in not supported by Firebase auth.")
     }
 
     func signOut() {

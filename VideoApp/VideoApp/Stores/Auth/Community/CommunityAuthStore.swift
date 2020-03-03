@@ -41,7 +41,7 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
-        
+        print("Email sign in not supported by community auth.")
     }
 
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
