@@ -26,7 +26,11 @@ class AuthStoreFactory {
                 firebaseAuthStore: FirebaseAuthStore()
             )
         case .videoCommunity:
-            return CommunityAuthStore()
+            return CommunityAuthStore(
+                appSettingsStore: AppSettingsStore.shared,
+                keychainStore: KeychainStore(),
+                api: API()
+            )
         }
     }
 }

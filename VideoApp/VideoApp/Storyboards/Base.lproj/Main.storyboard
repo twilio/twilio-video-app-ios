@@ -8,6 +8,97 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Sign in-->
+        <scene sceneID="Wlo-Jz-Cdx">
+            <objects>
+                <viewController id="yY1-e5-MwM" customClass="PasscodeSignInViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IEH-1O-p6k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JE7-HK-ASa">
+                                <rect key="frame" x="20" y="196" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="15K-ID-nZh"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYe-GN-WTo">
+                                <rect key="frame" x="20" y="263" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ynh-TU-VEg"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX1-TW-dVA">
+                                <rect key="frame" x="20" y="333" width="374" height="48"/>
+                                <color key="backgroundColor" red="0.64296793937683105" green="0.12823647260665894" blue="0.15827658772468567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="fGu-nn-PGf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInTap:" destination="yY1-e5-MwM" eventType="touchUpInside" id="CVn-eJ-JcZ"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-logo-login" translatesAutoresizingMaskIntoConstraints="NO" id="H83-Ih-XT9">
+                                <rect key="frame" x="170" y="97" width="74" height="57"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-hP-3rc" userLabel="Passcode line">
+                                <rect key="frame" x="20" y="290" width="374" height="3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="W4N-qk-Pio"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXx-uc-eqE" userLabel="Name line">
+                                <rect key="frame" x="20" y="223" width="374" height="3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="kQI-Z7-CF6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80463725328445435" green="0.16199085116386414" blue="0.20183241367340088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MXx-uc-eqE" firstAttribute="width" secondItem="JE7-HK-ASa" secondAttribute="width" id="40m-RL-voO"/>
+                            <constraint firstItem="aYe-GN-WTo" firstAttribute="top" secondItem="MXx-uc-eqE" secondAttribute="bottom" constant="37" id="57X-E7-nb4"/>
+                            <constraint firstItem="eAG-hP-3rc" firstAttribute="centerX" secondItem="MXx-uc-eqE" secondAttribute="centerX" id="5ZI-ok-oxF"/>
+                            <constraint firstItem="oX1-TW-dVA" firstAttribute="width" secondItem="aYe-GN-WTo" secondAttribute="width" id="7k1-aq-n3U"/>
+                            <constraint firstItem="H83-Ih-XT9" firstAttribute="top" secondItem="8Fe-i6-cdh" secondAttribute="top" constant="53" id="CFb-B1-Sow"/>
+                            <constraint firstItem="8Fe-i6-cdh" firstAttribute="trailing" secondItem="JE7-HK-ASa" secondAttribute="trailing" constant="20" id="Gqe-ci-qD2"/>
+                            <constraint firstItem="eAG-hP-3rc" firstAttribute="width" secondItem="MXx-uc-eqE" secondAttribute="width" id="Ion-3P-Yco"/>
+                            <constraint firstItem="eAG-hP-3rc" firstAttribute="top" secondItem="aYe-GN-WTo" secondAttribute="bottom" constant="-3" id="Lap-zL-iPy"/>
+                            <constraint firstItem="aYe-GN-WTo" firstAttribute="centerX" secondItem="JE7-HK-ASa" secondAttribute="centerX" id="NXh-Ew-K3R"/>
+                            <constraint firstItem="JE7-HK-ASa" firstAttribute="leading" secondItem="8Fe-i6-cdh" secondAttribute="leading" constant="20" id="Xtg-WC-fAW"/>
+                            <constraint firstItem="MXx-uc-eqE" firstAttribute="top" secondItem="JE7-HK-ASa" secondAttribute="bottom" constant="-3" id="ZLY-7O-uWA"/>
+                            <constraint firstItem="oX1-TW-dVA" firstAttribute="top" secondItem="eAG-hP-3rc" secondAttribute="bottom" constant="40" id="fYO-2m-l6g"/>
+                            <constraint firstItem="JE7-HK-ASa" firstAttribute="top" secondItem="H83-Ih-XT9" secondAttribute="bottom" constant="42" id="ilJ-e1-YSX"/>
+                            <constraint firstItem="oX1-TW-dVA" firstAttribute="centerX" secondItem="aYe-GN-WTo" secondAttribute="centerX" id="rJK-zV-syx"/>
+                            <constraint firstItem="MXx-uc-eqE" firstAttribute="centerX" secondItem="JE7-HK-ASa" secondAttribute="centerX" id="yQ2-7X-8y1"/>
+                            <constraint firstItem="H83-Ih-XT9" firstAttribute="centerX" secondItem="8Fe-i6-cdh" secondAttribute="centerX" id="yeV-hv-tJ7"/>
+                            <constraint firstItem="aYe-GN-WTo" firstAttribute="width" secondItem="JE7-HK-ASa" secondAttribute="width" id="z3H-Li-joF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Fe-i6-cdh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign in" id="pBp-O1-Ias"/>
+                    <connections>
+                        <outlet property="passcodeTextField" destination="aYe-GN-WTo" id="xHa-ve-t9u"/>
+                        <outlet property="signInButton" destination="oX1-TW-dVA" id="bEE-WW-8s4"/>
+                        <outlet property="userIdentityTextField" destination="JE7-HK-ASa" id="zSU-1a-YRm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvR-9j-vyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762.31884057971024" y="-1138.3928571428571"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="0Ie-IN-MOF">
             <objects>
@@ -208,6 +299,7 @@
                     <connections>
                         <segue destination="VHW-D9-Yxw" kind="show" identifier="loginSegue" animates="NO" id="bkW-VQ-pWw"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="lobbySegue" id="Txa-aP-AmN"/>
+                        <segue destination="yY1-e5-MwM" kind="show" identifier="passcodeSignIn" animates="NO" id="Dc1-pi-N6S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pG-mS-k4I" userLabel="First Responder" sceneMemberID="firstResponder"/>

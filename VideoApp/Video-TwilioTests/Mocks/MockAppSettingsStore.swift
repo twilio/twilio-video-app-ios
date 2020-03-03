@@ -197,6 +197,12 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             return stubbedWebRTCSDKLogLevel
         }
     }
+    var invokedReset = false
+    var invokedResetCount = 0
+    func reset() {
+        invokedReset = true
+        invokedResetCount += 1
+    }
     var invokedStart = false
     var invokedStartCount = 0
     func start() {

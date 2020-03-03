@@ -63,17 +63,31 @@ class MockFirebaseAuthStore: FirebaseAuthStoreWriting {
             completion(result.0, result.1)
         }
     }
-    var invokedSignIn = false
-    var invokedSignInCount = 0
-    var invokedSignInParameters: (email: String, password: String)?
-    var invokedSignInParametersList = [(email: String, password: String)]()
-    var stubbedSignInCompletionResult: (Error?, Void)?
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
-        invokedSignIn = true
-        invokedSignInCount += 1
-        invokedSignInParameters = (email, password)
-        invokedSignInParametersList.append((email, password))
-        if let result = stubbedSignInCompletionResult {
+    var invokedSignInEmail = false
+    var invokedSignInEmailCount = 0
+    var invokedSignInEmailParameters: (email: String, password: String)?
+    var invokedSignInEmailParametersList = [(email: String, password: String)]()
+    var stubbedSignInEmailCompletionResult: (AuthError?, Void)?
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
+        invokedSignInEmail = true
+        invokedSignInEmailCount += 1
+        invokedSignInEmailParameters = (email, password)
+        invokedSignInEmailParametersList.append((email, password))
+        if let result = stubbedSignInEmailCompletionResult {
+            completion(result.0)
+        }
+    }
+    var invokedSignInUserIdentity = false
+    var invokedSignInUserIdentityCount = 0
+    var invokedSignInUserIdentityParameters: (userIdentity: String, passcode: String)?
+    var invokedSignInUserIdentityParametersList = [(userIdentity: String, passcode: String)]()
+    var stubbedSignInUserIdentityCompletionResult: (AuthError?, Void)?
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+        invokedSignInUserIdentity = true
+        invokedSignInUserIdentityCount += 1
+        invokedSignInUserIdentityParameters = (userIdentity, passcode)
+        invokedSignInUserIdentityParametersList.append((userIdentity, passcode))
+        if let result = stubbedSignInUserIdentityCompletionResult {
             completion(result.0)
         }
     }

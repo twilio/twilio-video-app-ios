@@ -18,19 +18,56 @@ import Foundation
 
 class CommunityAuthStore: AuthStoreEverything {
     weak var delegate: AuthStoreWritingDelegate?
-    var isSignedIn: Bool { return true }
-    var userDisplayName: String { return "Unknown" }
+    var isSignedIn: Bool { keychainStore.passcode != nil }
+    var userDisplayName: String { appSettingsStore.userIdentity }
+    private let appSettingsStore: AppSettingsStoreWriting
+    private let keychainStore: KeychainStoreWriting
+    private let api: APIConfiguring & APIRequesting
+
+    init(
+        appSettingsStore: AppSettingsStoreWriting,
+        keychainStore: KeychainStoreWriting,
+        api: APIConfiguring & APIRequesting
+    ) {
+        self.appSettingsStore = appSettingsStore
+        self.keychainStore = keychainStore
+        self.api = api
+    }
 
     func start() {
-
-    }
-
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
+        guard let passcode = keychainStore.passcode else { return }
         
+        configureAPI(passcode: passcode)
     }
-    
-    func signOut() {
 
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
+        print("Email sign in not supported by community auth.")
+    }
+
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+        configureAPI(passcode: passcode)
+        let request = CreateTwilioAccessTokenRequest(passcode: passcode, userIdentity: userIdentity, roomName: "")
+        
+        api.request(request) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success:
+                self.keychainStore.passcode = passcode
+                self.appSettingsStore.userIdentity = userIdentity
+                completion(nil)
+            case let .failure(error):
+                self.api.config = nil
+                completion(AuthError(apiError: error))
+            }
+        }
+    }
+
+    func signOut() {
+        keychainStore.passcode = nil
+        appSettingsStore.reset()
+        api.config = nil
+        delegate?.didSignOut()
     }
 
     func openURL(_ url: URL) -> Bool {
@@ -38,8 +75,22 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        let accessToken = "TWILIO_ACCESS_TOKEN"
+        let request = CreateTwilioAccessTokenRequest(
+            passcode: keychainStore.passcode ?? "",
+            userIdentity: appSettingsStore.userIdentity,
+            roomName: roomName
+        )
         
-        completion(accessToken, nil)
+        api.request(request) { result in
+            switch result {
+            case let .success(response): completion(response.token, nil)
+            case let .failure(error): completion(nil, error)
+            }
+        }
+    }
+    
+    private func configureAPI(passcode: String) {
+        let host = "video-app-\(PasscodeComponents(string: passcode).appID)-dev.twil.io"
+        api.config = APIConfig(host: host)
     }
 }
