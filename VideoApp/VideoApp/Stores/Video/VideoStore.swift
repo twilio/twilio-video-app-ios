@@ -34,10 +34,10 @@ class VideoStore: VideoStoreWriting {
     }
     
     func start() {
-        configureSDK()
+        configure()
         
         notificationCenter.addObserver(forName: .appSettingDidChange, object: nil, queue: nil) { [weak self] _ in
-            self?.configureSDK()
+            self?.configure()
         }
     }
     
@@ -46,7 +46,7 @@ class VideoStore: VideoStoreWriting {
         UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
     }
 
-    private func configureSDK() {
+    private func configure() {
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.coreSDKLogLevel), module: .core)
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.platformSDKLogLevel), module: .platform)
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.signalingSDKLogLevel), module: .signaling)
