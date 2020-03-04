@@ -16,7 +16,7 @@
 
 import Foundation
 
-class SelectAPIEnvironmentViewModel: SelectOptionViewModel {
+class SelectEnvironmentViewModel: SelectOptionViewModel {
     let title = "Environment"
     let options = Environment.allCases.map { $0.title }
     var selectedIndex: Int {

@@ -25,7 +25,7 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
             userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
             crashReportStore: CrashReportStore.shared,
             editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
-            selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory(),
+            selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
             developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
             sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory()
         )

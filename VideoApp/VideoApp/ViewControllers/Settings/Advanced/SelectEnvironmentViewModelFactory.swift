@@ -16,8 +16,8 @@
 
 import Foundation
 
-class SelectAPIEnvironmentViewModelFactory: SelectOptionViewModelFactory {
+class SelectEnvironmentViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectAPIEnvironmentViewModel(appSettingsStore: AppSettingsStore.shared)
+        SelectEnvironmentViewModel(appSettingsStore: AppSettingsStore.shared)
     }
 }
