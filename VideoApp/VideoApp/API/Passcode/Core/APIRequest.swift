@@ -16,11 +16,21 @@
 
 import Foundation
 
+enum APIEncoder {
+    case json
+    case query
+}
+
 protocol APIRequest {
     associatedtype Parameters: Encodable
     associatedtype Response: Decodable
     var path: String { get }
     var method: APIHTTPMethod { get }
     var parameters: Parameters { get }
+    var encoder: APIEncoder { get }
     var responseType: Response.Type { get }
+}
+
+extension APIRequest {
+    var encoder: APIEncoder { .json }
 }

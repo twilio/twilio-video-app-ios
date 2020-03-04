@@ -20,12 +20,12 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { return firebaseAuthStore.isSignedIn }
     var userDisplayName: String { return firebaseAuthStore.userDisplayName }
-    private let api: TwilioVideoAppAPIProtocol
+    private let api: APIConfiguring & APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let firebaseAuthStore: FirebaseAuthStoreWriting
 
     init(
-        api: TwilioVideoAppAPIProtocol,
+        api: APIConfiguring & APIRequesting,
         appSettingsStore: AppSettingsStoreWriting,
         firebaseAuthStore: FirebaseAuthStoreWriting
     ) {
@@ -59,14 +59,22 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
             guard let self = self, let accessToken = accessToken else { completion(nil, error); return }
             
-            self.api.retrieveAccessToken(
-                forIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
+            let host = "https://app.\(self.appSettingsStore.apiEnvironment.qualifier)video.bytwilio.com"
+            self.api.config = APIConfig(host: host, accessToken: accessToken)
+
+            let parameters = CreateFirebaseTwilioAccessTokenRequest.Parameters(
+                identity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
                 roomName: roomName,
-                authToken: accessToken,
-                environment: self.appSettingsStore.apiEnvironment.legacyAPIEnvironment,
-                topology: self.appSettingsStore.topology.apiTopology
-            ) { accessToken, error in
-                completion(accessToken, error)
+                topology: .init(topology: self.appSettingsStore.topology)
+            )
+            
+            let request = CreateFirebaseTwilioAccessTokenRequest(parameters: parameters)
+            
+            self.api.request(request) { result in
+                switch result {
+                case let .success(accessToken): completion(accessToken, nil)
+                case let .failure(error): completion(nil, error)
+                }
             }
         }
     }
@@ -83,21 +91,21 @@ extension AhoyAuthStore: AuthStoreWritingDelegate {
     }
 }
 
-private extension Topology {
-    var apiTopology: TwilioVideoAppAPITopology {
+private extension APIEnvironment {
+    var qualifier: String {
         switch self {
-        case .group: return .group
-        case .peerToPeer: return .P2P
+        case .production: return ""
+        case .staging: return "stage."
+        case .development: return "dev."
         }
     }
 }
 
-private extension APIEnvironment {
-    var legacyAPIEnvironment: TwilioVideoAppAPIEnvironment {
-        switch self {
-        case .production: return .production
-        case .staging: return .staging
-        case .development: return .development
+private extension CreateFirebaseTwilioAccessTokenRequest.Parameters.Topology {
+    init(topology: Topology) {
+        switch topology {
+        case .group: self = .group
+        case .peerToPeer: self = .peerToPeer
         }
     }
 }

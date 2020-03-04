@@ -17,5 +17,6 @@
 import Foundation
 
 enum APIHTTPMethod {
+    case get
     case post
 }

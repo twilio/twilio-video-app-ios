@@ -32,12 +32,19 @@ class API: APIConfiguring, APIRequesting {
     private let session = Session()
     private let jsonDecoder = JSONDecoder()
     private let jsonParameterEncoder: JSONParameterEncoder
+    private let queryParemterencoder: URLEncodedFormParameterEncoder
+    private var headers: HTTPHeaders? {
+        guard let accessToken = config.accessToken else { return nil }
+        
+        return [.authorization(accessToken)]
+    }
 
     init() {
         let jsonEncoder = JSONEncoder()
         jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
         jsonParameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        queryParemterencoder = URLEncodedFormParameterEncoder()
     }
     
     func request<Request: APIRequest>(
@@ -46,11 +53,19 @@ class API: APIConfiguring, APIRequesting {
     ) {
         let url = "https://\(config.host)/\(request.path)"
         
+        let encoder: ParameterEncoder
+        
+        switch request.encoder {
+        case .json: encoder = jsonParameterEncoder
+        case .query: encoder = queryParemterencoder
+        }
+        
         session.request(
             url,
             method: HTTPMethod(apiHTTPMethod: request.method),
             parameters: request.parameters,
-            encoder: jsonParameterEncoder
+            encoder: encoder,
+            headers: headers
         ).validate().response { [weak self] response in
             guard let self = self else { return }
             
@@ -100,6 +115,7 @@ private extension HTTPMethod {
     init(apiHTTPMethod: APIHTTPMethod) {
         switch apiHTTPMethod {
         case .post: self = .post
+        case .get: self = .get
         }
     }
 }

@@ -21,7 +21,7 @@ class AuthStoreFactory {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio, .videoInternal:
             return AhoyAuthStore(
-                api: TwilioVideoAppAPI(),
+                api: API(),
                 appSettingsStore: AppSettingsStore.shared,
                 firebaseAuthStore: FirebaseAuthStore()
             )

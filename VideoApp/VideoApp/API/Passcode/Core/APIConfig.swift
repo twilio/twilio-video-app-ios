@@ -17,5 +17,11 @@
 import Foundation
 
 struct APIConfig: Equatable {
-    var host: String
+    let host: String
+    let accessToken: String?
+    
+    init(host: String, accessToken: String? = nil) {
+        self.host = host
+        self.accessToken = accessToken
+    }
 }

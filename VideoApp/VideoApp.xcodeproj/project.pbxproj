@@ -271,6 +271,9 @@
 		DCA65021240D91CA0038DEE1 /* CreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CreateTwilioAccessTokenResponse.swift */; };
 		DCA65024240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */; };
 		DCA65026240D9A3B0038DEE1 /* AuthErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */; };
+		DCA65028240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift */; };
+		DCA65029240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift */; };
+		DCA6502A240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift */; };
 		DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
 		DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
 		DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
@@ -610,6 +613,7 @@
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
 		DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCreateTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
 		DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorSpec.swift; sourceTree = "<group>"; };
+		DCA65027240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFirebaseTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCAEBF12238331A800141D2D /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
@@ -1343,6 +1347,7 @@
 			isa = PBXGroup;
 			children = (
 				DCC7E36D24085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift */,
+				DCA65027240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2302,6 +2307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA65028240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift in Sources */,
 				DC044691238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
@@ -2426,6 +2432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA65029240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift in Sources */,
 				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
@@ -2550,6 +2557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA6502A240F1E0D0038DEE1 /* CreateFirebaseTwilioAccessTokenRequest.swift in Sources */,
 				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
