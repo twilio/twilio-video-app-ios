@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum APIEnvironment: String, CaseIterable, Codable {
+enum Environment: String, CaseIterable, Codable {
     case production
     case staging
     case development

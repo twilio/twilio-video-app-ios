@@ -24,7 +24,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                 rows: [
                     .optionList(
                         title: "Environment",
-                        selectedOption: appSettingsStore.apiEnvironment.title,
+                        selectedOption: appSettingsStore.environment.title,
                         viewModelFactory: selectAPIEnvironmentViewModelFactory
                     ),
                     .editableText(

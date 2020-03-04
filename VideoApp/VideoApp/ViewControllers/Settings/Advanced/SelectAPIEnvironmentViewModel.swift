@@ -18,10 +18,10 @@ import Foundation
 
 class SelectAPIEnvironmentViewModel: SelectOptionViewModel {
     let title = "Environment"
-    let options = APIEnvironment.allCases.map { $0.title }
+    let options = Environment.allCases.map { $0.title }
     var selectedIndex: Int {
-        get { APIEnvironment.allCases.firstIndex(of: appSettingsStore.apiEnvironment) ?? 0 }
-        set { appSettingsStore.apiEnvironment = APIEnvironment.allCases[newValue] }
+        get { Environment.allCases.firstIndex(of: appSettingsStore.environment) ?? 0 }
+        set { appSettingsStore.environment = Environment.allCases[newValue] }
     }
     private let appSettingsStore: AppSettingsStoreWriting
     

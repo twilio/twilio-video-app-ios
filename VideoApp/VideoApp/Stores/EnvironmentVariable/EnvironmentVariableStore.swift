@@ -16,12 +16,23 @@
 
 import Foundation
 
-class VideoStoreFactory {
-    func makeVideoStore() -> VideoStoreWriting {
-        return VideoStore(
-            appSettingsStore: AppSettingsStore.shared,
-            environmentVariableStore: EnvironmentVariableStore(),
-            notificationCenter: NotificationCenter.default
-        )
+protocol EnvironmentVariableStoreWriting: AnyObject {
+    var twilioEnvironment: Environment? { get set }
+}
+
+class EnvironmentVariableStore: EnvironmentVariableStoreWriting {
+    var twilioEnvironment: Environment? {
+        get { fatalError() }
+        set { setenv("TWILIO_ENVIRONMENT", newValue?.environmentVariableValue, 1) }
+    }
+}
+
+private extension Environment {
+    var environmentVariableValue: String {
+        switch self {
+        case .production: return "Production"
+        case .staging: return "Staging"
+        case .development: return "Development"
+        }
     }
 }
