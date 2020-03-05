@@ -19,19 +19,30 @@ import TwilioVideo
 protocol VideoStoreWriting: LaunchStore, WindowSceneObserving { }
 
 class VideoStore: VideoStoreWriting {
+    static let shared: VideoStoreWriting = VideoStore(
+        appSettingsStore: AppSettingsStore.shared,
+        environmentVariableStore: EnvironmentVariableStore(),
+        notificationCenter: NotificationCenter.default
+    )
     private let appSettingsStore: AppSettingsStoreWriting
+    private let environmentVariableStore: EnvironmentVariableStoreWriting
     private let notificationCenter: NotificationCenterProtocol
         
-    init(appSettingsStore: AppSettingsStoreWriting, notificationCenter: NotificationCenterProtocol) {
+    init(
+        appSettingsStore: AppSettingsStoreWriting,
+        environmentVariableStore: EnvironmentVariableStoreWriting,
+        notificationCenter: NotificationCenterProtocol
+    ) {
         self.appSettingsStore = appSettingsStore
+        self.environmentVariableStore = environmentVariableStore
         self.notificationCenter = notificationCenter
     }
     
     func start() {
-        setLogLevels()
+        configure()
         
         notificationCenter.addObserver(forName: .appSettingDidChange, object: nil, queue: nil) { [weak self] _ in
-            self?.setLogLevels()
+            self?.configure()
         }
     }
     
@@ -40,11 +51,12 @@ class VideoStore: VideoStoreWriting {
         UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
     }
 
-    private func setLogLevels() {
+    private func configure() {
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.coreSDKLogLevel), module: .core)
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.platformSDKLogLevel), module: .platform)
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.signalingSDKLogLevel), module: .signaling)
         TwilioVideoSDK.setLogLevel(.init(sdkLogLevel: appSettingsStore.webRTCSDKLogLevel), module: .webRTC)
+        environmentVariableStore.twilioEnvironment = appSettingsStore.environment
     }
 }
 

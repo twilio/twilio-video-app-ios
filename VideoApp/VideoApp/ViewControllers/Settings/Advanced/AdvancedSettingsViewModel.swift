@@ -24,8 +24,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                 rows: [
                     .optionList(
                         title: "Environment",
-                        selectedOption: appSettingsStore.apiEnvironment.title,
-                        viewModelFactory: selectAPIEnvironmentViewModelFactory
+                        selectedOption: appSettingsStore.environment.title,
+                        viewModelFactory: selectEnvironmentViewModelFactory
                     ),
                     .editableText(
                         title: "User Identity",
@@ -52,7 +52,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let userStore: UserStoreReading
     private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
-    private let selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
+    private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     
@@ -60,7 +60,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
          userStore: UserStoreReading,
          crashReportStore: CrashReportStoreWriting,
          editIdentityViewModalFactory: EditTextViewModelFactory,
-         selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory,
+         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
          developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
          sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     ) {
@@ -68,7 +68,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         self.userStore = userStore
         self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
-        self.selectAPIEnvironmentViewModelFactory = selectAPIEnvironmentViewModelFactory
+        self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
     }

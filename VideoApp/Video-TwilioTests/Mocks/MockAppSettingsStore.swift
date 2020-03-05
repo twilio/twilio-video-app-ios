@@ -17,24 +17,24 @@
 @testable import VideoApp
 
 class MockAppSettingsStore: AppSettingsStoreWriting {
-    var invokedApiEnvironmentSetter = false
-    var invokedApiEnvironmentSetterCount = 0
-    var invokedApiEnvironment: APIEnvironment?
-    var invokedApiEnvironmentList = [APIEnvironment]()
-    var invokedApiEnvironmentGetter = false
-    var invokedApiEnvironmentGetterCount = 0
-    var stubbedApiEnvironment: APIEnvironment!
-    var apiEnvironment: APIEnvironment {
+    var invokedEnvironmentSetter = false
+    var invokedEnvironmentSetterCount = 0
+    var invokedEnvironment: Environment?
+    var invokedEnvironmentList = [Environment]()
+    var invokedEnvironmentGetter = false
+    var invokedEnvironmentGetterCount = 0
+    var stubbedEnvironment: Environment!
+    var environment: Environment {
         set {
-            invokedApiEnvironmentSetter = true
-            invokedApiEnvironmentSetterCount += 1
-            invokedApiEnvironment = newValue
-            invokedApiEnvironmentList.append(newValue)
+            invokedEnvironmentSetter = true
+            invokedEnvironmentSetterCount += 1
+            invokedEnvironment = newValue
+            invokedEnvironmentList.append(newValue)
         }
         get {
-            invokedApiEnvironmentGetter = true
-            invokedApiEnvironmentGetterCount += 1
-            return stubbedApiEnvironment
+            invokedEnvironmentGetter = true
+            invokedEnvironmentGetterCount += 1
+            return stubbedEnvironment
         }
     }
     var invokedVideoCodecSetter = false

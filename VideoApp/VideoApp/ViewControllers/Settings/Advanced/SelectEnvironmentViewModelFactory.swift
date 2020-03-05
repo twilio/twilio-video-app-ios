@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2020 Twilio, Inc.
+//  Copyright (C) 2019 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 
 import Foundation
 
-class VideoStoreFactory {
-    func makeVideoStore() -> VideoStoreWriting {
-        return VideoStore(appSettingsStore: AppSettingsStore.shared, notificationCenter: NotificationCenter.default)
+class SelectEnvironmentViewModelFactory: SelectOptionViewModelFactory {
+    func makeSelectOptionViewModel() -> SelectOptionViewModel {
+        SelectEnvironmentViewModel(appSettingsStore: AppSettingsStore.shared)
     }
 }
