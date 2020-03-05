@@ -950,8 +950,8 @@
 		DC4E4E2723578DF200C5D313 /* AppSettings */ = {
 			isa = PBXGroup;
 			children = (
-				DC044683238EF6C20072F597 /* Environment.swift */,
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
+				DC044683238EF6C20072F597 /* Environment.swift */,
 				DC82A34E23FC9AAA0081578C /* JSONContainer.swift */,
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
