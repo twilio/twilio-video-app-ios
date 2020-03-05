@@ -17,9 +17,13 @@
 import Foundation
 
 struct APIErrorResponse: Decodable {
-    enum Error: String, Decodable {
-        case expired
-        case unauthorized
+    struct Error: Decodable {
+        enum Message: String, Decodable {
+            case passcodeExpired = "passcode expired"
+            case passcodeIncorrect = "passcode incorrect"
+        }
+        
+        let message: Message
     }
     
     let error: Error
