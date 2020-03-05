@@ -183,9 +183,6 @@
 		DC82A35C23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */; };
 		DC82A35D23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */; };
 		DC82A35E23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */; };
-		DC82A36023FF23090081578C /* VideoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35F23FF23090081578C /* VideoStoreFactory.swift */; };
-		DC82A36123FF23090081578C /* VideoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35F23FF23090081578C /* VideoStoreFactory.swift */; };
-		DC82A36223FF23090081578C /* VideoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35F23FF23090081578C /* VideoStoreFactory.swift */; };
 		DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
@@ -522,7 +519,6 @@
 		DC82A34E23FC9AAA0081578C /* JSONContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContainer.swift; sourceTree = "<group>"; };
 		DC82A35223FDB6890081578C /* SDKLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevel.swift; sourceTree = "<group>"; };
 		DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewModel.swift; sourceTree = "<group>"; };
-		DC82A35F23FF23090081578C /* VideoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStoreFactory.swift; sourceTree = "<group>"; };
 		DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
 		DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
@@ -1104,7 +1100,6 @@
 			isa = PBXGroup;
 			children = (
 				DC8EAE3E23BA926E0045018F /* VideoStore.swift */,
-				DC82A35F23FF23090081578C /* VideoStoreFactory.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -2222,7 +2217,6 @@
 				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
 				24A598531ECCE069003466B4 /* RoundButton.m in Sources */,
 				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DC82A36023FF23090081578C /* VideoStoreFactory.swift in Sources */,
 				DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC82A35323FDB6890081578C /* SDKLogLevel.swift in Sources */,
 				DC044699238F20130072F597 /* SwiftToObjc.swift in Sources */,
@@ -2331,7 +2325,6 @@
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				4B0012301FBA52C4004A587E /* RoundButton.m in Sources */,
 				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DC82A36123FF23090081578C /* VideoStoreFactory.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC82A35423FDB6890081578C /* SDKLogLevel.swift in Sources */,
 				DC04469A238F20130072F597 /* SwiftToObjc.swift in Sources */,
@@ -2440,7 +2433,6 @@
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				4B00126D1FBA52E5004A587E /* RoundButton.m in Sources */,
 				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DC82A36223FF23090081578C /* VideoStoreFactory.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC82A35523FDB6890081578C /* SDKLogLevel.swift in Sources */,
 				DC04469B238F20130072F597 /* SwiftToObjc.swift in Sources */,

@@ -19,6 +19,11 @@ import TwilioVideo
 protocol VideoStoreWriting: LaunchStore, WindowSceneObserving { }
 
 class VideoStore: VideoStoreWriting {
+    static let shared: VideoStoreWriting = VideoStore(
+        appSettingsStore: AppSettingsStore.shared,
+        environmentVariableStore: EnvironmentVariableStore(),
+        notificationCenter: NotificationCenter.default
+    )
     private let appSettingsStore: AppSettingsStoreWriting
     private let environmentVariableStore: EnvironmentVariableStoreWriting
     private let notificationCenter: NotificationCenterProtocol

@@ -24,6 +24,6 @@ protocol WindowSceneObserverFactory: AnyObject {
 @available(iOS 13, *)
 class WindowSceneObserverFactoryImpl: WindowSceneObserverFactory {
     func makeWindowSceneObserver() -> WindowSceneObserving {
-        return VideoStoreFactory().makeVideoStore()
+        return VideoStore.shared
     }
 }

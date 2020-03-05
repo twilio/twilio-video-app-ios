@@ -99,7 +99,7 @@ static NSString *const kTwilioVideoAppAPIErrorDomain                        = @"
     if (![environment isEqualToString:kTwilioVideoAppAPIEnvironmentProduction]) {
         if ([environment isEqualToString:kTwilioVideoAppAPIEnvironmentStaging]) {
             envString = kTwilioVideoAppAPIStageQualifier;
-        } else if ([environment isEqualToString:kTwilioVideoAppAPIDevQualifier]) {
+        } else if ([environment isEqualToString:kTwilioVideoAppAPIEnvironmentDevelopment]) {
             envString = kTwilioVideoAppAPIDevQualifier;
         }
     }
