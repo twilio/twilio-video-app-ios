@@ -4,6 +4,8 @@
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles || true
 base64 -D <<< $INTERNAL_DISTRIBUTION_PROVISIONING_PROFILE -o ~/Library/MobileDevice/Provisioning\ Profiles/internal_distribution.mobileprovision
 base64 -D <<< $INTERNAL_DEVELOPMENT_PROVISIONING_PROFILE -o ~/Library/MobileDevice/Provisioning\ Profiles/internal_development.mobileprovision
+base64 -D <<< $COMMUNITY_DISTRIBUTION_PROVISIONING_PROFILE -o ~/Library/MobileDevice/Provisioning\ Profiles/community_distribution.mobileprovision
+base64 -D <<< $COMMUNITY_DEVELOPMENT_PROVISIONING_PROFILE -o ~/Library/MobileDevice/Provisioning\ Profiles/community_development.mobileprovision
 
 # Install certificates
 base64 -D <<< $APPLE_WORLDWIDE_DEVELOPER_RELATIONS_CERTIFICATE_AUTHORITY_CER -o Apple\ Worldwide\ Developer\ Relations\ Certification\ Authority.cer
