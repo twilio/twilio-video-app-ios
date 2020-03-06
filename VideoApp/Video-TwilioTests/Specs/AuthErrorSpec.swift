@@ -30,7 +30,7 @@ class AuthErrorSpec: QuickSpec {
 
             context("when apiError is expiredPasscode") {
                 it("returns expiredPasscode") {
-                    expect(AuthError(apiError: .expiredPasscode)).to(equal(.expiredPasscode))
+                    expect(AuthError(apiError: .passcodeExpired)).to(equal(.passcodeExpired))
                 }
             }
 
@@ -42,7 +42,7 @@ class AuthErrorSpec: QuickSpec {
 
             context("when apiError is unauthorized") {
                 it("returns wrongPasscode") {
-                    expect(AuthError(apiError: .unauthorized)).to(equal(.wrongPasscode))
+                    expect(AuthError(apiError: .passcodeIncorrect)).to(equal(.passcodeIncorrect))
                 }
             }
         }

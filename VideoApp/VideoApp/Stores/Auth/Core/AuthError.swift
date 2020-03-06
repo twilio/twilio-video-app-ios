@@ -17,20 +17,20 @@
 import Foundation
 
 enum AuthError: Error {
-    case expiredPasscode
-    case wrongPasscode
-    case userDisabled
     case invalidEmail
-    case wrongPassword
     case networkError
+    case passcodeExpired
+    case passcodeIncorrect
     case unknown
-    
+    case userDisabled
+    case wrongPassword
+
     init(apiError: APIError) {
         switch apiError {
         case .decodeError: self = .unknown
-        case .expiredPasscode: self = .expiredPasscode
         case .notConnectedToInternet: self = .networkError
-        case .unauthorized: self = .wrongPasscode
+        case .passcodeExpired: self = .passcodeExpired
+        case .passcodeIncorrect: self = .passcodeIncorrect
         }
     }
 }
