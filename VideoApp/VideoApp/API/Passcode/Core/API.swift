@@ -69,7 +69,7 @@ class API: APIConfiguring, APIRequesting {
 
                 do {
                     let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
-                    completion(.failure(APIError(responseError: errorResponse.error)))
+                    completion(.failure(APIError(message: errorResponse.error.message)))
                 } catch {
                     completion(.failure(.decodeError))
                 }
@@ -79,10 +79,10 @@ class API: APIConfiguring, APIRequesting {
 }
 
 private extension APIError {
-    init(responseError: APIErrorResponse.Error) {
-        switch responseError {
-        case .expired: self = .expiredPasscode
-        case .unauthorized: self = .unauthorized
+    init(message: APIErrorResponse.Error.Message) {
+        switch message {
+        case .passcodeExpired: self = .passcodeExpired
+        case .passcodeIncorrect: self = .passcodeIncorrect
         }
     }
 }

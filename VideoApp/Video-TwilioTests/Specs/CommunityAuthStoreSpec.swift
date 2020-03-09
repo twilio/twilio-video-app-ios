@@ -232,17 +232,17 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                 context("when result is failure") {
                     it("sets API config to nil") {
-                        signIn(result: .failure(.expiredPasscode))
+                        signIn(result: .failure(.passcodeExpired))
                         
                         expect(mockAPI.invokedConfig).to(beNil())
                     }
 
                     context("when error is expiredPasscode error") {
                         it("calls completion with expiredPasscode error") {
-                            signIn(result: .failure(.expiredPasscode))
+                            signIn(result: .failure(.passcodeExpired))
 
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.error).to(equal(.expiredPasscode))
+                            expect(invokedCompletionParameters?.error).to(equal(.passcodeExpired))
                         }
                     }
                     
@@ -392,11 +392,11 @@ class CommunityAuthStoreSpec: QuickSpec {
                 context("when result is failure") {
                     context("when error is expiredPasscode") {
                         it("calls completion with expiredPasscode error") {
-                            fetchTwilioAccessToken(result: .failure(.expiredPasscode))
+                            fetchTwilioAccessToken(result: .failure(.passcodeExpired))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(beNil())
-                            expect(invokedCompletionParameters?.error as? APIError).to(equal(.expiredPasscode))
+                            expect(invokedCompletionParameters?.error as? APIError).to(equal(.passcodeExpired))
                         }
                     }
 

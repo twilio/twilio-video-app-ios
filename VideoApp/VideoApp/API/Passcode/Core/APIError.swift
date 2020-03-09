@@ -18,7 +18,7 @@ import Foundation
 
 enum APIError: Error, Equatable {
     case decodeError
-    case expiredPasscode
     case notConnectedToInternet
-    case unauthorized
+    case passcodeExpired
+    case passcodeIncorrect
 }
