@@ -32,7 +32,7 @@ class API: APIConfiguring, APIRequesting {
     private let session = Session()
     private let jsonDecoder = JSONDecoder()
     private let jsonParameterEncoder: JSONParameterEncoder
-    private let queryParemterencoder: URLEncodedFormParameterEncoder
+    private let queryParemterEncoder: URLEncodedFormParameterEncoder
     private var headers: HTTPHeaders? {
         guard let accessToken = config.accessToken else { return nil }
         
@@ -44,7 +44,7 @@ class API: APIConfiguring, APIRequesting {
         jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
         jsonParameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        queryParemterencoder = URLEncodedFormParameterEncoder()
+        queryParemterEncoder = URLEncodedFormParameterEncoder()
     }
     
     func request<Request: APIRequest>(
@@ -57,7 +57,7 @@ class API: APIConfiguring, APIRequesting {
         
         switch request.encoder {
         case .json: encoder = jsonParameterEncoder
-        case .query: encoder = queryParemterencoder
+        case .query: encoder = queryParemterEncoder
         }
         
         session.request(
