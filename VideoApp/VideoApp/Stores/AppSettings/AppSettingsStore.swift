@@ -17,7 +17,7 @@
 import Foundation
 
 protocol AppSettingsStoreWriting: LaunchStore {
-    var apiEnvironment: APIEnvironment { get set }
+    var environment: Environment { get set }
     var videoCodec: VideoCodec { get set }
     var topology: Topology { get set }
     var userIdentity: String { get set }
@@ -30,7 +30,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
-    @Storage(key: makeKey("apiEnvironment"), defaultValue: APIEnvironment.production) var apiEnvironment: APIEnvironment
+    @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
     @Storage(key: makeKey("videoCodec"), defaultValue: VideoCodec.h264) var videoCodec: VideoCodec
     @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String

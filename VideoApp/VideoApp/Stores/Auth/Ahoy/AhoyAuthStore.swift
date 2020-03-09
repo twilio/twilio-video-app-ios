@@ -63,7 +63,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
                 forIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
                 roomName: roomName,
                 authToken: accessToken,
-                environment: self.appSettingsStore.apiEnvironment.legacyAPIEnvironment,
+                environment: self.appSettingsStore.environment.legacyAPIEnvironment,
                 topology: self.appSettingsStore.topology.apiTopology
             ) { accessToken, error in
                 completion(accessToken, error)
@@ -92,7 +92,7 @@ private extension Topology {
     }
 }
 
-private extension APIEnvironment {
+private extension Environment {
     var legacyAPIEnvironment: TwilioVideoAppAPIEnvironment {
         switch self {
         case .production: return .production

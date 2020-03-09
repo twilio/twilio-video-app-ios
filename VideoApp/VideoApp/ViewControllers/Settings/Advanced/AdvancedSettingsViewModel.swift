@@ -24,8 +24,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                 rows: [
                     .optionList(
                         title: "Environment",
-                        selectedOption: appSettingsStore.apiEnvironment.title,
-                        viewModelFactory: selectAPIEnvironmentViewModelFactory
+                        selectedOption: appSettingsStore.environment.title,
+                        viewModelFactory: selectEnvironmentViewModelFactory
                     ),
                     .editableText(
                         title: "User Identity",
@@ -57,8 +57,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let userStore: UserStoreReading
     private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
-    private let selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory
     private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
+    private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     
@@ -66,8 +66,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
          userStore: UserStoreReading,
          crashReportStore: CrashReportStoreWriting,
          editIdentityViewModalFactory: EditTextViewModelFactory,
-         selectAPIEnvironmentViewModelFactory: SelectAPIEnvironmentViewModelFactory,
          selectTopologyViewModelFactory: SelectOptionViewModelFactory,
+         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
          developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
          sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     ) {
@@ -75,8 +75,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         self.userStore = userStore
         self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
-        self.selectAPIEnvironmentViewModelFactory = selectAPIEnvironmentViewModelFactory
         self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
+        self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
     }
