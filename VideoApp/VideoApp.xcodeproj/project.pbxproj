@@ -131,6 +131,9 @@
 		DC39248C2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */; };
 		DC39248D2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */; };
 		DC39248E2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */; };
+		DC3924902416A8070068E33F /* APIErrorResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseHandler.swift */; };
+		DC3924912416A8070068E33F /* APIErrorResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseHandler.swift */; };
+		DC3924922416A8070068E33F /* APIErrorResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseHandler.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -555,6 +558,7 @@
 		DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
 		DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModel.swift; sourceTree = "<group>"; };
+		DC39248F2416A8070068E33F /* APIErrorResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponseHandler.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -1347,6 +1351,7 @@
 				DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */,
 				DCB64B4E2409976F00E090BE /* APIRequest.swift */,
 				DCB64B48240995A100E090BE /* APIHTTPMethod.swift */,
+				DC39248F2416A8070068E33F /* APIErrorResponseHandler.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2368,6 +2373,7 @@
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
+				DC3924902416A8070068E33F /* APIErrorResponseHandler.swift in Sources */,
 				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53948235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -2493,6 +2499,7 @@
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
+				DC3924912416A8070068E33F /* APIErrorResponseHandler.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -2618,6 +2625,7 @@
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
+				DC3924922416A8070068E33F /* APIErrorResponseHandler.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* AhoyAuthStore.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,

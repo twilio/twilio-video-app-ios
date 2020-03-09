@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum APIEncoder {
+enum APIEncoder { // Type?
     case json
     case query
 }

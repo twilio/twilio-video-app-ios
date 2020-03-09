@@ -30,21 +30,20 @@ protocol APIRequesting: AnyObject {
 class API: APIConfiguring, APIRequesting {
     var config: APIConfig!
     private let session = Session()
-    private let jsonDecoder = JSONDecoder()
-    private let jsonParameterEncoder: JSONParameterEncoder
-    private let queryParemterEncoder: URLEncodedFormParameterEncoder
     private var headers: HTTPHeaders? {
         guard let accessToken = config.accessToken else { return nil }
         
         return [.authorization(accessToken)]
     }
-
-    init() {
-        let jsonEncoder = JSONEncoder()
-        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
-        jsonParameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        queryParemterEncoder = URLEncodedFormParameterEncoder()
+    private var jsonDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
+    private let errorResponseDecoder: APIErrorResponseDecoder
+    
+    init(errorResponseDecoder: APIErrorResponseDecoder) {
+        self.errorResponseDecoder = errorResponseDecoder
     }
     
     func request<Request: APIRequest>(
@@ -53,51 +52,35 @@ class API: APIConfiguring, APIRequesting {
     ) {
         let url = "https://\(config.host)/\(request.path)"
         
-        let encoder: ParameterEncoder
-        
-        switch request.encoder {
-        case .json: encoder = jsonParameterEncoder
-        case .query: encoder = queryParemterEncoder
-        }
-        
         session.request(
             url,
             method: HTTPMethod(apiHTTPMethod: request.method),
             parameters: request.parameters,
-            encoder: encoder,
+            encoder: makeParameterEncoder(encoder: request.encoder),
             headers: headers
-        ).validate().response { [weak self] response in
+        ).validate().responseDecodableOrString(of: request.responseType, decoder: jsonDecoder) { [weak self] response in
             guard let self = self else { return }
             
             switch response.result {
-            case let .success(data):
-                guard let data = data else { completion(.failure(.decodeError)); return }
-                
-                do {
-                    completion(.success(try self.jsonDecoder.decode(request.responseType, from: data)))
-                } catch {
-                    completion(.failure(.decodeError))
-                }
+            case let .success(response):
+                completion(.success(response))
             case let .failure(error):
                 guard !error.isNotConnectedToInternetError else { completion(.failure(.notConnectedToInternet)); return }
                 guard let data = response.data else { completion(.failure(.decodeError)); return }
 
-                do {
-                    let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
-                    completion(.failure(APIError(message: errorResponse.error.message)))
-                } catch {
-                    completion(.failure(.decodeError))
-                }
+                completion(.failure(self.errorResponseDecoder.decode(data: data)))
             }
         }
     }
-}
-
-private extension APIError {
-    init(message: APIErrorResponse.Error.Message) {
-        switch message {
-        case .passcodeExpired: self = .passcodeExpired
-        case .passcodeIncorrect: self = .passcodeIncorrect
+    
+    private func makeParameterEncoder(encoder: APIEncoder) -> ParameterEncoder {
+        switch encoder {
+        case .json:
+            let jsonEncoder = JSONEncoder()
+            jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+            return JSONParameterEncoder(encoder: jsonEncoder)
+        case .query:
+            return URLEncodedFormParameterEncoder()
         }
     }
 }
@@ -116,6 +99,25 @@ private extension HTTPMethod {
         switch apiHTTPMethod {
         case .post: self = .post
         case .get: self = .get
+        }
+    }
+}
+
+extension DataRequest {
+    @discardableResult func responseDecodableOrString<T: Decodable>(
+        of type: T.Type = T.self,
+        queue: DispatchQueue = .main,
+        decoder: DataDecoder = JSONDecoder(),
+        completionHandler: @escaping (AFDataResponse<T>) -> Void
+    ) -> Self {
+        if type is String.Type {
+            return responseString(queue: queue, encoding: .utf8) { completionHandler( $0.map { $0 as! T }) }
+        } else {
+            return response(
+                queue: queue,
+                responseSerializer: DecodableResponseSerializer(decoder: decoder),
+                completionHandler: completionHandler
+            )
         }
     }
 }

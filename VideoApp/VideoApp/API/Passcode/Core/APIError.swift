@@ -18,7 +18,15 @@ import Foundation
 
 enum APIError: Error, Equatable {
     case decodeError
+    case message(message: String)
     case notConnectedToInternet
     case passcodeExpired
     case passcodeIncorrect
+
+    init(message: APIErrorResponse.Error.Message) {
+        switch message {
+        case .passcodeExpired: self = .passcodeExpired
+        case .passcodeIncorrect: self = .passcodeIncorrect
+        }
+    }
 }

@@ -21,7 +21,7 @@ class AuthStoreFactory {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio, .videoInternal:
             return AhoyAuthStore(
-                api: API(),
+                api: API(errorResponseDecoder: MainErrorResponseDecoder()), // move to factory
                 appSettingsStore: AppSettingsStore.shared,
                 firebaseAuthStore: FirebaseAuthStore()
             )
@@ -29,7 +29,7 @@ class AuthStoreFactory {
             return CommunityAuthStore(
                 appSettingsStore: AppSettingsStore.shared,
                 keychainStore: KeychainStore(),
-                api: API()
+                api: API(errorResponseDecoder: CommunityErrorResponseDecoder()) // Move to factory
             )
         }
     }
