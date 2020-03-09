@@ -110,13 +110,13 @@ PODS:
   - TwilioVideo (3.2.2)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (= 5.0.2)
   - AppCenter/Distribute (= 2.5.3)
   - Crashlytics (= 3.14.0)
   - Firebase/Analytics (= 6.14.0)
   - FirebaseUI/Auth (= 8.4.0)
   - FirebaseUI/Google (= 8.4.0)
-  - KeychainAccess
+  - KeychainAccess (= 4.1.0)
   - Nimble
   - Quick
   - TwilioVideo (~> 3.2)
@@ -178,6 +178,6 @@ SPEC CHECKSUMS:
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   TwilioVideo: 996f6c2b06f7d3d49f5d4e7cd80a19b0d07f4625
 
-PODFILE CHECKSUM: 6bf05ae3ec6154a5bc6771112f4f13fd30db17ac
+PODFILE CHECKSUM: d922c034a0992e722444cf2a0977772142697d9b
 
 COCOAPODS: 1.8.4
