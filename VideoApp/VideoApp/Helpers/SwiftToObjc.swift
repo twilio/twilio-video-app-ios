@@ -32,8 +32,8 @@ import Foundation
         }
     }
 
-    @objc static func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        AuthStore.shared.fetchTwilioAccessToken(roomName: roomName, completion: completion)
+    @objc static func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, String?) -> Void) {
+        AuthStore.shared.fetchTwilioAccessToken(roomName: roomName) { completion($0, $1?.message) }
     }
 
     @objc static func prepareForShowSettingsSegue(_ segue: UIStoryboardSegue) {

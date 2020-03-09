@@ -34,7 +34,7 @@ protocol AuthStoreReading: AnyObject {
 }
 
 protocol AuthStoreTwilioAccessTokenFetching: AnyObject {
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void)
+    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void)
 }
 
 protocol AuthStoreEverything: AuthStoreWriting, AuthStoreTwilioAccessTokenFetching { }

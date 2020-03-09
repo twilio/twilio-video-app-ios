@@ -92,7 +92,7 @@ extension AuthFlow: AuthStoreWritingDelegate {
     }
 }
 
-private extension AuthError {
+extension AuthError {
     var message: String {
         switch self {
         case let .message(message): return message

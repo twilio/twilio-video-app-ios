@@ -74,7 +74,7 @@ class CommunityAuthStore: AuthStoreEverything {
         return false
     }
 
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
+    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void) {
         let request = CreateTwilioAccessTokenRequest(
             passcode: keychainStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
@@ -84,7 +84,7 @@ class CommunityAuthStore: AuthStoreEverything {
         api.request(request) { result in
             switch result {
             case let .success(response): completion(response.token, nil)
-            case let .failure(error): completion(nil, error)
+            case let .failure(error): completion(nil, AuthError(apiError: error))
             }
         }
     }

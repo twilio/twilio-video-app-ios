@@ -55,9 +55,9 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         return firebaseAuthStore.openURL(url)
     }
 
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
+    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void) {
         firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
-            guard let self = self, let accessToken = accessToken else { completion(nil, error); return }
+            guard let self = self, let accessToken = accessToken else { completion(nil, .unknown); return } // TODO: Create new auth error
             
             let host = "https://app.\(self.appSettingsStore.environment.qualifier)video.bytwilio.com/api/v1"
             self.api.config = APIConfig(host: host, accessToken: accessToken)
@@ -73,7 +73,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
             self.api.request(request) { result in
                 switch result {
                 case let .success(accessToken): completion(accessToken, nil)
-                case let .failure(error): completion(nil, error)
+                case let .failure(error): completion(nil, AuthError(apiError: error))
                 }
             }
         }
