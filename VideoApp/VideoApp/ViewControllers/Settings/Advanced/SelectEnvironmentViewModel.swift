@@ -16,16 +16,16 @@
 
 import Foundation
 
-enum APIEnvironment: String, CaseIterable, Codable {
-    case production
-    case staging
-    case development
+class SelectEnvironmentViewModel: SelectOptionViewModel {
+    let title = "Environment"
+    let options = Environment.allCases.map { $0.title }
+    var selectedIndex: Int {
+        get { Environment.allCases.firstIndex(of: appSettingsStore.environment) ?? 0 }
+        set { appSettingsStore.environment = Environment.allCases[newValue] }
+    }
+    private let appSettingsStore: AppSettingsStoreWriting
     
-    var title: String {
-        switch self {
-        case .production: return "Production"
-        case .staging: return "Staging"
-        case .development: return "Development"
-        }
+    init(appSettingsStore: AppSettingsStoreWriting) {
+        self.appSettingsStore = appSettingsStore
     }
 }

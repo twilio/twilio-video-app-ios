@@ -51,14 +51,14 @@ class AhoyAuthStoreSpec: QuickSpec {
                 firebaseResult: (String?, Error?) = (nil, nil),
                 firebaseDisplayName: String = "",
                 userIdentitySetting: String = "",
-                apiEnvironmentSetting: APIEnvironment = .production,
+                environmentSetting: Environment = .production,
                 topologySetting: Topology = .group,
                 twilioResult: (String?, Error?) = (nil, nil)
             ) {
                 mockFirebaseAuthStore.stubbedFetchAccessTokenCompletionResult = firebaseResult
                 mockFirebaseAuthStore.stubbedUserDisplayName = firebaseDisplayName
                 mockAppSettingsStore.stubbedUserIdentity = userIdentitySetting
-                mockAppSettingsStore.stubbedApiEnvironment = apiEnvironmentSetting
+                mockAppSettingsStore.stubbedEnvironment = environmentSetting
                 mockAppSettingsStore.stubbedTopology = topologySetting
                 mockAPI.stubbedRetrieveAccessTokenCompletionBlockResult = twilioResult
 
@@ -177,17 +177,17 @@ class AhoyAuthStoreSpec: QuickSpec {
                     }
                 }
 
-                context("when apiEnvironment is production") {
+                context("when environment is production") {
                     it("is called with production environment") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), apiEnvironmentSetting: .production)
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), environmentSetting: .production)
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.production))
                     }
                 }
                 
-                context("when apiEnvironment is development") {
+                context("when environment is development") {
                     it("is called with development environment") {
-                        fetchTwilioAccessToken(firebaseResult: ("", nil), apiEnvironmentSetting: .development)
+                        fetchTwilioAccessToken(firebaseResult: ("", nil), environmentSetting: .development)
 
                         expect(mockAPI.invokedRetrieveAccessTokenParameters?.environment).to(equal(.development))
                     }

@@ -16,8 +16,16 @@
 
 import Foundation
 
-class SelectAPIEnvironmentViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectAPIEnvironmentViewModel(appSettingsStore: AppSettingsStore.shared)
+enum Environment: String, CaseIterable, Codable {
+    case production
+    case staging
+    case development
+    
+    var title: String {
+        switch self {
+        case .production: return "Production"
+        case .staging: return "Staging"
+        case .development: return "Development"
+        }
     }
 }
