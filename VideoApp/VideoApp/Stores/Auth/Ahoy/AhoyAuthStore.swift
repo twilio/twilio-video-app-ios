@@ -59,7 +59,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
         firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
             guard let self = self, let accessToken = accessToken else { completion(nil, .unknown); return } // TODO: Create new auth error
             
-            let host = "https://app.\(self.appSettingsStore.environment.qualifier)video.bytwilio.com/api/v1"
+            let host = "app.\(self.appSettingsStore.environment.qualifier)video.bytwilio.com/api/v1"
             self.api.config = APIConfig(host: host, accessToken: accessToken)
 
             let parameters = CreateFirebaseTwilioAccessTokenRequest.Parameters(

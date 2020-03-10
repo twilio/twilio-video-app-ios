@@ -34,7 +34,6 @@ struct CreateFirebaseTwilioAccessTokenRequest: APIRequest {
     }
 
     let path = "token"
-    let method = APIHTTPMethod.post
     let parameters: Parameters
     let encoder = APIEncoder.query
     let responseType = String.self
