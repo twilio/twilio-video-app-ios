@@ -16,17 +16,12 @@
 
 import Foundation
 
-protocol APIRequest {
-    associatedtype Parameters: Encodable
-    associatedtype Response: Decodable
-    var path: String { get }
-    var method: APIHTTPMethod { get }
-    var parameters: Parameters { get }
-    var encoding: APIEncoding { get }
-    var responseType: Response.Type { get }
+protocol APIURLFactory: AnyObject {
+    func makeURL(host: String, path: String) -> String
 }
 
-extension APIRequest {
-    var encoding: APIEncoding { .jsonBody }
-    var method: APIHTTPMethod { .get }
+class APIURLFactoryImpl: APIURLFactory {
+    func makeURL(host: String, path: String) -> String {
+        return "https://\(host)/\(path)"
+    }
 }

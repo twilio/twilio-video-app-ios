@@ -18,6 +18,7 @@ import Alamofire
 
 protocol APIConfiguring: AnyObject {
     var config: APIConfig! { get set }
+    var errorResponseDecoder: APIErrorResponseDecoder! { get set }
 }
 
 protocol APIRequesting: AnyObject {
@@ -28,35 +29,42 @@ protocol APIRequesting: AnyObject {
 }
 
 class API: APIConfiguring, APIRequesting {
+    static var shared: APIConfiguring & APIRequesting = API(
+        session: Session(),
+        urlFactory: APIURLFactoryImpl(),
+        jsonEncoder: JSONEncoder(),
+        jsonDecoder: JSONDecoder()
+    )
     var config: APIConfig!
-    private let session = Session()
+    var errorResponseDecoder: APIErrorResponseDecoder!
+    private let session: Session
+    private let urlFactory: APIURLFactory
+    private let jsonEncoder: JSONEncoder
+    private let jsonDecoder: JSONDecoder
     private var headers: HTTPHeaders? {
         guard let accessToken = config.accessToken else { return nil }
         
         return [.authorization(accessToken)]
     }
-    private var jsonDecoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }
-    private let errorResponseDecoder: APIErrorResponseDecoder
-    
-    init(errorResponseDecoder: APIErrorResponseDecoder) {
-        self.errorResponseDecoder = errorResponseDecoder
+
+    init(session: Session, urlFactory: APIURLFactory, jsonEncoder: JSONEncoder, jsonDecoder: JSONDecoder) {
+        self.session = session
+        self.urlFactory = urlFactory
+        self.jsonEncoder = jsonEncoder
+        self.jsonDecoder = jsonDecoder
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
     }
     
     func request<Request: APIRequest>(
         _ request: Request,
         completion: @escaping (Result<Request.Response, APIError>) -> Void
     ) {
-        let url = "https://\(config.host)/\(request.path)"
-        
         session.request(
-            url,
+            urlFactory.makeURL(host: config.host, path: request.path),
             method: HTTPMethod(apiHTTPMethod: request.method),
             parameters: request.parameters,
-            encoder: makeParameterEncoder(encoder: request.encoder),
+            encoder: makeParameterEncoder(encoding: request.encoding),
             headers: headers
         ).validate().responseDecodableOrString(of: request.responseType, decoder: jsonDecoder) { [weak self] response in
             guard let self = self else { return }
@@ -73,14 +81,10 @@ class API: APIConfiguring, APIRequesting {
         }
     }
     
-    private func makeParameterEncoder(encoder: APIEncoder) -> ParameterEncoder {
-        switch encoder {
-        case .json:
-            let jsonEncoder = JSONEncoder()
-            jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
-            return JSONParameterEncoder(encoder: jsonEncoder)
-        case .query:
-            return URLEncodedFormParameterEncoder()
+    private func makeParameterEncoder(encoding: APIEncoding) -> ParameterEncoder {
+        switch encoding {
+        case .jsonBody: return JSONParameterEncoder(encoder: jsonEncoder)
+        case .queryStringURL: return URLEncodedFormParameterEncoder()
         }
     }
 }
@@ -106,18 +110,13 @@ private extension HTTPMethod {
 extension DataRequest {
     @discardableResult func responseDecodableOrString<T: Decodable>(
         of type: T.Type = T.self,
-        queue: DispatchQueue = .main,
-        decoder: DataDecoder = JSONDecoder(),
+        decoder: DataDecoder,
         completionHandler: @escaping (AFDataResponse<T>) -> Void
     ) -> Self {
         if type is String.Type {
-            return responseString(queue: queue, encoding: .utf8) { completionHandler( $0.map { $0 as! T }) } // Don't bang?
+            return responseString { completionHandler( $0.map { $0 as! T }) }
         } else {
-            return response(
-                queue: queue,
-                responseSerializer: DecodableResponseSerializer(decoder: decoder),
-                completionHandler: completionHandler
-            )
+            return responseDecodable(of: type, decoder: decoder, completionHandler: completionHandler)
         }
     }
 }

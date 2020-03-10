@@ -16,16 +16,10 @@
 
 import Foundation
 
-class CommunityErrorResponseDecoder: APIErrorResponseDecoder {
-    private let jsonDecoder = JSONDecoder()
-    
+class InternalAPIErrorResponseDecoder: APIErrorResponseDecoder {
     func decode(data: Data) -> APIError {
-        do {
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-            let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
-            return APIError(message: errorResponse.error.message)
-        } catch {
-            return .decodeError
-        }
+        guard let string = String(data: data, encoding: .utf8) else { return .decodeError }
+
+        return .message(message: string)
     }
 }

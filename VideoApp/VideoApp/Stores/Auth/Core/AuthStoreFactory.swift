@@ -20,16 +20,18 @@ class AuthStoreFactory {
     func makeAuthStore() -> AuthStoreEverything {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio, .videoInternal:
+            API.shared.errorResponseDecoder = InternalAPIErrorResponseDecoder()
             return InternalAuthStore(
-                api: API(errorResponseDecoder: InternalErrorResponseDecoder()), // move to factory
+                api: API.shared,
                 appSettingsStore: AppSettingsStore.shared,
                 firebaseAuthStore: FirebaseAuthStore()
             )
         case .videoCommunity:
+            API.shared.errorResponseDecoder = CommunityAPIErrorResponseDecoder()
             return CommunityAuthStore(
                 appSettingsStore: AppSettingsStore.shared,
                 keychainStore: KeychainStore(),
-                api: API(errorResponseDecoder: CommunityErrorResponseDecoder()) // Move to factory
+                api: API.shared
             )
         }
     }

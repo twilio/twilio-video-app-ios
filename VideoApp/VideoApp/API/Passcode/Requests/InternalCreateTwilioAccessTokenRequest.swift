@@ -35,7 +35,7 @@ struct InternalCreateTwilioAccessTokenRequest: APIRequest {
 
     let path = "token"
     let parameters: Parameters
-    let encoder = APIEncoder.query
+    let encoding = APIEncoding.queryStringURL
     let responseType = String.self
 
     init(identity: String, roomName: String, topology: Parameters.Topology) {

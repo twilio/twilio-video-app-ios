@@ -16,10 +16,7 @@
 
 import Foundation
 
-class InternalErrorResponseDecoder: APIErrorResponseDecoder {
-    func decode(data: Data) -> APIError {
-        guard let string = String(data: data, encoding: .utf8) else { return .decodeError }
-
-        return .message(message: string)
-    }
+enum APIEncoding {
+    case jsonBody
+    case queryStringURL
 }

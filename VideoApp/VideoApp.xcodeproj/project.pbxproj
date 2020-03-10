@@ -134,12 +134,18 @@
 		DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
 		DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
 		DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
-		DC3C32D02417E6C400F56AFB /* CommunityErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityErrorResponseDecoder.swift */; };
-		DC3C32D12417E6C400F56AFB /* CommunityErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityErrorResponseDecoder.swift */; };
-		DC3C32D22417E6C400F56AFB /* CommunityErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityErrorResponseDecoder.swift */; };
-		DC3C32D42417E6E000F56AFB /* InternalErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalErrorResponseDecoder.swift */; };
-		DC3C32D52417E6E000F56AFB /* InternalErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalErrorResponseDecoder.swift */; };
-		DC3C32D62417E6E000F56AFB /* InternalErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalErrorResponseDecoder.swift */; };
+		DC3C32D02417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */; };
+		DC3C32D12417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */; };
+		DC3C32D22417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */; };
+		DC3C32D42417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */; };
+		DC3C32D52417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */; };
+		DC3C32D62417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */; };
+		DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D724180C3100F56AFB /* APIEncoding.swift */; };
+		DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D724180C3100F56AFB /* APIEncoding.swift */; };
+		DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D724180C3100F56AFB /* APIEncoding.swift */; };
+		DC3C32DC241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
+		DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
+		DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
 		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
@@ -565,8 +571,10 @@
 		DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
 		DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModel.swift; sourceTree = "<group>"; };
 		DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponseDecoder.swift; sourceTree = "<group>"; };
-		DC3C32CF2417E6C400F56AFB /* CommunityErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityErrorResponseDecoder.swift; sourceTree = "<group>"; };
-		DC3C32D32417E6E000F56AFB /* InternalErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalErrorResponseDecoder.swift; sourceTree = "<group>"; };
+		DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAPIErrorResponseDecoder.swift; sourceTree = "<group>"; };
+		DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAPIErrorResponseDecoder.swift; sourceTree = "<group>"; };
+		DC3C32D724180C3100F56AFB /* APIEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEncoding.swift; sourceTree = "<group>"; };
+		DC3C32DB241812B400F56AFB /* APIURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURLFactory.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -1355,13 +1363,15 @@
 			children = (
 				DCB7C1842405BD68009DEA70 /* API.swift */,
 				DCB64B542409BC4E00E090BE /* APIConfig.swift */,
+				DC3C32D724180C3100F56AFB /* APIEncoding.swift */,
 				DCC7E36924085AD800431AC3 /* APIError.swift */,
 				DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */,
 				DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */,
 				DCB64B4E2409976F00E090BE /* APIRequest.swift */,
 				DCB64B48240995A100E090BE /* APIHTTPMethod.swift */,
-				DC3C32CF2417E6C400F56AFB /* CommunityErrorResponseDecoder.swift */,
-				DC3C32D32417E6E000F56AFB /* InternalErrorResponseDecoder.swift */,
+				DC3C32DB241812B400F56AFB /* APIURLFactory.swift */,
+				DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */,
+				DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2336,6 +2346,7 @@
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
+				DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
@@ -2353,7 +2364,7 @@
 				DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
-				DC3C32D42417E6E000F56AFB /* InternalErrorResponseDecoder.swift in Sources */,
+				DC3C32D42417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
 				DCA65021240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */,
@@ -2367,6 +2378,7 @@
 				DC82A35C23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
 				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC82A34F23FC9AAA0081578C /* JSONContainer.swift in Sources */,
+				DC3C32DC241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */,
 				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
@@ -2429,7 +2441,7 @@
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B4F2409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
-				DC3C32D02417E6C400F56AFB /* CommunityErrorResponseDecoder.swift in Sources */,
+				DC3C32D02417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044695238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2464,6 +2476,7 @@
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
+				DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
@@ -2481,7 +2494,7 @@
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
-				DC3C32D52417E6E000F56AFB /* InternalErrorResponseDecoder.swift in Sources */,
+				DC3C32D52417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
 				DCA65020240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */,
@@ -2495,6 +2508,7 @@
 				DC82A35D23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
+				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
@@ -2557,7 +2571,7 @@
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
-				DC3C32D12417E6C400F56AFB /* CommunityErrorResponseDecoder.swift in Sources */,
+				DC3C32D12417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2592,6 +2606,7 @@
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
+				DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
@@ -2609,7 +2624,7 @@
 				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
-				DC3C32D62417E6E000F56AFB /* InternalErrorResponseDecoder.swift in Sources */,
+				DC3C32D62417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
 				DCA6501F240D91C90038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
 				DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */,
@@ -2623,6 +2638,7 @@
 				DC82A35E23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,
+				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
@@ -2685,7 +2701,7 @@
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
-				DC3C32D22417E6C400F56AFB /* CommunityErrorResponseDecoder.swift in Sources */,
+				DC3C32D22417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,

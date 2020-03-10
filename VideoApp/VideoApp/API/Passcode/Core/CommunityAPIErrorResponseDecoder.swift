@@ -16,17 +16,16 @@
 
 import Foundation
 
-protocol APIRequest {
-    associatedtype Parameters: Encodable
-    associatedtype Response: Decodable
-    var path: String { get }
-    var method: APIHTTPMethod { get }
-    var parameters: Parameters { get }
-    var encoding: APIEncoding { get }
-    var responseType: Response.Type { get }
-}
-
-extension APIRequest {
-    var encoding: APIEncoding { .jsonBody }
-    var method: APIHTTPMethod { .get }
+class CommunityAPIErrorResponseDecoder: APIErrorResponseDecoder {
+    private let jsonDecoder = JSONDecoder()
+    
+    func decode(data: Data) -> APIError {
+        do {
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+            let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
+            return APIError(message: errorResponse.error.message)
+        } catch {
+            return .decodeError
+        }
+    }
 }
