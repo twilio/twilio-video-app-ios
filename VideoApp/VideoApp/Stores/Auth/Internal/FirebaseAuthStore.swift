@@ -18,7 +18,7 @@ import Firebase
 import GoogleSignIn
 
 protocol FirebaseAuthStoreWriting: AuthStoreWriting {
-    func fetchAccessToken(completion: @escaping (String?, Error?) -> Void)
+    func fetchAccessToken(completion: @escaping (String?, AuthError?) -> Void)
 }
 
 class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
@@ -61,10 +61,12 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
         return googleSignIn.handle(url)
     }
     
-    func fetchAccessToken(completion: @escaping (String?, Error?) -> Void) {
+    func fetchAccessToken(completion: @escaping (String?, AuthError?) -> Void) {
         guard let user = firebaseAuth.currentUser else { completion(nil, nil); return }
         
-        user.getIDTokenForcingRefresh(true, completion: completion)
+        user.getIDTokenForcingRefresh(true) { accessToken, error in
+            completion(accessToken, AuthError(firebaseAuthError: error))
+        }
     }
 }
 

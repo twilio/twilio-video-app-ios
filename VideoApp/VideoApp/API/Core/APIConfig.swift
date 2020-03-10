@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct APIConfig {
+struct APIConfig: Equatable {
     let host: String
     let accessToken: String?
     

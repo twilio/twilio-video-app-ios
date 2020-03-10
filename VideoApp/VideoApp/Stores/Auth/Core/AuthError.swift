@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum AuthError: Error {
+enum AuthError: Error, Equatable {
     case invalidEmail
     case message(message: String)
     case networkError

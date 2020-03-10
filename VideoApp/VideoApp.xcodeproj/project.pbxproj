@@ -176,10 +176,9 @@
 		DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
 		DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
 		DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
-		DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */; };
+		DC4E4E2F2357A73900C5D313 /* InternalAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* InternalAuthStoreSpec.swift */; };
 		DC6EABBD2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */; };
 		DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */; };
-		DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */; };
 		DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
 		DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
 		DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
@@ -579,11 +578,10 @@
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
 		DC4E4E2223577EE500C5D313 /* Topology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topology.swift; sourceTree = "<group>"; };
 		DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhoyAuthStoreSpec.swift; sourceTree = "<group>"; };
+		DC4E4E2E2357A73900C5D313 /* InternalAuthStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStoreSpec.swift; sourceTree = "<group>"; };
 		DC4E4E302357A73900C5D313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6EABBC2357CA2E0064E9E0 /* MockFirebaseAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseAuthStore.swift; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
-		DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTwilioVideoAppAPI.swift; sourceTree = "<group>"; };
 		DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariableStore.swift; sourceTree = "<group>"; };
 		DC82A34E23FC9AAA0081578C /* JSONContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContainer.swift; sourceTree = "<group>"; };
 		DC82A35223FDB6890081578C /* SDKLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevel.swift; sourceTree = "<group>"; };
@@ -1083,7 +1081,6 @@
 				DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */,
 				DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */,
 				DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */,
-				DC6EABC02357CB440064E9E0 /* MockTwilioVideoAppAPI.swift */,
 				DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */,
 				DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */,
 				DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */,
@@ -1095,13 +1092,13 @@
 		DC6EABCB235907280064E9E0 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				DC4E4E2E2357A73900C5D313 /* AhoyAuthStoreSpec.swift */,
 				DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */,
 				DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */,
 				DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */,
 				DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
 				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
+				DC4E4E2E2357A73900C5D313 /* InternalAuthStoreSpec.swift */,
 				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
 				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
 				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
@@ -2715,12 +2712,11 @@
 				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
 				DCB64B5F240D811900E090BE /* MockAuthStoreWritingDelegate.swift in Sources */,
 				DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */,
-				DC4E4E2F2357A73900C5D313 /* AhoyAuthStoreSpec.swift in Sources */,
+				DC4E4E2F2357A73900C5D313 /* InternalAuthStoreSpec.swift in Sources */,
 				DCB64B5D240D66C700E090BE /* MockKeychainStore.swift in Sources */,
 				DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */,
 				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
 				DCD7676623DFDA1700A2939C /* DeepLinkStoreSpec.swift in Sources */,
-				DC6EABC12357CB440064E9E0 /* MockTwilioVideoAppAPI.swift in Sources */,
 				DCD7676823DFDEEA00A2939C /* UserActivityStoreSpec.swift in Sources */,
 				DCD7674F23DA350A00A2939C /* DeepLinkSpec.swift in Sources */,
 				DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */,

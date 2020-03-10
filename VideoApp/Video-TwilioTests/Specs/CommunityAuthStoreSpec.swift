@@ -111,7 +111,7 @@ class CommunityAuthStoreSpec: QuickSpec {
             func signIn(
                 userIdentity: String = "",
                 passcode: String = "",
-                result: Result<Any, APIError> = .success(CreateTwilioAccessTokenResponse.stub())
+                result: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
             ) {
                 mockAPI.stubbedRequestCompletionResult = result
                 sut.signIn(userIdentity: userIdentity, passcode: passcode) { error in
@@ -151,7 +151,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with foo userIdentity") {
                         signIn(userIdentity: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
                     }
                 }
 
@@ -159,7 +159,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with bar userIdentity") {
                         signIn(userIdentity: "bar")
 
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
                     }
                 }
 
@@ -167,7 +167,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with foo passcode") {
                         signIn(passcode: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("foo"))
                     }
                 }
 
@@ -175,20 +175,20 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with bar passcode") {
                         signIn(passcode: "bar")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("bar"))
                     }
                 }
 
                 it("is called with empty roomName") {
                     signIn()
                     
-                    expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal(""))
+                    expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal(""))
                 }
 
                 context("when result is success") {
                     context("when passcode is foo") {
                         it("stores foo passcode in keychain") {
-                            signIn(passcode: "foo", result: .success(CreateTwilioAccessTokenResponse.stub()))
+                            signIn(passcode: "foo", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
                             expect(mockKeychainStore.invokedPasscode).to(equal("foo"))
@@ -197,7 +197,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when passcode is bar") {
                         it("stores bar passcode in keychain") {
-                            signIn(passcode: "bar", result: .success(CreateTwilioAccessTokenResponse.stub()))
+                            signIn(passcode: "bar", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
                             expect(mockKeychainStore.invokedPasscode).to(equal("bar"))
@@ -206,7 +206,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when userIdentity is foo") {
                         it("sets userIdentity setting to foo") {
-                            signIn(userIdentity: "foo", result: .success(CreateTwilioAccessTokenResponse.stub()))
+                            signIn(userIdentity: "foo", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("foo"))
@@ -215,7 +215,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     
                     context("when userIdentity is bar") {
                         it("sets userIdentity setting to bar") {
-                            signIn(userIdentity: "bar", result: .success(CreateTwilioAccessTokenResponse.stub()))
+                            signIn(userIdentity: "bar", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("bar"))
@@ -223,7 +223,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     }
 
                     it("calls completion with nil error") {
-                        signIn(result: .success(CreateTwilioAccessTokenResponse.stub()))
+                        signIn(result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                         
                         expect(invokedCompletionCount).to(equal(1))
                         expect(invokedCompletionParameters?.error).to(beNil())
@@ -301,7 +301,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                 passcode: String? = nil,
                 userIdentity: String = "",
                 roomName: String = "",
-                result: Result<Any, APIError> = .success(CreateTwilioAccessTokenResponse.stub())
+                result: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
             ) {
                 mockKeychainStore.stubbedPasscode = passcode
                 mockAppSettingsStore.stubbedUserIdentity = userIdentity
@@ -323,7 +323,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with empty passcode") {
                         fetchTwilioAccessToken(passcode: nil)
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal(""))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal(""))
                     }
                 }
 
@@ -331,7 +331,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with foo passcode") {
                         fetchTwilioAccessToken(passcode: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("foo"))
                     }
                 }
 
@@ -339,7 +339,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with foo userIdentity") {
                         fetchTwilioAccessToken(userIdentity: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
                     }
                 }
 
@@ -347,7 +347,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with bar userIdentity") {
                         fetchTwilioAccessToken(userIdentity: "bar")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
                     }
                 }
 
@@ -355,7 +355,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with foo roomName") {
                         fetchTwilioAccessToken(roomName: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("foo"))
                     }
                 }
 
@@ -363,14 +363,14 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with bar roomName") {
                         fetchTwilioAccessToken(roomName: "bar")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("bar"))
                     }
                 }
                 
                 context("when result is success") {
                     context("when token is foo") {
                         it("calls completion with foo token") {
-                            fetchTwilioAccessToken(result: .success(CreateTwilioAccessTokenResponse.stub(token: "foo")))
+                            fetchTwilioAccessToken(result: .success(CommunityCreateTwilioAccessTokenResponse.stub(token: "foo")))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(equal("foo"))
@@ -380,7 +380,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     
                     context("when token is bar") {
                         it("calls completion with bar token") {
-                            fetchTwilioAccessToken(result: .success(CreateTwilioAccessTokenResponse.stub(token: "bar")))
+                            fetchTwilioAccessToken(result: .success(CommunityCreateTwilioAccessTokenResponse.stub(token: "bar")))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(equal("bar"))
@@ -390,23 +390,23 @@ class CommunityAuthStoreSpec: QuickSpec {
                 }
 
                 context("when result is failure") {
-                    context("when error is expiredPasscode") {
-                        it("calls completion with expiredPasscode error") {
+                    context("when error is passcodeExpired") {
+                        it("calls completion with passcodeExpired error") {
                             fetchTwilioAccessToken(result: .failure(.passcodeExpired))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(beNil())
-                            expect(invokedCompletionParameters?.error as? APIError).to(equal(.passcodeExpired))
+                            expect(invokedCompletionParameters?.error as? AuthError).to(equal(.passcodeExpired))
                         }
                     }
 
                     context("when error is notConnectedToInternet") {
-                        it("calls completion with notConnectedToInternet error") {
+                        it("calls completion with networkError error") {
                             fetchTwilioAccessToken(result: .failure(.notConnectedToInternet))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.accessToken).to(beNil())
-                            expect(invokedCompletionParameters?.error as? APIError).to(equal(.notConnectedToInternet))
+                            expect(invokedCompletionParameters?.error as? AuthError).to(equal(.networkError))
                         }
                     }
                 }

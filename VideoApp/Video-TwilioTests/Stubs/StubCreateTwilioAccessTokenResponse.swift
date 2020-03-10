@@ -16,8 +16,8 @@
 
 @testable import VideoApp
 
-extension CreateTwilioAccessTokenResponse {
-    static func stub(token: String = "") -> CreateTwilioAccessTokenResponse {
+extension CommunityCreateTwilioAccessTokenResponse {
+    static func stub(token: String = "") -> CommunityCreateTwilioAccessTokenResponse {
         .init(token: token)
     }
 }
