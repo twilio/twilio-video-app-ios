@@ -16,7 +16,7 @@
 
 import Foundation
 
-class AhoyAuthStore: NSObject, AuthStoreEverything {
+class InternalAuthStore: NSObject, AuthStoreEverything {
     weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { return firebaseAuthStore.isSignedIn }
     var userDisplayName: String { return firebaseAuthStore.userDisplayName }
@@ -44,7 +44,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
 
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
-        print("Passcode sign in not supported by Firebase auth.")
+        fatalError("Passcode sign in not supported by Firebase auth.")
     }
 
     func signOut() {
@@ -62,13 +62,11 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
             let host = "app.\(self.appSettingsStore.environment.qualifier)video.bytwilio.com/api/v1"
             self.api.config = APIConfig(host: host, accessToken: accessToken)
 
-            let parameters = CreateFirebaseTwilioAccessTokenRequest.Parameters(
+            let request = InternalCreateTwilioAccessTokenRequest(
                 identity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
                 roomName: roomName,
                 topology: .init(topology: self.appSettingsStore.topology)
             )
-            
-            let request = CreateFirebaseTwilioAccessTokenRequest(parameters: parameters)
             
             self.api.request(request) { result in
                 switch result {
@@ -80,7 +78,7 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
 }
 
-extension AhoyAuthStore: AuthStoreWritingDelegate {
+extension InternalAuthStore: AuthStoreWritingDelegate {
     func didSignIn(error: AuthError?) {
         delegate?.didSignIn(error: error)
     }
@@ -101,7 +99,7 @@ private extension Environment {
     }
 }
 
-private extension CreateFirebaseTwilioAccessTokenRequest.Parameters.Topology {
+private extension InternalCreateTwilioAccessTokenRequest.Parameters.Topology {
     init(topology: Topology) {
         switch topology {
         case .group: self = .group

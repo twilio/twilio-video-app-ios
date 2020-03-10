@@ -20,8 +20,8 @@ class AuthStoreFactory {
     func makeAuthStore() -> AuthStoreEverything {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio, .videoInternal:
-            return AhoyAuthStore(
-                api: API(errorResponseDecoder: MainErrorResponseDecoder()), // move to factory
+            return InternalAuthStore(
+                api: API(errorResponseDecoder: InternalErrorResponseDecoder()), // move to factory
                 appSettingsStore: AppSettingsStore.shared,
                 firebaseAuthStore: FirebaseAuthStore()
             )

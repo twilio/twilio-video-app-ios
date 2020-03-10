@@ -16,7 +16,7 @@
 
 import Foundation
 
-class MainErrorResponseDecoder: APIErrorResponseDecoder {
+class InternalErrorResponseDecoder: APIErrorResponseDecoder {
     func decode(data: Data) -> APIError {
         guard let string = String(data: data, encoding: .utf8) else { return .decodeError }
 

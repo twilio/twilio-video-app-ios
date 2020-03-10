@@ -41,12 +41,12 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
-        print("Email sign in not supported by community auth.")
+        fatalError("Email sign in not supported by community auth.")
     }
 
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
         configureAPI(passcode: passcode)
-        let request = CreateTwilioAccessTokenRequest(passcode: passcode, userIdentity: userIdentity, roomName: "")
+        let request = CommunityCreateTwilioAccessTokenRequest(passcode: passcode, userIdentity: userIdentity, roomName: "")
         
         api.request(request) { [weak self] result in
             guard let self = self else { return }
@@ -75,7 +75,7 @@ class CommunityAuthStore: AuthStoreEverything {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void) {
-        let request = CreateTwilioAccessTokenRequest(
+        let request = CommunityCreateTwilioAccessTokenRequest(
             passcode: keychainStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
             roomName: roomName

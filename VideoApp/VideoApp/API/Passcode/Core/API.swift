@@ -111,7 +111,7 @@ extension DataRequest {
         completionHandler: @escaping (AFDataResponse<T>) -> Void
     ) -> Self {
         if type is String.Type {
-            return responseString(queue: queue, encoding: .utf8) { completionHandler( $0.map { $0 as! T }) }
+            return responseString(queue: queue, encoding: .utf8) { completionHandler( $0.map { $0 as! T }) } // Don't bang?
         } else {
             return response(
                 queue: queue,

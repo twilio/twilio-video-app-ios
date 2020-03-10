@@ -16,29 +16,23 @@
 
 import Foundation
 
-struct CreateFirebaseTwilioAccessTokenRequest: APIRequest {
+struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
     struct Parameters: Encodable {
-        enum AppEnvironment: String, Encodable {
-            case production
-        }
-        
-        enum Topology: String, Encodable {
-            case group
-            case peerToPeer = "peer-to-peer"
-        }
-        
-        let identity: String
+        let passcode: String
+        let userIdentity: String
         let roomName: String
-        let appEnvironment = AppEnvironment.production
-        let topology: Topology
     }
 
     let path = "token"
+    let method = APIHTTPMethod.post
     let parameters: Parameters
-    let encoder = APIEncoder.query
-    let responseType = String.self
+    let responseType = CommunityCreateTwilioAccessTokenResponse.self
 
-    init(parameters: Parameters) {
-        self.parameters = parameters
+    init(passcode: String, userIdentity: String, roomName: String) {
+        parameters = Parameters(
+            passcode: PasscodeComponents(string: passcode).passcode,
+            userIdentity: userIdentity,
+            roomName: roomName
+        )
     }
 }
