@@ -57,10 +57,9 @@ class InternalAuthStore: NSObject, AuthStoreEverything {
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void) {
         firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
-            guard let self = self, let accessToken = accessToken else { completion(nil, .unknown); return } // TODO: Create new auth error
+            guard let self = self, let accessToken = accessToken else { completion(nil, .unknown); return }
             
-            let host = "app.\(self.appSettingsStore.environment.qualifier)video.bytwilio.com/api/v1"
-            self.api.config = APIConfig(host: host, accessToken: accessToken)
+            self.api.config = APIConfig(host: self.appSettingsStore.environment.host, accessToken: accessToken)
 
             let request = InternalCreateTwilioAccessTokenRequest(
                 identity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
@@ -90,11 +89,11 @@ extension InternalAuthStore: AuthStoreWritingDelegate {
 }
 
 private extension Environment {
-    var qualifier: String {
+    var host: String {
         switch self {
-        case .production: return ""
-        case .staging: return "stage."
-        case .development: return "dev."
+        case .production: return "app.video.bytwilio.com/api/v1"
+        case .staging: return "app.stage.video.bytwilio.com/api/v1"
+        case .development: return "app.dev.video.bytwilio.com/api/v1"
         }
     }
 }

@@ -17,12 +17,12 @@
 import Foundation
 
 class CommunityAPIErrorResponseDecoder: APIErrorResponseDecoder {
-    private let jsonDecoder = JSONDecoder()
-    
     func decode(data: Data) -> APIError {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
         do {
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-            let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
+            let errorResponse = try jsonDecoder.decode(APIErrorResponse.self, from: data)
             return APIError(message: errorResponse.error.message)
         } catch {
             return .decodeError
