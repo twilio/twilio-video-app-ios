@@ -11,9 +11,6 @@
 		241282451E36A6AB002198BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
 		241282471E36A6AB002198BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
 		2412824A1E36A6AB002198BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
-		242D1C16217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */; };
-		242D1C17217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */; };
-		242D1C18217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */; };
 		243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
 		243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
 		243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
@@ -173,9 +170,6 @@
 		DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
-		DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
-		DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
-		DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */; };
 		DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
@@ -491,8 +485,6 @@
 		241282461E36A6AB002198BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241282491E36A6AB002198BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2412824B1E36A6AB002198BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwilioVideoAppAPI.m; sourceTree = "<group>"; };
-		242D1C15217662B700DB63E5 /* TwilioVideoAppAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwilioVideoAppAPI.h; sourceTree = "<group>"; };
 		243CDB4922665F1800637B6B /* TwilioColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioColors.swift; sourceTree = "<group>"; };
 		243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualityIndicator.swift; sourceTree = "<group>"; };
 		24480A451EF07716003BCF00 /* Video.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Video.entitlements; sourceTree = "<group>"; };
@@ -584,7 +576,6 @@
 		DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionSegueSender.swift; sourceTree = "<group>"; };
 		DC44C2E923876B4700205174 /* EditTextSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextSegueSender.swift; sourceTree = "<group>"; };
 		DC4568852385D5490069BB5A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioVideoAppAPIProtocol.swift; sourceTree = "<group>"; };
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
 		DC4E4E2223577EE500C5D313 /* Topology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topology.swift; sourceTree = "<group>"; };
 		DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -831,8 +822,9 @@
 		24693EEA1E393F1B00F21DDC /* API */ = {
 			isa = PBXGroup;
 			children = (
-				DCB64B5224099DBF00E090BE /* Firebase */,
-				DCB7C1912405C1BC009DEA70 /* Passcode */,
+				DCB64B4C2409970A00E090BE /* Core */,
+				DCB64B4D2409973600E090BE /* Requests */,
+				DCB64B60240D909400E090BE /* Responses */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1385,16 +1377,6 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
-		DCB64B5224099DBF00E090BE /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				242D1C15217662B700DB63E5 /* TwilioVideoAppAPI.h */,
-				242D1C14217662B700DB63E5 /* TwilioVideoAppAPI.m */,
-				DC4E4E1A23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		DCB64B60240D909400E090BE /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -1410,16 +1392,6 @@
 				DCB7C1882405BE40009DEA70 /* KeychainStore.swift */,
 			);
 			path = Keychain;
-			sourceTree = "<group>";
-		};
-		DCB7C1912405C1BC009DEA70 /* Passcode */ = {
-			isa = PBXGroup;
-			children = (
-				DCB64B4C2409970A00E090BE /* Core */,
-				DCB64B4D2409973600E090BE /* Requests */,
-				DCB64B60240D909400E090BE /* Responses */,
-			);
-			path = Passcode;
 			sourceTree = "<group>";
 		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
@@ -2383,7 +2355,6 @@
 				DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */,
 				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
 				248D94A71ED3176000FC8A94 /* VideoCollectionViewCell.m in Sources */,
-				242D1C16217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */,
 				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */,
@@ -2402,7 +2373,6 @@
 				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
-				DC4E4E1B23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1852405BD68009DEA70 /* API.swift in Sources */,
@@ -2513,7 +2483,6 @@
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
 				4B0012271FBA52C4004A587E /* VideoCollectionViewCell.m in Sources */,
-				242D1C17217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				4B0012281FBA52C4004A587E /* LoginViewController.m in Sources */,
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
@@ -2532,7 +2501,6 @@
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
-				DC4E4E1C23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
@@ -2643,7 +2611,6 @@
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				4B0012641FBA52E5004A587E /* VideoCollectionViewCell.m in Sources */,
-				242D1C18217662B700DB63E5 /* TwilioVideoAppAPI.m in Sources */,
 				4B0012651FBA52E5004A587E /* LoginViewController.m in Sources */,
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
@@ -2662,7 +2629,6 @@
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
-				DC4E4E1D23576A5A00C5D313 /* TwilioVideoAppAPIProtocol.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
