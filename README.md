@@ -1,10 +1,10 @@
-# Twilio iOS Video App
+# Twilio Video iOS App
 
 ![CircleCI](https://circleci.com/gh/twilio/twilio-video-app-ios.svg?style=shield&circle-token=5472df4715fce13ee02276b13b5325acd40128b4)
 
 This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). The open source app can be easily configured by developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
 
-![room](https://user-images.githubusercontent.com/1930363/68962658-502d7f00-0792-11ea-84d2-14c5c8a704b3.png)
+![video-app-screenshots](https://user-images.githubusercontent.com/1930363/76462720-c2f8e080-63a7-11ea-9b15-d4326636c42c.png)
 
 ## Features
 
@@ -91,6 +91,11 @@ UI tests require credentials that are only available to Twilio employees.
 ### Known Issues
 
 1. Running tests `⌘U` will crash if the app was run `⌘R` on the device previously. See issue [#12](https://github.com/twilio/twilio-video-app-ios/issues/12) for a workaround and more details.
+
+## Other Platforms
+
+- [Twilio Video React App](https://github.com/twilio/twilio-video-app-react)
+- [Twilio Video Android App](https://github.com/twilio/twilio-video-app-android)
 
 ## For Twilions
 
