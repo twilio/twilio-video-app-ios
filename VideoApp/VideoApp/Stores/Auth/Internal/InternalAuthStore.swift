@@ -55,23 +55,28 @@ class InternalAuthStore: NSObject, AuthStoreEverything {
         return firebaseAuthStore.openURL(url)
     }
 
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void) {
-        firebaseAuthStore.fetchAccessToken { [weak self] accessToken, error in
-            guard let self = self, let accessToken = accessToken else { completion(nil, .unknown); return }
+    func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, AuthError>) -> Void) {
+        firebaseAuthStore.fetchAccessToken { [weak self] result in
+            guard let self = self else { return }
             
-            self.api.config = APIConfig(host: self.appSettingsStore.environment.host, accessToken: accessToken)
+            switch result {
+            case let .success(accessToken):
+                self.api.config = APIConfig(host: self.appSettingsStore.environment.host, accessToken: accessToken)
 
-            let request = InternalCreateTwilioAccessTokenRequest(
-                identity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
-                roomName: roomName,
-                topology: .init(topology: self.appSettingsStore.topology)
-            )
-            
-            self.api.request(request) { result in
-                switch result {
-                case let .success(accessToken): completion(accessToken, nil)
-                case let .failure(error): completion(nil, AuthError(apiError: error))
+                let request = InternalCreateTwilioAccessTokenRequest(
+                    identity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.userDisplayName,
+                    roomName: roomName,
+                    topology: .init(topology: self.appSettingsStore.topology)
+                )
+                
+                self.api.request(request) { result in
+                    switch result {
+                    case let .success(accessToken): completion(.success(accessToken))
+                    case let .failure(error): completion(.failure(AuthError(apiError: error)))
+                    }
                 }
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
     }

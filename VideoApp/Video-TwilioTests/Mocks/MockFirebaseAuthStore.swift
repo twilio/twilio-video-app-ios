@@ -55,12 +55,12 @@ class MockFirebaseAuthStore: FirebaseAuthStoreWriting {
     }
     var invokedFetchAccessToken = false
     var invokedFetchAccessTokenCount = 0
-    var stubbedFetchAccessTokenCompletionResult: (String?, Error?)?
-    func fetchAccessToken(completion: @escaping (String?, Error?) -> Void) {
+    var stubbedFetchAccessTokenCompletionResult: (Result<String, AuthError>, Void)?
+    func fetchAccessToken(completion: @escaping (Result<String, AuthError>) -> Void) {
         invokedFetchAccessToken = true
         invokedFetchAccessTokenCount += 1
         if let result = stubbedFetchAccessTokenCompletionResult {
-            completion(result.0, result.1)
+            completion(result.0)
         }
     }
     var invokedSignInEmail = false

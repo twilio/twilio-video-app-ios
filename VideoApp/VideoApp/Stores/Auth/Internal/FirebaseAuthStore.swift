@@ -18,7 +18,7 @@ import Firebase
 import GoogleSignIn
 
 protocol FirebaseAuthStoreWriting: AuthStoreWriting {
-    func fetchAccessToken(completion: @escaping (String?, AuthError?) -> Void)
+    func fetchAccessToken(completion: @escaping (Result<String, AuthError>) -> Void)
 }
 
 class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
@@ -43,7 +43,11 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
     
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         firebaseAuth.signIn(withEmail: email, password: password) { _, error in
-            completion(AuthError(firebaseAuthError: error))
+            if let error = error {
+                completion(AuthError(firebaseAuthError: error))
+            } else {
+                completion(nil)
+            }
         }
     }
 
@@ -61,11 +65,17 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
         return googleSignIn.handle(url)
     }
     
-    func fetchAccessToken(completion: @escaping (String?, AuthError?) -> Void) {
-        guard let user = firebaseAuth.currentUser else { completion(nil, nil); return }
+    func fetchAccessToken(completion: @escaping (Result<String, AuthError>) -> Void) {
+        guard let user = firebaseAuth.currentUser else { completion(.failure(.unknown)); return }
         
         user.getIDTokenForcingRefresh(true) { accessToken, error in
-            completion(accessToken, AuthError(firebaseAuthError: error))
+            if let accessToken = accessToken {
+                completion(.success(accessToken))
+            } else if let error = error {
+                completion(.failure(AuthError(firebaseAuthError: error)))
+            } else {
+                completion(.failure(.unknown))
+            }
         }
     }
 }
@@ -80,7 +90,11 @@ extension FirebaseAuthStore: GIDSignInDelegate {
         )
 
         firebaseAuth.signIn(with: credential) { [weak self] _, error in
-            self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
+            if let error = error {
+                self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
+            } else {
+                self?.delegate?.didSignIn(error: nil)
+            }
         }
     }
     
@@ -90,9 +104,8 @@ extension FirebaseAuthStore: GIDSignInDelegate {
 }
 
 private extension AuthError {
-    init?(firebaseAuthError: Error?) {
-        guard let error = firebaseAuthError else { return nil }
-        guard let code = AuthErrorCode(rawValue: (error as NSError).code) else { self = .unknown; return }
+    init(firebaseAuthError: Error) {
+        guard let code = AuthErrorCode(rawValue: (firebaseAuthError as NSError).code) else { self = .unknown; return }
         
         switch code {
         case .userDisabled: self = .userDisabled

@@ -91,14 +91,14 @@ class MockAuthStore: AuthStoreEverything {
     var invokedFetchTwilioAccessTokenCount = 0
     var invokedFetchTwilioAccessTokenParameters: (roomName: String, Void)?
     var invokedFetchTwilioAccessTokenParametersList = [(roomName: String, Void)]()
-    var stubbedFetchTwilioAccessTokenCompletionResult: (String?, AuthError?)?
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, AuthError?) -> Void) {
+    var stubbedFetchTwilioAccessTokenCompletionResult: (Result<String, AuthError>, Void)?
+    func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, AuthError>) -> Void) {
         invokedFetchTwilioAccessToken = true
         invokedFetchTwilioAccessTokenCount += 1
         invokedFetchTwilioAccessTokenParameters = (roomName, ())
         invokedFetchTwilioAccessTokenParametersList.append((roomName, ()))
         if let result = stubbedFetchTwilioAccessTokenCompletionResult {
-            completion(result.0, result.1)
+            completion(result.0)
         }
     }
     var invokedStart = false
