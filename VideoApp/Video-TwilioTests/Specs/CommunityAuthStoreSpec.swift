@@ -129,9 +129,9 @@ class CommunityAuthStoreSpec: QuickSpec {
             func signIn(
                 userIdentity: String = "",
                 passcode: String = "",
-                result: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
+                apiResult: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
             ) {
-                mockAPI.stubbedRequestCompletionResult = result
+                mockAPI.stubbedRequestCompletionResult = apiResult
                 sut.signIn(userIdentity: userIdentity, passcode: passcode) { error in
                     invokedCompletionCount += 1
                     invokedCompletionParameters = (error, ())
@@ -206,7 +206,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                 context("when result is success") {
                     context("when passcode is foo") {
                         it("stores foo passcode in keychain") {
-                            signIn(passcode: "foo", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(passcode: "foo", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
                             expect(mockKeychainStore.invokedPasscode).to(equal("foo"))
@@ -215,7 +215,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when passcode is bar") {
                         it("stores bar passcode in keychain") {
-                            signIn(passcode: "bar", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(passcode: "bar", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
                             expect(mockKeychainStore.invokedPasscode).to(equal("bar"))
@@ -224,7 +224,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when userIdentity is foo") {
                         it("sets userIdentity setting to foo") {
-                            signIn(userIdentity: "foo", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(userIdentity: "foo", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("foo"))
@@ -233,7 +233,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     
                     context("when userIdentity is bar") {
                         it("sets userIdentity setting to bar") {
-                            signIn(userIdentity: "bar", result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(userIdentity: "bar", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("bar"))
@@ -241,7 +241,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     }
 
                     it("calls completion with nil error") {
-                        signIn(result: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                        signIn(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                         
                         expect(invokedCompletionCount).to(equal(1))
                         expect(invokedCompletionParameters?.error).to(beNil())
@@ -250,14 +250,14 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                 context("when result is failure") {
                     it("sets API config to nil") {
-                        signIn(result: .failure(.passcodeExpired))
+                        signIn(apiResult: .failure(.passcodeExpired))
                         
                         expect(mockAPI.invokedConfig).to(beNil())
                     }
 
                     context("when error is expiredPasscode error") {
                         it("calls completion with expiredPasscode error") {
-                            signIn(result: .failure(.passcodeExpired))
+                            signIn(apiResult: .failure(.passcodeExpired))
 
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.error).to(equal(.passcodeExpired))
@@ -266,7 +266,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     
                     context("when error is notConnectedToInternet error") {
                         it("calls completion with notConnectedToInternet error") {
-                            signIn(result: .failure(.notConnectedToInternet))
+                            signIn(apiResult: .failure(.notConnectedToInternet))
 
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters?.error).to(equal(.networkError))

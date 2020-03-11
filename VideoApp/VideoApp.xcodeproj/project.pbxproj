@@ -273,7 +273,7 @@
 		DCA6501F240D91C90038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CommunityCreateTwilioAccessTokenResponse.swift */; };
 		DCA65020240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CommunityCreateTwilioAccessTokenResponse.swift */; };
 		DCA65021240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CommunityCreateTwilioAccessTokenResponse.swift */; };
-		DCA65024240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */; };
+		DCA65024240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */; };
 		DCA65026240D9A3B0038DEE1 /* AuthErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */; };
 		DCA65028240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift */; };
 		DCA65029240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift */; };
@@ -627,7 +627,7 @@
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
-		DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCreateTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
+		DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCommunityCreateTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
 		DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorSpec.swift; sourceTree = "<group>"; };
 		DCA65027240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalCreateTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
@@ -1207,7 +1207,7 @@
 		DCA65022240D926A0038DEE1 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */,
+				DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -2734,7 +2734,7 @@
 				DCB64B59240D624600E090BE /* CommunityAuthStoreSpec.swift in Sources */,
 				DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */,
 				DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */,
-				DCA65024240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift in Sources */,
+				DCA65024240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */,
 				DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */,
 				DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */,
