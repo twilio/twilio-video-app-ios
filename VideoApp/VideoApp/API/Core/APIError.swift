@@ -29,4 +29,14 @@ enum APIError: Error, Equatable {
         case .passcodeIncorrect: self = .passcodeIncorrect
         }
     }
+
+    var message: String {
+        switch self {
+        case .decodeError: return "Decode error."
+        case let .message(message): return message
+        case .notConnectedToInternet: return "The Internet connection appears to be offline."
+        case .passcodeExpired: return "Passcode expired."
+        case .passcodeIncorrect: return "Passcode incorrect."
+        }
+    }
 }

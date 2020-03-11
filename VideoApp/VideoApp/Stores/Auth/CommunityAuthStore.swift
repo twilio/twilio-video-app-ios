@@ -16,9 +16,10 @@
 
 import Foundation
 
-class CommunityAuthStore: AuthStoreEverything {
+class CommunityAuthStore: AuthStoreWriting {
     weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { keychainStore.passcode != nil }
+    var passcode: String? { keychainStore.passcode }
     var userDisplayName: String { appSettingsStore.userIdentity }
     private let appSettingsStore: AppSettingsStoreWriting
     private let keychainStore: KeychainStoreWriting
@@ -74,19 +75,8 @@ class CommunityAuthStore: AuthStoreEverything {
         return false
     }
 
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, AuthError>) -> Void) {
-        let request = CommunityCreateTwilioAccessTokenRequest(
-            passcode: keychainStore.passcode ?? "",
-            userIdentity: appSettingsStore.userIdentity,
-            roomName: roomName
-        )
-        
-        api.request(request) { result in
-            switch result {
-            case let .success(response): completion(.success(response.token))
-            case let .failure(error): completion(.failure(AuthError(apiError: error)))
-            }
-        }
+    func refreshAccessToken(completion: @escaping () -> Void) {
+        fatalError("Refresh access token not supported by community auth.")
     }
     
     private func configureAPI(passcode: String) {
