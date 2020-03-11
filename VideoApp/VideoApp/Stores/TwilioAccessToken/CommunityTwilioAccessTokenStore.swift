@@ -38,11 +38,6 @@ class CommunityTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
             roomName: roomName
         )
         
-        api.request(request) { result in
-            switch result {
-            case let .success(response): completion(.success(response.token))
-            case let .failure(error): completion(.failure(error))
-            }
-        }
+        api.request(request) { completion($0.map { $0.token }) }
     }
 }
