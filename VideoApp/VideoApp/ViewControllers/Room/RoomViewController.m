@@ -115,7 +115,7 @@
         if (accessToken != nil) {
             [strongSelf joinRoomWithAccessToken:accessToken];
         } else {
-            [strongSelf displayErrorWithTitle:@"Token Retrieval Failure" message:error];
+            [strongSelf displayErrorWithTitle:@"Join Room Error" message:error];
         }
     }];
 }
