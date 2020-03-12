@@ -19,7 +19,7 @@ This app is a sample video conferencing app that uses the [Twilio Programmable V
 
 iOS Deployment Target | Xcode Version | Swift Language Version
 ------------ | ------------- | -------------
-11.0 | 11.2 | Swift 5
+11.0 | 11.3 | Swift 5
 
 ## Getting Started
 
