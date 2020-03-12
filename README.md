@@ -1,6 +1,6 @@
 # Twilio Video iOS App
 
-![CircleCI](https://circleci.com/gh/twilio/twilio-video-app-ios.svg?style=shield&circle-token=5472df4715fce13ee02276b13b5325acd40128b4)
+[![CircleCI](https://circleci.com/gh/twilio/twilio-video-app-ios.svg?style=shield&circle-token=5472df4715fce13ee02276b13b5325acd40128b4)](https://circleci.com/gh/twilio/twilio-video-app-ios)
 
 This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). The open source app can be easily configured by developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
 
@@ -10,8 +10,8 @@ This app is a sample video conferencing app that uses the [Twilio Programmable V
 
 - [x] Video conferencing with real-time video and audio
 - [x] Enable/disable camera
-- [x] Switch between front and back camera
 - [x] Mute/unmute mic
+- [x] Switch between front and back camera
 - [x] [Dominant speaker](https://www.twilio.com/docs/video/detecting-dominant-speaker) indicator
 - [x] [Network quality](https://www.twilio.com/docs/video/using-network-quality-api) indicator
 
@@ -44,6 +44,7 @@ The passcode will expire after one week. To generate a new passcode:
 
 ### Configure Signing
 
+1. Open `VideoApp.xcworkspace` with Xcode.
 1. In Xcode navigate to the [Signing & Capabilities pane](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) of the project editor for the `Video-Community` target.
 1. Change `Team` to your team.
 1. Change `Bundle identifier` to something unique.
@@ -92,10 +93,10 @@ UI tests require credentials that are only available to Twilio employees.
 
 1. Running tests `⌘U` will crash if the app was run `⌘R` on the device previously. See issue [#12](https://github.com/twilio/twilio-video-app-ios/issues/12) for a workaround and more details.
 
-## Other Platforms
+## Related
 
-- [Twilio Video React App](https://github.com/twilio/twilio-video-app-react)
 - [Twilio Video Android App](https://github.com/twilio/twilio-video-app-android)
+- [Twilio Video React App](https://github.com/twilio/twilio-video-app-react)
 
 ## For Twilions
 
