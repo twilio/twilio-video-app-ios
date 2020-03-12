@@ -25,17 +25,20 @@ class LaunchFlowImpl: LaunchFlow {
     private let authFlow: AuthStoreWritingDelegate
     private let authStore: AuthStoreWriting
     private let deepLinkStore: DeepLinkStoreWriting
+    private let signInSegueIdentifierFactory: SignInSegueIdentifierFactory
     
     init(
         window: UIWindow,
         authFlow: AuthStoreWritingDelegate,
         authStore: AuthStoreWriting,
-        deepLinkStore: DeepLinkStoreWriting
+        deepLinkStore: DeepLinkStoreWriting,
+        signInSegueIdentifierFactory: SignInSegueIdentifierFactory
     ) {
         self.window = window
         self.authFlow = authFlow
         self.authStore = authStore
         self.deepLinkStore = deepLinkStore
+        self.signInSegueIdentifierFactory = signInSegueIdentifierFactory
     }
     
     func start() {
@@ -49,7 +52,7 @@ class LaunchFlowImpl: LaunchFlow {
         navigationController.barHideOnSwipeGestureRecognizer.isEnabled = false
         navigationController.hidesBarsOnSwipe = false
 
-        let segueIdentifier = AuthStore.shared.isSignedIn ? "lobbySegue" : "loginSegue"
+        let segueIdentifier = authStore.isSignedIn ? "lobbySegue" : signInSegueIdentifierFactory.makeSignInSegueIdentifier()
         navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
         
         deepLinkStore.didReceiveDeepLink = { [weak self] in

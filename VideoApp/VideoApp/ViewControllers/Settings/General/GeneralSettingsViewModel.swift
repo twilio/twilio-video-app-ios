@@ -39,11 +39,6 @@ class GeneralSettingsViewModel: SettingsViewModel {
                         selectedOption: appSettingsStore.videoCodec.title,
                         viewModelFactory: selectVideoCodecViewModelFactory
                     ),
-                    .optionList(
-                        title: "Topology",
-                        selectedOption: appSettingsStore.topology.title,
-                        viewModelFactory: selectTopologyViewModelFactory
-                    ),
                     .toggle(title: "TURN Media Relay",
                         isOn: appSettingsStore.isTURNMediaRelayOn,
                         updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
@@ -81,20 +76,17 @@ class GeneralSettingsViewModel: SettingsViewModel {
     private let appInfoStore: AppInfoStoreReading
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreWriting
-    private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
     private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
 
     init(
         appInfoStore: AppInfoStoreReading,
         appSettingsStore: AppSettingsStoreWriting,
         authStore: AuthStoreWriting,
-        selectTopologyViewModelFactory: SelectOptionViewModelFactory,
         selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
     ) {
         self.appInfoStore = appInfoStore
         self.appSettingsStore = appSettingsStore
         self.authStore = authStore
-        self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
         self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
     }
 }

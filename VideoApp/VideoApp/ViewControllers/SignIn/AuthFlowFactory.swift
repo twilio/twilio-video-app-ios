@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,22 +14,16 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-protocol LaunchFlowFactory: AnyObject {
-    func makeLaunchFlow(window: UIWindow) -> LaunchFlow
+protocol AuthFlowFactory: AnyObject {
+    func makeAuthFlow(window: UIWindow) -> AuthFlow
 }
 
-class LaunchFlowFactoryImpl: LaunchFlowFactory {
-    func makeLaunchFlow(window: UIWindow) -> LaunchFlow {
+class AuthFlowFactoryImpl: AuthFlowFactory {
+    func makeAuthFlow(window: UIWindow) -> AuthFlow {
         let appInfoStore = AppInfoStoreFactory().makeAppInfoStore()
         let signInSegueIdentifierFactory = SignInSegueIdentifierFactoryImpl(appInfoStore: appInfoStore)
-        return LaunchFlowImpl(
-            window: window,
-            authFlow: AuthFlow(window: window, signInSegueIdentifierFactory: signInSegueIdentifierFactory),
-            authStore: AuthStore.shared,
-            deepLinkStore: DeepLinkStore.shared,
-            signInSegueIdentifierFactory: signInSegueIdentifierFactory
-        )
+        return AuthFlow(window: window, signInSegueIdentifierFactory: signInSegueIdentifierFactory)
     }
 }

@@ -32,6 +32,11 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         text: userStore.user.displayName,
                         viewModelFactory: editIdentityViewModalFactory
                     ),
+                    .optionList(
+                        title: "Topology",
+                        selectedOption: appSettingsStore.topology.title,
+                        viewModelFactory: selectTopologyViewModelFactory
+                    ),
                     .push(
                         title: "SDK Log Levels",
                         viewControllerFactory: sdkLogLevelSettingsViewControllerFactory
@@ -52,6 +57,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let userStore: UserStoreReading
     private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
+    private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
     private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
@@ -60,6 +66,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
          userStore: UserStoreReading,
          crashReportStore: CrashReportStoreWriting,
          editIdentityViewModalFactory: EditTextViewModelFactory,
+         selectTopologyViewModelFactory: SelectOptionViewModelFactory,
          selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
          developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
          sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
@@ -68,6 +75,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         self.userStore = userStore
         self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
+        self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
         self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory

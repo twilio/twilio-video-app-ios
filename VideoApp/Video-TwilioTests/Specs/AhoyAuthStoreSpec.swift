@@ -68,7 +68,7 @@ class AhoyAuthStoreSpec: QuickSpec {
                 }
             }
             
-            describe("fetchAccessToken") {
+            describe("fetchTwilioAccessToken") {
                 it("is called once") {
                     fetchTwilioAccessToken()
                     

@@ -17,10 +17,7 @@
 import Foundation
 
 class AhoyAuthStore: NSObject, AuthStoreEverything {
-    var delegate: AuthStoreWritingDelegate? {
-        get { return firebaseAuthStore.delegate }
-        set { firebaseAuthStore.delegate = newValue }
-    }
+    weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { return firebaseAuthStore.isSignedIn }
     var userDisplayName: String { return firebaseAuthStore.userDisplayName }
     private let api: TwilioVideoAppAPIProtocol
@@ -38,13 +35,18 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
     }
     
     func start() {
+        firebaseAuthStore.delegate = self
         firebaseAuthStore.start()
     }
     
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         firebaseAuthStore.signIn(email: email, password: password, completion: completion)
     }
-    
+
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+        print("Passcode sign in not supported by Firebase auth.")
+    }
+
     func signOut() {
         firebaseAuthStore.signOut()
     }
@@ -67,6 +69,17 @@ class AhoyAuthStore: NSObject, AuthStoreEverything {
                 completion(accessToken, error)
             }
         }
+    }
+}
+
+extension AhoyAuthStore: AuthStoreWritingDelegate {
+    func didSignIn(error: AuthError?) {
+        delegate?.didSignIn(error: error)
+    }
+    
+    func didSignOut() {
+        appSettingsStore.reset()
+        delegate?.didSignOut()
     }
 }
 

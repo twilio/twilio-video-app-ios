@@ -41,12 +41,16 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
         googleSignIn.delegate = self
     }
     
-    func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
+    func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         firebaseAuth.signIn(withEmail: email, password: password) { _, error in
-            completion(error)
+            completion(AuthError(firebaseAuthError: error))
         }
     }
-    
+
+    func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
+        print("Passcode sign in not supported by Firebase auth.")
+    }
+
     func signOut() {
         try? firebaseAuth.signOut()
         googleSignIn.signOut()
@@ -74,11 +78,26 @@ extension FirebaseAuthStore: GIDSignInDelegate {
         )
 
         firebaseAuth.signIn(with: credential) { [weak self] _, error in
-            self?.delegate?.didSignIn(error: error)
+            self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
         }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         delegate?.didSignOut()
+    }
+}
+
+private extension AuthError {
+    init?(firebaseAuthError: Error?) {
+        guard let error = firebaseAuthError else { return nil }
+        guard let code = AuthErrorCode(rawValue: (error as NSError).code) else { self = .unknown; return }
+        
+        switch code {
+        case .userDisabled: self = .userDisabled
+        case .invalidEmail: self = .invalidEmail
+        case .userNotFound, .wrongPassword: self = .wrongPassword
+        case .networkError: self = .networkError
+        default: self = .unknown
+        }
     }
 }

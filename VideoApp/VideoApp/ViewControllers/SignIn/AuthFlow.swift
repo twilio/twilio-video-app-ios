@@ -15,24 +15,29 @@
 //
 
 import UIKit
-import Firebase
 
 class AuthFlow {
     private let window: UIWindow
-    
-    init(window: UIWindow) {
+    private let signInSegueIdentifierFactory: SignInSegueIdentifierFactory
+
+    init(window: UIWindow, signInSegueIdentifierFactory: SignInSegueIdentifierFactory) {
         self.window = window
+        self.signInSegueIdentifierFactory = signInSegueIdentifierFactory
     }
     
     private func showSignIn() {
-        guard let rootViewController = window.rootViewController else {
+        guard
+            let rootViewController = window.rootViewController,
+            let navigationController = rootViewController as? UINavigationController
+        else {
             return
         }
-        if let navigationController = rootViewController as? UINavigationController {
-            navigationController.dismiss(animated: true) {
-                navigationController.popToRootViewController(animated: true)
-                navigationController.topViewController?.performSegue(withIdentifier: "loginSegue", sender: self)
-            }
+
+        let segueIdentifier = signInSegueIdentifierFactory.makeSignInSegueIdentifier()
+        
+        navigationController.dismiss(animated: true) {
+            navigationController.popToRootViewController(animated: true)
+            navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
         }
     }
 
@@ -59,42 +64,8 @@ class AuthFlow {
         }
     }
 
-    private func showError(error: Error) {
-        guard let errorCode = AuthErrorCode(rawValue: error._code) else {
-            return
-        }
-
-        var errorMessage: String
-
-        switch (errorCode) {
-        case .userDisabled:
-            // Indicates the user's account is disabled.
-            errorMessage = "The user account is disabled."
-            break
-        case .invalidEmail:
-            // Indicates the email address is malformed.
-            errorMessage = "The email address was malformed."
-            break
-        case .userNotFound:
-            // Indicates the user account was not found.
-            fallthrough
-        case .wrongPassword:
-            // Indicates the user attempted sign in with an incorrect password, if credential is of the type EmailPasswordAuthCredential.
-            errorMessage = "The email address or password was incorrect."
-            break
-        case .networkError:
-            // Indicates a network error occurred (such as a timeout, interrupted connection, or unreachable host). These types of
-            // errors are often recoverable with a retry. The NSUnderlyingError field in the NSError.userInfo dictionary will contain
-            // the error encountered.
-            errorMessage = "A network error occurred. Please try authenticating again."
-            break
-        default:
-            // Any other of the litany of errors that could occur
-            errorMessage = "An authentication error has occurred. Please try authenticating again."
-            break
-        }
-
-        let alertController = UIAlertController(title: "AuthenticationError", message: errorMessage, preferredStyle: .alert)
+    private func showError(error: AuthError) {
+        let alertController = UIAlertController(title: "Sign In Error", message: error.message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
         var topController = window.rootViewController!
@@ -108,7 +79,7 @@ class AuthFlow {
 }
 
 extension AuthFlow: AuthStoreWritingDelegate {
-    func didSignIn(error: Error?) {
+    func didSignIn(error: AuthError?) {
         if let error = error {
             showError(error: error)
         } else {
@@ -118,5 +89,19 @@ extension AuthFlow: AuthStoreWritingDelegate {
     
     func didSignOut() {
         showSignIn()
+    }
+}
+
+private extension AuthError {
+    var message: String {
+        switch self {
+        case .passcodeExpired: return "Expired passcode."
+        case .passcodeIncorrect: return "Incorrect passcode."
+        case .userDisabled: return "User account disabled."
+        case .invalidEmail: return "Invalid email format."
+        case .wrongPassword: return "Incorrect email or password."
+        case .networkError: return "A network error occurred. Please try again."
+        case .unknown: return "An error occurred. Please try again."
+        }
     }
 }

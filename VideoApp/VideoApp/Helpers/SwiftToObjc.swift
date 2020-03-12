@@ -43,7 +43,6 @@ import Foundation
             appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
             appSettingsStore: AppSettingsStore.shared,
             authStore: AuthStore.shared,
-            selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
             selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
         )
     }
