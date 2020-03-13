@@ -1,7 +1,5 @@
 # Twilio Video iOS App
 
-[![CircleCI](https://circleci.com/gh/twilio/twilio-video-app-ios.svg?style=svg)](https://circleci.com/gh/twilio/twilio-video-app-ios)
-
 This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). The open source app can be easily configured by developers to try out real-time video and audio features. Converting Objective-C code to Swift is in progress.
 
 ![video-app-screenshots](https://user-images.githubusercontent.com/1930363/76462720-c2f8e080-63a7-11ea-9b15-d4326636c42c.png)
