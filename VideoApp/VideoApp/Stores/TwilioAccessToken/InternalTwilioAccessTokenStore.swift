@@ -32,7 +32,7 @@ class InternalTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
     }
     
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
-        authStore.refreshAccessToken { [weak self] in
+        authStore.refreshIDToken { [weak self] in
             guard let self = self else { return }
 
             let request = InternalCreateTwilioAccessTokenRequest(

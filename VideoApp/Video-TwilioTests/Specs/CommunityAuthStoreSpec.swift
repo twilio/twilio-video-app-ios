@@ -22,20 +22,20 @@ import Quick
 class CommunityAuthStoreSpec: QuickSpec {
     override func spec() {
         var sut: CommunityAuthStore!
+        var mockAPI: MockAPI!
         var mockAppSettingsStore: MockAppSettingsStore!
         var mockKeychainStore: MockKeychainStore!
-        var mockAPI: MockAPI!
         var mockDelegate: MockAuthStoreWritingDelgate!
 
         beforeEach {
+            mockAPI = MockAPI()
             mockAppSettingsStore = MockAppSettingsStore()
             mockKeychainStore = MockKeychainStore()
-            mockAPI = MockAPI()
             mockDelegate = MockAuthStoreWritingDelgate()
             sut = CommunityAuthStore(
+                api: mockAPI,
                 appSettingsStore: mockAppSettingsStore,
-                keychainStore: mockKeychainStore,
-                api: mockAPI
+                keychainStore: mockKeychainStore
             )
             sut.delegate = mockDelegate
         }

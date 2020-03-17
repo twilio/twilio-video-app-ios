@@ -63,14 +63,14 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
         googleSignIn.handle(url)
     }
 
-    func refreshAccessToken(completion: @escaping () -> Void) {
+    func refreshIDToken(completion: @escaping () -> Void) {
         guard let user = firebaseAuth.currentUser else { completion(); return }
         
-        user.getIDTokenForcingRefresh(true) { [weak self] accessToken, error in
+        user.getIDTokenForcingRefresh(true) { [weak self] idToken, error in
             guard let self = self else { return }
             
-            if let accessToken = accessToken {
-                self.api.config = APIConfig(host: self.appSettingsStore.environment.host, accessToken: accessToken)
+            if let idToken = idToken {
+                self.api.config = APIConfig(host: self.appSettingsStore.environment.host, idToken: idToken)
             }
             
             completion()

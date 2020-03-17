@@ -42,9 +42,9 @@ class API: APIConfiguring, APIRequesting {
     private let jsonEncoder: JSONEncoder
     private let jsonDecoder: JSONDecoder
     private var headers: HTTPHeaders? {
-        guard let accessToken = config.accessToken else { return nil }
+        guard let idToken = config.idToken else { return nil }
         
-        return [.authorization(accessToken)]
+        return [.authorization(idToken)]
     }
 
     init(session: Session, urlFactory: APIURLFactory, jsonEncoder: JSONEncoder, jsonDecoder: JSONDecoder) {

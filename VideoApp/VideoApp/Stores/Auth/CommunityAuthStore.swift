@@ -21,18 +21,18 @@ class CommunityAuthStore: AuthStoreWriting {
     var isSignedIn: Bool { keychainStore.passcode != nil }
     var passcode: String? { keychainStore.passcode }
     var userDisplayName: String { appSettingsStore.userIdentity }
+    private let api: APIConfiguring & APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let keychainStore: KeychainStoreWriting
-    private let api: APIConfiguring & APIRequesting
 
     init(
+        api: APIConfiguring & APIRequesting,
         appSettingsStore: AppSettingsStoreWriting,
-        keychainStore: KeychainStoreWriting,
-        api: APIConfiguring & APIRequesting
+        keychainStore: KeychainStoreWriting
     ) {
+        self.api = api
         self.appSettingsStore = appSettingsStore
         self.keychainStore = keychainStore
-        self.api = api
     }
 
     func start() {
@@ -75,8 +75,8 @@ class CommunityAuthStore: AuthStoreWriting {
         return false
     }
 
-    func refreshAccessToken(completion: @escaping () -> Void) {
-        fatalError("Refresh access token not supported by community auth.")
+    func refreshIDToken(completion: @escaping () -> Void) {
+        fatalError("Refresh ID token not supported by community auth.")
     }
     
     private func configureAPI(passcode: String) {

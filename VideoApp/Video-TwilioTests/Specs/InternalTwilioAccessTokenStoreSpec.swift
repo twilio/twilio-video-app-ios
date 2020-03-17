@@ -56,7 +56,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                 mockAppSettingsStore.stubbedUserIdentity = userIdentity
                 mockAppSettingsStore.stubbedTopology = topology
                 mockAuthStore.stubbedUserDisplayName = userDisplayName
-                mockAuthStore.shouldInvokeRefreshAccessTokenCompletion = true
+                mockAuthStore.shouldInvokeRefreshIDTokenCompletion = true
                 mockAPI.stubbedRequestCompletionResult = apiResult
 
                 sut.fetchTwilioAccessToken(roomName: roomName) { result in
@@ -65,10 +65,10 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                 }
             }
 
-            it("it calls refreshAccessToken once") {
+            it("it calls refreshIDToken once") {
                 fetchTwilioAccessToken()
                 
-                expect(mockAuthStore.invokedRefreshAccessTokenCount).to(equal(1))
+                expect(mockAuthStore.invokedRefreshIDTokenCount).to(equal(1))
             }
 
             describe("request") {

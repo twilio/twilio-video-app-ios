@@ -17,7 +17,6 @@
 #import <UIKit/UIKit.h>
 
 @class LocalMediaController;
-@protocol TwilioAccessTokenService;
 
 @interface RoomViewController : UIViewController
 

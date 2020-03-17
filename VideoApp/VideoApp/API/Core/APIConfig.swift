@@ -18,10 +18,10 @@ import Foundation
 
 struct APIConfig: Equatable {
     let host: String
-    let accessToken: String?
+    let idToken: String?
     
-    init(host: String, accessToken: String? = nil) {
+    init(host: String, idToken: String? = nil) {
         self.host = host
-        self.accessToken = accessToken
+        self.idToken = idToken
     }
 }

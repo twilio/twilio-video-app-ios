@@ -61,13 +61,13 @@ class MockAuthStore: AuthStoreWriting {
         invokedUserDisplayNameGetterCount += 1
         return stubbedUserDisplayName
     }
-    var invokedRefreshAccessToken = false
-    var invokedRefreshAccessTokenCount = 0
-    var shouldInvokeRefreshAccessTokenCompletion = false
-    func refreshAccessToken(completion: @escaping () -> Void) {
-        invokedRefreshAccessToken = true
-        invokedRefreshAccessTokenCount += 1
-        if shouldInvokeRefreshAccessTokenCompletion {
+    var invokedRefreshIDToken = false
+    var invokedRefreshIDTokenCount = 0
+    var shouldInvokeRefreshIDTokenCompletion = false
+    func refreshIDToken(completion: @escaping () -> Void) {
+        invokedRefreshIDToken = true
+        invokedRefreshIDTokenCount += 1
+        if shouldInvokeRefreshIDTokenCompletion {
             completion()
         }
     }
