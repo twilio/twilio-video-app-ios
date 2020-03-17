@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,13 +14,18 @@
 //  limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-@class LocalMediaController;
+class CommunityAPIErrorResponseDecoder: APIErrorResponseDecoder {
+    func decode(data: Data) -> APIError {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
-@interface RoomViewController : UIViewController
-
-@property (nonatomic, strong, nonnull) LocalMediaController *localMediaController;
-@property (nonatomic, copy, nonnull) NSString *roomName;
-
-@end
+        do {
+            let errorResponse = try jsonDecoder.decode(APIErrorResponse.self, from: data)
+            return APIError(message: errorResponse.error.message)
+        } catch {
+            return .decodeError
+        }
+    }
+}

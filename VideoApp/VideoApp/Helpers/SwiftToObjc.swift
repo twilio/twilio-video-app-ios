@@ -31,9 +31,15 @@ import Foundation
         case let .room(roomName): return roomName
         }
     }
+    private static let twilioAccessTokenStore = TwilioAccessTokenStoreFactory().makeTwilioAccessTokenStore()
 
-    @objc static func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        AuthStore.shared.fetchTwilioAccessToken(roomName: roomName, completion: completion)
+    @objc static func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, String?) -> Void) {
+        twilioAccessTokenStore.fetchTwilioAccessToken(roomName: roomName) { result in
+            switch result {
+            case let .success(accessToken): completion(accessToken, nil)
+            case let .failure(error): completion(nil, error.message)
+            }
+        }
     }
 
     @objc static func prepareForShowSettingsSegue(_ segue: UIStoryboardSegue) {

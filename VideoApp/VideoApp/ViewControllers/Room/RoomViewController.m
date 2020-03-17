@@ -15,7 +15,6 @@
 //
 
 #import "RoomViewController.h"
-#import "TwilioVideoAppAPI.h"
 #import "LocalMediaController.h"
 #import "VariableAlphaToggleButton.h"
 #import "RoundButton.h"
@@ -110,13 +109,13 @@
 - (void)fetchAccessToken {
     typeof(self) __weak weakSelf = self;
 
-    [SwiftToObjc fetchTwilioAccessTokenWithRoomName:self.roomName completion:^(NSString *accessToken, NSError *error) {
+    [SwiftToObjc fetchTwilioAccessTokenWithRoomName:self.roomName completion:^(NSString *accessToken, NSString *error) {
         typeof(self) __strong strongSelf = weakSelf;
 
         if (accessToken != nil) {
             [strongSelf joinRoomWithAccessToken:accessToken];
         } else {
-            [strongSelf displayErrorWithTitle:@"Token Retrieval Failure" message:[error localizedDescription]];
+            [strongSelf displayErrorWithTitle:@"Join Room Error" message:error];
         }
     }];
 }

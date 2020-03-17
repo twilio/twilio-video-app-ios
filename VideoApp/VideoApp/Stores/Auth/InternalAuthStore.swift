@@ -17,21 +17,19 @@
 import Firebase
 import GoogleSignIn
 
-protocol FirebaseAuthStoreWriting: AuthStoreWriting {
-    func fetchAccessToken(completion: @escaping (String?, Error?) -> Void)
-}
-
-class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
+class InternalAuthStore: NSObject, AuthStoreWriting {
     weak var delegate: AuthStoreWritingDelegate?
+    var isSignedIn: Bool { firebaseAuth.currentUser != nil }
+    var passcode: String? { fatalError("Passcode not supported by Firebase auth.") }
+    var userDisplayName: String { firebaseAuth.currentUser?.displayName ?? firebaseAuth.currentUser?.email ?? "Unknown" }
+    private let api: APIConfiguring
+    private let appSettingsStore: AppSettingsStoreWriting
     private var firebaseAuth: Auth { return Auth.auth() }
     private var googleSignIn: GIDSignIn { return GIDSignIn.sharedInstance() }
-    
-    var isSignedIn: Bool {
-        return firebaseAuth.currentUser != nil
-    }
 
-    var userDisplayName: String {
-        return firebaseAuth.currentUser?.displayName ?? firebaseAuth.currentUser?.email ?? "Unknown"
+    init(api: APIConfiguring, appSettingsStore: AppSettingsStoreWriting) {
+        self.api = api
+        self.appSettingsStore = appSettingsStore
     }
     
     func start() {
@@ -43,12 +41,16 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
     
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         firebaseAuth.signIn(withEmail: email, password: password) { _, error in
-            completion(AuthError(firebaseAuthError: error))
+            if let error = error {
+                completion(AuthError(firebaseAuthError: error))
+            } else {
+                completion(nil)
+            }
         }
     }
 
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
-        print("Passcode sign in not supported by Firebase auth.")
+        fatalError("Passcode sign in not supported by Firebase auth.")
     }
 
     func signOut() {
@@ -58,17 +60,25 @@ class FirebaseAuthStore: NSObject, FirebaseAuthStoreWriting {
     }
 
     func openURL(_ url: URL) -> Bool {
-        return googleSignIn.handle(url)
+        googleSignIn.handle(url)
     }
-    
-    func fetchAccessToken(completion: @escaping (String?, Error?) -> Void) {
-        guard let user = firebaseAuth.currentUser else { completion(nil, nil); return }
+
+    func refreshIDToken(completion: @escaping () -> Void) {
+        guard let user = firebaseAuth.currentUser else { completion(); return }
         
-        user.getIDTokenForcingRefresh(true, completion: completion)
+        user.getIDTokenForcingRefresh(true) { [weak self] idToken, error in
+            guard let self = self else { return }
+            
+            if let idToken = idToken {
+                self.api.config = APIConfig(host: self.appSettingsStore.environment.host, idToken: idToken)
+            }
+            
+            completion()
+        }
     }
 }
 
-extension FirebaseAuthStore: GIDSignInDelegate {
+extension InternalAuthStore: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard error == nil, let authentication = user.authentication else { return }
         
@@ -78,19 +88,33 @@ extension FirebaseAuthStore: GIDSignInDelegate {
         )
 
         firebaseAuth.signIn(with: credential) { [weak self] _, error in
-            self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
+            if let error = error {
+                self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
+            } else {
+                self?.delegate?.didSignIn(error: nil)
+            }
         }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        appSettingsStore.reset()
         delegate?.didSignOut()
     }
 }
 
+private extension Environment {
+    var host: String {
+        switch self {
+        case .production: return "app.video.bytwilio.com/api/v1"
+        case .staging: return "app.stage.video.bytwilio.com/api/v1"
+        case .development: return "app.dev.video.bytwilio.com/api/v1"
+        }
+    }
+}
+
 private extension AuthError {
-    init?(firebaseAuthError: Error?) {
-        guard let error = firebaseAuthError else { return nil }
-        guard let code = AuthErrorCode(rawValue: (error as NSError).code) else { self = .unknown; return }
+    init(firebaseAuthError: Error) {
+        guard let code = AuthErrorCode(rawValue: (firebaseAuthError as NSError).code) else { self = .unknown; return }
         
         switch code {
         case .userDisabled: self = .userDisabled

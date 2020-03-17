@@ -95,8 +95,9 @@ extension AuthFlow: AuthStoreWritingDelegate {
 private extension AuthError {
     var message: String {
         switch self {
-        case .passcodeExpired: return "Expired passcode."
-        case .passcodeIncorrect: return "Incorrect passcode."
+        case let .message(message): return message
+        case .passcodeExpired: return "Passcode expired."
+        case .passcodeIncorrect: return "Passcode incorrect."
         case .userDisabled: return "User account disabled."
         case .invalidEmail: return "Invalid email format."
         case .wrongPassword: return "Incorrect email or password."

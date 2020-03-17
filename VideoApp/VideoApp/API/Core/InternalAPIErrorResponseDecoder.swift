@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,13 +14,12 @@
 //  limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-@class LocalMediaController;
+class InternalAPIErrorResponseDecoder: APIErrorResponseDecoder {
+    func decode(data: Data) -> APIError {
+        guard let string = String(data: data, encoding: .utf8) else { return .decodeError }
 
-@interface RoomViewController : UIViewController
-
-@property (nonatomic, strong, nonnull) LocalMediaController *localMediaController;
-@property (nonatomic, copy, nonnull) NSString *roomName;
-
-@end
+        return .message(message: string)
+    }
+}

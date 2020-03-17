@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,15 +16,12 @@
 
 import Foundation
 
-protocol TwilioVideoAppAPIProtocol {
-    func retrieveAccessToken(
-        forIdentity identity: String,
-        roomName: String,
-        authToken: String,
-        environment: TwilioVideoAppAPIEnvironment,
-        topology: TwilioVideoAppAPITopology,
-        completionBlock: @escaping (String?, Error?) -> Void
-    )
+struct PasscodeComponents {
+    let passcode: String
+    let appID: String
+    
+    init(string: String) {
+        passcode = string
+        appID = String(string.dropFirst(6))
+    }
 }
-
-extension TwilioVideoAppAPI: TwilioVideoAppAPIProtocol { }

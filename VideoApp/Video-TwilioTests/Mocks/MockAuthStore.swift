@@ -16,7 +16,7 @@
 
 @testable import VideoApp
 
-class MockAuthStore: AuthStoreEverything {
+class MockAuthStore: AuthStoreWriting {
     var invokedDelegateSetter = false
     var invokedDelegateSetterCount = 0
     var invokedDelegate: AuthStoreWritingDelegate?
@@ -45,6 +45,14 @@ class MockAuthStore: AuthStoreEverything {
         invokedIsSignedInGetterCount += 1
         return stubbedIsSignedIn
     }
+    var invokedPasscodeGetter = false
+    var invokedPasscodeGetterCount = 0
+    var stubbedPasscode: String!
+    var passcode: String? {
+        invokedPasscodeGetter = true
+        invokedPasscodeGetterCount += 1
+        return stubbedPasscode
+    }
     var invokedUserDisplayNameGetter = false
     var invokedUserDisplayNameGetterCount = 0
     var stubbedUserDisplayName: String! = ""
@@ -52,6 +60,16 @@ class MockAuthStore: AuthStoreEverything {
         invokedUserDisplayNameGetter = true
         invokedUserDisplayNameGetterCount += 1
         return stubbedUserDisplayName
+    }
+    var invokedRefreshIDToken = false
+    var invokedRefreshIDTokenCount = 0
+    var shouldInvokeRefreshIDTokenCompletion = false
+    func refreshIDToken(completion: @escaping () -> Void) {
+        invokedRefreshIDToken = true
+        invokedRefreshIDTokenCount += 1
+        if shouldInvokeRefreshIDTokenCompletion {
+            completion()
+        }
     }
     var invokedSignInEmail = false
     var invokedSignInEmailCount = 0
@@ -86,20 +104,6 @@ class MockAuthStore: AuthStoreEverything {
     func signOut() {
         invokedSignOut = true
         invokedSignOutCount += 1
-    }
-    var invokedFetchTwilioAccessToken = false
-    var invokedFetchTwilioAccessTokenCount = 0
-    var invokedFetchTwilioAccessTokenParameters: (roomName: String, Void)?
-    var invokedFetchTwilioAccessTokenParametersList = [(roomName: String, Void)]()
-    var stubbedFetchTwilioAccessTokenCompletionResult: (String?, Error?)?
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void) {
-        invokedFetchTwilioAccessToken = true
-        invokedFetchTwilioAccessTokenCount += 1
-        invokedFetchTwilioAccessTokenParameters = (roomName, ())
-        invokedFetchTwilioAccessTokenParametersList.append((roomName, ()))
-        if let result = stubbedFetchTwilioAccessTokenCompletionResult {
-            completion(result.0, result.1)
-        }
     }
     var invokedStart = false
     var invokedStartCount = 0

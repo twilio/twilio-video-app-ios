@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,13 +14,19 @@
 //  limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-@class LocalMediaController;
+protocol APIRequest {
+    associatedtype Parameters: Encodable
+    associatedtype Response: Decodable
+    var path: String { get }
+    var method: APIHTTPMethod { get }
+    var parameters: Parameters { get }
+    var encoding: APIEncoding { get }
+    var responseType: Response.Type { get }
+}
 
-@interface RoomViewController : UIViewController
-
-@property (nonatomic, strong, nonnull) LocalMediaController *localMediaController;
-@property (nonatomic, copy, nonnull) NSString *roomName;
-
-@end
+extension APIRequest {
+    var encoding: APIEncoding { .jsonBody }
+    var method: APIHTTPMethod { .get }
+}

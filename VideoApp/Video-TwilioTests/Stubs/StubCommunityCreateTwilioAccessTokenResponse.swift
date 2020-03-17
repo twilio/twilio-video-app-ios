@@ -14,23 +14,10 @@
 //  limitations under the License.
 //
 
-import Foundation
+@testable import VideoApp
 
-enum AuthError: Error {
-    case invalidEmail
-    case networkError
-    case passcodeExpired
-    case passcodeIncorrect
-    case unknown
-    case userDisabled
-    case wrongPassword
-
-    init(apiError: APIError) {
-        switch apiError {
-        case .decodeError: self = .unknown
-        case .notConnectedToInternet: self = .networkError
-        case .passcodeExpired: self = .passcodeExpired
-        case .passcodeIncorrect: self = .passcodeIncorrect
-        }
+extension CommunityCreateTwilioAccessTokenResponse {
+    static func stub(token: String = "") -> CommunityCreateTwilioAccessTokenResponse {
+        .init(token: token)
     }
 }

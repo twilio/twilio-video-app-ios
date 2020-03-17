@@ -23,6 +23,7 @@ protocol AuthStoreWritingDelegate: AnyObject {
 
 protocol AuthStoreWriting: AuthStoreReading, LaunchStore, URLOpening {
     var delegate: AuthStoreWritingDelegate? { get set }
+    func refreshIDToken(completion: @escaping () -> Void)
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void)
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void)
     func signOut()
@@ -30,15 +31,10 @@ protocol AuthStoreWriting: AuthStoreReading, LaunchStore, URLOpening {
 
 protocol AuthStoreReading: AnyObject {
     var isSignedIn: Bool { get }
+    var passcode: String? { get }
     var userDisplayName: String { get }
 }
 
-protocol AuthStoreTwilioAccessTokenFetching: AnyObject {
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (String?, Error?) -> Void)
-}
-
-protocol AuthStoreEverything: AuthStoreWriting, AuthStoreTwilioAccessTokenFetching { }
-
 class AuthStore: NSObject {
-    static let shared: AuthStoreEverything = AuthStoreFactory().makeAuthStore()
+    static let shared: AuthStoreWriting = AuthStoreFactory().makeAuthStore()
 }

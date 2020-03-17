@@ -15,7 +15,6 @@
 //
 
 #import "LobbyViewController.h"
-#import "TwilioVideoAppAPI.h"
 #import "LocalMediaController.h"
 #import "RoomViewController.h"
 #import "VariableAlphaToggleButton.h"

@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,13 +14,14 @@
 //  limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-@class LocalMediaController;
+protocol APIURLFactory: AnyObject {
+    func makeURL(host: String, path: String) -> String
+}
 
-@interface RoomViewController : UIViewController
-
-@property (nonatomic, strong, nonnull) LocalMediaController *localMediaController;
-@property (nonatomic, copy, nonnull) NSString *roomName;
-
-@end
+class APIURLFactoryImpl: APIURLFactory {
+    func makeURL(host: String, path: String) -> String {
+        return "https://\(host)/\(path)"
+    }
+}

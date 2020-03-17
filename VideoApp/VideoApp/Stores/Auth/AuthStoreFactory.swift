@@ -17,19 +17,17 @@
 import Foundation
 
 class AuthStoreFactory {
-    func makeAuthStore() -> AuthStoreEverything {
+    func makeAuthStore() -> AuthStoreWriting {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoTwilio, .videoInternal:
-            return AhoyAuthStore(
-                api: TwilioVideoAppAPI(),
-                appSettingsStore: AppSettingsStore.shared,
-                firebaseAuthStore: FirebaseAuthStore()
-            )
+            API.shared.errorResponseDecoder = InternalAPIErrorResponseDecoder()
+            return InternalAuthStore(api: API.shared, appSettingsStore: AppSettingsStore.shared)
         case .videoCommunity:
+            API.shared.errorResponseDecoder = CommunityAPIErrorResponseDecoder()
             return CommunityAuthStore(
+                api: API.shared,
                 appSettingsStore: AppSettingsStore.shared,
-                keychainStore: KeychainStore(),
-                api: API()
+                keychainStore: KeychainStore()
             )
         }
     }
