@@ -104,7 +104,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                     }
                     
                     context("when userDisplayName is bar") {
-                        it("is called with foo identity") {
+                        it("is called with bar identity") {
                             fetchTwilioAccessToken(userIdentity: "", userDisplayName: "bar")
 
                             expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.identity).to(equal("bar"))
