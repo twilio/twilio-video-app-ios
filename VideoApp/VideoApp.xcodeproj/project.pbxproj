@@ -93,7 +93,7 @@
 		DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469E238F29F50072F597 /* MockAuthStore.swift */; };
 		DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestSecretsStore.swift */; };
 		DC0446A3239716860072F597 /* TestSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestSecrets.swift */; };
-		DC0446B2239855090072F597 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B1239855090072F597 /* UITestCase.swift */; };
+		DC0446B2239855090072F597 /* BasicTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B1239855090072F597 /* BasicTestCase.swift */; };
 		DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
@@ -181,6 +181,9 @@
 		DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
 		DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
 		DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
+		DC78CABA24352FEE006D3FAA /* RoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CAB924352FEE006D3FAA /* RoomTests.swift */; };
+		DC78CABC243547CB006D3FAA /* RoomActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABB243547CB006D3FAA /* RoomActivities.swift */; };
+		DC78CABE24354F8F006D3FAA /* SignedInTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */; };
 		DC82A34F23FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
 		DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
 		DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
@@ -557,7 +560,7 @@
 		DC04469E238F29F50072F597 /* MockAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthStore.swift; sourceTree = "<group>"; };
 		DC0446A0239716530072F597 /* TestSecretsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecretsStore.swift; sourceTree = "<group>"; };
 		DC0446A2239716860072F597 /* TestSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecrets.swift; sourceTree = "<group>"; };
-		DC0446B1239855090072F597 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
+		DC0446B1239855090072F597 /* BasicTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTestCase.swift; sourceTree = "<group>"; };
 		DC0446B723A182980072F597 /* CrashReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportStore.swift; sourceTree = "<group>"; };
 		DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewModel.swift; sourceTree = "<group>"; };
 		DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -591,6 +594,9 @@
 		DC4E4E302357A73900C5D313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
 		DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariableStore.swift; sourceTree = "<group>"; };
+		DC78CAB924352FEE006D3FAA /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
+		DC78CABB243547CB006D3FAA /* RoomActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomActivities.swift; sourceTree = "<group>"; };
+		DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInTestCase.swift; sourceTree = "<group>"; };
 		DC82A34E23FC9AAA0081578C /* JSONContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContainer.swift; sourceTree = "<group>"; };
 		DC82A35223FDB6890081578C /* SDKLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevel.swift; sourceTree = "<group>"; };
 		DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -901,9 +907,9 @@
 			isa = PBXGroup;
 			children = (
 				DCD7675F23DF91DC00A2939C /* Activities */,
+				DC0446AF239854E20072F597 /* Helpers */,
 				DC0446A62398433A0072F597 /* Tests */,
 				DC0446A7239843470072F597 /* TestSecretsStore */,
-				DC0446AF239854E20072F597 /* UITestCase */,
 				DC04467D238DD55C0072F597 /* Info.plist */,
 			);
 			path = "Video-TwilioUITests";
@@ -923,6 +929,7 @@
 			children = (
 				DC04467B238DD55C0072F597 /* AuthTests.swift */,
 				DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */,
+				DC78CAB924352FEE006D3FAA /* RoomTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -937,12 +944,13 @@
 			path = TestSecretsStore;
 			sourceTree = "<group>";
 		};
-		DC0446AF239854E20072F597 /* UITestCase */ = {
+		DC0446AF239854E20072F597 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DC0446B1239855090072F597 /* UITestCase.swift */,
+				DC0446B1239855090072F597 /* BasicTestCase.swift */,
+				DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */,
 			);
-			path = UITestCase;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DC0446B623A182780072F597 /* CrashReport */ = {
@@ -1402,6 +1410,7 @@
 			children = (
 				DCD7676123DF923700A2939C /* AuthActivities.swift */,
 				DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */,
+				DC78CABB243547CB006D3FAA /* RoomActivities.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -2703,10 +2712,13 @@
 			files = (
 				DC0446A3239716860072F597 /* TestSecrets.swift in Sources */,
 				DCD7675E23DF63F500A2939C /* DeepLinkTests.swift in Sources */,
-				DC0446B2239855090072F597 /* UITestCase.swift in Sources */,
+				DC0446B2239855090072F597 /* BasicTestCase.swift in Sources */,
 				DCD7676423DF9CC000A2939C /* DeepLinkActivities.swift in Sources */,
+				DC78CABC243547CB006D3FAA /* RoomActivities.swift in Sources */,
 				DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */,
 				DCD7676223DF923700A2939C /* AuthActivities.swift in Sources */,
+				DC78CABA24352FEE006D3FAA /* RoomTests.swift in Sources */,
+				DC78CABE24354F8F006D3FAA /* SignedInTestCase.swift in Sources */,
 				DC04467C238DD55C0072F597 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
