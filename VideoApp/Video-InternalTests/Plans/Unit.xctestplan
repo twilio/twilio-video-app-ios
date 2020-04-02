@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "F4916C5D-3EC0-42DB-B2EE-0AA53DF20960",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:VideoApp.xcodeproj",
+          "identifier" : "4B0012221FBA52C4004A587E",
+          "name" : "Video-Internal"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VideoApp.xcodeproj",
+      "identifier" : "4B0012221FBA52C4004A587E",
+      "name" : "Video-Internal"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:VideoApp.xcodeproj",
+        "identifier" : "DCE965B7237492410002EC78",
+        "name" : "Video-InternalTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "49B9DE46-E800-4B6B-87CF-DDCF6C53A14B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "RoomTests\/test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen()"
+      ],
+      "target" : {
+        "containerPath" : "container:VideoApp.xcodeproj",
+        "identifier" : "DC044678238DD55C0072F597",
+        "name" : "Video-TwilioUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

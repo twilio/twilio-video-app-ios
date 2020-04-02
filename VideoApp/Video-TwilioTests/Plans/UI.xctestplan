@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "9802C041-B6BF-41C3-848C-6F90A8A8BC8F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:VideoApp.xcodeproj",
+        "identifier" : "DC044678238DD55C0072F597",
+        "name" : "Video-TwilioUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

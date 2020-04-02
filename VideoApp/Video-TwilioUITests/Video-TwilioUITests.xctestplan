@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "D9A79D01-61CD-4572-926C-51A604272435",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VideoApp.xcodeproj",
+      "identifier" : "241282361E36A6AB002198BE",
+      "name" : "Video-Twilio"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:VideoApp.xcodeproj",
+        "identifier" : "DC044678238DD55C0072F597",
+        "name" : "Video-TwilioUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
