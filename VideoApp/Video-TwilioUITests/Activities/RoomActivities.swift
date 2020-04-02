@@ -21,7 +21,7 @@ class RoomActivities {
         XCTContext.runActivity(named: "Join room") { _ in
             let roomNameTextField = app/*@START_MENU_TOKEN@*/.textFields["roomNameTextField"]/*[[".textFields[\"Room\"]",".textFields[\"roomNameTextField\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
             roomNameTextField.tap()
-            roomNameTextField.typeText("foo")
+            roomNameTextField.typeText(roomName)
 
             app.buttons["joinRoomButton"].tap()
         }

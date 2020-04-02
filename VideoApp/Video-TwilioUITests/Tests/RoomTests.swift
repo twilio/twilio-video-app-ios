@@ -18,8 +18,8 @@ import Nimble
 
 class RoomTests: SignedInTestCase {
     func test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen() {
-        RoomActivities.join(roomName: "foo")
-        expect(app.staticTexts["roomNameLabel"].label).toEventually(equal("foo"))
+        RoomActivities.join(roomName: "ios status check")
+        expect(app.staticTexts["roomNameLabel"].label).toEventually(equal("ios status check"))
         RoomActivities.leave()
     }
 }
