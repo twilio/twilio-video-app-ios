@@ -8,7 +8,7 @@ platform :ios do
   end
 
   lane :test do |options|
-    scan(scheme: options[:scheme], device: "iPhone 11")
+    scan(scheme: options[:scheme], testplan: options[:test_plan], device: "iPhone 11")
   end
 
   lane :beta do

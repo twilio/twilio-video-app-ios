@@ -10,7 +10,7 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "11.2.0"
+      xcode: "11.4.0"
 
 commands:
   setup:
@@ -35,11 +35,13 @@ commands:
     parameters:
       scheme:
         type: string
+      test_plan:
+        type: string
     steps:
       - setup
       - run:
           name: Test
-          command: bundle exec fastlane test scheme:<< parameters.scheme >>
+          command: bundle exec fastlane test scheme:<< parameters.scheme >> test_plan:<< parameters.test_plan
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
@@ -62,21 +64,31 @@ jobs:
     steps:
       - test:
           scheme: Video-Twilio
+          test_plan: Unit
   test_community_app:
     executor: macos_executor
     steps:
       - test:
           scheme: Video-Community
+          test_plan: Unit
   test_internal_app:
     executor: macos_executor
     steps:
       - test:
           scheme: Video-Internal
+          test_plan: Unit
   run_ui_tests:
     executor: macos_executor
     steps:
       - test:
-          scheme: Video-TwilioUITests
+          scheme: Video-Twilio
+          test_plan: UI
+  status_check:
+    executor: macos_executor
+    steps:
+      - test:
+          scheme: Video-Twilio
+          test_plan: StatusCheck
   deploy_internal_app_beta:
     executor: macos_executor
     steps:
@@ -99,3 +111,13 @@ workflows:
             branches:
               only:
                 - master
+  status_check:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - status_check
