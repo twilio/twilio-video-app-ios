@@ -36,7 +36,7 @@ class AuthActivities {
 
             app.buttons["submitButton"].tap()
             
-            sleep(3)
+            sleep(3) // To prevent CI failures
         }
     }
 
