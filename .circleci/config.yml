@@ -100,7 +100,7 @@ jobs:
   status_check:
     executor: macos_executor
     steps:
-      - test:
+      - status_check:
           scheme: Video-Twilio
           test_plan: StatusCheck
   deploy_internal_app_beta:
