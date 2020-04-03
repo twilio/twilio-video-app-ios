@@ -37,7 +37,7 @@ class AuthActivities {
 
             app.buttons["submitButton"].tap()
             
-            expect(app.textFields["roomNameTextField"].exists).toEventually(beTrue()) // Prevent CI failure
+            expect(app.textFields["roomNameTextField"].exists).toEventually(beTrue()) // CI always fails without this
         }
     }
 
