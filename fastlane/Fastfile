@@ -16,7 +16,7 @@ platform :ios do
     )
   end
 
-  lane :status_check
+  lane :status_check do
     begin
       test(scheme: "Video-Twilio", test_plan: "StatusCheck")
     rescue => exception
