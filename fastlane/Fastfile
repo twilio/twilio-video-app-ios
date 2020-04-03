@@ -21,7 +21,7 @@ platform :ios do
       test(scheme: "Video-Twilio", test_plan: "StatusCheck")
     rescue
       slack(
-        channel: "tcr-test", # "eng-sdk-ahoyapps",
+        channel: "eng-sdk-ahoyapps",
         success: false,
         message: "Failed <#{ENV["CIRCLE_BUILD_URL"]}|iOS status check> 🔥🔥🔥",
         default_payloads: [],
