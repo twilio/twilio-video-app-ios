@@ -19,15 +19,15 @@ platform :ios do
   lane :status_check do
     begin
       test(scheme: "Video-Twilio", test_plan: "StatusCheck")
-    rescue => exception
+    rescue
       slack(
         channel: "tcr-test", # change, delete channel
         success: false,
-        message: "Failed <#{ENV[CIRCLE_BUILD_URL]}|iOS status check> 🔥🔥🔥",
+        message: "Failed <#{ENV["CIRCLE_BUILD_URL"]}|iOS status check> 🔥🔥🔥",
         default_payloads: [],
       )
 
-      raise exception
+      raise
     end
   end
 
