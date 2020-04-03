@@ -31,6 +31,11 @@ commands:
       - run:
           name: Setup internal pod repo
           command: sh .circleci/setup_internal_pod_repo.sh
+  store_scan_artifacts:
+    steps:
+      - store_artifacts:
+          path: "~/Library/Logs/scan"
+          destination: "scan"
   test:
     parameters:
       scheme:
@@ -42,23 +47,14 @@ commands:
       - run:
           name: Test
           command: bundle exec fastlane test scheme:<< parameters.scheme >> test_plan:<< parameters.test_plan >>
-      - store_artifacts:
-          path: "~/Library/Logs/scan"
-          destination: "scan"
+      - store_scan_artifacts
   status_check:
-    parameters:
-      scheme:
-        type: string
-      test_plan:
-        type: string
     steps:
       - setup
       - run:
-          name: Test
-          command: bundle exec fastlane status_check scheme:<< parameters.scheme >> test_plan:<< parameters.test_plan >>
-      - store_artifacts:
-          path: "~/Library/Logs/scan"
-          destination: "scan"
+          name: Status check
+          command: bundle exec fastlane status_check
+      - store_scan_artifacts
   beta:
     steps:
       - setup
