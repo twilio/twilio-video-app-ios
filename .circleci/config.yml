@@ -45,6 +45,20 @@ commands:
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
+  status_check:
+    parameters:
+      scheme:
+        type: string
+      test_plan:
+        type: string
+    steps:
+      - setup
+      - run:
+          name: Test
+          command: bundle exec fastlane status_check scheme:<< parameters.scheme >> test_plan:<< parameters.test_plan >>
+      - store_artifacts:
+          path: "~/Library/Logs/scan"
+          destination: "scan"
   beta:
     steps:
       - setup
@@ -98,19 +112,21 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - test_twilio_app:
+      - status_check:
           filters: *test_filters
-      - test_community_app:
-          filters: *test_filters
-      - test_internal_app:
-          filters: *test_filters
-      - run_ui_tests:
-          filters: *test_filters
-      - deploy_internal_app_beta:
-          filters:
-            branches:
-              only:
-                - master
+      # - test_twilio_app:
+      #     filters: *test_filters
+      # - test_community_app:
+      #     filters: *test_filters
+      # - test_internal_app:
+      #     filters: *test_filters
+      # - run_ui_tests:
+      #     filters: *test_filters
+      # - deploy_internal_app_beta:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
   status_check:
     triggers:
       - schedule:

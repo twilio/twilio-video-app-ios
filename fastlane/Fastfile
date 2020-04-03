@@ -8,7 +8,22 @@ platform :ios do
   end
 
   lane :test do |options|
-    scan(scheme: options[:scheme], testplan: options[:test_plan], device: "iPhone 11")
+    scan(
+      scheme: options[:scheme], 
+      testplan: options[:test_plan], 
+      device: "iPhone 11"
+    )
+  end
+
+  lane :status_check do |options|
+    scan(
+      scheme: options[:scheme], 
+      testplan: options[:test_plan], 
+      device: "iPhone 11",
+      slack_channel: "eng-sdk-ahoyapps",
+      slack_message: "iOS status check failed",
+      slack_only_on_failure: true
+    )
   end
 
   lane :beta do
