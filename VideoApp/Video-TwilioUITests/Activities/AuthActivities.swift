@@ -14,6 +14,7 @@
 //  limitations under the License.
 //
 
+import Nimble
 import XCTest
 
 class AuthActivities {
@@ -36,7 +37,7 @@ class AuthActivities {
 
             app.buttons["submitButton"].tap()
             
-            sleep(3) // To prevent CI failures
+            expect(app.textFields["roomNameTextField"].exists).toEventually(beTrue()) // Prevent CI failure
         }
     }
 
