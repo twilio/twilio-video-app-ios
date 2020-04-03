@@ -21,14 +21,13 @@ platform :ios do
       test(scheme: "Video-Twilio", test_plan: "StatusCheck")
     rescue => exception
       slack(
-        channel: "eng-sdk-ahoyapps",
+        channel: "tcr-test", # change, delete channel
         success: false,
-        message: "iOS status check failed 🔥🔥🔥",
+        message: "Failed iOS status check 🔥🔥🔥",
         default_payloads: [],
-        payload: {
-          "Error message" => exception.to_s
-        }
       )
+
+      UI.error exception.to_s
     end
   end
 
