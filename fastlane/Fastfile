@@ -23,7 +23,7 @@ platform :ios do
       slack(
         channel: "tcr-test", # change, delete channel
         success: false,
-        message: "Failed iOS status check 🔥🔥🔥",
+        message: "Failed <#{ENV[CIRCLE_BUILD_URL]}|iOS status check> 🔥🔥🔥",
         default_payloads: [],
       )
 
