@@ -35,6 +35,8 @@ class AuthActivities {
             passwordTextField.typeText(password)
 
             app.buttons["submitButton"].tap()
+            
+            sleep(3)
         }
     }
 
