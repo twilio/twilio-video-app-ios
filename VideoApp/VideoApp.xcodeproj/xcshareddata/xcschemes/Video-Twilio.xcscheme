@@ -49,14 +49,14 @@
       </CodeCoverageTargets>
       <TestPlans>
          <TestPlanReference
-            reference = "container:Video-TwilioTests/Plans/Unit.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-         <TestPlanReference
             reference = "container:Video-TwilioUITests/Plans/StatusCheck.xctestplan">
          </TestPlanReference>
          <TestPlanReference
             reference = "container:Video-TwilioUITests/Plans/UI.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Video-TwilioTests/Plans/Unit.xctestplan"
+            default = "YES">
          </TestPlanReference>
       </TestPlans>
       <Testables>
