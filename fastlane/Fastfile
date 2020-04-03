@@ -27,7 +27,7 @@ platform :ios do
         default_payloads: [],
       )
 
-      UI.error exception.to_s
+      raise exception
     end
   end
 
