@@ -35,8 +35,6 @@ class AuthActivities {
             passwordTextField.typeText(password)
 
             app.buttons["submitButton"].tap()
-            
-            sleep(3) // Have to wait for multiple screen transitions to complete
         }
     }
 
