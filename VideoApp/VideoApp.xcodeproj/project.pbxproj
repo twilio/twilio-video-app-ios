@@ -572,6 +572,8 @@
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
+		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
+		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
 		DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
 		DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModel.swift; sourceTree = "<group>"; };
 		DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponseDecoder.swift; sourceTree = "<group>"; };
@@ -598,11 +600,7 @@
 		DC78CAB924352FEE006D3FAA /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
 		DC78CABB243547CB006D3FAA /* RoomActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomActivities.swift; sourceTree = "<group>"; };
 		DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInTestCase.swift; sourceTree = "<group>"; };
-		DC78CABF24365452006D3FAA /* Video-TwilioUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Video-TwilioUITests.xctestplan"; sourceTree = "<group>"; };
-		DC78CAC2243655D4006D3FAA /* Video-TwilioUITestsStatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Video-TwilioUITestsStatusCheck.xctestplan"; sourceTree = "<group>"; };
 		DC78CAC324367355006D3FAA /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
-		DC78CAC4243673C2006D3FAA /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
-		DC78CAC524367408006D3FAA /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
 		DC78CAC62436768F006D3FAA /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC82A34E23FC9AAA0081578C /* JSONContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContainer.swift; sourceTree = "<group>"; };
 		DC82A35223FDB6890081578C /* SDKLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevel.swift; sourceTree = "<group>"; };
@@ -913,10 +911,9 @@
 		DC04467A238DD55C0072F597 /* Video-TwilioUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DC78CABF24365452006D3FAA /* Video-TwilioUITests.xctestplan */,
-				DC78CAC2243655D4006D3FAA /* Video-TwilioUITestsStatusCheck.xctestplan */,
 				DCD7675F23DF91DC00A2939C /* Activities */,
 				DC0446AF239854E20072F597 /* Helpers */,
+				DC338A282437E6E00093E855 /* Plans */,
 				DC0446A62398433A0072F597 /* Tests */,
 				DC0446A7239843470072F597 /* TestSecretsStore */,
 				DC04467D238DD55C0072F597 /* Info.plist */,
@@ -1058,6 +1055,15 @@
 			isa = PBXGroup;
 			children = (
 				DC338A2724367AEC0093E855 /* Unit.xctestplan */,
+			);
+			path = Plans;
+			sourceTree = "<group>";
+		};
+		DC338A282437E6E00093E855 /* Plans */ = {
+			isa = PBXGroup;
+			children = (
+				DC338A292437E7380093E855 /* StatusCheck.xctestplan */,
+				DC338A2A2437E7380093E855 /* UI.xctestplan */,
 			);
 			path = Plans;
 			sourceTree = "<group>";
@@ -1417,8 +1423,6 @@
 			isa = PBXGroup;
 			children = (
 				DC78CAC324367355006D3FAA /* Unit.xctestplan */,
-				DC78CAC4243673C2006D3FAA /* UI.xctestplan */,
-				DC78CAC524367408006D3FAA /* StatusCheck.xctestplan */,
 			);
 			path = Plans;
 			sourceTree = "<group>";

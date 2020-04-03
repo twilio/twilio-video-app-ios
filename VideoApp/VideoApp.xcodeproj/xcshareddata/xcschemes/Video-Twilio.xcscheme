@@ -53,10 +53,10 @@
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:Video-TwilioTests/Plans/UI.xctestplan">
+            reference = "container:Video-TwilioUITests/Plans/StatusCheck.xctestplan">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:Video-TwilioTests/Plans/StatusCheck.xctestplan">
+            reference = "container:Video-TwilioUITests/Plans/UI.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
