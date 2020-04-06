@@ -18,9 +18,6 @@
 		243CDB4F2266629E00637B6B /* NetworkQualityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */; };
 		243CDB502266629E00637B6B /* NetworkQualityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */; };
 		24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24491F7C1E37F8F000028B24 /* LoginViewController.m */; };
-		246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
-		246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
-		246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */ = {isa = PBXBuildFile; fileRef = 246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */; };
 		248D94A71ED3176000FC8A94 /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */; };
 		24927E2F1ECC9E44006510E3 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24927E2E1ECC9E44006510E3 /* RoomViewController.m */; };
 		24A5984D1ECCC4D4003466B4 /* LocalMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */; };
@@ -34,9 +31,6 @@
 		24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		24CF99DC1ECF36E8007C8631 /* VariableAlphaToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */; };
-		24ED8B0421C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */; };
-		24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */; };
-		24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */; };
 		32BD0B3476F7C1A3D75FD8EF /* Pods_Video_Twilio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */; };
 		48B785FD323FF9E429DB3835 /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB1306CB055161D792FB7EB /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework */; };
 		4B0012251FBA52C4004A587E /* LocalMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */; };
@@ -394,6 +388,12 @@
 		DCD940B1243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
 		DCD940B2243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
 		DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
+		DCD940B5243BA44700D9ECC5 /* VideoAppCameraSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B4243BA44700D9ECC5 /* VideoAppCameraSource.swift */; };
+		DCD940B6243BA44700D9ECC5 /* VideoAppCameraSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B4243BA44700D9ECC5 /* VideoAppCameraSource.swift */; };
+		DCD940B7243BA44700D9ECC5 /* VideoAppCameraSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B4243BA44700D9ECC5 /* VideoAppCameraSource.swift */; };
+		DCD940B9243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B8243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift */; };
+		DCD940BA243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B8243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift */; };
+		DCD940BB243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B8243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift */; };
 		DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
@@ -504,8 +504,6 @@
 		24480A451EF07716003BCF00 /* Video.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Video.entitlements; sourceTree = "<group>"; };
 		24491F7B1E37F8F000028B24 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		24491F7C1E37F8F000028B24 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TVILocalVideoTrack+Mirroring.h"; sourceTree = "<group>"; };
-		246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TVILocalVideoTrack+Mirroring.m"; sourceTree = "<group>"; };
 		248D94A51ED3176000FC8A94 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
 		248D94A61ED3176000FC8A94 /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
 		24927E2D1ECC9E44006510E3 /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
@@ -530,8 +528,6 @@
 		24CF99DB1ECF36E8007C8631 /* VariableAlphaToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableAlphaToggleButton.m; sourceTree = "<group>"; };
 		24ED8AF221C42BB3007BD8E7 /* LocalMediaController+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalMediaController+Internal.h"; sourceTree = "<group>"; };
 		24ED8AFC21C450D1007BD8E7 /* VideoAppCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAppCamera.h; sourceTree = "<group>"; };
-		24ED8B0221C451AD007BD8E7 /* VideoAppCameraSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAppCameraSource.h; sourceTree = "<group>"; };
-		24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAppCameraSource.m; sourceTree = "<group>"; };
 		2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B7A8FEA91C4F11C6503CC7 /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B00124E1FBA52C4004A587E /* Video-Internal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Internal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -692,6 +688,8 @@
 		DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStore.swift; sourceTree = "<group>"; };
 		DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStoreFactory.swift; sourceTree = "<group>"; };
 		DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOptionsFactory.swift; sourceTree = "<group>"; };
+		DCD940B4243BA44700D9ECC5 /* VideoAppCameraSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAppCameraSource.swift; sourceTree = "<group>"; };
+		DCD940B8243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrackHelpers.swift; sourceTree = "<group>"; };
 		DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStore.swift; sourceTree = "<group>"; };
 		DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTwilioAccessTokenStore.swift; sourceTree = "<group>"; };
 		DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTwilioAccessTokenStore.swift; sourceTree = "<group>"; };
@@ -985,7 +983,6 @@
 			children = (
 				24927E2D1ECC9E44006510E3 /* RoomViewController.h */,
 				24927E2E1ECC9E44006510E3 /* RoomViewController.m */,
-				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1288,15 +1285,14 @@
 		DCAEBEEB2376252F00141D2D /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
 				24A5984B1ECCC4D4003466B4 /* LocalMediaController.h */,
 				24A5984C1ECCC4D4003466B4 /* LocalMediaController.m */,
 				24ED8AF221C42BB3007BD8E7 /* LocalMediaController+Internal.h */,
+				DCD940B8243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift */,
 				243CDB4D2266629E00637B6B /* NetworkQualityIndicator.swift */,
-				246ED61921C8071B00227414 /* TVILocalVideoTrack+Mirroring.h */,
-				246ED61A21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m */,
 				24ED8AFC21C450D1007BD8E7 /* VideoAppCamera.h */,
-				24ED8B0221C451AD007BD8E7 /* VideoAppCameraSource.h */,
-				24ED8B0321C451AD007BD8E7 /* VideoAppCameraSource.m */,
+				DCD940B4243BA44700D9ECC5 /* VideoAppCameraSource.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -2367,6 +2363,7 @@
 				DCA65028240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */,
 				DC044691238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DCDCD37624193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
+				DCD940B5243BA44700D9ECC5 /* VideoAppCameraSource.swift in Sources */,
 				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
@@ -2381,7 +2378,6 @@
 				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248C2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */,
 				DC3924892416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
-				246ED61B21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2451,7 +2447,6 @@
 				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
 				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044684238EF6C20072F597 /* Environment.swift in Sources */,
-				24ED8B0421C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				24C239F61EDF263800AA9419 /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCC7E36E24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
@@ -2485,6 +2480,7 @@
 				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
+				DCD940B9243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift in Sources */,
 				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
@@ -2499,6 +2495,7 @@
 				DCA65029240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */,
 				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DCDCD37724193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
+				DCD940B6243BA44700D9ECC5 /* VideoAppCameraSource.swift in Sources */,
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
@@ -2513,7 +2510,6 @@
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248D2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
-				246ED61C21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2583,7 +2579,6 @@
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* Environment.swift in Sources */,
-				24ED8B0521C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00122D1FBA52C4004A587E /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCC7E36F24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
@@ -2617,6 +2612,7 @@
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
+				DCD940BA243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */,
@@ -2631,6 +2627,7 @@
 				DCA6502A240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */,
 				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DCDCD37824193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
+				DCD940B7243BA44700D9ECC5 /* VideoAppCameraSource.swift in Sources */,
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
@@ -2645,7 +2642,6 @@
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248E2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
-				246ED61D21C8071B00227414 /* TVILocalVideoTrack+Mirroring.m in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2715,7 +2711,6 @@
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* Environment.swift in Sources */,
-				24ED8B0621C451AD007BD8E7 /* VideoAppCameraSource.m in Sources */,
 				4B00126A1FBA52E5004A587E /* RemoteParticipantUIModel.m in Sources */,
 				DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCC7E37024085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
@@ -2749,6 +2744,7 @@
 				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
 				DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
+				DCD940BB243BD6DA00D9ECC5 /* LocalVideoTrackHelpers.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */,
 				DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */,

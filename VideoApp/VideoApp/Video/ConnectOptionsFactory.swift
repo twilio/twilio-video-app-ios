@@ -17,7 +17,7 @@
 import TwilioVideo
 
 @objc class ConnectOptionsFactory: NSObject {
-    private let appSettings: AppSettingsStoreWriting = AppSettingsStore.shared
+    private let appSettingsStore: AppSettingsStoreWriting = AppSettingsStore.shared
     
     @objc func makeConnectOptions(
         token: String,
@@ -36,7 +36,7 @@ import TwilioVideo
                 remoteVerbosity: .minimal
             )
             
-            switch self.appSettings.videoCodec {
+            switch self.appSettingsStore.videoCodec {
             case .h264:
                 builder.preferredVideoCodecs = [H264Codec()]
                 builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1200)
@@ -48,7 +48,7 @@ import TwilioVideo
                 builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1600)
             }
             
-            if self.appSettings.isTURNMediaRelayOn {
+            if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
                     builder.abortOnIceServersTimeout = true
                     builder.iceServersTimeout = 30

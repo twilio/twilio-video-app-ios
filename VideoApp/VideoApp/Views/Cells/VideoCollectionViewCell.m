@@ -16,8 +16,6 @@
 
 #import "VideoCollectionViewCell.h"
 #import "RemoteParticipantUIModel.h"
-#import "TVILocalVideoTrack+Mirroring.h"
-
 #import "VideoApp-Swift.h"
 
 @import TwilioVideo;
@@ -145,7 +143,7 @@
 
         if ([_videoTrack isKindOfClass:[TVILocalVideoTrack class]]) {
             TVILocalVideoTrack *localVideoTrack = (TVILocalVideoTrack *)_videoTrack;
-            self.videoView.mirror = [localVideoTrack tvi_shouldMirror];
+            self.videoView.mirror = localVideoTrack.shouldMirror;
         }
     }
 

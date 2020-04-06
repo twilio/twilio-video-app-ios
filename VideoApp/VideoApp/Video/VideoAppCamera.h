@@ -22,8 +22,6 @@
 
 @property (nonatomic, strong, nullable, readonly) TVILocalVideoTrack *localVideoTrack;
 
-- (_Nonnull instancetype)initWithLocalMediaController:(nonnull LocalMediaController *)localMediaController;
-
 - (void)destroyLocalVideoTrack;
 
 - (void)flipCamera;

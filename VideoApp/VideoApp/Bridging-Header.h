@@ -3,3 +3,5 @@
 //
 
 #import "LobbyViewController.h"
+#import "LocalMediaController.h"
+#import "VideoAppCamera.h"

@@ -38,6 +38,10 @@
 - (void)destroyLocalVideoTrack;
 - (void)flipCamera;
 
+- (void)cameraSourceWasInterrupted;
+- (void)cameraSourceInterruptionEnded;
+- (void)videoCaptureStarted;
+
 @property (nonatomic, readonly, getter=shouldMirrorLocalVideoView) BOOL mirrorLocalVideoView;
 
 @end
