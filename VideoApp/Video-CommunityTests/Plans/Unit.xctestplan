@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "949F3D8E-07F0-4548-95EF-3955FD558D8F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:VideoApp.xcodeproj",
+          "identifier" : "4B00125F1FBA52E5004A587E",
+          "name" : "Video-Community"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VideoApp.xcodeproj",
+      "identifier" : "4B00125F1FBA52E5004A587E",
+      "name" : "Video-Community"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:VideoApp.xcodeproj",
+        "identifier" : "DCE965C5237498F50002EC78",
+        "name" : "Video-CommunityTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -8,7 +8,27 @@ platform :ios do
   end
 
   lane :test do |options|
-    scan(scheme: options[:scheme], device: "iPhone 11")
+    scan(
+      scheme: options[:scheme], 
+      testplan: options[:test_plan], 
+      device: "iPhone 11",
+      skip_slack: true
+    )
+  end
+
+  lane :status_check do
+    begin
+      test(scheme: "Video-Twilio", test_plan: "StatusCheck")
+    rescue
+      slack(
+        channel: "eng-sdk-ahoyapps",
+        success: false,
+        message: "Failed <#{ENV["CIRCLE_BUILD_URL"]}|iOS status check> 🔥🔥🔥",
+        default_payloads: [],
+      )
+
+      raise
+    end
   end
 
   lane :beta do

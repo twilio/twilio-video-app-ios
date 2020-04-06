@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,11 +16,10 @@
 
 import Nimble
 
-class AuthTests: BasicTestCase {
-    func test_emailSignIn_withValidCredentials_shouldDisplayUserNameOnLobbyScreen() {
-        let emailSignInUser = TestSecretsStore().testSecrets.emailSignInUser
-        AuthActivities.signIn(email: emailSignInUser.email, password: emailSignInUser.password)
-        expect(app.staticTexts["userNameLabel"].label).to(equal(emailSignInUser.email))
-        AuthActivities.signOut()
+class RoomTests: SignedInTestCase {
+    func test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen() {
+        RoomActivities.join(roomName: "ios status check")
+        expect(app.staticTexts["roomNameLabel"].label).toEventually(equal("ios status check"))
+        RoomActivities.leave()
     }
 }
