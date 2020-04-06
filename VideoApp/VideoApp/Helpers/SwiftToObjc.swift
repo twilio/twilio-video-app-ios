@@ -19,7 +19,6 @@ import Foundation
 @objc class SwiftToObjc: NSObject {
     @objc static var appSettingsStoreDidChangeNotificationName: String { Notification.Name.appSettingDidChange.rawValue }
     @objc static var enableVP8Simulcast: Bool { AppSettingsStore.shared.videoCodec == .vp8Simulcast }
-    @objc static var forceTURNMediaRelay: Bool { AppSettingsStore.shared.isTURNMediaRelayOn }
     @objc static var isGroupTopology: Bool { AppSettingsStore.shared.topology == .group }
     @objc static var userDisplayName: String {
         UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared).user.displayName
