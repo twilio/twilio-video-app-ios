@@ -24,6 +24,7 @@ class SelectOptionViewController: UITableViewController {
         super.viewDidLoad()
         
         title = viewModel.title
+        navigationItem.largeTitleDisplayMode = .never
         
         tableView.register(BasicCell.self)
     }
