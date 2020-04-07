@@ -20,12 +20,12 @@ import TwilioVideo
     private let appSettingsStore: AppSettingsStoreWriting = AppSettingsStore.shared
     
     @objc func makeConnectOptions(
-        token: String,
+        accessToken: String,
         roomName: String,
         audioTracks: [LocalAudioTrack],
         videoTracks: [LocalVideoTrack]
     ) -> ConnectOptions {
-        let connectOptions = ConnectOptions(token: token) { builder in
+        let connectOptions = ConnectOptions(token: accessToken) { builder in
             builder.roomName = roomName
             builder.audioTracks = audioTracks
             builder.videoTracks = videoTracks

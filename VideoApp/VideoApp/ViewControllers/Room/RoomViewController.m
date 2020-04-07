@@ -159,10 +159,10 @@
 }
 
 - (void)joinRoomWithAccessToken:(NSString *)accessToken {
-    TVIConnectOptions *options = [[ConnectOptionsFactory new] makeConnectOptionsWithToken:accessToken
-                                                                                 roomName:self.roomName
-                                                                              audioTracks:self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[]
-                                                                              videoTracks:self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[]];
+    TVIConnectOptions *options = [[ConnectOptionsFactory new] makeConnectOptionsWithAccessToken:accessToken
+                                                                                       roomName:self.roomName
+                                                                                    audioTracks:self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[]
+                                                                                    videoTracks:self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[]];
     self.room = [TwilioVideoSDK connectWithOptions:options delegate:self];
     self.statsViewController.room = self.room;
 }
