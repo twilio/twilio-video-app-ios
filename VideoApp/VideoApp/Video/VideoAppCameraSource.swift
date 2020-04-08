@@ -29,7 +29,7 @@ import TwilioVideo
     }
     
     deinit {
-        cameraSource?.stopCapture()
+        cameraSource?.stopCapture() // Prevent leaking the CameraSource when a Track/Source has been created
     }
 
     func destroyLocalVideoTrack() {
@@ -66,8 +66,11 @@ import TwilioVideo
             }
             
             switch self.appSettingsStore.topology {
-            case .group: builder.rotationTags = .remove
-            case .peerToPeer: break
+            case .group:
+                // Take a best guess and remove rotation tags using hardware acceleration
+                builder.rotationTags = .remove
+            case .peerToPeer:
+                break
             }
         }
         
@@ -88,13 +91,18 @@ import TwilioVideo
         
         switch appSettingsStore.videoCodec {
         case .h264, .vp8:
+            // 640 x 480 squarish crop (1.13:1)
             targetSize = CMVideoDimensions(width: 544, height: 480)
+            
             cropRatio = CGFloat(targetSize.width) / CGFloat(targetSize.height)
             frameRate = 20
         case .vp8Simulcast:
+            // 1024 x 768 squarish crop (1.25:1) on most iPhones. 1280 x 720 squarish crop (1.25:1) on the iPhone X
+            // and models that don't have 1024 x 768.
             targetSize = CMVideoDimensions(width: 900, height: 720)
+            
             cropRatio = CGFloat(targetSize.width) / CGFloat(targetSize.height)
-            frameRate = 24
+            frameRate = 24 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4
         }
         
         let captureDevice = CameraSource.captureDevice(position: .front)!
@@ -132,6 +140,7 @@ import TwilioVideo
     private func selectVideoFormatBySize(captureDevice: AVCaptureDevice, targetSize: CMVideoDimensions) -> VideoFormat {
         let supportedFormats = Array(CameraSource.supportedFormats(captureDevice: captureDevice)) as! [VideoFormat]
         
+        // Cropping might be used if there is not an exact match
         for format in supportedFormats {
             guard
                 format.pixelFormat == .formatYUV420BiPlanarFullRange &&

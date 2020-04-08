@@ -45,6 +45,8 @@ import TwilioVideo
                 builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1200)
             case .vp8Simulcast:
                 builder.preferredVideoCodecs = [Vp8Codec(simulcast: true)]
+                
+                // Allocate a higher bitrate for the simulcast track with 3 spatial layers
                 builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1600)
             }
             
