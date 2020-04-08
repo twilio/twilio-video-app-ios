@@ -20,7 +20,7 @@ class DeepLinkTests: BasicTestCase {
     func test_roomDeepLink_withUserSignedIn_shouldNavigateToLobbyScreenAndSetRoomName() {
         AuthActivities.signIn()
         DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo") {
-            expect(app.textFields["roomNameTextField"].value as? String).to(equal("foo"))
+            expect(app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
             AuthActivities.signOut()
         }
     }
@@ -28,7 +28,7 @@ class DeepLinkTests: BasicTestCase {
     func test_roomDeepLink_withUserSignedOut_shouldRequireUserToSignInAndNavigateToLobbyScreenAndSetRoomName() {
         DeepLinkActivities.open(url: "https://twilio-video-react.appspot.com/room/foo") {
             AuthActivities.signIn()
-            expect(app.textFields["roomNameTextField"].value as? String).to(equal("foo"))
+            expect(app.textFields["roomNameTextField"].value as? String).toEventually(equal("foo"))
             AuthActivities.signOut()
         }
     }
