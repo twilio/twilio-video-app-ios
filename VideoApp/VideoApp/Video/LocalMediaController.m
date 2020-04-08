@@ -23,6 +23,7 @@
 @property (nonatomic, strong, nullable) TVILocalAudioTrack *localAudioTrack;
 @property (nonatomic, strong) id <VideoAppCamera> camera;
 @property (nonatomic, strong) NSPointerArray *delegates;
+@property (nonatomic) BOOL useMultipartyMedia;
 
 @end
 
@@ -33,6 +34,7 @@
 
     if (self) {
         _delegates = [NSPointerArray weakObjectsPointerArray];
+        _useMultipartyMedia = false;
     }
 
     return self;
@@ -119,11 +121,20 @@
 }
 
 - (void)flipCamera {
-    [self.camera flipCamera];
+    [self.camera flipCamera:self.useMultipartyMedia];
 }
 
 - (BOOL)shouldMirrorLocalVideoView {
     return self.camera.shouldMirrorLocalVideoView;
+}
+
+- (void)checkVideoSenderSettings:(BOOL)isMultiparty {
+    if (SwiftToObjc.isVideoCodecVP8Simulcast && self.localParticipant != nil && isMultiparty != self.useMultipartyMedia) {
+        self.useMultipartyMedia = isMultiparty;
+        TVIEncodingParameters *encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0 videoBitrate:1800];
+        [self.localParticipant setEncodingParameters:encodingParameters];
+        [self.camera updateVideoSenderSettings:isMultiparty];
+    }
 }
 
 #pragma mark - Delegate management

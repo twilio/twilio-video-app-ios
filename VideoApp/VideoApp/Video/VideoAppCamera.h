@@ -24,8 +24,10 @@
 
 - (void)destroyLocalVideoTrack;
 
-- (void)flipCamera;
+- (void)flipCamera:(BOOL)isMultiparty;
 
 - (BOOL)shouldMirrorLocalVideoView;
+
+- (void)updateVideoSenderSettings:(BOOL)isMultiparty;
 
 @end

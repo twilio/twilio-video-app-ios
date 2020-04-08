@@ -455,6 +455,10 @@
     }
 }
 
+- (void)checkVideoSenderSettings {
+    [self.localMediaController checkVideoSenderSettings:self.room.remoteParticipants.count > 1];
+}
+
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -536,6 +540,7 @@
     self.videoCollectionView.hidden = NO;
     [self refreshVideoViews];
     [self setNeedsUpdateOfHomeIndicatorAutoHidden];
+    [self checkVideoSenderSettings];
 }
 
 - (void)room:(TVIRoom *)room didFailToConnectWithError:(NSError *)error {
@@ -570,6 +575,7 @@
 
 - (void)didReconnectToRoom:(TVIRoom *)room {
     NSLog(@"%s - Room sid: %@", __PRETTY_FUNCTION__, room.sid);
+    [self checkVideoSenderSettings];
 }
 
 - (void)room:(TVIRoom *)room participantDidConnect:(TVIRemoteParticipant *)participant {
@@ -581,6 +587,7 @@
     participant.delegate = self;
 
     [self addRemoteParticipantModel:participant];
+    [self checkVideoSenderSettings];
 }
 
 - (void)room:(TVIRoom *)room participantDidDisconnect:(TVIRemoteParticipant *)participant {
@@ -591,6 +598,7 @@
           participant.sid);
 
     [self deleteParticipantModel:participant publication:nil];
+    [self checkVideoSenderSettings];
 }
 
 - (void)roomDidStartRecording:(TVIRoom *)room {

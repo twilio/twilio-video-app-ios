@@ -41,6 +41,7 @@
 - (void)cameraSourceWasInterrupted;
 - (void)cameraSourceInterruptionEnded;
 - (void)videoCaptureStarted;
+- (void)checkVideoSenderSettings:(BOOL)isMultiparty;
 
 @property (nonatomic, readonly, getter=shouldMirrorLocalVideoView) BOOL mirrorLocalVideoView;
 
