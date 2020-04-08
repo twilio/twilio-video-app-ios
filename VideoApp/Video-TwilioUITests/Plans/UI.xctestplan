@@ -13,6 +13,9 @@
   },
   "testTargets" : [
     {
+      "skippedTests" : [
+        "RoomTests\/test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen()"
+      ],
       "target" : {
         "containerPath" : "container:VideoApp.xcodeproj",
         "identifier" : "DC044678238DD55C0072F597",
