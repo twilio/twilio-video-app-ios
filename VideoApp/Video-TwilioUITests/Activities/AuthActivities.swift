@@ -43,9 +43,7 @@ class AuthActivities {
 
     static func signOut() {
         XCTContext.runActivity(named: "Sign out") { _ in
-            let settingsButton = app.buttons["settingsButton"]
-            expect(settingsButton.exists).toEventually(beTrue()) // Prevent intermittent failure on simulator
-            settingsButton.tap()
+            app.buttons["settingsButton"].tap()
             app.tables/*@START_MENU_TOKEN@*/.staticTexts["Sign Out"]/*[[".cells.staticTexts[\"Sign Out\"]",".staticTexts[\"Sign Out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         }
     }
