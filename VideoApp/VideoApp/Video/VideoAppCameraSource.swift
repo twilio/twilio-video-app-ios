@@ -19,7 +19,7 @@ import TwilioVideo
 @objc class VideoAppCameraSource: NSObject, VideoAppCamera {
     private(set) var localVideoTrack: LocalVideoTrack?
     private let appSettingsStore: AppSettingsStoreWriting = AppSettingsStore.shared
-    private weak var localMediaController: LocalMediaController!
+    private weak var localMediaController: LocalMediaController?
     private var cameraSource: CameraSource?
 
     @objc init(localMediaController: LocalMediaController) {
@@ -51,7 +51,7 @@ import TwilioVideo
         cameraSource.selectCaptureDevice(captureDevice) { [weak self] _, _, error in
             guard error == nil else { return }
             
-            self?.localMediaController.videoCaptureStarted()
+            self?.localMediaController?.videoCaptureStarted()
         }
     }
 
@@ -79,6 +79,8 @@ import TwilioVideo
         if let cameraSource = cameraSource {
             localVideoTrack = LocalVideoTrack(source: cameraSource, enabled: true, name: "camera")
             startCameraSource()
+        } else {
+            print("Unable to create a capturer...")
         }
     }
     
@@ -133,7 +135,7 @@ import TwilioVideo
         cameraSource.startCapture(device: captureDevice, format: preferredFormat) { [weak self] _, _, error in
             guard error == nil else { return }
             
-            self?.localMediaController.videoCaptureStarted()
+            self?.localMediaController?.videoCaptureStarted()
         }
     }
         
@@ -159,10 +161,10 @@ import TwilioVideo
 
 extension VideoAppCameraSource: CameraSourceDelegate {
     func cameraSourceInterruptionEnded(source: CameraSource) {
-        localMediaController.cameraSourceInterruptionEnded()
+        localMediaController?.cameraSourceInterruptionEnded()
     }
 
     func cameraSourceWasInterrupted(source: CameraSource, reason: AVCaptureSession.InterruptionReason) {
-        localMediaController.cameraSourceWasInterrupted()
+        localMediaController?.cameraSourceWasInterrupted()
     }
 }
