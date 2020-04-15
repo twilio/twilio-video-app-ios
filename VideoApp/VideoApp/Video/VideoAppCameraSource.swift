@@ -85,7 +85,12 @@ import TwilioVideo
     }
     
     private func startCameraSource() {
-        guard let cameraSource = cameraSource else { return }
+        guard
+            let cameraSource = cameraSource,
+            let captureDevice = CameraSource.captureDevice(position: .front)
+            else {
+                return
+        }
 
         let targetSize: CMVideoDimensions
         let cropRatio: CGFloat
@@ -107,7 +112,6 @@ import TwilioVideo
             frameRate = 24 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4
         }
         
-        let captureDevice = CameraSource.captureDevice(position: .front)!
         let preferredFormat = selectVideoFormatBySize(captureDevice: captureDevice, targetSize: targetSize)
         preferredFormat.frameRate = min(preferredFormat.frameRate, frameRate)
         
