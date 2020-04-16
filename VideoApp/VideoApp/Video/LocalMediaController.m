@@ -131,7 +131,8 @@
 - (void)checkVideoSenderSettings:(BOOL)isMultiparty {
     if (SwiftToObjc.isVideoCodecVP8Simulcast && self.localParticipant != nil && isMultiparty != self.useMultipartyMedia) {
         self.useMultipartyMedia = isMultiparty;
-        TVIEncodingParameters *encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0 videoBitrate:1800];
+        NSUInteger videoBitrate = isMultiparty ? 600 : 1120;
+        TVIEncodingParameters *encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0 videoBitrate:videoBitrate];
         [self.localParticipant setEncodingParameters:encodingParameters];
         [self.camera updateVideoSenderSettings:isMultiparty];
     }
