@@ -14,7 +14,9 @@
   "testTargets" : [
     {
       "selectedTests" : [
-        "RoomTests\/test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen()"
+        "RoomTests\/test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen()",
+        "RoomTests\/test_joinRoom_withIOSStatusCheckRoomName_shouldDisplayIOSStatusCheckRoomNameOnRoomScreen()",
+        "RoomTests\/test_joinRoom_withStatusCheckRoomName_shouldDisplayStatusCheckRoomNameOnRoomScreen()"
       ],
       "target" : {
         "containerPath" : "container:VideoApp.xcodeproj",

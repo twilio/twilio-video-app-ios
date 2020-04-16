@@ -159,36 +159,10 @@
 }
 
 - (void)joinRoomWithAccessToken:(NSString *)accessToken {
-    // Allocate a higher bitrate for the simulcast track with 3 spatial layers.
-    int32_t videoBitrate = SwiftToObjc.enableVP8Simulcast ? 1600 : 1200;
-    
-    TVIConnectOptions *options = [TVIConnectOptions optionsWithToken:accessToken
-                                                               block:^(TVIConnectOptionsBuilder *builder) {
-        builder.roomName = self.roomName;
-        builder.dominantSpeakerEnabled = YES;
-        builder.networkQualityEnabled = YES;
-        builder.networkQualityConfiguration = [[TVINetworkQualityConfiguration alloc] initWithLocalVerbosity:TVINetworkQualityVerbosityMinimal
-                                                                                             remoteVerbosity:TVINetworkQualityVerbosityMinimal];
-        builder.audioTracks = self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[];
-        builder.videoTracks = self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[];
-        
-        if (SwiftToObjc.enableVP8Simulcast) {
-            builder.preferredVideoCodecs = @[[[TVIVp8Codec alloc] initWithSimulcast:YES]];
-        } else {
-            builder.preferredVideoCodecs = @[[TVIH264Codec new]];
-        }
-        builder.encodingParameters = [[TVIEncodingParameters alloc] initWithAudioBitrate:0
-                                                                            videoBitrate:videoBitrate];
-        
-        if (SwiftToObjc.forceTURNMediaRelay) {
-            builder.iceOptions = [TVIIceOptions optionsWithBlock:^(TVIIceOptionsBuilder * _Nonnull builder) {
-                builder.abortOnIceServersTimeout = YES;
-                builder.iceServersTimeout = 30;
-                builder.transportPolicy = TVIIceTransportPolicyRelay;
-            }];
-        }
-    }];
-    
+    TVIConnectOptions *options = [[ConnectOptionsFactory new] makeConnectOptionsWithAccessToken:accessToken
+                                                                                       roomName:self.roomName
+                                                                                    audioTracks:self.localMediaController.localAudioTrack ? @[self.localMediaController.localAudioTrack] : @[]
+                                                                                    videoTracks:self.localMediaController.localVideoTrack ? @[self.localMediaController.localVideoTrack] : @[]];
     self.room = [TwilioVideoSDK connectWithOptions:options delegate:self];
     self.statsViewController.room = self.room;
 }

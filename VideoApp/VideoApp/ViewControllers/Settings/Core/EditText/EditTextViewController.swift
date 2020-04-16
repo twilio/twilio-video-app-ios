@@ -24,7 +24,8 @@ class EditTextViewController: UITableViewController {
         super.viewDidLoad()
         
         title = viewModel.title
-        
+        navigationItem.largeTitleDisplayMode = .never
+
         tableView.register(EditTextCell.self)
     }
     

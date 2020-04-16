@@ -16,7 +16,7 @@
 
 #import "LocalMediaController.h"
 #import "VideoAppCamera.h"
-#import "VideoAppCameraSource.h"
+#import "VideoApp-Swift.h"
 
 @interface LocalMediaController ()
 

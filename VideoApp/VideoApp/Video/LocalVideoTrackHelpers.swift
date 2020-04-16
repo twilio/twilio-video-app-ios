@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,9 +14,12 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-#import "VideoAppCamera.h"
+import TwilioVideo
 
-@interface VideoAppCameraSource : NSObject <VideoAppCamera>
+@objc extension LocalVideoTrack {
+    @objc var shouldMirror: Bool {
+        guard let source = source as? CameraSource else { return false }
 
-@end
+        return source.device?.position == .front
+    }
+}

@@ -18,11 +18,13 @@ import Foundation
 
 enum VideoCodec: String, CaseIterable, Codable {
     case h264
+    case vp8
     case vp8Simulcast
     
     var title: String {
         switch self {
         case .h264: return "H.264"
+        case .vp8: return "VP8"
         case .vp8Simulcast: return "VP8 Simulcast"
         }
     }
