@@ -184,8 +184,8 @@ private extension VideoCodec {
     
     func frameRate(isMultiparty: Bool) -> UInt {
         switch self {
-        case .h264, .vp8: return 20
-        case .vp8Simulcast: return isMultiparty ? 15 : 24 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4
+        case .h264, .vp8: return isMultiparty ? 15 : 24
+        case .vp8Simulcast: return 20 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4
         }
     }
 }
