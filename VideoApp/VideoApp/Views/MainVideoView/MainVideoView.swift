@@ -16,11 +16,25 @@
 
 import UIKit
 
-class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
-    func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
-        return viewController
+@IBDesignable
+class MainVideoView: NibView {
+    @IBOutlet weak var emptyVideoView: EmptyVideoView!
+    @IBOutlet weak var videoView: VideoView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        videoView.delegate = self
+    }
+    
+    func configure(identity: String, videoConfig: VideoView.Config) {
+        emptyVideoView.configure(identity: identity)
+        videoView.configure(config: videoConfig)
+    }
+}
+
+extension MainVideoView: VideoViewDelegate {
+    func didUpdateStatus(isVideoOn: Bool) {
+        emptyVideoView.isHidden = isVideoOn
     }
 }

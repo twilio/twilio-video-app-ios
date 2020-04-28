@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,7 +16,11 @@
 
 import UIKit
 
-@available(iOS 13, *)
-protocol WindowSceneObserving: AnyObject {
-    func interfaceOrientationDidChange(windowScene: UIWindowScene)
+@IBDesignable
+class EmptyVideoView: NibView {
+    @IBOutlet weak var identityLabel: UILabel!
+
+    func configure(identity: String) {
+        identityLabel.text = identity
+    }
 }

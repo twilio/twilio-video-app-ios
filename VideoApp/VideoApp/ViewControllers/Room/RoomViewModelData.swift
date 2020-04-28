@@ -14,13 +14,23 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
-    func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
-        return viewController
+struct RoomViewModelData {
+    struct MainParticipant {
+        let identity: String
+        let videoConfig: VideoView.Config
+        
+        init(participant: VideoApp.Participant) {
+            identity = participant.identity
+            videoConfig = .init(
+                videoTrack: participant.screenTrack ?? participant.cameraTrack,
+                shouldMirror: participant.shouldMirrorCameraVideo
+            )
+        }
     }
+    
+    let roomName: String
+    let participants: [Participant]
+    let mainParticipant: MainParticipant
 }

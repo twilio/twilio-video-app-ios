@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,7 +16,19 @@
 
 import UIKit
 
-@available(iOS 13, *)
-protocol WindowSceneObserving: AnyObject {
-    func interfaceOrientationDidChange(windowScene: UIWindowScene)
+extension UIViewController {
+    func showError(error: Error, handler: (() -> Void)? = nil) {
+        let alertController = UIAlertController(
+            title: "Error",
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            handler?()
+        }
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }

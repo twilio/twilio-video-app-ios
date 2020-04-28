@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,9 +14,10 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-@available(iOS 13, *)
-protocol WindowSceneObserving: AnyObject {
-    func interfaceOrientationDidChange(windowScene: UIWindowScene)
+class UserStoreFactory {
+    func makeUserStore() -> UserStoreReading {
+        UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared)
+    }
 }
