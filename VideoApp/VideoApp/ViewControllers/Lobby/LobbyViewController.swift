@@ -28,6 +28,7 @@ class LobbyViewController: UIViewController {
     private let deepLinkStore: DeepLinkStoreWriting = DeepLinkStore.shared
     private let notificationCenter = NotificationCenter.default
     private var participant: LocalParticipant!
+    private var shouldRenderVideo = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +60,15 @@ class LobbyViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        shouldRenderVideo = false
         configureVideoView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        shouldRenderVideo = true
+        refresh()
         configureVideoView()
     }
     
@@ -156,12 +160,10 @@ class LobbyViewController: UIViewController {
     }
     
     private func configureVideoView() {
-        let isVisible = viewIfLoaded?.window != nil
-        
         videoView.configure(
             identity: participant.identity,
             videoConfig: .init(
-                videoTrack: isVisible ? participant.cameraTrack : nil,
+                videoTrack: shouldRenderVideo ? participant.cameraTrack : nil,
                 shouldMirror: participant.shouldMirrorCameraVideo
             )
         )
