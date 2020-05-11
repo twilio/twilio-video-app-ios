@@ -77,7 +77,10 @@ class LocalParticipant: NSObject, Participant {
     }
     var localCameraTrack: LocalVideoTrack? { cameraManager?.track }
     var cameraPosition: AVCaptureDevice.Position = .front {
-        didSet { cameraManager?.position = cameraPosition }
+        didSet {
+            cameraManager?.position = cameraPosition
+            postUpdate()
+        }
     }
     private(set) var micTrack: LocalAudioTrack?
     private let micTrackFactory: MicTrackFactory

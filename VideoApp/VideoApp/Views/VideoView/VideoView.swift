@@ -49,7 +49,7 @@ class VideoView: NibView {
             updateStatus(hasVideoData: false)
             return
         }
-        guard !videoTrack.isRendered(by: videoView) else {
+        guard !videoTrack.isRendered(by: videoView) || videoView.shouldMirror != config.shouldMirror else {
             return // Don't thrash rendering because it causes empty frames to flash
         }
         
