@@ -18,6 +18,6 @@ import TwilioVideo
 
 class MicTrackFactory {
     func makeMicTrack() -> LocalAudioTrack? {
-        return LocalAudioTrack(options: nil, enabled: true, name: "microphone")
+        return LocalAudioTrack(options: nil, enabled: true, name: TrackName.mic)
     }
 }

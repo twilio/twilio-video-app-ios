@@ -24,7 +24,11 @@ class RemoteParticipant: NSObject, Participant {
     let shouldMirrorCameraVideo = false
     var networkQualityLevel: NetworkQualityLevel { participant.networkQualityLevel }
     let isRemote = true
-    var isMicOn: Bool { participant.remoteAudioTracks.first(where: { $0.trackName == TrackName.mic })?.isTrackEnabled == true }
+    var isMicOn: Bool {
+        guard let micTrack = participant.remoteAudioTracks.first else { return false }
+        
+        return micTrack.isTrackSubscribed && micTrack.isTrackEnabled
+    }
     var isDominantSpeaker = false { didSet { postUpdate() } }
     var isPinned = false
     private let participant: TwilioVideo.RemoteParticipant
