@@ -543,7 +543,7 @@
                                             <constraint firstItem="lfZ-Rn-kba" firstAttribute="top" secondItem="Ogu-iq-Lc6" secondAttribute="top" id="uAQ-oo-mIh"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wU6-sZ-Ash">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wU6-sZ-Ash">
                                         <rect key="frame" x="10" y="690" width="404" height="172"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
