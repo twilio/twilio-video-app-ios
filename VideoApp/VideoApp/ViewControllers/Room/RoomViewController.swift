@@ -25,6 +25,7 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var participantCollectionView: UICollectionView!
     @IBOutlet weak var mainVideoView: MainVideoView!
+    @IBOutlet weak var mainIdentityLabel: UILabel!
     var viewModel: RoomViewModel!
     var statsViewController: StatsViewController!
     
@@ -64,6 +65,7 @@ class RoomViewController: UIViewController {
         switchCameraButton.isEnabled = viewModel.isCameraOn
         let participant = viewModel.data.mainParticipant
         mainVideoView.configure(identity: participant.identity, videoConfig: participant.videoConfig)
+        mainIdentityLabel.text = participant.identity
     }
 }
 

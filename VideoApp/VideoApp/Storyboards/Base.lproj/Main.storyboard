@@ -618,12 +618,40 @@
                                             <constraint firstAttribute="width" constant="48" id="kA4-dE-nDr"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyO-2I-nos" userLabel="Main identity">
+                                        <rect key="frame" x="20" y="114" width="67.5" height="30.5"/>
+                                        <subviews>
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-Zf-y91" userLabel="Background">
+                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="30.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76w-QN-Sk9" userLabel="Identity">
+                                                <rect key="frame" x="5" y="5" width="57.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="76w-QN-Sk9" firstAttribute="centerX" secondItem="nyO-2I-nos" secondAttribute="centerX" id="Dhg-8b-fgV"/>
+                                            <constraint firstAttribute="bottom" secondItem="QtR-Zf-y91" secondAttribute="bottom" id="J3V-hi-Baa"/>
+                                            <constraint firstItem="76w-QN-Sk9" firstAttribute="centerY" secondItem="nyO-2I-nos" secondAttribute="centerY" id="PdS-iW-Mb6"/>
+                                            <constraint firstItem="76w-QN-Sk9" firstAttribute="width" secondItem="nyO-2I-nos" secondAttribute="width" constant="-10" id="Vnn-2g-MGc"/>
+                                            <constraint firstItem="QtR-Zf-y91" firstAttribute="leading" secondItem="nyO-2I-nos" secondAttribute="leading" id="eMP-YX-4z9"/>
+                                            <constraint firstAttribute="trailing" secondItem="QtR-Zf-y91" secondAttribute="trailing" id="pFa-du-ebi"/>
+                                            <constraint firstItem="76w-QN-Sk9" firstAttribute="height" secondItem="nyO-2I-nos" secondAttribute="height" constant="-10" id="qlf-6B-b3w"/>
+                                            <constraint firstItem="QtR-Zf-y91" firstAttribute="top" secondItem="nyO-2I-nos" secondAttribute="top" id="r2f-d8-tNT"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Ogu-iq-Lc6" firstAttribute="leading" secondItem="dz5-X8-ZUx" secondAttribute="leading" id="6vs-XS-pg4"/>
                                     <constraint firstAttribute="trailing" secondItem="Ogu-iq-Lc6" secondAttribute="trailing" id="UiG-hY-C5C"/>
                                     <constraint firstItem="Ogu-iq-Lc6" firstAttribute="top" secondItem="dz5-X8-ZUx" secondAttribute="top" id="jJX-xx-PVt"/>
+                                    <constraint firstItem="nyO-2I-nos" firstAttribute="top" secondItem="Ogu-iq-Lc6" secondAttribute="bottom" constant="20" id="lRQ-91-2wb"/>
+                                    <constraint firstItem="nyO-2I-nos" firstAttribute="leading" secondItem="dz5-X8-ZUx" secondAttribute="leading" constant="20" id="tpu-Uo-GTE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -653,6 +681,7 @@
                         <outlet property="disableCameraButton" destination="sqN-Vg-1NI" id="y5T-Nf-psh"/>
                         <outlet property="disableMicButton" destination="xjQ-ct-136" id="Gjm-8P-1Sd"/>
                         <outlet property="leaveButton" destination="dW2-aV-srT" id="V6o-I0-16I"/>
+                        <outlet property="mainIdentityLabel" destination="76w-QN-Sk9" id="cs2-yA-7eD"/>
                         <outlet property="mainVideoView" destination="wQq-n1-BV3" id="IEa-gb-6eu"/>
                         <outlet property="participantCollectionView" destination="wU6-sZ-Ash" id="1ue-Zg-5ps"/>
                         <outlet property="roomNameLabel" destination="LQi-P8-wlg" id="ysU-OB-NcB"/>
