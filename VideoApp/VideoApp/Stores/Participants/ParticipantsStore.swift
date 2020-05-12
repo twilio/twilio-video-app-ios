@@ -63,10 +63,10 @@ class ParticipantsStore {
             
             post(.didUpdateParticipant(index: index))
             
-            if participant.screenTrack != nil && index != participants.screenIndex {
+            if participant.isDominantSpeaker && index != participants.dominantSpeakerIndex {
                 var new = participants
                 new.remove(at: index)
-                new.insert(participant, at: new.screenIndex)
+                new.insert(participant, at: new.dominantSpeakerIndex)
                 postDiff(new: new)
             }
         }
@@ -80,8 +80,8 @@ class ParticipantsStore {
             
             if !participant.isRemote {
                 index = 0
-            } else if participant.screenTrack != nil {
-                index = new.screenIndex
+            } else if participant.isDominantSpeaker {
+                index = new.dominantSpeakerIndex
             } else {
                 index = new.endIndex
             }
@@ -112,5 +112,5 @@ class ParticipantsStore {
 }
 
 private extension Array where Element == Participant {
-    var screenIndex: Int { firstIndex(where: { $0.isRemote }) ?? endIndex }
+    var dominantSpeakerIndex: Int { firstIndex(where: { $0.isRemote }) ?? endIndex }
 }
