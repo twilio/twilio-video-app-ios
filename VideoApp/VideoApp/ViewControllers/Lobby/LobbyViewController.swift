@@ -18,7 +18,7 @@ import UIKit
 
 class LobbyViewController: UIViewController {
     @IBOutlet weak var loggedInUser: UILabel!
-    @IBOutlet weak var videoView: MainVideoView!
+    @IBOutlet weak var videoView: VideoView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var roomTextField: UITextField!
     @IBOutlet weak var audioToggleButton: UIButton!
@@ -160,13 +160,11 @@ class LobbyViewController: UIViewController {
     }
     
     private func configureVideoView() {
-        videoView.configure(
-            identity: participant.identity,
-            videoConfig: .init(
-                videoTrack: shouldRenderVideo ? participant.cameraTrack : nil,
-                shouldMirror: participant.shouldMirrorCameraVideo
-            )
+        let config = VideoView.Config(
+            videoTrack: shouldRenderVideo ? participant.cameraTrack : nil,
+            shouldMirror: participant.shouldMirrorCameraVideo
         )
+        videoView.configure(config: config)
     }
     
     private func refresh() {

@@ -314,7 +314,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-At-G0j" userLabel="Local Video View" customClass="MainVideoView" customModule="VideoApp" customModuleProvider="target">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-At-G0j" userLabel="Local Video View" customClass="VideoView" customModule="VideoApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24" width="414" height="838"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -487,7 +487,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQq-n1-BV3" userLabel="Main Video" customClass="MainVideoView" customModule="VideoApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQq-n1-BV3" userLabel="Main Video" customClass="VideoView" customModule="VideoApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz5-X8-ZUx" userLabel="Overlay">

@@ -249,21 +249,9 @@
 		DC9A5DD6245B7F8600E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
 		DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
 		DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
-		DC9A5DDA245C8AE600E4B079 /* MainVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD9245C8AE500E4B079 /* MainVideoView.swift */; };
-		DC9A5DDB245C8AE600E4B079 /* MainVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD9245C8AE500E4B079 /* MainVideoView.swift */; };
-		DC9A5DDC245C8AE600E4B079 /* MainVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD9245C8AE500E4B079 /* MainVideoView.swift */; };
-		DC9A5DDE245C8CA300E4B079 /* MainVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DDD245C8CA300E4B079 /* MainVideoView.xib */; };
-		DC9A5DDF245C8CA300E4B079 /* MainVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DDD245C8CA300E4B079 /* MainVideoView.xib */; };
-		DC9A5DE0245C8CA300E4B079 /* MainVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DDD245C8CA300E4B079 /* MainVideoView.xib */; };
 		DC9A5DE2245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
 		DC9A5DE3245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
 		DC9A5DE4245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
-		DC9A5DF3245CB41000E4B079 /* EmptyVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DF2245CB41000E4B079 /* EmptyVideoView.swift */; };
-		DC9A5DF4245CB41000E4B079 /* EmptyVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DF2245CB41000E4B079 /* EmptyVideoView.swift */; };
-		DC9A5DF5245CB41000E4B079 /* EmptyVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DF2245CB41000E4B079 /* EmptyVideoView.swift */; };
-		DC9A5DF7245CB42C00E4B079 /* EmptyVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DF6245CB42C00E4B079 /* EmptyVideoView.xib */; };
-		DC9A5DF8245CB42C00E4B079 /* EmptyVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DF6245CB42C00E4B079 /* EmptyVideoView.xib */; };
-		DC9A5DF9245CB42C00E4B079 /* EmptyVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DF6245CB42C00E4B079 /* EmptyVideoView.xib */; };
 		DC9A5DFC245CB66800E4B079 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DFB245CB66800E4B079 /* VideoView.xib */; };
 		DC9A5DFD245CB66800E4B079 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DFB245CB66800E4B079 /* VideoView.xib */; };
 		DC9A5DFE245CB66800E4B079 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DFB245CB66800E4B079 /* VideoView.xib */; };
@@ -700,11 +688,7 @@
 		DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalParticipant.swift; sourceTree = "<group>"; };
 		DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteParticipant.swift; sourceTree = "<group>"; };
 		DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
-		DC9A5DD9245C8AE500E4B079 /* MainVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVideoView.swift; sourceTree = "<group>"; };
-		DC9A5DDD245C8CA300E4B079 /* MainVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVideoView.xib; sourceTree = "<group>"; };
 		DC9A5DE1245CA2E000E4B079 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
-		DC9A5DF2245CB41000E4B079 /* EmptyVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVideoView.swift; sourceTree = "<group>"; };
-		DC9A5DF6245CB42C00E4B079 /* EmptyVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyVideoView.xib; sourceTree = "<group>"; };
 		DC9A5DFB245CB66800E4B079 /* VideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
 		DC9A5DFF245CB67600E4B079 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		DC9A5E04245DDC1000E4B079 /* RoomViewModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelData.swift; sourceTree = "<group>"; };
@@ -962,8 +946,6 @@
 				DC0446C723A2D7720072F597 /* Cells */,
 				DCEDB33524651287006AF70D /* CircleView */,
 				DCEDB3372465129A006AF70D /* CircleButton */,
-				DC9A5DE9245CB2A700E4B079 /* EmptyVideoView */,
-				DC9A5DE7245CB1C400E4B079 /* MainVideoView */,
 				DCEDB3362465128E006AF70D /* ToggleButton */,
 				DC9A5DE8245CB1D600E4B079 /* VideoView */,
 			);
@@ -1334,15 +1316,6 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
-		DC9A5DE7245CB1C400E4B079 /* MainVideoView */ = {
-			isa = PBXGroup;
-			children = (
-				DC9A5DD9245C8AE500E4B079 /* MainVideoView.swift */,
-				DC9A5DDD245C8CA300E4B079 /* MainVideoView.xib */,
-			);
-			path = MainVideoView;
-			sourceTree = "<group>";
-		};
 		DC9A5DE8245CB1D600E4B079 /* VideoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1350,15 +1323,6 @@
 				DC9A5DFB245CB66800E4B079 /* VideoView.xib */,
 			);
 			path = VideoView;
-			sourceTree = "<group>";
-		};
-		DC9A5DE9245CB2A700E4B079 /* EmptyVideoView */ = {
-			isa = PBXGroup;
-			children = (
-				DC9A5DF2245CB41000E4B079 /* EmptyVideoView.swift */,
-				DC9A5DF6245CB42C00E4B079 /* EmptyVideoView.xib */,
-			);
-			path = EmptyVideoView;
 			sourceTree = "<group>";
 		};
 		DC9A5E03245DC5FD00E4B079 /* Participant */ = {
@@ -1966,12 +1930,10 @@
 				DCAEBF1F2383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				2412824A1E36A6AB002198BE /* LaunchScreen.storyboard in Resources */,
 				DC85CA5F23CCDADB00BF016F /* GoogleService-Info.plist in Resources */,
-				DC9A5DDE245C8CA300E4B079 /* MainVideoView.xib in Resources */,
 				DCAEBF332383560500141D2D /* EditTextCell.xib in Resources */,
 				DC44C2C523870D0800205174 /* BasicCell.xib in Resources */,
 				DC9A5E112460CE9800E4B079 /* ParticipantCell.xib in Resources */,
 				241282471E36A6AB002198BE /* Assets.xcassets in Resources */,
-				DC9A5DF7245CB42C00E4B079 /* EmptyVideoView.xib in Resources */,
 				DC9A5DFC245CB66800E4B079 /* VideoView.xib in Resources */,
 				DC44C2BD238704FB00205174 /* RightDetailCell.xib in Resources */,
 				241282451E36A6AB002198BE /* Main.storyboard in Resources */,
@@ -1986,12 +1948,10 @@
 				DCAEBF202383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				4B0012411FBA52C4004A587E /* LaunchScreen.storyboard in Resources */,
 				DCAEBF342383560500141D2D /* EditTextCell.xib in Resources */,
-				DC9A5DDF245C8CA300E4B079 /* MainVideoView.xib in Resources */,
 				DC44C2C623870D0800205174 /* BasicCell.xib in Resources */,
 				4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */,
 				DC9A5E122460CE9800E4B079 /* ParticipantCell.xib in Resources */,
 				DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */,
-				DC9A5DF8245CB42C00E4B079 /* EmptyVideoView.xib in Resources */,
 				DC9A5DFD245CB66800E4B079 /* VideoView.xib in Resources */,
 				DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */,
 				4B0012461FBA52C4004A587E /* Main.storyboard in Resources */,
@@ -2011,9 +1971,7 @@
 				4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */,
 				DC44C2BF238704FB00205174 /* RightDetailCell.xib in Resources */,
 				DC9A5E132460CE9800E4B079 /* ParticipantCell.xib in Resources */,
-				DC9A5DE0245C8CA300E4B079 /* MainVideoView.xib in Resources */,
 				4B0012831FBA52E5004A587E /* Main.storyboard in Resources */,
-				DC9A5DF9245CB42C00E4B079 /* EmptyVideoView.xib in Resources */,
 				DCAEBF19238331A800141D2D /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2648,7 +2606,6 @@
 				DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
 				DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				DCD7675623DF554A00A2939C /* UserActivityStore.swift in Sources */,
-				DC9A5DDA245C8AE600E4B079 /* MainVideoView.swift in Sources */,
 				DCEDB3282464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */,
 				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E05245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
@@ -2728,7 +2685,6 @@
 				DC9A5E00245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD12458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
-				DC9A5DF3245CB41000E4B079 /* EmptyVideoView.swift in Sources */,
 				DC044695238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC02459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2802,7 +2758,6 @@
 				DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
 				DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				DCD7675723DF554A00A2939C /* UserActivityStore.swift in Sources */,
-				DC9A5DDB245C8AE600E4B079 /* MainVideoView.swift in Sources */,
 				DCEDB3292464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E06245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
@@ -2882,7 +2837,6 @@
 				DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
-				DC9A5DF4245CB41000E4B079 /* EmptyVideoView.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC12459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2956,7 +2910,6 @@
 				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
 				DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
 				DCD7675823DF554B00A2939C /* UserActivityStore.swift in Sources */,
-				DC9A5DDC245C8AE600E4B079 /* MainVideoView.swift in Sources */,
 				DCEDB32A2464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E07245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
@@ -3036,7 +2989,6 @@
 				DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
-				DC9A5DF5245CB41000E4B079 /* EmptyVideoView.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC22459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
