@@ -18,6 +18,6 @@ import TwilioVideo
 
 class CameraTrackFactory {
     func makeCameraTrack(source: TwilioVideo.CameraSource) -> LocalVideoTrack? {
-        LocalVideoTrack(source: source, enabled: true, name: "camera")
+        LocalVideoTrack(source: source, enabled: true, name: TrackName.camera)
     }
 }
