@@ -28,6 +28,7 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var mainIdentityLabel: UILabel!
     var viewModel: RoomViewModel!
     var statsViewController: StatsViewController!
+    var application: UIApplication!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,18 @@ class RoomViewController: UIViewController {
         statsViewController.addAsSwipeableView(toParentViewController: self)
 
         updateView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        application.isIdleTimerDisabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        application.isIdleTimerDisabled = false
     }
     
     @IBAction func leaveButtonTapped(_ sender: Any) {

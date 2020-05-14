@@ -90,6 +90,7 @@ class LobbyViewController: UIViewController {
         switch segue.identifier {
         case "roomSegue":
             let roomViewController = segue.destination as! RoomViewController
+            roomViewController.application = .shared
             let room = RoomFactory().makeRoom(localParticipant: participant)
             roomViewController.viewModel = RoomViewModelFactory().makeRoomViewModel(
                 roomName: roomTextField.text ?? "",
