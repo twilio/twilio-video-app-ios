@@ -52,6 +52,7 @@ class RoomViewController: UIViewController {
     
     @IBAction func leaveButtonTapped(_ sender: Any) {
         viewModel.disconnect()
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func switchCameraButtonTapped(_ sender: Any) {

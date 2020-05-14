@@ -76,14 +76,6 @@ import TwilioVideo
 
     func disconnect() {
         room?.disconnect()
-        state = .disconnected
-        post(.didDisconnect(error: nil))
-    }
-    
-    private func updateRemoteParticipants() {
-        guard let room = room else { remoteParticipants = []; return }
-        
-        remoteParticipants = room.remoteParticipants.map { RemoteParticipant(participant: $0, notificationCenter: .default) }
     }
     
     private func post(_ update: Update) {
@@ -94,7 +86,9 @@ import TwilioVideo
 extension Room: TwilioVideo.RoomDelegate {
     func roomDidConnect(room: TwilioVideo.Room) {
         localParticipant.participant = room.localParticipant
-        updateRemoteParticipants()
+        remoteParticipants = room.remoteParticipants.map {
+            RemoteParticipant(participant: $0, notificationCenter: notificationCenter)
+        }
         state = .connected
         post(.didConnect)
         
@@ -104,16 +98,14 @@ extension Room: TwilioVideo.RoomDelegate {
     }
     
     func roomDidFailToConnect(room: TwilioVideo.Room, error: Error) {
-        self.room = nil
         state = .disconnected
         post(.didFailToConnect(error: error))
     }
     
     func roomDidDisconnect(room: TwilioVideo.Room, error: Error?) {
-        self.room = nil
         localParticipant.participant = nil
         let participants = remoteParticipants
-        updateRemoteParticipants()
+        remoteParticipants.removeAll()
         state = .disconnected
         post(.didDisconnect(error: error))
         
@@ -123,28 +115,21 @@ extension Room: TwilioVideo.RoomDelegate {
     }
     
     func participantDidConnect(room: TwilioVideo.Room, participant: TwilioVideo.RemoteParticipant) {
-        updateRemoteParticipants()
+        remoteParticipants.append(RemoteParticipant(participant: participant, notificationCenter: notificationCenter))
     
-        post(.didAddRemoteParticipants(participants: [remoteParticipants[remoteParticipants.count - 1]]))
+        post(.didAddRemoteParticipants(participants: [remoteParticipants.last!]))
     }
     
     func participantDidDisconnect(room: TwilioVideo.Room, participant: TwilioVideo.RemoteParticipant) {
-        guard let participant = remoteParticipants.first(identity: participant.identity) else { return }
+        guard let index = remoteParticipants.firstIndex(where: { $0.identity == participant.identity }) else { return }
         
-        updateRemoteParticipants()
-        post(.didRemoveRemoteParticipants(participants: [participant]))
+        post(.didRemoveRemoteParticipants(participants: [remoteParticipants.remove(at: index)]))
     }
     
     func dominantSpeakerDidChange(room: TwilioVideo.Room, participant: TwilioVideo.RemoteParticipant?) {
-        guard let participant = remoteParticipants.first(identity: participant?.identity) else { return }
+        guard let participant = remoteParticipants.first(where: { $0.identity == participant?.identity }) else { return }
 
         remoteParticipants.first(where: { $0.isDominantSpeaker })?.isDominantSpeaker = false
         participant.isDominantSpeaker = true // The participant sends out update
-    }
-}
-
-private extension Array where Element == RemoteParticipant {
-    func first(identity: String?) -> RemoteParticipant? {
-        first(where: { $0.identity == identity })
     }
 }
