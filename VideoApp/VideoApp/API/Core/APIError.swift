@@ -30,7 +30,7 @@ enum APIError: Error, Equatable {
         }
     }
 
-    var message: String {
+    var localizedDescription: String {
         switch self {
         case .decodeError: return "Decode error."
         case let .message(message): return message

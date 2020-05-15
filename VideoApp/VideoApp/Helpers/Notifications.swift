@@ -18,4 +18,19 @@ import Foundation
 
 extension Notification.Name {
     static let appSettingDidChange = Notification.Name("AppSettingDidChange")
+    static let roomUpdate = Notification.Name("RoomUpdate")
+    static let participantUpdate = Notification.Name("ParticipantUpdate")
+    static let participantsStoreUpdate = Notification.Name("ParticipantsStoreUpdate")
+    static let mainParticipantStoreUpdate = Notification.Name("MainParticipantStoreUpdate")
+}
+
+extension NotificationCenter {
+    func post(name aName: NSNotification.Name, object anObject: Any?, payload: Any) {
+        post(name: aName, object: anObject, userInfo: [Notification.payloadKey: payload])
+    }
+}
+
+extension Notification {
+    static let payloadKey = "payload"
+    var payload: Any? { userInfo?[Self.payloadKey] }
 }

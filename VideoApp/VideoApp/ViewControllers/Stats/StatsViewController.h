@@ -21,7 +21,8 @@
 
 @interface StatsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) TVIRoom *room;
+// Had to use NSObject and cast later because of a strange Swift bridging dependency cycle
+@property (nonatomic, strong) NSObject *videoAppRoom;
 
 - (void)addAsSwipeableViewToParentViewController:(UIViewController *)parentViewController;
 

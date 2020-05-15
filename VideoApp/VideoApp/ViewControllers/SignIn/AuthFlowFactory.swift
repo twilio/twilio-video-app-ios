@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import Foundation
+import UIKit
 
 protocol AuthFlowFactory: AnyObject {
     func makeAuthFlow(window: UIWindow) -> AuthFlow

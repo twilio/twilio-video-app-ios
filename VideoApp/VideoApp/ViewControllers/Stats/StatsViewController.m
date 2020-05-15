@@ -24,6 +24,7 @@
 #import "HeaderTableViewCell.h"
 #import "StatsUIModel.h"
 #import "TrackStatsTableViewCell.h"
+#import "VideoApp-Swift.h"
 
 static const CGFloat kGapWidth = 0.15;
 static const CGFloat kAnimationDuration = 0.35;
@@ -59,6 +60,7 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 @property (nonatomic, assign) NSProcessInfoThermalState lastThermalState;
 @property (nonatomic, strong) TVIIceCandidatePairStats *lastPairStats;
 @property (nonatomic, strong) NSDate *lastPairDate;
+@property (nonatomic, strong) TVIRoom *room;
 
 @end
 
@@ -135,6 +137,11 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
                                              selector:@selector(thermalStateDidChange:)
                                                  name:NSProcessInfoThermalStateDidChangeNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(roomDidChange)
+                                                 name:@"RoomDidChange"
+                                               object:nil];
 }
 
 - (void)dealloc {
@@ -176,6 +183,10 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
         [self adjustConstraintsForNavBar:NO];
         [self adjustConstraintsForStatusBar:NO];
     }
+}
+
+- (void)roomDidChange {
+    self.room = ((Room *)self.videoAppRoom).room;
 }
 
 - (void)removeStatsUnavailableView {
