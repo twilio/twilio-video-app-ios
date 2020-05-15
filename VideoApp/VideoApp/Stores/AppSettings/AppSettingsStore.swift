@@ -31,7 +31,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
 
 class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
-    @Storage(key: makeKey("videoCodec"), defaultValue: VideoCodec.h264) var videoCodec: VideoCodec
+    @Storage(key: makeKey("videoCodec"), defaultValue: VideoCodec.vp8Simulcast) var videoCodec: VideoCodec
     @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool

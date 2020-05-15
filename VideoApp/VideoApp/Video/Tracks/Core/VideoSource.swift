@@ -14,14 +14,19 @@
 //  limitations under the License.
 //
 
-import TwilioVideo
+import Foundation
 
-class CameraTrackFactory {
-    func makeCameraTrack(source: TwilioVideo.CameraSource) -> LocalVideoTrack? {
-        guard let track = TwilioVideo.LocalVideoTrack(source: source, enabled: true, name: TrackName.camera) else {
+enum VideoSource {
+    case camera
+    case screen
+
+    init?(trackName: String) {
+        if trackName.contains(TrackName.camera) {
+            self = .camera
+        } else if trackName.contains(TrackName.screen) {
+            self = .screen
+        } else {
             return nil
         }
-        
-        return LocalVideoTrack(track: track)
     }
 }

@@ -23,7 +23,7 @@ import TwilioVideo
         accessToken: String,
         roomName: String,
         audioTracks: [LocalAudioTrack],
-        videoTracks: [LocalVideoTrack]
+        videoTracks: [TwilioVideo.LocalVideoTrack]
     ) -> ConnectOptions {
         ConnectOptions(token: accessToken) { builder in
             builder.roomName = roomName
@@ -35,7 +35,11 @@ import TwilioVideo
                 localVerbosity: .minimal,
                 remoteVerbosity: .minimal
             )
-            
+            builder.bandwidthProfileOptions = BandwidthProfileOptions(
+                videoOptions: VideoBandwidthProfileOptions { builder in
+                    builder.mode = .collaboration
+                }
+            )
             switch self.appSettingsStore.videoCodec {
             case .h264:
                 builder.preferredVideoCodecs = [H264Codec()]

@@ -19,11 +19,12 @@ import TwilioVideo
 
 class LocalParticipant: NSObject, Participant {
     let identity: String
-    var cameraTrack: VideoTrack? { localCameraTrack }
+    let isDominantSpeaker = false
+    let isRemote = false
+    var cameraTrack: VideoTrack? { cameraManager?.track }
     var screenTrack: VideoTrack? { nil }
     var shouldMirrorCameraVideo: Bool { cameraPosition == .front }
     var networkQualityLevel: NetworkQualityLevel { participant?.networkQualityLevel ?? .unknown }
-    let isRemote = false
     var isMicOn: Bool {
         get {
             micTrack?.isEnabled ?? false
@@ -44,7 +45,6 @@ class LocalParticipant: NSObject, Participant {
             postUpdate()
         }
     }
-    let isDominantSpeaker = false
     var isPinned = false
     var isCameraOn: Bool {
         get {
@@ -61,11 +61,11 @@ class LocalParticipant: NSObject, Participant {
                 
                 self.cameraManager = cameraManager
                 cameraManager.delegate = self
-                participant?.publishVideoTrack(cameraManager.track)
+                participant?.publishVideoTrack(cameraManager.track.track)
             } else {
                 guard let cameraManager = cameraManager else { return }
                 
-                participant?.unpublishVideoTrack(cameraManager.track)
+                participant?.unpublishVideoTrack(cameraManager.track.track)
                 self.cameraManager = nil
             }
 
@@ -75,7 +75,7 @@ class LocalParticipant: NSObject, Participant {
     var participant: TwilioVideo.LocalParticipant? {
         didSet { participant?.delegate = self }
     }
-    var localCameraTrack: LocalVideoTrack? { cameraManager?.track }
+    var localCameraTrack: TwilioVideo.LocalVideoTrack? { cameraManager?.track.track }
     var cameraPosition: AVCaptureDevice.Position = .front {
         didSet {
             cameraManager?.position = cameraPosition
@@ -119,7 +119,7 @@ extension LocalParticipant: ListDiffable {
 extension LocalParticipant: LocalParticipantDelegate {
     func localParticipantDidFailToPublishVideoTrack(
         participant: TwilioVideo.LocalParticipant,
-        videoTrack: LocalVideoTrack,
+        videoTrack: TwilioVideo.LocalVideoTrack,
         error: Error
     ) {
         print("Failed to publish video track: \(error)")
@@ -143,10 +143,10 @@ extension LocalParticipant: LocalParticipantDelegate {
 
 extension LocalParticipant: CameraManagerDelegate {
     func trackSourceWasInterrupted(track: LocalVideoTrack) {
-        participant?.unpublishVideoTrack(track)
+        participant?.unpublishVideoTrack(track.track)
     }
     
     func trackSourceInterruptionEnded(track: LocalVideoTrack) {
-        participant?.publishVideoTrack(track)
+        participant?.publishVideoTrack(track.track)
     }
 }

@@ -17,7 +17,26 @@
 import Foundation
 
 class MainParticipantStore {
-    private(set) var mainParticipant: Participant
+    private(set) var mainParticipant: Participant {
+        didSet {
+            videoTrack = mainParticipant.mainVideoTrack
+
+            if mainParticipant.isPinned || videoTrack === mainParticipant.screenTrack || !mainParticipant.isDominantSpeaker {
+                videoTrack?.priority = .high
+            } else {
+                videoTrack?.priority = nil
+            }
+
+            notificationCenter.post(name: .mainParticipantStoreUpdate, object: self)
+        }
+    }
+    private(set) var videoTrack: VideoTrack? {
+        didSet {
+            guard oldValue !== videoTrack else { return }
+
+            oldValue?.priority = nil
+        }
+    }
     private let room: Room
     private let participantsStore: ParticipantsStore
     private let notificationCenter: NotificationCenter
@@ -26,59 +45,29 @@ class MainParticipantStore {
         self.room = room
         self.participantsStore = participantsStore
         self.notificationCenter = notificationCenter
-        self.mainParticipant = room.localParticipant
+        mainParticipant = room.localParticipant
+        videoTrack = mainParticipant.mainVideoTrack
         update()
-        notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
-        notificationCenter.addObserver(self, selector: #selector(handleParticipantUpdate(_:)), name: .participantUpdate, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(handleParticipantsStoreUpdate(_:)), name: .participantsStoreUpdate, object: participantsStore)
-    }
-
-    @objc private func handleRoomUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? Room.Update else { return }
-        
-        switch payload {
-        case .didStartConnecting, .didConnect, .didFailToConnect, .didDisconnect: break
-        case .didAddRemoteParticipants, .didRemoveRemoteParticipants: update()
-        }
+        notificationCenter.addObserver(self, selector: #selector(update), name: .roomUpdate, object: room)
+        notificationCenter.addObserver(self, selector: #selector(update), name: .participantUpdate, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(update), name: .participantsStoreUpdate, object: participantsStore)
     }
     
-    @objc private func handleParticipantUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? ParticipantUpdate else { return }
-        
-        switch payload {
-        case let .didUpdate(participant):
-            if participant === mainParticipant {
-                postUpdate()
-            }
-            
-            update()
-        }
-    }
-
-    @objc private func handleParticipantsStoreUpdate(_ notification: Notification) {
-        update()
-    }
-    
-    private func update() {
+    @objc private func update() {
         let pinnedParticipant = participantsStore.participants.first(where: { $0.isPinned })
         let screenParticipant = room.remoteParticipants.first(where: { $0.screenTrack != nil })
         let dominantSpeaker = room.remoteParticipants.first(where: { $0.isDominantSpeaker })
         let firstRemoteParticipant = participantsStore.participants.first(where: { $0.isRemote })
         
-        let new =
+        mainParticipant =
             pinnedParticipant ??
             screenParticipant ??
             dominantSpeaker ??
             firstRemoteParticipant ??
             room.localParticipant
+    }
+}
 
-        if new.identity != mainParticipant.identity {
-            mainParticipant = new
-            postUpdate()
-        }
-    }
-    
-    private func postUpdate() {
-        notificationCenter.post(name: .mainParticipantStoreUpdate, object: self)
-    }
+private extension Participant {
+    var mainVideoTrack: VideoTrack? { screenTrack ?? cameraTrack }
 }
