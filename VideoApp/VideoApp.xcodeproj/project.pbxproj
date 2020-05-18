@@ -499,6 +499,9 @@
 		DCEDB3302464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
+		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
@@ -788,6 +791,7 @@
 		DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewHelpers.swift; sourceTree = "<group>"; };
 		DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexSetHelpers.swift; sourceTree = "<group>"; };
+		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1151,6 +1155,7 @@
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
 				DC9A5E5224638A9C00E4B079 /* ShowError.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
+				DCEDB35824730476006AF70D /* SwiftToObjc.swift */,
 				243CDB4922665F1800637B6B /* TwilioColors.swift */,
 				DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */,
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
@@ -2574,6 +2579,7 @@
 				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
@@ -2726,6 +2732,7 @@
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
@@ -2878,6 +2885,7 @@
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
