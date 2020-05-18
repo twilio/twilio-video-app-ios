@@ -511,6 +511,9 @@
 		DCEDB355246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
 		DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
 		DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
+		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
@@ -804,6 +807,7 @@
 		DCEDB34C246F16C6006AF70D /* VideoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSource.swift; sourceTree = "<group>"; };
 		DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrack.swift; sourceTree = "<group>"; };
+		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1167,6 +1171,7 @@
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
 				DC9A5E5224638A9C00E4B079 /* ShowError.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
+				DCEDB35824730476006AF70D /* SwiftToObjc.swift */,
 				243CDB4922665F1800637B6B /* TwilioColors.swift */,
 				DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */,
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
@@ -2594,6 +2599,7 @@
 				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB349246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */,
@@ -2750,6 +2756,7 @@
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */,
@@ -2906,6 +2913,7 @@
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
+				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */,
@@ -3287,7 +3295,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 53;
+				CURRENT_PROJECT_VERSION = 54;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3323,7 +3331,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 53;
+				CURRENT_PROJECT_VERSION = 54;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3355,7 +3363,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 53;
+				CURRENT_PROJECT_VERSION = 54;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3391,7 +3399,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 53;
+				CURRENT_PROJECT_VERSION = 54;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3423,7 +3431,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 53;
+				CURRENT_PROJECT_VERSION = 54;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3459,7 +3467,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 53;
+				CURRENT_PROJECT_VERSION = 54;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
