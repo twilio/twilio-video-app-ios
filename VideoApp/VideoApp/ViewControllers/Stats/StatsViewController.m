@@ -140,7 +140,7 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(roomDidChange)
-                                                 name:@"RoomDidChange"
+                                                 name:SwiftToObjc.roomUpdateNotificationName
                                                object:nil];
 }
 
