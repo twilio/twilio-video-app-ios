@@ -18,6 +18,10 @@ import Foundation
 
 class SelectEnvironmentViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectEnvironmentViewModel(appSettingsStore: AppSettingsStore.shared)
+        SelectSettingViewModel(
+            title: "Environment",
+            keyPath: \.environment,
+            appSettingsStore: AppSettingsStore.shared
+        )
     }
 }

@@ -62,14 +62,15 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     
-    init(appSettingsStore: AppSettingsStoreWriting,
-         userStore: UserStoreReading,
-         crashReportStore: CrashReportStoreWriting,
-         editIdentityViewModalFactory: EditTextViewModelFactory,
-         selectTopologyViewModelFactory: SelectOptionViewModelFactory,
-         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
-         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
-         sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
+    init(
+        appSettingsStore: AppSettingsStoreWriting,
+        userStore: UserStoreReading,
+        crashReportStore: CrashReportStoreWriting,
+        editIdentityViewModalFactory: EditTextViewModelFactory,
+        selectTopologyViewModelFactory: SelectOptionViewModelFactory,
+        selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
+        developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
+        sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore

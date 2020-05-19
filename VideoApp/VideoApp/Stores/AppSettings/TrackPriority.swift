@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,16 +16,18 @@
 
 import Foundation
 
-class SelectTopologyViewModel: SelectOptionViewModel {
-    let title = "Topology"
-    let options = Topology.allCases.map { $0.title }
-    var selectedIndex: Int {
-        get { Topology.allCases.firstIndex(of: appSettingsStore.topology) ?? 0 }
-        set { appSettingsStore.topology = Topology.allCases[newValue] }
-    }
-    private let appSettingsStore: AppSettingsStoreWriting
+enum TrackPriority: String, SettingOptions {
+    case serverDefault
+    case low
+    case standard
+    case high
     
-    init(appSettingsStore: AppSettingsStoreWriting) {
-        self.appSettingsStore = appSettingsStore
+    var title: String {
+        switch self {
+        case .serverDefault: return "Server Default"
+        case .low: return "Low"
+        case .standard: return "Standard"
+        case .high: return "High"
+        }
     }
 }

@@ -95,9 +95,6 @@
 		DC3924892416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
-		DC39248C2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */; };
-		DC39248D2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */; };
-		DC39248E2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */; };
 		DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
 		DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
 		DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
@@ -166,9 +163,6 @@
 		DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
-		DC82A38C24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */; };
-		DC82A38D24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */; };
-		DC82A38E24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */; };
 		DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
 		DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
 		DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
@@ -362,12 +356,6 @@
 		DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
 		DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
 		DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
-		DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */; };
-		DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */; };
-		DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */; };
-		DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */; };
-		DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */; };
-		DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */; };
 		DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
@@ -514,6 +502,36 @@
 		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB36224743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
+		DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
+		DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
+		DCEDB36624743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */; };
+		DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */; };
+		DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */; };
+		DCEDB36A24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */; };
+		DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */; };
+		DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */; };
+		DCEDB36E24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */; };
+		DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */; };
+		DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */; };
+		DCEDB372247442D9006AF70D /* TrackPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB371247442D9006AF70D /* TrackPriority.swift */; };
+		DCEDB373247442D9006AF70D /* TrackPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB371247442D9006AF70D /* TrackPriority.swift */; };
+		DCEDB374247442D9006AF70D /* TrackPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB371247442D9006AF70D /* TrackPriority.swift */; };
+		DCEDB376247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */; };
+		DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */; };
+		DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */; };
+		DCEDB37A24744734006AF70D /* TrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */; };
+		DCEDB37B24744734006AF70D /* TrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */; };
+		DCEDB37C24744734006AF70D /* TrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */; };
+		DCEDB37E247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */; };
+		DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */; };
+		DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */; };
+		DCEDB382247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
+		DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
+		DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
+		DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
+		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
+		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
@@ -638,7 +656,6 @@
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
 		DC386DD02458DC05009E994A /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
-		DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModel.swift; sourceTree = "<group>"; };
 		DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponseDecoder.swift; sourceTree = "<group>"; };
 		DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAPIErrorResponseDecoder.swift; sourceTree = "<group>"; };
 		DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAPIErrorResponseDecoder.swift; sourceTree = "<group>"; };
@@ -669,7 +686,6 @@
 		DC82A35223FDB6890081578C /* SDKLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevel.swift; sourceTree = "<group>"; };
 		DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewModel.swift; sourceTree = "<group>"; };
 		DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
-		DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModel.swift; sourceTree = "<group>"; };
 		DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSDKLogLevelViewModelFactory.swift; sourceTree = "<group>"; };
 		DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevelOptionListFactory.swift; sourceTree = "<group>"; };
 		DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSignInViewController.swift; sourceTree = "<group>"; };
@@ -741,8 +757,6 @@
 		DCAEBF362383581F00141D2D /* EditTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextViewController.swift; sourceTree = "<group>"; };
 		DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewModel.swift; sourceTree = "<group>"; };
-		DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModel.swift; sourceTree = "<group>"; };
-		DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModel.swift; sourceTree = "<group>"; };
 		DCAEBF5223849C1C00141D2D /* VideoCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCodec.swift; sourceTree = "<group>"; };
 		DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeComponentsSpec.swift; sourceTree = "<group>"; };
 		DCB64B48240995A100E090BE /* APIHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHTTPMethod.swift; sourceTree = "<group>"; };
@@ -808,6 +822,16 @@
 		DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
+		DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewModel.swift; sourceTree = "<group>"; };
+		DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileMode.swift; sourceTree = "<group>"; };
+		DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBandwidthProfileModeViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEDB371247442D9006AF70D /* TrackPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPriority.swift; sourceTree = "<group>"; };
+		DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDominantSpeakerPriorityViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSwitchOffMode.swift; sourceTree = "<group>"; };
+		DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackSwitchOffModeViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEDB381247489A0006AF70D /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
+		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1185,10 +1209,13 @@
 			isa = PBXGroup;
 			children = (
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
+				DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */,
 				DC044683238EF6C20072F597 /* Environment.swift */,
 				DC82A34E23FC9AAA0081578C /* JSONContainer.swift */,
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
+				DCEDB371247442D9006AF70D /* TrackPriority.swift */,
+				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
 				DC82A35223FDB6890081578C /* SDKLogLevel.swift */,
 			);
@@ -1288,7 +1315,6 @@
 				DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */,
 				DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */,
 				DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */,
-				DC82A38B24008AE00081578C /* SelectSDKLogLevelViewModel.swift */,
 				DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */,
 			);
 			path = SDKLogLevel;
@@ -1429,6 +1455,7 @@
 		DCAEBF4B2384880300141D2D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DCEDB360247439E9006AF70D /* BandwidthProfile */,
 				DCAEBF51238488CC00141D2D /* Advanced */,
 				DCAEBF4E2384887B00141D2D /* Core */,
 				DC0446C923A2EDFB0072F597 /* Developer */,
@@ -1443,6 +1470,7 @@
 			children = (
 				DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */,
 				DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */,
+				DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */,
 			);
 			path = SelectOption;
 			sourceTree = "<group>";
@@ -1473,6 +1501,7 @@
 				DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */,
 				DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */,
 				DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */,
+				DCEDB381247489A0006AF70D /* SettingOptions.swift */,
 				DCF461582385A51700DD8FEA /* SettingsViewController.swift */,
 				DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */,
 				DC4568852385D5490069BB5A /* ViewControllerFactory.swift */,
@@ -1485,7 +1514,6 @@
 			children = (
 				DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */,
 				DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */,
-				DCAEBF422384450300141D2D /* SelectVideoCodecViewModel.swift */,
 				DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */,
 			);
 			path = General;
@@ -1497,9 +1525,7 @@
 				DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */,
 				DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */,
 				DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */,
-				DC3924882416A1D80068E33F /* SelectEnvironmentViewModel.swift */,
 				DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */,
-				DCAEBF46238446F500141D2D /* SelectTopologyViewModel.swift */,
 				DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */,
 			);
 			path = Advanced;
@@ -1708,6 +1734,18 @@
 				DC9A5E422463247700E4B079 /* CircleButton.swift */,
 			);
 			path = CircleButton;
+			sourceTree = "<group>";
+		};
+		DCEDB360247439E9006AF70D /* BandwidthProfile */ = {
+			isa = PBXGroup;
+			children = (
+				DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */,
+				DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */,
+				DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */,
+				DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */,
+				DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */,
+			);
+			path = BandwidthProfile;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -2603,15 +2641,14 @@
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB349246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */,
+				DCEDB36624743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DC82A38C24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DCC7E3552406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCEDB3202464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
-				DC39248C2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */,
 				DC3924892416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E432463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2642,6 +2679,8 @@
 				DC9A5E09245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A34F23FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD6245B7F8600E4B079 /* ParticipantCell.swift in Sources */,
+				DCEDB36224743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
+				DCEDB382247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E332462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DC241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */,
@@ -2652,16 +2691,18 @@
 				DC9A5DC5245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */,
+				DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DCEDB36E24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53948235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCEDB376247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB355246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2672,7 +2713,10 @@
 				DCB7C1852405BD68009DEA70 /* API.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DCEDB37E247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */,
+				DCEDB37A24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
+				DCEDB372247442D9006AF70D /* TrackPriority.swift in Sources */,
 				DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18E2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2685,6 +2729,7 @@
 				DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
+				DCEDB36A24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31C2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3982404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
@@ -2692,7 +2737,6 @@
 				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044684238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E472463345F00E4B079 /* LobbyViewController.swift in Sources */,
-				DCAEBF47238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCC7E36E24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
 				DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC9A5DCA245A215000E4B079 /* RoomViewController.swift in Sources */,
@@ -2760,15 +2804,14 @@
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */,
+				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DC82A38D24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
-				DC39248D2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2799,6 +2842,8 @@
 				DC9A5E0A245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */,
+				DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
+				DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
@@ -2809,16 +2854,18 @@
 				DC9A5DC6245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
+				DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2829,7 +2876,10 @@
 				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
+				DCEDB37B24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
+				DCEDB373247442D9006AF70D /* TrackPriority.swift in Sources */,
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2842,6 +2892,7 @@
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
+				DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
@@ -2849,7 +2900,6 @@
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E482463345F00E4B079 /* LobbyViewController.swift in Sources */,
-				DCAEBF48238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCC7E36F24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
 				DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC9A5DCB245A215000E4B079 /* RoomViewController.swift in Sources */,
@@ -2917,15 +2967,14 @@
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */,
+				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DC82A38E24008AE00081578C /* SelectSDKLogLevelViewModel.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
-				DC39248E2416A1D80068E33F /* SelectEnvironmentViewModel.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2956,6 +3005,8 @@
 				DC9A5E0B245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */,
+				DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
+				DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
@@ -2966,16 +3017,18 @@
 				DC9A5DC7245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
+				DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2986,7 +3039,10 @@
 				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
+				DCEDB37C24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
+				DCEDB374247442D9006AF70D /* TrackPriority.swift in Sources */,
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2999,6 +3055,7 @@
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
+				DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
@@ -3006,7 +3063,6 @@
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E492463345F00E4B079 /* LobbyViewController.swift in Sources */,
-				DCAEBF49238446F500141D2D /* SelectTopologyViewModel.swift in Sources */,
 				DCC7E37024085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
 				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC9A5DCC245A215000E4B079 /* RoomViewController.swift in Sources */,

@@ -39,9 +39,14 @@ class GeneralSettingsViewModel: SettingsViewModel {
                         selectedOption: appSettingsStore.videoCodec.title,
                         viewModelFactory: selectVideoCodecViewModelFactory
                     ),
-                    .toggle(title: "TURN Media Relay",
+                    .toggle(
+                        title: "TURN Media Relay",
                         isOn: appSettingsStore.isTURNMediaRelayOn,
                         updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
+                    ),
+                    .push(
+                        title: "Bandwidth Profile",
+                        viewControllerFactory: BandwidthProfileSettingsViewControllerFactory()
                     )
                 ]
             )

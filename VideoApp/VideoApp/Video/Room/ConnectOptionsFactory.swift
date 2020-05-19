@@ -37,11 +37,11 @@ import TwilioVideo
             )
             builder.bandwidthProfileOptions = BandwidthProfileOptions(
                 videoOptions: VideoBandwidthProfileOptions { builder in
-                    builder.mode = .collaboration
+                    builder.mode = TwilioVideo.BandwidthProfileMode(setting: self.appSettingsStore.bandwidthProfileMode)
                     builder.maxSubscriptionBitrate = 6_000
                     builder.maxTracks = 10
-                    builder.dominantSpeakerPriority = .high
-                    builder.trackSwitchOffMode = .detected
+                    builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
+                    builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
                     builder.renderDimensions = VideoRenderDimensions()
                     builder.renderDimensions?.high = VideoDimensions(width: 1_280, height: 720)
                     builder.renderDimensions?.low = VideoDimensions(width: 352, height: 288)
@@ -68,6 +68,39 @@ import TwilioVideo
                     builder.transportPolicy = .relay
                 }
             }
+        }
+    }
+}
+
+private extension TwilioVideo.BandwidthProfileMode {
+    init?(setting: BandwidthProfileMode) {
+        switch setting {
+        case .serverDefault: return nil
+        case .collaboration: self = .collaboration
+        case .grid: self = .grid
+        case .presentation: self = .presentation
+        }
+    }
+}
+
+private extension Track.Priority {
+    init?(setting: TrackPriority) {
+        switch setting {
+        case .serverDefault: return nil
+        case .low: self = .low
+        case .standard: self = .standard
+        case .high: self = .high
+        }
+    }
+}
+
+private extension Track.SwitchOffMode {
+    init?(setting: TrackSwitchOffMode) {
+        switch setting {
+        case .serverDefault: return nil
+        case .disabled: self = .disabled
+        case .detected: self = .detected
+        case .predicted: self = .predicted
         }
     }
 }
