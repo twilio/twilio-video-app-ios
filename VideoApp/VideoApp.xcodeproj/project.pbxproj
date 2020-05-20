@@ -496,6 +496,18 @@
 		DCEDB3302464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
+		DCEDB349246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
+		DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
+		DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
+		DCEDB34D246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
+		DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
+		DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
+		DCEDB351246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
+		DCEDB352246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
+		DCEDB353246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
+		DCEDB355246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
+		DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
+		DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
 		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
@@ -789,6 +801,10 @@
 		DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewHelpers.swift; sourceTree = "<group>"; };
 		DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexSetHelpers.swift; sourceTree = "<group>"; };
+		DCEDB348246F16AD006AF70D /* VideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrack.swift; sourceTree = "<group>"; };
+		DCEDB34C246F16C6006AF70D /* VideoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSource.swift; sourceTree = "<group>"; };
+		DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoTrack.swift; sourceTree = "<group>"; };
+		DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
 		DCEDB35C24733641006AF70D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -1643,7 +1659,11 @@
 		DCEDB31A2464C4B9006AF70D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */,
+				DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */,
 				DCEDB31B2464C4CC006AF70D /* TrackName.swift */,
+				DCEDB34C246F16C6006AF70D /* VideoSource.swift */,
+				DCEDB348246F16AD006AF70D /* VideoTrack.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2579,6 +2599,7 @@
 				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
+				DCEDB349246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -2602,6 +2623,7 @@
 				DC3C32D42417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
 				DCA65021240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
+				DCEDB351246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */,
 				DC9A5DD2245B332D00E4B079 /* RemoteParticipant.swift in Sources */,
 				DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DCEDB3302464F9BA006AF70D /* IndexSetHelpers.swift in Sources */,
@@ -2638,6 +2660,7 @@
 				DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53948235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCEDB355246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
@@ -2709,6 +2732,7 @@
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3B2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E3F2463239E00E4B079 /* ToggleButton.swift in Sources */,
+				DCEDB34D246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32C2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5324638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
@@ -2732,6 +2756,7 @@
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
+				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -2755,6 +2780,7 @@
 				DC3C32D52417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
 				DCA65020240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
+				DCEDB352246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */,
 				DC9A5DD3245B332D00E4B079 /* RemoteParticipant.swift in Sources */,
 				DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */,
@@ -2791,6 +2817,7 @@
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
@@ -2862,6 +2889,7 @@
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */,
+				DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
@@ -2885,6 +2913,7 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
+				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -2908,6 +2937,7 @@
 				DC3C32D62417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
 				DCA6501F240D91C90038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
+				DCEDB353246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */,
 				DC9A5DD4245B332D00E4B079 /* RemoteParticipant.swift in Sources */,
 				DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */,
@@ -2944,6 +2974,7 @@
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
@@ -3015,6 +3046,7 @@
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */,
+				DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,

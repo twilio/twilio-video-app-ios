@@ -32,7 +32,10 @@ class RoomViewModel {
         .init(
             roomName: room.state == .connecting ? "Connecting..." : roomName,
             participants: participantsStore.participants,
-            mainParticipant: .init(participant: mainParticipantStore.mainParticipant)
+            mainParticipant: .init(
+                participant: mainParticipantStore.mainParticipant,
+                videoTrack: mainParticipantStore.videoTrack
+            )
         )
     }
     var isMicOn: Bool {

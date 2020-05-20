@@ -23,7 +23,7 @@ import TwilioVideo
         accessToken: String,
         roomName: String,
         audioTracks: [LocalAudioTrack],
-        videoTracks: [LocalVideoTrack]
+        videoTracks: [TwilioVideo.LocalVideoTrack]
     ) -> ConnectOptions {
         ConnectOptions(token: accessToken) { builder in
             builder.roomName = roomName
@@ -35,19 +35,25 @@ import TwilioVideo
                 localVerbosity: .minimal,
                 remoteVerbosity: .minimal
             )
+            builder.bandwidthProfileOptions = BandwidthProfileOptions(
+                videoOptions: VideoBandwidthProfileOptions { builder in
+                    builder.mode = .collaboration
+                    builder.maxTracks = 5
+                }
+            )
             
             switch self.appSettingsStore.videoCodec {
             case .h264:
                 builder.preferredVideoCodecs = [H264Codec()]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1200)
+                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1_200)
             case .vp8:
                 builder.preferredVideoCodecs = [Vp8Codec(simulcast: false)]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1200)
+                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1_200)
             case .vp8Simulcast:
                 builder.preferredVideoCodecs = [Vp8Codec(simulcast: true)]
                 
                 // Allocate a higher bitrate for the simulcast track with 3 spatial layers
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1600)
+                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1_600)
             }
             
             if self.appSettingsStore.isTURNMediaRelayOn {

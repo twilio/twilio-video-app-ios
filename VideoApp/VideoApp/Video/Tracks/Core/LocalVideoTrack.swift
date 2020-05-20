@@ -16,12 +16,22 @@
 
 import TwilioVideo
 
-class CameraTrackFactory {
-    func makeCameraTrack(source: TwilioVideo.CameraSource) -> LocalVideoTrack? {
-        guard let track = TwilioVideo.LocalVideoTrack(source: source, enabled: true, name: TrackName.camera) else {
-            return nil
-        }
-        
-        return LocalVideoTrack(track: track)
+class LocalVideoTrack: VideoTrack {
+    let track: TwilioVideo.LocalVideoTrack
+    let isSwitchedOff = false
+    var isEnabled: Bool { track.isEnabled }
+    var priority: Track.Priority? = nil
+    var renderers: [VideoRenderer] { track.renderers }
+
+    init(track: TwilioVideo.LocalVideoTrack) {
+        self.track = track
+    }
+
+    func addRenderer(_ renderer: VideoRenderer) {
+        track.addRenderer(renderer)
+    }
+
+    func removeRenderer(_ renderer: VideoRenderer) {
+        track.removeRenderer(renderer)
     }
 }

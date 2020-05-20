@@ -21,12 +21,9 @@ struct RoomViewModelData {
         let identity: String
         let videoConfig: VideoView.Config
         
-        init(participant: VideoApp.Participant) {
+        init(participant: VideoApp.Participant, videoTrack: VideoTrack?) {
             identity = participant.identity
-            videoConfig = .init(
-                videoTrack: participant.screenTrack ?? participant.cameraTrack,
-                shouldMirror: participant.shouldMirrorCameraVideo
-            )
+            videoConfig = .init(videoTrack: videoTrack, shouldMirror: participant.shouldMirrorCameraVideo)
         }
     }
     

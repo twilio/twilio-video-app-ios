@@ -18,12 +18,10 @@ import IGListDiffKit
 import TwilioVideo
 
 class RemoteParticipant: NSObject, Participant {
-    var identity: String { participant.identity }
-    var cameraTrack: VideoTrack? { participant.remoteVideoTrack(name: TrackName.camera) }
-    var screenTrack: VideoTrack? { participant.remoteVideoTrack(name: TrackName.screen) }
     let shouldMirrorCameraVideo = false
-    var networkQualityLevel: NetworkQualityLevel { participant.networkQualityLevel }
     let isRemote = true
+    var identity: String { participant.identity }
+    var networkQualityLevel: NetworkQualityLevel { participant.networkQualityLevel }
     var isMicOn: Bool {
         guard let micTrack = participant.remoteAudioTracks.first else { return false }
         
@@ -31,6 +29,8 @@ class RemoteParticipant: NSObject, Participant {
     }
     var isDominantSpeaker = false { didSet { postUpdate() } }
     var isPinned = false
+    private(set) var cameraTrack: VideoTrack?
+    private(set) var screenTrack: VideoTrack?
     private let participant: TwilioVideo.RemoteParticipant
     private let notificationCenter: NotificationCenter
     
@@ -72,19 +72,48 @@ extension RemoteParticipant: RemoteParticipantDelegate {
         postUpdate()
     }
     
-    func didSubscribeToVideoTrack(
-        videoTrack: RemoteVideoTrack,
-        publication: RemoteVideoTrackPublication,
-        participant: TwilioVideo.RemoteParticipant
+    func remoteParticipantSwitchedOnVideoTrack(
+        participant: TwilioVideo.RemoteParticipant,
+        videoTrack: TwilioVideo.RemoteVideoTrack
+    ) {
+        postUpdate()
+    }
+
+    func remoteParticipantSwitchedOffVideoTrack(
+        participant: TwilioVideo.RemoteParticipant,
+        videoTrack: TwilioVideo.RemoteVideoTrack,
+        reason: String
     ) {
         postUpdate()
     }
     
-    func didUnsubscribeFromVideoTrack(
-        videoTrack: RemoteVideoTrack,
+    func didSubscribeToVideoTrack(
+        videoTrack: TwilioVideo.RemoteVideoTrack,
         publication: RemoteVideoTrackPublication,
         participant: TwilioVideo.RemoteParticipant
     ) {
+        guard let source = videoTrack.source else { return }
+
+        switch source {
+        case .camera: cameraTrack = RemoteVideoTrack(track: videoTrack)
+        case .screen: screenTrack = RemoteVideoTrack(track: videoTrack)
+        }
+        
+        postUpdate()
+    }
+    
+    func didUnsubscribeFromVideoTrack(
+        videoTrack: TwilioVideo.RemoteVideoTrack,
+        publication: RemoteVideoTrackPublication,
+        participant: TwilioVideo.RemoteParticipant
+    ) {
+        guard let source = videoTrack.source else { return }
+
+        switch source {
+        case .camera: cameraTrack = nil
+        case .screen: screenTrack = nil
+        }
+        
         postUpdate()
     }
     
@@ -126,8 +155,6 @@ extension RemoteParticipant: RemoteParticipantDelegate {
     }
 }
 
-private extension TwilioVideo.RemoteParticipant {
-    func remoteVideoTrack(name: String) -> VideoTrack? {
-        remoteVideoTracks.first(where: { $0.trackName.contains(name) })?.remoteTrack
-    }
+private extension TwilioVideo.RemoteVideoTrack {
+    var source: VideoSource? { VideoSource(trackName: name) }
 }
