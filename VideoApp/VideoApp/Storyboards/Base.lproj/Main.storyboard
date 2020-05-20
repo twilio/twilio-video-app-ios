@@ -102,7 +102,7 @@
         <!--Login View Controller-->
         <scene sceneID="0Ie-IN-MOF">
             <objects>
-                <viewController storyboardIdentifier="loginScreen" id="VHW-D9-Yxw" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginScreen" id="VHW-D9-Yxw" customClass="LoginViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mz1-6T-CQ0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,8 +146,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="u5D-hS-Zby"/>
                     <connections>
-                        <outlet property="googleSignInButton" destination="fwk-pW-rSy" id="oKR-c1-okU"/>
-                        <outlet property="signInButton" destination="izX-1R-9hf" id="vcj-VY-OSQ"/>
+                        <outlet property="googleSignInButton" destination="fwk-pW-rSy" id="bFV-py-6Up"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xk-MB-jpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
