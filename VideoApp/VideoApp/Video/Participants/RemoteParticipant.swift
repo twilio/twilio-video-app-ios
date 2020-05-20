@@ -81,8 +81,7 @@ extension RemoteParticipant: RemoteParticipantDelegate {
 
     func remoteParticipantSwitchedOffVideoTrack(
         participant: TwilioVideo.RemoteParticipant,
-        videoTrack: TwilioVideo.RemoteVideoTrack,
-        reason: String
+        videoTrack: TwilioVideo.RemoteVideoTrack
     ) {
         postUpdate()
     }
