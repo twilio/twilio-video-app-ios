@@ -43,8 +43,8 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("signalingSDKLogLevel"), defaultValue: SDKLogLevel.error) var signalingSDKLogLevel: SDKLogLevel
     @Storage(key: makeKey("webRTCSDKLogLevel"), defaultValue: SDKLogLevel.off) var webRTCSDKLogLevel: SDKLogLevel
     @Storage(key: makeKey("bandwidthProfileMode"), defaultValue: BandwidthProfileMode.collaboration) var bandwidthProfileMode: BandwidthProfileMode
-    @Storage(key: makeKey("dominantSpeakerPriority"), defaultValue: TrackPriority.high) var dominantSpeakerPriority: TrackPriority
-    @Storage(key: makeKey("trackSwitchOffMode"), defaultValue: TrackSwitchOffMode.detected) var trackSwitchOffMode: TrackSwitchOffMode
+    @Storage(key: makeKey("dominantSpeakerPriority"), defaultValue: TrackPriority.serverDefault) var dominantSpeakerPriority: TrackPriority
+    @Storage(key: makeKey("trackSwitchOffMode"), defaultValue: TrackSwitchOffMode.serverDefault) var trackSwitchOffMode: TrackSwitchOffMode
 
     static var shared: AppSettingsStoreWriting = AppSettingsStore(
         notificationCenter: NotificationCenter.default,
