@@ -38,15 +38,12 @@ import TwilioVideo
             builder.bandwidthProfileOptions = BandwidthProfileOptions(
                 videoOptions: VideoBandwidthProfileOptions { builder in
                     builder.mode = TwilioVideo.BandwidthProfileMode(setting: self.appSettingsStore.bandwidthProfileMode)
-                    builder.maxSubscriptionBitrate = 6_000
-                    builder.maxTracks = 10
+                    builder.maxTracks = 5
                     builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
                     builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
-                    builder.renderDimensions = VideoRenderDimensions()
-                    builder.renderDimensions?.high = VideoDimensions(width: 1_280, height: 720)
-                    builder.renderDimensions?.low = VideoDimensions(width: 352, height: 288)
                 }
             )
+
             switch self.appSettingsStore.videoCodec {
             case .h264:
                 builder.preferredVideoCodecs = [H264Codec()]

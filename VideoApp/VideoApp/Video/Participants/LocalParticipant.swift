@@ -61,7 +61,8 @@ class LocalParticipant: NSObject, Participant {
                 
                 self.cameraManager = cameraManager
                 cameraManager.delegate = self
-                participant?.publishVideoTrack(cameraManager.track.track)
+                let publicationOptions = LocalTrackPublicationOptions(priority: .low)
+                participant?.publishVideoTrack(cameraManager.track.track, publicationOptions: publicationOptions)
             } else {
                 guard let cameraManager = cameraManager else { return }
                 
