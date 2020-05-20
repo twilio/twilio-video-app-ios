@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,8 +14,20 @@
 //  limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import GoogleSignIn
+import UIKit
 
-@interface LoginViewController : UIViewController
-
-@end
+class LoginViewController: UIViewController {
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().presentingViewController = self
+        googleSignInButton.style = .wide
+        
+        if #available(iOS 13, *) {
+            isModalInPresentation = true
+        }
+    }
+}

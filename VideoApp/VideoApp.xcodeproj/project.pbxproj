@@ -13,7 +13,6 @@
 		243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
 		243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
 		243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
-		24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24491F7C1E37F8F000028B24 /* LoginViewController.m */; };
 		24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
 		24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E61ECE1CBD00486E7A /* StatsUIModel.m */; };
 		24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */; };
@@ -24,7 +23,6 @@
 		32BD0B3476F7C1A3D75FD8EF /* Pods_Video_Twilio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */; };
 		48B785FD323FF9E429DB3835 /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB1306CB055161D792FB7EB /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework */; };
 		4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
-		4B0012281FBA52C4004A587E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24491F7C1E37F8F000028B24 /* LoginViewController.m */; };
 		4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */; };
 		4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E61ECE1CBD00486E7A /* StatsUIModel.m */; };
 		4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */; };
@@ -32,7 +30,6 @@
 		4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
 		4B0012461FBA52C4004A587E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
 		4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
-		4B0012651FBA52E5004A587E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24491F7C1E37F8F000028B24 /* LoginViewController.m */; };
 		4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */; };
 		4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E61ECE1CBD00486E7A /* StatsUIModel.m */; };
 		4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */; };
@@ -514,6 +511,9 @@
 		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
+		DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
+		DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
 		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
@@ -580,8 +580,6 @@
 		2412824B1E36A6AB002198BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		243CDB4922665F1800637B6B /* TwilioColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioColors.swift; sourceTree = "<group>"; };
 		24480A451EF07716003BCF00 /* Video.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Video.entitlements; sourceTree = "<group>"; };
-		24491F7B1E37F8F000028B24 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		24491F7C1E37F8F000028B24 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		24A723E11ECE1C8500486E7A /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		24A723E21ECE1C8500486E7A /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
 		24A723E51ECE1CBD00486E7A /* StatsUIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsUIModel.h; sourceTree = "<group>"; };
@@ -808,6 +806,7 @@
 		DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
+		DCEDB35C24733641006AF70D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1104,8 +1103,7 @@
 				DCA5394F235F765D00CA26FB /* AuthFlow.swift */,
 				DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */,
 				24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */,
-				24491F7B1E37F8F000028B24 /* LoginViewController.h */,
-				24491F7C1E37F8F000028B24 /* LoginViewController.m */,
+				DCEDB35C24733641006AF70D /* LoginViewController.swift */,
 				DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */,
 				DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */,
 			);
@@ -2647,7 +2645,6 @@
 				DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */,
 				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
-				24491F7D1E37F8F000028B24 /* LoginViewController.m in Sources */,
 				DC9A5E4B2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
 				DC9A5DC5245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
@@ -2656,6 +2653,7 @@
 				DCAEBF432384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
+				DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */,
 				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
@@ -2804,7 +2802,6 @@
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
-				4B0012281FBA52C4004A587E /* LoginViewController.m in Sources */,
 				DC9A5E4C2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
 				DC9A5DC6245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
@@ -2813,6 +2810,7 @@
 				DCAEBF442384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
+				DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
@@ -2961,7 +2959,6 @@
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
-				4B0012651FBA52E5004A587E /* LoginViewController.m in Sources */,
 				DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
 				DC9A5DC7245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
@@ -2970,6 +2967,7 @@
 				DCAEBF452384450300141D2D /* SelectVideoCodecViewModel.swift in Sources */,
 				DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
+				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
@@ -3295,7 +3293,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3331,7 +3329,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3363,7 +3361,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3399,7 +3397,7 @@
 				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3431,7 +3429,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3467,7 +3465,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 54;
+				CURRENT_PROJECT_VERSION = 55;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
