@@ -41,10 +41,11 @@ import TwilioVideo
                     builder.maxTracks = 5
                     builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
                     builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
-                    builder.renderDimensions = VideoRenderDimensions()
-                    builder.renderDimensions?.low = .make(setting: self.appSettingsStore.lowRenderDimensions)
-                    builder.renderDimensions?.standard = .make(setting: self.appSettingsStore.standardRenderDimensions)
-                    builder.renderDimensions?.high = .make(setting: self.appSettingsStore.highRenderDimensions)
+                    let renderDimensions = VideoRenderDimensions()
+                    renderDimensions.low = VideoDimensions(setting: self.appSettingsStore.lowRenderDimensions)
+                    renderDimensions.standard = VideoDimensions(setting: self.appSettingsStore.standardRenderDimensions)
+                    renderDimensions.high = VideoDimensions(setting: self.appSettingsStore.highRenderDimensions)
+                    builder.renderDimensions = renderDimensions
                 }
             )
 
@@ -107,17 +108,17 @@ private extension Track.SwitchOffMode {
 }
 
 private extension VideoDimensions {
-    static func make(setting: VideoDimensionsName) -> VideoDimensions? {
+    convenience init?(setting: VideoDimensionsName) {
         switch setting {
         case .serverDefault: return nil
-        case .cif: return .cif
-        case .vga: return .vga
-        case .wvga: return .wvga
-        case .hd540P: return .hd540P
-        case .hd720P: return .hd720P
-        case .hd960P: return .hd960P
-        case .hdS1080P: return .hdStandard1080P
-        case .hd1080P: return .hdWidescreen1080P
+        case .cif: self.init(width: 352, height: 288)
+        case .vga: self.init(width: 640, height: 480)
+        case .wvga: self.init(width: 800, height: 480)
+        case .hd540P: self.init(width: 960, height: 540)
+        case .hd720P: self.init(width: 1280, height: 720)
+        case .hd960P: self.init(width: 1280, height: 960)
+        case .hdStandard1080P: self.init(width: 1440, height: 1080)
+        case .hdWidescreen1080P: self.init(width: 1920, height: 1080)
         }
     }
 }

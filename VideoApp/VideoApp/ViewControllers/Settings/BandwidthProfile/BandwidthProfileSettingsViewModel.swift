@@ -46,16 +46,19 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     private let selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory
     private let selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory
     private let selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
+    private let renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
     
     init(
         appSettingsStore: AppSettingsStoreWriting,
         selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory,
         selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory,
-        selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
+        selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory,
+        renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.selectBandwidthProfileModeViewModelFactory = selectBandwidthProfileModeViewModelFactory
         self.selectDominantSpeakerPriorityViewModelFactory = selectDominantSpeakerPriorityViewModelFactory
         self.selectTrackSwitchOffModeViewModelFactory = selectTrackSwitchOffModeViewModelFactory
+        self.renderDimensionsSettingsViewControllerFactory = renderDimensionsSettingsViewControllerFactory
     }
 }

@@ -532,9 +532,9 @@
 		DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
-		DCEDB38A2475B693006AF70D /* VideoDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimension.swift */; };
-		DCEDB38B2475B693006AF70D /* VideoDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimension.swift */; };
-		DCEDB38C2475B693006AF70D /* VideoDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimension.swift */; };
+		DCEDB38A2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
+		DCEDB38B2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
+		DCEDB38C2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
 		DCEDB38F2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
 		DCEDB3902475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
 		DCEDB3912475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
@@ -849,7 +849,7 @@
 		DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackSwitchOffModeViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB381247489A0006AF70D /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
-		DCEDB3892475B693006AF70D /* VideoDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDimension.swift; sourceTree = "<group>"; };
+		DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDimensionsName.swift; sourceTree = "<group>"; };
 		DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDimensionsSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDimensionsSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLowRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
@@ -1239,7 +1239,7 @@
 				DCEDB371247442D9006AF70D /* TrackPriority.swift */,
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
-				DCEDB3892475B693006AF70D /* VideoDimension.swift */,
+				DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */,
 				DC82A35223FDB6890081578C /* SDKLogLevel.swift */,
 			);
 			path = AppSettings;
@@ -1494,7 +1494,7 @@
 			children = (
 				DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */,
 				DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */,
-				DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */,
+				DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */,
 			);
 			path = SelectOption;
 			sourceTree = "<group>";
@@ -1524,7 +1524,7 @@
 				DC44C2E923876B4700205174 /* EditTextSegueSender.swift */,
 				DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */,
 				DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */,
-				DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */,
+				DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */,
 				DCEDB381247489A0006AF70D /* SettingOptions.swift */,
 				DCF461582385A51700DD8FEA /* SettingsViewController.swift */,
 				DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */,
@@ -2730,7 +2730,7 @@
 				DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCEDB38A2475B693006AF70D /* VideoDimension.swift in Sources */,
+				DCEDB38A2475B693006AF70D /* VideoDimensionsName.swift in Sources */,
 				DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -2899,7 +2899,7 @@
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCEDB38B2475B693006AF70D /* VideoDimension.swift in Sources */,
+				DCEDB38B2475B693006AF70D /* VideoDimensionsName.swift in Sources */,
 				DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -3068,7 +3068,7 @@
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCEDB38C2475B693006AF70D /* VideoDimension.swift in Sources */,
+				DCEDB38C2475B693006AF70D /* VideoDimensionsName.swift in Sources */,
 				DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,

@@ -23,13 +23,13 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
         viewController.viewModel = AdvancedSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
             userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
-            crashReportStore: CrashReportStore.shared,
             editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
             selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
             selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
             developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
             sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory(),
-            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
+            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory(),
+            bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory()
         )
         return viewController
     }

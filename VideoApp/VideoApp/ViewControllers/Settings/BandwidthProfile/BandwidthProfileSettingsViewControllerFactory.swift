@@ -24,7 +24,8 @@ class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
             appSettingsStore: AppSettingsStore.shared,
             selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory(),
             selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory(),
-            selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory()
+            selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory(),
+            renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory()
         )
         return viewController
     }

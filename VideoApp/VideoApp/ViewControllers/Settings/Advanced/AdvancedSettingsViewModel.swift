@@ -57,7 +57,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                     ),
                     .push(
                         title: "Bandwidth Profile",
-                        viewControllerFactory: BandwidthProfileSettingsViewControllerFactory()
+                        viewControllerFactory: bandwidthProfileSettingsViewControllerFactory
                     )
                 ]
             ),
@@ -81,33 +81,33 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     }
     private let appSettingsStore: AppSettingsStoreWriting
     private let userStore: UserStoreReading
-    private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
     private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
     private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+    private let bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
 
     init(
         appSettingsStore: AppSettingsStoreWriting,
         userStore: UserStoreReading,
-        crashReportStore: CrashReportStoreWriting,
         editIdentityViewModalFactory: EditTextViewModelFactory,
         selectTopologyViewModelFactory: SelectOptionViewModelFactory,
         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
         sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory,
-        selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+        selectVideoCodecViewModelFactory: SelectOptionViewModelFactory,
+        bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
-        self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
         self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
         self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
         self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
+        self.bandwidthProfileSettingsViewControllerFactory = bandwidthProfileSettingsViewControllerFactory
     }
 }

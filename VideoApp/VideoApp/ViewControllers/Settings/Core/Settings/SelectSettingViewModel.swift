@@ -24,8 +24,8 @@ class SelectSettingViewModel<T: SettingOptions>: SelectOptionViewModel {
         set { appSettingsStore[keyPath: keyPath] = T.allCases[newValue as! T.AllCases.Index] }
     }
 
-    private let appSettingsStore: AppSettingsStoreWriting
     private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, T>
+    private let appSettingsStore: AppSettingsStoreWriting
     
     init(
         title: String,
