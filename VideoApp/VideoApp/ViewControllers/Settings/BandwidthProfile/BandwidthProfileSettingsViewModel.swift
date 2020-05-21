@@ -36,7 +36,8 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
                         title: "Track Switch Off Mode",
                         selectedOption: appSettingsStore.trackSwitchOffMode.title,
                         viewModelFactory: selectTrackSwitchOffModeViewModelFactory
-                    )
+                    ),
+                    .push(title: "Render Dimensions", viewControllerFactory: RenderDimensionsSettingsViewControllerFactory())
                 ]
             )
         ]

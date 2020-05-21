@@ -499,6 +499,9 @@
 		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
+		DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
+		DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
+		DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
 		DCEDB36224743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
 		DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
 		DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
@@ -529,9 +532,24 @@
 		DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
-		DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
-		DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
-		DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
+		DCEDB38A2475B693006AF70D /* VideoDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimension.swift */; };
+		DCEDB38B2475B693006AF70D /* VideoDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimension.swift */; };
+		DCEDB38C2475B693006AF70D /* VideoDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimension.swift */; };
+		DCEDB38F2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
+		DCEDB3902475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
+		DCEDB3912475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
+		DCEDB3932475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */; };
+		DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */; };
+		DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */; };
+		DCEDB3972475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */; };
+		DCEDB3982475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */; };
+		DCEDB3992475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */; };
+		DCEDB39B2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
+		DCEDB39C2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
+		DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
+		DCEDB39F2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
+		DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
+		DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
 		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
@@ -820,6 +838,7 @@
 		DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
+		DCEDB35C24733641006AF70D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileMode.swift; sourceTree = "<group>"; };
@@ -830,7 +849,12 @@
 		DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackSwitchOffModeViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB381247489A0006AF70D /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
-		DCEDB35C24733641006AF70D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DCEDB3892475B693006AF70D /* VideoDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDimension.swift; sourceTree = "<group>"; };
+		DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDimensionsSettingsViewModel.swift; sourceTree = "<group>"; };
+		DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDimensionsSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLowRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStandardRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHighRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1215,6 +1239,7 @@
 				DCEDB371247442D9006AF70D /* TrackPriority.swift */,
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
+				DCEDB3892475B693006AF70D /* VideoDimension.swift */,
 				DC82A35223FDB6890081578C /* SDKLogLevel.swift */,
 			);
 			path = AppSettings;
@@ -1453,11 +1478,12 @@
 		DCAEBF4B2384880300141D2D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				DCEDB360247439E9006AF70D /* BandwidthProfile */,
 				DCAEBF51238488CC00141D2D /* Advanced */,
+				DCEDB360247439E9006AF70D /* BandwidthProfile */,
 				DCAEBF4E2384887B00141D2D /* Core */,
 				DC0446C923A2EDFB0072F597 /* Developer */,
 				DCAEBF50238488C500141D2D /* General */,
+				DCEDB38D2475D1C2006AF70D /* RenderDimensions */,
 				DC82A35A23FDB8F80081578C /* SDKLogLevel */,
 			);
 			path = Settings;
@@ -1744,6 +1770,18 @@
 				DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */,
 			);
 			path = BandwidthProfile;
+			sourceTree = "<group>";
+		};
+		DCEDB38D2475D1C2006AF70D /* RenderDimensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */,
+				DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */,
+				DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */,
+				DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */,
+				DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */,
+			);
+			path = RenderDimensions;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -2642,6 +2680,7 @@
 				DCEDB36624743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCEDB39B2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3552406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
@@ -2649,6 +2688,7 @@
 				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC3924892416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E432463247700E4B079 /* CircleButton.swift in Sources */,
+				DCEDB38F2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
 				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2690,6 +2730,7 @@
 				DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */,
+				DCEDB38A2475B693006AF70D /* VideoDimension.swift in Sources */,
 				DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -2697,6 +2738,7 @@
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DCEDB3932475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36E24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53948235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
@@ -2707,6 +2749,7 @@
 				DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2D2462153000E4B079 /* CameraManager.swift in Sources */,
+				DCEDB39F2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1852405BD68009DEA70 /* API.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
@@ -2745,6 +2788,7 @@
 				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCD940B1243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
+				DCEDB3972475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E3592407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B4F2409976F00E090BE /* APIRequest.swift in Sources */,
@@ -2805,6 +2849,7 @@
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCEDB39C2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
@@ -2812,6 +2857,7 @@
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
+				DCEDB3902475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2853,6 +2899,7 @@
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
+				DCEDB38B2475B693006AF70D /* VideoDimension.swift in Sources */,
 				DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -2860,6 +2907,7 @@
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
@@ -2870,6 +2918,7 @@
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */,
+				DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
@@ -2908,6 +2957,7 @@
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCD940B2243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
+				DCEDB3982475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
@@ -2968,6 +3018,7 @@
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
@@ -2975,6 +3026,7 @@
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */,
+				DCEDB3912475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -3016,6 +3068,7 @@
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
+				DCEDB38C2475B693006AF70D /* VideoDimension.swift in Sources */,
 				DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -3023,6 +3076,7 @@
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
@@ -3033,6 +3087,7 @@
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */,
+				DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
@@ -3071,6 +3126,7 @@
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
+				DCEDB3992475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,

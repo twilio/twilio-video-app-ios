@@ -41,6 +41,10 @@ import TwilioVideo
                     builder.maxTracks = 5
                     builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
                     builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
+                    builder.renderDimensions = VideoRenderDimensions()
+                    builder.renderDimensions?.low = .make(setting: self.appSettingsStore.lowRenderDimensions)
+                    builder.renderDimensions?.standard = .make(setting: self.appSettingsStore.standardRenderDimensions)
+                    builder.renderDimensions?.high = .make(setting: self.appSettingsStore.highRenderDimensions)
                 }
             )
 
@@ -98,6 +102,22 @@ private extension Track.SwitchOffMode {
         case .disabled: self = .disabled
         case .detected: self = .detected
         case .predicted: self = .predicted
+        }
+    }
+}
+
+private extension VideoDimensions {
+    static func make(setting: VideoDimensionsName) -> VideoDimensions? {
+        switch setting {
+        case .serverDefault: return nil
+        case .cif: return .cif
+        case .vga: return .vga
+        case .wvga: return .wvga
+        case .hd540P: return .hd540P
+        case .hd720P: return .hd720P
+        case .hd960P: return .hd960P
+        case .hdS1080P: return .hdStandard1080P
+        case .hd1080P: return .hdWidescreen1080P
         }
     }
 }
