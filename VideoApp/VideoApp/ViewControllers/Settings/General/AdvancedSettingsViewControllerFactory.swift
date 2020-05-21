@@ -28,7 +28,8 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
             selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
             selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
             developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
-            sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory()
+            sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory(),
+            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
         )
         return viewController
     }

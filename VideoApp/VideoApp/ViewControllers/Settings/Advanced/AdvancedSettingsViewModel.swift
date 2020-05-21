@@ -26,17 +26,43 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         title: "Environment",
                         selectedOption: appSettingsStore.environment.title,
                         viewModelFactory: selectEnvironmentViewModelFactory
-                    ),
+                    )
+                ]
+            ),
+            .init(
+                rows: [
                     .editableText(
                         title: "User Identity",
                         text: userStore.user.displayName,
                         viewModelFactory: editIdentityViewModalFactory
-                    ),
+                    )
+                ]
+            ),
+            .init(
+                rows: [
                     .optionList(
                         title: "Topology",
                         selectedOption: appSettingsStore.topology.title,
                         viewModelFactory: selectTopologyViewModelFactory
                     ),
+                    .optionList(
+                        title: "Video Codec",
+                        selectedOption: appSettingsStore.videoCodec.title,
+                        viewModelFactory: selectVideoCodecViewModelFactory
+                    ),
+                    .toggle(
+                        title: "TURN Media Relay",
+                        isOn: appSettingsStore.isTURNMediaRelayOn,
+                        updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
+                    ),
+                    .push(
+                        title: "Bandwidth Profile",
+                        viewControllerFactory: BandwidthProfileSettingsViewControllerFactory()
+                    )
+                ]
+            ),
+            .init(
+                rows: [
                     .push(
                         title: "SDK Log Levels",
                         viewControllerFactory: sdkLogLevelSettingsViewControllerFactory
@@ -61,7 +87,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
-    
+    private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+
     init(
         appSettingsStore: AppSettingsStoreWriting,
         userStore: UserStoreReading,
@@ -70,7 +97,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         selectTopologyViewModelFactory: SelectOptionViewModelFactory,
         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
-        sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
+        sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory,
+        selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
@@ -80,5 +108,6 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
+        self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
     }
 }

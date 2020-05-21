@@ -106,8 +106,7 @@ class LobbyViewController: UIViewController {
             settingsViewController.viewModel = GeneralSettingsViewModel(
                 appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
                 appSettingsStore: AppSettingsStore.shared,
-                authStore: AuthStore.shared,
-                selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory()
+                authStore: AuthStore.shared
             )
         default:
             break
