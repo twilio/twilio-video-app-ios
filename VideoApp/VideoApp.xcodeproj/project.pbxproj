@@ -86,6 +86,12 @@
 		DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */; };
+		DC2511A7247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
+		DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
+		DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
+		DC2511AB2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
+		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
+		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC386DD12458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
@@ -667,6 +673,8 @@
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
+		DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxTracksViewModel.swift; sourceTree = "<group>"; };
+		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
@@ -1765,6 +1773,8 @@
 			children = (
 				DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */,
 				DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */,
+				DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */,
+				DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */,
 				DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */,
 				DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */,
 				DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */,
@@ -2680,6 +2690,7 @@
 				DCEDB36624743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC2511AB2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCEDB39B2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
@@ -2738,6 +2749,7 @@
 				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DC2511A7247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
 				DCEDB3932475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36E24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
@@ -2849,6 +2861,7 @@
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCEDB39C2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
@@ -2907,6 +2920,7 @@
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
 				DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
@@ -3018,6 +3032,7 @@
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
@@ -3076,6 +3091,7 @@
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
+				DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
 				DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,

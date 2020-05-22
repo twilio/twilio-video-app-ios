@@ -38,7 +38,8 @@ import TwilioVideo
             builder.bandwidthProfileOptions = BandwidthProfileOptions(
                 videoOptions: VideoBandwidthProfileOptions { builder in
                     builder.mode = TwilioVideo.BandwidthProfileMode(setting: self.appSettingsStore.bandwidthProfileMode)
-                    builder.maxTracks = 5
+                    builder.maxSubscriptionBitrate = self.appSettingsStore.maxSubscriptionBitrate as NSNumber?
+                    builder.maxTracks = self.appSettingsStore.maxTracks as NSNumber?
                     builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
                     builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
                     let renderDimensions = VideoRenderDimensions()
