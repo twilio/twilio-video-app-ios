@@ -238,6 +238,50 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
+    var invokedMaxSubscriptionBitrateSetter = false
+    var invokedMaxSubscriptionBitrateSetterCount = 0
+    var invokedMaxSubscriptionBitrate: Int?
+    var invokedMaxSubscriptionBitrateList = [Int?]()
+    var invokedMaxSubscriptionBitrateGetter = false
+    var invokedMaxSubscriptionBitrateGetterCount = 0
+    var stubbedMaxSubscriptionBitrate: Int!
+
+    var maxSubscriptionBitrate: Int? {
+        set {
+            invokedMaxSubscriptionBitrateSetter = true
+            invokedMaxSubscriptionBitrateSetterCount += 1
+            invokedMaxSubscriptionBitrate = newValue
+            invokedMaxSubscriptionBitrateList.append(newValue)
+        }
+        get {
+            invokedMaxSubscriptionBitrateGetter = true
+            invokedMaxSubscriptionBitrateGetterCount += 1
+            return stubbedMaxSubscriptionBitrate
+        }
+    }
+
+    var invokedMaxTracksSetter = false
+    var invokedMaxTracksSetterCount = 0
+    var invokedMaxTracks: Int?
+    var invokedMaxTracksList = [Int?]()
+    var invokedMaxTracksGetter = false
+    var invokedMaxTracksGetterCount = 0
+    var stubbedMaxTracks: Int!
+
+    var maxTracks: Int? {
+        set {
+            invokedMaxTracksSetter = true
+            invokedMaxTracksSetterCount += 1
+            invokedMaxTracks = newValue
+            invokedMaxTracksList.append(newValue)
+        }
+        get {
+            invokedMaxTracksGetter = true
+            invokedMaxTracksGetterCount += 1
+            return stubbedMaxTracks
+        }
+    }
+
     var invokedDominantSpeakerPrioritySetter = false
     var invokedDominantSpeakerPrioritySetterCount = 0
     var invokedDominantSpeakerPriority: TrackPriority?

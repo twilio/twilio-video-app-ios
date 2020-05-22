@@ -19,66 +19,78 @@ import Foundation
 class AdvancedSettingsViewModel: SettingsViewModel {
     let title = "Advanced"
     var sections: [SettingsViewModelSection] {
-        [
-            .init(
-                rows: [
-                    .optionList(
-                        title: "Environment",
-                        selectedOption: appSettingsStore.environment.title,
-                        viewModelFactory: selectEnvironmentViewModelFactory
-                    )
-                ]
-            ),
-            .init(
-                rows: [
-                    .editableText(
-                        title: "User Identity",
-                        text: userStore.user.displayName,
-                        viewModelFactory: editIdentityViewModalFactory
-                    )
-                ]
-            ),
-            .init(
-                rows: [
-                    .optionList(
-                        title: "Topology",
-                        selectedOption: appSettingsStore.topology.title,
-                        viewModelFactory: selectTopologyViewModelFactory
-                    ),
-                    .optionList(
-                        title: "Video Codec",
-                        selectedOption: appSettingsStore.videoCodec.title,
-                        viewModelFactory: selectVideoCodecViewModelFactory
-                    ),
-                    .toggle(
-                        title: "TURN Media Relay",
-                        isOn: appSettingsStore.isTURNMediaRelayOn,
-                        updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
-                    ),
-                    .push(
-                        title: "Bandwidth Profile",
-                        viewControllerFactory: bandwidthProfileSettingsViewControllerFactory
-                    )
-                ]
-            ),
-            .init(
-                rows: [
-                    .push(
-                        title: "SDK Log Levels",
-                        viewControllerFactory: sdkLogLevelSettingsViewControllerFactory
-                    )
-                ]
-            ),
-            .init(
-                rows: [
-                    .push(
-                        title: "Developer",
-                        viewControllerFactory: developerSettingsViewControllerFactory
-                    )
-                ]
+        var sections: [SettingsViewModelSection] = []
+        
+        if appInfoStore.appInfo.target == .videoInternal {
+            sections.append(
+                .init(
+                    rows: [
+                        .optionList(
+                            title: "Environment",
+                            selectedOption: appSettingsStore.environment.title,
+                            viewModelFactory: selectEnvironmentViewModelFactory
+                        )
+                    ]
+                )
             )
-        ]
+        }
+
+        sections.append(
+            contentsOf: [
+                .init(
+                    rows: [
+                        .editableText(
+                            title: "User Identity",
+                            text: userStore.user.displayName,
+                            viewModelFactory: editIdentityViewModalFactory
+                        )
+                    ]
+                ),
+                .init(
+                    rows: [
+                        .optionList(
+                            title: "Topology",
+                            selectedOption: appSettingsStore.topology.title,
+                            viewModelFactory: selectTopologyViewModelFactory
+                        ),
+                        .optionList(
+                            title: "Video Codec",
+                            selectedOption: appSettingsStore.videoCodec.title,
+                            viewModelFactory: selectVideoCodecViewModelFactory
+                        ),
+                        .toggle(
+                            title: "TURN Media Relay",
+                            isOn: appSettingsStore.isTURNMediaRelayOn,
+                            updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
+                        ),
+                        .push(
+                            title: "Bandwidth Profile",
+                            viewControllerFactory: bandwidthProfileSettingsViewControllerFactory
+                        )
+                    ]
+                ),
+                .init(
+                    rows: [
+                        .push(
+                            title: "SDK Log Levels",
+                            viewControllerFactory: sdkLogLevelSettingsViewControllerFactory
+                        )
+                    ]
+                ),
+                .init(
+                    rows: [
+                        .push(
+                            title: "Developer",
+                            viewControllerFactory: developerSettingsViewControllerFactory
+                        )
+                    ]
+                )
+            ]
+        )
+        
+        return sections
     }
+    private let appInfoStore: AppInfoStoreReading
     private let appSettingsStore: AppSettingsStoreWriting
     private let userStore: UserStoreReading
     private let editIdentityViewModalFactory: EditTextViewModelFactory
@@ -90,6 +102,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
 
     init(
+        appInfoStore: AppInfoStoreReading,
         appSettingsStore: AppSettingsStoreWriting,
         userStore: UserStoreReading,
         editIdentityViewModalFactory: EditTextViewModelFactory,
@@ -100,6 +113,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         selectVideoCodecViewModelFactory: SelectOptionViewModelFactory,
         bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
     ) {
+        self.appInfoStore = appInfoStore
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory

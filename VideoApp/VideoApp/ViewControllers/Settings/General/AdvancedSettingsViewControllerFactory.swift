@@ -21,6 +21,7 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
         viewController.viewModel = AdvancedSettingsViewModel(
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
             appSettingsStore: AppSettingsStore.shared,
             userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
             editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
