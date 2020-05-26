@@ -26,6 +26,12 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var platformSDKLogLevel: SDKLogLevel { get set }
     var signalingSDKLogLevel: SDKLogLevel { get set }
     var webRTCSDKLogLevel: SDKLogLevel { get set }
+    var bandwidthProfileMode: BandwidthProfileMode { get set }
+    var dominantSpeakerPriority: TrackPriority { get set }
+    var trackSwitchOffMode: TrackSwitchOffMode { get set }
+    var lowRenderDimensions: VideoDimensionsName { get set }
+    var standardRenderDimensions: VideoDimensionsName { get set }
+    var highRenderDimensions: VideoDimensionsName { get set }
     func reset()
 }
 
@@ -39,6 +45,12 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("platformSDKLogLevel"), defaultValue: SDKLogLevel.info) var platformSDKLogLevel: SDKLogLevel
     @Storage(key: makeKey("signalingSDKLogLevel"), defaultValue: SDKLogLevel.error) var signalingSDKLogLevel: SDKLogLevel
     @Storage(key: makeKey("webRTCSDKLogLevel"), defaultValue: SDKLogLevel.off) var webRTCSDKLogLevel: SDKLogLevel
+    @Storage(key: makeKey("bandwidthProfileMode"), defaultValue: BandwidthProfileMode.collaboration) var bandwidthProfileMode: BandwidthProfileMode
+    @Storage(key: makeKey("dominantSpeakerPriority"), defaultValue: TrackPriority.serverDefault) var dominantSpeakerPriority: TrackPriority
+    @Storage(key: makeKey("trackSwitchOffMode"), defaultValue: TrackSwitchOffMode.serverDefault) var trackSwitchOffMode: TrackSwitchOffMode
+    @Storage(key: makeKey("lowRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var lowRenderDimensions: VideoDimensionsName
+    @Storage(key: makeKey("standardRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var standardRenderDimensions: VideoDimensionsName
+    @Storage(key: makeKey("highRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var highRenderDimensions: VideoDimensionsName
 
     static var shared: AppSettingsStoreWriting = AppSettingsStore(
         notificationCenter: NotificationCenter.default,

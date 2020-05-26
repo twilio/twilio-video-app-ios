@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,23 +18,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDN-5f-s8F">
-                        <rect key="frame" x="16" y="11.5" width="221" height="21"/>
+                        <rect key="frame" x="20" y="11.5" width="215" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAc-Fj-rbX">
-                        <rect key="frame" x="253" y="6.5" width="51" height="31"/>
+                        <rect key="frame" x="251" y="6.5" width="51" height="31"/>
                         <connections>
                             <action selector="switchChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="iCK-LG-KXg"/>
                         </connections>
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="XAc-Fj-rbX" secondAttribute="trailing" constant="18" id="9XB-NB-pY7"/>
+                    <constraint firstAttribute="trailing" secondItem="XAc-Fj-rbX" secondAttribute="trailing" constant="20" id="9XB-NB-pY7"/>
                     <constraint firstItem="XAc-Fj-rbX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="V2g-TU-Q10"/>
                     <constraint firstItem="XAc-Fj-rbX" firstAttribute="leading" secondItem="ZDN-5f-s8F" secondAttribute="trailing" constant="16" id="Y81-if-gX9"/>
-                    <constraint firstItem="ZDN-5f-s8F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="YZC-xJ-OV1"/>
+                    <constraint firstItem="ZDN-5f-s8F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="YZC-xJ-OV1"/>
                     <constraint firstItem="ZDN-5f-s8F" firstAttribute="centerY" secondItem="XAc-Fj-rbX" secondAttribute="centerY" id="qXK-F0-7wr"/>
                 </constraints>
             </tableViewCellContentView>

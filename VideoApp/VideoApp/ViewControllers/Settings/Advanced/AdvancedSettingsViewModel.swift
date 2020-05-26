@@ -26,17 +26,43 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         title: "Environment",
                         selectedOption: appSettingsStore.environment.title,
                         viewModelFactory: selectEnvironmentViewModelFactory
-                    ),
+                    )
+                ]
+            ),
+            .init(
+                rows: [
                     .editableText(
                         title: "User Identity",
                         text: userStore.user.displayName,
                         viewModelFactory: editIdentityViewModalFactory
-                    ),
+                    )
+                ]
+            ),
+            .init(
+                rows: [
                     .optionList(
                         title: "Topology",
                         selectedOption: appSettingsStore.topology.title,
                         viewModelFactory: selectTopologyViewModelFactory
                     ),
+                    .optionList(
+                        title: "Video Codec",
+                        selectedOption: appSettingsStore.videoCodec.title,
+                        viewModelFactory: selectVideoCodecViewModelFactory
+                    ),
+                    .toggle(
+                        title: "TURN Media Relay",
+                        isOn: appSettingsStore.isTURNMediaRelayOn,
+                        updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
+                    ),
+                    .push(
+                        title: "Bandwidth Profile",
+                        viewControllerFactory: bandwidthProfileSettingsViewControllerFactory
+                    )
+                ]
+            ),
+            .init(
+                rows: [
                     .push(
                         title: "SDK Log Levels",
                         viewControllerFactory: sdkLogLevelSettingsViewControllerFactory
@@ -55,29 +81,33 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     }
     private let appSettingsStore: AppSettingsStoreWriting
     private let userStore: UserStoreReading
-    private let crashReportStore: CrashReportStoreWriting
     private let editIdentityViewModalFactory: EditTextViewModelFactory
     private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
     private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
-    
-    init(appSettingsStore: AppSettingsStoreWriting,
-         userStore: UserStoreReading,
-         crashReportStore: CrashReportStoreWriting,
-         editIdentityViewModalFactory: EditTextViewModelFactory,
-         selectTopologyViewModelFactory: SelectOptionViewModelFactory,
-         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
-         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
-         sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
+    private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+    private let bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
+
+    init(
+        appSettingsStore: AppSettingsStoreWriting,
+        userStore: UserStoreReading,
+        editIdentityViewModalFactory: EditTextViewModelFactory,
+        selectTopologyViewModelFactory: SelectOptionViewModelFactory,
+        selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
+        developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
+        sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory,
+        selectVideoCodecViewModelFactory: SelectOptionViewModelFactory,
+        bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
-        self.crashReportStore = crashReportStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
         self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
         self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
+        self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
+        self.bandwidthProfileSettingsViewControllerFactory = bandwidthProfileSettingsViewControllerFactory
     }
 }

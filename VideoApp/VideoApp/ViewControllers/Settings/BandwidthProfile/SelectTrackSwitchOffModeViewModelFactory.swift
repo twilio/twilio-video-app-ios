@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,16 +16,12 @@
 
 import Foundation
 
-class SelectEnvironmentViewModel: SelectOptionViewModel {
-    let title = "Environment"
-    let options = Environment.allCases.map { $0.title }
-    var selectedIndex: Int {
-        get { Environment.allCases.firstIndex(of: appSettingsStore.environment) ?? 0 }
-        set { appSettingsStore.environment = Environment.allCases[newValue] }
-    }
-    private let appSettingsStore: AppSettingsStoreWriting
-    
-    init(appSettingsStore: AppSettingsStoreWriting) {
-        self.appSettingsStore = appSettingsStore
+class SelectTrackSwitchOffModeViewModelFactory: SelectOptionViewModelFactory {
+    func makeSelectOptionViewModel() -> SelectOptionViewModel {
+        SelectSettingViewModel(
+            title: "Track Switch Off Mode",
+            keyPath: \.trackSwitchOffMode,
+            appSettingsStore: AppSettingsStore.shared
+        )
     }
 }

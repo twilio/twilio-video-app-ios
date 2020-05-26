@@ -16,19 +16,20 @@
 
 import Foundation
 
-class SelectSDKLogLevelViewModel: SelectOptionViewModel {
+class SelectSettingViewModel<T: SettingOptions>: SelectOptionViewModel {
     let title: String
-    let options = SDKLogLevel.allCases.map { $0.title }
+    let options = T.allCases.map { $0.title }
     var selectedIndex: Int {
-        get { SDKLogLevel.allCases.firstIndex(of: appSettingsStore[keyPath: keyPath]) ?? 0 }
-        set { appSettingsStore[keyPath: keyPath] = SDKLogLevel.allCases[newValue] }
+        get { T.allCases.firstIndex(of: appSettingsStore[keyPath: keyPath]) as! Int }
+        set { appSettingsStore[keyPath: keyPath] = T.allCases[newValue as! T.AllCases.Index] }
     }
-    private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>
-    private let appSettingsStore: AppSettingsStoreWriting
 
+    private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, T>
+    private let appSettingsStore: AppSettingsStoreWriting
+    
     init(
         title: String,
-        keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>,
+        keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, T>,
         appSettingsStore: AppSettingsStoreWriting
     ) {
         self.title = title

@@ -37,11 +37,18 @@ import TwilioVideo
             )
             builder.bandwidthProfileOptions = BandwidthProfileOptions(
                 videoOptions: VideoBandwidthProfileOptions { builder in
-                    builder.mode = .collaboration
+                    builder.mode = TwilioVideo.BandwidthProfileMode(setting: self.appSettingsStore.bandwidthProfileMode)
                     builder.maxTracks = 5
+                    builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
+                    builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
+                    let renderDimensions = VideoRenderDimensions()
+                    renderDimensions.low = VideoDimensions(setting: self.appSettingsStore.lowRenderDimensions)
+                    renderDimensions.standard = VideoDimensions(setting: self.appSettingsStore.standardRenderDimensions)
+                    renderDimensions.high = VideoDimensions(setting: self.appSettingsStore.highRenderDimensions)
+                    builder.renderDimensions = renderDimensions
                 }
             )
-            
+
             switch self.appSettingsStore.videoCodec {
             case .h264:
                 builder.preferredVideoCodecs = [H264Codec()]
@@ -63,6 +70,55 @@ import TwilioVideo
                     builder.transportPolicy = .relay
                 }
             }
+        }
+    }
+}
+
+private extension TwilioVideo.BandwidthProfileMode {
+    init?(setting: BandwidthProfileMode) {
+        switch setting {
+        case .serverDefault: return nil
+        case .collaboration: self = .collaboration
+        case .grid: self = .grid
+        case .presentation: self = .presentation
+        }
+    }
+}
+
+private extension Track.Priority {
+    init?(setting: TrackPriority) {
+        switch setting {
+        case .serverDefault: return nil
+        case .low: self = .low
+        case .standard: self = .standard
+        case .high: self = .high
+        }
+    }
+}
+
+private extension Track.SwitchOffMode {
+    init?(setting: TrackSwitchOffMode) {
+        switch setting {
+        case .serverDefault: return nil
+        case .disabled: self = .disabled
+        case .detected: self = .detected
+        case .predicted: self = .predicted
+        }
+    }
+}
+
+private extension VideoDimensions {
+    convenience init?(setting: VideoDimensionsName) {
+        switch setting {
+        case .serverDefault: return nil
+        case .cif: self.init(width: 352, height: 288)
+        case .vga: self.init(width: 640, height: 480)
+        case .wvga: self.init(width: 800, height: 480)
+        case .hd540P: self.init(width: 960, height: 540)
+        case .hd720P: self.init(width: 1280, height: 720)
+        case .hd960P: self.init(width: 1280, height: 960)
+        case .hdStandard1080P: self.init(width: 1440, height: 1080)
+        case .hdWidescreen1080P: self.init(width: 1920, height: 1080)
         }
     }
 }

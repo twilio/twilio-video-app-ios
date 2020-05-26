@@ -26,6 +26,6 @@ class SelectSDKLogLevelViewModelFactory: SelectOptionViewModelFactory {
     }
     
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectSDKLogLevelViewModel(title: title, keyPath: keyPath, appSettingsStore: AppSettingsStore.shared)
+        SelectSettingViewModel(title: title, keyPath: keyPath, appSettingsStore: AppSettingsStore.shared)
     }
 }

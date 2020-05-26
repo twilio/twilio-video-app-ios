@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,20 +16,16 @@
 
 import UIKit
 
-class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
+class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = AdvancedSettingsViewModel(
+        viewController.viewModel = BandwidthProfileSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
-            userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
-            editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
-            selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
-            selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
-            developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
-            sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory(),
-            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory(),
-            bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory()
+            selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory(),
+            selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory(),
+            selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory(),
+            renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory()
         )
         return viewController
     }

@@ -31,19 +31,6 @@ class GeneralSettingsViewModel: SettingsViewModel {
                         detail: TwilioVideoSDK.sdkVersion()
                     )
                 ]
-            ),
-            SettingsViewModelSection(
-                rows: [
-                    .optionList(
-                        title: "Video Codec",
-                        selectedOption: appSettingsStore.videoCodec.title,
-                        viewModelFactory: selectVideoCodecViewModelFactory
-                    ),
-                    .toggle(title: "TURN Media Relay",
-                        isOn: appSettingsStore.isTURNMediaRelayOn,
-                        updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
-                    )
-                ]
             )
         ]
 
@@ -76,17 +63,14 @@ class GeneralSettingsViewModel: SettingsViewModel {
     private let appInfoStore: AppInfoStoreReading
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreWriting
-    private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
 
     init(
         appInfoStore: AppInfoStoreReading,
         appSettingsStore: AppSettingsStoreWriting,
-        authStore: AuthStoreWriting,
-        selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+        authStore: AuthStoreWriting
     ) {
         self.appInfoStore = appInfoStore
         self.appSettingsStore = appSettingsStore
         self.authStore = authStore
-        self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
     }
 }
