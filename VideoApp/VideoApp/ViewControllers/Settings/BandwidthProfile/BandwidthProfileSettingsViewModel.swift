@@ -19,13 +19,26 @@ import Foundation
 class BandwidthProfileSettingsViewModel: SettingsViewModel {
     let title = "Bandwidth Profile"
     var sections: [SettingsViewModelSection] {
-        [
+        let editMaxSubscriptionBitrateViewModel = editMaxSubscriptionBitrateViewModelFactory.makeEditTextViewModel()
+        let editMaxTracksViewModel = editMaxTracksViewModelFactory.makeEditTextViewModel()
+        
+        return [
             .init(
                 rows: [
                     .optionList(
                         title: "Mode",
                         selectedOption: appSettingsStore.bandwidthProfileMode.title,
                         viewModelFactory: selectBandwidthProfileModeViewModelFactory
+                    ),
+                    .editableText(
+                        title: editMaxSubscriptionBitrateViewModel.title,
+                        text: editMaxSubscriptionBitrateViewModel.text.nilIfEmpty ?? editMaxSubscriptionBitrateViewModel.placeholder,
+                        viewModelFactory: editMaxSubscriptionBitrateViewModelFactory
+                    ),
+                    .editableText(
+                        title: editMaxTracksViewModel.title,
+                        text: editMaxTracksViewModel.text.nilIfEmpty ?? editMaxTracksViewModel.placeholder,
+                        viewModelFactory: editMaxTracksViewModelFactory
                     ),
                     .optionList(
                         title: "Dominant Speaker Priority",
@@ -44,6 +57,8 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     }
     private let appSettingsStore: AppSettingsStoreWriting
     private let selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory
+    private let editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory
+    private let editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory
     private let selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory
     private let selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
     private let renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
@@ -51,12 +66,16 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     init(
         appSettingsStore: AppSettingsStoreWriting,
         selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory,
+        editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory,
+        editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory,
         selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory,
         selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory,
         renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.selectBandwidthProfileModeViewModelFactory = selectBandwidthProfileModeViewModelFactory
+        self.editMaxSubscriptionBitrateViewModelFactory = editMaxSubscriptionBitrateViewModelFactory
+        self.editMaxTracksViewModelFactory = editMaxTracksViewModelFactory
         self.selectDominantSpeakerPriorityViewModelFactory = selectDominantSpeakerPriorityViewModelFactory
         self.selectTrackSwitchOffModeViewModelFactory = selectTrackSwitchOffModeViewModelFactory
         self.renderDimensionsSettingsViewControllerFactory = renderDimensionsSettingsViewControllerFactory

@@ -52,6 +52,7 @@ class EditTextViewController: UITableViewController {
         cell.textField.placeholder = viewModel.placeholder
         cell.textField.text = viewModel.text
         cell.textField.delegate = self
+        cell.textField.keyboardType = viewModel.keyboardType
         return cell
     }
 }

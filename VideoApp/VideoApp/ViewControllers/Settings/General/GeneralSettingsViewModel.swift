@@ -19,8 +19,8 @@ import TwilioVideo
 class GeneralSettingsViewModel: SettingsViewModel {
     let title = "Settings"
     var sections: [SettingsViewModelSection] {
-        var sections = [
-            SettingsViewModelSection(
+        [
+            .init(
                 rows: [
                     .info(
                         title: "App Version",
@@ -31,24 +31,16 @@ class GeneralSettingsViewModel: SettingsViewModel {
                         detail: TwilioVideoSDK.sdkVersion()
                     )
                 ]
-            )
-        ]
-
-        if appInfoStore.appInfo.target == .videoInternal {
-            sections.append(
-                SettingsViewModelSection(
-                    rows: [
-                        .push(
-                            title: "Advanced",
-                            viewControllerFactory: AdvancedSettingsViewControllerFactory()
-                        )
-                    ]
-                )
-            )
-        }
-
-        sections.append(
-            SettingsViewModelSection(
+            ),
+            .init(
+                rows: [
+                    .push(
+                        title: "Advanced",
+                        viewControllerFactory: AdvancedSettingsViewControllerFactory()
+                    )
+                ]
+            ),
+            .init(
                 rows: [
                     .destructiveButton(
                         title: "Sign Out",
@@ -56,9 +48,7 @@ class GeneralSettingsViewModel: SettingsViewModel {
                     )
                 ]
             )
-        )
-        
-        return sections
+        ]
     }
     private let appInfoStore: AppInfoStoreReading
     private let appSettingsStore: AppSettingsStoreWriting
