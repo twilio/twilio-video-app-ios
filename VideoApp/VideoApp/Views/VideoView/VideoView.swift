@@ -41,7 +41,6 @@ class VideoView: NibView {
         super.awakeFromNib()
         
         videoView.delegate = self
-        isHidden = true
     }
 
     func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
@@ -65,7 +64,7 @@ class VideoView: NibView {
     }
     
     private func updateStatus(hasVideoData: Bool) {
-        isHidden = !hasVideoData
+        videoView.isHidden = !hasVideoData
         delegate?.didUpdateStatus(isVideoOn: hasVideoData)
     }
 }
