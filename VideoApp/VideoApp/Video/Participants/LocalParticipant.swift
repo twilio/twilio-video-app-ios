@@ -61,8 +61,7 @@ class LocalParticipant: NSObject, Participant {
                 
                 self.cameraManager = cameraManager
                 cameraManager.delegate = self
-                let publicationOptions = LocalTrackPublicationOptions(priority: .low)
-                participant?.publishVideoTrack(cameraManager.track.track, publicationOptions: publicationOptions)
+                participant?.publishCameraTrack(cameraManager.track.track)
             } else {
                 guard let cameraManager = cameraManager else { return }
                 
@@ -74,7 +73,28 @@ class LocalParticipant: NSObject, Participant {
         }
     }
     var participant: TwilioVideo.LocalParticipant? {
-        didSet { participant?.delegate = self }
+        didSet {
+            guard let participant = participant else { return }
+            
+            participant.delegate = self
+
+            // Sync tracks in case user made changes while connecting to room
+            participant.localVideoTracks.compactMap { $0.localTrack }.filter { $0 !== cameraManager?.track.track }.forEach {
+                participant.unpublishVideoTrack($0)
+            }
+
+            if let cameraTrack = cameraManager?.track.track, !participant.localVideoTracks.contains(where: { $0.localTrack === cameraTrack }) {
+                participant.publishCameraTrack(cameraTrack)
+            }
+
+            participant.localAudioTracks.compactMap { $0.localTrack }.filter { $0 !== micTrack }.forEach {
+                participant.unpublishAudioTrack($0)
+            }
+
+            if let micTrack = micTrack, !participant.localAudioTracks.contains(where: { $0.localTrack === micTrack }) {
+                participant.publishAudioTrack(micTrack)
+            }
+        }
     }
     var localCameraTrack: TwilioVideo.LocalVideoTrack? { cameraManager?.track.track }
     var cameraPosition: AVCaptureDevice.Position = .front {
@@ -149,5 +169,12 @@ extension LocalParticipant: CameraManagerDelegate {
     
     func trackSourceInterruptionEnded(track: LocalVideoTrack) {
         participant?.publishVideoTrack(track.track)
+    }
+}
+
+private extension TwilioVideo.LocalParticipant {
+    func publishCameraTrack(_ track: TwilioVideo.LocalVideoTrack) {
+        let publicationOptions = LocalTrackPublicationOptions(priority: .low)
+        publishVideoTrack(track, publicationOptions: publicationOptions)
     }
 }
