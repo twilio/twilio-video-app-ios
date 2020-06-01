@@ -46,7 +46,7 @@ class CameraConfigFactory {
             targetSize = CMVideoDimensions(width: 900, height: 720)
             
             cropRatio = CGFloat(targetSize.width) / CGFloat(targetSize.height)
-            frameRate = 24 // With HD simulcast enabled there are 3 temporal layers, allowing a frame rate of f/4
+            frameRate = 24 // With HD simulcast enabled there are 3 temporal layers, allowing a frame rate of {f, f/2, f/4}
         }
         
         let preferredFormat = selectVideoFormatBySize(captureDevice: captureDevice, targetSize: targetSize)
