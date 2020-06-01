@@ -26,6 +26,15 @@ import TwilioVideo
         videoTracks: [TwilioVideo.LocalVideoTrack]
     ) -> ConnectOptions {
         ConnectOptions(token: accessToken) { builder in
+            var videoBitrate: UInt {
+                switch self.appSettingsStore.videoCodec {
+                case .h264: return 1_200
+                case .vp8: return 1_200
+                case .vp8SimulcastVGA: return 0
+                case .vp8SimulcastHD: return 1_600
+                }
+            }
+            
             builder.roomName = roomName
             builder.audioTracks = audioTracks
             builder.videoTracks = videoTracks
@@ -49,20 +58,8 @@ import TwilioVideo
                     builder.renderDimensions = renderDimensions
                 }
             )
-
-            switch self.appSettingsStore.videoCodec {
-            case .h264:
-                builder.preferredVideoCodecs = [H264Codec()]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1_200)
-            case .vp8:
-                builder.preferredVideoCodecs = [Vp8Codec(simulcast: false)]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1_200)
-            case .vp8Simulcast:
-                builder.preferredVideoCodecs = [Vp8Codec(simulcast: true)]
-                
-                // Allocate a higher bitrate for the simulcast track with 3 spatial layers
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1_600)
-            }
+            builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
+            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
@@ -71,6 +68,16 @@ import TwilioVideo
                     builder.transportPolicy = .relay
                 }
             }
+        }
+    }
+}
+
+private extension TwilioVideo.VideoCodec {
+    static func make(setting: VideoCodec) -> TwilioVideo.VideoCodec {
+        switch setting {
+        case .h264: return H264Codec()
+        case .vp8: return Vp8Codec(simulcast: false)
+        case .vp8SimulcastVGA, .vp8SimulcastHD: return Vp8Codec(simulcast: true)
         }
     }
 }
