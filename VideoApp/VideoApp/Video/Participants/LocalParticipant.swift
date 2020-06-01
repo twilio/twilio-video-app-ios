@@ -168,7 +168,7 @@ extension LocalParticipant: CameraManagerDelegate {
     }
     
     func trackSourceInterruptionEnded(track: LocalVideoTrack) {
-        participant?.publishVideoTrack(track.track)
+        participant?.publishCameraTrack(track.track)
     }
 }
 
