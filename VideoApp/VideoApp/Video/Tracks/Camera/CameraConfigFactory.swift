@@ -39,7 +39,7 @@ class CameraConfigFactory {
         case .vp8SimulcastVGA:
             targetSize = CMVideoDimensions(width: 640, height: 480)
             cropRatio = CGFloat(targetSize.width) / CGFloat(targetSize.height)
-            frameRate = 24 // With VGA simulcast enabled there are 2 temporal layers, allowing a frame rate of f/4
+            frameRate = 24 // With VGA simulcast enabled there are 3 temporal layers, allowing a frame rate of {f, f/2, f/4}
         case .vp8SimulcastHD:
             // 1024 x 768 squarish crop (1.25:1) on most iPhones. 1280 x 720 squarish crop (1.25:1) on the iPhone X
             // and models that don't have 1024 x 768.
