@@ -26,6 +26,15 @@ import TwilioVideo
         videoTracks: [TwilioVideo.LocalVideoTrack]
     ) -> ConnectOptions {
         ConnectOptions(token: accessToken) { builder in
+            var videoBitrate: UInt {
+                switch self.appSettingsStore.videoCodec {
+                case .h264: return 1_200
+                case .vp8: return 1_200
+                case .vp8SimulcastVGA: return 0
+                case .vp8SimulcastHD: return 1_600
+                }
+            }
+            
             builder.roomName = roomName
             builder.audioTracks = audioTracks
             builder.videoTracks = videoTracks
@@ -50,7 +59,7 @@ import TwilioVideo
                 }
             )
             builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
-            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: 0)
+            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
