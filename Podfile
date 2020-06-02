@@ -16,7 +16,7 @@ target 'Video-Twilio' do
   pod 'FirebaseUI/Google', '8.4.0'
   pod 'IGListDiffKit', '4.0.0'
   pod 'KeychainAccess', '4.1.0'
-  pod 'TwilioVideo', '3.4.0-rc1'
+  pod 'TwilioVideo', '3.4.0-rc2'
 
   target 'Video-TwilioTests' do
     pod 'Nimble'
