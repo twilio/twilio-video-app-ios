@@ -37,10 +37,10 @@ class RoomViewController: UIViewController {
         participantCollectionView.delegate = self
         participantCollectionView.register(ParticipantCell.self)
 
-        disableMicButton.didToggle = { self.viewModel.isMicOn = !$0 }
-        disableCameraButton.didToggle = {
-            self.viewModel.isCameraOn = !$0
-            self.updateView()
+        disableMicButton.didToggle = { [weak self] in self?.viewModel.isMicOn = !$0 }
+        disableCameraButton.didToggle = { [weak self] in
+            self?.viewModel.isCameraOn = !$0
+            self?.updateView()
         }
 
         viewModel.delegate = self
