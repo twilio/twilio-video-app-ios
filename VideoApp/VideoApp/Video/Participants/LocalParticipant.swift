@@ -164,11 +164,12 @@ extension LocalParticipant: LocalParticipantDelegate {
 
 extension LocalParticipant: CameraManagerDelegate {
     func trackSourceWasInterrupted(track: LocalVideoTrack) {
-        participant?.unpublishVideoTrack(track.track)
+        // Disable instead of unpublish to work around SDK bug https://issues.corp.twilio.com/browse/AHOYAPPS-701
+        track.track.isEnabled = false
     }
     
     func trackSourceInterruptionEnded(track: LocalVideoTrack) {
-        participant?.publishCameraTrack(track.track)
+        track.track.isEnabled = true
     }
 }
 
