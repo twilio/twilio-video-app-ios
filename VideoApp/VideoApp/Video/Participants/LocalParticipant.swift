@@ -42,7 +42,7 @@ class LocalParticipant: NSObject, Participant {
                 self.micTrack = nil
             }
 
-            postUpdate()
+            sendUpdate()
         }
     }
     var isPinned = false
@@ -69,7 +69,7 @@ class LocalParticipant: NSObject, Participant {
                 self.cameraManager = nil
             }
 
-            postUpdate()
+            sendUpdate()
         }
     }
     var participant: TwilioVideo.LocalParticipant? {
@@ -100,30 +100,23 @@ class LocalParticipant: NSObject, Participant {
     var cameraPosition: AVCaptureDevice.Position = .front {
         didSet {
             cameraManager?.position = cameraPosition
-            postUpdate()
+            sendUpdate()
         }
     }
+    weak var delegate: ParticipantDelegate?
     private(set) var micTrack: LocalAudioTrack?
     private let micTrackFactory: MicTrackFactory
     private let cameraManagerFactory: CameraManagerFactory
-    private let notificationCenter: NotificationCenter
     private var cameraManager: CameraManager?
 
-    init(
-        identity: String,
-        micTrackFactory: MicTrackFactory,
-        cameraManagerFactory: CameraManagerFactory,
-        notificationCenter: NotificationCenter
-    ) {
+    init(identity: String, micTrackFactory: MicTrackFactory, cameraManagerFactory: CameraManagerFactory) {
         self.identity = identity
         self.micTrackFactory = micTrackFactory
         self.cameraManagerFactory = cameraManagerFactory
-        self.notificationCenter = notificationCenter
     }
-
-    private func postUpdate() {
-        let update = ParticipantUpdate.didUpdate(participant: self)
-        notificationCenter.post(name: .participantUpdate, object: self, payload: update)
+    
+    private func sendUpdate() {
+        delegate?.didUpdate(participant: self)
     }
 }
 
@@ -158,7 +151,7 @@ extension LocalParticipant: LocalParticipantDelegate {
         participant: TwilioVideo.LocalParticipant,
         networkQualityLevel: NetworkQualityLevel
     ) {
-        postUpdate()
+        sendUpdate()
     }
 }
 

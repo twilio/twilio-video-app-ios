@@ -49,7 +49,6 @@ class MainParticipantStore {
         videoTrack = mainParticipant.mainVideoTrack
         update()
         notificationCenter.addObserver(self, selector: #selector(update), name: .roomUpdate, object: room)
-        notificationCenter.addObserver(self, selector: #selector(update), name: .participantUpdate, object: nil)
         notificationCenter.addObserver(self, selector: #selector(update), name: .participantsStoreUpdate, object: participantsStore)
     }
     

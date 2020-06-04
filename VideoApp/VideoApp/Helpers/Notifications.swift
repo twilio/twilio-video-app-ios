@@ -19,7 +19,6 @@ import Foundation
 extension Notification.Name {
     static let appSettingDidChange = Notification.Name("AppSettingDidChange")
     static let roomUpdate = Notification.Name("RoomUpdate")
-    static let participantUpdate = Notification.Name("ParticipantUpdate")
     static let participantsStoreUpdate = Notification.Name("ParticipantsStoreUpdate")
     static let mainParticipantStoreUpdate = Notification.Name("MainParticipantStoreUpdate")
 }

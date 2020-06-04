@@ -24,16 +24,17 @@ class LobbyViewController: UIViewController {
     @IBOutlet weak var audioToggleButton: UIButton!
     @IBOutlet weak var videoToggleButton: UIButton!
     @IBOutlet weak var flipCameraButton: UIButton!
-    private let localParticipantFactory = LocalParticipantFactory()
+    private let roomFactory = RoomFactory()
     private let deepLinkStore: DeepLinkStoreWriting = DeepLinkStore.shared
     private let notificationCenter = NotificationCenter.default
-    private var participant: LocalParticipant!
+    private var room: Room!
+    private var participant: LocalParticipant { room.localParticipant }
     private var shouldRenderVideo = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        resetParticipant()
+        resetRoom()
         configureVideoView()
 
         roomTextField.attributedPlaceholder = NSAttributedString(
@@ -51,7 +52,7 @@ class LobbyViewController: UIViewController {
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
-        notificationCenter.addObserver(self, selector: #selector(participantDidChange(_:)), name: .participantUpdate, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: nil)
         notificationCenter.addObserver(self, selector: #selector(handleSettingChange), name: .appSettingDidChange, object: nil)
         
         refresh()
@@ -91,7 +92,6 @@ class LobbyViewController: UIViewController {
         case "roomSegue":
             let roomViewController = segue.destination as! RoomViewController
             roomViewController.application = .shared
-            let room = RoomFactory().makeRoom(localParticipant: participant)
             roomViewController.viewModel = RoomViewModelFactory().makeRoomViewModel(
                 roomName: roomTextField.text ?? "",
                 room: room
@@ -137,25 +137,27 @@ class LobbyViewController: UIViewController {
         performSegue(withIdentifier: "roomSegue", sender: self)
     }
     
-    private func resetParticipant() {
-        participant = localParticipantFactory.makeLocalParticipant()
+    private func resetRoom() {
+        room = roomFactory.makeRoom()
         participant.isMicOn = true
         participant.isCameraOn = true
     }
     
     @objc private func handleSettingChange() {
-        resetParticipant() // Pick up settings like identity and video codec
+        resetRoom() // Pick up settings like identity and video codec
         refresh()
     }
 
-    @objc private func participantDidChange(_ notification: Notification) {
-        guard let payload = notification.payload as? ParticipantUpdate else { return }
+    @objc private func handleRoomUpdate(_ notification: Notification) {
+        guard let payload = notification.payload as? Room.Update else { return }
         
         switch payload {
-        case let .didUpdate(participant):
-            guard participant === participant else { return }
+        case let .didUpdateParticipants(participants):
+            guard participants.contains(where: { $0 === participant }) else { return }
 
             configureVideoView()
+        default:
+            break
         }
     }
     

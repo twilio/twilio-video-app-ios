@@ -92,6 +92,9 @@
 		DC2511AB2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
+		DC2511B3248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
+		DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
+		DC2511B5248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
 		DC386DD12458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
@@ -300,9 +303,6 @@
 		DC9A5E4B2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
 		DC9A5E4C2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
 		DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
-		DC9A5E4F246366D500E4B079 /* LocalParticipantFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4E246366D500E4B079 /* LocalParticipantFactory.swift */; };
-		DC9A5E50246366D500E4B079 /* LocalParticipantFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4E246366D500E4B079 /* LocalParticipantFactory.swift */; };
-		DC9A5E51246366D500E4B079 /* LocalParticipantFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4E246366D500E4B079 /* LocalParticipantFactory.swift */; };
 		DC9A5E5324638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
 		DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
 		DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
@@ -675,6 +675,7 @@
 		DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxTracksViewModel.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
+		DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDelegate.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
@@ -761,7 +762,6 @@
 		DC9A5E422463247700E4B079 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		DC9A5E462463345F00E4B079 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreFactory.swift; sourceTree = "<group>"; };
-		DC9A5E4E246366D500E4B079 /* LocalParticipantFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalParticipantFactory.swift; sourceTree = "<group>"; };
 		DC9A5E5224638A9C00E4B079 /* ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* InternalAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
@@ -1688,8 +1688,8 @@
 			isa = PBXGroup;
 			children = (
 				DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */,
-				DC9A5E4E246366D500E4B079 /* LocalParticipantFactory.swift */,
 				DC9A5DBF2459F1D100E4B079 /* Participant.swift */,
+				DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */,
 				DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */,
 			);
 			path = Participants;
@@ -2764,6 +2764,7 @@
 				DCEDB39F2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1852405BD68009DEA70 /* API.swift in Sources */,
+				DC2511B3248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCEDB37E247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
@@ -2827,7 +2828,6 @@
 				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
-				DC9A5E4F246366D500E4B079 /* LocalParticipantFactory.swift in Sources */,
 				DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3B2463161400E4B079 /* CircleView.swift in Sources */,
@@ -2935,6 +2935,7 @@
 				DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
+				DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
@@ -2998,7 +2999,6 @@
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
-				DC9A5E50246366D500E4B079 /* LocalParticipantFactory.swift in Sources */,
 				DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */,
@@ -3106,6 +3106,7 @@
 				DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
+				DC2511B5248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
@@ -3169,7 +3170,6 @@
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
-				DC9A5E51246366D500E4B079 /* LocalParticipantFactory.swift in Sources */,
 				DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */,
