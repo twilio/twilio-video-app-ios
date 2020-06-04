@@ -89,7 +89,7 @@ import TwilioVideo
             old.isPinned = false
         }
         
-        new.isPinned = !new.isPinned
+        new.isPinned.toggle()
         post(.didUpdateParticipants(participants: [old, new].compactMap { $0 }))
     }
     
