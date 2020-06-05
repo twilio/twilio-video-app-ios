@@ -29,50 +29,22 @@ class ParticipantsStore {
     init(room: Room, notificationCenter: NotificationCenter) {
         self.room = room
         self.notificationCenter = notificationCenter
-        insertParticipants(participants: [room.localParticipant] + room.remoteParticipants)
+        insert(participants: [room.localParticipant] + room.remoteParticipants)
         notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
-        notificationCenter.addObserver(self, selector: #selector(handleParticipantUpdate(_:)), name: .participantUpdate, object: nil)
     }
 
-    func togglePin(at index: Int) {
-        if let oldIndex = participants.firstIndex(where: { $0.isPinned }), oldIndex != index {
-            participants[oldIndex].isPinned = false
-            post(.didUpdateParticipant(index: oldIndex))
-        }
-        
-        participants[index].isPinned = !participants[index].isPinned
-        post(.didUpdateParticipant(index: index))
-    }
-
-    @objc private func handleRoomUpdate(_ notification:Notification) {
+    @objc private func handleRoomUpdate(_ notification: Notification) {
         guard let payload = notification.payload as? Room.Update else { return }
         
         switch payload {
         case .didStartConnecting, .didConnect, .didFailToConnect, .didDisconnect: break
-        case let .didAddRemoteParticipants(participants): insertParticipants(participants: participants)
-        case let .didRemoveRemoteParticipants(participants): deleteParticipants(participants: participants)
+        case let .didAddRemoteParticipants(participants): insert(participants: participants)
+        case let .didRemoveRemoteParticipants(participants): delete(participants: participants)
+        case let .didUpdateParticipants(participants): update(participants: participants)
         }
     }
 
-    @objc private func handleParticipantUpdate(_ notification:Notification) {
-        guard let payload = notification.payload as? ParticipantUpdate else { return }
-        
-        switch payload {
-        case let .didUpdate(participant):
-            guard let index = participants.firstIndex(where: { $0 === participant }) else { return }
-            
-            post(.didUpdateParticipant(index: index))
-            
-            if participant.isDominantSpeaker && index != participants.dominantSpeakerIndex {
-                var new = participants
-                new.remove(at: index)
-                new.insert(participant, at: new.dominantSpeakerIndex)
-                postDiff(new: new)
-            }
-        }
-    }
-    
-    private func insertParticipants(participants: [Participant]) {
+    private func insert(participants: [Participant]) {
         var new = self.participants
         
         participants.forEach { participant in
@@ -92,12 +64,27 @@ class ParticipantsStore {
         postDiff(new: new)
     }
     
-    private func deleteParticipants(participants: [Participant]) {
+    private func delete(participants: [Participant]) {
         let new = self.participants.filter { participant in
             participants.first { $0 === participant } == nil
         }
 
         postDiff(new: new)
+    }
+
+    private func update(participants: [Participant]) {
+        participants.forEach { participant in
+            guard let index = self.participants.firstIndex(where: { $0 === participant }) else { return }
+            
+            post(.didUpdateParticipant(index: index))
+            
+            if participant.isDominantSpeaker && index != self.participants.dominantSpeakerIndex {
+                var new = self.participants
+                new.remove(at: index)
+                new.insert(participant, at: new.dominantSpeakerIndex)
+                postDiff(new: new)
+            }
+        }
     }
 
     private func postDiff(new: [Participant]) {

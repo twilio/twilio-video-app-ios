@@ -16,13 +16,6 @@
 
 import Foundation
 
-class LocalParticipantFactory {
-    func makeLocalParticipant() -> LocalParticipant {
-        LocalParticipant(
-            identity: UserStoreFactory().makeUserStore().user.displayName,
-            micTrackFactory: MicTrackFactory(),
-            cameraManagerFactory: CameraManagerFactory(),
-            notificationCenter: .default
-        )
-    }
+protocol ParticipantDelegate: AnyObject {
+    func didUpdate(participant: Participant)
 }

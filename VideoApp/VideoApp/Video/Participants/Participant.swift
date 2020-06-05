@@ -19,10 +19,6 @@ import TwilioVideo
 
 typealias NetworkQualityLevel = TwilioVideo.NetworkQualityLevel // So UI doesn't have to import TwilioVideo
 
-enum ParticipantUpdate {
-    case didUpdate(participant: Participant)
-}
-
 protocol Participant: AnyObject, ListDiffable {
     var identity: String { get }
     var cameraTrack: VideoTrack? { get }
