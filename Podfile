@@ -1,4 +1,3 @@
-source 'git@github.com:twilio/cocoapod-specs-internal.git'
 source 'https://cdn.cocoapods.org/'
 
 platform :ios, '11.0'
@@ -16,7 +15,7 @@ target 'Video-Twilio' do
   pod 'FirebaseUI/Google', '8.4.0'
   pod 'IGListDiffKit', '4.0.0'
   pod 'KeychainAccess', '4.1.0'
-  pod 'TwilioVideo', '3.4.0-rc4'
+  pod 'TwilioVideo', '~> 3.4'
 
   target 'Video-TwilioTests' do
     pod 'Nimble'
