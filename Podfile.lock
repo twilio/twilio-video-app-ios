@@ -108,7 +108,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - Nimble (8.0.5)
   - Quick (2.2.0)
-  - TwilioVideo (3.4.0-rc3)
+  - TwilioVideo (3.4.0-rc4)
 
 DEPENDENCIES:
   - Alamofire (= 5.0.2)
@@ -121,7 +121,7 @@ DEPENDENCIES:
   - KeychainAccess (= 4.1.0)
   - Nimble
   - Quick
-  - TwilioVideo (= 3.4.0-rc3)
+  - TwilioVideo (= 3.4.0-rc4)
 
 SPEC REPOS:
   "git@github.com:twilio/cocoapod-specs-internal.git":
@@ -181,8 +181,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  TwilioVideo: d9526612d2fec61d2a0ab33a58ca11dcf9eea1c1
+  TwilioVideo: 783d28886e4dbfc00ec2c68dfe31fc176474644c
 
-PODFILE CHECKSUM: 0589974c4407d4aab742222043dd91da353871b0
+PODFILE CHECKSUM: efd254c90846d98b3f14a5df690ca64342669a99
 
 COCOAPODS: 1.8.4
