@@ -23,9 +23,18 @@ import TwilioVideo
         accessToken: String,
         roomName: String,
         audioTracks: [LocalAudioTrack],
-        videoTracks: [LocalVideoTrack]
+        videoTracks: [TwilioVideo.LocalVideoTrack]
     ) -> ConnectOptions {
         ConnectOptions(token: accessToken) { builder in
+            var videoBitrate: UInt {
+                switch self.appSettingsStore.videoCodec {
+                case .h264: return 1_200
+                case .vp8: return 1_200
+                case .vp8SimulcastVGA: return 0
+                case .vp8SimulcastHD: return 1_600
+                }
+            }
+            
             builder.roomName = roomName
             builder.audioTracks = audioTracks
             builder.videoTracks = videoTracks
@@ -35,20 +44,22 @@ import TwilioVideo
                 localVerbosity: .minimal,
                 remoteVerbosity: .minimal
             )
-            
-            switch self.appSettingsStore.videoCodec {
-            case .h264:
-                builder.preferredVideoCodecs = [H264Codec()]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1200)
-            case .vp8:
-                builder.preferredVideoCodecs = [Vp8Codec(simulcast: false)]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1200)
-            case .vp8Simulcast:
-                builder.preferredVideoCodecs = [Vp8Codec(simulcast: true)]
-                
-                // Allocate a higher bitrate for the simulcast track with 3 spatial layers
-                builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: 1600)
-            }
+            builder.bandwidthProfileOptions = BandwidthProfileOptions(
+                videoOptions: VideoBandwidthProfileOptions { builder in
+                    builder.mode = TwilioVideo.BandwidthProfileMode(setting: self.appSettingsStore.bandwidthProfileMode)
+                    builder.maxSubscriptionBitrate = self.appSettingsStore.maxSubscriptionBitrate as NSNumber?
+                    builder.maxTracks = self.appSettingsStore.maxTracks as NSNumber?
+                    builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
+                    builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
+                    let renderDimensions = VideoRenderDimensions()
+                    renderDimensions.low = VideoDimensions(setting: self.appSettingsStore.lowRenderDimensions)
+                    renderDimensions.standard = VideoDimensions(setting: self.appSettingsStore.standardRenderDimensions)
+                    renderDimensions.high = VideoDimensions(setting: self.appSettingsStore.highRenderDimensions)
+                    builder.renderDimensions = renderDimensions
+                }
+            )
+            builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
+            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
@@ -57,6 +68,65 @@ import TwilioVideo
                     builder.transportPolicy = .relay
                 }
             }
+        }
+    }
+}
+
+private extension TwilioVideo.VideoCodec {
+    static func make(setting: VideoCodec) -> TwilioVideo.VideoCodec {
+        switch setting {
+        case .h264: return H264Codec()
+        case .vp8: return Vp8Codec(simulcast: false)
+        case .vp8SimulcastVGA, .vp8SimulcastHD: return Vp8Codec(simulcast: true)
+        }
+    }
+}
+
+private extension TwilioVideo.BandwidthProfileMode {
+    init?(setting: BandwidthProfileMode) {
+        switch setting {
+        case .serverDefault: return nil
+        case .collaboration: self = .collaboration
+        case .grid: self = .grid
+        case .presentation: self = .presentation
+        }
+    }
+}
+
+private extension Track.Priority {
+    init?(setting: TrackPriority) {
+        switch setting {
+        case .serverDefault: return nil
+        case .low: self = .low
+        case .standard: self = .standard
+        case .high: self = .high
+        }
+    }
+}
+
+private extension Track.SwitchOffMode {
+    init?(setting: TrackSwitchOffMode) {
+        switch setting {
+        case .serverDefault: return nil
+        case .disabled: self = .disabled
+        case .detected: self = .detected
+        case .predicted: self = .predicted
+        }
+    }
+}
+
+private extension VideoDimensions {
+    convenience init?(setting: VideoDimensionsName) {
+        switch setting {
+        case .serverDefault: return nil
+        case .cif: self.init(width: 352, height: 288)
+        case .vga: self.init(width: 640, height: 480)
+        case .wvga: self.init(width: 800, height: 480)
+        case .hd540P: self.init(width: 960, height: 540)
+        case .hd720P: self.init(width: 1280, height: 720)
+        case .hd960P: self.init(width: 1280, height: 960)
+        case .hdStandard1080P: self.init(width: 1440, height: 1080)
+        case .hdWidescreen1080P: self.init(width: 1920, height: 1080)
         }
     }
 }

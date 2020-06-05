@@ -21,14 +21,16 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
         viewController.viewModel = AdvancedSettingsViewModel(
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
             appSettingsStore: AppSettingsStore.shared,
             userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
-            crashReportStore: CrashReportStore.shared,
             editIdentityViewModalFactory: EditUserIdentityViewModelFactory(),
             selectTopologyViewModelFactory: SelectTopologyViewModelFactory(),
             selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
             developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
-            sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory()
+            sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory(),
+            selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory(),
+            bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory()
         )
         return viewController
     }

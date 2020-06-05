@@ -18,6 +18,10 @@ import Foundation
 
 class SelectVideoCodecViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectVideoCodecViewModel(appSettingsStore: AppSettingsStore.shared)
+        SelectSettingViewModel(
+            title: "Video Codec",
+            keyPath: \.videoCodec,
+            appSettingsStore: AppSettingsStore.shared
+        )
     }
 }

@@ -20,4 +20,9 @@ protocol EditTextViewModel: AnyObject {
     var title: String { get }
     var placeholder: String { get }
     var text: String { get set }
+    var keyboardType: UIKeyboardType { get }
+}
+
+extension EditTextViewModel {
+    var keyboardType: UIKeyboardType { .default }
 }

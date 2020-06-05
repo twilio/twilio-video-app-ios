@@ -19,11 +19,12 @@ import TwilioVideo
 
 class LocalParticipant: NSObject, Participant {
     let identity: String
-    var cameraTrack: VideoTrack? { localCameraTrack }
+    let isDominantSpeaker = false
+    let isRemote = false
+    var cameraTrack: VideoTrack? { cameraManager?.track }
     var screenTrack: VideoTrack? { nil }
     var shouldMirrorCameraVideo: Bool { cameraPosition == .front }
     var networkQualityLevel: NetworkQualityLevel { participant?.networkQualityLevel ?? .unknown }
-    let isRemote = false
     var isMicOn: Bool {
         get {
             micTrack?.isEnabled ?? false
@@ -41,10 +42,9 @@ class LocalParticipant: NSObject, Participant {
                 self.micTrack = nil
             }
 
-            postUpdate()
+            sendUpdate()
         }
     }
-    let isDominantSpeaker = false
     var isPinned = false
     var isCameraOn: Bool {
         get {
@@ -61,48 +61,62 @@ class LocalParticipant: NSObject, Participant {
                 
                 self.cameraManager = cameraManager
                 cameraManager.delegate = self
-                participant?.publishVideoTrack(cameraManager.track)
+                participant?.publishCameraTrack(cameraManager.track.track)
             } else {
                 guard let cameraManager = cameraManager else { return }
                 
-                participant?.unpublishVideoTrack(cameraManager.track)
+                participant?.unpublishVideoTrack(cameraManager.track.track)
                 self.cameraManager = nil
             }
 
-            postUpdate()
+            sendUpdate()
         }
     }
     var participant: TwilioVideo.LocalParticipant? {
-        didSet { participant?.delegate = self }
+        didSet {
+            guard let participant = participant else { return }
+            
+            participant.delegate = self
+
+            // Sync tracks in case user made changes while connecting to room
+            participant.localVideoTracks.compactMap { $0.localTrack }.filter { $0 !== cameraManager?.track.track }.forEach {
+                participant.unpublishVideoTrack($0)
+            }
+
+            if let cameraTrack = cameraManager?.track.track, !participant.localVideoTracks.contains(where: { $0.localTrack === cameraTrack }) {
+                participant.publishCameraTrack(cameraTrack)
+            }
+
+            participant.localAudioTracks.compactMap { $0.localTrack }.filter { $0 !== micTrack }.forEach {
+                participant.unpublishAudioTrack($0)
+            }
+
+            if let micTrack = micTrack, !participant.localAudioTracks.contains(where: { $0.localTrack === micTrack }) {
+                participant.publishAudioTrack(micTrack)
+            }
+        }
     }
-    var localCameraTrack: LocalVideoTrack? { cameraManager?.track }
+    var localCameraTrack: TwilioVideo.LocalVideoTrack? { cameraManager?.track.track }
     var cameraPosition: AVCaptureDevice.Position = .front {
         didSet {
             cameraManager?.position = cameraPosition
-            postUpdate()
+            sendUpdate()
         }
     }
+    weak var delegate: ParticipantDelegate?
     private(set) var micTrack: LocalAudioTrack?
     private let micTrackFactory: MicTrackFactory
     private let cameraManagerFactory: CameraManagerFactory
-    private let notificationCenter: NotificationCenter
     private var cameraManager: CameraManager?
 
-    init(
-        identity: String,
-        micTrackFactory: MicTrackFactory,
-        cameraManagerFactory: CameraManagerFactory,
-        notificationCenter: NotificationCenter
-    ) {
+    init(identity: String, micTrackFactory: MicTrackFactory, cameraManagerFactory: CameraManagerFactory) {
         self.identity = identity
         self.micTrackFactory = micTrackFactory
         self.cameraManagerFactory = cameraManagerFactory
-        self.notificationCenter = notificationCenter
     }
-
-    private func postUpdate() {
-        let update = ParticipantUpdate.didUpdate(participant: self)
-        notificationCenter.post(name: .participantUpdate, object: self, payload: update)
+    
+    private func sendUpdate() {
+        delegate?.didUpdate(participant: self)
     }
 }
 
@@ -119,7 +133,7 @@ extension LocalParticipant: ListDiffable {
 extension LocalParticipant: LocalParticipantDelegate {
     func localParticipantDidFailToPublishVideoTrack(
         participant: TwilioVideo.LocalParticipant,
-        videoTrack: LocalVideoTrack,
+        videoTrack: TwilioVideo.LocalVideoTrack,
         error: Error
     ) {
         print("Failed to publish video track: \(error)")
@@ -137,16 +151,24 @@ extension LocalParticipant: LocalParticipantDelegate {
         participant: TwilioVideo.LocalParticipant,
         networkQualityLevel: NetworkQualityLevel
     ) {
-        postUpdate()
+        sendUpdate()
     }
 }
 
 extension LocalParticipant: CameraManagerDelegate {
     func trackSourceWasInterrupted(track: LocalVideoTrack) {
-        participant?.unpublishVideoTrack(track)
+        // Disable instead of unpublish to work around SDK bug https://issues.corp.twilio.com/browse/AHOYAPPS-701
+        track.track.isEnabled = false
     }
     
     func trackSourceInterruptionEnded(track: LocalVideoTrack) {
-        participant?.publishVideoTrack(track)
+        track.track.isEnabled = true
+    }
+}
+
+private extension TwilioVideo.LocalParticipant {
+    func publishCameraTrack(_ track: TwilioVideo.LocalVideoTrack) {
+        let publicationOptions = LocalTrackPublicationOptions(priority: .low)
+        publishVideoTrack(track, publicationOptions: publicationOptions)
     }
 }

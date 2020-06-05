@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,14 +16,6 @@
 
 import Foundation
 
-enum Topology: String, SettingOptions {
-    case group
-    case peerToPeer
-    
-    var title: String {
-        switch self {
-        case .group: return "Group"
-        case .peerToPeer: return "Peer-to-peer"
-        }
-    }
+protocol ParticipantDelegate: AnyObject {
+    func didUpdate(participant: Participant)
 }

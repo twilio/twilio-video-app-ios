@@ -16,23 +16,29 @@
 
 import Foundation
 
-class SelectSDKLogLevelViewModel: SelectOptionViewModel {
-    let title: String
-    let options = SDKLogLevel.allCases.map { $0.title }
-    var selectedIndex: Int {
-        get { SDKLogLevel.allCases.firstIndex(of: appSettingsStore[keyPath: keyPath]) ?? 0 }
-        set { appSettingsStore[keyPath: keyPath] = SDKLogLevel.allCases[newValue] }
+class EditMaxTracksViewModelFactory: EditTextViewModelFactory {
+    func makeEditTextViewModel() -> EditTextViewModel {
+        EditMaxTracksViewModel(appSettingsStore: AppSettingsStore.shared)
     }
-    private let keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>
+}
+
+class EditMaxTracksViewModel: EditTextViewModel {
+    let title = "Max Tracks"
+    var placeholder: String { "Server Default" }
+    var text: String {
+        get {
+            guard let maxTracks = appSettingsStore.maxTracks else { return "" }
+            
+            return "\(maxTracks)"
+        }
+        set {
+            appSettingsStore.maxTracks = Int(newValue)
+        }
+    }
+    var keyboardType: UIKeyboardType { .numberPad }
     private let appSettingsStore: AppSettingsStoreWriting
 
-    init(
-        title: String,
-        keyPath: ReferenceWritableKeyPath<AppSettingsStoreWriting, SDKLogLevel>,
-        appSettingsStore: AppSettingsStoreWriting
-    ) {
-        self.title = title
-        self.keyPath = keyPath
+    init(appSettingsStore: AppSettingsStoreWriting) {
         self.appSettingsStore = appSettingsStore
     }
 }

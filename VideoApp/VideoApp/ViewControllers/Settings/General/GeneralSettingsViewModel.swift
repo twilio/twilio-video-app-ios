@@ -19,8 +19,8 @@ import TwilioVideo
 class GeneralSettingsViewModel: SettingsViewModel {
     let title = "Settings"
     var sections: [SettingsViewModelSection] {
-        var sections = [
-            SettingsViewModelSection(
+        [
+            .init(
                 rows: [
                     .info(
                         title: "App Version",
@@ -32,36 +32,15 @@ class GeneralSettingsViewModel: SettingsViewModel {
                     )
                 ]
             ),
-            SettingsViewModelSection(
+            .init(
                 rows: [
-                    .optionList(
-                        title: "Video Codec",
-                        selectedOption: appSettingsStore.videoCodec.title,
-                        viewModelFactory: selectVideoCodecViewModelFactory
-                    ),
-                    .toggle(title: "TURN Media Relay",
-                        isOn: appSettingsStore.isTURNMediaRelayOn,
-                        updateHandler: { self.appSettingsStore.isTURNMediaRelayOn = $0 }
+                    .push(
+                        title: "Advanced",
+                        viewControllerFactory: AdvancedSettingsViewControllerFactory()
                     )
                 ]
-            )
-        ]
-
-        if appInfoStore.appInfo.target == .videoInternal {
-            sections.append(
-                SettingsViewModelSection(
-                    rows: [
-                        .push(
-                            title: "Advanced",
-                            viewControllerFactory: AdvancedSettingsViewControllerFactory()
-                        )
-                    ]
-                )
-            )
-        }
-
-        sections.append(
-            SettingsViewModelSection(
+            ),
+            .init(
                 rows: [
                     .destructiveButton(
                         title: "Sign Out",
@@ -69,24 +48,19 @@ class GeneralSettingsViewModel: SettingsViewModel {
                     )
                 ]
             )
-        )
-        
-        return sections
+        ]
     }
     private let appInfoStore: AppInfoStoreReading
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreWriting
-    private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
 
     init(
         appInfoStore: AppInfoStoreReading,
         appSettingsStore: AppSettingsStoreWriting,
-        authStore: AuthStoreWriting,
-        selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+        authStore: AuthStoreWriting
     ) {
         self.appInfoStore = appInfoStore
         self.appSettingsStore = appSettingsStore
         self.authStore = authStore
-        self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
     }
 }

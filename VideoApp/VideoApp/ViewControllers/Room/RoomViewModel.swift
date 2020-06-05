@@ -32,7 +32,10 @@ class RoomViewModel {
         .init(
             roomName: room.state == .connecting ? "Connecting..." : roomName,
             participants: participantsStore.participants,
-            mainParticipant: .init(participant: mainParticipantStore.mainParticipant)
+            mainParticipant: .init(
+                participant: mainParticipantStore.mainParticipant,
+                videoTrack: mainParticipantStore.videoTrack
+            )
         )
     }
     var isMicOn: Bool {
@@ -79,7 +82,7 @@ class RoomViewModel {
     }
     
     func togglePin(at index: Int) {
-        participantsStore.togglePin(at: index)
+        room.togglePin(participant: participantsStore.participants[index])
     }
 
     @objc private func handleRoomUpdate(_ notification: Notification) {
@@ -89,7 +92,7 @@ class RoomViewModel {
         case .didStartConnecting, .didConnect: delegate?.didConnect()
         case let .didFailToConnect(error): delegate?.didFailToConnect(error: error)
         case let .didDisconnect(error): delegate?.didDisconnect(error: error)
-        case .didAddRemoteParticipants, .didRemoveRemoteParticipants: break
+        case .didAddRemoteParticipants, .didRemoveRemoteParticipants, .didUpdateParticipants: break
         }
     }
 

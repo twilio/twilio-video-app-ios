@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,16 +14,24 @@
 //  limitations under the License.
 //
 
-import Foundation
+import TwilioVideo
 
-enum Topology: String, SettingOptions {
-    case group
-    case peerToPeer
-    
-    var title: String {
-        switch self {
-        case .group: return "Group"
-        case .peerToPeer: return "Peer-to-peer"
-        }
+class LocalVideoTrack: VideoTrack {
+    let track: TwilioVideo.LocalVideoTrack
+    let isSwitchedOff = false
+    var isEnabled: Bool { track.isEnabled }
+    var priority: Track.Priority? = nil
+    var renderers: [VideoRenderer] { track.renderers }
+
+    init(track: TwilioVideo.LocalVideoTrack) {
+        self.track = track
+    }
+
+    func addRenderer(_ renderer: VideoRenderer) {
+        track.addRenderer(renderer)
+    }
+
+    func removeRenderer(_ renderer: VideoRenderer) {
+        track.removeRenderer(renderer)
     }
 }

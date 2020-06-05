@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,16 +16,12 @@
 
 import Foundation
 
-class SelectVideoCodecViewModel: SelectOptionViewModel {
-    let title = "Video Codec"
-    let options = VideoCodec.allCases.map { $0.title }
-    var selectedIndex: Int {
-        get { VideoCodec.allCases.firstIndex(of: appSettingsStore.videoCodec) ?? 0 }
-        set { appSettingsStore.videoCodec = VideoCodec.allCases[newValue] }
-    }
-    private let appSettingsStore: AppSettingsStoreWriting
-    
-    init(appSettingsStore: AppSettingsStoreWriting) {
-        self.appSettingsStore = appSettingsStore
+class SelectBandwidthProfileModeViewModelFactory: SelectOptionViewModelFactory {
+    func makeSelectOptionViewModel() -> SelectOptionViewModel {
+        SelectSettingViewModel(
+            title: "Mode",
+            keyPath: \.bandwidthProfileMode,
+            appSettingsStore: AppSettingsStore.shared
+        )
     }
 }

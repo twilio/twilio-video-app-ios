@@ -14,15 +14,13 @@
 //  limitations under the License.
 //
 
-import Foundation
+import TwilioVideo
 
-class LocalParticipantFactory {
-    func makeLocalParticipant() -> LocalParticipant {
-        LocalParticipant(
-            identity: UserStoreFactory().makeUserStore().user.displayName,
-            micTrackFactory: MicTrackFactory(),
-            cameraManagerFactory: CameraManagerFactory(),
-            notificationCenter: .default
-        )
-    }
+protocol VideoTrack: AnyObject {
+    var isSwitchedOff: Bool { get }
+    var isEnabled: Bool { get }
+    var priority: Track.Priority? { get set }
+    var renderers: [VideoRenderer] { get }
+    func addRenderer(_ renderer: VideoRenderer)
+    func removeRenderer(_ renderer: VideoRenderer)
 }

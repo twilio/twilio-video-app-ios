@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum SDKLogLevel: String, CaseIterable, Codable {
+enum SDKLogLevel: String, SettingOptions {
     case off
     case fatal
     case error

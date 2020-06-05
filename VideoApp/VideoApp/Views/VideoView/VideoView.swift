@@ -29,6 +29,7 @@ class VideoView: NibView {
     }
 
     @IBOutlet weak var videoView: TwilioVideo.VideoView!
+    @IBOutlet weak var errorView: UIView!
     weak var delegate: VideoViewDelegate?
     private var videoTrack: VideoTrack?
     
@@ -40,10 +41,11 @@ class VideoView: NibView {
         super.awakeFromNib()
         
         videoView.delegate = self
-        isHidden = true
     }
 
     func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
+        defer { errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false) }
+        
         guard let videoTrack = config.videoTrack, videoTrack.isEnabled else {
             self.videoTrack?.removeRenderer(videoView)
             updateStatus(hasVideoData: false)
@@ -62,7 +64,7 @@ class VideoView: NibView {
     }
     
     private func updateStatus(hasVideoData: Bool) {
-        isHidden = !hasVideoData
+        videoView.isHidden = !hasVideoData
         delegate?.didUpdateStatus(isVideoOn: hasVideoData)
     }
 }
