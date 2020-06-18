@@ -19,7 +19,7 @@ import Foundation
 class AuthStoreFactory {
     func makeAuthStore() -> AuthStoreWriting {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
-        case .videoTwilio, .videoInternal:
+        case .videoInternal:
             API.shared.errorResponseDecoder = InternalAPIErrorResponseDecoder()
             return InternalAuthStore(api: API.shared, appSettingsStore: AppSettingsStore.shared)
         case .videoCommunity:

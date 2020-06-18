@@ -41,6 +41,12 @@
             reference = "container:Video-InternalTests/Plans/Unit.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Video-InternalUITests/Plans/StatusCheck.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Video-InternalUITests/Plans/UI.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
@@ -50,6 +56,16 @@
                BlueprintIdentifier = "DCE965B7237492410002EC78"
                BuildableName = "Video-InternalTests.xctest"
                BlueprintName = "Video-InternalTests"
+               ReferencedContainer = "container:VideoApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DC5CC38C249C0EC000355CC6"
+               BuildableName = "Video-InternalUITests.xctest"
+               BlueprintName = "Video-InternalUITests"
                ReferencedContainer = "container:VideoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

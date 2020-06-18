@@ -21,10 +21,28 @@ import Quick
 
 class AppInfoStoreSpec: QuickSpec {
     override func spec() {
+        var sut: AppInfoStore!
+        
+        beforeEach {
+            sut = AppInfoStore(bundle: Bundle.main)
+        }
+        
         describe("appInfo") {
+            describe("version") {
+                it("is not empty") {
+                    expect(sut.appInfo.version.isEmpty).to(beFalse())
+                }
+            }
+
+            describe("build") {
+                it("is not empty") {
+                    expect(sut.appInfo.build.isEmpty).to(beFalse())
+                }
+            }
+
             describe("target") {
                 it("is videoInternal") {
-                    expect(AppInfoStore(bundle: Bundle.main).appInfo.target).to(equal(.videoInternal))
+                    expect(sut.appInfo.target).to(equal(.videoInternal))
                 }
             }
         }

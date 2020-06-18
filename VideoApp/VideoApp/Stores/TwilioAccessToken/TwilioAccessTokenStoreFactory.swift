@@ -19,7 +19,7 @@ import Foundation
 class TwilioAccessTokenStoreFactory {
     func makeTwilioAccessTokenStore() -> TwilioAccessTokenStoreReading {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
-        case .videoTwilio, .videoInternal:
+        case .videoInternal:
             return InternalTwilioAccessTokenStore(
                 api: API.shared,
                 appSettingsStore: AppSettingsStore.shared,

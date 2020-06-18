@@ -16,13 +16,14 @@ Twilio employees should follow these instructions for internal testing.
 
 ### Run
 
-1. Select either `Video-Twilio` or `Video-Internal` scheme.
+1. Select `Video-Internal` scheme.
 1. Run `⌘R` the app.
 
 ## UI Tests
 
 For UI tests use:
 
-- `Video-TwilioUITests` scheme.
-- `Video-TwilioUITests` target. 
+- `Video-InternalUITests` scheme.
+- `Video-InternalUITests` target. 
+- `UI` test plan.
 - [Nimble](https://github.com/Quick/Quick) for assertions.
