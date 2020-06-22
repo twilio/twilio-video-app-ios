@@ -14,14 +14,12 @@
   "testTargets" : [
     {
       "selectedTests" : [
-        "RoomTests\/test_joinRoom_withFooRoomName_shouldDisplayFooRoomNameOnRoomScreen()",
-        "RoomTests\/test_joinRoom_withIOSStatusCheckRoomName_shouldDisplayIOSStatusCheckRoomNameOnRoomScreen()",
         "RoomTests\/test_joinRoom_withStatusCheckRoomName_shouldDisplayStatusCheckRoomNameOnRoomScreen()"
       ],
       "target" : {
         "containerPath" : "container:VideoApp.xcodeproj",
-        "identifier" : "DC044678238DD55C0072F597",
-        "name" : "Video-TwilioUITests"
+        "identifier" : "DC5CC38C249C0EC000355CC6",
+        "name" : "Video-InternalUITests"
       }
     }
   ],

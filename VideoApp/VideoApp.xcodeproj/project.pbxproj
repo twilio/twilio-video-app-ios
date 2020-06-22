@@ -7,21 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		241282451E36A6AB002198BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
-		241282471E36A6AB002198BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
-		2412824A1E36A6AB002198BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
-		243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
+		0465056A73113195D323193C /* Pods_Video_Internal_Video_InternalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3A673FFFA1998DACFEFE3C /* Pods_Video_Internal_Video_InternalTests.framework */; };
+		23674101EF04DB988097E672 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE77220CF59EDFDB7EA1086 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework */; };
 		243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
 		243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
-		24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
-		24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E61ECE1CBD00486E7A /* StatsUIModel.m */; };
-		24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */; };
-		24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */; };
-		24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
-		32BD0B3476F7C1A3D75FD8EF /* Pods_Video_Twilio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */; };
-		48B785FD323FF9E429DB3835 /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB1306CB055161D792FB7EB /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework */; };
 		4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
 		4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */; };
 		4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E61ECE1CBD00486E7A /* StatsUIModel.m */; };
@@ -36,564 +27,387 @@
 		4B00127E1FBA52E5004A587E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282481E36A6AB002198BE /* LaunchScreen.storyboard */; };
 		4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
 		4B0012831FBA52E5004A587E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
-		66C73E6EA03924E6E1E449F6 /* Pods_Video_TwilioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBA027ED2CF803749AECF19 /* Pods_Video_TwilioUITests.framework */; };
-		8AC4999A232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
+		752D4639BF9718A771C3B2EF /* Pods_Video_InternalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C557AEFEDA02580046B98 /* Pods_Video_InternalUITests.framework */; };
 		8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
 		8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
-		AE0CFB3237FBE318B731B713 /* Pods_Video_Twilio_Video_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */; };
-		B9C6EDCF2651C8C600E239F6 /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ADEE0522D37947FC5C015A /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework */; };
-		C5FC580267C650371E9AB56B /* Pods_Video_Twilio_Video_Internal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */; };
-		DC04467C238DD55C0072F597 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04467B238DD55C0072F597 /* AuthTests.swift */; };
-		DC044684238EF6C20072F597 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* Environment.swift */; };
+		93223A7F4DEC256BF49177A0 /* Pods_Video_Internal_Video_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAD7F49B9C6F06A36CDD692 /* Pods_Video_Internal_Video_Community.framework */; };
 		DC044685238EF6C20072F597 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* Environment.swift */; };
 		DC044686238EF6C20072F597 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* Environment.swift */; };
-		DC044691238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
 		DC044692238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
 		DC044693238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
-		DC044695238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
 		DC044696238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
 		DC044697238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
-		DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
-		DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469E238F29F50072F597 /* MockAuthStore.swift */; };
-		DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestSecretsStore.swift */; };
-		DC0446A3239716860072F597 /* TestSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestSecrets.swift */; };
-		DC0446B2239855090072F597 /* BasicTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B1239855090072F597 /* BasicTestCase.swift */; };
-		DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
 		DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B723A182980072F597 /* CrashReportStore.swift */; };
-		DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
 		DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
 		DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CA23A2EE340072F597 /* DeveloperSettingsViewModel.swift */; };
-		DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
 		DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
 		DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446CE23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift */; };
-		DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446DA23A40E3E0072F597 /* Storage.swift */; };
 		DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446DA23A40E3E0072F597 /* Storage.swift */; };
 		DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446DA23A40E3E0072F597 /* Storage.swift */; };
-		DC1C2F7E23A445740044FB4D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F7D23A445740044FB4D /* Notifications.swift */; };
 		DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F7D23A445740044FB4D /* Notifications.swift */; };
 		DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F7D23A445740044FB4D /* Notifications.swift */; };
-		DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */; };
 		DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */; };
 		DC1C2F8823A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8523A6E7050044FB4D /* DispatchQueueProtocol.swift */; };
-		DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
 		DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
 		DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */; };
-		DC1C2F8E23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
 		DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
 		DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
-		DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
-		DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */; };
-		DC2511A7247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
 		DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
 		DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
-		DC2511AB2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
-		DC2511B3248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
 		DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
 		DC2511B5248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
-		DC386DD12458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
-		DC3924892416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
-		DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
 		DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
 		DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39248F2416A8070068E33F /* APIErrorResponseDecoder.swift */; };
-		DC3C32D02417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */; };
 		DC3C32D12417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */; };
 		DC3C32D22417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32CF2417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift */; };
-		DC3C32D42417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */; };
 		DC3C32D52417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */; };
 		DC3C32D62417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D32417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift */; };
-		DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D724180C3100F56AFB /* APIEncoding.swift */; };
 		DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D724180C3100F56AFB /* APIEncoding.swift */; };
 		DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32D724180C3100F56AFB /* APIEncoding.swift */; };
-		DC3C32DC241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
 		DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
 		DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
-		DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
-		DC44C2BD238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
 		DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
 		DC44C2BF238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
-		DC44C2C223870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
 		DC44C2C323870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
 		DC44C2C423870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
-		DC44C2C523870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
 		DC44C2C623870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
 		DC44C2C723870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
-		DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
 		DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
 		DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
-		DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
 		DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
 		DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
-		DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
 		DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
 		DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
-		DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
 		DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
 		DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E923876B4700205174 /* EditTextSegueSender.swift */; };
-		DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
-		DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
-		DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
 		DC4E4E2423577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
 		DC4E4E2523577EE500C5D313 /* Topology.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2223577EE500C5D313 /* Topology.swift */; };
-		DC4E4E2F2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */; };
-		DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */; };
-		DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
+		DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
+		DC5CC371249C0D0300355CC6 /* InternalTwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */; };
+		DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */; };
+		DC5CC373249C0D0300355CC6 /* CommunityTwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */; };
+		DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */; };
+		DC5CC375249C0D0300355CC6 /* AuthErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */; };
+		DC5CC376249C0D0300355CC6 /* DeepLinkStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */; };
+		DC5CC377249C0D0300355CC6 /* UserActivityStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */; };
+		DC5CC378249C0D0300355CC6 /* PasscodeComponentsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */; };
+		DC5CC379249C0D0300355CC6 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
+		DC5CC37A249C0D3900355CC6 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5A240D638900E090BE /* MockAPI.swift */; };
+		DC5CC37B249C0D3900355CC6 /* MockAppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */; };
+		DC5CC37C249C0D3900355CC6 /* MockAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469E238F29F50072F597 /* MockAuthStore.swift */; };
+		DC5CC37D249C0D3900355CC6 /* MockAuthStoreWritingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5E240D811900E090BE /* MockAuthStoreWritingDelegate.swift */; };
+		DC5CC37E249C0D3900355CC6 /* MockDeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */; };
+		DC5CC37F249C0D3900355CC6 /* MockKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */; };
+		DC5CC380249C0D3900355CC6 /* MockLaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */; };
+		DC5CC381249C0D3900355CC6 /* MockLaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */; };
+		DC5CC382249C0D3900355CC6 /* MockLaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */; };
+		DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
+		DC5CC384249C0D3900355CC6 /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
+		DC5CC385249C0D3900355CC6 /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
+		DC5CC386249C0D3900355CC6 /* MockUserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */; };
+		DC5CC387249C0D3900355CC6 /* MockUserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */; };
+		DC5CC388249C0D6C00355CC6 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */; };
+		DC5CC397249C0F2100355CC6 /* AuthActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676123DF923700A2939C /* AuthActivities.swift */; };
+		DC5CC398249C0F2100355CC6 /* DeepLinkActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */; };
+		DC5CC399249C0F2100355CC6 /* RoomActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABB243547CB006D3FAA /* RoomActivities.swift */; };
+		DC5CC39A249C0F2E00355CC6 /* BasicTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446B1239855090072F597 /* BasicTestCase.swift */; };
+		DC5CC39B249C0F2E00355CC6 /* SignedInTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */; };
+		DC5CC39C249C0F4800355CC6 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04467B238DD55C0072F597 /* AuthTests.swift */; };
+		DC5CC39D249C0F4800355CC6 /* DeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */; };
+		DC5CC39E249C0F4800355CC6 /* RoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CAB924352FEE006D3FAA /* RoomTests.swift */; };
+		DC5CC39F249C0F5900355CC6 /* TestSecrets.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C9123D161A200D37CEC /* TestSecrets.json */; };
+		DC5CC3A0249C0F5900355CC6 /* TestSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestSecrets.swift */; };
+		DC5CC3A1249C0F5900355CC6 /* TestSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestSecretsStore.swift */; };
 		DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
 		DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
-		DC78CABA24352FEE006D3FAA /* RoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CAB924352FEE006D3FAA /* RoomTests.swift */; };
-		DC78CABC243547CB006D3FAA /* RoomActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABB243547CB006D3FAA /* RoomActivities.swift */; };
-		DC78CABE24354F8F006D3FAA /* SignedInTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */; };
-		DC82A34F23FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
 		DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
 		DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
-		DC82A35323FDB6890081578C /* SDKLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35223FDB6890081578C /* SDKLogLevel.swift */; };
 		DC82A35423FDB6890081578C /* SDKLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35223FDB6890081578C /* SDKLogLevel.swift */; };
 		DC82A35523FDB6890081578C /* SDKLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35223FDB6890081578C /* SDKLogLevel.swift */; };
-		DC82A35C23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */; };
 		DC82A35D23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */; };
 		DC82A35E23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35B23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift */; };
-		DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
 		DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A36323FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift */; };
-		DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
 		DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
 		DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A38F24008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift */; };
-		DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
 		DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
 		DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A39324008DCB0081578C /* SDKLogLevelOptionListFactory.swift */; };
-		DC82A3982404950B0081578C /* PasscodeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */; };
 		DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */; };
 		DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A3972404950B0081578C /* PasscodeSignInViewController.swift */; };
-		DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
-		DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
-		DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
-		DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */; };
-		DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */; };
-		DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */; };
-		DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */; };
 		DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */; };
 		DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */; };
 		DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
-		DC85CA5E23CCDADA00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
-		DC85CA5F23CCDADB00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
-		DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
-		DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
-		DC8AA8CB236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
 		DC8AA8CC236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
 		DC8AA8CD236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
-		DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */; };
 		DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */; };
 		DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */; };
-		DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */; };
 		DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */; };
 		DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8D22367A399006C06D5 /* TestSceneDelegate.swift */; };
-		DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */; };
 		DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */; };
 		DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE2E23BA5EC70045018F /* AppDelegate.swift */; };
-		DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */; };
 		DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */; };
 		DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3223BA71990045018F /* LaunchStoresFactory.swift */; };
-		DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
 		DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
 		DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3623BA75C00045018F /* LaunchStore.swift */; };
-		DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
 		DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
 		DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3A23BA88850045018F /* URLOpening.swift */; };
-		DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3E23BA926E0045018F /* VideoStore.swift */; };
 		DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3E23BA926E0045018F /* VideoStore.swift */; };
 		DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE3E23BA926E0045018F /* VideoStore.swift */; };
-		DC8EAE4323BA96C00045018F /* URLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */; };
 		DC8EAE4423BA96C00045018F /* URLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */; };
 		DC8EAE4523BA96C00045018F /* URLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4223BA96C00045018F /* URLOpenerFactory.swift */; };
-		DC8EAE4823BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
 		DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
 		DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
-		DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
-		DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */; };
-		DC9A4C9223D161A200D37CEC /* TestSecrets.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C9123D161A200D37CEC /* TestSecrets.json */; };
-		DC9A5DC02459F1D100E4B079 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DBF2459F1D100E4B079 /* Participant.swift */; };
 		DC9A5DC12459F1D100E4B079 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DBF2459F1D100E4B079 /* Participant.swift */; };
 		DC9A5DC22459F1D100E4B079 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DBF2459F1D100E4B079 /* Participant.swift */; };
-		DC9A5DC5245A0B5F00E4B079 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC4245A0B5F00E4B079 /* Room.swift */; };
 		DC9A5DC6245A0B5F00E4B079 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC4245A0B5F00E4B079 /* Room.swift */; };
 		DC9A5DC7245A0B5F00E4B079 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC4245A0B5F00E4B079 /* Room.swift */; };
-		DC9A5DCA245A215000E4B079 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC9245A215000E4B079 /* RoomViewController.swift */; };
 		DC9A5DCB245A215000E4B079 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC9245A215000E4B079 /* RoomViewController.swift */; };
 		DC9A5DCC245A215000E4B079 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC9245A215000E4B079 /* RoomViewController.swift */; };
-		DC9A5DCE245B0E6100E4B079 /* LocalParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */; };
 		DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */; };
 		DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */; };
-		DC9A5DD2245B332D00E4B079 /* RemoteParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */; };
 		DC9A5DD3245B332D00E4B079 /* RemoteParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */; };
 		DC9A5DD4245B332D00E4B079 /* RemoteParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */; };
-		DC9A5DD6245B7F8600E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
 		DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
 		DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
-		DC9A5DE2245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
 		DC9A5DE3245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
 		DC9A5DE4245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
-		DC9A5DFC245CB66800E4B079 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DFB245CB66800E4B079 /* VideoView.xib */; };
 		DC9A5DFD245CB66800E4B079 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DFB245CB66800E4B079 /* VideoView.xib */; };
 		DC9A5DFE245CB66800E4B079 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5DFB245CB66800E4B079 /* VideoView.xib */; };
-		DC9A5E00245CB67600E4B079 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DFF245CB67600E4B079 /* VideoView.swift */; };
 		DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DFF245CB67600E4B079 /* VideoView.swift */; };
 		DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DFF245CB67600E4B079 /* VideoView.swift */; };
-		DC9A5E05245DDC1000E4B079 /* RoomViewModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E04245DDC1000E4B079 /* RoomViewModelData.swift */; };
 		DC9A5E06245DDC1000E4B079 /* RoomViewModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E04245DDC1000E4B079 /* RoomViewModelData.swift */; };
 		DC9A5E07245DDC1000E4B079 /* RoomViewModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E04245DDC1000E4B079 /* RoomViewModelData.swift */; };
-		DC9A5E09245DFFC100E4B079 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E08245DFFC100E4B079 /* ParticipantsStore.swift */; };
 		DC9A5E0A245DFFC100E4B079 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E08245DFFC100E4B079 /* ParticipantsStore.swift */; };
 		DC9A5E0B245DFFC100E4B079 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E08245DFFC100E4B079 /* ParticipantsStore.swift */; };
-		DC9A5E0D245F611D00E4B079 /* MainParticipantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E0C245F611D00E4B079 /* MainParticipantStore.swift */; };
 		DC9A5E0E245F611D00E4B079 /* MainParticipantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E0C245F611D00E4B079 /* MainParticipantStore.swift */; };
 		DC9A5E0F245F611D00E4B079 /* MainParticipantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E0C245F611D00E4B079 /* MainParticipantStore.swift */; };
-		DC9A5E112460CE9800E4B079 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5E102460CE9800E4B079 /* ParticipantCell.xib */; };
 		DC9A5E122460CE9800E4B079 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5E102460CE9800E4B079 /* ParticipantCell.xib */; };
 		DC9A5E132460CE9800E4B079 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5E102460CE9800E4B079 /* ParticipantCell.xib */; };
-		DC9A5E1D2461C0A100E4B079 /* MicTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */; };
 		DC9A5E1E2461C0A100E4B079 /* MicTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */; };
 		DC9A5E1F2461C0A100E4B079 /* MicTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */; };
-		DC9A5E25246207E600E4B079 /* CameraSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */; };
 		DC9A5E26246207E600E4B079 /* CameraSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */; };
 		DC9A5E27246207E600E4B079 /* CameraSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */; };
-		DC9A5E2924620B6D00E4B079 /* CameraTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */; };
 		DC9A5E2A24620B6D00E4B079 /* CameraTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */; };
 		DC9A5E2B24620B6D00E4B079 /* CameraTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */; };
-		DC9A5E2D2462153000E4B079 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2C2462153000E4B079 /* CameraManager.swift */; };
 		DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2C2462153000E4B079 /* CameraManager.swift */; };
 		DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2C2462153000E4B079 /* CameraManager.swift */; };
-		DC9A5E332462211D00E4B079 /* CameraManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */; };
 		DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */; };
 		DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */; };
-		DC9A5E3724622C6100E4B079 /* CameraConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */; };
 		DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */; };
 		DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */; };
-		DC9A5E3B2463161400E4B079 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3A2463161400E4B079 /* CircleView.swift */; };
 		DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3A2463161400E4B079 /* CircleView.swift */; };
 		DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3A2463161400E4B079 /* CircleView.swift */; };
-		DC9A5E3F2463239E00E4B079 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3E2463239D00E4B079 /* ToggleButton.swift */; };
 		DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3E2463239D00E4B079 /* ToggleButton.swift */; };
 		DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3E2463239D00E4B079 /* ToggleButton.swift */; };
-		DC9A5E432463247700E4B079 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E422463247700E4B079 /* CircleButton.swift */; };
 		DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E422463247700E4B079 /* CircleButton.swift */; };
 		DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E422463247700E4B079 /* CircleButton.swift */; };
-		DC9A5E472463345F00E4B079 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E462463345F00E4B079 /* LobbyViewController.swift */; };
 		DC9A5E482463345F00E4B079 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E462463345F00E4B079 /* LobbyViewController.swift */; };
 		DC9A5E492463345F00E4B079 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E462463345F00E4B079 /* LobbyViewController.swift */; };
-		DC9A5E4B2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
 		DC9A5E4C2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
 		DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
-		DC9A5E5324638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
 		DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
 		DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
-		DCA53948235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
-		DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
 		DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
 		DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
-		DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394F235F765D00CA26FB /* AuthFlow.swift */; };
 		DCA53951235F765D00CA26FB /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394F235F765D00CA26FB /* AuthFlow.swift */; };
 		DCA53952235F765D00CA26FB /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394F235F765D00CA26FB /* AuthFlow.swift */; };
-		DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */; };
 		DCA6501F240D91C90038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CommunityCreateTwilioAccessTokenResponse.swift */; };
 		DCA65020240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CommunityCreateTwilioAccessTokenResponse.swift */; };
-		DCA65021240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B61240D90CD00E090BE /* CommunityCreateTwilioAccessTokenResponse.swift */; };
-		DCA65024240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */; };
-		DCA65026240D9A3B0038DEE1 /* AuthErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */; };
-		DCA65028240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift */; };
 		DCA65029240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift */; };
 		DCA6502A240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65027240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift */; };
-		DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
 		DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
 		DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B27236B821E009141C9 /* LaunchFlow.swift */; };
-		DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
 		DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */; };
-		DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
 		DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
 		DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
-		DCAEBF17238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
 		DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
 		DCAEBF19238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
-		DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */; };
 		DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */; };
 		DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */; };
-		DCAEBF1F2383342C00141D2D /* DestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */; };
 		DCAEBF202383342C00141D2D /* DestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */; };
 		DCAEBF212383342C00141D2D /* DestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */; };
-		DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF2E2383560500141D2D /* EditTextCell.swift */; };
 		DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF2E2383560500141D2D /* EditTextCell.swift */; };
 		DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF2E2383560500141D2D /* EditTextCell.swift */; };
-		DCAEBF332383560500141D2D /* EditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF2F2383560500141D2D /* EditTextCell.xib */; };
 		DCAEBF342383560500141D2D /* EditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF2F2383560500141D2D /* EditTextCell.xib */; };
 		DCAEBF352383560500141D2D /* EditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF2F2383560500141D2D /* EditTextCell.xib */; };
-		DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF362383581F00141D2D /* EditTextViewController.swift */; };
 		DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF362383581F00141D2D /* EditTextViewController.swift */; };
 		DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF362383581F00141D2D /* EditTextViewController.swift */; };
-		DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */; };
 		DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */; };
 		DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3A2384448500141D2D /* SelectOptionViewController.swift */; };
-		DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
 		DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
 		DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF3E238444D500141D2D /* SelectOptionViewModel.swift */; };
-		DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
 		DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF5223849C1C00141D2D /* VideoCodec.swift */; };
-		DCB64B47240969B400E090BE /* PasscodeComponentsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */; };
-		DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B48240995A100E090BE /* APIHTTPMethod.swift */; };
 		DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B48240995A100E090BE /* APIHTTPMethod.swift */; };
 		DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B48240995A100E090BE /* APIHTTPMethod.swift */; };
-		DCB64B4F2409976F00E090BE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B4E2409976F00E090BE /* APIRequest.swift */; };
 		DCB64B502409976F00E090BE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B4E2409976F00E090BE /* APIRequest.swift */; };
 		DCB64B512409976F00E090BE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B4E2409976F00E090BE /* APIRequest.swift */; };
-		DCB64B552409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
 		DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
 		DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B542409BC4E00E090BE /* APIConfig.swift */; };
-		DCB64B59240D624600E090BE /* CommunityAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */; };
-		DCB64B5B240D638900E090BE /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5A240D638900E090BE /* MockAPI.swift */; };
-		DCB64B5D240D66C700E090BE /* MockKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */; };
-		DCB64B5F240D811900E090BE /* MockAuthStoreWritingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5E240D811900E090BE /* MockAuthStoreWritingDelegate.swift */; };
-		DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
 		DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1802405BD2C009DEA70 /* PasscodeComponents.swift */; };
-		DCB7C1852405BD68009DEA70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* API.swift */; };
 		DCB7C1862405BD68009DEA70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* API.swift */; };
 		DCB7C1872405BD68009DEA70 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1842405BD68009DEA70 /* API.swift */; };
-		DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
 		DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
 		DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
-		DCB7C18E2405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
 		DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
 		DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
-		DCC7E3552406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
 		DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
 		DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
-		DCC7E3592407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
 		DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
 		DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
-		DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
 		DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
 		DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */; };
-		DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
 		DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
 		DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36024082EB300431AC3 /* AuthError.swift */; };
-		DCC7E36A24085AD800431AC3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* APIError.swift */; };
 		DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* APIError.swift */; };
 		DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36924085AD800431AC3 /* APIError.swift */; };
-		DCC7E36E24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */; };
 		DCC7E36F24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */; };
 		DCC7E37024085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */; };
-		DCC7E37624085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
-		DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
-		DCD7674F23DA350A00A2939C /* DeepLinkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */; };
-		DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
 		DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
 		DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
-		DCD7675623DF554A00A2939C /* UserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675523DF554A00A2939C /* UserActivityStore.swift */; };
 		DCD7675723DF554A00A2939C /* UserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675523DF554A00A2939C /* UserActivityStore.swift */; };
 		DCD7675823DF554B00A2939C /* UserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675523DF554A00A2939C /* UserActivityStore.swift */; };
-		DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
-		DCD7675E23DF63F500A2939C /* DeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675D23DF63F500A2939C /* DeepLinkTests.swift */; };
-		DCD7676223DF923700A2939C /* AuthActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676123DF923700A2939C /* AuthActivities.swift */; };
-		DCD7676423DF9CC000A2939C /* DeepLinkActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */; };
-		DCD7676623DFDA1700A2939C /* DeepLinkStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */; };
-		DCD7676823DFDEEA00A2939C /* UserActivityStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */; };
-		DCD7676A23DFE03F00A2939C /* MockDeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */; };
-		DCD7676C23DFE70700A2939C /* MockUserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */; };
-		DCD7676E23DFE74D00A2939C /* MockUserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */; };
-		DCD940B1243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
 		DCD940B2243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
 		DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
-		DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
-		DCDCD37624193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */; };
 		DCDCD37724193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */; };
 		DCDCD37824193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */; };
-		DCDCD37A2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */; };
 		DCDCD37B2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */; };
 		DCDCD37C2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */; };
-		DCDCD37E241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */; };
 		DCDCD37F241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */; };
 		DCDCD380241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */; };
-		DCDCD38624194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
-		DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
 		DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
 		DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
-		DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */; };
 		DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */; };
 		DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */; };
-		DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
 		DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
 		DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
-		DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
 		DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
 		DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
-		DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
 		DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
 		DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
-		DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
 		DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
 		DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
-		DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
 		DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
 		DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
-		DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
 		DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
 		DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
-		DCEDB31C2464C4CD006AF70D /* TrackName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31B2464C4CC006AF70D /* TrackName.swift */; };
 		DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31B2464C4CC006AF70D /* TrackName.swift */; };
 		DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31B2464C4CC006AF70D /* TrackName.swift */; };
-		DCEDB3202464CF90006AF70D /* RoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31F2464CF90006AF70D /* RoomState.swift */; };
 		DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31F2464CF90006AF70D /* RoomState.swift */; };
 		DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31F2464CF90006AF70D /* RoomState.swift */; };
-		DCEDB3242464D7EE006AF70D /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3232464D7EE006AF70D /* RoomFactory.swift */; };
 		DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3232464D7EE006AF70D /* RoomFactory.swift */; };
 		DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3232464D7EE006AF70D /* RoomFactory.swift */; };
-		DCEDB3282464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
 		DCEDB3292464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
 		DCEDB32A2464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
-		DCEDB32C2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
 		DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
 		DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
-		DCEDB3302464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
-		DCEDB349246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
 		DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
 		DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
-		DCEDB34D246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
 		DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
 		DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
-		DCEDB351246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
 		DCEDB352246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
 		DCEDB353246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
-		DCEDB355246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
 		DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
 		DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
-		DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
-		DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
 		DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
 		DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
-		DCEDB36224743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
 		DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
 		DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
-		DCEDB36624743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */; };
 		DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */; };
 		DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */; };
-		DCEDB36A24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */; };
 		DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */; };
 		DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */; };
-		DCEDB36E24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */; };
 		DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */; };
 		DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */; };
-		DCEDB372247442D9006AF70D /* TrackPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB371247442D9006AF70D /* TrackPriority.swift */; };
 		DCEDB373247442D9006AF70D /* TrackPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB371247442D9006AF70D /* TrackPriority.swift */; };
 		DCEDB374247442D9006AF70D /* TrackPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB371247442D9006AF70D /* TrackPriority.swift */; };
-		DCEDB376247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */; };
 		DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */; };
 		DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */; };
-		DCEDB37A24744734006AF70D /* TrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */; };
 		DCEDB37B24744734006AF70D /* TrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */; };
 		DCEDB37C24744734006AF70D /* TrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */; };
-		DCEDB37E247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */; };
 		DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */; };
 		DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */; };
-		DCEDB382247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
 		DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
 		DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
-		DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
-		DCEDB38A2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
 		DCEDB38B2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
 		DCEDB38C2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
-		DCEDB38F2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
 		DCEDB3902475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
 		DCEDB3912475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB38E2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift */; };
-		DCEDB3932475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */; };
 		DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */; };
 		DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3922475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift */; };
-		DCEDB3972475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3982475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3992475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */; };
-		DCEDB39B2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
 		DCEDB39C2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
 		DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
-		DCEDB39F2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
-		DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
-		DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
 		DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
-		DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615423859BB800DD8FEA /* AppInfoStore.swift */; };
 		DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615423859BB800DD8FEA /* AppInfoStore.swift */; };
 		DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615423859BB800DD8FEA /* AppInfoStore.swift */; };
-		DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461582385A51700DD8FEA /* SettingsViewController.swift */; };
 		DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461582385A51700DD8FEA /* SettingsViewController.swift */; };
 		DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461582385A51700DD8FEA /* SettingsViewController.swift */; };
-		DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */; };
 		DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */; };
 		DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */; };
-		DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */; };
 		DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */; };
 		DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */; };
-		DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */; };
 		DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */; };
 		DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */; };
-		E79FE7DB28C3BBBE4440D1F3 /* Pods_Video_Twilio_Video_TwilioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */; };
+		E8492255161E66F2E6770FBF /* Pods_Video_Internal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B4786D4DFD2B5B7A68469C /* Pods_Video_Internal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC04467E238DD55C0072F597 /* PBXContainerItemProxy */ = {
+		DC5CC392249C0EC000355CC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2412822F1E36A6AB002198BE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 241282361E36A6AB002198BE;
-			remoteInfo = "Video-Twilio";
-		};
-		DC4E4E312357A73900C5D313 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2412822F1E36A6AB002198BE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 241282361E36A6AB002198BE;
-			remoteInfo = "Video-Twilio";
+			remoteGlobalIDString = 4B0012221FBA52C4004A587E;
+			remoteInfo = "Video-Internal";
 		};
 		DCE965BD237492410002EC78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -612,10 +426,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05FE9D8FE25C13BB6ADB4F3B /* Pods-Video-Twilio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.release.xcconfig"; sourceTree = "<group>"; };
 		09DA89059C9FC51D558EB8D4 /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig"; sourceTree = "<group>"; };
-		1FB1306CB055161D792FB7EB /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		241282371E36A6AB002198BE /* Video-Twilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Twilio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BAD7F49B9C6F06A36CDD692 /* Pods_Video_Internal_Video_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Internal_Video_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		241282441E36A6AB002198BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		241282461E36A6AB002198BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241282491E36A6AB002198BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -632,29 +444,33 @@
 		24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsTableViewCell.m; sourceTree = "<group>"; };
 		24C5217720FFAD030018E2D8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginViewController.swift; sourceTree = "<group>"; };
-		2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2580377D50CDD413DB713E35 /* Pods-Video-Internal-Video-InternalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests.release.xcconfig"; sourceTree = "<group>"; };
+		25B4786D4DFD2B5B7A68469C /* Pods_Video_Internal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Internal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27DB76AA40066D307B64797A /* Pods-Video-Internal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal/Pods-Video-Internal.debug.xcconfig"; sourceTree = "<group>"; };
+		2BE77220CF59EDFDB7EA1086 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F565645E975B9B195D81C5B /* Pods-Video-Internal-Video-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-Community.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-Community/Pods-Video-Internal-Video-Community.debug.xcconfig"; sourceTree = "<group>"; };
 		33B7A8FEA91C4F11C6503CC7 /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3643530DDA99CCF776B5F33A /* Pods-Video-Internal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal.release.xcconfig"; path = "Target Support Files/Pods-Video-Internal/Pods-Video-Internal.release.xcconfig"; sourceTree = "<group>"; };
 		4B00124E1FBA52C4004A587E /* Video-Internal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Internal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B00128B1FBA52E5004A587E /* Video-Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Community.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9C557AEFEDA02580046B98 /* Pods_Video_InternalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_InternalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F66C3D4CD6DB108A8F8EB06 /* Pods-Video-Twilio-Video-Internal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Internal.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal.release.xcconfig"; sourceTree = "<group>"; };
-		6A619E930BB6631879D05D9C /* Pods-Video-TwilioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-TwilioUITests.release.xcconfig"; path = "Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5BBBCFD96628BCB502CCDA04 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BF86F7A57DAC623A7A9F61B /* Pods-Video-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Community.debug.xcconfig"; path = "Target Support Files/Pods-Video-Community/Pods-Video-Community.debug.xcconfig"; sourceTree = "<group>"; };
 		8A14E433CF4662B19E44A3BE /* Pods-Video-Twilio-Video-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC49999232A18D2005A4B35 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		97650562A7ED4405DB1FC500 /* Pods-Video-Twilio-Video-Internal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Internal.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal.debug.xcconfig"; sourceTree = "<group>"; };
 		97E391D410028974C4641B09 /* Pods-Video-Twilio-Video-TwilioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests.release.xcconfig"; sourceTree = "<group>"; };
 		A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_TwilioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2712C60E58D010FD4CD7EC6 /* Pods-Video-TwilioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-TwilioUITests.debug.xcconfig"; path = "Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A9ADEE0522D37947FC5C015A /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75F43370842DD4A8718485D /* Pods-Video-InternalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-InternalUITests.debug.xcconfig"; path = "Target Support Files/Pods-Video-InternalUITests/Pods-Video-InternalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B082508FE031E758D3AE0E4D /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B18CDAA6CE26C50150300CC2 /* Pods-Video-Twilio-Video-TwilioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3AB78B22F2DA8EBE6CE00CE /* Pods-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Community/Pods-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
-		BFBA027ED2CF803749AECF19 /* Pods_Video_TwilioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_TwilioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4E1D6D09E2DE36C2CD37979 /* Pods-Video-Twilio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio.debug.xcconfig"; path = "Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio.debug.xcconfig"; sourceTree = "<group>"; };
+		B3E48E3694ED13BADF86A97C /* Pods-Video-InternalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-InternalUITests.release.xcconfig"; path = "Target Support Files/Pods-Video-InternalUITests/Pods-Video-InternalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CECDDB77E7A9B03648F91095 /* Pods-Video-Twilio-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
-		DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3A673FFFA1998DACFEFE3C /* Pods_Video_Internal_Video_InternalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Internal_Video_InternalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90DE0A39F48B889AB2E6C96 /* Pods-Video-Internal-Video-InternalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC04467B238DD55C0072F597 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
-		DC04467D238DD55C0072F597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC044683238EF6C20072F597 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DC044690238F1E3C0072F597 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		DC044694238F1FAA0072F597 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -672,7 +488,6 @@
 		DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
-		DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxTracksViewModel.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDelegate.swift; sourceTree = "<group>"; };
@@ -697,15 +512,14 @@
 		DC4568852385D5490069BB5A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
 		DC4E4E2223577EE500C5D313 /* Topology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topology.swift; sourceTree = "<group>"; };
-		DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-TwilioTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTwilioAccessTokenStoreSpec.swift; sourceTree = "<group>"; };
-		DC4E4E302357A73900C5D313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC5CC38D249C0EC000355CC6 /* Video-InternalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC5CC391249C0EC000355CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
 		DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariableStore.swift; sourceTree = "<group>"; };
 		DC78CAB924352FEE006D3FAA /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
 		DC78CABB243547CB006D3FAA /* RoomActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomActivities.swift; sourceTree = "<group>"; };
 		DC78CABD24354F8F006D3FAA /* SignedInTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInTestCase.swift; sourceTree = "<group>"; };
-		DC78CAC324367355006D3FAA /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC78CAC62436768F006D3FAA /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC82A34E23FC9AAA0081578C /* JSONContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContainer.swift; sourceTree = "<group>"; };
 		DC82A35223FDB6890081578C /* SDKLogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogLevel.swift; sourceTree = "<group>"; };
@@ -870,25 +684,17 @@
 		DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF461602385B13000DD8FEA /* AdvancedSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		DF7571CCC7F4F72D99CF0E22 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.release.xcconfig"; sourceTree = "<group>"; };
 		E500D96C3DB0CE83932C6D4D /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig"; path = "Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig"; sourceTree = "<group>"; };
-		E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Internal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEFE3781D8D7C23D60A5F8DE /* Pods-Video-Internal-Video-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-Community.release.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-Community/Pods-Video-Internal-Video-Community.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		241282341E36A6AB002198BE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				32BD0B3476F7C1A3D75FD8EF /* Pods_Video_Twilio.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B0012351FBA52C4004A587E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5FC580267C650371E9AB56B /* Pods_Video_Twilio_Video_Internal.framework in Frameworks */,
+				E8492255161E66F2E6770FBF /* Pods_Video_Internal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,23 +702,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE0CFB3237FBE318B731B713 /* Pods_Video_Twilio_Video_Community.framework in Frameworks */,
+				93223A7F4DEC256BF49177A0 /* Pods_Video_Internal_Video_Community.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC044676238DD55C0072F597 /* Frameworks */ = {
+		DC5CC38A249C0EC000355CC6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66C73E6EA03924E6E1E449F6 /* Pods_Video_TwilioUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC4E4E292357A73900C5D313 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E79FE7DB28C3BBBE4440D1F3 /* Pods_Video_Twilio_Video_TwilioTests.framework in Frameworks */,
+				752D4639BF9718A771C3B2EF /* Pods_Video_InternalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,7 +718,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C6EDCF2651C8C600E239F6 /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework in Frameworks */,
+				0465056A73113195D323193C /* Pods_Video_Internal_Video_InternalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,7 +726,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B785FD323FF9E429DB3835 /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework in Frameworks */,
+				23674101EF04DB988097E672 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,10 +737,9 @@
 			isa = PBXGroup;
 			children = (
 				241282391E36A6AB002198BE /* VideoApp */,
-				DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */,
-				DC04467A238DD55C0072F597 /* Video-TwilioUITests */,
 				DCE965C7237498F50002EC78 /* Video-CommunityTests */,
 				DCE965B9237492410002EC78 /* Video-InternalTests */,
+				DC5CC38E249C0EC000355CC6 /* Video-InternalUITests */,
 				24F2990C1E37AF86001A389B /* Frameworks */,
 				241282381E36A6AB002198BE /* Products */,
 				5D24F42A53DEB8839B3BDD30 /* Pods */,
@@ -952,13 +749,11 @@
 		241282381E36A6AB002198BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				241282371E36A6AB002198BE /* Video-Twilio.app */,
 				4B00124E1FBA52C4004A587E /* Video-Internal.app */,
 				4B00128B1FBA52E5004A587E /* Video-Community.app */,
-				DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */,
 				DCE965B8237492410002EC78 /* Video-InternalTests.xctest */,
 				DCE965C6237498F50002EC78 /* Video-CommunityTests.xctest */,
-				DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */,
+				DC5CC38D249C0EC000355CC6 /* Video-InternalUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1030,13 +825,12 @@
 		24F2990C1E37AF86001A389B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E6CC3FFD92A7E294B9AD1 /* Pods_Video_Twilio.framework */,
 				A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */,
-				E708CB2AB7DFB73C47D7AB38 /* Pods_Video_Twilio_Video_Community.framework */,
-				E56431190FD8D2B0FFBB6F56 /* Pods_Video_Twilio_Video_Internal.framework */,
-				BFBA027ED2CF803749AECF19 /* Pods_Video_TwilioUITests.framework */,
-				1FB1306CB055161D792FB7EB /* Pods_Video_Twilio_Video_TwilioTests_Video_CommunityTests.framework */,
-				A9ADEE0522D37947FC5C015A /* Pods_Video_Twilio_Video_TwilioTests_Video_InternalTests.framework */,
+				25B4786D4DFD2B5B7A68469C /* Pods_Video_Internal.framework */,
+				0BAD7F49B9C6F06A36CDD692 /* Pods_Video_Internal_Video_Community.framework */,
+				CF3A673FFFA1998DACFEFE3C /* Pods_Video_Internal_Video_InternalTests.framework */,
+				2BE77220CF59EDFDB7EA1086 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework */,
+				4C9C557AEFEDA02580046B98 /* Pods_Video_InternalUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1044,8 +838,6 @@
 		5D24F42A53DEB8839B3BDD30 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C4E1D6D09E2DE36C2CD37979 /* Pods-Video-Twilio.debug.xcconfig */,
-				05FE9D8FE25C13BB6ADB4F3B /* Pods-Video-Twilio.release.xcconfig */,
 				B18CDAA6CE26C50150300CC2 /* Pods-Video-Twilio-Video-TwilioTests.debug.xcconfig */,
 				97E391D410028974C4641B09 /* Pods-Video-Twilio-Video-TwilioTests.release.xcconfig */,
 				7BF86F7A57DAC623A7A9F61B /* Pods-Video-Community.debug.xcconfig */,
@@ -1054,28 +846,23 @@
 				CECDDB77E7A9B03648F91095 /* Pods-Video-Twilio-Video-Community.release.xcconfig */,
 				97650562A7ED4405DB1FC500 /* Pods-Video-Twilio-Video-Internal.debug.xcconfig */,
 				4F66C3D4CD6DB108A8F8EB06 /* Pods-Video-Twilio-Video-Internal.release.xcconfig */,
-				A2712C60E58D010FD4CD7EC6 /* Pods-Video-TwilioUITests.debug.xcconfig */,
-				6A619E930BB6631879D05D9C /* Pods-Video-TwilioUITests.release.xcconfig */,
 				B082508FE031E758D3AE0E4D /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.debug.xcconfig */,
 				09DA89059C9FC51D558EB8D4 /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig */,
 				33B7A8FEA91C4F11C6503CC7 /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig */,
 				E500D96C3DB0CE83932C6D4D /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig */,
+				27DB76AA40066D307B64797A /* Pods-Video-Internal.debug.xcconfig */,
+				3643530DDA99CCF776B5F33A /* Pods-Video-Internal.release.xcconfig */,
+				2F565645E975B9B195D81C5B /* Pods-Video-Internal-Video-Community.debug.xcconfig */,
+				FEFE3781D8D7C23D60A5F8DE /* Pods-Video-Internal-Video-Community.release.xcconfig */,
+				D90DE0A39F48B889AB2E6C96 /* Pods-Video-Internal-Video-InternalTests.debug.xcconfig */,
+				2580377D50CDD413DB713E35 /* Pods-Video-Internal-Video-InternalTests.release.xcconfig */,
+				5BBBCFD96628BCB502CCDA04 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig */,
+				DF7571CCC7F4F72D99CF0E22 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.release.xcconfig */,
+				A75F43370842DD4A8718485D /* Pods-Video-InternalUITests.debug.xcconfig */,
+				B3E48E3694ED13BADF86A97C /* Pods-Video-InternalUITests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
-			sourceTree = "<group>";
-		};
-		DC04467A238DD55C0072F597 /* Video-TwilioUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DCD7675F23DF91DC00A2939C /* Activities */,
-				DC0446AF239854E20072F597 /* Helpers */,
-				DC338A282437E6E00093E855 /* Plans */,
-				DC0446A62398433A0072F597 /* Tests */,
-				DC0446A7239843470072F597 /* TestSecretsStore */,
-				DC04467D238DD55C0072F597 /* Info.plist */,
-			);
-			path = "Video-TwilioUITests";
 			sourceTree = "<group>";
 		};
 		DC04468F238F1E2D0072F597 /* User */ = {
@@ -1253,18 +1040,6 @@
 			path = AppSettings;
 			sourceTree = "<group>";
 		};
-		DC4E4E2D2357A73900C5D313 /* Video-TwilioTests */ = {
-			isa = PBXGroup;
-			children = (
-				DC4E4E362357B03100C5D313 /* Mocks */,
-				DCC80186243679E300A7BE46 /* Plans */,
-				DC6EABCB235907280064E9E0 /* Specs */,
-				DCA65022240D926A0038DEE1 /* Stubs */,
-				DC4E4E302357A73900C5D313 /* Info.plist */,
-			);
-			path = "Video-TwilioTests";
-			sourceTree = "<group>";
-		};
 		DC4E4E362357B03100C5D313 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1286,22 +1061,17 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		DC6EABCB235907280064E9E0 /* Specs */ = {
+		DC5CC38E249C0EC000355CC6 /* Video-InternalUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */,
-				DC1C2F9523AC35E40044FB4D /* AppInfoStoreSpec.swift */,
-				DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */,
-				DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */,
-				DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */,
-				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
-				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
-				DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */,
-				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
-				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
-				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
+				DCD7675F23DF91DC00A2939C /* Activities */,
+				DC0446AF239854E20072F597 /* Helpers */,
+				DC338A282437E6E00093E855 /* Plans */,
+				DC0446A62398433A0072F597 /* Tests */,
+				DC0446A7239843470072F597 /* TestSecretsStore */,
+				DC5CC391249C0EC000355CC6 /* Info.plist */,
 			);
-			path = Specs;
+			path = "Video-InternalUITests";
 			sourceTree = "<group>";
 		};
 		DC76FCFF241054A3001B2FFC /* EnvironmentVariable */ = {
@@ -1371,7 +1141,17 @@
 		DC8EAE2D23AC3D6A0045018F /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */,
 				DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */,
+				DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */,
+				DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */,
+				DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */,
+				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
+				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
+				DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */,
+				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
+				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
+				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -1607,14 +1387,6 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
-		DCC80186243679E300A7BE46 /* Plans */ = {
-			isa = PBXGroup;
-			children = (
-				DC78CAC324367355006D3FAA /* Unit.xctestplan */,
-			);
-			path = Plans;
-			sourceTree = "<group>";
-		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
 			isa = PBXGroup;
 			children = (
@@ -1657,8 +1429,10 @@
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC4E4E362357B03100C5D313 /* Mocks */,
 				DC78CAC7243676DC006D3FAA /* Plans */,
 				DC8EAE2D23AC3D6A0045018F /* Specs */,
+				DCA65022240D926A0038DEE1 /* Stubs */,
 				DCE965BC237492410002EC78 /* Info.plist */,
 			);
 			path = "Video-InternalTests";
@@ -1807,26 +1581,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		241282361E36A6AB002198BE /* Video-Twilio */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 241282591E36A6AB002198BE /* Build configuration list for PBXNativeTarget "Video-Twilio" */;
-			buildPhases = (
-				C4E0C2362D4C51837A5CC4B3 /* [CP] Check Pods Manifest.lock */,
-				241282331E36A6AB002198BE /* Sources */,
-				241282341E36A6AB002198BE /* Frameworks */,
-				241282351E36A6AB002198BE /* Resources */,
-				B8DC1D53081BADC2A60D9D63 /* [CP] Embed Pods Frameworks */,
-				B9DF8BBD8C9B60DC7ED08677 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Video-Twilio";
-			productName = VideoApp;
-			productReference = 241282371E36A6AB002198BE /* Video-Twilio.app */;
-			productType = "com.apple.product-type.application";
-		};
 		4B0012221FBA52C4004A587E /* Video-Internal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B00124B1FBA52C4004A587E /* Build configuration list for PBXNativeTarget "Video-Internal" */;
@@ -1868,46 +1622,25 @@
 			productReference = 4B00128B1FBA52E5004A587E /* Video-Community.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DC044678238DD55C0072F597 /* Video-TwilioUITests */ = {
+		DC5CC38C249C0EC000355CC6 /* Video-InternalUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC044682238DD55C0072F597 /* Build configuration list for PBXNativeTarget "Video-TwilioUITests" */;
+			buildConfigurationList = DC5CC394249C0EC000355CC6 /* Build configuration list for PBXNativeTarget "Video-InternalUITests" */;
 			buildPhases = (
-				891B4017D476EF7DB6334C3C /* [CP] Check Pods Manifest.lock */,
-				DC044675238DD55C0072F597 /* Sources */,
-				DC044676238DD55C0072F597 /* Frameworks */,
-				DC044677238DD55C0072F597 /* Resources */,
-				2B224A264286B32C37047175 /* [CP] Embed Pods Frameworks */,
+				FE88788C833C87C2D5D8C7C7 /* [CP] Check Pods Manifest.lock */,
+				DC5CC389249C0EC000355CC6 /* Sources */,
+				DC5CC38A249C0EC000355CC6 /* Frameworks */,
+				DC5CC38B249C0EC000355CC6 /* Resources */,
+				FDB85BF0EC0B6365D4DC7FC0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DC04467F238DD55C0072F597 /* PBXTargetDependency */,
+				DC5CC393249C0EC000355CC6 /* PBXTargetDependency */,
 			);
-			name = "Video-TwilioUITests";
-			productName = "Video-TwilioUITests";
-			productReference = DC044679238DD55C0072F597 /* Video-TwilioUITests.xctest */;
+			name = "Video-InternalUITests";
+			productName = "Video-InternalUITests";
+			productReference = DC5CC38D249C0EC000355CC6 /* Video-InternalUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		DC4E4E2B2357A73900C5D313 /* Video-TwilioTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC4E4E332357A73900C5D313 /* Build configuration list for PBXNativeTarget "Video-TwilioTests" */;
-			buildPhases = (
-				D829BBCA340717DAB3C7ADA9 /* [CP] Check Pods Manifest.lock */,
-				DC4E4E282357A73900C5D313 /* Sources */,
-				DC4E4E292357A73900C5D313 /* Frameworks */,
-				DC4E4E2A2357A73900C5D313 /* Resources */,
-				52C0EC0D20F9CF04B9822F24 /* [CP] Embed Pods Frameworks */,
-				59145AB0F9D4E1839674C472 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC4E4E322357A73900C5D313 /* PBXTargetDependency */,
-			);
-			name = "Video-TwilioTests";
-			productName = "Video-TwilioTests";
-			productReference = DC4E4E2C2357A73900C5D313 /* Video-TwilioTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DCE965B7237492410002EC78 /* Video-InternalTests */ = {
 			isa = PBXNativeTarget;
@@ -1957,24 +1690,10 @@
 		2412822F1E36A6AB002198BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Twilio, Inc.";
 				TargetAttributes = {
-					241282361E36A6AB002198BE = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SX5J6BN2KX;
-						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-							com.apple.SafariKeychain = {
-								enabled = 1;
-							};
-						};
-					};
 					4B0012221FBA52C4004A587E = {
 						DevelopmentTeam = SX5J6BN2KX;
 						LastSwiftMigration = 0940;
@@ -1985,15 +1704,11 @@
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
-					DC044678238DD55C0072F597 = {
-						CreatedOnToolsVersion = 11.2;
+					DC5CC38C249C0EC000355CC6 = {
+						CreatedOnToolsVersion = 11.5;
+						DevelopmentTeam = SX5J6BN2KX;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 241282361E36A6AB002198BE;
-					};
-					DC4E4E2B2357A73900C5D313 = {
-						CreatedOnToolsVersion = 11.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 241282361E36A6AB002198BE;
+						TestTargetID = 4B0012221FBA52C4004A587E;
 					};
 					DCE965B7237492410002EC78 = {
 						CreatedOnToolsVersion = 11.2;
@@ -2020,36 +1735,16 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				241282361E36A6AB002198BE /* Video-Twilio */,
 				4B0012221FBA52C4004A587E /* Video-Internal */,
 				4B00125F1FBA52E5004A587E /* Video-Community */,
-				DC4E4E2B2357A73900C5D313 /* Video-TwilioTests */,
 				DCE965B7237492410002EC78 /* Video-InternalTests */,
 				DCE965C5237498F50002EC78 /* Video-CommunityTests */,
-				DC044678238DD55C0072F597 /* Video-TwilioUITests */,
+				DC5CC38C249C0EC000355CC6 /* Video-InternalUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		241282351E36A6AB002198BE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DCAEBF1F2383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
-				2412824A1E36A6AB002198BE /* LaunchScreen.storyboard in Resources */,
-				DC85CA5F23CCDADB00BF016F /* GoogleService-Info.plist in Resources */,
-				DCAEBF332383560500141D2D /* EditTextCell.xib in Resources */,
-				DC44C2C523870D0800205174 /* BasicCell.xib in Resources */,
-				DC9A5E112460CE9800E4B079 /* ParticipantCell.xib in Resources */,
-				241282471E36A6AB002198BE /* Assets.xcassets in Resources */,
-				DC9A5DFC245CB66800E4B079 /* VideoView.xib in Resources */,
-				DC44C2BD238704FB00205174 /* RightDetailCell.xib in Resources */,
-				241282451E36A6AB002198BE /* Main.storyboard in Resources */,
-				DCAEBF17238331A800141D2D /* SwitchCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B0012401FBA52C4004A587E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2085,19 +1780,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC044677238DD55C0072F597 /* Resources */ = {
+		DC5CC38B249C0EC000355CC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9A4C9223D161A200D37CEC /* TestSecrets.json in Resources */,
-				DC85CA5E23CCDADA00BF016F /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC4E4E2A2357A73900C5D313 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				DC5CC39F249C0F5900355CC6 /* TestSecrets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2124,7 +1811,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal/Pods-Video-Internal-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
@@ -2149,7 +1836,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal/Pods-Video-Internal-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		16576706FFF09EBC78467827 /* [CP] Check Pods Manifest.lock */ = {
@@ -2167,7 +1854,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Video-Internal-Video-InternalTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2180,7 +1867,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
@@ -2209,7 +1896,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1C69E570AC1D1B9DF20186BE /* [CP] Copy Pods Resources */ = {
@@ -2218,7 +1905,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-Community/Pods-Video-Internal-Video-Community-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
@@ -2233,25 +1920,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2B224A264286B32C37047175 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-TwilioUITests/Pods-Video-TwilioUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-Community/Pods-Video-Internal-Video-Community-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3F2802B0738EDB0C0DA6E5CF /* [CP] Copy Pods Resources */ = {
@@ -2260,7 +1929,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal/Pods-Video-Internal-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
@@ -2275,7 +1944,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Internal/Pods-Video-Twilio-Video-Internal-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal/Pods-Video-Internal-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		51410BD346737619E1046195 /* [CP] Copy Pods Resources */ = {
@@ -2284,7 +1953,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
@@ -2299,69 +1968,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52C0EC0D20F9CF04B9822F24 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59145AB0F9D4E1839674C472 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests/Pods-Video-Twilio-Video-TwilioTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		833AA91031FEB8DED2FD4052 /* [CP] Check Pods Manifest.lock */ = {
@@ -2379,29 +1986,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-Twilio-Video-Community-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		891B4017D476EF7DB6334C3C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-TwilioUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Video-Internal-Video-Community-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2414,7 +1999,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-Community/Pods-Video-Internal-Video-Community-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
@@ -2439,7 +2024,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-Community/Pods-Video-Twilio-Video-Community-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-Community/Pods-Video-Internal-Video-Community-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A328821F3A97D06DF5A8473E /* [CP] Check Pods Manifest.lock */ = {
@@ -2457,7 +2042,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-Twilio-Video-Internal-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Video-Internal-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2470,7 +2055,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
@@ -2485,87 +2070,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests/Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8DC1D53081BADC2A60D9D63 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9DF8BBD8C9B60DC7ED08677 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio/Pods-Video-Twilio-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4E0C2362D4C51837A5CC4B3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-Twilio-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0E961D9DC252F9C43BB93ED /* [CP] Embed Pods Frameworks */ = {
@@ -2574,7 +2079,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
@@ -2603,29 +2108,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D829BBCA340717DAB3C7ADA9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-Twilio-Video-TwilioTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC0446B423A02E660072F597 /* Crashlytics */ = {
@@ -2646,6 +2129,46 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
+		FDB85BF0EC0B6365D4DC7FC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Video-InternalUITests/Pods-Video-InternalUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Video-InternalUITests/Pods-Video-InternalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE88788C833C87C2D5D8C7C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Video-InternalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FF01EB7FB507DA5BB103F0F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2661,7 +2184,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2671,177 +2194,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		241282331E36A6AB002198BE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DCA65028240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */,
-				DC044691238F1E3C0072F597 /* UserStore.swift in Sources */,
-				DC9A5E25246207E600E4B079 /* CameraSourceFactory.swift in Sources */,
-				DC9A5E2924620B6D00E4B079 /* CameraTrackFactory.swift in Sources */,
-				DCDCD37624193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
-				DC0446DB23A40E3E0072F597 /* Storage.swift in Sources */,
-				DC8AA8CB236795FA006C06D5 /* main.swift in Sources */,
-				DCEC3CFC2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
-				DCEDB35924730476006AF70D /* SwiftToObjc.swift in Sources */,
-				DC8EAE3723BA75C00045018F /* LaunchStore.swift in Sources */,
-				DCEDB349246F16AD006AF70D /* VideoTrack.swift in Sources */,
-				DC3C32D824180C3100F56AFB /* APIEncoding.swift in Sources */,
-				DCEDB36624743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCDCD372241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
-				DCF4615D2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
-				DC2511AB2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
-				DCEDB39B2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
-				DCC7E35D24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
-				DC85CA6123CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
-				DCC7E3552406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
-				DCEDB3202464CF90006AF70D /* RoomState.swift in Sources */,
-				DC44C2C92387118400205174 /* UITableViewCellHelpers.swift in Sources */,
-				DC3924892416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
-				DC9A5E432463247700E4B079 /* CircleButton.swift in Sources */,
-				DCEDB38F2475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
-				DCEC3D0E23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
-				DC44C2C223870D0800205174 /* BasicCell.swift in Sources */,
-				DC8AA8D32367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
-				DC1C2F8E23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
-				DC8EAE4823BA9F390045018F /* WindowSceneObserving.swift in Sources */,
-				DC1C2F9223AC34B30044FB4D /* BundleProtocol.swift in Sources */,
-				DCEC3D1323861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
-				DC82A36423FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
-				DC3C32D42417E6E000F56AFB /* InternalAPIErrorResponseDecoder.swift in Sources */,
-				DCA65021240D91CA0038DEE1 /* CommunityCreateTwilioAccessTokenResponse.swift in Sources */,
-				DC1C2F8A23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
-				DCEDB351246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */,
-				DC9A5DD2245B332D00E4B079 /* RemoteParticipant.swift in Sources */,
-				DC8EAE3323BA71990045018F /* LaunchStoresFactory.swift in Sources */,
-				DCEDB3302464F9BA006AF70D /* IndexSetHelpers.swift in Sources */,
-				DC44C2EA23876B4700205174 /* EditTextSegueSender.swift in Sources */,
-				DC4E4E2323577EE500C5D313 /* Topology.swift in Sources */,
-				DC0446CF23A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
-				DC0446CB23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
-				DCD7675623DF554A00A2939C /* UserActivityStore.swift in Sources */,
-				DCEDB3282464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */,
-				DCAEBF302383560500141D2D /* EditTextCell.swift in Sources */,
-				DC9A5E05245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
-				DC82A35C23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
-				DCAEBF14238331A800141D2D /* SwitchCell.swift in Sources */,
-				DC9A5E09245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
-				DC82A34F23FC9AAA0081578C /* JSONContainer.swift in Sources */,
-				DC9A5DD6245B7F8600E4B079 /* ParticipantCell.swift in Sources */,
-				DCEDB36224743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
-				DCEDB382247489A0006AF70D /* SettingOptions.swift in Sources */,
-				DC9A5E332462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
-				DC3C32DC241812B400F56AFB /* APIURLFactory.swift in Sources */,
-				DC8EAE3F23BA926E0045018F /* VideoStore.swift in Sources */,
-				DC8EAE2F23BA5EC80045018F /* AppDelegate.swift in Sources */,
-				24A723E31ECE1C8500486E7A /* StatsViewController.m in Sources */,
-				DC9A5E4B2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
-				DC9A5DC5245A0B5F00E4B079 /* Room.swift in Sources */,
-				DC0446B823A182980072F597 /* CrashReportStore.swift in Sources */,
-				DC76FD01241054FC001B2FFC /* EnvironmentVariableStore.swift in Sources */,
-				DCEDB386247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
-				DCB7C1892405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCEDB38A2475B693006AF70D /* VideoDimensionsName.swift in Sources */,
-				DCB64B49240995A100E090BE /* APIHTTPMethod.swift in Sources */,
-				DCF4615523859BB800DD8FEA /* AppInfoStore.swift in Sources */,
-				DCEDB35D24733641006AF70D /* LoginViewController.swift in Sources */,
-				DCA53954235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
-				DCAEBF372383581F00141D2D /* EditTextViewController.swift in Sources */,
-				243CDB4A22665F1800637B6B /* TwilioColors.swift in Sources */,
-				DC3924902416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
-				DC2511A7247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
-				DCEDB3932475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
-				DCEDB36E24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
-				DCD7675123DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
-				DCA53948235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
-				DCEDB376247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
-				DCEDB355246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
-				DC4568862385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
-				DCAEBF3F238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
-				DCEC3D1B23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
-				DCF4615123859BA400DD8FEA /* AppInfo.swift in Sources */,
-				DC9A5E2D2462153000E4B079 /* CameraManager.swift in Sources */,
-				DCEDB39F2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
-				DCF461592385A51700DD8FEA /* SettingsViewController.swift in Sources */,
-				DCB7C1852405BD68009DEA70 /* API.swift in Sources */,
-				DC2511B3248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
-				24A723EE1ECE1D2A00486E7A /* TrackStatsTableViewCell.m in Sources */,
-				DCAEBF3B2384448500141D2D /* SelectOptionViewController.swift in Sources */,
-				DCEDB37E247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
-				DC4E4E1F23577EA700C5D313 /* AppSettingsStore.swift in Sources */,
-				DCEDB37A24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
-				DCEDB372247442D9006AF70D /* TrackPriority.swift in Sources */,
-				DC44C2E623876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
-				DCB7C18E2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
-				DC44C2E223875C4F00205174 /* StringHelpers.swift in Sources */,
-				DCF4614C238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
-				DCC7E36A24085AD800431AC3 /* APIError.swift in Sources */,
-				DC8AA8AD236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
-				DCDCD37A2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */,
-				DCB64B552409BC4E00E090BE /* APIConfig.swift in Sources */,
-				DCEC3D062386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
-				DC44C2BA238704FB00205174 /* RightDetailCell.swift in Sources */,
-				DCD7675A23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
-				DC82A39024008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
-				DCEDB36A24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
-				DCEDB31C2464C4CD006AF70D /* TrackName.swift in Sources */,
-				DC82A39424008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
-				DC82A3982404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
-				24A723E71ECE1CBD00486E7A /* StatsUIModel.m in Sources */,
-				DC8EAE4C23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
-				DC044684238EF6C20072F597 /* Environment.swift in Sources */,
-				DC9A5E472463345F00E4B079 /* LobbyViewController.swift in Sources */,
-				DCC7E36E24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */,
-				DCF461612385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
-				DC9A5DCA245A215000E4B079 /* RoomViewController.swift in Sources */,
-				DC1C2F7E23A445740044FB4D /* Notifications.swift in Sources */,
-				DCDCD37E241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */,
-				DCAEBF5323849C1C00141D2D /* VideoCodec.swift in Sources */,
-				DCA80B2C236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
-				DCA5394C235F740200CA26FB /* AuthStore.swift in Sources */,
-				24C5217920FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
-				DCD940B1243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
-				DCEDB3972475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift in Sources */,
-				DCC7E3592407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
-				DC85CA4C23CCD39400BF016F /* AppCenterStore.swift in Sources */,
-				DCB64B4F2409976F00E090BE /* APIRequest.swift in Sources */,
-				DC9A5E1D2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
-				DCB7C1812405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
-				DC3C32D02417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
-				DCEDB3242464D7EE006AF70D /* RoomFactory.swift in Sources */,
-				DC9A5DCE245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
-				DC9A5E00245CB67600E4B079 /* VideoView.swift in Sources */,
-				DC386DD12458DC05009E994A /* RoomViewModel.swift in Sources */,
-				DCA80B28236B821E009141C9 /* LaunchFlow.swift in Sources */,
-				DC044695238F1FAA0072F597 /* User.swift in Sources */,
-				DC9A5DC02459F1D100E4B079 /* Participant.swift in Sources */,
-				DC8EAE3B23BA88850045018F /* URLOpening.swift in Sources */,
-				DC9A5E3724622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
-				24A723ED1ECE1D2A00486E7A /* HeaderTableViewCell.m in Sources */,
-				DCEC3D1723861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
-				DC9A5E0D245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
-				DCC7E37624085BE200431AC3 /* APIErrorResponse.swift in Sources */,
-				DCEC3CF82385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
-				DC9A5DE2245CA2E000E4B079 /* NibView.swift in Sources */,
-				DC82A35323FDB6890081578C /* SDKLogLevel.swift in Sources */,
-				DC8EAE4323BA96C00045018F /* URLOpenerFactory.swift in Sources */,
-				DC8AA8CF2367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
-				DCF461652385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
-				DC1C2F8623A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
-				DCC7E36124082EB300431AC3 /* AuthError.swift in Sources */,
-				DCAEBF1C2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
-				DC9A5E3B2463161400E4B079 /* CircleView.swift in Sources */,
-				DC9A5E3F2463239E00E4B079 /* ToggleButton.swift in Sources */,
-				DCEDB34D246F16C6006AF70D /* VideoSource.swift in Sources */,
-				DCEDB32C2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
-				DC9A5E5324638A9C00E4B079 /* ShowError.swift in Sources */,
-				DCEC3D0A238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
-				DCD7674B23DA336600A2939C /* DeepLink.swift in Sources */,
-				DCA53950235F765D00CA26FB /* AuthFlow.swift in Sources */,
-				8AC4999A232A18D2005A4B35 /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4B0012231FBA52C4004A587E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3184,53 +2536,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC044675238DD55C0072F597 /* Sources */ = {
+		DC5CC389249C0EC000355CC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0446A3239716860072F597 /* TestSecrets.swift in Sources */,
-				DCD7675E23DF63F500A2939C /* DeepLinkTests.swift in Sources */,
-				DC0446B2239855090072F597 /* BasicTestCase.swift in Sources */,
-				DCD7676423DF9CC000A2939C /* DeepLinkActivities.swift in Sources */,
-				DC78CABC243547CB006D3FAA /* RoomActivities.swift in Sources */,
-				DC0446A1239716530072F597 /* TestSecretsStore.swift in Sources */,
-				DCD7676223DF923700A2939C /* AuthActivities.swift in Sources */,
-				DC78CABA24352FEE006D3FAA /* RoomTests.swift in Sources */,
-				DC78CABE24354F8F006D3FAA /* SignedInTestCase.swift in Sources */,
-				DC04467C238DD55C0072F597 /* AuthTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC4E4E282357A73900C5D313 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DCDCD38624194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift in Sources */,
-				DCD7676E23DFE74D00A2939C /* MockUserActivityStoreFactory.swift in Sources */,
-				DC04469D238F29500072F597 /* UserStoreSpec.swift in Sources */,
-				DCB64B5F240D811900E090BE /* MockAuthStoreWritingDelegate.swift in Sources */,
-				DC85CA4923BBCD2A00BF016F /* MockLaunchFlow.swift in Sources */,
-				DC4E4E2F2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift in Sources */,
-				DCB64B5D240D66C700E090BE /* MockKeychainStore.swift in Sources */,
-				DC1C2F9623AC35E40044FB4D /* AppInfoStoreSpec.swift in Sources */,
-				DC04469F238F29F50072F597 /* MockAuthStore.swift in Sources */,
-				DCD7676623DFDA1700A2939C /* DeepLinkStoreSpec.swift in Sources */,
-				DCD7676823DFDEEA00A2939C /* UserActivityStoreSpec.swift in Sources */,
-				DCD7674F23DA350A00A2939C /* DeepLinkSpec.swift in Sources */,
-				DC85CA4123BBCCB000BF016F /* MockURLOpener.swift in Sources */,
-				DCD7676C23DFE70700A2939C /* MockUserActivityStore.swift in Sources */,
-				DCA65026240D9A3B0038DEE1 /* AuthErrorSpec.swift in Sources */,
-				DC6EABBF2357CAC50064E9E0 /* MockAppSettingsStore.swift in Sources */,
-				DCB64B59240D624600E090BE /* CommunityAuthStoreSpec.swift in Sources */,
-				DC85CA4723BBCD0B00BF016F /* MockLaunchFlowFactory.swift in Sources */,
-				DC8EAE5023BBA6790045018F /* AppDelegateSpec.swift in Sources */,
-				DCA65024240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */,
-				DC85CA3F23BBCC8400BF016F /* MockURLOpenerFactory.swift in Sources */,
-				DC85CA4523BBCCE400BF016F /* MockLaunchStore.swift in Sources */,
-				DC85CA4323BBCCC800BF016F /* MockLaunchStoresFactory.swift in Sources */,
-				DCB64B5B240D638900E090BE /* MockAPI.swift in Sources */,
-				DCB64B47240969B400E090BE /* PasscodeComponentsSpec.swift in Sources */,
-				DCD7676A23DFE03F00A2939C /* MockDeepLinkStore.swift in Sources */,
+				DC5CC39A249C0F2E00355CC6 /* BasicTestCase.swift in Sources */,
+				DC5CC39C249C0F4800355CC6 /* AuthTests.swift in Sources */,
+				DC5CC39E249C0F4800355CC6 /* RoomTests.swift in Sources */,
+				DC5CC398249C0F2100355CC6 /* DeepLinkActivities.swift in Sources */,
+				DC5CC399249C0F2100355CC6 /* RoomActivities.swift in Sources */,
+				DC5CC39B249C0F2E00355CC6 /* SignedInTestCase.swift in Sources */,
+				DC5CC39D249C0F4800355CC6 /* DeepLinkTests.swift in Sources */,
+				DC5CC3A1249C0F5900355CC6 /* TestSecretsStore.swift in Sources */,
+				DC5CC3A0249C0F5900355CC6 /* TestSecrets.swift in Sources */,
+				DC5CC397249C0F2100355CC6 /* AuthActivities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3238,7 +2557,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5CC375249C0D0300355CC6 /* AuthErrorSpec.swift in Sources */,
+				DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */,
+				DC5CC371249C0D0300355CC6 /* InternalTwilioAccessTokenStoreSpec.swift in Sources */,
+				DC5CC37D249C0D3900355CC6 /* MockAuthStoreWritingDelegate.swift in Sources */,
+				DC5CC381249C0D3900355CC6 /* MockLaunchFlowFactory.swift in Sources */,
+				DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */,
+				DC5CC384249C0D3900355CC6 /* MockURLOpener.swift in Sources */,
+				DC5CC382249C0D3900355CC6 /* MockLaunchStore.swift in Sources */,
+				DC5CC37E249C0D3900355CC6 /* MockDeepLinkStore.swift in Sources */,
+				DC5CC386249C0D3900355CC6 /* MockUserActivityStore.swift in Sources */,
+				DC5CC388249C0D6C00355CC6 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */,
+				DC5CC37A249C0D3900355CC6 /* MockAPI.swift in Sources */,
+				DC5CC378249C0D0300355CC6 /* PasscodeComponentsSpec.swift in Sources */,
+				DC5CC37F249C0D3900355CC6 /* MockKeychainStore.swift in Sources */,
+				DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */,
+				DC5CC373249C0D0300355CC6 /* CommunityTwilioAccessTokenStoreSpec.swift in Sources */,
+				DC5CC387249C0D3900355CC6 /* MockUserActivityStoreFactory.swift in Sources */,
+				DC5CC380249C0D3900355CC6 /* MockLaunchFlow.swift in Sources */,
+				DC5CC37C249C0D3900355CC6 /* MockAuthStore.swift in Sources */,
+				DC5CC377249C0D0300355CC6 /* UserActivityStoreSpec.swift in Sources */,
+				DC5CC37B249C0D3900355CC6 /* MockAppSettingsStore.swift in Sources */,
 				DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */,
+				DC5CC385249C0D3900355CC6 /* MockURLOpenerFactory.swift in Sources */,
+				DC5CC376249C0D0300355CC6 /* DeepLinkStoreSpec.swift in Sources */,
+				DC5CC379249C0D0300355CC6 /* AppDelegateSpec.swift in Sources */,
+				DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3253,15 +2597,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DC04467F238DD55C0072F597 /* PBXTargetDependency */ = {
+		DC5CC393249C0EC000355CC6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 241282361E36A6AB002198BE /* Video-Twilio */;
-			targetProxy = DC04467E238DD55C0072F597 /* PBXContainerItemProxy */;
-		};
-		DC4E4E322357A73900C5D313 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 241282361E36A6AB002198BE /* Video-Twilio */;
-			targetProxy = DC4E4E312357A73900C5D313 /* PBXContainerItemProxy */;
+			target = 4B0012221FBA52C4004A587E /* Video-Internal */;
+			targetProxy = DC5CC392249C0EC000355CC6 /* PBXContainerItemProxy */;
 		};
 		DCE965BE237492410002EC78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3412,77 +2751,9 @@
 			};
 			name = Release;
 		};
-		2412825A1E36A6AB002198BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4E1D6D09E2DE36C2CD37979 /* Pods-Video-Twilio.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 59;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = SX5J6BN2KX;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = VideoApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app";
-				PRODUCT_MODULE_NAME = VideoApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "VideoApp/Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Debug;
-		};
-		2412825B1E36A6AB002198BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05FE9D8FE25C13BB6ADB4F3B /* Pods-Video-Twilio.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = VideoApp/Video.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 59;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = SX5J6BN2KX;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				INFOPLIST_FILE = VideoApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-lc++",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.video-app";
-				PRODUCT_MODULE_NAME = VideoApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "VideoApp/Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
 		4B00124C1FBA52C4004A587E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97650562A7ED4405DB1FC500 /* Pods-Video-Twilio-Video-Internal.debug.xcconfig */;
+			baseConfigurationReference = 27DB76AA40066D307B64797A /* Pods-Video-Internal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3550,7 +2821,7 @@
 		};
 		4B0012891FBA52E5004A587E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A14E433CF4662B19E44A3BE /* Pods-Video-Twilio-Video-Community.debug.xcconfig */;
+			baseConfigurationReference = 2F565645E975B9B195D81C5B /* Pods-Video-Internal-Video-Community.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3586,7 +2857,7 @@
 		};
 		4B00128A1FBA52E5004A587E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CECDDB77E7A9B03648F91095 /* Pods-Video-Twilio-Video-Community.release.xcconfig */;
+			baseConfigurationReference = FEFE3781D8D7C23D60A5F8DE /* Pods-Video-Internal-Video-Community.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3616,105 +2887,59 @@
 			};
 			name = Release;
 		};
-		DC044680238DD55C0072F597 /* Debug */ = {
+		DC5CC395249C0EC000355CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2712C60E58D010FD4CD7EC6 /* Pods-Video-TwilioUITests.debug.xcconfig */;
+			baseConfigurationReference = A75F43370842DD4A8718485D /* Pods-Video-InternalUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Video-TwilioUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				INFOPLIST_FILE = "Video-InternalUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-InternalUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Video-Twilio";
+				TEST_TARGET_NAME = "Video-Internal";
 			};
 			name = Debug;
 		};
-		DC044681238DD55C0072F597 /* Release */ = {
+		DC5CC396249C0EC000355CC6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A619E930BB6631879D05D9C /* Pods-Video-TwilioUITests.release.xcconfig */;
+			baseConfigurationReference = B3E48E3694ED13BADF86A97C /* Pods-Video-InternalUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SX5J6BN2KX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Video-TwilioUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				INFOPLIST_FILE = "Video-InternalUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-InternalUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Video-Twilio";
-			};
-			name = Release;
-		};
-		DC4E4E342357A73900C5D313 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B18CDAA6CE26C50150300CC2 /* Pods-Video-Twilio-Video-TwilioTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Video-TwilioTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Twilio.app/Video-Twilio";
-			};
-			name = Debug;
-		};
-		DC4E4E352357A73900C5D313 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97E391D410028974C4641B09 /* Pods-Video-Twilio-Video-TwilioTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Video-TwilioTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twilio.Video-TwilioTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Video-Twilio.app/Video-Twilio";
+				TEST_TARGET_NAME = "Video-Internal";
 			};
 			name = Release;
 		};
 		DCE965BF237492410002EC78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33B7A8FEA91C4F11C6503CC7 /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.debug.xcconfig */;
+			baseConfigurationReference = D90DE0A39F48B889AB2E6C96 /* Pods-Video-Internal-Video-InternalTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3739,7 +2964,7 @@
 		};
 		DCE965C0237492410002EC78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E500D96C3DB0CE83932C6D4D /* Pods-Video-Twilio-Video-TwilioTests-Video-InternalTests.release.xcconfig */;
+			baseConfigurationReference = 2580377D50CDD413DB713E35 /* Pods-Video-Internal-Video-InternalTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3762,7 +2987,7 @@
 		};
 		DCE965CD237498F50002EC78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B082508FE031E758D3AE0E4D /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.debug.xcconfig */;
+			baseConfigurationReference = 5BBBCFD96628BCB502CCDA04 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3787,7 +3012,7 @@
 		};
 		DCE965CE237498F50002EC78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09DA89059C9FC51D558EB8D4 /* Pods-Video-Twilio-Video-TwilioTests-Video-CommunityTests.release.xcconfig */;
+			baseConfigurationReference = DF7571CCC7F4F72D99CF0E22 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3820,15 +3045,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		241282591E36A6AB002198BE /* Build configuration list for PBXNativeTarget "Video-Twilio" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2412825A1E36A6AB002198BE /* Debug */,
-				2412825B1E36A6AB002198BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4B00124B1FBA52C4004A587E /* Build configuration list for PBXNativeTarget "Video-Internal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3847,20 +3063,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC044682238DD55C0072F597 /* Build configuration list for PBXNativeTarget "Video-TwilioUITests" */ = {
+		DC5CC394249C0EC000355CC6 /* Build configuration list for PBXNativeTarget "Video-InternalUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC044680238DD55C0072F597 /* Debug */,
-				DC044681238DD55C0072F597 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC4E4E332357A73900C5D313 /* Build configuration list for PBXNativeTarget "Video-TwilioTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC4E4E342357A73900C5D313 /* Debug */,
-				DC4E4E352357A73900C5D313 /* Release */,
+				DC5CC395249C0EC000355CC6 /* Debug */,
+				DC5CC396249C0EC000355CC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

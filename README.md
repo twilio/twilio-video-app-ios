@@ -62,7 +62,7 @@ If any errors occur after running a [Twilio CLI RTC Plugin](https://github.com/t
 1. In Xcode use the [Scheme menu](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/BuildingYourApp.html) to select a destination. Cameras do not work in the simulator so select a device for best results.
 1. Run `⌘R` the app.
 
-The `Video-Twilio` and `Video-Internal` schemes use authentication that is only available to Twilio employees in order to make internal testing easier. 
+The `Video-Internal` scheme uses authentication that is only available to Twilio employees in order to make internal testing easier. 
 
 ### Start Video Conference
 
@@ -87,8 +87,9 @@ The passcode will expire after one week. Follow the steps below to sign in with 
 
 For unit tests use:
 
-- `Video-Twilio` scheme.
-- `Video-TwilioTests` target.
+- `Video-Internal` scheme.
+- `Video-InternalTests` target.
+- `Unit` test plan.
 - [Quick and Nimble](https://github.com/Quick/Quick) to write unit tests.
 - [Swift Mock Generator](https://github.com/seanhenry/SwiftMockGeneratorForXcode) to create mocks.
 

@@ -69,12 +69,6 @@ commands:
           destination: "gym"
 
 jobs:
-  test_twilio_app:
-    executor: macos_executor
-    steps:
-      - test:
-          scheme: Video-Twilio
-          test_plan: Unit
   test_community_app:
     executor: macos_executor
     steps:
@@ -91,7 +85,7 @@ jobs:
     executor: macos_executor
     steps:
       - test:
-          scheme: Video-Twilio
+          scheme: Video-Internal
           test_plan: UI
   status_check:
     executor: macos_executor
@@ -106,8 +100,6 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - test_twilio_app:
-          filters: *test_filters
       - test_community_app:
           filters: *test_filters
       - test_internal_app:

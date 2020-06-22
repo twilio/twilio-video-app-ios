@@ -18,7 +18,7 @@ platform :ios do
 
   lane :status_check do
     begin
-      test(scheme: "Video-Twilio", test_plan: "StatusCheck")
+      test(scheme: "Video-Internal", test_plan: "StatusCheck")
     rescue
       slack(
         channel: "tcr-test",

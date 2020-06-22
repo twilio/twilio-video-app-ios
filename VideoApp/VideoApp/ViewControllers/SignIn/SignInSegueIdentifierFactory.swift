@@ -29,7 +29,7 @@ class SignInSegueIdentifierFactoryImpl: SignInSegueIdentifierFactory {
     
     func makeSignInSegueIdentifier() -> String {
         switch appInfoStore.appInfo.target {
-        case .videoTwilio, .videoInternal: return "loginSegue"
+        case .videoInternal: return "loginSegue"
         case .videoCommunity: return "passcodeSignIn"
         }
     }

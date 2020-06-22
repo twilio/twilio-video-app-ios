@@ -4,7 +4,7 @@ platform :ios, '11.0'
 use_frameworks!
 workspace 'VideoApp'
 
-target 'Video-Twilio' do
+target 'Video-Internal' do
   project 'VideoApp/VideoApp.xcodeproj'
 
   pod 'Alamofire', '5.0.2'
@@ -17,21 +17,13 @@ target 'Video-Twilio' do
   pod 'KeychainAccess', '4.1.0'
   pod 'TwilioVideo', '~> 3.4'
 
-  target 'Video-TwilioTests' do
+  target 'Video-InternalTests' do
     pod 'Nimble'
     pod 'Quick'
 
-    target 'Video-InternalTests' do
-      # Identical to Video-TwilioTests
-    end
-
     target 'Video-CommunityTests' do
-      # Identical to Video-TwilioTests
+      # Identical to Video-InternalTests
     end
-  end
-
-  target 'Video-Internal' do
-    # Identical to Video-Twilio
   end
 
   target 'Video-Community' do
@@ -40,7 +32,7 @@ target 'Video-Twilio' do
 end
 
 # Don't inherit pods like other targets for good black box testing
-target 'Video-TwilioUITests' do
+target 'Video-InternalUITests' do
   project 'VideoApp/VideoApp.xcodeproj'
 
   pod 'Nimble'
