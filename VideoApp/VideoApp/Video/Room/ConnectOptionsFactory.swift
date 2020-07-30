@@ -40,6 +40,7 @@ import TwilioVideo
             builder.videoTracks = videoTracks
             builder.isDominantSpeakerEnabled = true
             builder.isNetworkQualityEnabled = true
+            builder.areInsightsEnabled = self.appSettingsStore.areInsightsEnabled
             builder.networkQualityConfiguration = NetworkQualityConfiguration(
                 localVerbosity: .minimal,
                 remoteVerbosity: .minimal
