@@ -64,8 +64,6 @@ import TwilioVideo
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
-                    builder.abortOnIceServersTimeout = true
-                    builder.iceServersTimeout = 30
                     builder.transportPolicy = .relay
                 }
             }
