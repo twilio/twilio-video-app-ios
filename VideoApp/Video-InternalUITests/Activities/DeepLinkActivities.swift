@@ -34,7 +34,7 @@ class DeepLinkActivities {
                 contactsApp.tables/*@START_MENU_TOKEN@*/.staticTexts["add url"]/*[[".cells[\"add url\"].staticTexts[\"add url\"]",".staticTexts[\"add url\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
                 
                 let homepageTextField = contactsApp.tables.textFields["homepage"]
-                homepageTextField.tap()
+//                homepageTextField.tap()
                 homepageTextField.typeText(url)
                 
                 contactsApp.navigationBars["New Contact"].buttons["Done"].tap()

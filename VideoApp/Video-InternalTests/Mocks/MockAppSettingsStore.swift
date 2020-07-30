@@ -128,6 +128,28 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
+    var invokedAreInsightsEnabledSetter = false
+    var invokedAreInsightsEnabledSetterCount = 0
+    var invokedAreInsightsEnabled: Bool?
+    var invokedAreInsightsEnabledList = [Bool]()
+    var invokedAreInsightsEnabledGetter = false
+    var invokedAreInsightsEnabledGetterCount = 0
+    var stubbedAreInsightsEnabled: Bool! = false
+
+    var areInsightsEnabled: Bool {
+        set {
+            invokedAreInsightsEnabledSetter = true
+            invokedAreInsightsEnabledSetterCount += 1
+            invokedAreInsightsEnabled = newValue
+            invokedAreInsightsEnabledList.append(newValue)
+        }
+        get {
+            invokedAreInsightsEnabledGetter = true
+            invokedAreInsightsEnabledGetterCount += 1
+            return stubbedAreInsightsEnabled
+        }
+    }
+
     var invokedCoreSDKLogLevelSetter = false
     var invokedCoreSDKLogLevelSetterCount = 0
     var invokedCoreSDKLogLevel: SDKLogLevel?
