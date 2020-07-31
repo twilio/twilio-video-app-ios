@@ -66,6 +66,11 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         .push(
                             title: "Bandwidth Profile",
                             viewControllerFactory: bandwidthProfileSettingsViewControllerFactory
+                        ),
+                        .toggle(
+                            title: "Insights",
+                            isOn: appSettingsStore.areInsightsEnabled,
+                            updateHandler: { self.appSettingsStore.areInsightsEnabled = $0 }
                         )
                     ]
                 ),

@@ -40,6 +40,7 @@ import TwilioVideo
             builder.videoTracks = videoTracks
             builder.isDominantSpeakerEnabled = true
             builder.isNetworkQualityEnabled = true
+            builder.areInsightsEnabled = self.appSettingsStore.areInsightsEnabled
             builder.networkQualityConfiguration = NetworkQualityConfiguration(
                 localVerbosity: .minimal,
                 remoteVerbosity: .minimal
@@ -63,8 +64,6 @@ import TwilioVideo
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
-                    builder.abortOnIceServersTimeout = true
-                    builder.iceServersTimeout = 30
                     builder.transportPolicy = .relay
                 }
             }
