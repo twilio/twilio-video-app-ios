@@ -80,7 +80,15 @@ class CommunityAuthStore: AuthStoreWriting {
     }
     
     private func configureAPI(passcode: String) {
-        let host = "video-app-\(PasscodeComponents(string: passcode).appID)-dev.twil.io"
+        guard let passcodeComponents = PasscodeComponents(string: passcode) else { return }
+        
+        var appID: String {
+            guard let appID = passcodeComponents.appID else { return "" }
+            
+            return "\(appID)-"
+        }
+        
+        let host = "video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
         api.config = APIConfig(host: host)
     }
 }

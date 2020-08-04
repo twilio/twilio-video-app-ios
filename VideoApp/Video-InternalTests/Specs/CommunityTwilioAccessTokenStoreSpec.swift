@@ -76,11 +76,11 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                     }
                 }
 
-                context("when passcode is foo") {
-                    it("is called with foo passcode") {
-                        fetchTwilioAccessToken(passcode: "foo")
+                context("when passcode is 59842367125687") {
+                    it("is called with 59842367125687 passcode") {
+                        fetchTwilioAccessToken(passcode: "59842367125687")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("59842367125687"))
                     }
                 }
 
