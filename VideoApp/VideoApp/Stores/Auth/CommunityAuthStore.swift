@@ -38,7 +38,7 @@ class CommunityAuthStore: AuthStoreWriting {
     func start() {
         guard let passcode = keychainStore.passcode else { return }
         
-        configureAPI(passcode: passcode)
+        try? configureAPI(passcode: passcode)
     }
 
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
@@ -46,7 +46,8 @@ class CommunityAuthStore: AuthStoreWriting {
     }
 
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
-        configureAPI(passcode: passcode)
+        guard (try? configureAPI(passcode: passcode)) != nil else { completion(.passcodeIncorrect); return }
+
         let request = CommunityCreateTwilioAccessTokenRequest(passcode: passcode, userIdentity: userIdentity, roomName: "")
         
         api.request(request) { [weak self] result in
@@ -79,8 +80,8 @@ class CommunityAuthStore: AuthStoreWriting {
         fatalError("Refresh ID token not supported by community auth.")
     }
     
-    private func configureAPI(passcode: String) {
-        guard let passcodeComponents = PasscodeComponents(string: passcode) else { return }
+    private func configureAPI(passcode: String) throws {
+        let passcodeComponents = try PasscodeComponents(string: passcode)
         
         var appID: String {
             guard let appID = passcodeComponents.appID else { return "" }

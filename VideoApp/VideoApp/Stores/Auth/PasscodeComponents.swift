@@ -21,7 +21,7 @@ struct PasscodeComponents {
     let appID: String?
     let serverlessID: String
     
-    init?(string: String) {
+    init(string: String) throws {
         passcode = string
         let shortPasscodeLength = 6
         let appIDLength = 4
@@ -40,7 +40,7 @@ struct PasscodeComponents {
             let serverlessIDStartIndex = string.index(string.startIndex, offsetBy: shortPasscodeLength)
             serverlessID = String(string[serverlessIDStartIndex...])
         } else {
-            return nil
+            throw AuthError.passcodeIncorrect
         }
     }
 }

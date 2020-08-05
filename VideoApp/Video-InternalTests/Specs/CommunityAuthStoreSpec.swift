@@ -128,7 +128,7 @@ class CommunityAuthStoreSpec: QuickSpec {
             
             func signIn(
                 userIdentity: String = "",
-                passcode: String = "",
+                passcode: String = "12546985321456",
                 apiResult: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
             ) {
                 mockAPI.stubbedRequestCompletionResult = apiResult
@@ -157,6 +157,18 @@ class CommunityAuthStoreSpec: QuickSpec {
                             
                             expect(mockAPI.invokedConfigSetterCount).to(equal(1))
                             expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-1749-dev.twil.io")))
+                        }
+                    }
+                }
+                
+                context("when passcode is invalid format") {
+                    context("when passcode is empty string") {
+                        it("calls completion with passcodeIncorrect error") {
+                            signIn(passcode: "")
+
+                            expect(invokedCompletionCount).to(equal(1))
+                            expect(invokedCompletionParameters?.error).to(equal(.passcodeIncorrect))
+                            expect(mockAPI.invokedRequestCount).to(equal(0))
                         }
                     }
                 }
@@ -208,21 +220,21 @@ class CommunityAuthStoreSpec: QuickSpec {
                 }
 
                 context("when result is success") {
-                    context("when passcode is foo") {
-                        it("stores foo passcode in keychain") {
-                            signIn(passcode: "foo", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                    context("when passcode is 21564852315698") {
+                        it("stores 21564852315698 passcode in keychain") {
+                            signIn(passcode: "21564852315698", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
-                            expect(mockKeychainStore.invokedPasscode).to(equal("foo"))
+                            expect(mockKeychainStore.invokedPasscode).to(equal("21564852315698"))
                         }
                     }
 
-                    context("when passcode is bar") {
-                        it("stores bar passcode in keychain") {
-                            signIn(passcode: "bar", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                    context("when passcode is 65984128742143") {
+                        it("stores 65984128742143 passcode in keychain") {
+                            signIn(passcode: "65984128742143", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
-                            expect(mockKeychainStore.invokedPasscode).to(equal("bar"))
+                            expect(mockKeychainStore.invokedPasscode).to(equal("65984128742143"))
                         }
                     }
 

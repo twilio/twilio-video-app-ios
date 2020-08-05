@@ -30,7 +30,7 @@ struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
 
     init(passcode: String, userIdentity: String, roomName: String) {
         parameters = Parameters(
-            passcode: PasscodeComponents(string: passcode)?.passcode ?? "",
+            passcode: (try? PasscodeComponents(string: passcode))?.passcode ?? "",
             userIdentity: userIdentity,
             roomName: roomName
         )
