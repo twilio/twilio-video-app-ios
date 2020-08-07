@@ -81,6 +81,8 @@ The passcode will expire after one week. Follow the steps below to sign in with 
 1. In the app tap `Settings > Sign Out`.
 1. Repeat the [steps above](#start-video-conference).
 
+⚠️ Changes were made to the Twilio Access Token Server and the app to support a new passcode format. Using old source code from this repo with a new Twilio Access Token Server may produce an error when the user enters the passcode in the app. The app will display this message: `An error occurred. Please try again.`. To fix the problem rebuild the app with the latest source code from this repo.
+
 ## Tests
 
 ### Unit Tests
