@@ -18,13 +18,11 @@ import UIKit
 
 class InternalSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = InternalSettingsViewModel(
+        let viewModel = InternalSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
             selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
             selectTopologyViewModelFactory: SelectTopologyViewModelFactory()
         )
-        return viewController
+        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
 }

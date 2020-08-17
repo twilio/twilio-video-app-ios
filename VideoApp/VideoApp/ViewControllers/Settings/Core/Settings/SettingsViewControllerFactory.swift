@@ -16,9 +16,11 @@
 
 import UIKit
 
-class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
-    func makeViewController() -> UIViewController {
-        let viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
-        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
+class SettingsViewControllerFactory {
+    func makeSettingsViewController(viewModel: SettingsViewModel) -> SettingsViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
+        viewController.viewModel = viewModel
+        return viewController
     }
 }

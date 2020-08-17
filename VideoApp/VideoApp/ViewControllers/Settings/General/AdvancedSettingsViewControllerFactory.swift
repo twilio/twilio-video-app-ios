@@ -18,9 +18,7 @@ import UIKit
 
 class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = AdvancedSettingsViewModel(
+        let viewModel = AdvancedSettingsViewModel(
             appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
             appSettingsStore: AppSettingsStore.shared,
             userStore: UserStore(appSettingsStore: AppSettingsStore.shared, authStore: AuthStore.shared),
@@ -31,6 +29,6 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
             bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory(),
             internalSettingsViewControllerFactory: InternalSettingsViewControllerFactory()
         )
-        return viewController
+        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
 }

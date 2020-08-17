@@ -248,6 +248,8 @@
 		DCACF1CF24EAEAD600D3C264 /* InternalSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1CD24EAEAD600D3C264 /* InternalSettingsViewModel.swift */; };
 		DCACF1D124EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D024EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift */; };
 		DCACF1D224EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D024EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift */; };
+		DCACF1D424EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */; };
+		DCACF1D524EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */; };
 		DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
 		DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAEBF12238331A800141D2D /* SwitchCell.swift */; };
 		DCAEBF18238331A800141D2D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAEBF13238331A800141D2D /* SwitchCell.xib */; };
@@ -592,6 +594,7 @@
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCACF1CD24EAEAD600D3C264 /* InternalSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCACF1D024EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DCAEBF12238331A800141D2D /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		DCAEBF13238331A800141D2D /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonCell.swift; sourceTree = "<group>"; };
@@ -1333,6 +1336,7 @@
 				DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */,
 				DCEDB381247489A0006AF70D /* SettingOptions.swift */,
 				DCF461582385A51700DD8FEA /* SettingsViewController.swift */,
+				DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */,
 				DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */,
 				DC4568852385D5490069BB5A /* ViewControllerFactory.swift */,
 			);
@@ -2359,6 +2363,7 @@
 				DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCACF1D424EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0E245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
 				DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
@@ -2532,6 +2537,7 @@
 				DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCACF1D524EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0F245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
 				DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
