@@ -20,20 +20,6 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     let title = "Advanced"
     var sections: [SettingsViewModelSection] {
         var sections: [SettingsViewModelSection] = []
-        
-        if appInfoStore.appInfo.target == .videoInternal {
-            sections.append(
-                .init(
-                    rows: [
-                        .optionList(
-                            title: "Environment",
-                            selectedOption: appSettingsStore.environment.title,
-                            viewModelFactory: selectEnvironmentViewModelFactory
-                        )
-                    ]
-                )
-            )
-        }
 
         sections.append(
             contentsOf: [
@@ -48,11 +34,6 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                 ),
                 .init(
                     rows: [
-                        .optionList(
-                            title: "Topology",
-                            selectedOption: appSettingsStore.topology.title,
-                            viewModelFactory: selectTopologyViewModelFactory
-                        ),
                         .optionList(
                             title: "Video Codec",
                             selectedOption: appSettingsStore.videoCodec.title,
@@ -92,41 +73,51 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                 )
             ]
         )
-        
+
+        if appInfoStore.appInfo.target == .videoInternal {
+            sections.append(
+                .init(
+                    rows: [
+                        .push(
+                            title: "Internal",
+                            viewControllerFactory: internalSettingsViewControllerFactory
+                        )
+                    ]
+                )
+            )
+        }
+
         return sections
     }
     private let appInfoStore: AppInfoStoreReading
     private let appSettingsStore: AppSettingsStoreWriting
     private let userStore: UserStoreReading
     private let editIdentityViewModalFactory: EditTextViewModelFactory
-    private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
-    private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
     private let bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
+    private let internalSettingsViewControllerFactory: InternalSettingsViewControllerFactory
 
     init(
         appInfoStore: AppInfoStoreReading,
         appSettingsStore: AppSettingsStoreWriting,
         userStore: UserStoreReading,
         editIdentityViewModalFactory: EditTextViewModelFactory,
-        selectTopologyViewModelFactory: SelectOptionViewModelFactory,
-        selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
         sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory,
         selectVideoCodecViewModelFactory: SelectOptionViewModelFactory,
-        bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
+        bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory,
+        internalSettingsViewControllerFactory: InternalSettingsViewControllerFactory
     ) {
         self.appInfoStore = appInfoStore
         self.appSettingsStore = appSettingsStore
         self.userStore = userStore
         self.editIdentityViewModalFactory = editIdentityViewModalFactory
-        self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
-        self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
         self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
         self.bandwidthProfileSettingsViewControllerFactory = bandwidthProfileSettingsViewControllerFactory
+        self.internalSettingsViewControllerFactory = internalSettingsViewControllerFactory
     }
 }
