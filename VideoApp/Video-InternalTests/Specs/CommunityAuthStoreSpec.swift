@@ -105,18 +105,18 @@ class CommunityAuthStoreSpec: QuickSpec {
                 }
             }
 
-            context("when passcode is 2546985235") {
-                it("configures API with video-app-5235-dev.twil.io host") {
-                    mockKeychainStore.stubbedPasscode = "2546985235"
+            context("when passcode is 25469852355647") {
+                it("configures API with video-app-5235-5647-dev.twil.io host") {
+                    mockKeychainStore.stubbedPasscode = "25469852355647"
                     
                     sut.start()
                     
                     expect(mockAPI.invokedConfigSetterCount).to(equal(1))
-                    expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-5235-dev.twil.io")))
+                    expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-5235-5647-dev.twil.io")))
                 }
             }
         }
-        
+
         describe("signIn with userIdentity and passcode") {
             var invokedCompletionCount = 0
             var invokedCompletionParameters: (error: AuthError?, Void)?
@@ -128,7 +128,7 @@ class CommunityAuthStoreSpec: QuickSpec {
             
             func signIn(
                 userIdentity: String = "",
-                passcode: String = "",
+                passcode: String = "12546985321456",
                 apiResult: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
             ) {
                 mockAPI.stubbedRequestCompletionResult = apiResult
@@ -139,21 +139,37 @@ class CommunityAuthStoreSpec: QuickSpec {
             }
             
             describe("configureAPI") {
-                context("when passcode is 2546985235") {
-                    it("configures API with video-app-5235-dev.twil.io host") {
-                        signIn(passcode: "2546985235")
-                        
-                        expect(mockAPI.invokedConfigSetterCount).to(equal(1))
-                        expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-5235-dev.twil.io")))
+                context("when passcode is new format") {
+                    context("when passcode is 25469852355627") {
+                        it("configures API with video-app-5235-5627-dev.twil.io host") {
+                            signIn(passcode: "25469852355627")
+                            
+                            expect(mockAPI.invokedConfigSetterCount).to(equal(1))
+                            expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-5235-5627-dev.twil.io")))
+                        }
                     }
                 }
+                
+                context("when passcode is old format") {
+                    context("when passcode is 6548521749") {
+                        it("configures API with video-app-1749-dev.twil.io host") {
+                            signIn(passcode: "6548521749")
+                            
+                            expect(mockAPI.invokedConfigSetterCount).to(equal(1))
+                            expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-1749-dev.twil.io")))
+                        }
+                    }
+                }
+                
+                context("when passcode is invalid format") {
+                    context("when passcode is empty string") {
+                        it("calls completion with passcodeIncorrect error") {
+                            signIn(passcode: "")
 
-                context("when passcode is 6548521749") {
-                    it("configures API with video-app-1749-dev.twil.io host") {
-                        signIn(passcode: "6548521749")
-                        
-                        expect(mockAPI.invokedConfigSetterCount).to(equal(1))
-                        expect(mockAPI.invokedConfig).to(equal(APIConfig(host: "video-app-1749-dev.twil.io")))
+                            expect(invokedCompletionCount).to(equal(1))
+                            expect(invokedCompletionParameters?.error).to(equal(.passcodeIncorrect))
+                            expect(mockAPI.invokedRequestCount).to(equal(0))
+                        }
                     }
                 }
             }
@@ -181,19 +197,19 @@ class CommunityAuthStoreSpec: QuickSpec {
                     }
                 }
 
-                context("when passcode is foo") {
-                    it("is called with foo passcode") {
-                        signIn(passcode: "foo")
+                context("when passcode is 15648298735694") {
+                    it("is called with 15648298735694 passcode") {
+                        signIn(passcode: "15648298735694")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("15648298735694"))
                     }
                 }
 
-                context("when passcode is bar") {
-                    it("is called with bar passcode") {
-                        signIn(passcode: "bar")
+                context("when passcode is 56487269813982") {
+                    it("is called with 56487269813982 passcode") {
+                        signIn(passcode: "56487269813982")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("56487269813982"))
                     }
                 }
 
@@ -204,21 +220,21 @@ class CommunityAuthStoreSpec: QuickSpec {
                 }
 
                 context("when result is success") {
-                    context("when passcode is foo") {
-                        it("stores foo passcode in keychain") {
-                            signIn(passcode: "foo", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                    context("when passcode is 21564852315698") {
+                        it("stores 21564852315698 passcode in keychain") {
+                            signIn(passcode: "21564852315698", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
-                            expect(mockKeychainStore.invokedPasscode).to(equal("foo"))
+                            expect(mockKeychainStore.invokedPasscode).to(equal("21564852315698"))
                         }
                     }
 
-                    context("when passcode is bar") {
-                        it("stores bar passcode in keychain") {
-                            signIn(passcode: "bar", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                    context("when passcode is 65984128742143") {
+                        it("stores 65984128742143 passcode in keychain") {
+                            signIn(passcode: "65984128742143", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
-                            expect(mockKeychainStore.invokedPasscode).to(equal("bar"))
+                            expect(mockKeychainStore.invokedPasscode).to(equal("65984128742143"))
                         }
                     }
 
