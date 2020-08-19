@@ -17,5 +17,17 @@
 import Foundation
 
 struct CommunityCreateTwilioAccessTokenResponse: Decodable {
+    enum RoomType: String, Codable { // Codable because it's persisted to track changes
+        case group
+        case groupSmall = "group-small"
+        case peerToPeer = "peer-to-peer"
+        case unknown
+
+        init(from decoder: Decoder) throws {
+            self = try RoomType(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+        }
+    }
+
     let token: String
+    let roomType: RoomType?
 }

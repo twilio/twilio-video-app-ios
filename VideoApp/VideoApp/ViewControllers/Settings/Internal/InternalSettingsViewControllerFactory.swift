@@ -21,7 +21,7 @@ class InternalSettingsViewControllerFactory: ViewControllerFactory {
         let viewModel = InternalSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
             selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
-            selectTopologyViewModelFactory: SelectTopologyViewModelFactory()
+            selectRoomTypeViewModelFactory: SelectRoomTypeViewModelFactory()
         )
         return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }

@@ -28,9 +28,9 @@ class InternalSettingsViewModel: SettingsViewModel {
                         viewModelFactory: selectEnvironmentViewModelFactory
                     ),
                     .optionList(
-                        title: "Topology",
+                        title: "Room Type",
                         selectedOption: appSettingsStore.topology.title,
-                        viewModelFactory: selectTopologyViewModelFactory
+                        viewModelFactory: selectRoomTypeViewModelFactory
                     )
                 ]
             )
@@ -38,15 +38,15 @@ class InternalSettingsViewModel: SettingsViewModel {
     }
     private let appSettingsStore: AppSettingsStoreWriting
     private let selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory
-    private let selectTopologyViewModelFactory: SelectOptionViewModelFactory
+    private let selectRoomTypeViewModelFactory: SelectOptionViewModelFactory
 
     init(
         appSettingsStore: AppSettingsStoreWriting,
         selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory,
-        selectTopologyViewModelFactory: SelectOptionViewModelFactory
+        selectRoomTypeViewModelFactory: SelectOptionViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.selectEnvironmentViewModelFactory = selectEnvironmentViewModelFactory
-        self.selectTopologyViewModelFactory = selectTopologyViewModelFactory
+        self.selectRoomTypeViewModelFactory = selectRoomTypeViewModelFactory
     }
 }

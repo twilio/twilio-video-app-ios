@@ -35,9 +35,25 @@ class CommunityTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
         let request = CommunityCreateTwilioAccessTokenRequest(
             passcode: authStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
-            roomName: roomName
+            roomName: roomName,
+            createRoom: true
         )
         
-        api.request(request) { completion($0.map { $0.token }) }
+        api.request(request) { [weak self] result in
+            guard let self = self else { return }
+            
+            if let roomType = try? result.get().roomType, roomType != self.appSettingsStore.remoteRoomType {
+                switch roomType {
+                case .group, .groupSmall, .unknown:
+                    self.appSettingsStore.videoCodec = .vp8SimulcastVGA
+                case .peerToPeer:
+                    self.appSettingsStore.videoCodec = .vp8
+                }
+                
+                self.appSettingsStore.remoteRoomType = roomType
+            }
+            
+            completion(result.map { $0.token })
+        }
     }
 }

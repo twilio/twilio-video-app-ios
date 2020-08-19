@@ -16,10 +16,10 @@
 
 import Foundation
 
-class SelectTopologyViewModelFactory: SelectOptionViewModelFactory {
+class SelectRoomTypeViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
         SelectSettingViewModel(
-            title: "Topology",
+            title: "Room Type",
             keyPath: \.topology,
             appSettingsStore: AppSettingsStore.shared
         )

@@ -330,8 +330,8 @@
 		DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
 		DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
 		DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
-		DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
-		DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */; };
+		DCEC3D1823861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift */; };
+		DCEC3D1923861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift */; };
 		DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
 		DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
 		DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31B2464C4CC006AF70D /* TrackName.swift */; };
@@ -656,7 +656,7 @@
 		DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserIdentityViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHelpers.swift; sourceTree = "<group>"; };
 		DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewModelFactory.swift; sourceTree = "<group>"; };
-		DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTopologyViewModelFactory.swift; sourceTree = "<group>"; };
+		DCEC3D1623861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB31B2464C4CC006AF70D /* TrackName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackName.swift; sourceTree = "<group>"; };
 		DCEDB31F2464CF90006AF70D /* RoomState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomState.swift; sourceTree = "<group>"; };
@@ -1248,7 +1248,7 @@
 				DCACF1D024EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift */,
 				DCACF1CD24EAEAD600D3C264 /* InternalSettingsViewModel.swift */,
 				DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */,
-				DCEC3D1623861D3700EBDEBF /* SelectTopologyViewModelFactory.swift */,
+				DCEC3D1623861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -2362,7 +2362,7 @@
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
 				DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
-				DCEC3D1823861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCEC3D1823861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */,
 				DCACF1D424EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0E245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
 				DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */,
@@ -2536,7 +2536,7 @@
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
 				DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
-				DCEC3D1923861D3700EBDEBF /* SelectTopologyViewModelFactory.swift in Sources */,
+				DCEC3D1923861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */,
 				DCACF1D524EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0F245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
 				DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */,
