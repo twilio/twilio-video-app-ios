@@ -51,7 +51,6 @@ class CommunityAuthStore: AuthStoreWriting {
         let request = CommunityCreateTwilioAccessTokenRequest(
             passcode: passcode,
             userIdentity: userIdentity,
-            roomName: "",
             createRoom: false
         )
         

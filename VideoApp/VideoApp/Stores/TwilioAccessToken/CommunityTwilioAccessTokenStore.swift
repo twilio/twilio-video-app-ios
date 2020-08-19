@@ -35,8 +35,8 @@ class CommunityTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
         let request = CommunityCreateTwilioAccessTokenRequest(
             passcode: authStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
-            roomName: roomName,
-            createRoom: true
+            createRoom: true,
+            roomName: roomName
         )
         
         api.request(request) { [weak self] result in
