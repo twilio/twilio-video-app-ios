@@ -117,6 +117,48 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                 }
                 
                 context("when result is success") {
+                    context("when roomType is different than stored setting") {
+                        beforeEach {
+                            mockAppSettingsStore.stubbedRemoteRoomType = nil
+                        }
+                        
+                        context("when roomType is group") {
+                            it("sets videoCodec setting to vp8SimulcastVGA") {
+                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .group)))
+
+                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
+                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.group))
+                            }
+                        }
+
+                        context("when roomType is groupSmall") {
+                            it("sets videoCodec setting to vp8SimulcastVGA") {
+                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .groupSmall)))
+
+                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
+                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.groupSmall))
+                            }
+                        }
+
+                        context("when roomType is unknown") {
+                            it("sets videoCodec setting to vp8SimulcastVGA") {
+                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .unknown)))
+
+                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
+                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.unknown))
+                            }
+                        }
+
+                        context("when roomType is peerToPeer") {
+                            it("sets videoCodec setting to vp8") {
+                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
+
+                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8))
+                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.peerToPeer))
+                            }
+                        }
+                    }
+                    
                     context("when token is foo") {
                         it("calls completion with foo token") {
                             fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(token: "foo")))

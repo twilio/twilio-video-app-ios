@@ -213,10 +213,10 @@ class CommunityAuthStoreSpec: QuickSpec {
                     }
                 }
 
-                it("is called with empty roomName") {
+                it("is called with createRoom set to false") {
                     signIn()
                     
-                    expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal(""))
+                    expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.createRoom).to(beFalse())
                 }
 
                 context("when result is success") {

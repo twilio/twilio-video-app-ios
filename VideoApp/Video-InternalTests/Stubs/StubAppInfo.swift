@@ -16,8 +16,13 @@
 
 @testable import VideoApp
 
-extension CommunityCreateTwilioAccessTokenResponse {
-    static func stub(token: String = "", roomType: RoomType = .group) -> CommunityCreateTwilioAccessTokenResponse {
-        .init(token: token, roomType: roomType)
+extension AppInfo {
+    static func stub(
+        appCenterAppSecret: String = "",
+        version: String = "",
+        build: String = "",
+        target: Target = .videoInternal
+    ) -> AppInfo {
+        .init(appCenterAppSecret: appCenterAppSecret, version: version, build: build, target: target)
     }
 }

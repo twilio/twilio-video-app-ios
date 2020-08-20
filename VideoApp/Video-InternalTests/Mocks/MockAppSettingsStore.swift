@@ -414,6 +414,28 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
+    var invokedRemoteRoomTypeSetter = false
+    var invokedRemoteRoomTypeSetterCount = 0
+    var invokedRemoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
+    var invokedRemoteRoomTypeList = [CommunityCreateTwilioAccessTokenResponse.RoomType?]()
+    var invokedRemoteRoomTypeGetter = false
+    var invokedRemoteRoomTypeGetterCount = 0
+    var stubbedRemoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType!
+
+    var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType? {
+        set {
+            invokedRemoteRoomTypeSetter = true
+            invokedRemoteRoomTypeSetterCount += 1
+            invokedRemoteRoomType = newValue
+            invokedRemoteRoomTypeList.append(newValue)
+        }
+        get {
+            invokedRemoteRoomTypeGetter = true
+            invokedRemoteRoomTypeGetterCount += 1
+            return stubbedRemoteRoomType
+        }
+    }
+
     var invokedReset = false
     var invokedResetCount = 0
 
