@@ -20,7 +20,8 @@ struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
     struct Parameters: Encodable {
         let passcode: String
         let userIdentity: String
-        let roomName: String
+        let roomName: String?
+        let createRoom: Bool
     }
 
     let path = "token"
@@ -28,11 +29,12 @@ struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
     let parameters: Parameters
     let responseType = CommunityCreateTwilioAccessTokenResponse.self
 
-    init(passcode: String, userIdentity: String, roomName: String) {
+    init(passcode: String, userIdentity: String, createRoom: Bool, roomName: String? = nil) {
         parameters = Parameters(
             passcode: (try? PasscodeComponents(string: passcode))?.passcode ?? "",
             userIdentity: userIdentity,
-            roomName: roomName
+            roomName: roomName,
+            createRoom: createRoom
         )
     }
 }

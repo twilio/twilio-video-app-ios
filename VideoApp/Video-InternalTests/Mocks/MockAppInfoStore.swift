@@ -14,11 +14,17 @@
 //  limitations under the License.
 //
 
-import UIKit
+@testable import VideoApp
 
-class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
-    func makeViewController() -> UIViewController {
-        let viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
-        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
+class MockAppInfoStore: AppInfoStoreReading {
+
+    var invokedAppInfoGetter = false
+    var invokedAppInfoGetterCount = 0
+    var stubbedAppInfo: AppInfo!
+
+    var appInfo: AppInfo {
+        invokedAppInfoGetter = true
+        invokedAppInfoGetterCount += 1
+        return stubbedAppInfo
     }
 }

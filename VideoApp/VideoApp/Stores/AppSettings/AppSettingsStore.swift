@@ -35,12 +35,13 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var lowRenderDimensions: VideoDimensionsName { get set }
     var standardRenderDimensions: VideoDimensionsName { get set }
     var highRenderDimensions: VideoDimensionsName { get set }
+    var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType? { get set }
     func reset()
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
-    @Storage(key: makeKey("videoCodec"), defaultValue: VideoCodec.vp8SimulcastVGA) var videoCodec: VideoCodec
+    @Storage(key: makeKey("videoCodec"), defaultValue: defaultVideoCodec) var videoCodec: VideoCodec
     @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
@@ -57,16 +58,24 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("lowRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var lowRenderDimensions: VideoDimensionsName
     @Storage(key: makeKey("standardRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var standardRenderDimensions: VideoDimensionsName
     @Storage(key: makeKey("highRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var highRenderDimensions: VideoDimensionsName
+    @Storage(key: makeKey("remoteRoomType"), defaultValue: nil) var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
 
     static var shared: AppSettingsStoreWriting = AppSettingsStore(
         notificationCenter: NotificationCenter.default,
         queue: DispatchQueue.main,
         userDefaults: UserDefaults.standard
     )
+    static var appInfoStore: AppInfoStoreReading = AppInfoStoreFactory().makeAppInfoStore()
     private let notificationCenter: NotificationCenterProtocol
     private let queue: DispatchQueueProtocol
     private let userDefaults: UserDefaultsProtocol
-    
+    private static var defaultVideoCodec: VideoCodec {
+        switch appInfoStore.appInfo.target {
+        case .videoInternal: return .vp8SimulcastVGA
+        case .videoCommunity: return .vp8
+        }
+    }
+
     private static func makeKey(_ appSetting: String) -> String {
         return appSetting + "AppSetting"
     }

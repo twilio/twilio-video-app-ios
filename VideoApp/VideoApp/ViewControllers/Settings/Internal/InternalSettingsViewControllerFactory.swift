@@ -16,9 +16,13 @@
 
 import UIKit
 
-class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
+class InternalSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
-        let viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
+        let viewModel = InternalSettingsViewModel(
+            appSettingsStore: AppSettingsStore.shared,
+            selectEnvironmentViewModelFactory: SelectEnvironmentViewModelFactory(),
+            selectRoomTypeViewModelFactory: SelectRoomTypeViewModelFactory()
+        )
         return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
 }

@@ -18,9 +18,7 @@ import UIKit
 
 class DeveloperSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = DeveloperSettingsViewModel(crashReportStore: CrashReportStore.shared)
-        return viewController
+        let viewModel = DeveloperSettingsViewModel(crashReportStore: CrashReportStore.shared)
+        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
 }

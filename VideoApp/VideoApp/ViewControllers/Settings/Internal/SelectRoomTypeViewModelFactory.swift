@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2020 Twilio, Inc.
+//  Copyright (C) 2019 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,11 +14,14 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-class SDKLogLevelSettingsViewControllerFactory: ViewControllerFactory {
-    func makeViewController() -> UIViewController {
-        let viewModel = SDKLogLevelSettingsViewModel(sdkLogLevelOptionListFactory: SDKLogLevelOptionListFactory())
-        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
+class SelectRoomTypeViewModelFactory: SelectOptionViewModelFactory {
+    func makeSelectOptionViewModel() -> SelectOptionViewModel {
+        SelectSettingViewModel(
+            title: "Room Type",
+            keyPath: \.topology,
+            appSettingsStore: AppSettingsStore.shared
+        )
     }
 }

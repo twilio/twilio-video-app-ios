@@ -48,7 +48,11 @@ class CommunityAuthStore: AuthStoreWriting {
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
         guard (try? configureAPI(passcode: passcode)) != nil else { completion(.passcodeIncorrect); return }
 
-        let request = CommunityCreateTwilioAccessTokenRequest(passcode: passcode, userIdentity: userIdentity, roomName: "")
+        let request = CommunityCreateTwilioAccessTokenRequest(
+            passcode: passcode,
+            userIdentity: userIdentity,
+            createRoom: false
+        )
         
         api.request(request) { [weak self] result in
             guard let self = self else { return }

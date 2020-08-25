@@ -16,8 +16,17 @@
 
 @testable import VideoApp
 
-extension CommunityCreateTwilioAccessTokenResponse {
-    static func stub(token: String = "", roomType: RoomType = .group) -> CommunityCreateTwilioAccessTokenResponse {
-        .init(token: token, roomType: roomType)
+class MockUserDefaults: UserDefaultsProtocol {
+
+    var invokedRemovePersistentDomain = false
+    var invokedRemovePersistentDomainCount = 0
+    var invokedRemovePersistentDomainParameters: (domainName: String, Void)?
+    var invokedRemovePersistentDomainParametersList = [(domainName: String, Void)]()
+
+    func removePersistentDomain(forName domainName: String) {
+        invokedRemovePersistentDomain = true
+        invokedRemovePersistentDomainCount += 1
+        invokedRemovePersistentDomainParameters = (domainName, ())
+        invokedRemovePersistentDomainParametersList.append((domainName, ()))
     }
 }

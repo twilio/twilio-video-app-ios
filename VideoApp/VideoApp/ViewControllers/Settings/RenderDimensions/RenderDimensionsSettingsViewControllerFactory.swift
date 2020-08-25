@@ -18,14 +18,12 @@ import UIKit
 
 class RenderDimensionsSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = RenderDimensionsSettingsViewModel(
+        let viewModel = RenderDimensionsSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
             selectLowRenderDimensionsViewModelFactory: SelectLowRenderDimensionsViewModelFactory(),
             selectStandardRenderDimensionsViewModelFactory: SelectStandardRenderDimensionsViewModelFactory(),
             selectHighRenderDimensionsViewModelFactory: SelectHighRenderDimensionsViewModelFactory()
         )
-        return viewController
+        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
 }

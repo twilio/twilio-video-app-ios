@@ -18,9 +18,7 @@ import UIKit
 
 class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
     func makeViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsController") as! SettingsViewController
-        viewController.viewModel = BandwidthProfileSettingsViewModel(
+        let viewModel = BandwidthProfileSettingsViewModel(
             appSettingsStore: AppSettingsStore.shared,
             selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory(),
             editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory(),
@@ -29,6 +27,6 @@ class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
             selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory(),
             renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory()
         )
-        return viewController
+        return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
 }

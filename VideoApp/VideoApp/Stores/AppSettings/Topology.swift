@@ -23,7 +23,7 @@ enum Topology: String, SettingOptions {
     var title: String {
         switch self {
         case .group: return "Group"
-        case .peerToPeer: return "Peer-to-peer"
+        case .peerToPeer: return "Peer-to-Peer"
         }
     }
 }

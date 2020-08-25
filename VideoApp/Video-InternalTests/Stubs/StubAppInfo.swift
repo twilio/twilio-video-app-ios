@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -14,14 +14,15 @@
 //  limitations under the License.
 //
 
-import Foundation
+@testable import VideoApp
 
-class SelectTopologyViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectSettingViewModel(
-            title: "Topology",
-            keyPath: \.topology,
-            appSettingsStore: AppSettingsStore.shared
-        )
+extension AppInfo {
+    static func stub(
+        appCenterAppSecret: String = "",
+        version: String = "",
+        build: String = "",
+        target: Target = .videoInternal
+    ) -> AppInfo {
+        .init(appCenterAppSecret: appCenterAppSecret, version: version, build: build, target: target)
     }
 }
