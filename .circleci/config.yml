@@ -10,7 +10,7 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "11.6.0"
+      xcode: "12.0.0"
 
 commands:
   setup:
