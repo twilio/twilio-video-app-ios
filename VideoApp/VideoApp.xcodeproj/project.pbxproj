@@ -228,6 +228,10 @@
 		DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */; };
 		DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
 		DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E5224638A9C00E4B079 /* ShowError.swift */; };
+		DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C77292500063200AC68FD /* RemoteConfigStore.swift */; };
+		DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C77292500063200AC68FD /* RemoteConfigStore.swift */; };
+		DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */; };
+		DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */; };
 		DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
@@ -579,6 +583,8 @@
 		DC9A5E462463345F00E4B079 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		DC9A5E4A2463575F00E4B079 /* UserStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreFactory.swift; sourceTree = "<group>"; };
 		DC9A5E5224638A9C00E4B079 /* ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
+		DC9C77292500063200AC68FD /* RemoteConfigStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStore.swift; sourceTree = "<group>"; };
+		DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStoreFactory.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* InternalAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -1217,6 +1223,15 @@
 			path = Mic;
 			sourceTree = "<group>";
 		};
+		DC9C77282500061900AC68FD /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C77292500063200AC68FD /* RemoteConfigStore.swift */,
+				DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
 		DCA53946235F534400CA26FB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -1263,6 +1278,7 @@
 				DC76FCFF241054A3001B2FFC /* EnvironmentVariable */,
 				DCEDB3342465117E006AF70D /* MainParticipant */,
 				DCEDB33324651140006AF70D /* Participants */,
+				DC9C77282500061900AC68FD /* RemoteConfig */,
 				DCDCD370241929C6004A30FC /* TwilioAccessToken */,
 				DC04468F238F1E2D0072F597 /* User */,
 				DCD7675423DF551B00A2939C /* UserActivity */,
@@ -2240,6 +2256,7 @@
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEDB3902475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
+				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2349,6 +2366,7 @@
 				DC9A5E1E2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DC3C32D12417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
+				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
 				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */,
@@ -2414,6 +2432,7 @@
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEDB3912475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
+				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2523,6 +2542,7 @@
 				DC9A5E1F2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DC3C32D22417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
+				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
 				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */,

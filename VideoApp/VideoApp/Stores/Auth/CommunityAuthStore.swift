@@ -24,15 +24,18 @@ class CommunityAuthStore: AuthStoreWriting {
     private let api: APIConfiguring & APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let keychainStore: KeychainStoreWriting
+    private let remoteConfigStore: RemoteConfigStore
 
     init(
         api: APIConfiguring & APIRequesting,
         appSettingsStore: AppSettingsStoreWriting,
-        keychainStore: KeychainStoreWriting
+        keychainStore: KeychainStoreWriting,
+        remoteConfigStore: RemoteConfigStore
     ) {
         self.api = api
         self.appSettingsStore = appSettingsStore
         self.keychainStore = keychainStore
+        self.remoteConfigStore = remoteConfigStore
     }
 
     func start() {
@@ -58,9 +61,14 @@ class CommunityAuthStore: AuthStoreWriting {
             guard let self = self else { return }
             
             switch result {
-            case .success:
+            case let .success(response):
                 self.keychainStore.passcode = passcode
                 self.appSettingsStore.userIdentity = userIdentity
+                
+                if let roomType = response.roomType {
+                    self.remoteConfigStore.roomType = roomType
+                }
+                
                 completion(nil)
             case let .failure(error):
                 self.api.config = nil

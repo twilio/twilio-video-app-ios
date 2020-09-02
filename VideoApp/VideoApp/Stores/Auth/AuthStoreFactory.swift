@@ -27,7 +27,8 @@ class AuthStoreFactory {
             return CommunityAuthStore(
                 api: API.shared,
                 appSettingsStore: AppSettingsStore.shared,
-                keychainStore: KeychainStore()
+                keychainStore: KeychainStore(),
+                remoteConfigStore: RemoteConfigStoreFactory().makeRemoteConfigStore()
             )
         }
     }

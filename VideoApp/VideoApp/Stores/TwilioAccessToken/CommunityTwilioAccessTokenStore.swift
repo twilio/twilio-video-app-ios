@@ -20,15 +20,18 @@ class CommunityTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
     private let api: APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreReading
+    private let remoteConfigStore: RemoteConfigStoreWriting
 
     init(
         api: APIRequesting,
         appSettingsStore: AppSettingsStoreWriting,
-        authStore: AuthStoreReading
+        authStore: AuthStoreReading,
+        remoteConfigStore: RemoteConfigStoreWriting
     ) {
         self.api = api
         self.appSettingsStore = appSettingsStore
         self.authStore = authStore
+        self.remoteConfigStore = remoteConfigStore
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
@@ -42,15 +45,8 @@ class CommunityTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
         api.request(request) { [weak self] result in
             guard let self = self else { return }
             
-            if let roomType = try? result.get().roomType, roomType != self.appSettingsStore.remoteRoomType {
-                switch roomType {
-                case .group, .groupSmall, .unknown:
-                    self.appSettingsStore.videoCodec = .vp8SimulcastVGA
-                case .peerToPeer:
-                    self.appSettingsStore.videoCodec = .vp8
-                }
-                
-                self.appSettingsStore.remoteRoomType = roomType
+            if let roomType = try? result.get().roomType {
+                self.remoteConfigStore.roomType = roomType
             }
             
             completion(result.map { $0.token })
