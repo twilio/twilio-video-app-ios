@@ -24,13 +24,13 @@ class CommunityAuthStore: AuthStoreWriting {
     private let api: APIConfiguring & APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let keychainStore: KeychainStoreWriting
-    private let remoteConfigStore: RemoteConfigStore
+    private let remoteConfigStore: RemoteConfigStoreWriting
 
     init(
         api: APIConfiguring & APIRequesting,
         appSettingsStore: AppSettingsStoreWriting,
         keychainStore: KeychainStoreWriting,
-        remoteConfigStore: RemoteConfigStore
+        remoteConfigStore: RemoteConfigStoreWriting
     ) {
         self.api = api
         self.appSettingsStore = appSettingsStore

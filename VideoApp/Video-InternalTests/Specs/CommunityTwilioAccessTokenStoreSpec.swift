@@ -25,15 +25,18 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
         var mockAPI: MockAPI!
         var mockAppSettingsStore: MockAppSettingsStore!
         var mockAuthStore: MockAuthStore!
+        var mockRemoteConfigStore: MockRemoteConfigStore!
 
         beforeEach {
             mockAPI = MockAPI()
             mockAppSettingsStore = MockAppSettingsStore()
             mockAuthStore = MockAuthStore()
+            mockRemoteConfigStore = MockRemoteConfigStore()
             sut = CommunityTwilioAccessTokenStore(
                 api: mockAPI,
                 appSettingsStore: mockAppSettingsStore,
-                authStore: mockAuthStore
+                authStore: mockAuthStore,
+                remoteConfigStore: mockRemoteConfigStore
             )
         }
         
@@ -117,45 +120,20 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                 }
                 
                 context("when result is success") {
-                    context("when roomType is different than stored setting") {
-                        beforeEach {
-                            mockAppSettingsStore.stubbedRemoteRoomType = nil
+                    context("when roomType is nil") {
+                        it("does not update remoteConfigStore") {
+                            fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: nil)))
+
+                            expect(mockRemoteConfigStore.invokedRoomTypeSetter).to(beFalse())
                         }
-                        
-                        context("when roomType is group") {
-                            it("sets videoCodec setting to vp8SimulcastVGA") {
-                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .group)))
+                    }
+                    
+                    context("when roomType is peerToPeer") {
+                        it("updates remoteConfigStore") {
+                            fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
 
-                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
-                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.group))
-                            }
-                        }
-
-                        context("when roomType is groupSmall") {
-                            it("sets videoCodec setting to vp8SimulcastVGA") {
-                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .groupSmall)))
-
-                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
-                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.groupSmall))
-                            }
-                        }
-
-                        context("when roomType is unknown") {
-                            it("sets videoCodec setting to vp8SimulcastVGA") {
-                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .unknown)))
-
-                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
-                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.unknown))
-                            }
-                        }
-
-                        context("when roomType is peerToPeer") {
-                            it("sets videoCodec setting to vp8") {
-                                fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
-
-                                expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8))
-                                expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.peerToPeer))
-                            }
+                            expect(mockRemoteConfigStore.invokedRoomTypeSetterCount).to(equal(1))
+                            expect(mockRemoteConfigStore.invokedRoomType).to(equal(.peerToPeer))
                         }
                     }
                     
