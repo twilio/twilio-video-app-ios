@@ -26,14 +26,28 @@ protocol RemoteConfigStoreWriting: RemoteConfigStoreReading {
 
 class RemoteConfigStore: RemoteConfigStoreWriting {
     private let appSettingsStore: AppSettingsStoreWriting
+    private let appInfoStore: AppInfoStoreReading
     
-    init(appSettingsStore: AppSettingsStoreWriting) {
+    init(appSettingsStore: AppSettingsStoreWriting, appInfoStore: AppInfoStoreReading) {
         self.appSettingsStore = appSettingsStore
+        self.appInfoStore = appInfoStore
     }
     
     var roomType: CommunityCreateTwilioAccessTokenResponse.RoomType {
         get {
-            appSettingsStore.remoteRoomType ?? .peerToPeer
+            guard let remoteRoomType = appSettingsStore.remoteRoomType else {
+                switch appInfoStore.appInfo.target {
+                case .videoCommunity:
+                    return .peerToPeer
+                case .videoInternal:
+                    switch appSettingsStore.topology {
+                    case .group: return .group
+                    case .peerToPeer: return .peerToPeer
+                    }
+                }
+            }
+            
+            return remoteRoomType
         }
         set {
             guard newValue != appSettingsStore.remoteRoomType else { return }

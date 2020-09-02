@@ -18,6 +18,9 @@ import Foundation
 
 class RemoteConfigStoreFactory {
     func makeRemoteConfigStore() -> RemoteConfigStore {
-        RemoteConfigStore(appSettingsStore: AppSettingsStore.shared)
+        RemoteConfigStore(
+            appSettingsStore: AppSettingsStore.shared,
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore()
+        )
     }
 }

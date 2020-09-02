@@ -23,17 +23,25 @@ struct CameraConfig {
 
 class CameraConfigFactory {
     private let appSettingsStore: AppSettingsStoreWriting = AppSettingsStore.shared
+    private let remoteConfigStore: RemoteConfigStoreReading = RemoteConfigStoreFactory().makeRemoteConfigStore()
     
     func makeCameraConfigFactory(captureDevice: AVCaptureDevice) -> CameraConfig {
         var targetSize: CMVideoDimensions {
+            // 1024 x 768 squarish crop (1.25:1) on most iPhones. 1280 x 720 squarish crop (1.25:1) on the iPhone X
+            // and models that don't have 1024 x 768.
+            let hdDimensions = CMVideoDimensions(width: 900, height: 720)
+            
+            switch remoteConfigStore.roomType {
+            case .peerToPeer: return hdDimensions
+            case .group, .groupSmall, .unknown: break
+            }
+            
             switch appSettingsStore.videoCodec {
             case .h264, .vp8, .vp8SimulcastVGA:
                 // 640 x 480 squarish crop (1.13:1)
                 return CMVideoDimensions(width: 544, height: 480)
             case .vp8SimulcastHD:
-                // 1024 x 768 squarish crop (1.25:1) on most iPhones. 1280 x 720 squarish crop (1.25:1) on the iPhone X
-                // and models that don't have 1024 x 768.
-                return CMVideoDimensions(width: 900, height: 720)
+                return hdDimensions
             }
         }
         var frameRate: UInt {
