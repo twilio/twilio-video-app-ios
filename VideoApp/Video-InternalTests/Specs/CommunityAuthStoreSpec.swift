@@ -26,16 +26,20 @@ class CommunityAuthStoreSpec: QuickSpec {
         var mockAppSettingsStore: MockAppSettingsStore!
         var mockKeychainStore: MockKeychainStore!
         var mockDelegate: MockAuthStoreWritingDelgate!
+        var mockRemoteConfigStore: MockRemoteConfigStore!
 
         beforeEach {
             mockAPI = MockAPI()
             mockAppSettingsStore = MockAppSettingsStore()
             mockKeychainStore = MockKeychainStore()
             mockDelegate = MockAuthStoreWritingDelgate()
+            mockRemoteConfigStore = MockRemoteConfigStore()
+            
             sut = CommunityAuthStore(
                 api: mockAPI,
                 appSettingsStore: mockAppSettingsStore,
-                keychainStore: mockKeychainStore
+                keychainStore: mockKeychainStore,
+                remoteConfigStore: mockRemoteConfigStore
             )
             sut.delegate = mockDelegate
         }
@@ -253,6 +257,23 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("bar"))
+                        }
+                    }
+
+                    context("when roomType is nil") {
+                        it("does not update remoteConfigStore") {
+                            signIn(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: nil)))
+
+                            expect(mockRemoteConfigStore.invokedRoomTypeSetter).to(beFalse())
+                        }
+                    }
+                    
+                    context("when roomType is peerToPeer") {
+                        it("updates remoteConfigStore") {
+                            signIn(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
+
+                            expect(mockRemoteConfigStore.invokedRoomTypeSetterCount).to(equal(1))
+                            expect(mockRemoteConfigStore.invokedRoomType).to(equal(.peerToPeer))
                         }
                     }
 

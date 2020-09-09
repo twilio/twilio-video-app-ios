@@ -29,7 +29,8 @@ class TwilioAccessTokenStoreFactory {
             return CommunityTwilioAccessTokenStore(
                 api: API.shared,
                 appSettingsStore: AppSettingsStore.shared,
-                authStore: AuthStore.shared
+                authStore: AuthStore.shared,
+                remoteConfigStore: RemoteConfigStoreFactory().makeRemoteConfigStore()
             )
         }
     }

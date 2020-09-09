@@ -14,10 +14,13 @@
 //  limitations under the License.
 //
 
-@testable import VideoApp
+import Foundation
 
-extension CommunityCreateTwilioAccessTokenResponse {
-    static func stub(token: String = "", roomType: RoomType? = nil) -> CommunityCreateTwilioAccessTokenResponse {
-        .init(token: token, roomType: roomType)
+class RemoteConfigStoreFactory {
+    func makeRemoteConfigStore() -> RemoteConfigStore {
+        RemoteConfigStore(
+            appSettingsStore: AppSettingsStore.shared,
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore()
+        )
     }
 }
