@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1100"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4B0012221FBA52C4004A587E"
+            BuildableName = "Video-Internal.app"
+            BlueprintName = "Video-Internal"
+            ReferencedContainer = "container:VideoApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <TestPlans>
          <TestPlanReference
             reference = "container:Video-InternalTests/Plans/Unit.xctestplan"
