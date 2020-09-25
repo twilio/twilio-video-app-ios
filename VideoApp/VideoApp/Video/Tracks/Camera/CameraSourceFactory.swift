@@ -17,7 +17,7 @@
 import TwilioVideo
 
 class CameraSourceFactory {
-    private let appSettingsStore: AppSettingsStoreWriting = AppSettingsStore.shared
+    private let remoteConfigStore: RemoteConfigStoreReading = RemoteConfigStoreFactory().makeRemoteConfigStore()
     
     func makeCameraSource() -> CameraSource? {
         let options = CameraSourceOptions() { builder in
@@ -25,11 +25,11 @@ class CameraSourceFactory {
                 builder.orientationTracker = UserInterfaceTracker(scene: UIApplication.shared.keyWindow!.windowScene!)
             }
             
-            switch self.appSettingsStore.topology {
-            case .group:
+            switch self.remoteConfigStore.roomType {
+            case .group, .groupSmall:
                 // Take a best guess and remove rotation tags using hardware acceleration
                 builder.rotationTags = .remove
-            case .peerToPeer:
+            case .peerToPeer, .go, .unknown:
                 break
             }
         }

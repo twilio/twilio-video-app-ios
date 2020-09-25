@@ -18,6 +18,7 @@ import Foundation
 
 struct CommunityCreateTwilioAccessTokenResponse: Decodable {
     enum RoomType: String, Codable { // Codable because it's persisted to track changes
+        case go = "go"
         case group
         case groupSmall = "group-small"
         case peerToPeer = "peer-to-peer"
