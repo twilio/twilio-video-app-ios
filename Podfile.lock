@@ -108,7 +108,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - Nimble (8.0.5)
   - Quick (2.2.0)
-  - TwilioVideo (3.7.0)
+  - TwilioVideo (3.7.1)
 
 DEPENDENCIES:
   - Alamofire (= 5.0.2)
@@ -157,8 +157,8 @@ SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
-  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
+  Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   Firebase: 0219bb4782eb1406f1b9b0628a2e625484ce910d
   FirebaseAnalytics: f68b9f3f1241385129ae0a83b63627fc420c05e5
   FirebaseAuth: 831577b184ecaba38bc886768c1c22a450cc44e3
@@ -180,7 +180,7 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  TwilioVideo: ac463041934869f6e3794f22e57fbe8db1f62814
+  TwilioVideo: 807526f68043a11f0e17e5c26ef0f0f73d5678e4
 
 PODFILE CHECKSUM: 19a0dd4f754c6739c446d716e779a5087e5d095c
 
