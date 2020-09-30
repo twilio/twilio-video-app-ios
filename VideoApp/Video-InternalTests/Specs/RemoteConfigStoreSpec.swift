@@ -127,6 +127,15 @@ class RemoteConfigStoreSpec: QuickSpec {
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.peerToPeer))
                         }
                     }
+
+                    context("when newValue is go") {
+                        it("sets videoCodec setting to vp8") {
+                            sut.roomType = .go
+
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8))
+                            expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.go))
+                        }
+                    }
                 }
                 
                 context("when newValue is not different from setting") {

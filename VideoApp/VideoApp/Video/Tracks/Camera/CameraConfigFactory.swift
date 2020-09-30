@@ -32,7 +32,7 @@ class CameraConfigFactory {
             let hdDimensions = CMVideoDimensions(width: 900, height: 720)
             
             switch remoteConfigStore.roomType {
-            case .peerToPeer: return hdDimensions
+            case .peerToPeer, .go: return hdDimensions
             case .group, .groupSmall, .unknown: break
             }
             
