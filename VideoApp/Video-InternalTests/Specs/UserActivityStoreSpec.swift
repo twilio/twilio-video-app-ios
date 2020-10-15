@@ -45,7 +45,7 @@ class UserActivityStoreSpec: QuickSpec {
                     continueUserActivity(url: "https://twilio-video-react.appspot.com/room/foo")
 
                     expect(mockDeepLinkStore.invokedCacheCount).to(equal(1))
-                    expect(mockDeepLinkStore.invokedCacheParameters?.deepLink).to(equal(.room(roomName: "foo")))
+                    expect(mockDeepLinkStore.invokedCacheParameters?.deepLink).to(equal(DeepLink.room(roomName: "foo")))
                 }
                 
                 it("returns true") {

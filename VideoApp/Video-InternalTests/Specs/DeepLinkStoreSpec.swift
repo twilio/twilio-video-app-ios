@@ -32,7 +32,7 @@ class DeepLinkStoreSpec: QuickSpec {
                 it("sets deepLink to foo") {
                     sut.cache(deepLink: .room(roomName: "foo"))
                     
-                    expect(sut.deepLink).to(equal(.room(roomName: "foo")))
+                    expect(sut.deepLink).to(equal(DeepLink.room(roomName: "foo")))
                 }
             }
 
@@ -40,7 +40,7 @@ class DeepLinkStoreSpec: QuickSpec {
                 it("sets deepLink to bar") {
                     sut.cache(deepLink: .room(roomName: "bar"))
                     
-                    expect(sut.deepLink).to(equal(.room(roomName: "bar")))
+                    expect(sut.deepLink).to(equal(DeepLink.room(roomName: "bar")))
                 }
             }
             
@@ -75,7 +75,7 @@ class DeepLinkStoreSpec: QuickSpec {
                 }
                 
                 it("returns foo") {
-                    expect(sut.consumeDeepLink()).to(equal(.room(roomName: "foo")))
+                    expect(sut.consumeDeepLink()).to(equal(DeepLink.room(roomName: "foo")))
                 }
             }
         }
