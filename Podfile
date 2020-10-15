@@ -37,7 +37,7 @@ target 'Video-InternalUITests' do
   pod 'Nimble', '~> 9'
 end
 
-# https://github.com/CocoaPods/CocoaPods/issues/9884
+# Fix lots of build warnings: https://github.com/CocoaPods/CocoaPods/issues/9884
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
