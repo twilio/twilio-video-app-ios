@@ -49,7 +49,9 @@ class InternalTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
 private extension InternalCreateTwilioAccessTokenRequest.Parameters.Topology {
     init(topology: Topology) {
         switch topology {
+        case .go: self = .go
         case .group: self = .group
+        case .groupSmall: self = .groupSmall
         case .peerToPeer: self = .peerToPeer
         }
     }

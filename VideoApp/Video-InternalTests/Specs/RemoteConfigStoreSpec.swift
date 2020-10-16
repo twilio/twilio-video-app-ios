@@ -66,12 +66,28 @@ class RemoteConfigStoreSpec: QuickSpec {
                         beforeEach {
                             mockAppInfoStore.stubbedAppInfo = .stub(target: .videoInternal)
                         }
-                        
+
+                        context("when topology setting is go") {
+                            it("returns go") {
+                                mockAppSettingsStore.stubbedTopology = .go
+
+                                expect(sut.roomType).to(equal(.go))
+                            }
+                        }
+
                         context("when topology setting is group") {
                             it("returns group") {
                                 mockAppSettingsStore.stubbedTopology = .group
 
                                 expect(sut.roomType).to(equal(.group))
+                            }
+                        }
+
+                        context("when topology setting is groupSmall") {
+                            it("returns groupSmall") {
+                                mockAppSettingsStore.stubbedTopology = .groupSmall
+
+                                expect(sut.roomType).to(equal(.groupSmall))
                             }
                         }
                         

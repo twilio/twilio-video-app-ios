@@ -120,6 +120,14 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                     }
                 }
 
+                context("when topology is go") {
+                    it("is called with go topology") {
+                        fetchTwilioAccessToken(topology: .go)
+
+                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.go))
+                    }
+                }
+
                 context("when topology is group") {
                     it("is called with group topology") {
                         fetchTwilioAccessToken(topology: .group)
@@ -128,6 +136,14 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                     }
                 }
 
+                context("when topology is groupSmall") {
+                    it("is called with groupSmall topology") {
+                        fetchTwilioAccessToken(topology: .groupSmall)
+
+                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.groupSmall))
+                    }
+                }
+                
                 context("when topology is peerToPeer") {
                     it("is called with peerToPeer topology") {
                         fetchTwilioAccessToken(topology: .peerToPeer)
@@ -135,7 +151,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                         expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.peerToPeer))
                     }
                 }
-
+                
                 context("when result is success") {
                     context("when response is foo") {
                         it("calls completion with foo token") {
