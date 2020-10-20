@@ -14,8 +14,7 @@
 //  limitations under the License.
 //
 
-import Fabric
-import Crashlytics
+import FirebaseCrashlytics
 
 protocol CrashReportStoreWriting: LaunchStore {
     func crash()
@@ -24,7 +23,6 @@ protocol CrashReportStoreWriting: LaunchStore {
 class CrashReportStore: NSObject, CrashReportStoreWriting {
     static let shared: CrashReportStoreWriting = CrashReportStore(appInfoStore: AppInfoStoreFactory().makeAppInfoStore())
     private let appInfoStore: AppInfoStoreReading
-    private var crashlytics: Crashlytics?
     
     init(appInfoStore: AppInfoStoreReading) {
         self.appInfoStore = appInfoStore
@@ -33,14 +31,12 @@ class CrashReportStore: NSObject, CrashReportStoreWriting {
     func start() {
         guard appInfoStore.appInfo.target == .videoInternal else { return }
         
-        // https://firebase.googleblog.com/2019/03/crashlytics-versions.html
         #if !DEBUG
-        Fabric.with([Crashlytics.self])
-        crashlytics = Crashlytics.sharedInstance()
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
         #endif
     }
     
     func crash() {
-        crashlytics?.crash()
+        fatalError()
     }
 }

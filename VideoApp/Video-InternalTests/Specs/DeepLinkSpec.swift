@@ -24,13 +24,13 @@ class DeepLinkSpec: QuickSpec {
         describe("init") {
             context("when path is /room/foo") {
                 it("returns room with foo roomName") {
-                    expect(DeepLink(url: URL(string: "https://www.twilio.com/room/foo")!)).to(equal(.room(roomName: "foo")))
+                    expect(DeepLink(url: URL(string: "https://www.twilio.com/room/foo")!)).to(equal(DeepLink.room(roomName: "foo")))
                 }
             }
 
             context("when path is /room/bar") {
                 it("returns room with bar roomName") {
-                    expect(DeepLink(url: URL(string: "https://www.twilio.com/room/bar")!)).to(equal(.room(roomName: "bar")))
+                    expect(DeepLink(url: URL(string: "https://www.twilio.com/room/bar")!)).to(equal(DeepLink.room(roomName: "bar")))
                 }
             }
 
