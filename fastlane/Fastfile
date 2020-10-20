@@ -5,6 +5,7 @@ default_platform :ios
 platform :ios do
   before_all do
     cocoapods
+    ensure_git_status_clean # Make sure Podfile.lock wasn't modified
   end
 
   lane :test do |options|
