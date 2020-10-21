@@ -142,7 +142,7 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(token: "foo")))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.success("foo")))
+                            expect(invokedCompletionParameters!.result).to(equal(.success("foo")))
                         }
                     }
                     
@@ -151,7 +151,7 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(token: "bar")))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.success("bar")))
+                            expect(invokedCompletionParameters!.result).to(equal(.success("bar")))
                         }
                     }
                 }
@@ -162,7 +162,7 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .failure(.passcodeExpired))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.failure(.passcodeExpired)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.passcodeExpired)))
                         }
                     }
 
@@ -171,7 +171,7 @@ class CommunityTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .failure(.notConnectedToInternet))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.failure(.notConnectedToInternet)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.notConnectedToInternet)))
                         }
                     }
                 }

@@ -104,7 +104,7 @@ class PasscodeComponentsSpec: QuickSpec {
             context("when string is invalid") {
                 context("when string length is 6") {
                     it("throws passcodeIncorrect error") {
-                        expect(expression: { try PasscodeComponents(string: "256984") }).to(throwError(AuthError.passcodeIncorrect))
+                        expect({ try PasscodeComponents(string: "256984") }).to(throwError(AuthError.passcodeIncorrect))
                     }
                 }
             }

@@ -158,7 +158,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .success("foo"))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.success("foo")))
+                            expect(invokedCompletionParameters!.result).to(equal(.success("foo")))
                         }
                     }
                     
@@ -167,7 +167,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .success("bar"))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.success("bar")))
+                            expect(invokedCompletionParameters!.result).to(equal(.success("bar")))
                         }
                     }
                 }
@@ -178,7 +178,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .failure(.passcodeExpired))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.failure(.passcodeExpired)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.passcodeExpired)))
                         }
                     }
 
@@ -187,7 +187,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                             fetchTwilioAccessToken(apiResult: .failure(.notConnectedToInternet))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.result).to(equal(.failure(.notConnectedToInternet)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.notConnectedToInternet)))
                         }
                     }
                 }

@@ -1,25 +1,24 @@
-source 'https://cdn.cocoapods.org/'
-
 platform :ios, '11.0'
+inhibit_all_warnings!
 use_frameworks!
 workspace 'VideoApp'
 
 target 'Video-Internal' do
   project 'VideoApp/VideoApp.xcodeproj'
 
-  pod 'Alamofire', '5.0.2'
-  pod 'AppCenter/Distribute', '2.5.3'
-  pod 'Crashlytics', '3.14.0'
-  pod 'Firebase/Analytics', '6.14.0'
-  pod 'FirebaseUI/Auth', '8.4.0'
-  pod 'FirebaseUI/Google', '8.4.0'
-  pod 'IGListDiffKit', '4.0.0'
-  pod 'KeychainAccess', '4.1.0'
-  pod 'TwilioVideo', '~> 3.7'
+  pod 'Alamofire', '~> 5'
+  pod 'AppCenter/Distribute', '~> 3'
+  pod 'Firebase/Analytics', '~> 6'
+  pod 'Firebase/Crashlytics', '~> 6'
+  pod 'FirebaseUI/Auth', '~> 9'
+  pod 'FirebaseUI/Google', '~> 9'
+  pod 'IGListDiffKit', '~> 4'
+  pod 'KeychainAccess', '~> 4'
+  pod 'TwilioVideo', '~> 3'
 
   target 'Video-InternalTests' do
-    pod 'Nimble'
-    pod 'Quick'
+    pod 'Nimble', '~> 9'
+    pod 'Quick', '~> 3'
 
     target 'Video-CommunityTests' do
       # Identical to Video-InternalTests
@@ -35,5 +34,14 @@ end
 target 'Video-InternalUITests' do
   project 'VideoApp/VideoApp.xcodeproj'
 
-  pod 'Nimble'
+  pod 'Nimble', '~> 9'
+end
+
+# Fix lots of build warnings: https://github.com/CocoaPods/CocoaPods/issues/9884
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+    end
+  end
 end
