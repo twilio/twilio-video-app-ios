@@ -151,7 +151,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                         expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.peerToPeer))
                     }
                 }
-                
+
                 context("when result is success") {
                     context("when response is foo") {
                         it("calls completion with foo token") {
