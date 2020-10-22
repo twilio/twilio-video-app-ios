@@ -23,7 +23,9 @@ struct InternalCreateTwilioAccessTokenRequest: APIRequest {
         }
         
         enum Topology: String, Encodable {
+            case go
             case group
+            case groupSmall = "group-small"
             case peerToPeer = "peer-to-peer"
         }
         

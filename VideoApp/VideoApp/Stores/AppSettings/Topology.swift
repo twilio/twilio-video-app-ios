@@ -17,12 +17,16 @@
 import Foundation
 
 enum Topology: String, SettingOptions {
+    case go
     case group
+    case groupSmall
     case peerToPeer
     
     var title: String {
         switch self {
+        case .go: return "Go"
         case .group: return "Group"
+        case .groupSmall: return "Group Small"
         case .peerToPeer: return "Peer-to-Peer"
         }
     }
