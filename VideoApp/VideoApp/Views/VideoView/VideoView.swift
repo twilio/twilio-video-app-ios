@@ -40,6 +40,7 @@ class VideoView: NibView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        print(errorView!)
         videoView.delegate = self
     }
 
