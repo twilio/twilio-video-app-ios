@@ -14,7 +14,7 @@ target 'Video-Internal' do
   pod 'FirebaseUI/Google', '~> 9'
   pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
-  pod 'TwilioVideo', '~> 4'
+  pod 'TwilioVideo', '~> 3'
 
   target 'Video-InternalTests' do
     pod 'Nimble', '~> 9'
