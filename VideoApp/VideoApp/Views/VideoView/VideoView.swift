@@ -29,7 +29,7 @@ class VideoView: UIView {
     }
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var videoView: TwilioVideo.VideoView!
     @IBOutlet weak var errorView: UIView!
     weak var delegate: VideoViewDelegate?
     private var videoTrack: VideoTrack?
@@ -52,7 +52,7 @@ class VideoView: UIView {
     }
     
     deinit {
-//        videoTrack?.removeRenderer(videoView)
+        videoTrack?.removeRenderer(videoView)
     }
 
     override func awakeFromNib() {
@@ -64,32 +64,31 @@ class VideoView: UIView {
             fatalError("videoView is nil")
         }
 
-        videoView.isHidden = false
-//        videoView.delegate = self
+        videoView.delegate = self
     }
 
     func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
-//        defer { errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false) }
-//
-//        guard let videoTrack = config.videoTrack, videoTrack.isEnabled else {
-//            self.videoTrack?.removeRenderer(videoView)
-//            updateStatus(hasVideoData: false)
-//            return
-//        }
-//        guard !videoTrack.isRendered(by: videoView) || videoView.shouldMirror != config.shouldMirror else {
-//            return // Don't thrash rendering because it causes empty frames to flash
-//        }
-//
-//        self.videoTrack?.removeRenderer(videoView)
-//        self.videoTrack = videoTrack
-//        videoTrack.addRenderer(videoView)
-//        videoView.shouldMirror = config.shouldMirror
-//        videoView.contentMode = contentMode
-//        updateStatus(hasVideoData: videoView.hasVideoData)
+        defer { errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false) }
+
+        guard let videoTrack = config.videoTrack, videoTrack.isEnabled else {
+            self.videoTrack?.removeRenderer(videoView)
+            updateStatus(hasVideoData: false)
+            return
+        }
+        guard !videoTrack.isRendered(by: videoView) || videoView.shouldMirror != config.shouldMirror else {
+            return // Don't thrash rendering because it causes empty frames to flash
+        }
+
+        self.videoTrack?.removeRenderer(videoView)
+        self.videoTrack = videoTrack
+        videoTrack.addRenderer(videoView)
+        videoView.shouldMirror = config.shouldMirror
+        videoView.contentMode = contentMode
+        updateStatus(hasVideoData: videoView.hasVideoData)
     }
     
     private func updateStatus(hasVideoData: Bool) {
-//        videoView.isHidden = !hasVideoData
+        videoView.isHidden = !hasVideoData
         delegate?.didUpdateStatus(isVideoOn: hasVideoData)
     }
 }

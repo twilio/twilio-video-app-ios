@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="7YG-bY-dc9"/>
                 <outlet property="errorView" destination="oUq-rY-4AT" id="TS4-JH-iur"/>
-                <outlet property="videoView" destination="bnz-gB-mOY" id="aYe-NV-tKk"/>
+                <outlet property="videoView" destination="bnz-gB-mOY" id="RXj-1n-uQV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="338" height="543"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnz-gB-mOY" userLabel="Video">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnz-gB-mOY" userLabel="Video" customClass="TVIVideoView">
                     <rect key="frame" x="0.0" y="0.0" width="338" height="543"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                 </view>
