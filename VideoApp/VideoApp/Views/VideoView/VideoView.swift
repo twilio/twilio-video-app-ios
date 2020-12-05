@@ -22,34 +22,16 @@ protocol VideoViewDelegate: AnyObject {
 }
 
 @IBDesignable
-class VideoView: UIView {
+class VideoView: NibView {
     struct Config {
         let videoTrack: VideoTrack?
         let shouldMirror: Bool
     }
 
-    @IBOutlet var contentView: UIView!
     @IBOutlet weak var videoView: TwilioVideo.VideoView!
     @IBOutlet weak var errorView: UIView!
     weak var delegate: VideoViewDelegate?
     private var videoTrack: VideoTrack?
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        Bundle.main.loadNibNamed("VideoView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
     
     deinit {
         videoTrack?.removeRenderer(videoView)
@@ -57,12 +39,6 @@ class VideoView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        if errorView == nil {
-            fatalError("errorView is nil")
-        } else if videoView == nil {
-            fatalError("videoView is nil")
-        }
 
         videoView.delegate = self
     }

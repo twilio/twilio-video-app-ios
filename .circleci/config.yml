@@ -10,7 +10,7 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "12.2.0"
+      xcode: "12.0.1"
 
 commands:
   setup:
@@ -36,8 +36,6 @@ commands:
       - store_artifacts:
           path: "~/Library/Logs/scan"
           destination: "scan"
-      - store_artifacts:
-          path: "~/Library/Logs/DiagnosticReports"
   test:
     parameters:
       scheme:
