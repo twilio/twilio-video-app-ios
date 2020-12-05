@@ -40,12 +40,12 @@ class VideoView: NibView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        
-        
-        print(errorView!)
+        if errorView == nil {
+            fatalError("erroView is nil")
+        } else if videoView == nil {
+            fatalError("videoView is nil")
+        }
 
-        
-        
         videoView.delegate = self
     }
 
