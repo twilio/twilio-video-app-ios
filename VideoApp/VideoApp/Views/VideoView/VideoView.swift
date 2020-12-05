@@ -39,13 +39,13 @@ class VideoView: NibView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         videoView.delegate = self
     }
 
     func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
         defer { errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false) }
-
+        
         guard let videoTrack = config.videoTrack, videoTrack.isEnabled else {
             self.videoTrack?.removeRenderer(videoView)
             updateStatus(hasVideoData: false)
@@ -54,7 +54,7 @@ class VideoView: NibView {
         guard !videoTrack.isRendered(by: videoView) || videoView.shouldMirror != config.shouldMirror else {
             return // Don't thrash rendering because it causes empty frames to flash
         }
-
+        
         self.videoTrack?.removeRenderer(videoView)
         self.videoTrack = videoTrack
         videoTrack.addRenderer(videoView)
