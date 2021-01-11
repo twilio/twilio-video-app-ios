@@ -311,6 +311,8 @@
 		DCC7E37024085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */; };
 		DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
+		DCD6468025A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */; };
+		DCD6468125A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
@@ -638,6 +640,7 @@
 		DCC7E36924085AD800431AC3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCreateTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
 		DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDotView.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -837,6 +840,7 @@
 				DC0446C723A2D7720072F597 /* Cells */,
 				DCEDB33524651287006AF70D /* CircleView */,
 				DCEDB3372465129A006AF70D /* CircleButton */,
+				DCD6467E25A91D5900E3E7B2 /* RecordingDotView */,
 				DCEDB3362465128E006AF70D /* ToggleButton */,
 				DC9A5DE8245CB1D600E4B079 /* VideoView */,
 			);
@@ -1424,6 +1428,14 @@
 				DCB7C1882405BE40009DEA70 /* KeychainStore.swift */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		DCD6467E25A91D5900E3E7B2 /* RecordingDotView */ = {
+			isa = PBXGroup;
+			children = (
+				DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */,
+			);
+			path = RecordingDotView;
 			sourceTree = "<group>";
 		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
@@ -2321,6 +2333,7 @@
 				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
+				DCD6468025A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */,
 				DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
@@ -2497,6 +2510,7 @@
 				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
+				DCD6468125A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */,
 				DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,

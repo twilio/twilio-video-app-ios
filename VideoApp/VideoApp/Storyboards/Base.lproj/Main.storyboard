@@ -622,7 +622,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z30-Vy-waJ">
                                                 <rect key="frame" x="10" y="5" width="99.5" height="20.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-Hb-RKI" userLabel="Red light" customClass="CircleView" customModule="VideoApp" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-Hb-RKI" userLabel="Dot" customClass="RecordingDotView" customModule="VideoApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="4.5" width="12" height="12"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                                         <constraints>
