@@ -20,38 +20,30 @@ class RecordingDotView: CircleView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        UIView.animateKeyframes(
-            withDuration: 1.5,
-            delay: .zero,
-            options: [.repeat, .autoreverse],
-            animations: {
-                UIView.addKeyframe(
-                    withRelativeStartTime: 0.0,
-                    relativeDuration: 0.75,
-                    animations: {
-                        self.backgroundColor = UIColor(rgb: 0xA90000)
-                    }
-                )
+        darken()
+    }
 
-                UIView.addKeyframe(
-                    withRelativeStartTime: 0.5,
-                    relativeDuration: 0.75,
-                    animations: {
-                        self.backgroundColor = .red
-                    }
-                )
-            },
-            completion: nil
+    private func darken() {
+        UIView.animate(
+            withDuration: 0.6,
+            delay: .zero,
+            options: .curveEaseOut,
+            animations: { self.backgroundColor = .darkRed },
+            completion: { _ in self.brighten() }
+        )
+    }
+    
+    private func brighten() {
+        UIView.animate(
+            withDuration: 0.6,
+            delay: .zero,
+            options: .curveEaseOut,
+            animations: { self.backgroundColor = .red },
+            completion: { _ in self.darken() }
         )
     }
 }
 
-extension UIColor {
-    convenience init(rgb: Int) {
-        self.init(
-            red: (rgb >> 16) & 0xFF,
-            green: (rgb >> 8) & 0xFF,
-            blue: rgb & 0xFF
-        )
-    }
+private extension UIColor {
+    static let darkRed = UIColor(hex: 0xA90000)
 }

@@ -27,18 +27,4 @@ extension UIColor {
     convenience init(hex:Int) {
         self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue:hex & 0xff)
     }
-
-    struct Twilio {
-        struct Brand {
-            static let Red = UIColor(hex: 0xF22F46)
-            static let Blue = UIColor(hex: 0x0D122B)
-        }
-
-        struct Status {
-            static let Blue = UIColor(hex: 0x0070CC)
-            static let Green = UIColor(hex: 0x29BB4f)
-            static let Orange = UIColor(hex: 0xFF9800)
-            static let Red = UIColor(hex: 0xC41025)
-        }
-    }
 }
