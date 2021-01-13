@@ -101,7 +101,7 @@ class CommunityAuthStore: AuthStoreWriting {
             return "\(appID)-"
         }
         
-        let host = "start-stop-recording-video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
+        let host = "video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
         api.config = APIConfig(host: host)
     }
 }
