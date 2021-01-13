@@ -23,10 +23,10 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet weak var switchCameraButton: UIButton!
     @IBOutlet weak var roomNameLabel: UILabel!
-    @IBOutlet weak var recordingView: UIView!
     @IBOutlet weak var participantCollectionView: UICollectionView!
     @IBOutlet weak var mainVideoView: VideoView!
     @IBOutlet weak var mainIdentityLabel: UILabel!
+    @IBOutlet weak var recordingView: UIView!
     var viewModel: RoomViewModel!
     var statsViewController: StatsViewController!
     var application: UIApplication!
