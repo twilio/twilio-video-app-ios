@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import FirebaseCrashlytics
+import Foundation
 
 protocol CrashReportStoreWriting: LaunchStore {
     func crash()
