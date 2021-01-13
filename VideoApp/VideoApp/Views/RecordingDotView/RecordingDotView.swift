@@ -29,7 +29,7 @@ class RecordingDotView: CircleView {
             delay: .zero,
             options: .curveEaseOut,
             animations: { self.backgroundColor = .darkRed },
-            completion: { _ in self.brighten() }
+            completion: { [weak self] _ in self?.brighten() }
         )
     }
     
@@ -39,7 +39,7 @@ class RecordingDotView: CircleView {
             delay: .zero,
             options: .curveEaseOut,
             animations: { self.backgroundColor = .red },
-            completion: { _ in self.darken() }
+            completion: { [weak self] _ in self?.darken() }
         )
     }
 }
