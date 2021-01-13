@@ -128,11 +128,7 @@ extension RoomViewController: RoomViewModelDelegate {
         updateView()
     }
 
-    func didStartRecording() {
-        updateView()
-    }
-    
-    func didStopRecording() {
+    func didUpdateRecording() {
         updateView()
     }
 }

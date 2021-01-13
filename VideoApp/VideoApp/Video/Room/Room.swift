@@ -30,9 +30,7 @@ import TwilioVideo
     }
 
     let localParticipant: LocalParticipant
-    var isRecording: Bool {
-        room?.isRecording ?? false
-    }
+    var isRecording: Bool { room?.isRecording ?? false }
     private(set) var remoteParticipants: [RemoteParticipant] = []
     private(set) var state: RoomState = .disconnected
     @objc private(set) var room: TwilioVideo.Room? // Only exposed for stats and should not be used for anything else

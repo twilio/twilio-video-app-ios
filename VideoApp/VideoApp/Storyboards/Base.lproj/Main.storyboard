@@ -612,7 +612,7 @@
                                             <constraint firstItem="QtR-Zf-y91" firstAttribute="top" secondItem="nyO-2I-nos" secondAttribute="top" id="r2f-d8-tNT"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-Ns-X89" userLabel="Recording indicator">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctC-Ns-X89" userLabel="Recording">
                                         <rect key="frame" x="274.5" y="114" width="119.5" height="30.5"/>
                                         <subviews>
                                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yy6-6D-JpR" userLabel="Background">
