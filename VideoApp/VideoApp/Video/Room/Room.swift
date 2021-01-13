@@ -25,9 +25,14 @@ import TwilioVideo
         case didAddRemoteParticipants(participants: [Participant])
         case didRemoveRemoteParticipants(participants: [Participant])
         case didUpdateParticipants(participants: [Participant])
+        case didStartRecording
+        case didStopRecording
     }
 
     let localParticipant: LocalParticipant
+    var isRecording: Bool {
+        room?.isRecording ?? false
+    }
     private(set) var remoteParticipants: [RemoteParticipant] = []
     private(set) var state: RoomState = .disconnected
     @objc private(set) var room: TwilioVideo.Room? // Only exposed for stats and should not be used for anything else
@@ -148,6 +153,14 @@ extension Room: TwilioVideo.RoomDelegate {
         old?.isDominantSpeaker = false
         new.isDominantSpeaker = true
         post(.didUpdateParticipants(participants: [old, new].compactMap { $0 }))
+    }
+    
+    func roomDidStartRecording(room: TwilioVideo.Room) {
+        post(.didStartRecording)
+    }
+    
+    func roomDidStopRecording(room: TwilioVideo.Room) {
+        post(.didStopRecording)
     }
 }
 

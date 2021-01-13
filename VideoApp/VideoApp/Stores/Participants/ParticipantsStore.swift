@@ -37,7 +37,7 @@ class ParticipantsStore {
         guard let payload = notification.payload as? Room.Update else { return }
         
         switch payload {
-        case .didStartConnecting, .didConnect, .didFailToConnect, .didDisconnect: break
+        case .didStartConnecting, .didConnect, .didFailToConnect, .didDisconnect, .didStartRecording, .didStopRecording: break
         case let .didAddRemoteParticipants(participants): insert(participants: participants)
         case let .didRemoveRemoteParticipants(participants): delete(participants: participants)
         case let .didUpdateParticipants(participants): update(participants: participants)

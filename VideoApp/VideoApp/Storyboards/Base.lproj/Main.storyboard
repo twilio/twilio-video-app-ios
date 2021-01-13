@@ -693,6 +693,7 @@
                         <outlet property="mainIdentityLabel" destination="76w-QN-Sk9" id="cs2-yA-7eD"/>
                         <outlet property="mainVideoView" destination="wQq-n1-BV3" id="IEa-gb-6eu"/>
                         <outlet property="participantCollectionView" destination="wU6-sZ-Ash" id="1ue-Zg-5ps"/>
+                        <outlet property="recordingView" destination="ctC-Ns-X89" id="X0B-Gi-r7F"/>
                         <outlet property="roomNameLabel" destination="LQi-P8-wlg" id="ysU-OB-NcB"/>
                         <outlet property="switchCameraButton" destination="DEq-Qj-jWj" id="4iu-kv-dUt"/>
                     </connections>
