@@ -26,6 +26,7 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var participantCollectionView: UICollectionView!
     @IBOutlet weak var mainVideoView: VideoView!
     @IBOutlet weak var mainIdentityLabel: UILabel!
+    @IBOutlet weak var recordingView: UIView!
     var viewModel: RoomViewModel!
     var statsViewController: StatsViewController!
     var application: UIApplication!
@@ -80,6 +81,7 @@ class RoomViewController: UIViewController {
         let participant = viewModel.data.mainParticipant
         mainVideoView.configure(config: participant.videoConfig)
         mainIdentityLabel.text = participant.identity
+        recordingView.isHidden = !viewModel.data.isRecording
     }
 }
 
@@ -123,6 +125,10 @@ extension RoomViewController: RoomViewModelDelegate {
     }
     
     func didUpdateMainParticipant() {
+        updateView()
+    }
+
+    func didUpdateRecording() {
         updateView()
     }
 }

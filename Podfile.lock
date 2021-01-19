@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.0)
+  - Alamofire (5.4.1)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -108,9 +108,9 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - Nimble (9.0.0)
-  - PromisesObjC (1.2.11)
+  - PromisesObjC (1.2.12)
   - Quick (3.0.0)
-  - TwilioVideo (4.0.0)
+  - TwilioVideo (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5)
@@ -153,7 +153,7 @@ SPEC REPOS:
     - TwilioVideo
 
 SPEC CHECKSUMS:
-  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   AppCenter: 0487be185c038ed2ecc5ed38219af1dcd280af23
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
@@ -174,9 +174,9 @@ SPEC CHECKSUMS:
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
-  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
-  TwilioVideo: 8c04f14202e4230fb71056c44e64af21cbcc3293
+  TwilioVideo: b85f32f42e79a2c6f30bdc9119bb0f86efd0b831
 
 PODFILE CHECKSUM: f22db36db4545a131be7417d00df2ce176070bc3
 

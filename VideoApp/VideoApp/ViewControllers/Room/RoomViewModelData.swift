@@ -30,4 +30,5 @@ struct RoomViewModelData {
     let roomName: String
     let participants: [Participant]
     let mainParticipant: MainParticipant
+    let isRecording: Bool
 }

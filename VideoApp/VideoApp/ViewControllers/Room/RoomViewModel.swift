@@ -24,6 +24,7 @@ protocol RoomViewModelDelegate: AnyObject {
     func didUpdateList(diff: ListIndexSetResult)
     func didUpdateParticipant(at index: Int)
     func didUpdateMainParticipant()
+    func didUpdateRecording()
 }
 
 class RoomViewModel {
@@ -35,7 +36,8 @@ class RoomViewModel {
             mainParticipant: .init(
                 participant: mainParticipantStore.mainParticipant,
                 videoTrack: mainParticipantStore.videoTrack
-            )
+            ),
+            isRecording: room.isRecording
         )
     }
     var isMicOn: Bool {
@@ -92,6 +94,8 @@ class RoomViewModel {
         case .didStartConnecting, .didConnect: delegate?.didConnect()
         case let .didFailToConnect(error): delegate?.didFailToConnect(error: error)
         case let .didDisconnect(error): delegate?.didDisconnect(error: error)
+        case .didStartRecording: delegate?.didUpdateRecording()
+        case .didStopRecording: delegate?.didUpdateRecording()
         case .didAddRemoteParticipants, .didRemoveRemoteParticipants, .didUpdateParticipants: break
         }
     }

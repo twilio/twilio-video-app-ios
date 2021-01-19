@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		0465056A73113195D323193C /* Pods_Video_Internal_Video_InternalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3A673FFFA1998DACFEFE3C /* Pods_Video_Internal_Video_InternalTests.framework */; };
 		23674101EF04DB988097E672 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE77220CF59EDFDB7EA1086 /* Pods_Video_Internal_Video_InternalTests_Video_CommunityTests.framework */; };
-		243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
-		243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* TwilioColors.swift */; };
+		243CDB4B22665F1800637B6B /* UIColorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* UIColorHelpers.swift */; };
+		243CDB4C22665F1800637B6B /* UIColorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243CDB4922665F1800637B6B /* UIColorHelpers.swift */; };
 		24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
@@ -311,6 +311,8 @@
 		DCC7E37024085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */; };
 		DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
+		DCD6468025A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */; };
+		DCD6468125A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
@@ -450,7 +452,7 @@
 		241282461E36A6AB002198BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241282491E36A6AB002198BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2412824B1E36A6AB002198BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		243CDB4922665F1800637B6B /* TwilioColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioColors.swift; sourceTree = "<group>"; };
+		243CDB4922665F1800637B6B /* UIColorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelpers.swift; sourceTree = "<group>"; };
 		24480A451EF07716003BCF00 /* Video.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Video.entitlements; sourceTree = "<group>"; };
 		24A723E11ECE1C8500486E7A /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		24A723E21ECE1C8500486E7A /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 		DCC7E36924085AD800431AC3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DCC7E36D24085B7200431AC3 /* CommunityCreateTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCreateTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
 		DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDotView.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -837,6 +840,7 @@
 				DC0446C723A2D7720072F597 /* Cells */,
 				DCEDB33524651287006AF70D /* CircleView */,
 				DCEDB3372465129A006AF70D /* CircleButton */,
+				DCD6467E25A91D5900E3E7B2 /* RecordingDotView */,
 				DCEDB3362465128E006AF70D /* ToggleButton */,
 				DC9A5DE8245CB1D600E4B079 /* VideoView */,
 			);
@@ -1022,8 +1026,8 @@
 				DC9A5E5224638A9C00E4B079 /* ShowError.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
 				DCEDB35824730476006AF70D /* SwiftToObjc.swift */,
-				243CDB4922665F1800637B6B /* TwilioColors.swift */,
 				DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */,
+				243CDB4922665F1800637B6B /* UIColorHelpers.swift */,
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
 				DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */,
 				DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */,
@@ -1424,6 +1428,14 @@
 				DCB7C1882405BE40009DEA70 /* KeychainStore.swift */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		DCD6467E25A91D5900E3E7B2 /* RecordingDotView */ = {
+			isa = PBXGroup;
+			children = (
+				DCD6467F25A91D7E00E3E7B2 /* RecordingDotView.swift */,
+			);
+			path = RecordingDotView;
 			sourceTree = "<group>";
 		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
@@ -2318,9 +2330,10 @@
 				DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */,
 				DCA53955235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
-				243CDB4B22665F1800637B6B /* TwilioColors.swift in Sources */,
+				243CDB4B22665F1800637B6B /* UIColorHelpers.swift in Sources */,
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
+				DCD6468025A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */,
 				DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
@@ -2494,9 +2507,10 @@
 				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
-				243CDB4C22665F1800637B6B /* TwilioColors.swift in Sources */,
+				243CDB4C22665F1800637B6B /* UIColorHelpers.swift in Sources */,
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
 				DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
+				DCD6468125A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */,
 				DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
