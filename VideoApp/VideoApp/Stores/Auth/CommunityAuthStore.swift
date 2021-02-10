@@ -69,6 +69,8 @@ class CommunityAuthStore: AuthStoreWriting {
                     self.remoteConfigStore.roomType = roomType
                 }
                 
+                ChatTokenStore.shared.token = response.token
+                
                 completion(nil)
             case let .failure(error):
                 self.api.config = nil
@@ -101,7 +103,8 @@ class CommunityAuthStore: AuthStoreWriting {
             return "\(appID)-"
         }
         
-        let host = "video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
+        // TODO: DON'T MERGE THIS CHANGE
+        let host = "test-video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
         api.config = APIConfig(host: host)
     }
 }
