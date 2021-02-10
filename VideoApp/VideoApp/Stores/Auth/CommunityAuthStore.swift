@@ -103,8 +103,7 @@ class CommunityAuthStore: AuthStoreWriting {
             return "\(appID)-"
         }
         
-        // TODO: DON'T MERGE THIS CHANGE
-        let host = "test-video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
+        let host = "video-app-\(appID)\(passcodeComponents.serverlessID)-dev.twil.io"
         api.config = APIConfig(host: host)
     }
 }
