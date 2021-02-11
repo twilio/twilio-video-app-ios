@@ -22,7 +22,7 @@ let app = XCUIApplication()
 class BasicTestCase: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
-        Nimble.AsyncDefaults.timeout = .seconds(5)
+        Nimble.AsyncDefaults.timeout = .seconds(30)
         app.launch()
     }
 }
