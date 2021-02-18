@@ -16,45 +16,52 @@
 
 import TwilioConversationsClient
 
+enum ChatState {
+    case disconnected
+    case connecting
+    case connected
+}
+
 protocol ChatStoreDelegate: AnyObject {
-    func didJoinChat()
-    func didReceiveNewMessage() // Probably need index
+    func didConnect()
 }
 
 class ChatStore: NSObject {
     weak var delegate: ChatStoreDelegate?
+    private(set) var state: ChatState = .disconnected
     private(set) var messages: [TCHMessage] = []
-    private var client: TwilioConversationsClient! // TODO: Maybe rename
+    private var client: TwilioConversationsClient?
     private var conversation: TCHConversation?
-    private var uniqueName: String!
+    private var conversationName = ""
     
-    func start(token: String, uniqueName: String) {
-        self.uniqueName = uniqueName
+    func connect(accessToken: String, conversationName: String) {
+        guard state == .disconnected else { fatalError("Connection already in progress.") }
+        
+        self.conversationName = conversationName
         
         TwilioConversationsClient.conversationsClient(
-            withToken: token,
+            withToken: accessToken,
             properties: nil,
             delegate: self
         ) { result, client in // TODO: Make sure weak self is not required
+            guard let client = client else {
+                self.state = .disconnected
+                return
+            }
+            
            self.client = client
         }
     }
 
-    func sendMessage(_ message: String) {
-        let options = TCHMessageOptions() .withBody(message)
-        conversation?.sendMessage(with: options, completion: nil) // Handle errors
-    }
+    func disconnect(completion: (() -> Void)? = nil) {
+        conversation?.leave { [weak self] _ in // TODO: Make sure this is called on main thread
+            guard let self = self else { return }
 
-    private func loadPreviousMessages() {
-        guard let conversation = conversation else { return }
-        
-        conversation.getLastMessages(withCount: 100) { (result, messages) in
-            if let messages = messages {
-                self.messages = messages
-                DispatchQueue.main.async {
-                    self.delegate?.didJoinChat()
-                }
-            }
+            self.client?.shutdown()
+            self.client = nil
+            self.messages = []
+            self.state = .disconnected
+            completion?()
         }
     }
 }
@@ -64,59 +71,20 @@ extension ChatStore: TwilioConversationsClientDelegate {
         _ client: TwilioConversationsClient,
         synchronizationStatusUpdated status: TCHClientSynchronizationStatus
     ) {
-        guard status == .completed else { return } // TODO: Handle all cases
+        guard status == .completed else { return }
 
-        print("Chat: sync complete")
-        
-        client.conversation(withSidOrUniqueName: uniqueName) { _, conversation in
-            print("Chat: sync complete")
-
-            if let conversation = conversation {
-                print("Chat: have conversation")
-                self.conversation = conversation
+        client.conversation(withSidOrUniqueName: conversationName) { [weak self] _, conversation in
+            guard let conversation = conversation else { return }
+            
+            self?.conversation = conversation
+            
+            conversation.getLastMessages(withCount: 100) { [weak self] _, messages in
+                guard let messages = messages else { return }
                 
-                conversation.join(completion: { result in
-//                    if result.isSuccessful { // Member already exists?
-                        self.loadPreviousMessages()
-//                    }
-                })
-            } else {
-                print("Chat: don't have conversation")
-                
-                let options = [TCHConversationOptionUniqueName: self.uniqueName!] // Remove bang
-                
-                client.createConversation(options: options) { _, conversation in
-                    guard let conversation = conversation else { return }
-
-                    print("Chat: created conversation")
-                    
-                    self.conversation = conversation
-                    
-                    if conversation.status == .joined { // Is this really necessary?
-                        self.loadPreviousMessages()
-                    } else {
-                        print("Chat: try to join conversation")
-                        
-                        conversation.join(completion: { result in
-                            if result.isSuccessful {
-                                self.loadPreviousMessages()
-                            }
-                        })
-                    }
-                }
+                self?.messages = messages // TODO: guard on self
+                self?.state = .connected
+                self?.delegate?.didConnect()
             }
-        }
-    }
-    
-    func conversationsClient(
-        _ client: TwilioConversationsClient,
-        conversation: TCHConversation,
-        messageAdded message: TCHMessage
-    ) {
-        messages.append(message)
-
-        DispatchQueue.main.async { [weak self] in
-            self?.delegate?.didReceiveNewMessage()
         }
     }
 }

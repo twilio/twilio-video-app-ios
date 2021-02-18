@@ -28,6 +28,7 @@ class LobbyViewController: UIViewController {
     private let deepLinkStore: DeepLinkStoreWriting = DeepLinkStore.shared
     private let notificationCenter = NotificationCenter.default
     private var room: Room!
+    private var chatStore = ChatStore()
     private var participant: LocalParticipant { room.localParticipant }
     private var shouldRenderVideo = true
 
@@ -94,7 +95,8 @@ class LobbyViewController: UIViewController {
             roomViewController.application = .shared
             roomViewController.viewModel = RoomViewModelFactory().makeRoomViewModel(
                 roomName: roomTextField.text ?? "",
-                room: room
+                room: room,
+                chatStore: chatStore
             )
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let statsViewController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController

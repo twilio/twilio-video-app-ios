@@ -69,8 +69,6 @@ class CommunityAuthStore: AuthStoreWriting {
                     self.remoteConfigStore.roomType = roomType
                 }
                 
-                ChatTokenStore.shared.token = response.token
-                
                 completion(nil)
             case let .failure(error):
                 self.api.config = nil

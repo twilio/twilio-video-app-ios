@@ -31,4 +31,5 @@ struct RoomViewModelData {
     let participants: [Participant]
     let mainParticipant: MainParticipant
     let isRecording: Bool
+    let isChatConnected: Bool
 }

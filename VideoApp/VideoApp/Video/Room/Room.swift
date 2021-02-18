@@ -19,7 +19,7 @@ import TwilioVideo
 @objc class Room: NSObject {
     enum Update {
         case didStartConnecting
-        case didConnect(sid: String, accessToken: String)
+        case didConnect(roomSID: String, accessToken: String)
         case didFailToConnect(error: Error)
         case didDisconnect(error: Error?)
         case didAddRemoteParticipants(participants: [Participant])
@@ -110,7 +110,7 @@ extension Room: TwilioVideo.RoomDelegate {
             RemoteParticipant(participant: $0, delegate: self)
         }
         state = .connected
-        post(.didConnect(sid: room.sid, accessToken: accessToken))
+        post(.didConnect(roomSID: room.sid, accessToken: accessToken))
         
         if !remoteParticipants.isEmpty {
             post(.didAddRemoteParticipants(participants: remoteParticipants))
