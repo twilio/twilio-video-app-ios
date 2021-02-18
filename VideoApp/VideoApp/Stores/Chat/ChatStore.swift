@@ -43,7 +43,7 @@ class ChatStore: NSObject {
             withToken: accessToken,
             properties: nil,
             delegate: self
-        ) { result, client in // TODO: Make sure weak self is not required
+        ) { _, client in // TODO: Make sure weak self is not required
             guard let client = client else {
                 self.state = .disconnected
                 return
@@ -54,7 +54,7 @@ class ChatStore: NSObject {
     }
 
     func disconnect(completion: (() -> Void)? = nil) {
-        conversation?.leave { [weak self] _ in // TODO: Make sure this is called on main thread
+        conversation?.leave { [weak self] _ in // TODO: Make sure all closures are called on main queue
             guard let self = self else { return }
 
             self.client?.shutdown()
@@ -62,6 +62,16 @@ class ChatStore: NSObject {
             self.messages = []
             self.state = .disconnected
             completion?()
+        }
+    }
+    
+    private func getMessages() {
+        conversation?.getLastMessages(withCount: 100) { [weak self] _, messages in
+            guard let self = self, let messages = messages else { return }
+            
+            self.messages = messages
+            self.state = .connected
+            self.delegate?.didConnect()
         }
     }
 }
@@ -74,17 +84,10 @@ extension ChatStore: TwilioConversationsClientDelegate {
         guard status == .completed else { return }
 
         client.conversation(withSidOrUniqueName: conversationName) { [weak self] _, conversation in
-            guard let conversation = conversation else { return }
+            guard let self = self, let conversation = conversation else { return }
             
-            self?.conversation = conversation
-            
-            conversation.getLastMessages(withCount: 100) { [weak self] _, messages in
-                guard let messages = messages else { return }
-                
-                self?.messages = messages // TODO: guard on self
-                self?.state = .connected
-                self?.delegate?.didConnect()
-            }
+            self.conversation = conversation
+            self.getMessages()
         }
     }
 }
