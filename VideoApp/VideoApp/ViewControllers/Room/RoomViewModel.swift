@@ -99,7 +99,7 @@ class RoomViewModel {
         switch payload {
         case .didStartConnecting:
             delegate?.didConnect() // TODO: This doesn't seem right
-        case let .didConnect(accessToken, roomSID):
+        case let .didConnect(roomSID, accessToken):
             delegate?.didConnect()
             chatStore.connect(accessToken: accessToken, conversationName: roomSID)
         case let .didFailToConnect(error):
