@@ -29,7 +29,6 @@ class LobbyViewController: UIViewController {
     private let notificationCenter = NotificationCenter.default
     private var room: Room!
     private var participant: LocalParticipant { room.localParticipant }
-    private var chatStore = ChatStore()
     private var shouldRenderVideo = true
 
     override func viewDidLoad() {
@@ -95,8 +94,7 @@ class LobbyViewController: UIViewController {
             roomViewController.application = .shared
             roomViewController.viewModel = RoomViewModelFactory().makeRoomViewModel(
                 roomName: roomTextField.text ?? "",
-                room: room,
-                chatStore: chatStore
+                room: room
             )
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let statsViewController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController

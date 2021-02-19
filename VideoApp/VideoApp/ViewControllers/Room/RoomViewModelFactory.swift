@@ -17,7 +17,7 @@
 import Foundation
 
 class RoomViewModelFactory {
-    func makeRoomViewModel(roomName: String, room: Room, chatStore: ChatStore) -> RoomViewModel {
+    func makeRoomViewModel(roomName: String, room: Room) -> RoomViewModel {
         let participantsStore = ParticipantsStore(room: room, notificationCenter: .default)
         let mainParticipantStore = MainParticipantStore(
             room: room,
@@ -29,7 +29,7 @@ class RoomViewModelFactory {
             room: room,
             participantsStore: participantsStore,
             mainParticipantStore: mainParticipantStore,
-            chatStore: chatStore,
+            chatStore: ChatStore.shared,
             notificationCenter: .default
         )
     }

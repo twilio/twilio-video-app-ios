@@ -576,7 +576,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="mb7-gW-cnd" kind="show" id="d5f-i1-Yyh"/>
+                                                    <segue destination="mb7-gW-cnd" kind="show" identifier="" id="d5f-i1-Yyh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW2-aV-srT" userLabel="Leave" customClass="CircleButton" customModule="VideoApp" customModuleProvider="target">

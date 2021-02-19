@@ -14,10 +14,10 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-class ChatViewController: UIViewController {
-    @IBAction func doneTap(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+enum ChatConnectionState {
+    case disconnected
+    case connecting
+    case connected
 }

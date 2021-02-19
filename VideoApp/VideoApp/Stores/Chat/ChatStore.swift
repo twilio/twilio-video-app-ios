@@ -16,18 +16,20 @@
 
 import TwilioConversationsClient
 
-class ChatStore: NSObject {
-    enum ConnectionState {
-        case disconnected
-        case connecting
-        case connected
-    }
+protocol ChatStoreWriting: AnyObject {
+    var connectionState: ChatConnectionState { get }
+    var messages: [TCHMessage] { get }
+    func connect(accessToken: String, conversationName: String)
+    func disconnect()
+}
 
+class ChatStore: NSObject, ChatStoreWriting {
     enum Update {
         case didChangeConnectionState
     }
 
-    private(set) var connectionState: ConnectionState = .disconnected {
+    static let shared: ChatStoreWriting = ChatStore()
+    private(set) var connectionState: ChatConnectionState = .disconnected {
         didSet { post(.didChangeConnectionState) }
     }
     private(set) var messages: [TCHMessage] = []

@@ -58,7 +58,7 @@ class RoomViewModel {
     private let room: Room
     private let participantsStore: ParticipantsStore
     private let mainParticipantStore: MainParticipantStore
-    private let chatStore: ChatStore
+    private let chatStore: ChatStoreWriting
     private let notificationCenter: NotificationCenter
 
     init(
@@ -66,7 +66,7 @@ class RoomViewModel {
         room: Room,
         participantsStore: ParticipantsStore,
         mainParticipantStore: MainParticipantStore,
-        chatStore: ChatStore,
+        chatStore: ChatStoreWriting,
         notificationCenter: NotificationCenter
     ) {
         self.roomName = roomName
@@ -98,7 +98,7 @@ class RoomViewModel {
         
         switch payload {
         case .didStartConnecting:
-            delegate?.didConnect() // TODO: This doesn't seem right
+            delegate?.didConnect()
         case let .didConnect(roomSID, accessToken):
             delegate?.didConnect()
             chatStore.connect(accessToken: accessToken, conversationName: roomSID)

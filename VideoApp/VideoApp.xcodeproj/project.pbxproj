@@ -409,6 +409,8 @@
 		DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
+		DCF458ED25E0754700192F11 /* ChatConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF458EC25E0754700192F11 /* ChatConnectionState.swift */; };
+		DCF458EE25E0754700192F11 /* ChatConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF458EC25E0754700192F11 /* ChatConnectionState.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -708,6 +710,7 @@
 		DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLowRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStandardRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHighRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
+		DCF458EC25E0754700192F11 /* ChatConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConnectionState.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -812,6 +815,7 @@
 		24491F791E37F89F00028B24 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DCF458E625E074E400192F11 /* Chat */,
 				DC0446C323A2D5D10072F597 /* Lobby */,
 				DC0446C423A2D5E70072F597 /* Room */,
 				DCAEBF4B2384880300141D2D /* Settings */,
@@ -1440,8 +1444,8 @@
 		DCBEA3CB25CC891200684ED2 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				DCF458EC25E0754700192F11 /* ChatConnectionState.swift */,
 				DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */,
-				DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1633,6 +1637,14 @@
 				DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */,
 			);
 			path = RenderDimensions;
+			sourceTree = "<group>";
+		};
+		DCF458E625E074E400192F11 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -2336,6 +2348,7 @@
 				DC9A5E0A245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */,
+				DCF458ED25E0754700192F11 /* ChatConnectionState.swift in Sources */,
 				DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
 				DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
@@ -2515,6 +2528,7 @@
 				DC9A5E0B245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */,
+				DCF458EE25E0754700192F11 /* ChatConnectionState.swift in Sources */,
 				DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
 				DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
