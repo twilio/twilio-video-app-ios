@@ -28,8 +28,8 @@ class LobbyViewController: UIViewController {
     private let deepLinkStore: DeepLinkStoreWriting = DeepLinkStore.shared
     private let notificationCenter = NotificationCenter.default
     private var room: Room!
-    private var chatStore = ChatStore()
     private var participant: LocalParticipant { room.localParticipant }
+    private var chatStore = ChatStore()
     private var shouldRenderVideo = true
 
     override func viewDidLoad() {

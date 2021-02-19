@@ -59,6 +59,7 @@ class ChatStore: NSObject {
 
             self.client?.shutdown()
             self.client = nil
+            self.conversation = nil
             self.messages = []
             self.state = .disconnected
             completion?()

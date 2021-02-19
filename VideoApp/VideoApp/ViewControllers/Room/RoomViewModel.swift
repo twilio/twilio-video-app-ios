@@ -56,24 +56,24 @@ class RoomViewModel {
     }
     private let roomName: String
     private let room: Room
-    private let chatStore: ChatStore
     private let participantsStore: ParticipantsStore
     private let mainParticipantStore: MainParticipantStore
+    private let chatStore: ChatStore
     private let notificationCenter: NotificationCenter
 
     init(
         roomName: String,
         room: Room,
-        chatStore: ChatStore,
         participantsStore: ParticipantsStore,
         mainParticipantStore: MainParticipantStore,
+        chatStore: ChatStore,
         notificationCenter: NotificationCenter
     ) {
         self.roomName = roomName
         self.room = room
-        self.chatStore = chatStore
         self.participantsStore = participantsStore
         self.mainParticipantStore = mainParticipantStore
+        self.chatStore = chatStore
         self.notificationCenter = notificationCenter
         notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
         notificationCenter.addObserver(self, selector: #selector(handleParticipansStoreUpdate(_:)), name: .participantsStoreUpdate, object: participantsStore)
@@ -97,15 +97,21 @@ class RoomViewModel {
         guard let payload = notification.payload as? Room.Update else { return }
         
         switch payload {
-        case .didStartConnecting: delegate?.didConnect() // TODO: Looks like a refactor error
+        case .didStartConnecting:
+            delegate?.didConnect() // TODO: This doesn't seem right
         case let .didConnect(accessToken, roomSID):
             delegate?.didConnect()
             chatStore.connect(accessToken: accessToken, conversationName: roomSID)
-        case let .didFailToConnect(error): delegate?.didFailToConnect(error: error)
-        case let .didDisconnect(error): delegate?.didDisconnect(error: error)
-        case .didStartRecording: delegate?.didUpdateRecording()
-        case .didStopRecording: delegate?.didUpdateRecording()
-        case .didAddRemoteParticipants, .didRemoveRemoteParticipants, .didUpdateParticipants: break
+        case let .didFailToConnect(error):
+            delegate?.didFailToConnect(error: error)
+        case let .didDisconnect(error):
+            delegate?.didDisconnect(error: error)
+        case .didStartRecording:
+            delegate?.didUpdateRecording()
+        case .didStopRecording:
+            delegate?.didUpdateRecording()
+        case .didAddRemoteParticipants, .didRemoveRemoteParticipants, .didUpdateParticipants:
+            break
         }
     }
 

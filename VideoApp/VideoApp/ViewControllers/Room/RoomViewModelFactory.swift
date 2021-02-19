@@ -27,9 +27,9 @@ class RoomViewModelFactory {
         return RoomViewModel(
             roomName: roomName,
             room: room,
-            chatStore: chatStore,
             participantsStore: participantsStore,
             mainParticipantStore: mainParticipantStore,
+            chatStore: chatStore,
             notificationCenter: .default
         )
     }
