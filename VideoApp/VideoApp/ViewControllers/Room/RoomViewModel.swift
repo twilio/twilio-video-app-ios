@@ -39,7 +39,7 @@ class RoomViewModel {
                 videoTrack: mainParticipantStore.videoTrack
             ),
             isRecording: room.isRecording,
-            isChatConnected: chatStore.state == .connected
+            isChatConnected: chatStore.connectionState == .connected
         )
     }
     var isMicOn: Bool {
@@ -78,7 +78,7 @@ class RoomViewModel {
         notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
         notificationCenter.addObserver(self, selector: #selector(handleParticipansStoreUpdate(_:)), name: .participantsStoreUpdate, object: participantsStore)
         notificationCenter.addObserver(self, selector: #selector(handleMainParticipantStoreUpdate), name: .mainParticipantStoreUpdate, object: mainParticipantStore)
-        chatStore.delegate = self
+        notificationCenter.addObserver(self, selector: #selector(handleChatStoreUpdate), name: .chatStoreUpdate, object: chatStore)
     }
     
     func connect() {
@@ -127,10 +127,12 @@ class RoomViewModel {
     @objc private func handleMainParticipantStoreUpdate() {
         delegate?.didUpdateMainParticipant()
     }
-}
 
-extension RoomViewModel: ChatStoreDelegate {
-    func didConnect() {
-        delegate?.didUpdateChat()
+    @objc private func handleChatStoreUpdate(_ notification: Notification) {
+        guard let payload = notification.payload as? ChatStore.Update else { return }
+
+        switch payload {
+        case .didChangeConnectionState: delegate?.didUpdateChat()
+        }
     }
 }

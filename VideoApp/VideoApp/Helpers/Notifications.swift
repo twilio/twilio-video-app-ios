@@ -21,6 +21,7 @@ extension Notification.Name {
     static let roomUpdate = Notification.Name("RoomUpdate")
     static let participantsStoreUpdate = Notification.Name("ParticipantsStoreUpdate")
     static let mainParticipantStoreUpdate = Notification.Name("MainParticipantStoreUpdate")
+    static let chatStoreUpdate = Notification.Name("ChatStoreUpdate")
 }
 
 extension NotificationCenter {

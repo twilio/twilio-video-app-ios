@@ -16,20 +16,22 @@
 
 import TwilioConversationsClient
 
-enum ChatConnectionState {
-    case disconnected
-    case connecting
-    case connected
-}
-
-protocol ChatStoreDelegate: AnyObject {
-    func didConnect()
-}
-
 class ChatStore: NSObject {
-    weak var delegate: ChatStoreDelegate?
-    private(set) var connectionState: ChatConnectionState = .disconnected
+    enum ConnectionState {
+        case disconnected
+        case connecting
+        case connected
+    }
+
+    enum Update {
+        case didChangeConnectionState
+    }
+
+    private(set) var connectionState: ConnectionState = .disconnected {
+        didSet { post(.didChangeConnectionState) }
+    }
     private(set) var messages: [TCHMessage] = []
+    private let notificationCenter = NotificationCenter.default
     private var client: TwilioConversationsClient?
     private var conversation: TCHConversation?
     private var conversationName = ""
@@ -39,7 +41,7 @@ class ChatStore: NSObject {
             disconnect()
         }
 
-        connectionState = .connecting // TODO: Post notification
+        connectionState = .connecting
         self.conversationName = conversationName
         
         TwilioConversationsClient.conversationsClient(
@@ -60,7 +62,6 @@ class ChatStore: NSObject {
         messages = []
         conversationName = ""
         connectionState = .disconnected
-        // TODO: Post notification
     }
 
     private func getConversation() {
@@ -78,8 +79,11 @@ class ChatStore: NSObject {
             
             self?.messages = messages
             self?.connectionState = .connected
-            self?.delegate?.didConnect()
         }
+    }
+    
+    private func post(_ update: Update) {
+        notificationCenter.post(name: .chatStoreUpdate, object: self, payload: update)
     }
 }
 
