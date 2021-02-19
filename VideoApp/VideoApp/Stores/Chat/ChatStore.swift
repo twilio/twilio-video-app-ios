@@ -16,7 +16,7 @@
 
 import TwilioConversationsClient
 
-enum ChatState {
+enum ChatConnectionState {
     case disconnected
     case connecting
     case connected
@@ -28,51 +28,57 @@ protocol ChatStoreDelegate: AnyObject {
 
 class ChatStore: NSObject {
     weak var delegate: ChatStoreDelegate?
-    private(set) var state: ChatState = .disconnected
+    private(set) var connectionState: ChatConnectionState = .disconnected
     private(set) var messages: [TCHMessage] = []
     private var client: TwilioConversationsClient?
     private var conversation: TCHConversation?
     private var conversationName = ""
     
     func connect(accessToken: String, conversationName: String) {
-        guard state == .disconnected else { fatalError("Connection already in progress.") }
-        
+        if connectionState != .disconnected {
+            disconnect()
+        }
+
+        connectionState = .connecting // TODO: Post notification
         self.conversationName = conversationName
         
         TwilioConversationsClient.conversationsClient(
             withToken: accessToken,
             properties: nil,
             delegate: self
-        ) { _, client in // TODO: Make sure weak self is not required
-            guard let client = client else {
-                self.state = .disconnected
-                return
-            }
+        ) { [weak self] _, client in
+            guard let client = client else { self?.disconnect(); return }
             
-           self.client = client
+            self?.client = client
         }
     }
 
-    func disconnect(completion: (() -> Void)? = nil) {
-        conversation?.leave { [weak self] _ in // TODO: Make sure all closures are called on main queue
-            guard let self = self else { return }
+    func disconnect() {
+        client?.shutdown()
+        client = nil
+        conversation = nil
+        messages = []
+        conversationName = ""
+        connectionState = .disconnected
+        // TODO: Post notification
+    }
 
-            self.client?.shutdown()
-            self.client = nil
-            self.conversation = nil
-            self.messages = []
-            self.state = .disconnected
-            completion?()
+    private func getConversation() {
+        client?.conversation(withSidOrUniqueName: conversationName) { [weak self] _, conversation in
+            guard let conversation = conversation else { self?.disconnect(); return }
+
+            self?.conversation = conversation
+            self?.getMessages()
         }
     }
     
     private func getMessages() {
         conversation?.getLastMessages(withCount: 100) { [weak self] _, messages in
-            guard let self = self, let messages = messages else { return }
+            guard let messages = messages else { self?.disconnect(); return }
             
-            self.messages = messages
-            self.state = .connected
-            self.delegate?.didConnect()
+            self?.messages = messages
+            self?.connectionState = .connected
+            self?.delegate?.didConnect()
         }
     }
 }
@@ -82,13 +88,11 @@ extension ChatStore: TwilioConversationsClientDelegate {
         _ client: TwilioConversationsClient,
         synchronizationStatusUpdated status: TCHClientSynchronizationStatus
     ) {
-        guard status == .completed else { return }
-
-        client.conversation(withSidOrUniqueName: conversationName) { [weak self] _, conversation in
-            guard let self = self, let conversation = conversation else { return }
-            
-            self.conversation = conversation
-            self.getMessages()
+        switch status {
+        case .started, .conversationsListCompleted: return
+        case .completed: getConversation()
+        case .failed: disconnect()
+        @unknown default: return
         }
     }
 }
