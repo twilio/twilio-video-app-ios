@@ -25,6 +25,31 @@ class ChatViewController: UIViewController {
         print("Messages: \(chatStore.messages)")
     }
     
+    @IBAction func composeTap(_ sender: Any) {
+        let alertController = UIAlertController(title: "New Message", message: nil, preferredStyle: .alert)
+
+        alertController.addTextField { textField in
+            textField.placeholder = "Message"
+        }
+
+        let sendAction = UIAlertAction(title: "Send", style: .default) { [weak self] _ in
+            guard let text = alertController.textFields?.first?.text else { return }
+            
+            self?.chatStore.sendMessage(text) { error in
+                guard let error = error else { return }
+
+                print("Send error: \(error)")
+            }
+        }
+
+        alertController.addAction(sendAction)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func doneTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
