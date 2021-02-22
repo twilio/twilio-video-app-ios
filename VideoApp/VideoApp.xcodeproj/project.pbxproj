@@ -297,6 +297,10 @@
 		DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C1882405BE40009DEA70 /* KeychainStore.swift */; };
 		DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
 		DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */; };
+		DCBEA3CD25CC892F00684ED2 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */; };
+		DCBEA3CE25CC892F00684ED2 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */; };
+		DCBEA3DA25CC966E00684ED2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */; };
+		DCBEA3DB25CC966E00684ED2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */; };
 		DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
 		DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */; };
 		DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */; };
@@ -405,6 +409,8 @@
 		DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
 		DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
+		DCF458ED25E0754700192F11 /* ChatConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF458EC25E0754700192F11 /* ChatConnectionState.swift */; };
+		DCF458EE25E0754700192F11 /* ChatConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF458EC25E0754700192F11 /* ChatConnectionState.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -633,6 +639,8 @@
 		DCB7C1842405BD68009DEA70 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DCB7C1882405BE40009DEA70 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		DCB7C18D2405C0BE009DEA70 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		DCC7E3582407081F00431AC3 /* SignInSegueIdentifierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSegueIdentifierFactory.swift; sourceTree = "<group>"; };
 		DCC7E35C24070C5200431AC3 /* AuthFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowFactory.swift; sourceTree = "<group>"; };
@@ -702,6 +710,7 @@
 		DCEDB3962475D476006AF70D /* SelectLowRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLowRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStandardRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHighRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
+		DCF458EC25E0754700192F11 /* ChatConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConnectionState.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -806,6 +815,7 @@
 		24491F791E37F89F00028B24 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DCF458E625E074E400192F11 /* Chat */,
 				DC0446C323A2D5D10072F597 /* Lobby */,
 				DC0446C423A2D5E70072F597 /* Room */,
 				DCAEBF4B2384880300141D2D /* Settings */,
@@ -1283,6 +1293,7 @@
 				DCF4614F23859B9A00DD8FEA /* AppInfo */,
 				DC4E4E2723578DF200C5D313 /* AppSettings */,
 				DCA53946235F534400CA26FB /* Auth */,
+				DCBEA3CB25CC891200684ED2 /* Chat */,
 				DC0446B623A182780072F597 /* CrashReport */,
 				DCB7C18C2405C0A4009DEA70 /* Keychain */,
 				DC76FCFF241054A3001B2FFC /* EnvironmentVariable */,
@@ -1428,6 +1439,15 @@
 				DCB7C1882405BE40009DEA70 /* KeychainStore.swift */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		DCBEA3CB25CC891200684ED2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DCF458EC25E0754700192F11 /* ChatConnectionState.swift */,
+				DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		DCD6467E25A91D5900E3E7B2 /* RecordingDotView */ = {
@@ -1617,6 +1637,14 @@
 				DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */,
 			);
 			path = RenderDimensions;
+			sourceTree = "<group>";
+		};
+		DCF458E625E074E400192F11 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -1871,6 +1899,7 @@
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/TwilioConversationsClient/TwilioConversationsClient.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TwilioVideo/TwilioVideo.framework/TwilioVideo",
 			);
@@ -1884,6 +1913,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioConversationsClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 			);
@@ -1929,6 +1959,7 @@
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/TwilioConversationsClient/TwilioConversationsClient.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -1944,6 +1975,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioConversationsClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -2063,6 +2095,7 @@
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/TwilioConversationsClient/TwilioConversationsClient.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/TwilioVideo/TwilioVideo.framework/TwilioVideo",
 			);
@@ -2076,6 +2109,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioConversationsClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 			);
@@ -2145,6 +2179,7 @@
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/TwilioConversationsClient/TwilioConversationsClient.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -2160,6 +2195,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioConversationsClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -2264,6 +2300,7 @@
 				DCDCD37724193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
+				DCBEA3CD25CC892F00684ED2 /* ChatStore.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
@@ -2311,6 +2348,7 @@
 				DC9A5E0A245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */,
+				DCF458ED25E0754700192F11 /* ChatConnectionState.swift in Sources */,
 				DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
 				DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
@@ -2338,6 +2376,7 @@
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCBEA3DA25CC966E00684ED2 /* ChatViewController.swift in Sources */,
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -2441,6 +2480,7 @@
 				DCDCD37824193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
+				DCBEA3CE25CC892F00684ED2 /* ChatStore.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
@@ -2488,6 +2528,7 @@
 				DC9A5E0B245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,
 				DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */,
+				DCF458EE25E0754700192F11 /* ChatConnectionState.swift in Sources */,
 				DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
 				DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
@@ -2515,6 +2556,7 @@
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCBEA3DB25CC966E00684ED2 /* ChatViewController.swift in Sources */,
 				DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,

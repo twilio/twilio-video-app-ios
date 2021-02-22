@@ -19,7 +19,7 @@ import TwilioVideo
 @objc class Room: NSObject {
     enum Update {
         case didStartConnecting
-        case didConnect
+        case didConnect(roomSID: String, accessToken: String)
         case didFailToConnect(error: Error)
         case didDisconnect(error: Error?)
         case didAddRemoteParticipants(participants: [Participant])
@@ -38,6 +38,7 @@ import TwilioVideo
     private let connectOptionsFactory: ConnectOptionsFactory
     private let notificationCenter: NotificationCenter
     private let twilioVideoSDKType: TwilioVideoSDK.Type
+    private var accessToken = ""
     
     init(
         localParticipant: LocalParticipant,
@@ -73,6 +74,7 @@ import TwilioVideo
                     videoTracks: [self.localParticipant.localCameraTrack].compactMap { $0 }
                 )
                 self.room = self.twilioVideoSDKType.connect(options: options, delegate: self)
+                self.accessToken = accessToken
             case let .failure(error):
                 self.state = .disconnected
                 self.post(.didFailToConnect(error: error))
@@ -108,7 +110,7 @@ extension Room: TwilioVideo.RoomDelegate {
             RemoteParticipant(participant: $0, delegate: self)
         }
         state = .connected
-        post(.didConnect)
+        post(.didConnect(roomSID: room.sid, accessToken: accessToken))
         
         if !remoteParticipants.isEmpty {
             post(.didAddRemoteParticipants(participants: remoteParticipants))

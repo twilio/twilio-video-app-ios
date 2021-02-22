@@ -14,6 +14,7 @@ target 'Video-Internal' do
   pod 'FirebaseUI/Google', '~> 9'
   pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
+  pod 'TwilioConversationsClient', '~> 1'
   pod 'TwilioVideo', '~> 4'
 
   target 'Video-InternalTests' do

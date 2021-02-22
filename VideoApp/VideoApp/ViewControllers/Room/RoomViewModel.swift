@@ -25,6 +25,7 @@ protocol RoomViewModelDelegate: AnyObject {
     func didUpdateParticipant(at index: Int)
     func didUpdateMainParticipant()
     func didUpdateRecording()
+    func didUpdateChat()
 }
 
 class RoomViewModel {
@@ -37,7 +38,8 @@ class RoomViewModel {
                 participant: mainParticipantStore.mainParticipant,
                 videoTrack: mainParticipantStore.videoTrack
             ),
-            isRecording: room.isRecording
+            isRecording: room.isRecording,
+            isChatConnected: chatStore.connectionState == .connected
         )
     }
     var isMicOn: Bool {
@@ -56,6 +58,7 @@ class RoomViewModel {
     private let room: Room
     private let participantsStore: ParticipantsStore
     private let mainParticipantStore: MainParticipantStore
+    private let chatStore: ChatStoreWriting
     private let notificationCenter: NotificationCenter
 
     init(
@@ -63,16 +66,19 @@ class RoomViewModel {
         room: Room,
         participantsStore: ParticipantsStore,
         mainParticipantStore: MainParticipantStore,
+        chatStore: ChatStoreWriting,
         notificationCenter: NotificationCenter
     ) {
         self.roomName = roomName
         self.room = room
         self.participantsStore = participantsStore
         self.mainParticipantStore = mainParticipantStore
+        self.chatStore = chatStore
         self.notificationCenter = notificationCenter
         notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
         notificationCenter.addObserver(self, selector: #selector(handleParticipansStoreUpdate(_:)), name: .participantsStoreUpdate, object: participantsStore)
         notificationCenter.addObserver(self, selector: #selector(handleMainParticipantStoreUpdate), name: .mainParticipantStoreUpdate, object: mainParticipantStore)
+        notificationCenter.addObserver(self, selector: #selector(handleChatStoreUpdate), name: .chatStoreUpdate, object: chatStore)
     }
     
     func connect() {
@@ -91,12 +97,21 @@ class RoomViewModel {
         guard let payload = notification.payload as? Room.Update else { return }
         
         switch payload {
-        case .didStartConnecting, .didConnect: delegate?.didConnect()
-        case let .didFailToConnect(error): delegate?.didFailToConnect(error: error)
-        case let .didDisconnect(error): delegate?.didDisconnect(error: error)
-        case .didStartRecording: delegate?.didUpdateRecording()
-        case .didStopRecording: delegate?.didUpdateRecording()
-        case .didAddRemoteParticipants, .didRemoveRemoteParticipants, .didUpdateParticipants: break
+        case .didStartConnecting:
+            delegate?.didConnect()
+        case let .didConnect(roomSID, accessToken):
+            delegate?.didConnect()
+            chatStore.connect(accessToken: accessToken, conversationName: roomSID)
+        case let .didFailToConnect(error):
+            delegate?.didFailToConnect(error: error)
+        case let .didDisconnect(error):
+            delegate?.didDisconnect(error: error)
+        case .didStartRecording:
+            delegate?.didUpdateRecording()
+        case .didStopRecording:
+            delegate?.didUpdateRecording()
+        case .didAddRemoteParticipants, .didRemoveRemoteParticipants, .didUpdateParticipants:
+            break
         }
     }
 
@@ -111,5 +126,13 @@ class RoomViewModel {
     
     @objc private func handleMainParticipantStoreUpdate() {
         delegate?.didUpdateMainParticipant()
+    }
+
+    @objc private func handleChatStoreUpdate(_ notification: Notification) {
+        guard let payload = notification.payload as? ChatStore.Update else { return }
+
+        switch payload {
+        case .didChangeConnectionState: delegate?.didUpdateChat()
+        }
     }
 }

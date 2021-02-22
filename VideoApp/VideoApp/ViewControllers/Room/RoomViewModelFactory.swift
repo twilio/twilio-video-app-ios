@@ -29,6 +29,7 @@ class RoomViewModelFactory {
             room: room,
             participantsStore: participantsStore,
             mainParticipantStore: mainParticipantStore,
+            chatStore: ChatStore.shared,
             notificationCenter: .default
         )
     }

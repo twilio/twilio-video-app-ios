@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2020 Twilio, Inc.
+//  Copyright (C) 2021 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,20 +16,8 @@
 
 import Foundation
 
-struct RoomViewModelData {
-    struct MainParticipant {
-        let identity: String
-        let videoConfig: VideoView.Config
-        
-        init(participant: VideoApp.Participant, videoTrack: VideoTrack?) {
-            identity = participant.identity
-            videoConfig = .init(videoTrack: videoTrack, shouldMirror: participant.shouldMirrorCameraVideo)
-        }
-    }
-    
-    let roomName: String
-    let participants: [Participant]
-    let mainParticipant: MainParticipant
-    let isRecording: Bool
-    let isChatConnected: Bool
+enum ChatConnectionState {
+    case disconnected
+    case connecting
+    case connected
 }
