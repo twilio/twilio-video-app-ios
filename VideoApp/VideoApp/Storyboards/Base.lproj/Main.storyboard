@@ -916,6 +916,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="BNo-pd-rzu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="bb2-to-nlR">
+                            <connections>
+                                <action selector="composeTap:" destination="sC1-s8-BYs" id="DBH-kS-TH4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="NFQ-s1-YT7">
                             <connections>
                                 <action selector="doneTap:" destination="sC1-s8-BYs" id="dPu-hp-dt1"/>

@@ -21,6 +21,7 @@ protocol ChatStoreWriting: AnyObject {
     var messages: [TCHMessage] { get }
     func connect(accessToken: String, conversationName: String)
     func disconnect()
+    func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void)
 }
 
 class ChatStore: NSObject, ChatStoreWriting {
@@ -64,6 +65,14 @@ class ChatStore: NSObject, ChatStoreWriting {
         messages = []
         conversationName = ""
         connectionState = .disconnected
+    }
+
+    func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void) {
+        let options = TCHMessageOptions().withBody(message)
+        
+        conversation?.sendMessage(with: options) { result, _ in
+            completion(result.error)
+        }
     }
 
     private func getConversation() {
