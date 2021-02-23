@@ -18,7 +18,7 @@ import TwilioConversationsClient
 
 protocol ChatStoreWriting: AnyObject {
     var connectionState: ChatConnectionState { get }
-    var messages: [TCHMessage] { get }
+    var messages: [ChatMessageGroup] { get }
     func connect(accessToken: String, conversationName: String)
     func disconnect()
     func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void)
@@ -33,7 +33,7 @@ class ChatStore: NSObject, ChatStoreWriting {
     private(set) var connectionState: ChatConnectionState = .disconnected {
         didSet { post(.didChangeConnectionState) }
     }
-    private(set) var messages: [TCHMessage] = []
+    private(set) var messages: [ChatMessageGroup] = []
     private let notificationCenter = NotificationCenter.default
     private var client: TwilioConversationsClient?
     private var conversation: TCHConversation?
@@ -109,5 +109,15 @@ extension ChatStore: TwilioConversationsClientDelegate {
         case .failed: disconnect()
         @unknown default: return
         }
+    }
+    
+    func conversationsClient(
+        _ client: TwilioConversationsClient,
+        conversation: TCHConversation,
+        messageAdded message: TCHMessage
+    ) {
+        guard conversation.sid == self.conversation?.sid else { return }
+        
+        
     }
 }
