@@ -130,7 +130,7 @@ class RoomViewModel {
     }
 
     @objc private func handleChatStoreUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? ChatStore.Update else { return }
+        guard let payload = notification.payload as? ChatUpdate else { return }
 
         switch payload {
         case .didChangeConnectionState, .didReceiveNewMessage, .didChangeHasUnreadMessage: delegate?.didUpdateChat()

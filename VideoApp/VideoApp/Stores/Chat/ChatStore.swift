@@ -27,12 +27,6 @@ protocol ChatStoreWriting: AnyObject {
 }
 
 class ChatStore: NSObject, ChatStoreWriting {
-    enum Update { // TODO: Move
-        case didChangeConnectionState
-        case didChangeHasUnreadMessage
-        case didReceiveNewMessage(message: ChatMessage) // TODO: Need parameter?
-    }
-
     static let shared: ChatStoreWriting = ChatStore()
     var isReading = false {
         didSet {
@@ -52,7 +46,7 @@ class ChatStore: NSObject, ChatStoreWriting {
     
     func connect(accessToken: String, conversationName: String) {
         if connectionState != .disconnected {
-            disconnect() // TODO: Improve?
+            disconnect()
         }
 
         connectionState = .connecting
@@ -115,7 +109,7 @@ class ChatStore: NSObject, ChatStoreWriting {
         }
     }
     
-    private func post(_ update: Update) {
+    private func post(_ update: ChatUpdate) {
         notificationCenter.post(name: .chatStoreUpdate, object: self, payload: update)
     }
 }
@@ -152,6 +146,6 @@ extension ChatStore: TwilioConversationsClientDelegate {
             post(.didChangeHasUnreadMessage)
         }
 
-        post(.didReceiveNewMessage(message: message))
+        post(.didReceiveNewMessage)
     }
 }

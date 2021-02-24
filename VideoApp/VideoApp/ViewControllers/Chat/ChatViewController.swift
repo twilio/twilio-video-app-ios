@@ -65,15 +65,15 @@ class ChatViewController: UIViewController {
     }
 
     @objc private func handleChatStoreUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? ChatStore.Update else { return }
+        guard let payload = notification.payload as? ChatUpdate else { return }
 
         switch payload {
         case .didChangeConnectionState, .didChangeHasUnreadMessage:
             break
-        case let .didReceiveNewMessage(message):
-            if let textMessage = message as? ChatTextMessage {
+        case .didReceiveNewMessage:
+            if let textMessage = chatStore.messages.last as? ChatTextMessage {
                 print("Text message: \(textMessage.body)")
-            } else if let fileMessage = message as? ChatFileMessage {
+            } else if let fileMessage = chatStore.messages.last as? ChatFileMessage {
                 print("File message: \(fileMessage)")
             }
         }
