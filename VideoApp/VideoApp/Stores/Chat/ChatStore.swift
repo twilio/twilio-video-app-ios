@@ -18,22 +18,33 @@ import TwilioConversationsClient
 
 protocol ChatStoreWriting: AnyObject {
     var connectionState: ChatConnectionState { get }
-    var messages: [ChatMessageGroup] { get }
+    var messages: [ChatMessage] { get }
+    var isReading: Bool { get set }
+    var hasUnreadMessage: Bool { get }
     func connect(accessToken: String, conversationName: String)
     func disconnect()
     func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void)
 }
 
 class ChatStore: NSObject, ChatStoreWriting {
-    enum Update {
+    enum Update { // TODO: Move
         case didChangeConnectionState
+        case didChangeHasUnreadMessage
+        case didReceiveNewMessage(message: ChatMessage) // TODO: Need parameter?
     }
 
     static let shared: ChatStoreWriting = ChatStore()
-    private(set) var connectionState: ChatConnectionState = .disconnected {
-        didSet { post(.didChangeConnectionState) }
+    var isReading = false {
+        didSet {
+            guard isReading && hasUnreadMessage else { return }
+
+            hasUnreadMessage = false
+            post(.didChangeHasUnreadMessage)
+        }
     }
-    private(set) var messages: [ChatMessageGroup] = []
+    private(set) var connectionState: ChatConnectionState = .disconnected
+    private(set) var messages: [ChatMessage] = []
+    private(set) var hasUnreadMessage = false
     private let notificationCenter = NotificationCenter.default
     private var client: TwilioConversationsClient?
     private var conversation: TCHConversation?
@@ -41,10 +52,11 @@ class ChatStore: NSObject, ChatStoreWriting {
     
     func connect(accessToken: String, conversationName: String) {
         if connectionState != .disconnected {
-            disconnect()
+            disconnect() // TODO: Improve?
         }
 
         connectionState = .connecting
+        post(.didChangeConnectionState)
         self.conversationName = conversationName
         
         TwilioConversationsClient.conversationsClient(
@@ -63,8 +75,11 @@ class ChatStore: NSObject, ChatStoreWriting {
         client = nil
         conversation = nil
         messages = []
+        hasUnreadMessage = false
         conversationName = ""
         connectionState = .disconnected
+        post(.didChangeConnectionState)
+        post(.didChangeHasUnreadMessage)
     }
 
     func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void) {
@@ -74,7 +89,7 @@ class ChatStore: NSObject, ChatStoreWriting {
             completion(result.error)
         }
     }
-
+    
     private func getConversation() {
         client?.conversation(withSidOrUniqueName: conversationName) { [weak self] _, conversation in
             guard let conversation = conversation else { self?.disconnect(); return }
@@ -88,8 +103,15 @@ class ChatStore: NSObject, ChatStoreWriting {
         conversation?.getLastMessages(withCount: 100) { [weak self] _, messages in
             guard let messages = messages else { self?.disconnect(); return }
             
-            self?.messages = messages
+            self?.messages = messages.compactMap { ChatTextMessage(message: $0) ?? ChatFileMessage(message: $0) }
             self?.connectionState = .connected
+            
+            if messages.count > 0 {
+                self?.hasUnreadMessage = true
+                self?.post(.didChangeHasUnreadMessage)
+            }
+            
+            self?.post(.didChangeConnectionState)
         }
     }
     
@@ -116,8 +138,20 @@ extension ChatStore: TwilioConversationsClientDelegate {
         conversation: TCHConversation,
         messageAdded message: TCHMessage
     ) {
-        guard conversation.sid == self.conversation?.sid else { return }
+        guard
+            conversation.sid == self.conversation?.sid,
+            let message: ChatMessage = ChatTextMessage(message: message) ?? ChatFileMessage(message: message)
+        else {
+            return
+        }
+
+        messages.append(message)
         
-        
+        if !isReading {
+            hasUnreadMessage = true
+            post(.didChangeHasUnreadMessage)
+        }
+
+        post(.didReceiveNewMessage(message: message))
     }
 }

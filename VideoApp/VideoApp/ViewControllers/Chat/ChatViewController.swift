@@ -22,7 +22,17 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleChatStoreUpdate), name: .chatStoreUpdate, object: chatStore)
+        
+        chatStore.isReading = true
+        
         print("Messages: \(chatStore.messages)")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        chatStore.isReading = false
     }
     
     @IBAction func composeTap(_ sender: Any) {
@@ -52,5 +62,20 @@ class ChatViewController: UIViewController {
     
     @IBAction func doneTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func handleChatStoreUpdate(_ notification: Notification) {
+        guard let payload = notification.payload as? ChatStore.Update else { return }
+
+        switch payload {
+        case .didChangeConnectionState, .didChangeHasUnreadMessage:
+            break
+        case let .didReceiveNewMessage(message):
+            if let textMessage = message as? ChatTextMessage {
+                print("Text message: \(textMessage.body)")
+            } else if let fileMessage = message as? ChatFileMessage {
+                print("File message: \(fileMessage)")
+            }
+        }
     }
 }
