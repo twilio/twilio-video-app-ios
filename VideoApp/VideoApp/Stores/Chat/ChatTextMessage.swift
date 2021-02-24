@@ -23,10 +23,11 @@ class ChatTextMessage: ChatMessage {
     
     init?(message: TCHMessage) {
         guard
+            message.messageType == .text,
             let dateCreated = message.dateCreatedAsDate,
             let author = message.author,
-            let body = message.body,
-            message.messageType == .text
+            let body = message.body
+            
         else {
             return nil
         }

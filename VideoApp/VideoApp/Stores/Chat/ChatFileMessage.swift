@@ -23,9 +23,9 @@ class ChatFileMessage: ChatMessage {
     
     init?(message: TCHMessage) {
         guard
+            message.messageType == .media,
             let dateCreated = message.dateCreatedAsDate,
-            let author = message.author,
-            message.messageType == .media
+            let author = message.author
         else {
             return nil
         }

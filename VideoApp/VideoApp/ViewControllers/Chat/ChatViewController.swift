@@ -22,7 +22,12 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleChatStoreUpdate), name: .chatStoreUpdate, object: chatStore)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleChatStoreUpdate),
+            name: .chatStoreUpdate,
+            object: chatStore
+        )
         
         chatStore.isReading = true
         

@@ -133,7 +133,8 @@ class RoomViewModel {
         guard let payload = notification.payload as? ChatUpdate else { return }
 
         switch payload {
-        case .didChangeConnectionState, .didReceiveNewMessage, .didChangeHasUnreadMessage: delegate?.didUpdateChat()
+        case .didChangeConnectionState, .didChangeHasUnreadMessage: delegate?.didUpdateChat()
+        case .didReceiveNewMessage: break
         }
     }
 }

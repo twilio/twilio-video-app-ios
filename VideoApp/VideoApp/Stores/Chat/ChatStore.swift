@@ -83,7 +83,7 @@ class ChatStore: NSObject, ChatStoreWriting {
             completion(result.error)
         }
     }
-    
+
     private func getConversation() {
         client?.conversation(withSidOrUniqueName: conversationName) { [weak self] _, conversation in
             guard let conversation = conversation else { self?.disconnect(); return }
