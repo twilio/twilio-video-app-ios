@@ -417,8 +417,8 @@
 		DCF4590D25E5811900192F11 /* ChatTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4590B25E5811900192F11 /* ChatTextMessage.swift */; };
 		DCF4591425E5812200192F11 /* ChatFileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4591325E5812200192F11 /* ChatFileMessage.swift */; };
 		DCF4591525E5812200192F11 /* ChatFileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4591325E5812200192F11 /* ChatFileMessage.swift */; };
-		DCF4592925E6C0F300192F11 /* ChatUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatUpdate.swift */; };
-		DCF4592A25E6C0F300192F11 /* ChatUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatUpdate.swift */; };
+		DCF4592925E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */; };
+		DCF4592A25E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -722,7 +722,7 @@
 		DCF4590325E5811000192F11 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		DCF4590B25E5811900192F11 /* ChatTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextMessage.swift; sourceTree = "<group>"; };
 		DCF4591325E5812200192F11 /* ChatFileMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFileMessage.swift; sourceTree = "<group>"; };
-		DCF4592825E6C0F300192F11 /* ChatUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUpdate.swift; sourceTree = "<group>"; };
+		DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreUpdate.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1460,8 +1460,8 @@
 				DCF4591325E5812200192F11 /* ChatFileMessage.swift */,
 				DCF4590325E5811000192F11 /* ChatMessage.swift */,
 				DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */,
+				DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */,
 				DCF4590B25E5811900192F11 /* ChatTextMessage.swift */,
-				DCF4592825E6C0F300192F11 /* ChatUpdate.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -2330,7 +2330,7 @@
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
-				DCF4592925E6C0F300192F11 /* ChatUpdate.swift in Sources */,
+				DCF4592925E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */,
 				DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
@@ -2514,7 +2514,7 @@
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
-				DCF4592A25E6C0F300192F11 /* ChatUpdate.swift in Sources */,
+				DCF4592A25E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */,
 				DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,

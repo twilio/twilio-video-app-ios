@@ -19,7 +19,7 @@ import TwilioConversationsClient
 protocol ChatStoreWriting: AnyObject {
     var connectionState: ChatConnectionState { get }
     var messages: [ChatMessage] { get }
-    var isReading: Bool { get set }
+    var isUserReadingMessages: Bool { get set }
     var hasUnreadMessage: Bool { get }
     func connect(accessToken: String, conversationName: String)
     func disconnect()
@@ -28,9 +28,9 @@ protocol ChatStoreWriting: AnyObject {
 
 class ChatStore: NSObject, ChatStoreWriting {
     static let shared: ChatStoreWriting = ChatStore()
-    var isReading = false {
+    var isUserReadingMessages = false {
         didSet {
-            guard isReading && hasUnreadMessage else { return }
+            guard isUserReadingMessages && hasUnreadMessage else { return }
 
             hasUnreadMessage = false
             post(.didChangeHasUnreadMessage)
@@ -113,7 +113,7 @@ class ChatStore: NSObject, ChatStoreWriting {
         ChatTextMessage(message: message) ?? ChatFileMessage(message: message)
     }
     
-    private func post(_ update: ChatUpdate) {
+    private func post(_ update: ChatStoreUpdate) {
         notificationCenter.post(name: .chatStoreUpdate, object: self, payload: update)
     }
 }
@@ -140,7 +140,7 @@ extension ChatStore: TwilioConversationsClientDelegate {
 
         messages.append(message)
         
-        if !isReading {
+        if !isUserReadingMessages {
             hasUnreadMessage = true
             post(.didChangeHasUnreadMessage)
         }

@@ -29,15 +29,16 @@ class ChatViewController: UIViewController {
             object: chatStore
         )
         
-        chatStore.isReading = true
+        chatStore.isUserReadingMessages = true
         
-        print("Messages: \(chatStore.messages)")
+        print("Chat > All messages:")
+        chatStore.messages.forEach { print("    \($0)") }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        chatStore.isReading = false
+        chatStore.isUserReadingMessages = false
     }
     
     @IBAction func composeTap(_ sender: Any) {
@@ -53,7 +54,7 @@ class ChatViewController: UIViewController {
             self?.chatStore.sendMessage(text) { error in
                 guard let error = error else { return }
 
-                print("Send error: \(error)")
+                print("Chat > Send message error:\n    \(error)")
             }
         }
 
@@ -70,17 +71,25 @@ class ChatViewController: UIViewController {
     }
 
     @objc private func handleChatStoreUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? ChatUpdate else { return }
+        guard let payload = notification.payload as? ChatStoreUpdate else { return }
 
         switch payload {
         case .didChangeConnectionState, .didChangeHasUnreadMessage:
             break
         case .didReceiveNewMessage:
             if let textMessage = chatStore.messages.last as? ChatTextMessage {
-                print("Text message: \(textMessage.body)")
+                print("Chat > Received text message:\n    \(textMessage)")
             } else if let fileMessage = chatStore.messages.last as? ChatFileMessage {
-                print("File message: \(fileMessage)")
+                print("Chat > Received file message:\n    \(fileMessage)")
             }
         }
     }
+}
+
+extension ChatTextMessage: CustomStringConvertible {
+    var description: String { "\(dateCreated) | \(author) | \(body)" }
+}
+
+extension ChatFileMessage: CustomStringConvertible {
+    var description: String { "\(dateCreated) | \(author) | \(fileName) | \(fileSize)" }
 }

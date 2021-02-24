@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum ChatUpdate {
+enum ChatStoreUpdate {
     case didChangeConnectionState
     case didChangeHasUnreadMessage
     case didReceiveNewMessage
