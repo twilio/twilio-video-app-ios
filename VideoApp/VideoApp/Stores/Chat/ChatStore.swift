@@ -97,7 +97,7 @@ class ChatStore: NSObject, ChatStoreWriting {
         conversation?.getLastMessages(withCount: 100) { [weak self] _, messages in
             guard let messages = messages else { self?.disconnect(); return }
             
-            self?.messages = messages.compactMap { ChatTextMessage(message: $0) ?? ChatFileMessage(message: $0) }
+            self?.messages = messages.compactMap { self?.decodeMessage($0) }
             self?.connectionState = .connected
             
             if messages.count > 0 {
@@ -107,6 +107,10 @@ class ChatStore: NSObject, ChatStoreWriting {
             
             self?.post(.didChangeConnectionState)
         }
+    }
+    
+    private func decodeMessage(_ message: TCHMessage) -> ChatMessage? {
+        ChatTextMessage(message: message) ?? ChatFileMessage(message: message)
     }
     
     private func post(_ update: ChatUpdate) {
@@ -132,12 +136,7 @@ extension ChatStore: TwilioConversationsClientDelegate {
         conversation: TCHConversation,
         messageAdded message: TCHMessage
     ) {
-        guard
-            conversation.sid == self.conversation?.sid,
-            let message: ChatMessage = ChatTextMessage(message: message) ?? ChatFileMessage(message: message)
-        else {
-            return
-        }
+        guard conversation.sid == self.conversation?.sid, let message = decodeMessage(message) else { return }
 
         messages.append(message)
         
