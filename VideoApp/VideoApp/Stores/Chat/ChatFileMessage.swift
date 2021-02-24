@@ -19,11 +19,14 @@ import TwilioConversationsClient
 class ChatFileMessage: ChatMessage {
     let author: String
     let dateCreated: Date
+    let fileName: String
+    var fileSize: UInt { message.mediaSize }
     private let message: TCHMessage
-    
+
     init?(message: TCHMessage) {
         guard
             message.messageType == .media,
+            let fileName = message.mediaFilename,
             let dateCreated = message.dateCreatedAsDate,
             let author = message.author
         else {
@@ -33,5 +36,17 @@ class ChatFileMessage: ChatMessage {
         self.author = author
         self.dateCreated = dateCreated
         self.message = message
+        self.fileName = fileName
+    }
+    
+    func getTemporaryURL(completion: @escaping (Result<String, NSError>) -> Void) {
+        message.getMediaContentTemporaryUrl { result, url in
+            guard let url = url else {
+                completion(.failure(result.error!))
+                return
+            }
+            
+            completion(.success(url))
+        }
     }
 }
