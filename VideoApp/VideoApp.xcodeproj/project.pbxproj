@@ -419,6 +419,8 @@
 		DCF4591525E5812200192F11 /* ChatFileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4591325E5812200192F11 /* ChatFileMessage.swift */; };
 		DCF4592925E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */; };
 		DCF4592A25E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */; };
+		DCF4594125E992BE00192F11 /* ChatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4594025E992BE00192F11 /* ChatButton.swift */; };
+		DCF4594225E992BE00192F11 /* ChatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4594025E992BE00192F11 /* ChatButton.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -723,6 +725,7 @@
 		DCF4590B25E5811900192F11 /* ChatTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextMessage.swift; sourceTree = "<group>"; };
 		DCF4591325E5812200192F11 /* ChatFileMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFileMessage.swift; sourceTree = "<group>"; };
 		DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreUpdate.swift; sourceTree = "<group>"; };
+		DCF4594025E992BE00192F11 /* ChatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatButton.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -860,6 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				DC0446C723A2D7720072F597 /* Cells */,
+				DCF4593F25E992AD00192F11 /* ChatButton */,
 				DCEDB33524651287006AF70D /* CircleView */,
 				DCEDB3372465129A006AF70D /* CircleButton */,
 				DCD6467E25A91D5900E3E7B2 /* RecordingDotView */,
@@ -1663,6 +1667,14 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		DCF4593F25E992AD00192F11 /* ChatButton */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4594025E992BE00192F11 /* ChatButton.swift */,
+			);
+			path = ChatButton;
+			sourceTree = "<group>";
+		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2452,6 +2464,7 @@
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DC3C32D12417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
+				DCF4594125E992BE00192F11 /* ChatButton.swift in Sources */,
 				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */,
@@ -2636,6 +2649,7 @@
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DC3C32D22417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
+				DCF4594225E992BE00192F11 /* ChatButton.swift in Sources */,
 				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */,
