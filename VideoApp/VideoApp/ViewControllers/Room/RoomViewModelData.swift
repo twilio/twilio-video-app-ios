@@ -32,5 +32,4 @@ struct RoomViewModelData {
     let mainParticipant: MainParticipant
     let isRecording: Bool
     let isChatConnected: Bool
-    let hasUnreadChatMessage: Bool
 }
