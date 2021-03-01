@@ -39,7 +39,8 @@ class RoomViewModel {
                 videoTrack: mainParticipantStore.videoTrack
             ),
             isRecording: room.isRecording,
-            isChatConnected: chatStore.connectionState == .connected
+            isChatConnected: chatStore.connectionState == .connected,
+            hasUnreadChatMessage: chatStore.hasUnreadMessage
         )
     }
     var isMicOn: Bool {
@@ -129,10 +130,11 @@ class RoomViewModel {
     }
 
     @objc private func handleChatStoreUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? ChatStore.Update else { return }
+        guard let payload = notification.payload as? ChatStoreUpdate else { return }
 
         switch payload {
-        case .didChangeConnectionState: delegate?.didUpdateChat()
+        case .didChangeConnectionState, .didChangeHasUnreadMessage: delegate?.didUpdateChat()
+        case .didReceiveNewMessage: break
         }
     }
 }

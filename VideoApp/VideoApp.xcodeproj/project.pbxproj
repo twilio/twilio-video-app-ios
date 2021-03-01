@@ -411,6 +411,16 @@
 		DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */; };
 		DCF458ED25E0754700192F11 /* ChatConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF458EC25E0754700192F11 /* ChatConnectionState.swift */; };
 		DCF458EE25E0754700192F11 /* ChatConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF458EC25E0754700192F11 /* ChatConnectionState.swift */; };
+		DCF4590425E5811000192F11 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4590325E5811000192F11 /* ChatMessage.swift */; };
+		DCF4590525E5811000192F11 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4590325E5811000192F11 /* ChatMessage.swift */; };
+		DCF4590C25E5811900192F11 /* ChatTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4590B25E5811900192F11 /* ChatTextMessage.swift */; };
+		DCF4590D25E5811900192F11 /* ChatTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4590B25E5811900192F11 /* ChatTextMessage.swift */; };
+		DCF4591425E5812200192F11 /* ChatFileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4591325E5812200192F11 /* ChatFileMessage.swift */; };
+		DCF4591525E5812200192F11 /* ChatFileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4591325E5812200192F11 /* ChatFileMessage.swift */; };
+		DCF4592925E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */; };
+		DCF4592A25E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */; };
+		DCF4594125E992BE00192F11 /* ChatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4594025E992BE00192F11 /* ChatButton.swift */; };
+		DCF4594225E992BE00192F11 /* ChatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4594025E992BE00192F11 /* ChatButton.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -711,6 +721,11 @@
 		DCEDB39A2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStandardRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB39E2476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHighRenderDimensionsViewModelFactory.swift; sourceTree = "<group>"; };
 		DCF458EC25E0754700192F11 /* ChatConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConnectionState.swift; sourceTree = "<group>"; };
+		DCF4590325E5811000192F11 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		DCF4590B25E5811900192F11 /* ChatTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextMessage.swift; sourceTree = "<group>"; };
+		DCF4591325E5812200192F11 /* ChatFileMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFileMessage.swift; sourceTree = "<group>"; };
+		DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreUpdate.swift; sourceTree = "<group>"; };
+		DCF4594025E992BE00192F11 /* ChatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatButton.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -848,6 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				DC0446C723A2D7720072F597 /* Cells */,
+				DCF4593F25E992AD00192F11 /* ChatButton */,
 				DCEDB33524651287006AF70D /* CircleView */,
 				DCEDB3372465129A006AF70D /* CircleButton */,
 				DCD6467E25A91D5900E3E7B2 /* RecordingDotView */,
@@ -1445,7 +1461,11 @@
 			isa = PBXGroup;
 			children = (
 				DCF458EC25E0754700192F11 /* ChatConnectionState.swift */,
+				DCF4591325E5812200192F11 /* ChatFileMessage.swift */,
+				DCF4590325E5811000192F11 /* ChatMessage.swift */,
 				DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */,
+				DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */,
+				DCF4590B25E5811900192F11 /* ChatTextMessage.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1645,6 +1665,14 @@
 				DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		DCF4593F25E992AD00192F11 /* ChatButton */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4594025E992BE00192F11 /* ChatButton.swift */,
+			);
+			path = ChatButton;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -2314,6 +2342,7 @@
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
+				DCF4592925E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */,
 				DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
@@ -2378,6 +2407,7 @@
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCBEA3DA25CC966E00684ED2 /* ChatViewController.swift in Sources */,
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
+				DCF4591425E5812200192F11 /* ChatFileMessage.swift in Sources */,
 				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2394,6 +2424,7 @@
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				DCEDB37B24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
 				DCEDB373247442D9006AF70D /* TrackPriority.swift in Sources */,
+				DCF4590C25E5811900192F11 /* ChatTextMessage.swift in Sources */,
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2433,6 +2464,7 @@
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DC3C32D12417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
+				DCF4594125E992BE00192F11 /* ChatButton.swift in Sources */,
 				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */,
@@ -2458,6 +2490,7 @@
 				DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */,
+				DCF4590425E5811000192F11 /* ChatMessage.swift in Sources */,
 				DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */,
 				DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
@@ -2494,6 +2527,7 @@
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
+				DCF4592A25E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */,
 				DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
@@ -2558,6 +2592,7 @@
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCBEA3DB25CC966E00684ED2 /* ChatViewController.swift in Sources */,
 				DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
+				DCF4591525E5812200192F11 /* ChatFileMessage.swift in Sources */,
 				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2574,6 +2609,7 @@
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				DCEDB37C24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
 				DCEDB374247442D9006AF70D /* TrackPriority.swift in Sources */,
+				DCF4590D25E5811900192F11 /* ChatTextMessage.swift in Sources */,
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
@@ -2613,6 +2649,7 @@
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DC3C32D22417E6C400F56AFB /* CommunityAPIErrorResponseDecoder.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
+				DCF4594225E992BE00192F11 /* ChatButton.swift in Sources */,
 				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */,
@@ -2638,6 +2675,7 @@
 				DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */,
+				DCF4590525E5811000192F11 /* ChatMessage.swift in Sources */,
 				DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */,
 				DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,

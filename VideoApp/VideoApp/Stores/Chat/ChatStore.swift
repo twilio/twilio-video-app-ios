@@ -18,22 +18,27 @@ import TwilioConversationsClient
 
 protocol ChatStoreWriting: AnyObject {
     var connectionState: ChatConnectionState { get }
-    var messages: [TCHMessage] { get }
+    var messages: [ChatMessage] { get }
+    var isUserReadingMessages: Bool { get set }
+    var hasUnreadMessage: Bool { get }
     func connect(accessToken: String, conversationName: String)
     func disconnect()
     func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void)
 }
 
 class ChatStore: NSObject, ChatStoreWriting {
-    enum Update {
-        case didChangeConnectionState
-    }
-
     static let shared: ChatStoreWriting = ChatStore()
-    private(set) var connectionState: ChatConnectionState = .disconnected {
-        didSet { post(.didChangeConnectionState) }
+    var isUserReadingMessages = false {
+        didSet {
+            guard isUserReadingMessages && hasUnreadMessage else { return }
+
+            hasUnreadMessage = false
+            post(.didChangeHasUnreadMessage)
+        }
     }
-    private(set) var messages: [TCHMessage] = []
+    private(set) var connectionState: ChatConnectionState = .disconnected
+    private(set) var messages: [ChatMessage] = []
+    private(set) var hasUnreadMessage = false
     private let notificationCenter = NotificationCenter.default
     private var client: TwilioConversationsClient?
     private var conversation: TCHConversation?
@@ -45,6 +50,7 @@ class ChatStore: NSObject, ChatStoreWriting {
         }
 
         connectionState = .connecting
+        post(.didChangeConnectionState)
         self.conversationName = conversationName
         
         TwilioConversationsClient.conversationsClient(
@@ -63,8 +69,11 @@ class ChatStore: NSObject, ChatStoreWriting {
         client = nil
         conversation = nil
         messages = []
+        hasUnreadMessage = false
         conversationName = ""
         connectionState = .disconnected
+        post(.didChangeConnectionState)
+        post(.didChangeHasUnreadMessage)
     }
 
     func sendMessage(_ message: String, completion: @escaping (NSError?) -> Void) {
@@ -88,12 +97,23 @@ class ChatStore: NSObject, ChatStoreWriting {
         conversation?.getLastMessages(withCount: 100) { [weak self] _, messages in
             guard let messages = messages else { self?.disconnect(); return }
             
-            self?.messages = messages
+            self?.messages = messages.compactMap { self?.decodeMessage($0) }
             self?.connectionState = .connected
+            
+            if messages.count > 0 {
+                self?.hasUnreadMessage = true
+                self?.post(.didChangeHasUnreadMessage)
+            }
+            
+            self?.post(.didChangeConnectionState)
         }
     }
     
-    private func post(_ update: Update) {
+    private func decodeMessage(_ message: TCHMessage) -> ChatMessage? {
+        ChatTextMessage(message: message) ?? ChatFileMessage(message: message)
+    }
+    
+    private func post(_ update: ChatStoreUpdate) {
         notificationCenter.post(name: .chatStoreUpdate, object: self, payload: update)
     }
 }
@@ -109,5 +129,22 @@ extension ChatStore: TwilioConversationsClientDelegate {
         case .failed: disconnect()
         @unknown default: return
         }
+    }
+    
+    func conversationsClient(
+        _ client: TwilioConversationsClient,
+        conversation: TCHConversation,
+        messageAdded message: TCHMessage
+    ) {
+        guard conversation.sid == self.conversation?.sid, let message = decodeMessage(message) else { return }
+
+        messages.append(message)
+        
+        if !isUserReadingMessages {
+            hasUnreadMessage = true
+            post(.didChangeHasUnreadMessage)
+        }
+
+        post(.didReceiveNewMessage)
     }
 }
