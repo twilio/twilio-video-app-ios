@@ -135,6 +135,7 @@ extension RoomViewController: RoomViewModelDelegate {
     
     func didUpdateChat() {
         chatButton.isEnabled = viewModel.data.isChatConnected
+        print("Room > Has unread messages:\n    \(viewModel.data.hasUnreadChatMessage)")
     }
 }
 

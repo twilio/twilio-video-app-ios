@@ -22,7 +22,23 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Messages: \(chatStore.messages)")
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleChatStoreUpdate),
+            name: .chatStoreUpdate,
+            object: chatStore
+        )
+        
+        chatStore.isUserReadingMessages = true
+        
+        print("Chat > All messages:")
+        chatStore.messages.forEach { print("    \($0)") }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        chatStore.isUserReadingMessages = false
     }
     
     @IBAction func composeTap(_ sender: Any) {
@@ -38,7 +54,7 @@ class ChatViewController: UIViewController {
             self?.chatStore.sendMessage(text) { error in
                 guard let error = error else { return }
 
-                print("Send error: \(error)")
+                print("Chat > Send message error:\n    \(error)")
             }
         }
 
@@ -53,4 +69,27 @@ class ChatViewController: UIViewController {
     @IBAction func doneTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
+    @objc private func handleChatStoreUpdate(_ notification: Notification) {
+        guard let payload = notification.payload as? ChatStoreUpdate else { return }
+
+        switch payload {
+        case .didChangeConnectionState, .didChangeHasUnreadMessage:
+            break
+        case .didReceiveNewMessage:
+            if let textMessage = chatStore.messages.last as? ChatTextMessage {
+                print("Chat > Received text message:\n    \(textMessage)")
+            } else if let fileMessage = chatStore.messages.last as? ChatFileMessage {
+                print("Chat > Received file message:\n    \(fileMessage)")
+            }
+        }
+    }
+}
+
+extension ChatTextMessage: CustomStringConvertible {
+    var description: String { "\(dateCreated) | \(author) | \(body)" }
+}
+
+extension ChatFileMessage: CustomStringConvertible {
+    var description: String { "\(dateCreated) | \(author) | \(fileName) | \(fileSize)" }
 }
