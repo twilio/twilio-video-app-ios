@@ -20,7 +20,7 @@ import UIKit
 class RoomViewController: UIViewController {
     @IBOutlet weak var disableMicButton: CircleToggleButton!
     @IBOutlet weak var disableCameraButton:  CircleToggleButton!
-    @IBOutlet weak var chatButton: CircleButton!
+    @IBOutlet weak var chatButton: ChatButton!
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet weak var switchCameraButton: UIButton!
     @IBOutlet weak var roomNameLabel: UILabel!
@@ -135,7 +135,7 @@ extension RoomViewController: RoomViewModelDelegate {
     
     func didUpdateChat() {
         chatButton.isEnabled = viewModel.data.isChatConnected
-        print("Room > Has unread messages:\n    \(viewModel.data.hasUnreadChatMessage)")
+        chatButton.hasUnreadMessage = viewModel.data.hasUnreadChatMessage
     }
 }
 
