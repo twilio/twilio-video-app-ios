@@ -17,6 +17,7 @@
 import TwilioConversationsClient
 
 class ChatFileMessage: ChatMessage {
+    let messageType = ChatMessageType.file
     let author: String
     let dateCreated: Date
     let fileName: String

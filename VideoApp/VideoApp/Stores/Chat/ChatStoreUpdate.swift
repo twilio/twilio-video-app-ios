@@ -19,5 +19,5 @@ import Foundation
 enum ChatStoreUpdate {
     case didChangeConnectionState
     case didChangeHasUnreadMessage
-    case didReceiveNewMessage
+    case didReceiveNewMessage(index: Int)
 }

@@ -17,6 +17,7 @@
 import Foundation
 
 protocol ChatMessage: AnyObject {
+    var messageType: ChatMessageType { get }
     var author: String { get }
     var dateCreated: Date { get }
 }

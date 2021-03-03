@@ -576,7 +576,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="mb7-gW-cnd" kind="show" identifier="" id="d5f-i1-Yyh"/>
+                                                    <segue destination="mb7-gW-cnd" kind="show" identifier="showChat" id="d5f-i1-Yyh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW2-aV-srT" userLabel="Leave" customClass="CircleButton" customModule="VideoApp" customModuleProvider="target">
@@ -898,7 +898,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="sC1-s8-BYs" kind="relationship" relationship="rootViewController" id="F7y-on-85c"/>
+                        <segue destination="sw9-Mh-0nK" kind="relationship" relationship="rootViewController" id="HPL-Li-xpy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81e-13-uAy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -906,31 +906,34 @@
             <point key="canvasLocation" x="1291" y="449"/>
         </scene>
         <!--Chat-->
-        <scene sceneID="ORJ-1X-Iuk">
+        <scene sceneID="5Zn-s2-kn1">
             <objects>
-                <viewController id="sC1-s8-BYs" customClass="ChatViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RIg-xj-dAW">
+                <tableViewController id="sw9-Mh-0nK" customClass="ChatViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="16y-QZ-oBE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="emU-YU-nLT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Chat" id="BNo-pd-rzu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="bb2-to-nlR">
+                        <connections>
+                            <outlet property="dataSource" destination="sw9-Mh-0nK" id="fw2-cP-lFj"/>
+                            <outlet property="delegate" destination="sw9-Mh-0nK" id="Mdj-8P-wZ4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Chat" id="wHf-qf-2FI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="S7T-8j-T5n">
                             <connections>
-                                <action selector="composeTap:" destination="sC1-s8-BYs" id="DBH-kS-TH4"/>
+                                <action selector="composeTap:" destination="sw9-Mh-0nK" id="bHG-Lg-NEM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="NFQ-s1-YT7">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ZWf-hU-yNj">
                             <connections>
-                                <action selector="doneTap:" destination="sC1-s8-BYs" id="dPu-hp-dt1"/>
+                                <action selector="doneTap:" destination="sw9-Mh-0nK" id="2C9-sE-3zw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0sk-98-31V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdE-vP-HnS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="450"/>
+            <point key="canvasLocation" x="2338" y="450"/>
         </scene>
         <!--Options-->
         <scene sceneID="GWF-HR-Ptl">
@@ -983,6 +986,7 @@
             <point key="canvasLocation" x="-2516" y="36"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0074348286729999996" green="0.38828012350000002" blue="0.87832146879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="ChatButtonWithoutUnreadMessage" width="22" height="22"/>
         <image name="hangup" width="26" height="10"/>
