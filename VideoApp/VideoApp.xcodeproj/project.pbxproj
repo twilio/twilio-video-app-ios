@@ -1016,20 +1016,13 @@
 				DCA23E0D25EEA6530076C4FC /* ChatHeader */,
 				DCA23DD225EDA5D50076C4FC /* ChatMessage */,
 				DC9A5E03245DC5FD00E4B079 /* Participant */,
-				DC44C2C023870D0800205174 /* BasicCell.swift */,
-				DC44C2C123870D0800205174 /* BasicCell.xib */,
-				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
-				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
-				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
-				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
-				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
-				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
-				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
-				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
-				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
-				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
-				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
-				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
+				DCA23E7725F177290076C4FC /* Basic */,
+				DCA23E7D25F177330076C4FC /* DestructiveButton */,
+				DCA23E8825F177410076C4FC /* EditText */,
+				DCA23E9325F1774B0076C4FC /* HeaderTableView */,
+				DCA23E9925F177580076C4FC /* RightDetail */,
+				DCA23E9F25F177630076C4FC /* SwitchCell */,
+				DCA23EAA25F1777D0076C4FC /* TrackStatsTableView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1304,6 +1297,69 @@
 				DCA23E0E25EEA6A10076C4FC /* ChatHeaderView.xib */,
 			);
 			path = ChatHeader;
+			sourceTree = "<group>";
+		};
+		DCA23E7725F177290076C4FC /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2C023870D0800205174 /* BasicCell.swift */,
+				DC44C2C123870D0800205174 /* BasicCell.xib */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		DCA23E7D25F177330076C4FC /* DestructiveButton */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
+				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
+			);
+			path = DestructiveButton;
+			sourceTree = "<group>";
+		};
+		DCA23E8825F177410076C4FC /* EditText */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
+				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
+			);
+			path = EditText;
+			sourceTree = "<group>";
+		};
+		DCA23E9325F1774B0076C4FC /* HeaderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
+				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
+			);
+			path = HeaderTableView;
+			sourceTree = "<group>";
+		};
+		DCA23E9925F177580076C4FC /* RightDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
+				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
+			);
+			path = RightDetail;
+			sourceTree = "<group>";
+		};
+		DCA23E9F25F177630076C4FC /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
+				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
+			);
+			path = SwitchCell;
+			sourceTree = "<group>";
+		};
+		DCA23EAA25F1777D0076C4FC /* TrackStatsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
+				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
+			);
+			path = TrackStatsTableView;
 			sourceTree = "<group>";
 		};
 		DCA53946235F534400CA26FB /* Auth */ = {
