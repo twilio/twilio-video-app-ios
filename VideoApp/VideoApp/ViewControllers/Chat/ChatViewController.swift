@@ -80,7 +80,6 @@ class ChatViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ChatHeaderView") as! ChatHeaderView
-
         headerView.configure(config: viewModel.configForSection(section: section))
 
         return headerView
@@ -88,7 +87,6 @@ class ChatViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageCell.identifier) as! ChatMessageCell
-
         cell.configure(config: viewModel.configForRow(indexPath: indexPath))
         
         return cell
