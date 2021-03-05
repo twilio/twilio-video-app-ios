@@ -14,27 +14,9 @@
 //  limitations under the License.
 //
 
-import TwilioConversationsClient
+import Foundation
 
-class ChatTextMessage: ChatMessage {
-    let messageType = ChatMessageType.text
-    let author: String
-    let dateCreated: Date
-    let body: String
-    
-    init?(message: TCHMessage) {
-        guard
-            message.messageType == .text,
-            let dateCreated = message.dateCreatedAsDate,
-            let author = message.author,
-            let body = message.body
-            
-        else {
-            return nil
-        }
-        
-        self.author = author
-        self.dateCreated = dateCreated
-        self.body = body
-    }
+enum ChatMessageType {
+    case text
+    case file
 }

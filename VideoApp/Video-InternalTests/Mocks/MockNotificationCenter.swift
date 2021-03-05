@@ -18,12 +18,12 @@
 
 class MockNotificationCenter: NotificationCenterProtocol {
 
-    var invokedAddObserver = false
-    var invokedAddObserverCount = 0
-    var invokedAddObserverParameters: (name: NSNotification.Name?, obj: Any?, queue: OperationQueue?)?
-    var invokedAddObserverParametersList = [(name: NSNotification.Name?, obj: Any?, queue: OperationQueue?)]()
-    var stubbedAddObserverBlockResult: (Notification, Void)?
-    var stubbedAddObserverResult: NSObjectProtocol!
+    var invokedAddObserverForName = false
+    var invokedAddObserverForNameCount = 0
+    var invokedAddObserverForNameParameters: (name: NSNotification.Name?, obj: Any?, queue: OperationQueue?)?
+    var invokedAddObserverForNameParametersList = [(name: NSNotification.Name?, obj: Any?, queue: OperationQueue?)]()
+    var stubbedAddObserverForNameBlockResult: (Notification, Void)?
+    var stubbedAddObserverForNameResult: NSObjectProtocol!
 
     func addObserver(
         forName name: NSNotification.Name?,
@@ -31,14 +31,31 @@ class MockNotificationCenter: NotificationCenterProtocol {
         queue: OperationQueue?,
         using block: @escaping (Notification) -> Void
     ) -> NSObjectProtocol {
-        invokedAddObserver = true
-        invokedAddObserverCount += 1
-        invokedAddObserverParameters = (name, obj, queue)
-        invokedAddObserverParametersList.append((name, obj, queue))
-        if let result = stubbedAddObserverBlockResult {
+        invokedAddObserverForName = true
+        invokedAddObserverForNameCount += 1
+        invokedAddObserverForNameParameters = (name, obj, queue)
+        invokedAddObserverForNameParametersList.append((name, obj, queue))
+        if let result = stubbedAddObserverForNameBlockResult {
             block(result.0)
         }
-        return stubbedAddObserverResult
+        return stubbedAddObserverForNameResult
+    }
+
+    var invokedAddObserverSelector = false
+    var invokedAddObserverSelectorCount = 0
+    var invokedAddObserverSelectorParameters: (observer: Any, aSelector: Selector, aName: NSNotification.Name?, anObject: Any?)?
+    var invokedAddObserverSelectorParametersList = [(observer: Any, aSelector: Selector, aName: NSNotification.Name?, anObject: Any?)]()
+
+    func addObserver(
+        _ observer: Any,
+        selector aSelector: Selector,
+        name aName: NSNotification.Name?,
+        object anObject: Any?
+    ) {
+        invokedAddObserverSelector = true
+        invokedAddObserverSelectorCount += 1
+        invokedAddObserverSelectorParameters = (observer, aSelector, aName, anObject)
+        invokedAddObserverSelectorParametersList.append((observer, aSelector, aName, anObject))
     }
 
     var invokedPost = false

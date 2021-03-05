@@ -16,29 +16,29 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
-    private let chatStore: ChatStoreWriting = ChatStore.shared
+class ChatViewController: UITableViewController {
+    var viewModel: ChatViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleChatStoreUpdate),
-            name: .chatStoreUpdate,
-            object: chatStore
+        viewModel.delegate = self
+        viewModel.isUserReadingMessages = true
+        
+        tableView.register(
+            UINib(nibName: "ChatHeaderView", bundle: nil),
+            forHeaderFooterViewReuseIdentifier: "ChatHeaderView"
         )
-        
-        chatStore.isUserReadingMessages = true
-        
-        print("Chat > All messages:")
-        chatStore.messages.forEach { print("    \($0)") }
+        tableView.register(ChatMessageCell.self)
+        tableView.sectionFooterHeight = 0
+        tableView.sectionHeaderHeight = UITableView.automaticDimension;
+        tableView.estimatedSectionHeaderHeight = 30;
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        chatStore.isUserReadingMessages = false
+        viewModel.isUserReadingMessages = false
     }
     
     @IBAction func composeTap(_ sender: Any) {
@@ -48,10 +48,10 @@ class ChatViewController: UIViewController {
             textField.placeholder = "Message"
         }
 
-        let sendAction = UIAlertAction(title: "Send", style: .default) { [weak self] _ in
+        let sendAction = UIAlertAction(title: "Send", style: .default) { _ in
             guard let text = alertController.textFields?.first?.text else { return }
             
-            self?.chatStore.sendMessage(text) { error in
+            ChatStore.shared.sendMessage(text) { error in
                 guard let error = error else { return }
 
                 print("Chat > Send message error:\n    \(error)")
@@ -70,26 +70,36 @@ class ChatViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @objc private func handleChatStoreUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? ChatStoreUpdate else { return }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfSections()
+    }
 
-        switch payload {
-        case .didChangeConnectionState, .didChangeHasUnreadMessage:
-            break
-        case .didReceiveNewMessage:
-            if let textMessage = chatStore.messages.last as? ChatTextMessage {
-                print("Chat > Received text message:\n    \(textMessage)")
-            } else if let fileMessage = chatStore.messages.last as? ChatFileMessage {
-                print("Chat > Received file message:\n    \(fileMessage)")
-            }
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRowsInSection(section: section)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ChatHeaderView") as! ChatHeaderView
+        headerView.configure(config: viewModel.configForSection(section: section))
+
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageCell.identifier) as! ChatMessageCell
+        cell.configure(config: viewModel.configForRow(indexPath: indexPath))
+        
+        return cell
     }
 }
 
-extension ChatTextMessage: CustomStringConvertible {
-    var description: String { "\(dateCreated) | \(author) | \(body)" }
-}
+extension ChatViewController: ChatViewModelDelegate {
+    func didReceiveNewMessage(indexPath: IndexPath) {
+        // Disable all animations because .none didn't work which seems like an Apple bug
+        UIView.setAnimationsEnabled(false)
+        tableView.insertSections([indexPath.section], with: .none)
+        UIView.setAnimationsEnabled(true)
 
-extension ChatFileMessage: CustomStringConvertible {
-    var description: String { "\(dateCreated) | \(author) | \(fileName) | \(fileSize)" }
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
 }

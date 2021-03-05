@@ -65,6 +65,21 @@ class RoomViewController: UIViewController {
         application.isIdleTimerDisabled = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showChat":
+            let navigationController = segue.destination as! UINavigationController
+            let chatViewController = navigationController.viewControllers.first as! ChatViewController
+            chatViewController.viewModel = ChatViewModelImpl(
+                authStore: AuthStore.shared,
+                chatStore: ChatStore.shared,
+                notificationCenter: NotificationCenter.default
+            )
+        default:
+            break
+        }
+    }
+    
     @IBAction func leaveButtonTapped(_ sender: Any) {
         viewModel.disconnect()
         navigationController?.popViewController(animated: true)

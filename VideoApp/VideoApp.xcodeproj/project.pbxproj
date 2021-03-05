@@ -234,6 +234,18 @@
 		DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */; };
 		DC9C773025003D5400AC68FD /* MockRemoteConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C772F25003D5400AC68FD /* MockRemoteConfigStore.swift */; };
 		DC9C7732250043A600AC68FD /* RemoteConfigStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */; };
+		DCA23DFF25EDAF110076C4FC /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23DFD25EDAF110076C4FC /* ChatMessageCell.swift */; };
+		DCA23E0025EDAF110076C4FC /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23DFD25EDAF110076C4FC /* ChatMessageCell.swift */; };
+		DCA23E0125EDAF110076C4FC /* ChatMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA23DFE25EDAF110076C4FC /* ChatMessageCell.xib */; };
+		DCA23E0225EDAF110076C4FC /* ChatMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA23DFE25EDAF110076C4FC /* ChatMessageCell.xib */; };
+		DCA23E0F25EEA6A10076C4FC /* ChatHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA23E0E25EEA6A10076C4FC /* ChatHeaderView.xib */; };
+		DCA23E1025EEA6A10076C4FC /* ChatHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA23E0E25EEA6A10076C4FC /* ChatHeaderView.xib */; };
+		DCA23E1725EEA6BA0076C4FC /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E1625EEA6BA0076C4FC /* ChatHeaderView.swift */; };
+		DCA23E1825EEA6BA0076C4FC /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E1625EEA6BA0076C4FC /* ChatHeaderView.swift */; };
+		DCA23E5B25F034AF0076C4FC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E5A25F034AF0076C4FC /* ChatViewModel.swift */; };
+		DCA23E5C25F034AF0076C4FC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E5A25F034AF0076C4FC /* ChatViewModel.swift */; };
+		DCA23E6325F1567B0076C4FC /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */; };
+		DCA23E6425F1567B0076C4FC /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */; };
 		DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
@@ -607,6 +619,12 @@
 		DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStoreFactory.swift; sourceTree = "<group>"; };
 		DC9C772F25003D5400AC68FD /* MockRemoteConfigStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRemoteConfigStore.swift; sourceTree = "<group>"; };
 		DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStoreSpec.swift; sourceTree = "<group>"; };
+		DCA23DFD25EDAF110076C4FC /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		DCA23DFE25EDAF110076C4FC /* ChatMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatMessageCell.xib; sourceTree = "<group>"; };
+		DCA23E0E25EEA6A10076C4FC /* ChatHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatHeaderView.xib; sourceTree = "<group>"; };
+		DCA23E1625EEA6BA0076C4FC /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
+		DCA23E5A25F034AF0076C4FC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* InternalAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -995,21 +1013,16 @@
 		DC0446C723A2D7720072F597 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DCA23E0D25EEA6530076C4FC /* ChatHeader */,
+				DCA23DD225EDA5D50076C4FC /* ChatMessage */,
 				DC9A5E03245DC5FD00E4B079 /* Participant */,
-				DC44C2C023870D0800205174 /* BasicCell.swift */,
-				DC44C2C123870D0800205174 /* BasicCell.xib */,
-				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
-				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
-				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
-				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
-				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
-				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
-				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
-				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
-				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
-				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
-				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
-				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
+				DCA23E7725F177290076C4FC /* Basic */,
+				DCA23E7D25F177330076C4FC /* DestructiveButton */,
+				DCA23E8825F177410076C4FC /* EditText */,
+				DCA23E9325F1774B0076C4FC /* HeaderTableView */,
+				DCA23E9925F177580076C4FC /* RightDetail */,
+				DCA23E9F25F177630076C4FC /* SwitchCell */,
+				DCA23EAA25F1777D0076C4FC /* TrackStatsTableView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1268,6 +1281,87 @@
 			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
+		DCA23DD225EDA5D50076C4FC /* ChatMessage */ = {
+			isa = PBXGroup;
+			children = (
+				DCA23DFD25EDAF110076C4FC /* ChatMessageCell.swift */,
+				DCA23DFE25EDAF110076C4FC /* ChatMessageCell.xib */,
+			);
+			path = ChatMessage;
+			sourceTree = "<group>";
+		};
+		DCA23E0D25EEA6530076C4FC /* ChatHeader */ = {
+			isa = PBXGroup;
+			children = (
+				DCA23E1625EEA6BA0076C4FC /* ChatHeaderView.swift */,
+				DCA23E0E25EEA6A10076C4FC /* ChatHeaderView.xib */,
+			);
+			path = ChatHeader;
+			sourceTree = "<group>";
+		};
+		DCA23E7725F177290076C4FC /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2C023870D0800205174 /* BasicCell.swift */,
+				DC44C2C123870D0800205174 /* BasicCell.xib */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		DCA23E7D25F177330076C4FC /* DestructiveButton */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF1A2383342C00141D2D /* DestructiveButtonCell.swift */,
+				DCAEBF1B2383342C00141D2D /* DestructiveButtonCell.xib */,
+			);
+			path = DestructiveButton;
+			sourceTree = "<group>";
+		};
+		DCA23E8825F177410076C4FC /* EditText */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF2E2383560500141D2D /* EditTextCell.swift */,
+				DCAEBF2F2383560500141D2D /* EditTextCell.xib */,
+			);
+			path = EditText;
+			sourceTree = "<group>";
+		};
+		DCA23E9325F1774B0076C4FC /* HeaderTableView */ = {
+			isa = PBXGroup;
+			children = (
+				24A723E91ECE1D2A00486E7A /* HeaderTableViewCell.h */,
+				24A723EA1ECE1D2A00486E7A /* HeaderTableViewCell.m */,
+			);
+			path = HeaderTableView;
+			sourceTree = "<group>";
+		};
+		DCA23E9925F177580076C4FC /* RightDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C2B8238704FB00205174 /* RightDetailCell.swift */,
+				DC44C2B9238704FB00205174 /* RightDetailCell.xib */,
+			);
+			path = RightDetail;
+			sourceTree = "<group>";
+		};
+		DCA23E9F25F177630076C4FC /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				DCAEBF12238331A800141D2D /* SwitchCell.swift */,
+				DCAEBF13238331A800141D2D /* SwitchCell.xib */,
+			);
+			path = SwitchCell;
+			sourceTree = "<group>";
+		};
+		DCA23EAA25F1777D0076C4FC /* TrackStatsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				24A723EB1ECE1D2A00486E7A /* TrackStatsTableViewCell.h */,
+				24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */,
+			);
+			path = TrackStatsTableView;
+			sourceTree = "<group>";
+		};
 		DCA53946235F534400CA26FB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -1463,6 +1557,7 @@
 				DCF458EC25E0754700192F11 /* ChatConnectionState.swift */,
 				DCF4591325E5812200192F11 /* ChatFileMessage.swift */,
 				DCF4590325E5811000192F11 /* ChatMessage.swift */,
+				DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */,
 				DCBEA3CC25CC892F00684ED2 /* ChatStore.swift */,
 				DCF4592825E6C0F300192F11 /* ChatStoreUpdate.swift */,
 				DCF4590B25E5811900192F11 /* ChatTextMessage.swift */,
@@ -1663,6 +1758,7 @@
 			isa = PBXGroup;
 			children = (
 				DCBEA3D925CC966E00684ED2 /* ChatViewController.swift */,
+				DCA23E5A25F034AF0076C4FC /* ChatViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1859,6 +1955,8 @@
 				DCAEBF202383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				4B0012411FBA52C4004A587E /* LaunchScreen.storyboard in Resources */,
 				DCAEBF342383560500141D2D /* EditTextCell.xib in Resources */,
+				DCA23E0125EDAF110076C4FC /* ChatMessageCell.xib in Resources */,
+				DCA23E0F25EEA6A10076C4FC /* ChatHeaderView.xib in Resources */,
 				DC44C2C623870D0800205174 /* BasicCell.xib in Resources */,
 				4B0012441FBA52C4004A587E /* Assets.xcassets in Resources */,
 				DC9A5E122460CE9800E4B079 /* ParticipantCell.xib in Resources */,
@@ -1877,7 +1975,9 @@
 				DCAEBF212383342C00141D2D /* DestructiveButtonCell.xib in Resources */,
 				4B00127E1FBA52E5004A587E /* LaunchScreen.storyboard in Resources */,
 				DCAEBF352383560500141D2D /* EditTextCell.xib in Resources */,
+				DCA23E1025EEA6A10076C4FC /* ChatHeaderView.xib in Resources */,
 				DC9A5DFE245CB66800E4B079 /* VideoView.xib in Resources */,
+				DCA23E0225EDAF110076C4FC /* ChatMessageCell.xib in Resources */,
 				DC44C2C723870D0800205174 /* BasicCell.xib in Resources */,
 				4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */,
 				DC44C2BF238704FB00205174 /* RightDetailCell.xib in Resources */,
@@ -2336,6 +2436,7 @@
 				DC3C32D924180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
+				DCA23E1725EEA6BA0076C4FC /* ChatHeaderView.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCEDB39C2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
@@ -2351,6 +2452,7 @@
 				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
+				DCA23DFF25EDAF110076C4FC /* ChatMessageCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
 				DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */,
@@ -2414,6 +2516,7 @@
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */,
+				DCA23E6325F1567B0076C4FC /* ChatMessageType.swift in Sources */,
 				DCEDB3A02476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
@@ -2473,6 +2576,7 @@
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC12459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
+				DCA23E5B25F034AF0076C4FC /* ChatViewModel.swift in Sources */,
 				DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				DCEC3D1823861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */,
@@ -2521,6 +2625,7 @@
 				DC3C32DA24180C3100F56AFB /* APIEncoding.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
+				DCA23E1825EEA6BA0076C4FC /* ChatHeaderView.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCEDB39D2475D4D9006AF70D /* SelectStandardRenderDimensionsViewModelFactory.swift in Sources */,
@@ -2536,6 +2641,7 @@
 				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
+				DCA23E0025EDAF110076C4FC /* ChatMessageCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
 				DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */,
@@ -2599,6 +2705,7 @@
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */,
+				DCA23E6425F1567B0076C4FC /* ChatMessageType.swift in Sources */,
 				DCEDB3A12476C531006AF70D /* SelectHighRenderDimensionsViewModelFactory.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
@@ -2658,6 +2765,7 @@
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC22459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
+				DCA23E5C25F034AF0076C4FC /* ChatViewModel.swift in Sources */,
 				DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				DCEC3D1923861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */,

@@ -145,6 +145,6 @@ extension ChatStore: TwilioConversationsClientDelegate {
             post(.didChangeHasUnreadMessage)
         }
 
-        post(.didReceiveNewMessage)
+        post(.didReceiveNewMessage(index: messages.count - 1))
     }
 }
