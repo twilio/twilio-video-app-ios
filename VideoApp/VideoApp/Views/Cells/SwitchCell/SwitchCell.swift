@@ -16,7 +16,7 @@
 
 import UIKit
 
-class SwitchCell: UITableViewCell {
+class SwitchCell: UITableViewCell, NibLoadableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchView: UISwitch!
     var updateHandler: ((Bool) -> Void)?

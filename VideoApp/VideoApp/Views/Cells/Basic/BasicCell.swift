@@ -16,6 +16,6 @@
 
 import UIKit
 
-class BasicCell: UITableViewCell {
+class BasicCell: UITableViewCell, NibLoadableView {
 
 }

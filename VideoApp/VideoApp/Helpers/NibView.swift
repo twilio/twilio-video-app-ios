@@ -16,7 +16,7 @@
 
 import UIKit
 
-class NibView: UIView {
+class NibView: UIView, NibLoadableView {
     override init(frame: CGRect) {
      super.init(frame: frame)
      setup()
@@ -41,10 +41,10 @@ class NibView: UIView {
     }
     
     func loadViewFromNib() -> UIView! {
-      let bundle = Bundle(for: type(of: self))
-      let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
-      let view = nib.instantiate(withOwner: self, options: nil).first as? UIView
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: type(of: self).nibName, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil).first as? UIView
       
-      return view
+        return view
     }
 }

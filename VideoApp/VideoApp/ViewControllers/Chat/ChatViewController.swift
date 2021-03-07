@@ -25,10 +25,7 @@ class ChatViewController: UITableViewController {
         viewModel.delegate = self
         viewModel.isUserReadingMessages = true
         
-        tableView.register(
-            UINib(nibName: "ChatHeaderView", bundle: nil),
-            forHeaderFooterViewReuseIdentifier: "ChatHeaderView"
-        )
+        tableView.register(ChatHeaderView.self)
         tableView.register(ChatMessageCell.self)
         tableView.sectionFooterHeight = 0
         tableView.sectionHeaderHeight = UITableView.automaticDimension;
@@ -79,14 +76,14 @@ class ChatViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ChatHeaderView") as! ChatHeaderView
-        headerView.configure(config: viewModel.configForSection(section: section))
+        let view: ChatHeaderView = tableView.dequeueReusableHeaderFooterView()
+        view.configure(config: viewModel.configForSection(section: section))
 
-        return headerView
+        return view
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageCell.identifier) as! ChatMessageCell
+        let cell: ChatMessageCell = tableView.dequeueReusableCell(for: indexPath)
         cell.configure(config: viewModel.configForRow(indexPath: indexPath))
         
         return cell

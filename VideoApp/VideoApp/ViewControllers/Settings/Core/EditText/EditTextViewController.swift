@@ -48,7 +48,7 @@ class EditTextViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EditTextCell.identifier) as! EditTextCell
+        let cell: EditTextCell = tableView.dequeueReusableCell(for: indexPath)
         cell.textField.placeholder = viewModel.placeholder
         cell.textField.text = viewModel.text
         cell.textField.delegate = self

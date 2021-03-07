@@ -16,6 +16,6 @@
 
 import UIKit
 
-class DestructiveButtonCell: UITableViewCell {
+class DestructiveButtonCell: UITableViewCell, NibLoadableView {
     @IBOutlet weak var buttonLabel: UILabel!
 }

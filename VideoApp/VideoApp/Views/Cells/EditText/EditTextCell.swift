@@ -16,6 +16,6 @@
 
 import UIKit
 
-class EditTextCell: UITableViewCell {
+class EditTextCell: UITableViewCell, NibLoadableView {
     @IBOutlet weak var textField: UITextField!
 }

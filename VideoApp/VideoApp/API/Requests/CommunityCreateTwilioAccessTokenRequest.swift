@@ -22,6 +22,7 @@ struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
         let userIdentity: String
         let roomName: String?
         let createRoom: Bool
+        let createConversation = true
     }
 
     let path = "token"

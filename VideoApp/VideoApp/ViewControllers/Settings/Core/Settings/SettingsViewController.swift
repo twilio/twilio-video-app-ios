@@ -24,7 +24,10 @@ class SettingsViewController: UITableViewController {
 
         title = viewModel.title
 
-        [BasicCell.self, RightDetailCell.self, SwitchCell.self, DestructiveButtonCell.self].forEach { tableView.register($0) }
+        tableView.register(BasicCell.self)
+        tableView.register(RightDetailCell.self)
+        tableView.register(SwitchCell.self)
+        tableView.register(DestructiveButtonCell.self)
         
         navigationController?.navigationBar.prefersLargeTitles = true
 
@@ -49,34 +52,34 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.row(at: indexPath) {
         case let .info(title, detail):
-            let cell = tableView.dequeueReusableCell(withIdentifier: RightDetailCell.identifier)!
+            let cell: RightDetailCell = tableView.dequeueReusableCell(for: indexPath)
             cell.textLabel?.text = title
             cell.detailTextLabel?.text = detail
             cell.selectionStyle = .none
             return cell
         case let .optionList(title, selectedOption, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: RightDetailCell.identifier)!
+            let cell: RightDetailCell = tableView.dequeueReusableCell(for: indexPath)
             cell.textLabel?.text = title
             cell.detailTextLabel?.text = selectedOption
             cell.accessoryType = .disclosureIndicator
             return cell
         case let .toggle(title, isOn, updateHandler):
-            let cell = tableView.dequeueReusableCell(withIdentifier: SwitchCell.identifier) as! SwitchCell
+            let cell: SwitchCell = tableView.dequeueReusableCell(for: indexPath)
             cell.titleLabel.text = title
             cell.switchView.isOn = isOn
             cell.updateHandler = updateHandler
             return cell
         case let .destructiveButton(title, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: DestructiveButtonCell.identifier) as! DestructiveButtonCell
+            let cell: DestructiveButtonCell = tableView.dequeueReusableCell(for: indexPath)
             cell.buttonLabel.text = title
             return cell
         case let .push(title, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: BasicCell.identifier)!
+            let cell: BasicCell = tableView.dequeueReusableCell(for: indexPath)
             cell.textLabel?.text = title
             cell.accessoryType = .disclosureIndicator
             return cell
         case let .editableText(title, text, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: RightDetailCell.identifier)!
+            let cell: RightDetailCell = tableView.dequeueReusableCell(for: indexPath)
             cell.textLabel?.text = title
             cell.detailTextLabel?.text = text
             cell.accessoryType = .disclosureIndicator

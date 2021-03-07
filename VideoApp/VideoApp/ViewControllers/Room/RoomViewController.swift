@@ -160,7 +160,7 @@ extension RoomViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParticipantCell.identifier, for: indexPath) as! ParticipantCell
+        let cell: ParticipantCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.configure(participant: viewModel.data.participants[indexPath.item])
         return cell
     }

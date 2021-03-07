@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ChatHeaderView: UITableViewHeaderFooterView {
+class ChatHeaderView: UITableViewHeaderFooterView, NibLoadableView {
     struct Config {
         let author: String
         let isAuthorYou: Bool

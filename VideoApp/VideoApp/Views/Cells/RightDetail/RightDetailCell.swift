@@ -16,6 +16,6 @@
 
 import UIKit
 
-class RightDetailCell: UITableViewCell {
+class RightDetailCell: UITableViewCell, NibLoadableView {
 
 }

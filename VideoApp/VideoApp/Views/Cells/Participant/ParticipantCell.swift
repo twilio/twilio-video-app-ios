@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ParticipantCell: UICollectionViewCell {
+class ParticipantCell: UICollectionViewCell, NibLoadableView {
     struct Status {
         let isMicOn: Bool
         let networkQualityLevel: NetworkQualityLevel

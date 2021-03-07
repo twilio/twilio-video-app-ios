@@ -83,8 +83,6 @@
 		DC44C2C423870D0800205174 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C023870D0800205174 /* BasicCell.swift */; };
 		DC44C2C623870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
 		DC44C2C723870D0800205174 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2C123870D0800205174 /* BasicCell.xib */; };
-		DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
-		DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */; };
 		DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
 		DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E123875C4F00205174 /* StringHelpers.swift */; };
 		DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */; };
@@ -246,6 +244,8 @@
 		DCA23E5C25F034AF0076C4FC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E5A25F034AF0076C4FC /* ChatViewModel.swift */; };
 		DCA23E6325F1567B0076C4FC /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */; };
 		DCA23E6425F1567B0076C4FC /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */; };
+		DCA23EBB25F541700076C4FC /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23EBA25F541700076C4FC /* ReusableView.swift */; };
+		DCA23EBC25F541700076C4FC /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA23EBA25F541700076C4FC /* ReusableView.swift */; };
 		DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
@@ -357,8 +357,6 @@
 		DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */; };
 		DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
 		DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */; };
-		DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
-		DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */; };
 		DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
 		DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */; };
 		DCEC3D1823861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1623861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift */; };
@@ -373,8 +371,6 @@
 		DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3232464D7EE006AF70D /* RoomFactory.swift */; };
 		DCEDB3292464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
 		DCEDB32A2464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
-		DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
-		DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
 		DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
@@ -543,7 +539,6 @@
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
 		DC44C2C123870D0800205174 /* BasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicCell.xib; sourceTree = "<group>"; };
-		DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellHelpers.swift; sourceTree = "<group>"; };
 		DC44C2E123875C4F00205174 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		DC44C2E523876AFB00205174 /* SelectOptionSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionSegueSender.swift; sourceTree = "<group>"; };
 		DC44C2E923876B4700205174 /* EditTextSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextSegueSender.swift; sourceTree = "<group>"; };
@@ -625,6 +620,7 @@
 		DCA23E1625EEA6BA0076C4FC /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
 		DCA23E5A25F034AF0076C4FC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		DCA23E6225F1567B0076C4FC /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
+		DCA23EBA25F541700076C4FC /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* InternalAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -706,7 +702,6 @@
 		DCEC3CFB2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIUserdentityViewModel.swift; sourceTree = "<group>"; };
 		DCEC3D052386085B00EBDEBF /* EditTextViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEC3D09238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserIdentityViewModelFactory.swift; sourceTree = "<group>"; };
-		DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHelpers.swift; sourceTree = "<group>"; };
 		DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEC3D1623861D3700EBDEBF /* SelectRoomTypeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModelFactory.swift; sourceTree = "<group>"; };
@@ -714,7 +709,6 @@
 		DCEDB31F2464CF90006AF70D /* RoomState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomState.swift; sourceTree = "<group>"; };
 		DCEDB3232464D7EE006AF70D /* RoomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFactory.swift; sourceTree = "<group>"; };
 		DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelFactory.swift; sourceTree = "<group>"; };
-		DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewHelpers.swift; sourceTree = "<group>"; };
 		DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexSetHelpers.swift; sourceTree = "<group>"; };
 		DCEDB348246F16AD006AF70D /* VideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB34C246F16C6006AF70D /* VideoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSource.swift; sourceTree = "<group>"; };
@@ -1062,13 +1056,11 @@
 				DC9A5DE1245CA2E000E4B079 /* NibView.swift */,
 				DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */,
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
+				DCA23EBA25F541700076C4FC /* ReusableView.swift */,
 				DC9A5E5224638A9C00E4B079 /* ShowError.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
 				DCEDB35824730476006AF70D /* SwiftToObjc.swift */,
-				DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */,
 				243CDB4922665F1800637B6B /* UIColorHelpers.swift */,
-				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
-				DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */,
 				DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */,
 			);
 			path = Helpers;
@@ -2445,12 +2437,10 @@
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCF4592925E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */,
 				DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */,
-				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEDB3902475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
 				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
-				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DCA23DFF25EDAF110076C4FC /* ChatMessageCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2505,6 +2495,7 @@
 				DCD6468025A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */,
 				DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
+				DCA23EBB25F541700076C4FC /* ReusableView.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCBEA3DA25CC966E00684ED2 /* ChatViewController.swift in Sources */,
@@ -2597,7 +2588,6 @@
 				DCF4590425E5811000192F11 /* ChatMessage.swift in Sources */,
 				DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */,
 				DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */,
-				DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */,
@@ -2634,12 +2624,10 @@
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCF4592A25E6C0F300192F11 /* ChatStoreUpdate.swift in Sources */,
 				DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */,
-				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */,
 				DCEDB3912475D210006AF70D /* RenderDimensionsSettingsViewModel.swift in Sources */,
 				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
-				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DCA23E0025EDAF110076C4FC /* ChatMessageCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
@@ -2694,6 +2682,7 @@
 				DCD6468125A91D7E00E3E7B2 /* RecordingDotView.swift in Sources */,
 				DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
+				DCA23EBC25F541700076C4FC /* ReusableView.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCBEA3DB25CC966E00684ED2 /* ChatViewController.swift in Sources */,
@@ -2786,7 +2775,6 @@
 				DCF4590525E5811000192F11 /* ChatMessage.swift in Sources */,
 				DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */,
 				DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */,
-				DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */,

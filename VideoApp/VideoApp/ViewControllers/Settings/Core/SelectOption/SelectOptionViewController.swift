@@ -38,7 +38,7 @@ class SelectOptionViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BasicCell.identifier)!
+        let cell: BasicCell = tableView.dequeueReusableCell(for: indexPath)
         cell.textLabel?.text = viewModel.options[indexPath.row]
         cell.accessoryType = viewModel.selectedIndex == indexPath.row ? .checkmark : .none
         return cell

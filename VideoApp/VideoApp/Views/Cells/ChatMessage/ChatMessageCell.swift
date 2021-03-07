@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ChatMessageCell: UITableViewCell {
+class ChatMessageCell: UITableViewCell, NibLoadableView {
     struct Config {
         let message: String
         let isAuthorYou: Bool
