@@ -49,7 +49,7 @@ import TwilioVideo
                 videoOptions: VideoBandwidthProfileOptions { builder in
                     builder.mode = TwilioVideo.BandwidthProfileMode(setting: self.appSettingsStore.bandwidthProfileMode)
                     builder.maxSubscriptionBitrate = self.appSettingsStore.maxSubscriptionBitrate as NSNumber?
-                    builder.maxTracks = self.appSettingsStore.maxTracks as NSNumber?
+                    // builder.maxTracks = self.appSettingsStore.maxTracks as NSNumber?
                     builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
                     builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
                     let renderDimensions = VideoRenderDimensions()
@@ -57,6 +57,7 @@ import TwilioVideo
                     renderDimensions.standard = VideoDimensions(setting: self.appSettingsStore.standardRenderDimensions)
                     renderDimensions.high = VideoDimensions(setting: self.appSettingsStore.highRenderDimensions)
                     builder.renderDimensions = renderDimensions
+                    builder.subscribedTrackSwitchOffMode = TwilioVideo.SubscribedTrackSwitchOffMode(setting:self.appSettingsStore.subscribedTrackSwitchOffMode)
                 }
             )
             builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
@@ -110,6 +111,16 @@ private extension Track.SwitchOffMode {
         case .disabled: self = .disabled
         case .detected: self = .detected
         case .predicted: self = .predicted
+        }
+    }
+}
+
+private extension TwilioVideo.SubscribedTrackSwitchOffMode {
+    init?(setting: SubscribedTrackSwitchOffMode) {
+        switch setting {
+        case .sdkDefault: return nil
+        case .auto: self = .auto
+        case .manual: self = .manual
         }
     }
 }

@@ -24,6 +24,7 @@ class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
             editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory(),
             editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory(),
             selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory(),
+            selectSubscribedTrackSwitchOffModeViewModelFactory: SelectSubscribedTrackSwitchOffModeViewModelFactory(),
             selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory(),
             renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory()
         )

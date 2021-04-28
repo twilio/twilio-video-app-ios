@@ -36,6 +36,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var standardRenderDimensions: VideoDimensionsName { get set }
     var highRenderDimensions: VideoDimensionsName { get set }
     var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType? { get set }
+    var subscribedTrackSwitchOffMode: SubscribedTrackSwitchOffMode { get set }
     func reset()
 }
 
@@ -59,7 +60,8 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("standardRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var standardRenderDimensions: VideoDimensionsName
     @Storage(key: makeKey("highRenderDimensions"), defaultValue: VideoDimensionsName.serverDefault) var highRenderDimensions: VideoDimensionsName
     @Storage(key: makeKey("remoteRoomType"), defaultValue: nil) var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
-
+    @Storage(key: makeKey("subscribedTrackSwitchOffMode"), defaultValue: .sdkDefault) var subscribedTrackSwitchOffMode: SubscribedTrackSwitchOffMode
+    
     static var shared: AppSettingsStoreWriting = AppSettingsStore(
         notificationCenter: NotificationCenter.default,
         queue: DispatchQueue.main,
