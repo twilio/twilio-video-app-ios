@@ -1,3 +1,4 @@
+source 'git@github.com:twilio/cocoapod-specs-internal.git'
 platform :ios, '12.0'
 inhibit_all_warnings!
 use_frameworks!
@@ -14,7 +15,7 @@ target 'Video-Internal' do
   pod 'FirebaseUI/Google', '~> 9'
   pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
-  pod 'TwilioVideo', '~> 4.5'
+  pod 'TwilioVideo', '4.5.0-6d8b03a4'
 
   target 'Video-InternalTests' do
     pod 'Nimble', '~> 9'
