@@ -23,7 +23,7 @@ enum SubscribedTrackSwitchOffMode: String, SettingOptions {
     
     var title: String {
         switch self {
-        case .sdkDefault: return "SDK Default (Auto)"
+        case .sdkDefault: return "SDK Default"
         case .auto: return "Auto"
         case .manual: return "Manual"
         }
