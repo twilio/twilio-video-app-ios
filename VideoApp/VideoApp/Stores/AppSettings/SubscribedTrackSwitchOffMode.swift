@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum SubscribedTrackSwitchOffMode: String, SettingOptions {
+enum ClientTrackSwitchOffControl: String, SettingOptions {
     case sdkDefault
     case auto
     case manual

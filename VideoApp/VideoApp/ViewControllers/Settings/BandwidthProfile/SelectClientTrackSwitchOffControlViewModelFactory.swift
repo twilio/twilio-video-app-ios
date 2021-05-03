@@ -16,11 +16,11 @@
 
 import Foundation
 
-class SelectSubscribedTrackSwitchOffModeViewModelFactory: SelectOptionViewModelFactory {
+class SelectClientTrackSwitchOffControlViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
         SelectSettingViewModel(
-            title: "Subscribed Track Switch Off Mode",
-            keyPath: \.subscribedTrackSwitchOffMode,
+            title: "Client Track Switch Off Control",
+            keyPath: \.clientTrackSwitchOffControl,
             appSettingsStore: AppSettingsStore.shared
         )
     }

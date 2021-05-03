@@ -57,7 +57,7 @@ import TwilioVideo
                     renderDimensions.standard = VideoDimensions(setting: self.appSettingsStore.standardRenderDimensions)
                     renderDimensions.high = VideoDimensions(setting: self.appSettingsStore.highRenderDimensions)
                     builder.renderDimensions = renderDimensions
-                    builder.subscribedTrackSwitchOffMode = TwilioVideo.SubscribedTrackSwitchOffMode(setting:self.appSettingsStore.subscribedTrackSwitchOffMode)
+                    builder.clientTrackSwitchOffControl = TwilioVideo.ClientTrackSwitchOffControl(setting:self.appSettingsStore.clientTrackSwitchOffControl)
                 }
             )
             builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
@@ -115,8 +115,8 @@ private extension Track.SwitchOffMode {
     }
 }
 
-private extension TwilioVideo.SubscribedTrackSwitchOffMode {
-    init?(setting: SubscribedTrackSwitchOffMode) {
+private extension TwilioVideo.ClientTrackSwitchOffControl {
+    init?(setting: ClientTrackSwitchOffControl) {
         switch setting {
         case .sdkDefault: return nil
         case .auto: self = .auto

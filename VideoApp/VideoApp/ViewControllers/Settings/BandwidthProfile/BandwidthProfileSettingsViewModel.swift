@@ -53,8 +53,8 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
                     .push(title: "Render Dimensions", viewControllerFactory: RenderDimensionsSettingsViewControllerFactory()),
                     .optionList(
                         title: "Subscribed Track Switch Off Mode",
-                        selectedOption: appSettingsStore.subscribedTrackSwitchOffMode.title,
-                        viewModelFactory: selectSubscribedTrackSwitchOffModeViewModelFactory
+                        selectedOption: appSettingsStore.clientTrackSwitchOffControl.title,
+                        viewModelFactory: selectClientTrackSwitchOffControlViewModelFactory
                     )
                 ]
             )
@@ -65,7 +65,7 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     private let editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory
     private let editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory
     private let selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory
-    private let selectSubscribedTrackSwitchOffModeViewModelFactory: SelectSubscribedTrackSwitchOffModeViewModelFactory
+    private let selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory
     private let selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
     private let renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
     
@@ -75,7 +75,7 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
         editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory,
         editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory,
         selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory,
-        selectSubscribedTrackSwitchOffModeViewModelFactory: SelectSubscribedTrackSwitchOffModeViewModelFactory,
+        selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory,
         selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory,
         renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
     ) {
@@ -84,7 +84,7 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
         self.editMaxSubscriptionBitrateViewModelFactory = editMaxSubscriptionBitrateViewModelFactory
         self.editMaxTracksViewModelFactory = editMaxTracksViewModelFactory
         self.selectDominantSpeakerPriorityViewModelFactory = selectDominantSpeakerPriorityViewModelFactory
-        self.selectSubscribedTrackSwitchOffModeViewModelFactory = selectSubscribedTrackSwitchOffModeViewModelFactory
+        self.selectClientTrackSwitchOffControlViewModelFactory = selectClientTrackSwitchOffControlViewModelFactory
         self.selectTrackSwitchOffModeViewModelFactory = selectTrackSwitchOffModeViewModelFactory
         self.renderDimensionsSettingsViewControllerFactory = renderDimensionsSettingsViewControllerFactory
     }
