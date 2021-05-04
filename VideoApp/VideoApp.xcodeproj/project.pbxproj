@@ -1039,10 +1039,10 @@
 			children = (
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
 				DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */,
+				8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */,
 				DC044683238EF6C20072F597 /* Environment.swift */,
 				DC82A34E23FC9AAA0081578C /* JSONContainer.swift */,
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
-				8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
 				DCEDB371247442D9006AF70D /* TrackPriority.swift */,
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
