@@ -59,8 +59,6 @@
 		DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
 		DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
-		DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
-		DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
@@ -502,7 +500,6 @@
 		DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
-		DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxTracksViewModel.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDelegate.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
@@ -1594,7 +1591,6 @@
 				DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */,
 				DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */,
 				DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */,
-				DC2511A6247817C600C776D6 /* EditMaxTracksViewModel.swift */,
 				DCEDB36D24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift */,
 				8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */,
 				DCEDB375247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift */,
@@ -2329,7 +2325,6 @@
 				DCAEBF382383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4B22665F1800637B6B /* UIColorHelpers.swift in Sources */,
 				DC3924912416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
-				DC2511A8247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
 				DCEDB3942475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
@@ -2507,7 +2502,6 @@
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				243CDB4C22665F1800637B6B /* UIColorHelpers.swift in Sources */,
 				DC3924922416A8070068E33F /* APIErrorResponseDecoder.swift in Sources */,
-				DC2511A9247817C600C776D6 /* EditMaxTracksViewModel.swift in Sources */,
 				DCEDB3952475D349006AF70D /* RenderDimensionsSettingsViewControllerFactory.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,

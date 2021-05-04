@@ -20,7 +20,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     let title = "Bandwidth Profile"
     var sections: [SettingsViewModelSection] {
         let editMaxSubscriptionBitrateViewModel = editMaxSubscriptionBitrateViewModelFactory.makeEditTextViewModel()
-        let editMaxTracksViewModel = editMaxTracksViewModelFactory.makeEditTextViewModel()
         
         return [
             .init(
@@ -34,11 +33,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
                         title: editMaxSubscriptionBitrateViewModel.title,
                         text: editMaxSubscriptionBitrateViewModel.text.nilIfEmpty ?? editMaxSubscriptionBitrateViewModel.placeholder,
                         viewModelFactory: editMaxSubscriptionBitrateViewModelFactory
-                    ),
-                    .editableText(
-                        title: editMaxTracksViewModel.title,
-                        text: editMaxTracksViewModel.text.nilIfEmpty ?? editMaxTracksViewModel.placeholder,
-                        viewModelFactory: editMaxTracksViewModelFactory
                     ),
                     .optionList(
                         title: "Dominant Speaker Priority",
@@ -63,7 +57,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     private let appSettingsStore: AppSettingsStoreWriting
     private let selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory
     private let editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory
-    private let editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory
     private let selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory
     private let selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory
     private let selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
@@ -73,7 +66,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
         appSettingsStore: AppSettingsStoreWriting,
         selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory,
         editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory,
-        editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory,
         selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory,
         selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory,
         selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory,
@@ -82,7 +74,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
         self.appSettingsStore = appSettingsStore
         self.selectBandwidthProfileModeViewModelFactory = selectBandwidthProfileModeViewModelFactory
         self.editMaxSubscriptionBitrateViewModelFactory = editMaxSubscriptionBitrateViewModelFactory
-        self.editMaxTracksViewModelFactory = editMaxTracksViewModelFactory
         self.selectDominantSpeakerPriorityViewModelFactory = selectDominantSpeakerPriorityViewModelFactory
         self.selectClientTrackSwitchOffControlViewModelFactory = selectClientTrackSwitchOffControlViewModelFactory
         self.selectTrackSwitchOffModeViewModelFactory = selectTrackSwitchOffModeViewModelFactory
