@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.1)
+  - Alamofire (5.4.3)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -92,24 +92,20 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
-  - GTMAppAuth (1.1.0):
+  - GTMAppAuth (1.2.1):
     - AppAuth/Core (~> 1.4)
-    - GTMSessionFetcher (~> 1.4)
-  - GTMSessionFetcher (1.5.0):
-    - GTMSessionFetcher/Full (= 1.5.0)
+    - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.5.0)
-  - GTMSessionFetcher/Full (1.5.0):
-    - GTMSessionFetcher/Core (= 1.5.0)
   - IGListDiffKit (4.0.0)
-  - KeychainAccess (4.2.1)
+  - KeychainAccess (4.2.2)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - Nimble (9.0.0)
+  - Nimble (9.0.1)
   - PromisesObjC (1.2.12)
-  - Quick (3.0.0)
+  - Quick (3.1.2)
   - TwilioVideo (4.5.0-rc1)
 
 DEPENDENCIES:
@@ -126,7 +122,7 @@ DEPENDENCIES:
   - TwilioVideo (= 4.5.0-rc1)
 
 SPEC REPOS:
-  https://github.com/twilio/cocoapod-specs-internal.git:
+  "git@github.com:twilio/cocoapod-specs-internal.git":
     - TwilioVideo
   trunk:
     - Alamofire
@@ -154,7 +150,7 @@ SPEC REPOS:
     - Quick
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   AppCenter: 0487be185c038ed2ecc5ed38219af1dcd280af23
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
@@ -169,16 +165,16 @@ SPEC CHECKSUMS:
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
+  GTMAppAuth: 5b53231ef6920f149ab84b2969cb0ab572da3077
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
-  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Nimble: 7bed62ffabd6dbfe05f5925cbc43722533248990
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   TwilioVideo: b4f306d7191c0893d2223c5b73c34c14d60fdf68
 
-PODFILE CHECKSUM: 5988a5831b13f736ebcb94a9fc6675e9b01cc8ea
+PODFILE CHECKSUM: a64c48e8378531cf6a5d244d1fc1294b9852adf5
 
 COCOAPODS: 1.10.0

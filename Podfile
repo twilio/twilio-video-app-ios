@@ -1,4 +1,4 @@
-source 'https://github.com/twilio/cocoapod-specs-internal.git'
+source 'git@github.com:twilio/cocoapod-specs-internal.git'
 platform :ios, '12.0'
 inhibit_all_warnings!
 use_frameworks!
