@@ -28,8 +28,8 @@
 		4B0012811FBA52E5004A587E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241282461E36A6AB002198BE /* Assets.xcassets */; };
 		4B0012831FBA52E5004A587E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241282431E36A6AB002198BE /* Main.storyboard */; };
 		752D4639BF9718A771C3B2EF /* Pods_Video_InternalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9C557AEFEDA02580046B98 /* Pods_Video_InternalUITests.framework */; };
-		8A206F0E263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F0D263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift */; };
-		8A206F0F263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F0D263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift */; };
+		8A206F0E263912B600EFCD97 /* ClientTrackSwitchOffControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */; };
+		8A206F0F263912B600EFCD97 /* ClientTrackSwitchOffControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */; };
 		8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */; };
 		8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */; };
 		8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
@@ -474,7 +474,7 @@
 		4B00128B1FBA52E5004A587E /* Video-Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Community.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9C557AEFEDA02580046B98 /* Pods_Video_InternalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_InternalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBBCFD96628BCB502CCDA04 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8A206F0D263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedTrackSwitchOffMode.swift; sourceTree = "<group>"; };
+		8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTrackSwitchOffControl.swift; sourceTree = "<group>"; };
 		8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClientTrackSwitchOffControlViewModelFactory.swift; sourceTree = "<group>"; };
 		8AC49999232A18D2005A4B35 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A10066E39687E61F986470C1 /* Pods_Video_Twilio_Video_TwilioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Twilio_Video_TwilioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1042,7 +1042,7 @@
 				DC044683238EF6C20072F597 /* Environment.swift */,
 				DC82A34E23FC9AAA0081578C /* JSONContainer.swift */,
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
-				8A206F0D263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift */,
+				8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */,
 				DC4E4E2223577EE500C5D313 /* Topology.swift */,
 				DCEDB371247442D9006AF70D /* TrackPriority.swift */,
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
@@ -2249,7 +2249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A206F0E263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift in Sources */,
+				8A206F0E263912B600EFCD97 /* ClientTrackSwitchOffControl.swift in Sources */,
 				DCA65029240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */,
 				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC9A5E26246207E600E4B079 /* CameraSourceFactory.swift in Sources */,
@@ -2426,7 +2426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A206F0F263912B600EFCD97 /* SubscribedTrackSwitchOffMode.swift in Sources */,
+				8A206F0F263912B600EFCD97 /* ClientTrackSwitchOffControl.swift in Sources */,
 				DCA6502A240F1E0D0038DEE1 /* InternalCreateTwilioAccessTokenRequest.swift in Sources */,
 				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC9A5E27246207E600E4B079 /* CameraSourceFactory.swift in Sources */,
