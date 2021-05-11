@@ -19,7 +19,7 @@ import TwilioVideo
 
 typealias NetworkQualityLevel = TwilioVideo.NetworkQualityLevel // So UI doesn't have to import TwilioVideo
 
-protocol Participant: AnyObject, ListDiffable {
+protocol Participant: ListDiffable {
     var identity: String { get }
     var cameraTrack: VideoTrack? { get }
     var screenTrack: VideoTrack? { get }
