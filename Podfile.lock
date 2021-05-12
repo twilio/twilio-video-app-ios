@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.1)
+  - Alamofire (5.4.3)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -92,25 +92,21 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
-  - GTMAppAuth (1.1.0):
+  - GTMAppAuth (1.2.2):
     - AppAuth/Core (~> 1.4)
-    - GTMSessionFetcher (~> 1.4)
-  - GTMSessionFetcher (1.5.0):
-    - GTMSessionFetcher/Full (= 1.5.0)
+    - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.5.0)
-  - GTMSessionFetcher/Full (1.5.0):
-    - GTMSessionFetcher/Core (= 1.5.0)
   - IGListDiffKit (4.0.0)
-  - KeychainAccess (4.2.1)
+  - KeychainAccess (4.2.2)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - Nimble (9.0.0)
+  - Nimble (9.2.0)
   - PromisesObjC (1.2.12)
-  - Quick (3.0.0)
-  - TwilioVideo (4.3.0)
+  - Quick (3.1.2)
+  - TwilioVideo (4.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5)
@@ -153,7 +149,7 @@ SPEC REPOS:
     - TwilioVideo
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   AppCenter: 0487be185c038ed2ecc5ed38219af1dcd280af23
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
@@ -168,15 +164,15 @@ SPEC CHECKSUMS:
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
+  GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
-  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
-  TwilioVideo: 1ece3d954245b02244ea613408f6a4413ff54987
+  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
+  TwilioVideo: fcf10b7460e582570887d194b73e75425685d813
 
 PODFILE CHECKSUM: f22db36db4545a131be7417d00df2ce176070bc3
 
