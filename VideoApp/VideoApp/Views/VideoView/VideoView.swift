@@ -58,11 +58,15 @@ class VideoView: NibView {
         errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false)
 
         if let videoTrack = config.videoTrack, videoTrack.isEnabled {
-            self.videoTrack = videoTrack
-
-            if shouldRenderVideo && !videoTrack.isRendered(by: videoView) {
-                videoTrack.addRenderer(videoView)
-                videoView.isHidden = !videoView.hasVideoData
+            if !videoTrack.isRendered(by: videoView) {
+                self.videoTrack?.removeRenderer(videoView)
+                self.videoTrack = videoTrack
+                videoView.isHidden = true
+                
+                if shouldRenderVideo {
+                    videoTrack.addRenderer(videoView)
+                    videoView.isHidden = !videoView.hasVideoData
+                }
             }
         } else {
             videoTrack?.removeRenderer(videoView)
