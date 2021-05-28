@@ -28,6 +28,10 @@ class ParticipantCell: UICollectionViewCell {
     @IBOutlet weak var networkQualityImage: UIImageView!
     @IBOutlet weak var pinView: UIView!
     @IBOutlet weak var muteView: UIView!
+    var shouldRenderVideo: Bool {
+        get { videoView.shouldRenderVideo }
+        set { videoView.shouldRenderVideo = newValue }
+    }
     
     func configure(participant: Participant) {
         identityLabel.text = participant.identity

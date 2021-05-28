@@ -17,6 +17,7 @@
 @testable import VideoApp
 
 class MockAppSettingsStore: AppSettingsStoreWriting {
+    var clientTrackSwitchOffControl: ClientTrackSwitchOffControl = .auto
 
     var invokedEnvironmentSetter = false
     var invokedEnvironmentSetterCount = 0
@@ -279,28 +280,6 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             invokedMaxSubscriptionBitrateGetter = true
             invokedMaxSubscriptionBitrateGetterCount += 1
             return stubbedMaxSubscriptionBitrate
-        }
-    }
-
-    var invokedMaxTracksSetter = false
-    var invokedMaxTracksSetterCount = 0
-    var invokedMaxTracks: Int?
-    var invokedMaxTracksList = [Int?]()
-    var invokedMaxTracksGetter = false
-    var invokedMaxTracksGetterCount = 0
-    var stubbedMaxTracks: Int!
-
-    var maxTracks: Int? {
-        set {
-            invokedMaxTracksSetter = true
-            invokedMaxTracksSetterCount += 1
-            invokedMaxTracks = newValue
-            invokedMaxTracksList.append(newValue)
-        }
-        get {
-            invokedMaxTracksGetter = true
-            invokedMaxTracksGetterCount += 1
-            return stubbedMaxTracks
         }
     }
 
