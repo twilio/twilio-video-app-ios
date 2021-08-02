@@ -18,6 +18,7 @@
 
 class MockAppSettingsStore: AppSettingsStoreWriting {
     var clientTrackSwitchOffControl: ClientTrackSwitchOffControl = .auto
+    var videoContentPreferencesMode: VideoContentPreferencesMode = .auto
 
     var invokedEnvironmentSetter = false
     var invokedEnvironmentSetterCount = 0
@@ -324,72 +325,6 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             invokedTrackSwitchOffModeGetter = true
             invokedTrackSwitchOffModeGetterCount += 1
             return stubbedTrackSwitchOffMode
-        }
-    }
-
-    var invokedLowRenderDimensionsSetter = false
-    var invokedLowRenderDimensionsSetterCount = 0
-    var invokedLowRenderDimensions: VideoDimensionsName?
-    var invokedLowRenderDimensionsList = [VideoDimensionsName]()
-    var invokedLowRenderDimensionsGetter = false
-    var invokedLowRenderDimensionsGetterCount = 0
-    var stubbedLowRenderDimensions: VideoDimensionsName!
-
-    var lowRenderDimensions: VideoDimensionsName {
-        set {
-            invokedLowRenderDimensionsSetter = true
-            invokedLowRenderDimensionsSetterCount += 1
-            invokedLowRenderDimensions = newValue
-            invokedLowRenderDimensionsList.append(newValue)
-        }
-        get {
-            invokedLowRenderDimensionsGetter = true
-            invokedLowRenderDimensionsGetterCount += 1
-            return stubbedLowRenderDimensions
-        }
-    }
-
-    var invokedStandardRenderDimensionsSetter = false
-    var invokedStandardRenderDimensionsSetterCount = 0
-    var invokedStandardRenderDimensions: VideoDimensionsName?
-    var invokedStandardRenderDimensionsList = [VideoDimensionsName]()
-    var invokedStandardRenderDimensionsGetter = false
-    var invokedStandardRenderDimensionsGetterCount = 0
-    var stubbedStandardRenderDimensions: VideoDimensionsName!
-
-    var standardRenderDimensions: VideoDimensionsName {
-        set {
-            invokedStandardRenderDimensionsSetter = true
-            invokedStandardRenderDimensionsSetterCount += 1
-            invokedStandardRenderDimensions = newValue
-            invokedStandardRenderDimensionsList.append(newValue)
-        }
-        get {
-            invokedStandardRenderDimensionsGetter = true
-            invokedStandardRenderDimensionsGetterCount += 1
-            return stubbedStandardRenderDimensions
-        }
-    }
-
-    var invokedHighRenderDimensionsSetter = false
-    var invokedHighRenderDimensionsSetterCount = 0
-    var invokedHighRenderDimensions: VideoDimensionsName?
-    var invokedHighRenderDimensionsList = [VideoDimensionsName]()
-    var invokedHighRenderDimensionsGetter = false
-    var invokedHighRenderDimensionsGetterCount = 0
-    var stubbedHighRenderDimensions: VideoDimensionsName!
-
-    var highRenderDimensions: VideoDimensionsName {
-        set {
-            invokedHighRenderDimensionsSetter = true
-            invokedHighRenderDimensionsSetterCount += 1
-            invokedHighRenderDimensions = newValue
-            invokedHighRenderDimensionsList.append(newValue)
-        }
-        get {
-            invokedHighRenderDimensionsGetter = true
-            invokedHighRenderDimensionsGetterCount += 1
-            return stubbedHighRenderDimensions
         }
     }
 

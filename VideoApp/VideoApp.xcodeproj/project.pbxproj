@@ -397,8 +397,6 @@
 		DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
 		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
-		DCEDB38B2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
-		DCEDB38C2475B693006AF70D /* VideoDimensionsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -692,7 +690,6 @@
 		DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackSwitchOffModeViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB381247489A0006AF70D /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
-		DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDimensionsName.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1039,7 +1036,6 @@
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
 				8A84724A26B36749004BBC79 /* VideoContentPreferencesMode.swift */,
-				DCEDB3892475B693006AF70D /* VideoDimensionsName.swift */,
 				DC82A35223FDB6890081578C /* SDKLogLevel.swift */,
 			);
 			path = AppSettings;
@@ -2296,7 +2292,6 @@
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCEDB38B2475B693006AF70D /* VideoDimensionsName.swift in Sources */,
 				DCB64B4A240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -2470,7 +2465,6 @@
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
 				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
-				DCEDB38C2475B693006AF70D /* VideoDimensionsName.swift in Sources */,
 				DCB64B4B240995A100E090BE /* APIHTTPMethod.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,
