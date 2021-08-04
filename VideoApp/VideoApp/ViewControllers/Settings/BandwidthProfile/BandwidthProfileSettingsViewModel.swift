@@ -44,11 +44,15 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
                         selectedOption: appSettingsStore.trackSwitchOffMode.title,
                         viewModelFactory: selectTrackSwitchOffModeViewModelFactory
                     ),
-                    .push(title: "Render Dimensions", viewControllerFactory: RenderDimensionsSettingsViewControllerFactory()),
                     .optionList(
                         title: "Client Track Switch Off Control",
                         selectedOption: appSettingsStore.clientTrackSwitchOffControl.title,
                         viewModelFactory: selectClientTrackSwitchOffControlViewModelFactory
+                    ),
+                    .optionList(
+                        title: "Video Content Preferences Mode",
+                        selectedOption: appSettingsStore.videoContentPreferencesMode.title,
+                        viewModelFactory: selectVideoContentPreferencesModeViewControllerFactory
                     )
                 ]
             )
@@ -60,7 +64,7 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     private let selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory
     private let selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory
     private let selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
-    private let renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
+    private let selectVideoContentPreferencesModeViewControllerFactory: SelectVideoContentPreferencesViewModelFactory
     
     init(
         appSettingsStore: AppSettingsStoreWriting,
@@ -69,7 +73,7 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
         selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory,
         selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory,
         selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory,
-        renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
+        selectVideoContentPreferencesModeViewControllerFactory: SelectVideoContentPreferencesViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.selectBandwidthProfileModeViewModelFactory = selectBandwidthProfileModeViewModelFactory
@@ -77,6 +81,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
         self.selectDominantSpeakerPriorityViewModelFactory = selectDominantSpeakerPriorityViewModelFactory
         self.selectClientTrackSwitchOffControlViewModelFactory = selectClientTrackSwitchOffControlViewModelFactory
         self.selectTrackSwitchOffModeViewModelFactory = selectTrackSwitchOffModeViewModelFactory
-        self.renderDimensionsSettingsViewControllerFactory = renderDimensionsSettingsViewControllerFactory
+        self.selectVideoContentPreferencesModeViewControllerFactory = selectVideoContentPreferencesModeViewControllerFactory
     }
 }

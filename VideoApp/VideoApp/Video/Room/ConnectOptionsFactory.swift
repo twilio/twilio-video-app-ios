@@ -51,12 +51,8 @@ import TwilioVideo
                     builder.maxSubscriptionBitrate = self.appSettingsStore.maxSubscriptionBitrate as NSNumber?
                     builder.dominantSpeakerPriority = Track.Priority(setting: self.appSettingsStore.dominantSpeakerPriority)
                     builder.trackSwitchOffMode = Track.SwitchOffMode(setting: self.appSettingsStore.trackSwitchOffMode)
-                    let renderDimensions = VideoRenderDimensions()
-                    renderDimensions.low = VideoDimensions(setting: self.appSettingsStore.lowRenderDimensions)
-                    renderDimensions.standard = VideoDimensions(setting: self.appSettingsStore.standardRenderDimensions)
-                    renderDimensions.high = VideoDimensions(setting: self.appSettingsStore.highRenderDimensions)
-                    builder.renderDimensions = renderDimensions
                     builder.clientTrackSwitchOffControl = TwilioVideo.ClientTrackSwitchOffControl(setting:self.appSettingsStore.clientTrackSwitchOffControl)
+                    builder.contentPreferencesMode = TwilioVideo.VideoContentPreferencesMode(setting: self.appSettingsStore.videoContentPreferencesMode)
                 }
             )
             builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
@@ -124,18 +120,12 @@ private extension TwilioVideo.ClientTrackSwitchOffControl {
     }
 }
 
-private extension VideoDimensions {
-    convenience init?(setting: VideoDimensionsName) {
+private extension TwilioVideo.VideoContentPreferencesMode {
+    init?(setting: VideoContentPreferencesMode) {
         switch setting {
-        case .serverDefault: return nil
-        case .cif: self.init(width: 352, height: 288)
-        case .vga: self.init(width: 640, height: 480)
-        case .wvga: self.init(width: 800, height: 480)
-        case .hd540P: self.init(width: 960, height: 540)
-        case .hd720P: self.init(width: 1280, height: 720)
-        case .hd960P: self.init(width: 1280, height: 960)
-        case .hdStandard1080P: self.init(width: 1440, height: 1080)
-        case .hdWidescreen1080P: self.init(width: 1920, height: 1080)
+        case .sdkDefault: return nil
+        case .auto: self = .auto
+        case .manual: self = .manual
         }
     }
 }

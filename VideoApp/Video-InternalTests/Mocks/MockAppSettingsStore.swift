@@ -17,7 +17,6 @@
 @testable import VideoApp
 
 class MockAppSettingsStore: AppSettingsStoreWriting {
-    var clientTrackSwitchOffControl: ClientTrackSwitchOffControl = .auto
 
     var invokedEnvironmentSetter = false
     var invokedEnvironmentSetterCount = 0
@@ -327,72 +326,6 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
-    var invokedLowRenderDimensionsSetter = false
-    var invokedLowRenderDimensionsSetterCount = 0
-    var invokedLowRenderDimensions: VideoDimensionsName?
-    var invokedLowRenderDimensionsList = [VideoDimensionsName]()
-    var invokedLowRenderDimensionsGetter = false
-    var invokedLowRenderDimensionsGetterCount = 0
-    var stubbedLowRenderDimensions: VideoDimensionsName!
-
-    var lowRenderDimensions: VideoDimensionsName {
-        set {
-            invokedLowRenderDimensionsSetter = true
-            invokedLowRenderDimensionsSetterCount += 1
-            invokedLowRenderDimensions = newValue
-            invokedLowRenderDimensionsList.append(newValue)
-        }
-        get {
-            invokedLowRenderDimensionsGetter = true
-            invokedLowRenderDimensionsGetterCount += 1
-            return stubbedLowRenderDimensions
-        }
-    }
-
-    var invokedStandardRenderDimensionsSetter = false
-    var invokedStandardRenderDimensionsSetterCount = 0
-    var invokedStandardRenderDimensions: VideoDimensionsName?
-    var invokedStandardRenderDimensionsList = [VideoDimensionsName]()
-    var invokedStandardRenderDimensionsGetter = false
-    var invokedStandardRenderDimensionsGetterCount = 0
-    var stubbedStandardRenderDimensions: VideoDimensionsName!
-
-    var standardRenderDimensions: VideoDimensionsName {
-        set {
-            invokedStandardRenderDimensionsSetter = true
-            invokedStandardRenderDimensionsSetterCount += 1
-            invokedStandardRenderDimensions = newValue
-            invokedStandardRenderDimensionsList.append(newValue)
-        }
-        get {
-            invokedStandardRenderDimensionsGetter = true
-            invokedStandardRenderDimensionsGetterCount += 1
-            return stubbedStandardRenderDimensions
-        }
-    }
-
-    var invokedHighRenderDimensionsSetter = false
-    var invokedHighRenderDimensionsSetterCount = 0
-    var invokedHighRenderDimensions: VideoDimensionsName?
-    var invokedHighRenderDimensionsList = [VideoDimensionsName]()
-    var invokedHighRenderDimensionsGetter = false
-    var invokedHighRenderDimensionsGetterCount = 0
-    var stubbedHighRenderDimensions: VideoDimensionsName!
-
-    var highRenderDimensions: VideoDimensionsName {
-        set {
-            invokedHighRenderDimensionsSetter = true
-            invokedHighRenderDimensionsSetterCount += 1
-            invokedHighRenderDimensions = newValue
-            invokedHighRenderDimensionsList.append(newValue)
-        }
-        get {
-            invokedHighRenderDimensionsGetter = true
-            invokedHighRenderDimensionsGetterCount += 1
-            return stubbedHighRenderDimensions
-        }
-    }
-
     var invokedRemoteRoomTypeSetter = false
     var invokedRemoteRoomTypeSetterCount = 0
     var invokedRemoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
@@ -412,6 +345,50 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             invokedRemoteRoomTypeGetter = true
             invokedRemoteRoomTypeGetterCount += 1
             return stubbedRemoteRoomType
+        }
+    }
+
+    var invokedClientTrackSwitchOffControlSetter = false
+    var invokedClientTrackSwitchOffControlSetterCount = 0
+    var invokedClientTrackSwitchOffControl: ClientTrackSwitchOffControl?
+    var invokedClientTrackSwitchOffControlList = [ClientTrackSwitchOffControl]()
+    var invokedClientTrackSwitchOffControlGetter = false
+    var invokedClientTrackSwitchOffControlGetterCount = 0
+    var stubbedClientTrackSwitchOffControl: ClientTrackSwitchOffControl!
+
+    var clientTrackSwitchOffControl: ClientTrackSwitchOffControl {
+        set {
+            invokedClientTrackSwitchOffControlSetter = true
+            invokedClientTrackSwitchOffControlSetterCount += 1
+            invokedClientTrackSwitchOffControl = newValue
+            invokedClientTrackSwitchOffControlList.append(newValue)
+        }
+        get {
+            invokedClientTrackSwitchOffControlGetter = true
+            invokedClientTrackSwitchOffControlGetterCount += 1
+            return stubbedClientTrackSwitchOffControl
+        }
+    }
+
+    var invokedVideoContentPreferencesModeSetter = false
+    var invokedVideoContentPreferencesModeSetterCount = 0
+    var invokedVideoContentPreferencesMode: VideoContentPreferencesMode?
+    var invokedVideoContentPreferencesModeList = [VideoContentPreferencesMode]()
+    var invokedVideoContentPreferencesModeGetter = false
+    var invokedVideoContentPreferencesModeGetterCount = 0
+    var stubbedVideoContentPreferencesMode: VideoContentPreferencesMode!
+
+    var videoContentPreferencesMode: VideoContentPreferencesMode {
+        set {
+            invokedVideoContentPreferencesModeSetter = true
+            invokedVideoContentPreferencesModeSetterCount += 1
+            invokedVideoContentPreferencesMode = newValue
+            invokedVideoContentPreferencesModeList.append(newValue)
+        }
+        get {
+            invokedVideoContentPreferencesModeGetter = true
+            invokedVideoContentPreferencesModeGetterCount += 1
+            return stubbedVideoContentPreferencesMode
         }
     }
 

@@ -25,7 +25,7 @@ class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
             selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory(),
             selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory(),
             selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory(),
-            renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory()
+            selectVideoContentPreferencesModeViewControllerFactory: SelectVideoContentPreferencesViewModelFactory()
         )
         return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }
