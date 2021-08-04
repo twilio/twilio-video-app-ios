@@ -17,8 +17,6 @@
 @testable import VideoApp
 
 class MockAppSettingsStore: AppSettingsStoreWriting {
-    var clientTrackSwitchOffControl: ClientTrackSwitchOffControl = .auto
-    var videoContentPreferencesMode: VideoContentPreferencesMode = .auto
 
     var invokedEnvironmentSetter = false
     var invokedEnvironmentSetterCount = 0
@@ -347,6 +345,50 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
             invokedRemoteRoomTypeGetter = true
             invokedRemoteRoomTypeGetterCount += 1
             return stubbedRemoteRoomType
+        }
+    }
+
+    var invokedClientTrackSwitchOffControlSetter = false
+    var invokedClientTrackSwitchOffControlSetterCount = 0
+    var invokedClientTrackSwitchOffControl: ClientTrackSwitchOffControl?
+    var invokedClientTrackSwitchOffControlList = [ClientTrackSwitchOffControl]()
+    var invokedClientTrackSwitchOffControlGetter = false
+    var invokedClientTrackSwitchOffControlGetterCount = 0
+    var stubbedClientTrackSwitchOffControl: ClientTrackSwitchOffControl!
+
+    var clientTrackSwitchOffControl: ClientTrackSwitchOffControl {
+        set {
+            invokedClientTrackSwitchOffControlSetter = true
+            invokedClientTrackSwitchOffControlSetterCount += 1
+            invokedClientTrackSwitchOffControl = newValue
+            invokedClientTrackSwitchOffControlList.append(newValue)
+        }
+        get {
+            invokedClientTrackSwitchOffControlGetter = true
+            invokedClientTrackSwitchOffControlGetterCount += 1
+            return stubbedClientTrackSwitchOffControl
+        }
+    }
+
+    var invokedVideoContentPreferencesModeSetter = false
+    var invokedVideoContentPreferencesModeSetterCount = 0
+    var invokedVideoContentPreferencesMode: VideoContentPreferencesMode?
+    var invokedVideoContentPreferencesModeList = [VideoContentPreferencesMode]()
+    var invokedVideoContentPreferencesModeGetter = false
+    var invokedVideoContentPreferencesModeGetterCount = 0
+    var stubbedVideoContentPreferencesMode: VideoContentPreferencesMode!
+
+    var videoContentPreferencesMode: VideoContentPreferencesMode {
+        set {
+            invokedVideoContentPreferencesModeSetter = true
+            invokedVideoContentPreferencesModeSetterCount += 1
+            invokedVideoContentPreferencesMode = newValue
+            invokedVideoContentPreferencesModeList.append(newValue)
+        }
+        get {
+            invokedVideoContentPreferencesModeGetter = true
+            invokedVideoContentPreferencesModeGetterCount += 1
+            return stubbedVideoContentPreferencesMode
         }
     }
 
