@@ -106,7 +106,7 @@ PODS:
   - Nimble (9.2.0)
   - PromisesObjC (1.2.12)
   - Quick (3.1.2)
-  - TwilioVideo (4.5.0-rc4)
+  - TwilioVideo (4.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5)
@@ -119,11 +119,9 @@ DEPENDENCIES:
   - KeychainAccess (~> 4)
   - Nimble (~> 9)
   - Quick (~> 3)
-  - TwilioVideo (= 4.5.0-rc4)
+  - TwilioVideo (= 4.5.0)
 
 SPEC REPOS:
-  "git@github.com:twilio/cocoapod-specs-internal.git":
-    - TwilioVideo
   trunk:
     - Alamofire
     - AppAuth
@@ -148,6 +146,7 @@ SPEC REPOS:
     - Nimble
     - PromisesObjC
     - Quick
+    - TwilioVideo
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -173,8 +172,8 @@ SPEC CHECKSUMS:
   Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
-  TwilioVideo: 40f1804d3ecbd3df45498a12b91163fc3a03c306
+  TwilioVideo: a765f519bb8646187eaa0e9f7443d08529ccba0a
 
-PODFILE CHECKSUM: b06441f0f1ac0e0375eb4704f7a6fa036d968850
+PODFILE CHECKSUM: 02614e1ff89056dc0616cd5b0c36ea13c7ed3bd7
 
 COCOAPODS: 1.10.0
