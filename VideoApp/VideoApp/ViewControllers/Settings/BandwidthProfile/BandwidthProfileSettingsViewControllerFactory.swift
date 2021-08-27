@@ -22,10 +22,10 @@ class BandwidthProfileSettingsViewControllerFactory: ViewControllerFactory {
             appSettingsStore: AppSettingsStore.shared,
             selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory(),
             editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory(),
-            editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory(),
             selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory(),
+            selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory(),
             selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory(),
-            renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory()
+            selectVideoContentPreferencesModeViewControllerFactory: SelectVideoContentPreferencesViewModelFactory()
         )
         return SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
     }

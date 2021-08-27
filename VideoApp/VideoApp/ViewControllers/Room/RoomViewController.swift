@@ -146,6 +146,27 @@ extension RoomViewController: UICollectionViewDataSource {
 }
 
 extension RoomViewController: UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        guard let cell = cell as? ParticipantCell else { return }
+
+        cell.shouldRenderVideo = true
+    }
+    
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didEndDisplaying cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        guard let cell = cell as? ParticipantCell else { return }
+        
+        cell.shouldRenderVideo = false
+    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.togglePin(at: indexPath.item)
     }

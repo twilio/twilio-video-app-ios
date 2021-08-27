@@ -20,7 +20,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     let title = "Bandwidth Profile"
     var sections: [SettingsViewModelSection] {
         let editMaxSubscriptionBitrateViewModel = editMaxSubscriptionBitrateViewModelFactory.makeEditTextViewModel()
-        let editMaxTracksViewModel = editMaxTracksViewModelFactory.makeEditTextViewModel()
         
         return [
             .init(
@@ -35,11 +34,6 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
                         text: editMaxSubscriptionBitrateViewModel.text.nilIfEmpty ?? editMaxSubscriptionBitrateViewModel.placeholder,
                         viewModelFactory: editMaxSubscriptionBitrateViewModelFactory
                     ),
-                    .editableText(
-                        title: editMaxTracksViewModel.title,
-                        text: editMaxTracksViewModel.text.nilIfEmpty ?? editMaxTracksViewModel.placeholder,
-                        viewModelFactory: editMaxTracksViewModelFactory
-                    ),
                     .optionList(
                         title: "Dominant Speaker Priority",
                         selectedOption: appSettingsStore.dominantSpeakerPriority.title,
@@ -50,7 +44,16 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
                         selectedOption: appSettingsStore.trackSwitchOffMode.title,
                         viewModelFactory: selectTrackSwitchOffModeViewModelFactory
                     ),
-                    .push(title: "Render Dimensions", viewControllerFactory: RenderDimensionsSettingsViewControllerFactory())
+                    .optionList(
+                        title: "Client Track Switch Off Control",
+                        selectedOption: appSettingsStore.clientTrackSwitchOffControl.title,
+                        viewModelFactory: selectClientTrackSwitchOffControlViewModelFactory
+                    ),
+                    .optionList(
+                        title: "Video Content Preferences Mode",
+                        selectedOption: appSettingsStore.videoContentPreferencesMode.title,
+                        viewModelFactory: selectVideoContentPreferencesModeViewControllerFactory
+                    )
                 ]
             )
         ]
@@ -58,26 +61,26 @@ class BandwidthProfileSettingsViewModel: SettingsViewModel {
     private let appSettingsStore: AppSettingsStoreWriting
     private let selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory
     private let editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory
-    private let editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory
     private let selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory
+    private let selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory
     private let selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory
-    private let renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
+    private let selectVideoContentPreferencesModeViewControllerFactory: SelectVideoContentPreferencesViewModelFactory
     
     init(
         appSettingsStore: AppSettingsStoreWriting,
         selectBandwidthProfileModeViewModelFactory: SelectBandwidthProfileModeViewModelFactory,
         editMaxSubscriptionBitrateViewModelFactory: EditMaxSubscriptionBitrateViewModelFactory,
-        editMaxTracksViewModelFactory: EditMaxTracksViewModelFactory,
         selectDominantSpeakerPriorityViewModelFactory: SelectDominantSpeakerPriorityViewModelFactory,
+        selectClientTrackSwitchOffControlViewModelFactory: SelectClientTrackSwitchOffControlViewModelFactory,
         selectTrackSwitchOffModeViewModelFactory: SelectTrackSwitchOffModeViewModelFactory,
-        renderDimensionsSettingsViewControllerFactory: RenderDimensionsSettingsViewControllerFactory
+        selectVideoContentPreferencesModeViewControllerFactory: SelectVideoContentPreferencesViewModelFactory
     ) {
         self.appSettingsStore = appSettingsStore
         self.selectBandwidthProfileModeViewModelFactory = selectBandwidthProfileModeViewModelFactory
         self.editMaxSubscriptionBitrateViewModelFactory = editMaxSubscriptionBitrateViewModelFactory
-        self.editMaxTracksViewModelFactory = editMaxTracksViewModelFactory
         self.selectDominantSpeakerPriorityViewModelFactory = selectDominantSpeakerPriorityViewModelFactory
+        self.selectClientTrackSwitchOffControlViewModelFactory = selectClientTrackSwitchOffControlViewModelFactory
         self.selectTrackSwitchOffModeViewModelFactory = selectTrackSwitchOffModeViewModelFactory
-        self.renderDimensionsSettingsViewControllerFactory = renderDimensionsSettingsViewControllerFactory
+        self.selectVideoContentPreferencesModeViewControllerFactory = selectVideoContentPreferencesModeViewControllerFactory
     }
 }

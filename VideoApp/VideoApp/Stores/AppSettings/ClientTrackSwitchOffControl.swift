@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2020 Twilio, Inc.
+//  Copyright (C) 2021 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,12 +16,16 @@
 
 import Foundation
 
-class SelectStandardRenderDimensionsViewModelFactory: SelectOptionViewModelFactory {
-    func makeSelectOptionViewModel() -> SelectOptionViewModel {
-        SelectSettingViewModel(
-            title: "Standard",
-            keyPath: \.standardRenderDimensions,
-            appSettingsStore: AppSettingsStore.shared
-        )
+enum ClientTrackSwitchOffControl: String, SettingOptions {
+    case sdkDefault
+    case auto
+    case manual
+    
+    var title: String {
+        switch self {
+        case .sdkDefault: return "SDK Default"
+        case .auto: return "Auto"
+        case .manual: return "Manual"
+        }
     }
 }

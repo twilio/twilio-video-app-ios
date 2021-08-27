@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2020 Twilio, Inc.
+//  Copyright (C) 2021 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 
 import Foundation
 
-class SelectHighRenderDimensionsViewModelFactory: SelectOptionViewModelFactory {
+class SelectVideoContentPreferencesViewModelFactory: SelectOptionViewModelFactory {
     func makeSelectOptionViewModel() -> SelectOptionViewModel {
         SelectSettingViewModel(
-            title: "High",
-            keyPath: \.highRenderDimensions,
+            title: "Video Content Preferences Mode",
+            keyPath: \.videoContentPreferencesMode,
             appSettingsStore: AppSettingsStore.shared
         )
     }

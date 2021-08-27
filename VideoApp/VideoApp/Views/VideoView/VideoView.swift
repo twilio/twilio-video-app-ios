@@ -17,10 +17,6 @@
 import TwilioVideo
 import UIKit
 
-protocol VideoViewDelegate: AnyObject {
-    func didUpdateStatus(isVideoOn: Bool)
-}
-
 @IBDesignable
 class VideoView: NibView {
     struct Config {
@@ -30,7 +26,20 @@ class VideoView: NibView {
 
     @IBOutlet weak var videoView: TwilioVideo.VideoView!
     @IBOutlet weak var errorView: UIView!
-    weak var delegate: VideoViewDelegate?
+    var shouldRenderVideo = true {
+        didSet {
+            guard let videoTrack = videoTrack else { return }
+            
+            if shouldRenderVideo {
+                guard !videoTrack.isRendered(by: videoView) else { return }
+                
+                videoTrack.addRenderer(videoView)
+                videoView.isHidden = !videoView.hasVideoData
+            } else {
+                videoTrack.removeRenderer(videoView)
+            }
+        }
+    }
     private var videoTrack: VideoTrack?
     
     deinit {
@@ -44,34 +53,32 @@ class VideoView: NibView {
     }
 
     func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
-        defer { errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false) }
-        
-        guard let videoTrack = config.videoTrack, videoTrack.isEnabled else {
-            self.videoTrack?.removeRenderer(videoView)
-            updateStatus(hasVideoData: false)
-            return
-        }
-        guard !videoTrack.isRendered(by: videoView) || videoView.shouldMirror != config.shouldMirror else {
-            return // Don't thrash rendering because it causes empty frames to flash
-        }
-        
-        self.videoTrack?.removeRenderer(videoView)
-        self.videoTrack = videoTrack
-        videoTrack.addRenderer(videoView)
         videoView.shouldMirror = config.shouldMirror
         videoView.contentMode = contentMode
-        updateStatus(hasVideoData: videoView.hasVideoData)
-    }
-    
-    private func updateStatus(hasVideoData: Bool) {
-        videoView.isHidden = !hasVideoData
-        delegate?.didUpdateStatus(isVideoOn: hasVideoData)
+        errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false)
+
+        if let videoTrack = config.videoTrack, videoTrack.isEnabled {
+            if !videoTrack.isRendered(by: videoView) {
+                self.videoTrack?.removeRenderer(videoView)
+                self.videoTrack = videoTrack
+                videoView.isHidden = true
+                
+                if shouldRenderVideo {
+                    videoTrack.addRenderer(videoView)
+                    videoView.isHidden = !videoView.hasVideoData
+                }
+            }
+        } else {
+            videoTrack?.removeRenderer(videoView)
+            videoTrack = nil
+            videoView.isHidden = true
+        }
     }
 }
 
 extension VideoView: TwilioVideo.VideoViewDelegate {
     func videoViewDidReceiveData(view: TwilioVideo.VideoView) {
-        updateStatus(hasVideoData: true)
+        videoView.isHidden = false
     }
 }
 
