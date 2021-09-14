@@ -55,7 +55,7 @@ class VideoView: NibView {
     func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
         videoView.shouldMirror = config.shouldMirror
         videoView.contentMode = contentMode
-        errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false)
+        errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? true)
 
         if let videoTrack = config.videoTrack, videoTrack.isEnabled {
             if !videoTrack.isRendered(by: videoView) {
