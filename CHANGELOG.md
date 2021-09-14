@@ -4,14 +4,14 @@
 
 ### New Feature
 
-- Added support for Client Track Switch Off and Video Content Preferences
+- Added support for Client Track Switch Off and Video Content Preferences.
 - Improved `UICollectionView` cell management so that tracks are switched off immediately when cells are offscreen.
 - We recommend that you review the [ParticipantCell](https://github.com/twilio/twilio-video-app-ios/blob/v0.81/VideoApp/VideoApp/Views/Cells/Participant/ParticipantCell.swift) and [VideoView](https://github.com/twilio/twilio-video-app-ios/blob/v0.81/VideoApp/VideoApp/Views/VideoView/VideoView.swift) implementations if you use `UICollectionView` and want to update your application for Client Track Switch Off.
 - For more information, please view this [blog post](https://www.twilio.com/blog/improve-efficiency-multi-party-video-experiences) and feature [documentation](https://www.twilio.com/docs/video/tutorials/using-bandwidth-profile-api#understanding-clientTrackSwitchOffControl).
 
 ### Bugs
 
-- Fixed a visual issue where the `UICollectionView` had leading space to its superview
+- Fixed a visual issue where the `UICollectionView` had leading space to its superview.
 
 ### Maintenance
 
