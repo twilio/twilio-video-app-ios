@@ -120,7 +120,6 @@ UI tests require credentials that are only available to Twilio employees.
 
 ## Related
 
-- [Change Log](CHANGELOG.md)
 - [Twilio Video Android App](https://github.com/twilio/twilio-video-app-android)
 - [Twilio Video React App](https://github.com/twilio/twilio-video-app-react)
 - [Twilio CLI RTC Plugin](https://github.com/twilio-labs/plugin-rtc)
