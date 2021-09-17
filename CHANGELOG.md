@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.82 (September 17, 2021)
+
+### Dependency Upgrades
+
+- `twilio-video-ios` has been updated from 4.5.0 to 4.6.0. [#169](https://github.com/twilio/twilio-video-app-ios/pull/170)
+
 ## 0.81 (August 27, 2021)
 
 ### New Feature
