@@ -9,14 +9,14 @@ target 'Video-Internal' do
   project 'VideoApp/VideoApp.xcodeproj'
 
   pod 'Alamofire', '~> 5'
-  pod 'AppCenter/Distribute', '~> 3'
-  pod 'Firebase/Analytics', '~> 6'
-  pod 'Firebase/Crashlytics', '~> 6'
-  pod 'FirebaseUI/Auth', '~> 9'
-  pod 'FirebaseUI/Google', '~> 9'
+  pod 'AppCenter/Distribute', '~> 4'
+  pod 'Firebase/Analytics', '~> 8'
+  pod 'Firebase/Crashlytics', '~> 8'
+  pod 'FirebaseUI/Auth', '~> 12'
+  pod 'FirebaseUI/Google', '~> 12'
   pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
-  pod 'TwilioVideo', '~> 4.5'
+  pod 'TwilioVideo', '~> 4'
 
   target 'Video-InternalTests' do
     pod 'Nimble', '~> 9'

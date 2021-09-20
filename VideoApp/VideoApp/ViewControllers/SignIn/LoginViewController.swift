@@ -23,11 +23,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GIDSignIn.sharedInstance().presentingViewController = self
         googleSignInButton.style = .wide
         
         if #available(iOS 13, *) {
             isModalInPresentation = true
         }
+    }
+    
+    @IBAction func googleSignInButtonTap(_ sender: Any) {
+        AuthStore.shared.signIn(googleSignInPresenting: self)
     }
 }

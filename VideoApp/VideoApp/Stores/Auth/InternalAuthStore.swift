@@ -25,7 +25,7 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
     private let api: APIConfiguring
     private let appSettingsStore: AppSettingsStoreWriting
     private var firebaseAuth: Auth { return Auth.auth() }
-    private var googleSignIn: GIDSignIn { return GIDSignIn.sharedInstance() }
+    private var googleSignIn: GIDSignIn { return GIDSignIn.sharedInstance }
 
     init(api: APIConfiguring, appSettingsStore: AppSettingsStoreWriting) {
         self.api = api
@@ -34,9 +34,40 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
     
     func start() {
         FirebaseApp.configure()
-        googleSignIn.clientID = FirebaseApp.app()?.options.clientID
-        googleSignIn.hostedDomain = "twilio.com"
-        googleSignIn.delegate = self
+    }
+
+    func signIn(googleSignInPresenting: UIViewController) {
+        let config = GIDConfiguration(
+            clientID: FirebaseApp.app()!.options.clientID!,
+            serverClientID: nil,
+            hostedDomain: "twilio.com",
+            openIDRealm: nil
+        )
+
+        googleSignIn.signIn(with: config, presenting: googleSignInPresenting) { [weak self] user, error in
+            if let error = error {
+                self?.delegate?.didSignIn(error: AuthError.message(message: error.localizedDescription))
+                return
+            }
+            
+            guard let authentication = user?.authentication, let idToken = authentication.idToken else {
+                self?.delegate?.didSignIn(error: AuthError.unknown)
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(
+                withIDToken: idToken,
+                accessToken: authentication.accessToken
+            )
+
+            self?.firebaseAuth.signIn(with: credential) { _, error in
+                if let error = error {
+                    self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
+                } else {
+                    self?.delegate?.didSignIn(error: nil)
+                }
+            }
+        }
     }
     
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
@@ -56,7 +87,10 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
     func signOut() {
         try? firebaseAuth.signOut()
         googleSignIn.signOut()
-        googleSignIn.disconnect()
+        googleSignIn.disconnect { [weak self] _ in
+            self?.appSettingsStore.reset()
+            self?.delegate?.didSignOut()
+        }
     }
 
     func openURL(_ url: URL) -> Bool {
@@ -75,30 +109,6 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
             
             completion()
         }
-    }
-}
-
-extension InternalAuthStore: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard error == nil, let authentication = user.authentication else { return }
-        
-        let credential = GoogleAuthProvider.credential(
-            withIDToken: authentication.idToken,
-            accessToken: authentication.accessToken
-        )
-
-        firebaseAuth.signIn(with: credential) { [weak self] _, error in
-            if let error = error {
-                self?.delegate?.didSignIn(error: AuthError(firebaseAuthError: error))
-            } else {
-                self?.delegate?.didSignIn(error: nil)
-            }
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        appSettingsStore.reset()
-        delegate?.didSignOut()
     }
 }
 

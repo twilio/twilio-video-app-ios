@@ -17,6 +17,7 @@
 @testable import VideoApp
 
 class MockAuthStore: AuthStoreWriting {
+
     var invokedDelegateSetter = false
     var invokedDelegateSetterCount = 0
     var invokedDelegate: AuthStoreWritingDelegate?
@@ -24,6 +25,7 @@ class MockAuthStore: AuthStoreWriting {
     var invokedDelegateGetter = false
     var invokedDelegateGetterCount = 0
     var stubbedDelegate: AuthStoreWritingDelegate!
+
     var delegate: AuthStoreWritingDelegate? {
         set {
             invokedDelegateSetter = true
@@ -37,33 +39,41 @@ class MockAuthStore: AuthStoreWriting {
             return stubbedDelegate
         }
     }
+
     var invokedIsSignedInGetter = false
     var invokedIsSignedInGetterCount = 0
     var stubbedIsSignedIn: Bool! = false
+
     var isSignedIn: Bool {
         invokedIsSignedInGetter = true
         invokedIsSignedInGetterCount += 1
         return stubbedIsSignedIn
     }
+
     var invokedPasscodeGetter = false
     var invokedPasscodeGetterCount = 0
     var stubbedPasscode: String!
+
     var passcode: String? {
         invokedPasscodeGetter = true
         invokedPasscodeGetterCount += 1
         return stubbedPasscode
     }
+
     var invokedUserDisplayNameGetter = false
     var invokedUserDisplayNameGetterCount = 0
     var stubbedUserDisplayName: String! = ""
+
     var userDisplayName: String {
         invokedUserDisplayNameGetter = true
         invokedUserDisplayNameGetterCount += 1
         return stubbedUserDisplayName
     }
+
     var invokedRefreshIDToken = false
     var invokedRefreshIDTokenCount = 0
     var shouldInvokeRefreshIDTokenCompletion = false
+
     func refreshIDToken(completion: @escaping () -> Void) {
         invokedRefreshIDToken = true
         invokedRefreshIDTokenCount += 1
@@ -71,11 +81,25 @@ class MockAuthStore: AuthStoreWriting {
             completion()
         }
     }
+
+    var invokedSignIn = false
+    var invokedSignInCount = 0
+    var invokedSignInParameters: (googleSignInPresenting: UIViewController, Void)?
+    var invokedSignInParametersList = [(googleSignInPresenting: UIViewController, Void)]()
+
+    func signIn(googleSignInPresenting: UIViewController) {
+        invokedSignIn = true
+        invokedSignInCount += 1
+        invokedSignInParameters = (googleSignInPresenting, ())
+        invokedSignInParametersList.append((googleSignInPresenting, ()))
+    }
+
     var invokedSignInEmail = false
     var invokedSignInEmailCount = 0
     var invokedSignInEmailParameters: (email: String, password: String)?
     var invokedSignInEmailParametersList = [(email: String, password: String)]()
     var stubbedSignInEmailCompletionResult: (AuthError?, Void)?
+
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         invokedSignInEmail = true
         invokedSignInEmailCount += 1
@@ -85,11 +109,13 @@ class MockAuthStore: AuthStoreWriting {
             completion(result.0)
         }
     }
+
     var invokedSignInUserIdentity = false
     var invokedSignInUserIdentityCount = 0
     var invokedSignInUserIdentityParameters: (userIdentity: String, passcode: String)?
     var invokedSignInUserIdentityParametersList = [(userIdentity: String, passcode: String)]()
     var stubbedSignInUserIdentityCompletionResult: (AuthError?, Void)?
+
     func signIn(userIdentity: String, passcode: String, completion: @escaping (AuthError?) -> Void) {
         invokedSignInUserIdentity = true
         invokedSignInUserIdentityCount += 1
@@ -99,23 +125,29 @@ class MockAuthStore: AuthStoreWriting {
             completion(result.0)
         }
     }
+
     var invokedSignOut = false
     var invokedSignOutCount = 0
+
     func signOut() {
         invokedSignOut = true
         invokedSignOutCount += 1
     }
+
     var invokedStart = false
     var invokedStartCount = 0
+
     func start() {
         invokedStart = true
         invokedStartCount += 1
     }
+
     var invokedOpenURL = false
     var invokedOpenURLCount = 0
     var invokedOpenURLParameters: (url: URL, Void)?
     var invokedOpenURLParametersList = [(url: URL, Void)]()
     var stubbedOpenURLResult: Bool! = false
+
     func openURL(_ url: URL) -> Bool {
         invokedOpenURL = true
         invokedOpenURLCount += 1
