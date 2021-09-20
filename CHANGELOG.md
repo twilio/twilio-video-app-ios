@@ -36,7 +36,7 @@
 
 ### Dependency Upgrades
 
-- `twilio-video-ios` has been updated from 4.4.0 to 4.5.0, and 4.5.0 is now the minimum required version. [#169](https://github.com/twilio/twilio-video-app-ios/pull/169)
+- `TwilioVideo` has been updated from 4.4.0 to 4.5.0, and 4.5.0 is now the minimum required version. [#169](https://github.com/twilio/twilio-video-app-ios/pull/169)
 
 -----------
 
