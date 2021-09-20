@@ -1,10 +1,21 @@
 # Change Log
 
-## 0.82 (September 17, 2021)
+## 0.82 (September 20, 2021)
+
+### New Feature
+
+- This release adds support for Apple Silicon arm64 Macs. You can now run the iOS and iPad OS simulators on your Mac in addition to testing on physical devices.
+- TwilioVideo [4.6.0](https://www.twilio.com/docs/video/changelog-twilio-video-ios-latest#460-september-17-2021) also updates WebRTC to M88 and modernizes the use of several WebRTC APIs.
 
 ### Dependency Upgrades
 
-- `twilio-video-ios` has been updated from 4.5.0 to 4.6.0. [#169](https://github.com/twilio/twilio-video-app-ios/pull/170)
+- Several dependencies were updated in order to support the iOS and iPadOS simulators on Apple Silicon machines.
+- `AppCenter/Distribute` has been updated from 3.3.4 to 4.3.0. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
+- `Firebase/Analytics` has been updated from 6.34.0 to 8.7.0. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
+- `Firebase/Crashlytics` has been updated from 6.34.0 to 8.7.0. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
+- `FirebaseUI/Auth` has been updated from 9.0.0 to 12.0.2. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
+- `FirebaseUI/Google` has been updated from 9.0.0 to 12.0.2. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
+- `TwilioVideo` has been updated from 4.5.0 to 4.6.0. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
 
 ## 0.81 (August 27, 2021)
 
