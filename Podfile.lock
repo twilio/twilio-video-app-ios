@@ -41,10 +41,9 @@ PODS:
     - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
     - GoogleUtilities/Environment (~> 7.4)
     - GTMSessionFetcher/Core (~> 1.5)
-  - FirebaseAuthUI (11.0.3):
+  - FirebaseAuthUI (12.0.2):
     - FirebaseAuth (~> 8.0)
     - FirebaseCore
-    - GoogleUtilities/UserDefaults
   - FirebaseCore (8.7.0):
     - FirebaseCoreDiagnostics (~> 8.0)
     - GoogleUtilities/Environment (~> 7.4)
@@ -61,21 +60,20 @@ PODS:
     - GoogleUtilities/Environment (~> 7.4)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseGoogleAuthUI (11.0.3):
-    - FirebaseAuth (~> 8.0)
+  - FirebaseGoogleAuthUI (12.0.0):
+    - FirebaseAuth
     - FirebaseAuthUI
     - FirebaseCore
-    - GoogleSignIn (~> 5.0)
-    - GoogleUtilities/UserDefaults
+    - GoogleSignIn (~> 6.0)
   - FirebaseInstallations (8.7.0):
     - FirebaseCore (~> 8.0)
     - GoogleUtilities/Environment (~> 7.4)
     - GoogleUtilities/UserDefaults (~> 7.4)
     - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseUI/Auth (11.0.3):
-    - FirebaseAuthUI (~> 11.0)
-  - FirebaseUI/Google (11.0.3):
-    - FirebaseGoogleAuthUI (~> 11.0)
+  - FirebaseUI/Auth (12.0.2):
+    - FirebaseAuthUI (~> 12.0)
+  - FirebaseUI/Google (12.0.2):
+    - FirebaseGoogleAuthUI (~> 12.0)
   - GoogleAppMeasurement (8.7.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.7.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
@@ -93,8 +91,8 @@ PODS:
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleSignIn (5.0.2):
-    - AppAuth (~> 1.2)
+  - GoogleSignIn (6.0.2):
+    - AppAuth (~> 1.4)
     - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleUtilities/AppDelegateSwizzler (7.5.2):
@@ -137,13 +135,13 @@ DEPENDENCIES:
   - AppCenter/Distribute (~> 4)
   - Firebase/Analytics (~> 8)
   - Firebase/Crashlytics (~> 8)
-  - FirebaseUI/Auth (~> 11)
-  - FirebaseUI/Google (~> 11)
+  - FirebaseUI/Auth (~> 12)
+  - FirebaseUI/Google (~> 12)
   - IGListDiffKit (~> 4)
   - KeychainAccess (~> 4)
   - Nimble (~> 9)
   - Quick (~> 3)
-  - TwilioVideo (~> 4.5)
+  - TwilioVideo (~> 4)
 
 SPEC REPOS:
   trunk:
@@ -181,16 +179,16 @@ SPEC CHECKSUMS:
   Firebase: bc9325d5ee2041524bac78a5213d0e530c651309
   FirebaseAnalytics: 52768800c2add1d84b751420cb4caaf8195f2c41
   FirebaseAuth: 2e7d029977648c67a5d51a263d4cbab76d34cf12
-  FirebaseAuthUI: 5ae57e5a3ffb821f89491f1b5da9efbdf99ce7cd
+  FirebaseAuthUI: e75ef9d6cfcd8f1ba8bee2b360493a9947533f6c
   FirebaseCore: f4804c1d3f4bbbefc88904d15653038f2c99ddf7
   FirebaseCoreDiagnostics: b63732f581a1c6a453ec7241f9ab60b3a5bd3450
   FirebaseCrashlytics: 6fac03d1eef054833b71c929c93ab95c12989728
-  FirebaseGoogleAuthUI: b73b9fad6b1e3f7baeb8189fc7b3a6eb6fa1430d
+  FirebaseGoogleAuthUI: 6981c0c3c054367f9ccd730fbcf483504deb0a68
   FirebaseInstallations: ede6fb72bb6337914e5888b399271259d0c4910c
-  FirebaseUI: d2777b3abcb3fa40ea9eea9e40db5a154df608d3
+  FirebaseUI: b04b32ead3a6dcd5a50829e14b8f3f6d044d5d62
   GoogleAppMeasurement: 2be61ce546ad074dbe4dd545f222ac6033bb1d9e
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
-  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
+  GoogleSignIn: fd381840dbe7c1137aa6dc30849a5c3e070c034a
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
@@ -202,6 +200,6 @@ SPEC CHECKSUMS:
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   TwilioVideo: 50fe59254718d86ffb342aff397bc89ab588e577
 
-PODFILE CHECKSUM: a020a235db137334f62651ed1eeb609566c8ddb1
+PODFILE CHECKSUM: 5ce4997325e2a0fedc4b9f550d377da8ac2e43c4
 
 COCOAPODS: 1.10.2

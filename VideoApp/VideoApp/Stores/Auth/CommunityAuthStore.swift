@@ -44,6 +44,10 @@ class CommunityAuthStore: AuthStoreWriting {
         try? configureAPI(passcode: passcode)
     }
 
+    func signIn(googleSignInPresenting: UIViewController) {
+        fatalError("Google sign in not supported by community auth.")
+    }
+    
     func signIn(email: String, password: String, completion: @escaping (AuthError?) -> Void) {
         fatalError("Email sign in not supported by community auth.")
     }

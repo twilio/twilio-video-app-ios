@@ -12,11 +12,11 @@ target 'Video-Internal' do
   pod 'AppCenter/Distribute', '~> 4'
   pod 'Firebase/Analytics', '~> 8'
   pod 'Firebase/Crashlytics', '~> 8'
-  pod 'FirebaseUI/Auth', '~> 11'
-  pod 'FirebaseUI/Google', '~> 11'
+  pod 'FirebaseUI/Auth', '~> 12'
+  pod 'FirebaseUI/Google', '~> 12'
   pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
-  pod 'TwilioVideo', '~> 4.5'
+  pod 'TwilioVideo', '~> 4'
 
   target 'Video-InternalTests' do
     pod 'Nimble', '~> 9'
