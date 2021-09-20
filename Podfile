@@ -9,7 +9,7 @@ target 'Video-Internal' do
   project 'VideoApp/VideoApp.xcodeproj'
 
   pod 'Alamofire', '~> 5'
-  pod 'AppCenter/Distribute', '~> 3'
+  pod 'AppCenter/Distribute', '~> 4'
   pod 'Firebase/Analytics', '~> 6'
   pod 'Firebase/Crashlytics', '~> 6'
   pod 'FirebaseUI/Auth', '~> 9'
