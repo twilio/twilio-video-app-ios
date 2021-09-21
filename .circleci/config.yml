@@ -10,7 +10,7 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "12.0.1"
+      xcode: "13.0.0"
 
 commands:
   setup:
@@ -100,17 +100,18 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - test_community_app:
-          filters: *test_filters
-      - test_internal_app:
-          filters: *test_filters
+      # - test_community_app:
+      #     filters: *test_filters
+      # - test_internal_app:
+      #     filters: *test_filters
       # - run_ui_tests:
       #     filters: *test_filters
       - deploy_internal_app_beta:
           filters:
             branches:
               only:
-                - master
+                - task/fix-app-center-distribution
+                # - master
   # status_check:
   #   triggers:
   #     - schedule:
