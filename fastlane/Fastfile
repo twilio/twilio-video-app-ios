@@ -4,6 +4,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
+    setup_circle_ci
     cocoapods
     # ensure_git_status_clean # Make sure Podfile.lock wasn't modified
   end
@@ -37,7 +38,7 @@ platform :ios do
     # commit_version_bump(message: "Increment build number [skip ci]", xcodeproj: "VideoApp/VideoApp.xcodeproj")
     # add_git_tag(tag: "v0.#{build_number}")
     # push_to_git_remote
-
+    
     import_certificate(
       certificate_path: "AppleWWDRCAG3.cer",
       keychain_path: "/Users/distiller/Library/Keychains/fastlane_tmp_keychain-db",
