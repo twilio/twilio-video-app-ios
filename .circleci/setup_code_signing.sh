@@ -9,8 +9,6 @@ base64 -D <<< $INTERNAL_DEVELOPMENT_PROVISIONING_PROFILE -o ~/Library/MobileDevi
 base64 -D <<< $APPLE_WORLDWIDE_DEVELOPER_RELATIONS_CERTIFICATE_AUTHORITY_CER -o Apple\ Worldwide\ Developer\ Relations\ Certification\ Authority.cer
 base64 -D <<< $TWILIO_IPHONE_DISTRIBUTION_P12 -o Certificates.p12
 
-base64 -D <<< $APPLE_WORLDWIDE_DEVELOPER_RELATIONS_CERTIFICATE_AUTHORITY_CER -o AppleWWDRCAG3.cer
-
 # Create a custom keychain
 security create-keychain -p keychain_password ios-build.keychain
 
@@ -26,7 +24,10 @@ security set-keychain-settings -t 7200 -l ~/Library/Keychains/ios-build.keychain
 
 # Add certificates to keychain and allow codesign to access them
 security import Apple\ Worldwide\ Developer\ Relations\ Certification\ Authority.cer -k ~/Library/Keychains/ios-build.keychain -A
-security import AppleWWDRCAG3.cer -k ~/Library/Keychains/ios-build.keychain -A
+
+# Add Apple's updated WWDR intermediate certificate to the keychain.
+# https://support.circleci.com/hc/en-us/articles/4402066403227-Xcode-12-5-Unable-to-build-chain-to-self-signed-root-for-signer
+security import AppleWWDRCAG3.cer -k ~/Library/Keychains/ios-build.keychain -P "" -A
 
 security import Certificates.p12 -k ~/Library/Keychains/ios-build.keychain -P $TWILIO_IPHONE_DISTRIBUTION_P12_PASSWORD -A
 
