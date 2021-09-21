@@ -41,9 +41,14 @@ platform :ios do
     
     import_certificate(
       certificate_path: "AppleWWDRCAG3.cer",
-      keychain_path: "/Users/distiller/Library/Keychains/fastlane_tmp_keychain-db",
-      keychain_password: ""
+      log_output: true
     )
+
+    # import_certificate(
+    #   certificate_path: "AppleWWDRCAG3.cer",
+    #   keychain_path: "/Users/distiller/Library/Keychains/fastlane_tmp_keychain-db",
+    #   keychain_password: ""
+    # )
 
     gym(
       scheme: "Video-Internal",
