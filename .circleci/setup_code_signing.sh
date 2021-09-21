@@ -9,6 +9,8 @@ base64 -D <<< $INTERNAL_DEVELOPMENT_PROVISIONING_PROFILE -o ~/Library/MobileDevi
 base64 -D <<< $APPLE_WORLDWIDE_DEVELOPER_RELATIONS_CERTIFICATE_AUTHORITY_CER -o Apple\ Worldwide\ Developer\ Relations\ Certification\ Authority.cer
 base64 -D <<< $TWILIO_IPHONE_DISTRIBUTION_P12 -o Certificates.p12
 
+base64 -D <<< $APPLE_WORLDWIDE_DEVELOPER_RELATIONS_CERTIFICATE_AUTHORITY_CER -o AppleWWDRCAG3.cer
+
 # Create a custom keychain
 security create-keychain -p keychain_password ios-build.keychain
 
