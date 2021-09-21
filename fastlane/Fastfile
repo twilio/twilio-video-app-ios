@@ -4,7 +4,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    setup_circle_ci
+    # setup_circle_ci
     cocoapods
     # ensure_git_status_clean # Make sure Podfile.lock wasn't modified
   end
@@ -39,10 +39,10 @@ platform :ios do
     # add_git_tag(tag: "v0.#{build_number}")
     # push_to_git_remote
     
-    import_certificate(
-      certificate_path: "AppleWWDRCAG3.cer",
-      log_output: true
-    )
+    # import_certificate(
+    #   certificate_path: "AppleWWDRCAG3.cer",
+    #   log_output: true
+    # )
 
     # import_certificate(
     #   certificate_path: "AppleWWDRCAG3.cer",

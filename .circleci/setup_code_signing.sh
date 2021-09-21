@@ -26,6 +26,8 @@ security set-keychain-settings -t 7200 -l ~/Library/Keychains/ios-build.keychain
 
 # Add certificates to keychain and allow codesign to access them
 security import Apple\ Worldwide\ Developer\ Relations\ Certification\ Authority.cer -k ~/Library/Keychains/ios-build.keychain -A
+security import AppleWWDRCAG3.cer -k ~/Library/Keychains/ios-build.keychain -A
+
 security import Certificates.p12 -k ~/Library/Keychains/ios-build.keychain -P $TWILIO_IPHONE_DISTRIBUTION_P12_PASSWORD -A
 
 security set-key-partition-list -S apple-tool:,apple: -k keychain_password ~/Library/Keychains/ios-build.keychain
