@@ -27,6 +27,7 @@ security import Apple\ Worldwide\ Developer\ Relations\ Certification\ Authority
 
 # Add Apple's updated WWDR intermediate certificate to the keychain.
 # https://support.circleci.com/hc/en-us/articles/4402066403227-Xcode-12-5-Unable-to-build-chain-to-self-signed-root-for-signer
+curl https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer --output AppleWWDRCAG3.cer
 security import AppleWWDRCAG3.cer -k ~/Library/Keychains/ios-build.keychain -P "" -A
 
 security import Certificates.p12 -k ~/Library/Keychains/ios-build.keychain -P $TWILIO_IPHONE_DISTRIBUTION_P12_PASSWORD -A
