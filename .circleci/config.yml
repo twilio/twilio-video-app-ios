@@ -100,18 +100,17 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      # - test_community_app:
-      #     filters: *test_filters
-      # - test_internal_app:
-      #     filters: *test_filters
+      - test_community_app:
+          filters: *test_filters
+      - test_internal_app:
+          filters: *test_filters
       # - run_ui_tests:
       #     filters: *test_filters
       - deploy_internal_app_beta:
           filters:
             branches:
               only:
-                - task/fix-app-center-distribution
-                # - master
+                - master
   # status_check:
   #   triggers:
   #     - schedule:
