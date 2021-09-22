@@ -43,5 +43,6 @@ IOSVideoAppSecrets*
 # CI
 /.bundle/
 /Apple Worldwide Developer Relations Certification Authority.cer
+/AppleWWDRCAG3.cer
 /Certificates.p12
 /vendor/

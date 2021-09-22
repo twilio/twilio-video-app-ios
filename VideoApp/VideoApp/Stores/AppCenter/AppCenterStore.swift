@@ -30,7 +30,7 @@ class AppCenterStore: AppCenterStoreWriting {
         guard appInfoStore.appInfo.target == .videoInternal else { return }
         
         #if !DEBUG
-        MSAppCenter.start(appInfoStore.appInfo.appCenterAppSecret, withServices: [MSDistribute.self])
+        AppCenter.start(withAppSecret: appInfoStore.appInfo.appCenterAppSecret, services: [Distribute.self])
         #endif
     }
 }
