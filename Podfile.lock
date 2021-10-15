@@ -128,7 +128,7 @@ PODS:
   - Nimble (9.2.0)
   - PromisesObjC (2.0.0)
   - Quick (3.1.2)
-  - TwilioVideo (4.6.0)
+  - TwilioVideo (4.6.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5)
@@ -198,7 +198,7 @@ SPEC CHECKSUMS:
   Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
-  TwilioVideo: 50fe59254718d86ffb342aff397bc89ab588e577
+  TwilioVideo: b3d34744e3860c09816e349679eb2572e8fba06c
 
 PODFILE CHECKSUM: 5ce4997325e2a0fedc4b9f550d377da8ac2e43c4
 

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.84 (October 15, 2021)
+
+### Dependency Upgrades
+
+- `TwilioVideo` has been updated from 4.6.0 to 4.6.1. [#176](https://github.com/twilio/twilio-video-app-ios/pull/176)
+
+-----------
+
 ## 0.82 (September 20, 2021)
 
 ### New Feature
@@ -16,6 +24,8 @@
 - `FirebaseUI/Auth` has been updated from 9.0.0 to 12.0.2. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
 - `FirebaseUI/Google` has been updated from 9.0.0 to 12.0.2. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
 - `TwilioVideo` has been updated from 4.5.0 to 4.6.0. [#174](https://github.com/twilio/twilio-video-app-ios/pull/174)
+
+-----------
 
 ## 0.81 (August 27, 2021)
 
