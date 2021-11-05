@@ -55,8 +55,17 @@ import TwilioVideo
                     builder.contentPreferencesMode = TwilioVideo.VideoContentPreferencesMode(setting: self.appSettingsStore.videoContentPreferencesMode)
                 }
             )
-            builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
-            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
+                        
+            // The automatic encoding mode is mutually exclusive with video bitrate and codec controls.
+            // TODO: Derive from self.appSettingsStore.
+            let autoEncoding = true
+            if autoEncoding {
+                builder.videoEncodingMode = .auto
+                builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: 0)
+            } else {
+                builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
+                builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
+            }
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
