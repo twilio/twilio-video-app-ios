@@ -32,6 +32,10 @@
 		8A206F0F263912B600EFCD97 /* ClientTrackSwitchOffControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */; };
 		8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */; };
 		8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */; };
+		8A25B9DD2739C2BB00B49A86 /* VideoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25B9DC2739C2BB00B49A86 /* VideoSize.swift */; };
+		8A25B9DE2739C2BB00B49A86 /* VideoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25B9DC2739C2BB00B49A86 /* VideoSize.swift */; };
+		8A25B9E02739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25B9DF2739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift */; };
+		8A25B9E12739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25B9DF2739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift */; };
 		8A84724B26B36749004BBC79 /* VideoContentPreferencesMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A84724A26B36749004BBC79 /* VideoContentPreferencesMode.swift */; };
 		8A84724C26B36749004BBC79 /* VideoContentPreferencesMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A84724A26B36749004BBC79 /* VideoContentPreferencesMode.swift */; };
 		8A84724E26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A84724D26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift */; };
@@ -468,6 +472,8 @@
 		5BBBCFD96628BCB502CCDA04 /* Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests/Pods-Video-Internal-Video-InternalTests-Video-CommunityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTrackSwitchOffControl.swift; sourceTree = "<group>"; };
 		8A206F3F263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClientTrackSwitchOffControlViewModelFactory.swift; sourceTree = "<group>"; };
+		8A25B9DC2739C2BB00B49A86 /* VideoSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSize.swift; sourceTree = "<group>"; };
+		8A25B9DF2739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVideoSizeViewModelFactory.swift; sourceTree = "<group>"; };
 		8A84724A26B36749004BBC79 /* VideoContentPreferencesMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContentPreferencesMode.swift; sourceTree = "<group>"; };
 		8A84724D26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVideoContentPreferencesModeViewModelFactory.swift; sourceTree = "<group>"; };
 		8AC49999232A18D2005A4B35 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1036,6 +1042,7 @@
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
 				8A84724A26B36749004BBC79 /* VideoContentPreferencesMode.swift */,
+				8A25B9DC2739C2BB00B49A86 /* VideoSize.swift */,
 				DC82A35223FDB6890081578C /* SDKLogLevel.swift */,
 			);
 			path = AppSettings;
@@ -1359,6 +1366,7 @@
 				DCF461642385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift */,
 				DCF4615C2385B10200DD8FEA /* GeneralSettingsViewModel.swift */,
 				DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */,
+				8A25B9DF2739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -2303,6 +2311,7 @@
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
 				DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */,
+				8A25B9E02739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift in Sources */,
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
@@ -2381,6 +2390,7 @@
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
+				8A25B9DD2739C2BB00B49A86 /* VideoSize.swift in Sources */,
 				DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
@@ -2476,6 +2486,7 @@
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
 				DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */,
+				8A25B9E12739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift in Sources */,
 				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
 				DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
@@ -2554,6 +2565,7 @@
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
+				8A25B9DE2739C2BB00B49A86 /* VideoSize.swift in Sources */,
 				DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,

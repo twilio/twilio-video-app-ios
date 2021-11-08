@@ -32,8 +32,7 @@ import TwilioVideo
                 case .auto: return 0
                 case .h264: return 1_200
                 case .vp8: return 1_200
-                case .vp8SimulcastVGA: return 0
-                case .vp8SimulcastHD: return 1_600
+                case .vp8Simulcast: return self.appSettingsStore.videoSize == .qarterhd ? 1_600 : 0
                 }
             }
             
@@ -81,7 +80,7 @@ private extension TwilioVideo.VideoCodec {
         case .auto: return Vp8Codec(simulcast: true)
         case .h264: return H264Codec()
         case .vp8: return Vp8Codec(simulcast: false)
-        case .vp8SimulcastVGA, .vp8SimulcastHD: return Vp8Codec(simulcast: true)
+        case .vp8Simulcast: return Vp8Codec(simulcast: true)
         }
     }
 }

@@ -57,7 +57,7 @@ class RemoteConfigStore: RemoteConfigStoreWriting {
             // TODO: Fix auto here.
             switch newValue {
             case .group, .groupSmall, .unknown:
-                appSettingsStore.videoCodec = .vp8SimulcastVGA
+                appSettingsStore.videoCodec = .vp8Simulcast
             case .peerToPeer, .go:
                 appSettingsStore.videoCodec = .vp8
             }

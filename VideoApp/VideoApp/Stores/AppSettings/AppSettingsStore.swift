@@ -19,6 +19,7 @@ import Foundation
 protocol AppSettingsStoreWriting: LaunchStore {
     var environment: Environment { get set }
     var videoCodec: VideoCodec { get set }
+    var videoSize: VideoSize { get set }
     var topology: Topology { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
@@ -40,6 +41,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
 class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
     @Storage(key: makeKey("videoCodec"), defaultValue: defaultVideoCodec) var videoCodec: VideoCodec
+    @Storage(key: makeKey("videoSize"), defaultValue: defaultVideoSize) var videoSize: VideoSize
     @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
@@ -65,6 +67,9 @@ class AppSettingsStore: AppSettingsStoreWriting {
     private let notificationCenter: NotificationCenterProtocol
     private let queue: DispatchQueueProtocol
     private let userDefaults: UserDefaultsProtocol
+    private static var defaultVideoSize: VideoSize {
+        return .vga
+    }
     private static var defaultVideoCodec: VideoCodec {
         switch appInfoStore.appInfo.target {
         case .videoInternal: return .auto
