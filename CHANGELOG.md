@@ -6,7 +6,7 @@
 
 - Extend the `VideoCodec` enumeration to include `.auto` (which maps to `VideoEncodingMode.auto` in the SDK). 
 - Introduce `VideoSize` - a setting to select the size of video published from the camera
-- The settings `.vp8SimulcastVGA` and `.vp8SimulcastHD` are condensed into `. vp8Simulcast`. 
+- The settings `.vp8SimulcastVGA` and `.vp8SimulcastHD` are condensed into `.vp8Simulcast`. 
 - The `Video-Internal` target now enables `.auto` by default.
 
 ### Dependency Upgrades
