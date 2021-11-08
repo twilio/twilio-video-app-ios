@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.86 (November 12, 2021)
+
+### New Feature
+
+- Added the ability to select automatic video encoding in addition to manual video codec selection
+- Enabled automatic video encoding by default in the app.
+
+### Dependency Upgrades
+
+- `TwilioVideo` has been updated from 4.6.2 to 4.7.0. [#178](https://github.com/twilio/twilio-video-app-ios/pull/178)
+
+-----------
+
 ## 0.85 (November 5, 2021)
 
 ### Dependency Upgrades
