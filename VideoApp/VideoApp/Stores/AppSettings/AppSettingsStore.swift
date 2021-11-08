@@ -66,10 +66,7 @@ class AppSettingsStore: AppSettingsStoreWriting {
     private let queue: DispatchQueueProtocol
     private let userDefaults: UserDefaultsProtocol
     private static var defaultVideoCodec: VideoCodec {
-        switch appInfoStore.appInfo.target {
-        case .videoInternal: return .vp8SimulcastVGA
-        case .videoCommunity: return .vp8
-        }
+        return .auto
     }
 
     private static func makeKey(_ appSetting: String) -> String {

@@ -28,6 +28,8 @@ import TwilioVideo
         ConnectOptions(token: accessToken) { builder in
             var videoBitrate: UInt {
                 switch self.appSettingsStore.videoCodec {
+                // Automatic encoding a video bitrate controls are mutually exclusive.
+                case .auto: return 0
                 case .h264: return 1_200
                 case .vp8: return 1_200
                 case .vp8SimulcastVGA: return 0
@@ -56,16 +58,13 @@ import TwilioVideo
                 }
             )
                         
-            // The automatic encoding mode is mutually exclusive with video bitrate and codec controls.
-            // TODO: Derive from self.appSettingsStore.
-            let autoEncoding = true
-            if autoEncoding {
+            // At the moment automatic encoding is mutually exclusive with manual video bitrate and codec controls.
+            if self.appSettingsStore.videoCodec == .auto {
                 builder.videoEncodingMode = .auto
-                builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: 0)
             } else {
                 builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
-                builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
             }
+            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
             
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
@@ -79,6 +78,7 @@ import TwilioVideo
 private extension TwilioVideo.VideoCodec {
     static func make(setting: VideoCodec) -> TwilioVideo.VideoCodec {
         switch setting {
+        case .auto: return Vp8Codec(simulcast: true)
         case .h264: return H264Codec()
         case .vp8: return Vp8Codec(simulcast: false)
         case .vp8SimulcastVGA, .vp8SimulcastHD: return Vp8Codec(simulcast: true)

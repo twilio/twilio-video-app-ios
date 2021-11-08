@@ -54,6 +54,7 @@ class RemoteConfigStore: RemoteConfigStoreWriting {
         set {
             guard newValue != appSettingsStore.remoteRoomType else { return }
             
+            // TODO: Fix auto here.
             switch newValue {
             case .group, .groupSmall, .unknown:
                 appSettingsStore.videoCodec = .vp8SimulcastVGA

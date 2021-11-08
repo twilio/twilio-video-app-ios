@@ -36,11 +36,12 @@ class CameraConfigFactory {
             case .group, .groupSmall, .unknown: break
             }
             
+            // TODO: Use appSettingsStore.videoSize instead
             switch appSettingsStore.videoCodec {
             case .h264, .vp8, .vp8SimulcastVGA:
                 // 640 x 480 squarish crop (1.13:1)
                 return CMVideoDimensions(width: 544, height: 480)
-            case .vp8SimulcastHD:
+            case .auto, .vp8SimulcastHD:
                 return hdDimensions
             }
         }
@@ -48,7 +49,7 @@ class CameraConfigFactory {
             switch appSettingsStore.videoCodec {
             case .h264, .vp8:
                 return 20
-            case .vp8SimulcastVGA, .vp8SimulcastHD:
+            case .auto, .vp8SimulcastVGA, .vp8SimulcastHD:
                 return 24 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of {f, f/2, f/4}
             }
         }

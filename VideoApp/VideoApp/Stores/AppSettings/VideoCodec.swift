@@ -17,13 +17,15 @@
 import Foundation
 
 enum VideoCodec: String, SettingOptions {
+    case auto
     case h264
     case vp8
     case vp8SimulcastVGA
     case vp8SimulcastHD
-    
+
     var title: String {
         switch self {
+        case .auto: return "Auto"
         case .h264: return "H.264"
         case .vp8: return "VP8"
         case .vp8SimulcastVGA: return "VP8 Simulcast VGA"
