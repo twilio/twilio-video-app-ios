@@ -28,11 +28,11 @@ import TwilioVideo
         ConnectOptions(token: accessToken) { builder in
             var videoBitrate: UInt {
                 switch self.appSettingsStore.videoCodec {
-                // Automatic encoding a video bitrate controls are mutually exclusive.
+                // Automatic encoding and video bitrate controls are mutually exclusive.
                 case .auto: return 0
                 case .h264: return 1_200
                 case .vp8: return 1_200
-                case .vp8Simulcast: return self.appSettingsStore.videoSize == .qarterhd ? 1_600 : 0
+                case .vp8Simulcast: return self.appSettingsStore.videoSize == .quarterHD ? 1_600 : 0
                 }
             }
             

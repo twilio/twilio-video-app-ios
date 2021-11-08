@@ -18,12 +18,12 @@ import Foundation
 
 enum VideoSize: String, SettingOptions {
     case vga
-    case qarterhd
+    case quarterHD
 
     var title: String {
         switch self {
         case .vga: return "VGA"
-        case .qarterhd: return "qHD"
+        case .quarterHD: return "qHD"
         }
     }
 }

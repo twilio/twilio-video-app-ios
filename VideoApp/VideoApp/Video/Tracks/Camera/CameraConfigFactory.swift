@@ -41,7 +41,7 @@ class CameraConfigFactory {
             case .vga:
                 // 640 x 480 squarish crop (1.13:1)
                 return CMVideoDimensions(width: 544, height: 480)
-            case .qarterhd:
+            case .quarterHD:
                 return hdDimensions
             }
         }
