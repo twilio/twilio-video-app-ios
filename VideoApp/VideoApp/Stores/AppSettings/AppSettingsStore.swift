@@ -66,7 +66,11 @@ class AppSettingsStore: AppSettingsStoreWriting {
     private let queue: DispatchQueueProtocol
     private let userDefaults: UserDefaultsProtocol
     private static var defaultVideoCodec: VideoCodec {
-        return .auto
+        switch appInfoStore.appInfo.target {
+        case .videoInternal: return .auto
+        // TODO: Simulcast is required for CTSO & VCP to function effectively. Ideally select ".auto" here.
+        case .videoCommunity: return .vp8
+        }
     }
 
     private static func makeKey(_ appSetting: String) -> String {
