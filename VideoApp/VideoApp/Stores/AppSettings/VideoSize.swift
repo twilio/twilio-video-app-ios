@@ -23,7 +23,7 @@ enum VideoSize: String, SettingOptions {
     var title: String {
         switch self {
         case .vga: return "VGA"
-        case .qarterhd: return "QHD"
+        case .qarterhd: return "qHD"
         }
     }
 }
