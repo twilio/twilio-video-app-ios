@@ -3,12 +3,13 @@ fastlane_version "2.28.3"
 default_platform :ios
 
 platform :ios do
-  before_all do
-    cocoapods
-    ensure_git_status_clean # Make sure Podfile.lock wasn't modified
-  end
+  development_app_identifiers = ["com.twilio.video-app-internal", "com.twilio.video-app-community", "com.twilio.Video-InternalUITests"]
+  enterprise_app_identifiers = "com.twilio.video-app-internal"
 
   lane :test do |options|
+    cocoapods
+    ensure_git_status_clean
+
     scan(
       scheme: options[:scheme], 
       testplan: options[:test_plan], 
@@ -17,22 +18,9 @@ platform :ios do
     )
   end
 
-  lane :status_check do
-    begin
-      test(scheme: "Video-Internal", test_plan: "StatusCheck")
-    rescue
-      slack(
-        channel: "tcr-test",
-        success: false,
-        message: "Failed <#{ENV["CIRCLE_BUILD_URL"]}|iOS status check> 🔥🔥🔥",
-        default_payloads: [],
-      )
-
-      raise
-    end
-  end
-
   lane :beta do
+    cocoapods
+    ensure_git_status_clean
     build_number = increment_build_number(xcodeproj: "VideoApp/VideoApp.xcodeproj")
     commit_version_bump(message: "Increment build number [skip ci]", xcodeproj: "VideoApp/VideoApp.xcodeproj")
     add_git_tag(tag: "v0.#{build_number}")
@@ -60,6 +48,79 @@ platform :ios do
       app_name: "Ahoy-Video-App-Internal",
       destinations: "Testers",
       file: "Video-Internal.ipa"
+    )
+  end
+
+  lane :ci_match_install do
+    setup_circle_ci
+
+    match(
+      api_key: get_app_store_connect_api_key,
+      type: "development",
+      app_identifier: development_app_identifiers,
+      readonly: true,
+      verbose: true,
+      force_for_new_devices: false
+    )
+
+    match(
+      api_key: get_app_store_connect_api_key,
+      type: "enterprise",
+      app_identifier: enterprise_app_identifiers,
+      readonly: true,
+      verbose: true,
+      force_for_new_devices: false
+    )
+  end
+
+  desc "Install existing match certs and profiles without updating/overwriting"
+  lane :match_install do
+    match(
+      api_key: get_app_store_connect_api_key,
+      type: "development",
+      app_identifier: development_app_identifiers,
+      readonly: true,
+      verbose: true,
+      force_for_new_devices: false
+    )
+
+    match(
+      api_key: get_app_store_connect_api_key,
+      type: "enterprise",
+      app_identifier: enterprise_app_identifiers,
+      readonly: true,
+      verbose: true,
+      force_for_new_devices: false
+    )
+  end
+
+  desc "Update and overwrite match certs and profiles if needed - destructive and may require other devs to match_install"
+  lane :match_update do
+    match(
+      type: "development",
+      app_identifier: development_app_identifiers,
+      readonly: false,
+      verbose: true,
+      force_for_new_devices: true
+    )
+
+    match(
+      type: "enterprise",
+      app_identifier: enterprise_app_identifiers,
+      readonly: false,
+      verbose: true,
+      force_for_new_devices: true
+    )
+  end
+
+  desc "Get local api key - assumes you have downloaded the api key to the project directory"
+  private_lane :get_app_store_connect_api_key do
+    app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_B64"],
+      is_key_content_base64: true,
+      in_house: false
     )
   end
 end
