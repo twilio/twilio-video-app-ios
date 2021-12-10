@@ -60,7 +60,7 @@ commands:
       - setup
       - run:
           name: Setup code signing
-          command: sh .circleci/setup_code_signing.sh
+          command: bundle exec fastlane ci_match_install
       - run:
           name: Deploy to App Center
           command: bundle exec fastlane beta
@@ -111,14 +111,3 @@ workflows:
             branches:
               only:
                 - master
-  # status_check:
-  #   triggers:
-  #     - schedule:
-  #         cron: "0 * * * *"
-  #         filters:
-  #           branches:
-  #             only:
-  #               - master
-  #   jobs:
-  #     - status_check
- 
