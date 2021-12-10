@@ -107,8 +107,7 @@ workflows:
       # - run_ui_tests:
       #     filters: *test_filters
       - deploy_internal_app_beta:
-          filters: *test_filters
-#          filters:
-#            branches:
-#              only:
-#                - master
+          filters:
+            branches:
+              only:
+                - master
