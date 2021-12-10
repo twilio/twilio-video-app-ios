@@ -107,18 +107,8 @@ workflows:
       # - run_ui_tests:
       #     filters: *test_filters
       - deploy_internal_app_beta:
-          filters:
-            branches:
-              only:
-                - master
-  # status_check:
-  #   triggers:
-  #     - schedule:
-  #         cron: "0 * * * *"
-  #         filters:
-  #           branches:
-  #             only:
-  #               - master
-  #   jobs:
-  #     - status_check
- 
+          filters: *test_filters
+#          filters:
+#            branches:
+#              only:
+#                - master
