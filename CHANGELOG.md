@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.86 (December 10, 2021)
+## 0.87 (December 13, 2021)
 
 ### Dependency Upgrades
 
