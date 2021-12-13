@@ -128,7 +128,7 @@ PODS:
   - Nimble (9.2.0)
   - PromisesObjC (2.0.0)
   - Quick (3.1.2)
-  - TwilioVideo (4.6.2)
+  - TwilioVideo (4.6.3)
 
 DEPENDENCIES:
   - Alamofire (~> 5)
