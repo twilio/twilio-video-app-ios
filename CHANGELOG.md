@@ -4,7 +4,7 @@
 
 ### Dependency Upgrades
 
-- `TwilioVideo` has been updated from 4.6.2 to 4.6.3. [#177](https://github.com/twilio/twilio-video-app-ios/pull/177)
+- `TwilioVideo` has been updated from 4.6.2 to 4.6.3. [#180](https://github.com/twilio/twilio-video-app-ios/pull/180)
 
 -----------
 
