@@ -8,6 +8,11 @@
 
 -----------
 
+## 0.86 (December 10, 2021)
+
+- Updated repo to use Fastlane match for provisioning.
+
+-----------
 ## 0.85 (November 5, 2021)
 
 ### Dependency Upgrades
