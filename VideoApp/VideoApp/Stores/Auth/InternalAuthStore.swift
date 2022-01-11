@@ -115,7 +115,7 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
 private extension Environment {
     var host: String {
         switch self {
-        case .production: return "app.video.bytwilio.com/api/v1"
+        case .production: return "twilio-video-react.appspot.com"
         case .staging: return "app.stage.video.bytwilio.com/api/v1"
         case .development: return "app.dev.video.bytwilio.com/api/v1"
         }
