@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
+struct CreateTwilioAccessTokenRequest: APIRequest {
     struct Parameters: Encodable {
         let passcode: String
         let userIdentity: String
@@ -27,7 +27,7 @@ struct CommunityCreateTwilioAccessTokenRequest: APIRequest {
     let path = "token"
     let method = APIHTTPMethod.post
     let parameters: Parameters
-    let responseType = CommunityCreateTwilioAccessTokenResponse.self
+    let responseType = CreateTwilioAccessTokenResponse.self
 
     init(passcode: String, userIdentity: String, createRoom: Bool, roomName: String? = nil) {
         parameters = Parameters(

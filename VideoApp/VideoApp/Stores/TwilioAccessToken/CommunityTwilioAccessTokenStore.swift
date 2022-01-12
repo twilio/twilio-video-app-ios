@@ -35,7 +35,7 @@ class CommunityTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
     }
 
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
-        let request = CommunityCreateTwilioAccessTokenRequest(
+        let request = CreateTwilioAccessTokenRequest(
             passcode: authStore.passcode ?? "",
             userIdentity: appSettingsStore.userIdentity,
             createRoom: true,

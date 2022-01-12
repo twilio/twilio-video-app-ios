@@ -18,7 +18,6 @@ import Alamofire
 
 protocol APIConfiguring: AnyObject {
     var config: APIConfig! { get set }
-    var errorResponseDecoder: APIErrorResponseDecoder! { get set }
 }
 
 protocol APIRequesting: AnyObject {
@@ -36,7 +35,6 @@ class API: APIConfiguring, APIRequesting {
         jsonDecoder: JSONDecoder()
     )
     var config: APIConfig!
-    var errorResponseDecoder: APIErrorResponseDecoder!
     private let session: Session
     private let urlFactory: APIURLFactory
     private let jsonEncoder: JSONEncoder
@@ -76,7 +74,12 @@ class API: APIConfiguring, APIRequesting {
                 guard !error.isNotConnectedToInternetError else { completion(.failure(.notConnectedToInternet)); return }
                 guard let data = response.data else { completion(.failure(.decodeError)); return }
 
-                completion(.failure(self.errorResponseDecoder.decode(data: data)))
+                do {
+                    let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
+                    completion(.failure(APIError(message: errorResponse.error.message)))
+                } catch {
+                    completion(.failure(.decodeError))
+                }
             }
         }
     }

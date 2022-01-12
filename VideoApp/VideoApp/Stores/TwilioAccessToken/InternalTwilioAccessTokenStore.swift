@@ -20,49 +20,42 @@ class InternalTwilioAccessTokenStore: TwilioAccessTokenStoreReading {
     private let api: APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreWriting
+    private let remoteConfigStore: RemoteConfigStoreWriting
 
     init(
         api: APIRequesting,
         appSettingsStore: AppSettingsStoreWriting,
-        authStore: AuthStoreWriting
+        authStore: AuthStoreWriting,
+        remoteConfigStore: RemoteConfigStoreWriting
     ) {
         self.api = api
         self.appSettingsStore = appSettingsStore
         self.authStore = authStore
+        self.remoteConfigStore = remoteConfigStore
     }
     
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
         authStore.refreshIDToken { [weak self] in
             guard let self = self else { return }
 
-            let request = CommunityCreateTwilioAccessTokenRequest(
+            let request = CreateTwilioAccessTokenRequest(
                 passcode: "",
                 userIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.authStore.userDisplayName,
-                createRoom: false,
+                createRoom: true,
                 roomName: roomName
             )
-            
-            self.api.request(request) { result in
-                switch result {
-                case let .success(response):
-                    // TODO: Do something with room type
-                    
-                    completion(.success(response.token))
-                case let .failure(error):
-                    completion(.failure(error))
-                }
-            }
-        }
-    }
-}
 
-private extension InternalCreateTwilioAccessTokenRequest.Parameters.Topology {
-    init(topology: Topology) {
-        switch topology {
-        case .go: self = .go
-        case .group: self = .group
-        case .groupSmall: self = .groupSmall
-        case .peerToPeer: self = .peerToPeer
+            
+            
+            self.api.request(request) { [weak self] result in
+                guard let self = self else { return }
+                
+                if let roomType = try? result.get().roomType {
+                    self.remoteConfigStore.roomType = roomType
+                }
+                
+                completion(result.map { $0.token })
+            }
         }
     }
 }

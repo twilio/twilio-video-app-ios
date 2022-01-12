@@ -31,7 +31,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var maxSubscriptionBitrate: Int? { get set }
     var dominantSpeakerPriority: TrackPriority { get set }
     var trackSwitchOffMode: TrackSwitchOffMode { get set }
-    var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType? { get set }
+    var remoteRoomType: CreateTwilioAccessTokenResponse.RoomType? { get set }
     var clientTrackSwitchOffControl: ClientTrackSwitchOffControl { get set }
     var videoContentPreferencesMode: VideoContentPreferencesMode { get set }
     func reset()
@@ -52,7 +52,7 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("maxSubscriptionBitrate"), defaultValue: nil) var maxSubscriptionBitrate: Int?
     @Storage(key: makeKey("dominantSpeakerPriority"), defaultValue: TrackPriority.serverDefault) var dominantSpeakerPriority: TrackPriority
     @Storage(key: makeKey("trackSwitchOffMode"), defaultValue: TrackSwitchOffMode.serverDefault) var trackSwitchOffMode: TrackSwitchOffMode
-    @Storage(key: makeKey("remoteRoomType"), defaultValue: nil) var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
+    @Storage(key: makeKey("remoteRoomType"), defaultValue: nil) var remoteRoomType: CreateTwilioAccessTokenResponse.RoomType?
     @Storage(key: makeKey("clientTrackSwitchOffControl"), defaultValue: .sdkDefault) var clientTrackSwitchOffControl: ClientTrackSwitchOffControl
     @Storage(key: makeKey("videoContentPreferencesMode"), defaultValue: .sdkDefault) var videoContentPreferencesMode: VideoContentPreferencesMode
 
