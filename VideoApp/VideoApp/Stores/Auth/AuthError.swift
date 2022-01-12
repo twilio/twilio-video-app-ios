@@ -30,7 +30,6 @@ enum AuthError: Error, Equatable {
         switch apiError {
         case .decodeError: self = .unknown
         case let .message(message): self = .message(message: message)
-        case .notConnectedToInternet: self = .networkError
         case .passcodeExpired: self = .passcodeExpired
         case .passcodeIncorrect: self = .passcodeIncorrect
         }

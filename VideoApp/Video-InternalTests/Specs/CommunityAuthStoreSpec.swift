@@ -133,7 +133,7 @@ class CommunityAuthStoreSpec: QuickSpec {
             func signIn(
                 userIdentity: String = "",
                 passcode: String = "12546985321456",
-                apiResult: Result<Any, APIError> = .success(CommunityCreateTwilioAccessTokenResponse.stub())
+                apiResult: Result<Any, APIError> = .success(CreateTwilioAccessTokenResponse.stub())
             ) {
                 mockAPI.stubbedRequestCompletionResult = apiResult
                 sut.signIn(userIdentity: userIdentity, passcode: passcode) { error in
@@ -189,7 +189,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with foo userIdentity") {
                         signIn(userIdentity: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
                     }
                 }
 
@@ -197,7 +197,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with bar userIdentity") {
                         signIn(userIdentity: "bar")
 
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
                     }
                 }
 
@@ -205,7 +205,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with 15648298735694 passcode") {
                         signIn(passcode: "15648298735694")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("15648298735694"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("15648298735694"))
                     }
                 }
 
@@ -213,20 +213,20 @@ class CommunityAuthStoreSpec: QuickSpec {
                     it("is called with 56487269813982 passcode") {
                         signIn(passcode: "56487269813982")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("56487269813982"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("56487269813982"))
                     }
                 }
 
                 it("is called with createRoom set to false") {
                     signIn()
                     
-                    expect((mockAPI.invokedRequestParameters?.request as? CommunityCreateTwilioAccessTokenRequest)?.parameters.createRoom).to(beFalse())
+                    expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.createRoom).to(beFalse())
                 }
 
                 context("when result is success") {
                     context("when passcode is 21564852315698") {
                         it("stores 21564852315698 passcode in keychain") {
-                            signIn(passcode: "21564852315698", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(passcode: "21564852315698", apiResult: .success(CreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
                             expect(mockKeychainStore.invokedPasscode).to(equal("21564852315698"))
@@ -235,7 +235,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when passcode is 65984128742143") {
                         it("stores 65984128742143 passcode in keychain") {
-                            signIn(passcode: "65984128742143", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(passcode: "65984128742143", apiResult: .success(CreateTwilioAccessTokenResponse.stub()))
                             
                             expect(mockKeychainStore.invokedPasscodeSetterCount).to(equal(1))
                             expect(mockKeychainStore.invokedPasscode).to(equal("65984128742143"))
@@ -244,7 +244,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when userIdentity is foo") {
                         it("sets userIdentity setting to foo") {
-                            signIn(userIdentity: "foo", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(userIdentity: "foo", apiResult: .success(CreateTwilioAccessTokenResponse.stub()))
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("foo"))
@@ -253,7 +253,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     
                     context("when userIdentity is bar") {
                         it("sets userIdentity setting to bar") {
-                            signIn(userIdentity: "bar", apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                            signIn(userIdentity: "bar", apiResult: .success(CreateTwilioAccessTokenResponse.stub()))
 
                             expect(mockAppSettingsStore.invokedUserIdentitySetterCount).to(equal(1))
                             expect(mockAppSettingsStore.invokedUserIdentity).to(equal("bar"))
@@ -262,7 +262,7 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                     context("when roomType is nil") {
                         it("does not update remoteConfigStore") {
-                            signIn(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: nil)))
+                            signIn(apiResult: .success(CreateTwilioAccessTokenResponse.stub(roomType: nil)))
 
                             expect(mockRemoteConfigStore.invokedRoomTypeSetter).to(beFalse())
                         }
@@ -270,7 +270,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     
                     context("when roomType is peerToPeer") {
                         it("updates remoteConfigStore") {
-                            signIn(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
+                            signIn(apiResult: .success(CreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
 
                             expect(mockRemoteConfigStore.invokedRoomTypeSetterCount).to(equal(1))
                             expect(mockRemoteConfigStore.invokedRoomType).to(equal(.peerToPeer))
@@ -278,7 +278,7 @@ class CommunityAuthStoreSpec: QuickSpec {
                     }
 
                     it("calls completion with nil error") {
-                        signIn(apiResult: .success(CommunityCreateTwilioAccessTokenResponse.stub()))
+                        signIn(apiResult: .success(CreateTwilioAccessTokenResponse.stub()))
                         
                         expect(invokedCompletionCount).to(equal(1))
                         expect(invokedCompletionParameters?.error).to(beNil())
@@ -301,12 +301,12 @@ class CommunityAuthStoreSpec: QuickSpec {
                         }
                     }
                     
-                    context("when error is notConnectedToInternet error") {
-                        it("calls completion with notConnectedToInternet error") {
-                            signIn(apiResult: .failure(.notConnectedToInternet))
+                    context("when error is passcodeIncorrect error") {
+                        it("calls completion with passcodeIncorrect error") {
+                            signIn(apiResult: .failure(.passcodeIncorrect))
 
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.error).to(equal(.networkError))
+                            expect(invokedCompletionParameters?.error).to(equal(.passcodeIncorrect))
                         }
                     }
                 }

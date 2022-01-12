@@ -94,9 +94,8 @@
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
-		DC5CC371249C0D0300355CC6 /* InternalTwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */; };
+		DC5CC371249C0D0300355CC6 /* TwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E2E2357A73900C5D313 /* TwilioAccessTokenStoreSpec.swift */; };
 		DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */; };
-		DC5CC373249C0D0300355CC6 /* CommunityTwilioAccessTokenStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */; };
 		DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */; };
 		DC5CC375249C0D0300355CC6 /* AuthErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */; };
 		DC5CC376249C0D0300355CC6 /* DeepLinkStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */; };
@@ -117,7 +116,7 @@
 		DC5CC385249C0D3900355CC6 /* MockURLOpenerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA3E23BBCC8400BF016F /* MockURLOpenerFactory.swift */; };
 		DC5CC386249C0D3900355CC6 /* MockUserActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */; };
 		DC5CC387249C0D3900355CC6 /* MockUserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */; };
-		DC5CC388249C0D6C00355CC6 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */; };
+		DC5CC388249C0D6C00355CC6 /* StubCreateTwilioAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */; };
 		DC5CC397249C0F2100355CC6 /* AuthActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676123DF923700A2939C /* AuthActivities.swift */; };
 		DC5CC398249C0F2100355CC6 /* DeepLinkActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676323DF9CC000A2939C /* DeepLinkActivities.swift */; };
 		DC5CC399249C0F2100355CC6 /* RoomActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78CABB243547CB006D3FAA /* RoomActivities.swift */; };
@@ -250,7 +249,7 @@
 		DCACF1D224EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D024EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift */; };
 		DCACF1D424EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */; };
 		DCACF1D524EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */; };
-		DCACF1D724EEE08000D3C264 /* CommunityCreateAccessTokenResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D624EEE08000D3C264 /* CommunityCreateAccessTokenResponseSpec.swift */; };
+		DCACF1D724EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D624EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift */; };
 		DCACF1D924EF14BD00D3C264 /* AppSettingsStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1D824EF14BD00D3C264 /* AppSettingsStoreSpec.swift */; };
 		DCACF1DB24EF1B8600D3C264 /* StubAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1DA24EF1B8600D3C264 /* StubAppInfo.swift */; };
 		DCACF1DD24EF1BBD00D3C264 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF1DC24EF1BBD00D3C264 /* MockNotificationCenter.swift */; };
@@ -313,14 +312,8 @@
 		DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675923DF56FE00A2939C /* UserActivityStoreFactory.swift */; };
 		DCD940B2243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
 		DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
-		DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
-		DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */; };
-		DCDCD37724193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */; };
-		DCDCD37824193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */; };
-		DCDCD37B2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */; };
-		DCDCD37C2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */; };
-		DCDCD37F241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */; };
-		DCDCD380241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */; };
+		DCDCD37724193042004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */; };
+		DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -496,7 +489,7 @@
 		DC44C2E923876B4700205174 /* EditTextSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextSegueSender.swift; sourceTree = "<group>"; };
 		DC4568852385D5490069BB5A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
-		DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTwilioAccessTokenStoreSpec.swift; sourceTree = "<group>"; };
+		DC4E4E2E2357A73900C5D313 /* TwilioAccessTokenStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStoreSpec.swift; sourceTree = "<group>"; };
 		DC5CC38D249C0EC000355CC6 /* Video-InternalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5CC391249C0EC000355CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
@@ -569,14 +562,14 @@
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		DCA53953235F89BE00CA26FB /* CommunityAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAuthStore.swift; sourceTree = "<group>"; };
-		DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCommunityCreateTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
+		DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCreateTwilioAccessTokenResponse.swift; sourceTree = "<group>"; };
 		DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorSpec.swift; sourceTree = "<group>"; };
 		DCA80B27236B821E009141C9 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		DCA80B2B236C77C6009141C9 /* LaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlowFactory.swift; sourceTree = "<group>"; };
 		DCACF1CD24EAEAD600D3C264 /* InternalSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCACF1D024EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
 		DCACF1D324EAF1F000D3C264 /* SettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerFactory.swift; sourceTree = "<group>"; };
-		DCACF1D624EEE08000D3C264 /* CommunityCreateAccessTokenResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCreateAccessTokenResponseSpec.swift; sourceTree = "<group>"; };
+		DCACF1D624EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccessTokenResponseSpec.swift; sourceTree = "<group>"; };
 		DCACF1D824EF14BD00D3C264 /* AppSettingsStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStoreSpec.swift; sourceTree = "<group>"; };
 		DCACF1DA24EF1B8600D3C264 /* StubAppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAppInfo.swift; sourceTree = "<group>"; };
 		DCACF1DC24EF1BBD00D3C264 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
@@ -626,11 +619,7 @@
 		DCD7676B23DFE70700A2939C /* MockUserActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStore.swift; sourceTree = "<group>"; };
 		DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStoreFactory.swift; sourceTree = "<group>"; };
 		DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOptionsFactory.swift; sourceTree = "<group>"; };
-		DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStore.swift; sourceTree = "<group>"; };
-		DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTwilioAccessTokenStore.swift; sourceTree = "<group>"; };
-		DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTwilioAccessTokenStore.swift; sourceTree = "<group>"; };
-		DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStoreFactory.swift; sourceTree = "<group>"; };
-		DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTwilioAccessTokenStoreSpec.swift; sourceTree = "<group>"; };
+		DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStore.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1132,13 +1121,12 @@
 				DCACF1D824EF14BD00D3C264 /* AppSettingsStoreSpec.swift */,
 				DCA65025240D9A3B0038DEE1 /* AuthErrorSpec.swift */,
 				DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */,
-				DCACF1D624EEE08000D3C264 /* CommunityCreateAccessTokenResponseSpec.swift */,
-				DCDCD38524194CF0004A30FC /* CommunityTwilioAccessTokenStoreSpec.swift */,
+				DCACF1D624EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
 				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
-				DC4E4E2E2357A73900C5D313 /* InternalTwilioAccessTokenStoreSpec.swift */,
 				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
 				DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */,
+				DC4E4E2E2357A73900C5D313 /* TwilioAccessTokenStoreSpec.swift */,
 				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
 				DC04469C238F29500072F597 /* UserStoreSpec.swift */,
 			);
@@ -1226,8 +1214,8 @@
 		DCA65022240D926A0038DEE1 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				DCA65023240D92960038DEE1 /* StubCommunityCreateTwilioAccessTokenResponse.swift */,
 				DCACF1DA24EF1B8600D3C264 /* StubAppInfo.swift */,
+				DCA65023240D92960038DEE1 /* StubCreateTwilioAccessTokenResponse.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1392,10 +1380,7 @@
 		DCDCD370241929C6004A30FC /* TwilioAccessToken */ = {
 			isa = PBXGroup;
 			children = (
-				DCDCD3792419306E004A30FC /* CommunityTwilioAccessTokenStore.swift */,
-				DCDCD37524193042004A30FC /* InternalTwilioAccessTokenStore.swift */,
-				DCDCD371241929E1004A30FC /* TwilioAccessTokenStore.swift */,
-				DCDCD37D241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift */,
+				DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */,
 			);
 			path = TwilioAccessToken;
 			sourceTree = "<group>";
@@ -2223,7 +2208,7 @@
 				DC044692238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC9A5E26246207E600E4B079 /* CameraSourceFactory.swift in Sources */,
 				DC9A5E2A24620B6D00E4B079 /* CameraTrackFactory.swift in Sources */,
-				DCDCD37724193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
+				DCDCD37724193042004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
@@ -2231,7 +2216,6 @@
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCDCD373241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
@@ -2313,7 +2297,6 @@
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
-				DCDCD37B2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */,
 				DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DCACF1D124EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */,
@@ -2332,7 +2315,6 @@
 				DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC9A5DCB245A215000E4B079 /* RoomViewController.swift in Sources */,
 				DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */,
-				DCDCD37F241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */,
 				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
@@ -2388,7 +2370,7 @@
 				DC044693238F1E3C0072F597 /* UserStore.swift in Sources */,
 				DC9A5E27246207E600E4B079 /* CameraSourceFactory.swift in Sources */,
 				DC9A5E2B24620B6D00E4B079 /* CameraTrackFactory.swift in Sources */,
-				DCDCD37824193042004A30FC /* InternalTwilioAccessTokenStore.swift in Sources */,
+				DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
@@ -2396,7 +2378,6 @@
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCDCD374241929E1004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
@@ -2478,7 +2459,6 @@
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
-				DCDCD37C2419306E004A30FC /* CommunityTwilioAccessTokenStore.swift in Sources */,
 				DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DCACF1D224EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */,
@@ -2497,7 +2477,6 @@
 				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC9A5DCC245A215000E4B079 /* RoomViewController.swift in Sources */,
 				DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */,
-				DCDCD380241930A7004A30FC /* TwilioAccessTokenStoreFactory.swift in Sources */,
 				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
@@ -2568,7 +2547,7 @@
 			files = (
 				DC5CC375249C0D0300355CC6 /* AuthErrorSpec.swift in Sources */,
 				DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */,
-				DC5CC371249C0D0300355CC6 /* InternalTwilioAccessTokenStoreSpec.swift in Sources */,
+				DC5CC371249C0D0300355CC6 /* TwilioAccessTokenStoreSpec.swift in Sources */,
 				DC5CC37D249C0D3900355CC6 /* MockAuthStoreWritingDelegate.swift in Sources */,
 				DC5CC381249C0D3900355CC6 /* MockLaunchFlowFactory.swift in Sources */,
 				DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */,
@@ -2579,7 +2558,7 @@
 				DC5CC37E249C0D3900355CC6 /* MockDeepLinkStore.swift in Sources */,
 				DC9C773025003D5400AC68FD /* MockRemoteConfigStore.swift in Sources */,
 				DC5CC386249C0D3900355CC6 /* MockUserActivityStore.swift in Sources */,
-				DC5CC388249C0D6C00355CC6 /* StubCommunityCreateTwilioAccessTokenResponse.swift in Sources */,
+				DC5CC388249C0D6C00355CC6 /* StubCreateTwilioAccessTokenResponse.swift in Sources */,
 				DCACF1DD24EF1BBD00D3C264 /* MockNotificationCenter.swift in Sources */,
 				DC5CC37A249C0D3900355CC6 /* MockAPI.swift in Sources */,
 				DC5CC378249C0D0300355CC6 /* PasscodeComponentsSpec.swift in Sources */,
@@ -2587,7 +2566,6 @@
 				DCACF1E324EF1C2F00D3C264 /* MockAppInfoStore.swift in Sources */,
 				DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */,
 				DCACF1E124EF1C0900D3C264 /* MockUserDefaults.swift in Sources */,
-				DC5CC373249C0D0300355CC6 /* CommunityTwilioAccessTokenStoreSpec.swift in Sources */,
 				DC5CC387249C0D3900355CC6 /* MockUserActivityStoreFactory.swift in Sources */,
 				DC5CC380249C0D3900355CC6 /* MockLaunchFlow.swift in Sources */,
 				DC9C7732250043A600AC68FD /* RemoteConfigStoreSpec.swift in Sources */,
@@ -2598,7 +2576,7 @@
 				DC5CC385249C0D3900355CC6 /* MockURLOpenerFactory.swift in Sources */,
 				DC5CC376249C0D0300355CC6 /* DeepLinkStoreSpec.swift in Sources */,
 				DCACF1DF24EF1BE500D3C264 /* MockDispatchQueue.swift in Sources */,
-				DCACF1D724EEE08000D3C264 /* CommunityCreateAccessTokenResponseSpec.swift in Sources */,
+				DCACF1D724EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift in Sources */,
 				DC5CC379249C0D0300355CC6 /* AppDelegateSpec.swift in Sources */,
 				DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */,
 			);

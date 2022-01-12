@@ -23,9 +23,15 @@ class RoomFactory {
             micTrackFactory: MicTrackFactory(),
             cameraManagerFactory: CameraManagerFactory()
         )
+        let accessTokenStore = TwilioAccessTokenStore(
+            api: API.shared,
+            appSettingsStore: AppSettingsStore.shared,
+            authStore: AuthStore.shared,
+            remoteConfigStore: RemoteConfigStoreFactory().makeRemoteConfigStore()
+        )
         return Room(
             localParticipant: localParticipant,
-            accessTokenStore: TwilioAccessTokenStoreFactory().makeTwilioAccessTokenStore(),
+            accessTokenStore: accessTokenStore,
             connectOptionsFactory: ConnectOptionsFactory(),
             notificationCenter: .default,
             twilioVideoSDKType: TwilioVideoSDK.self

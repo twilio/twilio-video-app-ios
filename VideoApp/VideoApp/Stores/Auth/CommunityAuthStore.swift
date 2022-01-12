@@ -93,7 +93,7 @@ class CommunityAuthStore: AuthStoreWriting {
     }
 
     func refreshIDToken(completion: @escaping () -> Void) {
-        fatalError("Refresh ID token not supported by community auth.")
+        // Do nothing for community auth
     }
     
     private func configureAPI(passcode: String) throws {

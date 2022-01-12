@@ -48,12 +48,6 @@ class AuthErrorSpec: QuickSpec {
                 }
             }
 
-            context("when apiError is notConnectedToInternet") {
-                it("returns networkError") {
-                    expect(AuthError(apiError: .notConnectedToInternet)).to(equal(.networkError))
-                }
-            }
-
             context("when apiError is passcodeIncorrect") {
                 it("returns passcodeIncorrect") {
                     expect(AuthError(apiError: .passcodeIncorrect)).to(equal(.passcodeIncorrect))
