@@ -19,7 +19,6 @@ import Foundation
 protocol AppSettingsStoreWriting: LaunchStore {
     var environment: Environment { get set }
     var videoCodec: VideoCodec { get set }
-    var topology: Topology { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
     var areInsightsEnabled: Bool { get set }
@@ -40,7 +39,6 @@ protocol AppSettingsStoreWriting: LaunchStore {
 class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
     @Storage(key: makeKey("videoCodec"), defaultValue: defaultVideoCodec) var videoCodec: VideoCodec
-    @Storage(key: makeKey("topology"), defaultValue: Topology.group) var topology: Topology
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
     @Storage(key: makeKey("areInsightsEnabled"), defaultValue: true) var areInsightsEnabled: Bool

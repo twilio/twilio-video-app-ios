@@ -31,27 +31,27 @@ class API: APIConfiguring, APIRequesting {
     static var shared: APIConfiguring & APIRequesting = API(
         session: Session(),
         urlFactory: APIURLFactoryImpl(),
-        jsonEncoder: JSONEncoder(),
         jsonDecoder: JSONDecoder()
     )
     var config: APIConfig!
     private let session: Session
     private let urlFactory: APIURLFactory
-    private let jsonEncoder: JSONEncoder
     private let jsonDecoder: JSONDecoder
+    private let parameterEncoder: JSONParameterEncoder
     private var headers: HTTPHeaders? {
         guard let idToken = config.idToken else { return nil }
         
         return [.authorization(idToken)]
     }
 
-    init(session: Session, urlFactory: APIURLFactory, jsonEncoder: JSONEncoder, jsonDecoder: JSONDecoder) {
+    init(session: Session, urlFactory: APIURLFactory, jsonDecoder: JSONDecoder) {
         self.session = session
         self.urlFactory = urlFactory
-        self.jsonEncoder = jsonEncoder
         self.jsonDecoder = jsonDecoder
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let jsonEncoder = JSONEncoder()
         jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+        parameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
     }
     
     func request<Request: APIRequest>(
@@ -60,66 +60,31 @@ class API: APIConfiguring, APIRequesting {
     ) {
         session.request(
             urlFactory.makeURL(host: config.host, path: request.path),
-            method: HTTPMethod(apiHTTPMethod: request.method),
+            method: .post, // Twilio Functions does not care about method
             parameters: request.parameters,
-            encoder: makeParameterEncoder(encoding: request.encoding),
+            encoder: parameterEncoder,
             headers: headers
-        ).validate().responseDecodableOrString(of: request.responseType, decoder: jsonDecoder) { [weak self] response in
-            guard let self = self else { return }
-            
-            switch response.result {
-            case let .success(response):
-                completion(.success(response))
-            case let .failure(error):
-                guard !error.isNotConnectedToInternetError else { completion(.failure(.notConnectedToInternet)); return }
-                guard let data = response.data else { completion(.failure(.decodeError)); return }
-
-                do {
-                    let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
-                    completion(.failure(APIError(message: errorResponse.error.message)))
-                } catch {
-                    completion(.failure(.decodeError))
+        )
+            .validate()
+            .responseDecodable(of: request.responseType, decoder: jsonDecoder) { [weak self] response in
+                guard let self = self else { return }
+                
+                switch response.result {
+                case let .success(response):
+                    completion(.success(response))
+                case let .failure(error):
+                    guard let data = response.data else {
+                        completion(.failure(.message(message: error.localizedDescription)))
+                        return
+                    }
+                    
+                    do {
+                        let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
+                        completion(.failure(APIError(message: errorResponse.error.message)))
+                    } catch {
+                        completion(.failure(.message(message: error.localizedDescription)))
+                    }
                 }
             }
-        }
-    }
-    
-    private func makeParameterEncoder(encoding: APIEncoding) -> ParameterEncoder {
-        switch encoding {
-        case .jsonBody: return JSONParameterEncoder(encoder: jsonEncoder)
-        case .queryStringURL: return URLEncodedFormParameterEncoder()
-        }
-    }
-}
-
-private extension AFError {
-    var isNotConnectedToInternetError: Bool {
-        guard let underlyingError = underlyingError, isSessionTaskError else { return false }
-
-        let error = underlyingError as NSError
-        return error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet
-    }
-}
-
-private extension HTTPMethod {
-    init(apiHTTPMethod: APIHTTPMethod) {
-        switch apiHTTPMethod {
-        case .post: self = .post
-        case .get: self = .get
-        }
-    }
-}
-
-extension DataRequest {
-    @discardableResult func responseDecodableOrString<T: Decodable>(
-        of type: T.Type = T.self,
-        decoder: DataDecoder,
-        completionHandler: @escaping (AFDataResponse<T>) -> Void
-    ) -> Self {
-        if type is String.Type {
-            return responseString { completionHandler( $0.map { $0 as! T }) }
-        } else {
-            return responseDecodable(of: type, decoder: decoder, completionHandler: completionHandler)
-        }
     }
 }

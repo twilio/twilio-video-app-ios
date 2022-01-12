@@ -25,7 +25,6 @@ struct CreateTwilioAccessTokenRequest: APIRequest {
     }
 
     let path = "token"
-    let method = APIHTTPMethod.post
     let parameters: Parameters
     let responseType = CreateTwilioAccessTokenResponse.self
 
