@@ -93,7 +93,7 @@ class CommunityAuthStore: AuthStoreWriting {
     }
 
     func refreshIDToken(completion: @escaping () -> Void) {
-        // Do nothing for community auth
+        completion() // Do nothing for community auth
     }
     
     private func configureAPI(passcode: String) throws {
