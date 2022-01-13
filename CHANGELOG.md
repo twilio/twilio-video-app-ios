@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.88 (January 13, 2022)
+
+### Maintenance
+
+- Updated the internal build variant to use the same REST interface for the token endpoint as the community build.
+- Removed topology setting that was only used by internal build.
+- Simplified error handling for REST requests.
+
+-----------
+
 ## 0.87 (December 13, 2021)
 
 ### Dependency Upgrades
