@@ -37,26 +37,6 @@ class MockAPI: APIConfiguring, APIRequesting {
             return stubbedConfig
         }
     }
-    var invokedErrorResponseDecoderSetter = false
-    var invokedErrorResponseDecoderSetterCount = 0
-    var invokedErrorResponseDecoder: APIErrorResponseDecoder?
-    var invokedErrorResponseDecoderList = [APIErrorResponseDecoder?]()
-    var invokedErrorResponseDecoderGetter = false
-    var invokedErrorResponseDecoderGetterCount = 0
-    var stubbedErrorResponseDecoder: APIErrorResponseDecoder!
-    var errorResponseDecoder: APIErrorResponseDecoder! {
-        set {
-            invokedErrorResponseDecoderSetter = true
-            invokedErrorResponseDecoderSetterCount += 1
-            invokedErrorResponseDecoder = newValue
-            invokedErrorResponseDecoderList.append(newValue)
-        }
-        get {
-            invokedErrorResponseDecoderGetter = true
-            invokedErrorResponseDecoderGetterCount += 1
-            return stubbedErrorResponseDecoder
-        }
-    }
     var invokedRequest = false
     var invokedRequestCount = 0
     var invokedRequestParameters: (request: Any, Void)?

@@ -17,7 +17,7 @@
 @testable import VideoApp
 
 extension CreateTwilioAccessTokenResponse {
-    static func stub(token: String = "") -> CreateTwilioAccessTokenResponse {
-        .init(token: token)
+    static func stub(token: String = "", roomType: RoomType? = nil) -> CreateTwilioAccessTokenResponse {
+        .init(token: token, roomType: roomType)
     }
 }

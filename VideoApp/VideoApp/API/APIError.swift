@@ -17,26 +17,11 @@
 import Foundation
 
 enum APIError: Error, Equatable {
-    case decodeError
     case message(message: String)
-    case notConnectedToInternet
-    case passcodeExpired
-    case passcodeIncorrect
-
-    init(message: APIErrorResponse.Error.Message) {
-        switch message {
-        case .passcodeExpired: self = .passcodeExpired
-        case .passcodeIncorrect: self = .passcodeIncorrect
-        }
-    }
 
     var localizedDescription: String {
         switch self {
-        case .decodeError: return "Decode error."
         case let .message(message): return message
-        case .notConnectedToInternet: return "The Internet connection appears to be offline."
-        case .passcodeExpired: return "Passcode expired. Please sign in with a new passcode."
-        case .passcodeIncorrect: return "Passcode incorrect."
         }
     }
 }

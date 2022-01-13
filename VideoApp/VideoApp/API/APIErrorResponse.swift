@@ -16,17 +16,11 @@
 
 import Foundation
 
-protocol APIRequest {
-    associatedtype Parameters: Encodable
-    associatedtype Response: Decodable
-    var path: String { get }
-    var method: APIHTTPMethod { get }
-    var parameters: Parameters { get }
-    var encoding: APIEncoding { get }
-    var responseType: Response.Type { get }
-}
-
-extension APIRequest {
-    var encoding: APIEncoding { .jsonBody }
-    var method: APIHTTPMethod { .get }
+struct APIErrorResponse: Decodable {
+    struct Error: Decodable {
+        let message: String
+        let explanation: String
+    }
+    
+    let error: Error
 }

@@ -19,21 +19,24 @@ import Nimble
 
 @testable import VideoApp
 
-class InternalTwilioAccessTokenStoreSpec: QuickSpec {
+class TwilioAccessTokenStoreSpec: QuickSpec {
     override func spec() {
-        var sut: InternalTwilioAccessTokenStore!
+        var sut: TwilioAccessTokenStore!
         var mockAPI: MockAPI!
         var mockAppSettingsStore: MockAppSettingsStore!
         var mockAuthStore: MockAuthStore!
+        var mockRemoteConfigStore: MockRemoteConfigStore!
         
         beforeEach {
             mockAPI = MockAPI()
             mockAppSettingsStore = MockAppSettingsStore()
             mockAuthStore = MockAuthStore()
-            sut = InternalTwilioAccessTokenStore(
+            mockRemoteConfigStore = MockRemoteConfigStore()
+            sut = TwilioAccessTokenStore(
                 api: mockAPI,
                 appSettingsStore: mockAppSettingsStore,
-                authStore: mockAuthStore
+                authStore: mockAuthStore,
+                remoteConfigStore: mockRemoteConfigStore
             )
         }
 
@@ -47,14 +50,14 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
             }
             
             func fetchTwilioAccessToken(
+                passcode: String? = nil,
                 roomName: String = "",
                 userIdentity: String = "",
                 userDisplayName: String = "",
-                topology: Topology = .group,
-                apiResult: Result<Any, APIError> = .success("")
+                apiResult: Result<Any, APIError> = .success(CreateTwilioAccessTokenResponse.stub())
             ) {
+                mockAuthStore.stubbedPasscode = passcode
                 mockAppSettingsStore.stubbedUserIdentity = userIdentity
-                mockAppSettingsStore.stubbedTopology = topology
                 mockAuthStore.stubbedUserDisplayName = userDisplayName
                 mockAuthStore.shouldInvokeRefreshIDTokenCompletion = true
                 mockAPI.stubbedRequestCompletionResult = apiResult
@@ -78,11 +81,33 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                     expect(mockAPI.invokedRequestCount).to(equal(1))
                 }
 
+                it("is called with createRoom true") {
+                    fetchTwilioAccessToken()
+                    
+                    expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.createRoom).to(beTrue())
+                }
+
+                context("when passcode is nil") {
+                    it("is called with empty passcode") {
+                        fetchTwilioAccessToken(passcode: nil)
+
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal(""))
+                    }
+                }
+
+                context("when passcode is 59842367125687") {
+                    it("is called with 59842367125687 passcode") {
+                        fetchTwilioAccessToken(passcode: "59842367125687")
+
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.passcode).to(equal("59842367125687"))
+                    }
+                }
+                
                 context("when roomName is foo") {
                     it("is called with foo roomName") {
                         fetchTwilioAccessToken(roomName: "foo")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("foo"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("foo"))
                     }
                 }
 
@@ -90,7 +115,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                     it("is called with bar roomName") {
                         fetchTwilioAccessToken(roomName: "bar")
                         
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("bar"))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.roomName).to(equal("bar"))
                     }
                 }
 
@@ -99,7 +124,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                         it("is called with foo identity") {
                             fetchTwilioAccessToken(userIdentity: "", userDisplayName: "foo")
 
-                            expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.identity).to(equal("foo"))
+                            expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
                         }
                     }
                     
@@ -107,7 +132,7 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                         it("is called with bar identity") {
                             fetchTwilioAccessToken(userIdentity: "", userDisplayName: "bar")
 
-                            expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.identity).to(equal("bar"))
+                            expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("bar"))
                         }
                     }
                 }
@@ -116,55 +141,40 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                     it("is called with foo identity") {
                         fetchTwilioAccessToken(userIdentity: "foo")
 
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.identity).to(equal("foo"))
-                    }
-                }
-
-                context("when topology is go") {
-                    it("is called with go topology") {
-                        fetchTwilioAccessToken(topology: .go)
-
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.go))
-                    }
-                }
-
-                context("when topology is group") {
-                    it("is called with group topology") {
-                        fetchTwilioAccessToken(topology: .group)
-
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.group))
-                    }
-                }
-
-                context("when topology is groupSmall") {
-                    it("is called with groupSmall topology") {
-                        fetchTwilioAccessToken(topology: .groupSmall)
-
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.groupSmall))
-                    }
-                }
-                
-                context("when topology is peerToPeer") {
-                    it("is called with peerToPeer topology") {
-                        fetchTwilioAccessToken(topology: .peerToPeer)
-
-                        expect((mockAPI.invokedRequestParameters?.request as? InternalCreateTwilioAccessTokenRequest)?.parameters.topology).to(equal(.peerToPeer))
+                        expect((mockAPI.invokedRequestParameters?.request as? CreateTwilioAccessTokenRequest)?.parameters.userIdentity).to(equal("foo"))
                     }
                 }
 
                 context("when result is success") {
-                    context("when response is foo") {
+                    context("when roomType is nil") {
+                        it("does not update remoteConfigStore") {
+                            fetchTwilioAccessToken(apiResult: .success(CreateTwilioAccessTokenResponse.stub(roomType: nil)))
+
+                            expect(mockRemoteConfigStore.invokedRoomTypeSetter).to(beFalse())
+                        }
+                    }
+
+                    context("when roomType is peerToPeer") {
+                        it("updates remoteConfigStore") {
+                            fetchTwilioAccessToken(apiResult: .success(CreateTwilioAccessTokenResponse.stub(roomType: .peerToPeer)))
+
+                            expect(mockRemoteConfigStore.invokedRoomTypeSetterCount).to(equal(1))
+                            expect(mockRemoteConfigStore.invokedRoomType).to(equal(.peerToPeer))
+                        }
+                    }
+                    
+                    context("when token is foo") {
                         it("calls completion with foo token") {
-                            fetchTwilioAccessToken(apiResult: .success("foo"))
+                            fetchTwilioAccessToken(apiResult: .success(CreateTwilioAccessTokenResponse.stub(token: "foo")))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters!.result).to(equal(.success("foo")))
                         }
                     }
                     
-                    context("when response is bar") {
+                    context("when token is bar") {
                         it("calls completion with bar token") {
-                            fetchTwilioAccessToken(apiResult: .success("bar"))
+                            fetchTwilioAccessToken(apiResult: .success(CreateTwilioAccessTokenResponse.stub(token: "bar")))
                             
                             expect(invokedCompletionCount).to(equal(1))
                             expect(invokedCompletionParameters!.result).to(equal(.success("bar")))
@@ -173,21 +183,21 @@ class InternalTwilioAccessTokenStoreSpec: QuickSpec {
                 }
 
                 context("when result is failure") {
-                    context("when error is passcodeExpired") {
-                        it("calls completion with passcodeExpired error") {
-                            fetchTwilioAccessToken(apiResult: .failure(.passcodeExpired))
+                    context("when error is foo") {
+                        it("calls completion with foo error") {
+                            fetchTwilioAccessToken(apiResult: .failure(.message(message: "foo")))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters!.result).to(equal(.failure(.passcodeExpired)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.message(message: "foo"))))
                         }
                     }
 
-                    context("when error is notConnectedToInternet") {
-                        it("calls completion with notConnectedToInternet error") {
-                            fetchTwilioAccessToken(apiResult: .failure(.notConnectedToInternet))
+                    context("when error is bar") {
+                        it("calls completion with bar error") {
+                            fetchTwilioAccessToken(apiResult: .failure(.message(message: "bar")))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters!.result).to(equal(.failure(.notConnectedToInternet)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.message(message: "bar"))))
                         }
                     }
                 }

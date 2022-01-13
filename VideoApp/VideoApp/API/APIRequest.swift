@@ -16,7 +16,10 @@
 
 import Foundation
 
-struct CreateTwilioAccessTokenResponse: Decodable {
-    let token: String
+protocol APIRequest {
+    associatedtype Parameters: Encodable
+    associatedtype Response: Decodable
+    var path: String { get }
+    var parameters: Parameters { get }
+    var responseType: Response.Type { get }
 }
-
