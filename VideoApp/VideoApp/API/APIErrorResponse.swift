@@ -18,12 +18,8 @@ import Foundation
 
 struct APIErrorResponse: Decodable {
     struct Error: Decodable {
-        enum Message: String, Decodable {
-            case passcodeExpired = "passcode expired"
-            case passcodeIncorrect = "passcode incorrect"
-        }
-        
-        let message: Message
+        let message: String
+        let explanation: String
     }
     
     let error: Error

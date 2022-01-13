@@ -80,7 +80,7 @@ class API: APIConfiguring, APIRequesting {
                     
                     do {
                         let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
-                        completion(.failure(APIError(message: errorResponse.error.message)))
+                        completion(.failure(.message(message: errorResponse.error.explanation)))
                     } catch {
                         completion(.failure(.message(message: error.localizedDescription)))
                     }

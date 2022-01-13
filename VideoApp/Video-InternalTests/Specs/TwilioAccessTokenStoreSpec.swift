@@ -183,21 +183,21 @@ class TwilioAccessTokenStoreSpec: QuickSpec {
                 }
 
                 context("when result is failure") {
-                    context("when error is passcodeExpired") {
-                        it("calls completion with passcodeExpired error") {
-                            fetchTwilioAccessToken(apiResult: .failure(.passcodeExpired))
+                    context("when error is foo") {
+                        it("calls completion with foo error") {
+                            fetchTwilioAccessToken(apiResult: .failure(.message(message: "foo")))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters!.result).to(equal(.failure(.passcodeExpired)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.message(message: "foo"))))
                         }
                     }
 
-                    context("when error is passcodeIncorrect") {
-                        it("calls completion with passcodeIncorrect error") {
-                            fetchTwilioAccessToken(apiResult: .failure(.passcodeIncorrect))
+                    context("when error is bar") {
+                        it("calls completion with bar error") {
+                            fetchTwilioAccessToken(apiResult: .failure(.message(message: "bar")))
                             
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters!.result).to(equal(.failure(.passcodeIncorrect)))
+                            expect(invokedCompletionParameters!.result).to(equal(.failure(.message(message: "bar"))))
                         }
                     }
                 }

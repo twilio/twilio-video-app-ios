@@ -287,26 +287,26 @@ class CommunityAuthStoreSpec: QuickSpec {
 
                 context("when result is failure") {
                     it("sets API config to nil") {
-                        signIn(apiResult: .failure(.passcodeExpired))
+                        signIn(apiResult: .failure(.message(message: "")))
                         
                         expect(mockAPI.invokedConfig).to(beNil())
                     }
 
-                    context("when error is expiredPasscode error") {
-                        it("calls completion with expiredPasscode error") {
-                            signIn(apiResult: .failure(.passcodeExpired))
+                    context("when error is foo") {
+                        it("calls completion with foo error") {
+                            signIn(apiResult: .failure(.message(message: "foo")))
 
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.error).to(equal(.passcodeExpired))
+                            expect(invokedCompletionParameters?.error).to(equal(.message(message: "foo")))
                         }
                     }
                     
-                    context("when error is passcodeIncorrect error") {
-                        it("calls completion with passcodeIncorrect error") {
-                            signIn(apiResult: .failure(.passcodeIncorrect))
+                    context("when error is bar") {
+                        it("calls completion with bar error") {
+                            signIn(apiResult: .failure(.message(message: "bar")))
 
                             expect(invokedCompletionCount).to(equal(1))
-                            expect(invokedCompletionParameters?.error).to(equal(.passcodeIncorrect))
+                            expect(invokedCompletionParameters?.error).to(equal(.message(message: "bar")))
                         }
                     }
                 }

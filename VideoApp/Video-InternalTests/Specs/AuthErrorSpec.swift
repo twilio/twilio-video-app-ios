@@ -22,12 +22,6 @@ import Quick
 class AuthErrorSpec: QuickSpec {
     override func spec() {
         describe("init") {
-            context("when apiError is decodeError") {
-                it("returns unknown") {
-                    expect(AuthError(apiError: .decodeError)).to(equal(.unknown))
-                }
-            }
-            
             context("when apiError is message") {
                 context("when message is foo") {
                     it("returns message error with foo message") {
@@ -39,18 +33,6 @@ class AuthErrorSpec: QuickSpec {
                     it("returns message error with bar message") {
                         expect(AuthError(apiError: .message(message: "bar"))).to(equal(.message(message: "bar")))
                     }
-                }
-            }
-
-            context("when apiError is passcodeExpired") {
-                it("returns passcodeExpired") {
-                    expect(AuthError(apiError: .passcodeExpired)).to(equal(.passcodeExpired))
-                }
-            }
-
-            context("when apiError is passcodeIncorrect") {
-                it("returns passcodeIncorrect") {
-                    expect(AuthError(apiError: .passcodeIncorrect)).to(equal(.passcodeIncorrect))
                 }
             }
         }
