@@ -4,7 +4,7 @@
 
 ### Maintenance
 
-- Updated the internal build variant to use the same REST interface for the token endpoint as the community build.
+- Updated the internal build variant to use the same REST interface for the token endpoint as the community build. 
 - Removed topology setting that was only used by internal build.
 - Simplified error handling for REST requests.
 
