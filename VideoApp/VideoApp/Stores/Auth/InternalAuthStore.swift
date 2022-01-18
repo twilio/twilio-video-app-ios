@@ -116,8 +116,8 @@ private extension Environment {
     var host: String {
         switch self {
         case .production: return "twilio-video-react.appspot.com"
-        case .staging: return "app.stage.video.bytwilio.com/api/v1"
-        case .development: return "app.dev.video.bytwilio.com/api/v1"
+        case .staging: return "stage-dot-twilio-video-react.appspot.com"
+        case .development: return "dev-dot-twilio-video-react.appspot.com"
         }
     }
 }
