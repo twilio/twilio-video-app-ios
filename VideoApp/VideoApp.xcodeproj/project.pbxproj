@@ -108,8 +108,6 @@
 		DC5CC37D249C0D3900355CC6 /* MockAuthStoreWritingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5E240D811900E090BE /* MockAuthStoreWritingDelegate.swift */; };
 		DC5CC37E249C0D3900355CC6 /* MockDeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */; };
 		DC5CC37F249C0D3900355CC6 /* MockKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */; };
-		DC5CC380249C0D3900355CC6 /* MockLaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */; };
-		DC5CC381249C0D3900355CC6 /* MockLaunchFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */; };
 		DC5CC382249C0D3900355CC6 /* MockLaunchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */; };
 		DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */; };
 		DC5CC384249C0D3900355CC6 /* MockURLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */; };
@@ -509,8 +507,6 @@
 		DC85CA4023BBCCB000BF016F /* MockURLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLOpener.swift; sourceTree = "<group>"; };
 		DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStoresFactory.swift; sourceTree = "<group>"; };
 		DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchStore.swift; sourceTree = "<group>"; };
-		DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchFlowFactory.swift; sourceTree = "<group>"; };
-		DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchFlow.swift; sourceTree = "<group>"; };
 		DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
@@ -1021,8 +1017,6 @@
 				DCD7676923DFE03F00A2939C /* MockDeepLinkStore.swift */,
 				DCACF1DE24EF1BE500D3C264 /* MockDispatchQueue.swift */,
 				DCB64B5C240D66C700E090BE /* MockKeychainStore.swift */,
-				DC85CA4823BBCD2A00BF016F /* MockLaunchFlow.swift */,
-				DC85CA4623BBCD0B00BF016F /* MockLaunchFlowFactory.swift */,
 				DC85CA4423BBCCE400BF016F /* MockLaunchStore.swift */,
 				DC85CA4223BBCCC800BF016F /* MockLaunchStoresFactory.swift */,
 				DCACF1DC24EF1BBD00D3C264 /* MockNotificationCenter.swift */,
@@ -2549,7 +2543,6 @@
 				DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */,
 				DC5CC371249C0D0300355CC6 /* TwilioAccessTokenStoreSpec.swift in Sources */,
 				DC5CC37D249C0D3900355CC6 /* MockAuthStoreWritingDelegate.swift in Sources */,
-				DC5CC381249C0D3900355CC6 /* MockLaunchFlowFactory.swift in Sources */,
 				DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */,
 				DC5CC384249C0D3900355CC6 /* MockURLOpener.swift in Sources */,
 				DCACF1D924EF14BD00D3C264 /* AppSettingsStoreSpec.swift in Sources */,
@@ -2567,7 +2560,6 @@
 				DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */,
 				DCACF1E124EF1C0900D3C264 /* MockUserDefaults.swift in Sources */,
 				DC5CC387249C0D3900355CC6 /* MockUserActivityStoreFactory.swift in Sources */,
-				DC5CC380249C0D3900355CC6 /* MockLaunchFlow.swift in Sources */,
 				DC9C7732250043A600AC68FD /* RemoteConfigStoreSpec.swift in Sources */,
 				DC5CC37C249C0D3900355CC6 /* MockAuthStore.swift in Sources */,
 				DC5CC377249C0D0300355CC6 /* UserActivityStoreSpec.swift in Sources */,
