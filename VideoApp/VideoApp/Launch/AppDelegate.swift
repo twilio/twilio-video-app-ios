@@ -17,26 +17,15 @@
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var launchFlow: LaunchFlow?
-    var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
     var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
     var userActivityStoreFactory: UserActivityStoreFactory = UserActivityStoreFactoryImpl()
-    var window: UIWindow?
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
-
-        if #available(iOS 13, *) {
-            // Do nothing because SceneDelegate will handle it
-        } else {
-            window = UIWindow(frame: UIScreen.main.bounds)
-            launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
-            launchFlow?.start()
-        }
 
         return true
     }

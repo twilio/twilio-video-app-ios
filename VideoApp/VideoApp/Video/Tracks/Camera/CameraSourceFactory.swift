@@ -21,8 +21,8 @@ class CameraSourceFactory {
     
     func makeCameraSource() -> CameraSource? {
         let options = CameraSourceOptions() { builder in
-            if #available(iOS 13, *) {
-                builder.orientationTracker = UserInterfaceTracker(scene: UIApplication.shared.keyWindow!.windowScene!)
+            if let scene = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.windowScene {
+                builder.orientationTracker = UserInterfaceTracker(scene: scene)
             }
             
             switch self.remoteConfigStore.roomType {
