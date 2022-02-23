@@ -24,10 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         googleSignInButton.style = .wide
-        
-        if #available(iOS 13, *) {
-            isModalInPresentation = true
-        }
+        isModalInPresentation = true
     }
     
     @IBAction func googleSignInButtonTap(_ sender: Any) {

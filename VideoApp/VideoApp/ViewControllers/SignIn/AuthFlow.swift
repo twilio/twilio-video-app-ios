@@ -46,21 +46,9 @@ class AuthFlow {
             return
         }
 
-        if #available(iOS 13, *) {
-            navigationVC.dismiss(animated: true) {
-                navigationVC.popToRootViewController(animated: true)
-                navigationVC.viewControllers.first?.performSegue(withIdentifier: "lobbySegue", sender: self)
-            }
-        } else {
-            if navigationVC.presentedViewController != nil {
-                navigationVC.dismiss(animated: true) {
-                    navigationVC.popToRootViewController(animated: true)
-                    navigationVC.viewControllers.first?.performSegue(withIdentifier: "lobbySegue", sender: self)
-                }
-            } else {
-                navigationVC.popToRootViewController(animated: true)
-                navigationVC.viewControllers.first?.performSegue(withIdentifier: "lobbySegue", sender: self)
-            }
+        navigationVC.dismiss(animated: true) {
+            navigationVC.popToRootViewController(animated: true)
+            navigationVC.viewControllers.first?.performSegue(withIdentifier: "lobbySegue", sender: self)
         }
     }
 

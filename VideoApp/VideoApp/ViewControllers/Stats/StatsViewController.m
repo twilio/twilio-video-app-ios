@@ -255,7 +255,7 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 }
 
 - (void)adjustConstraintsForStatusBar:(BOOL)shouldAnimate {
-    CGFloat statusBarHeight = [UIApplication sharedApplication].isStatusBarHidden ? 0 : [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat statusBarHeight = self.view.window.windowScene.statusBarManager.isStatusBarHidden ? 0 : self.view.window.windowScene.statusBarManager.statusBarFrame.size.height;
     [self.tableView setContentInset:UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)];
 
     if (shouldAnimate) {

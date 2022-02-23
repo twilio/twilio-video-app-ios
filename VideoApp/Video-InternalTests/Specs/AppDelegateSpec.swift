@@ -22,18 +22,15 @@ import Quick
 class AppDelegateSpec: QuickSpec {
     override func spec() {
         var sut: AppDelegate!
-        var mockLaunchFlowFactory: MockLaunchFlowFactory!
         var mockLaunchStoresFactory: MockLaunchStoresFactory!
         var mockURLOpenerFactory: MockURLOpenerFactory!
         var mockUserActivityStoreFactory: MockUserActivityStoreFactory!
         
         beforeEach {
-            mockLaunchFlowFactory = MockLaunchFlowFactory()
             mockLaunchStoresFactory = MockLaunchStoresFactory()
             mockURLOpenerFactory = MockURLOpenerFactory()
             mockUserActivityStoreFactory = MockUserActivityStoreFactory()
             sut = AppDelegate()
-            sut.launchFlowFactory = mockLaunchFlowFactory
             sut.launchStoresFactory = mockLaunchStoresFactory
             sut.urlOpenerFactory = mockURLOpenerFactory
             sut.userActivityStoreFactory = mockUserActivityStoreFactory
