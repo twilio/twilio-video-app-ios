@@ -14,58 +14,58 @@
 //  limitations under the License.
 //
 
-import UIKit
-
-class ParticipantCell: UICollectionViewCell {
-    struct Status {
-        let isMicOn: Bool
-        let networkQualityLevel: NetworkQualityLevel
-        let isPinned: Bool
-    }
-    
-    @IBOutlet weak var videoView: VideoView!
-    @IBOutlet weak var identityLabel: UILabel!
-    @IBOutlet weak var networkQualityImage: UIImageView!
-    @IBOutlet weak var pinView: UIView!
-    @IBOutlet weak var muteView: UIView!
-    var shouldRenderVideo: Bool {
-        get { videoView.shouldRenderVideo }
-        set { videoView.shouldRenderVideo = newValue }
-    }
-    
-    func configure(participant: Participant) {
-        identityLabel.text = participant.identity
-        muteView.isHidden = participant.isMicOn
-        pinView.isHidden = !participant.isPinned
-        
-        if let imageName = participant.networkQualityLevel.imageName {
-            networkQualityImage.image = UIImage(named: imageName)
-        } else {
-            networkQualityImage.image = nil
-        }
-
-        videoView.configure(
-            config: .init(
-                videoTrack: participant.cameraTrack,
-                shouldMirror: participant.shouldMirrorCameraVideo
-            ),
-            contentMode: .scaleAspectFill
-        )
-    }
-}
-
-private extension NetworkQualityLevel {
-    var imageName: String? {
-        switch self {
-        case .unknown: return nil
-        case .zero: return "network-quality-level-0"
-        case .one: return "network-quality-level-1"
-        case .two: return "network-quality-level-2"
-        case .three: return "network-quality-level-3"
-        case .four: return "network-quality-level-4"
-        case .five: return "network-quality-level-5"
-        @unknown default:
-            return nil
-        }
-    }
-}
+//import UIKit
+//
+//class ParticipantCell: UICollectionViewCell {
+//    struct Status {
+//        let isMicOn: Bool
+//        let networkQualityLevel: NetworkQualityLevel
+//        let isPinned: Bool
+//    }
+//    
+//    @IBOutlet weak var videoView: VideoView!
+//    @IBOutlet weak var identityLabel: UILabel!
+//    @IBOutlet weak var networkQualityImage: UIImageView!
+//    @IBOutlet weak var pinView: UIView!
+//    @IBOutlet weak var muteView: UIView!
+//    var shouldRenderVideo: Bool {
+//        get { videoView.shouldRenderVideo }
+//        set { videoView.shouldRenderVideo = newValue }
+//    }
+//    
+//    func configure(participant: Participant) {
+//        identityLabel.text = participant.identity
+//        muteView.isHidden = participant.isMicOn
+//        pinView.isHidden = !participant.isPinned
+//        
+//        if let imageName = participant.networkQualityLevel.imageName {
+//            networkQualityImage.image = UIImage(named: imageName)
+//        } else {
+//            networkQualityImage.image = nil
+//        }
+//
+//        videoView.configure(
+//            config: .init(
+//                videoTrack: participant.cameraTrack,
+//                shouldMirror: participant.shouldMirrorCameraVideo
+//            ),
+//            contentMode: .scaleAspectFill
+//        )
+//    }
+//}
+//
+//private extension NetworkQualityLevel {
+//    var imageName: String? {
+//        switch self {
+//        case .unknown: return nil
+//        case .zero: return "network-quality-level-0"
+//        case .one: return "network-quality-level-1"
+//        case .two: return "network-quality-level-2"
+//        case .three: return "network-quality-level-3"
+//        case .four: return "network-quality-level-4"
+//        case .five: return "network-quality-level-5"
+//        @unknown default:
+//            return nil
+//        }
+//    }
+//}

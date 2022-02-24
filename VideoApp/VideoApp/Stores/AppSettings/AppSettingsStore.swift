@@ -17,7 +17,7 @@
 import Foundation
 
 protocol AppSettingsStoreWriting: LaunchStore {
-    var environment: Environment { get set }
+    var environment: BackendEnvironment { get set }
     var videoCodec: VideoCodec { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
@@ -37,7 +37,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
-    @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
+    @Storage(key: makeKey("environment"), defaultValue: BackendEnvironment.production) var environment: BackendEnvironment
     @Storage(key: makeKey("videoCodec"), defaultValue: defaultVideoCodec) var videoCodec: VideoCodec
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool

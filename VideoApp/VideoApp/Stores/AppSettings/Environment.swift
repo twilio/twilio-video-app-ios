@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum Environment: String, SettingOptions {
+enum BackendEnvironment: String, SettingOptions {
     case production
     case staging
     case development

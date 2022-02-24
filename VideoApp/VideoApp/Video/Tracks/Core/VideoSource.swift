@@ -14,19 +14,19 @@
 //  limitations under the License.
 //
 
-import Foundation
-
-enum VideoSource {
-    case camera
-    case screen
-
-    init?(trackName: String) {
-        if trackName.contains(TrackName.camera) {
-            self = .camera
-        } else if trackName.contains(TrackName.screen) {
-            self = .screen
-        } else {
-            return nil
-        }
-    }
-}
+//import Foundation
+//
+//enum VideoSource {
+//    case camera
+//    case screen
+//
+//    init?(trackName: String) {
+//        if trackName.contains(TrackName.camera) {
+//            self = .camera
+//        } else if trackName.contains(TrackName.screen) {
+//            self = .screen
+//        } else {
+//            return nil
+//        }
+//    }
+//}

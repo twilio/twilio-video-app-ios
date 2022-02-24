@@ -22,6 +22,6 @@ class CameraTrackFactory {
             return nil
         }
         
-        return LocalVideoTrack(track: track)
+        return track
     }
 }

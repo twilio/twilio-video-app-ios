@@ -14,33 +14,33 @@
 //  limitations under the License.
 //
 
-import TwilioVideo
-
-class RemoteVideoTrack: VideoTrack {
-    var isSwitchedOff: Bool { track.isSwitchedOff }
-    var isEnabled: Bool { track.isEnabled }
-    var priority: Track.Priority? {
-        get {
-            track.priority
-        }
-        set {
-            guard newValue != priority else { return }
-
-            track.priority = newValue
-        }
-    }
-    var renderers: [VideoRenderer] { track.renderers }
-    private let track: TwilioVideo.RemoteVideoTrack
-
-    init(track: TwilioVideo.RemoteVideoTrack) {
-        self.track = track
-    }
-
-    func addRenderer(_ renderer: VideoRenderer) {
-        track.addRenderer(renderer)
-    }
-
-    func removeRenderer(_ renderer: VideoRenderer) {
-        track.removeRenderer(renderer)
-    }
-}
+//import TwilioVideo
+//
+//class RemoteVideoTrack: VideoTrack {
+//    var isSwitchedOff: Bool { track.isSwitchedOff }
+//    var isEnabled: Bool { track.isEnabled }
+//    var priority: Track.Priority? {
+//        get {
+//            track.priority
+//        }
+//        set {
+//            guard newValue != priority else { return }
+//
+//            track.priority = newValue
+//        }
+//    }
+//    var renderers: [VideoRenderer] { track.renderers }
+//    private let track: TwilioVideo.RemoteVideoTrack
+//
+//    init(track: TwilioVideo.RemoteVideoTrack) {
+//        self.track = track
+//    }
+//
+//    func addRenderer(_ renderer: VideoRenderer) {
+//        track.addRenderer(renderer)
+//    }
+//
+//    func removeRenderer(_ renderer: VideoRenderer) {
+//        track.removeRenderer(renderer)
+//    }
+//}

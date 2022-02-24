@@ -14,8 +14,8 @@
 //  limitations under the License.
 //
 
-import Foundation
-
-protocol ParticipantDelegate: AnyObject {
-    func didUpdate(participant: Participant)
-}
+//import Foundation
+//
+//protocol ParticipantDelegate: AnyObject {
+//    func didUpdate(participant: Participant)
+//}

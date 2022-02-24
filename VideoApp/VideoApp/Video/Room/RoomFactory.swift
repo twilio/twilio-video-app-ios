@@ -14,27 +14,27 @@
 //  limitations under the License.
 //
 
-import TwilioVideo
-
-class RoomFactory {
-    func makeRoom() -> Room {
-        let localParticipant = LocalParticipant(
-            identity: UserStoreFactory().makeUserStore().user.displayName,
-            micTrackFactory: MicTrackFactory(),
-            cameraManagerFactory: CameraManagerFactory()
-        )
-        let accessTokenStore = TwilioAccessTokenStore(
-            api: API.shared,
-            appSettingsStore: AppSettingsStore.shared,
-            authStore: AuthStore.shared,
-            remoteConfigStore: RemoteConfigStoreFactory().makeRemoteConfigStore()
-        )
-        return Room(
-            localParticipant: localParticipant,
-            accessTokenStore: accessTokenStore,
-            connectOptionsFactory: ConnectOptionsFactory(),
-            notificationCenter: .default,
-            twilioVideoSDKType: TwilioVideoSDK.self
-        )
-    }
-}
+//import TwilioVideo
+//
+//class RoomFactory {
+//    func makeRoom() -> Room {
+//        let localParticipant = LocalParticipant(
+//            identity: UserStoreFactory().makeUserStore().user.displayName,
+//            micTrackFactory: MicTrackFactory(),
+//            cameraManagerFactory: CameraManagerFactory()
+//        )
+//        let accessTokenStore = TwilioAccessTokenStore(
+//            api: API.shared,
+//            appSettingsStore: AppSettingsStore.shared,
+//            authStore: AuthStore.shared,
+//            remoteConfigStore: RemoteConfigStoreFactory().makeRemoteConfigStore()
+//        )
+//        return Room(
+//            localParticipant: localParticipant,
+//            accessTokenStore: accessTokenStore,
+//            connectOptionsFactory: ConnectOptionsFactory(),
+//            notificationCenter: .default,
+//            twilioVideoSDKType: TwilioVideoSDK.self
+//        )
+//    }
+//}

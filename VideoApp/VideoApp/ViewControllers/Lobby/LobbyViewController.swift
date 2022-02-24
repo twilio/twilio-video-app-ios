@@ -15,20 +15,20 @@
 //
 
 import UIKit
+import SwiftUI
 
 class LobbyViewController: UIViewController {
     @IBOutlet weak var loggedInUser: UILabel!
-    @IBOutlet weak var videoView: VideoView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var roomTextField: UITextField!
     @IBOutlet weak var audioToggleButton: UIButton!
     @IBOutlet weak var videoToggleButton: UIButton!
     @IBOutlet weak var flipCameraButton: UIButton!
-    private let roomFactory = RoomFactory()
+//    private let roomFactory = RoomFactory()
     private let deepLinkStore: DeepLinkStoreWriting = DeepLinkStore.shared
     private let notificationCenter = NotificationCenter.default
-    private var room: Room!
-    private var participant: LocalParticipant { room.localParticipant }
+//    private var room: Room!
+//    private var participant: LocalParticipant { room.localParticipant }
     private var shouldRenderVideo = true
 
     override func viewDidLoad() {
@@ -90,16 +90,17 @@ class LobbyViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "roomSegue":
-            let roomViewController = segue.destination as! RoomViewController
-            roomViewController.application = .shared
-            roomViewController.viewModel = RoomViewModelFactory().makeRoomViewModel(
-                roomName: roomTextField.text ?? "",
-                room: room
-            )
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let statsViewController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController
-            statsViewController.videoAppRoom = room
-            roomViewController.statsViewController = statsViewController
+            break
+//            let roomViewController = segue.destination as! RoomViewController
+//            roomViewController.application = .shared
+//            roomViewController.viewModel = RoomViewModelFactory().makeRoomViewModel(
+//                roomName: roomTextField.text ?? "",
+//                room: room
+//            )
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let statsViewController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController
+//            statsViewController.videoAppRoom = room
+//            roomViewController.statsViewController = statsViewController
         case "showSettings":
             let navigationController = segue.destination as! UINavigationController
             let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
@@ -114,17 +115,17 @@ class LobbyViewController: UIViewController {
     }
         
     @IBAction func toggleAudioPressed(_ sender: Any) {
-        participant.isMicOn = !participant.isMicOn
+//        participant.isMicOn = !participant.isMicOn
         refresh()
     }
     
     @IBAction func toggleVideoPressed(_ sender: Any) {
-        participant.isCameraOn = !participant.isCameraOn
+//        participant.isCameraOn = !participant.isCameraOn
         refresh()
     }
     
     @IBAction func flipCameraPressed(_ sender: Any) {
-        participant.cameraPosition = participant.cameraPosition == .front ? .back : .front
+//        participant.cameraPosition = participant.cameraPosition == .front ? .back : .front
     }
     
     @IBAction func joinRoomButtonPressed(_ sender: Any) {
@@ -134,13 +135,17 @@ class LobbyViewController: UIViewController {
         }
         
         dismissKeyboard()
-        performSegue(withIdentifier: "roomSegue", sender: self)
+//        performSegue(withIdentifier: "roomSegue", sender: self)
+        
+        let config = StreamConfig(streamName: roomName, userIdentity: AuthStore.shared.userDisplayName)
+        let controller = UIHostingController(rootView: StreamView(config: config))
+        present(controller, animated: true)
     }
     
     private func resetRoom() {
-        room = roomFactory.makeRoom()
-        participant.isMicOn = true
-        participant.isCameraOn = true
+//        room = roomFactory.makeRoom()
+//        participant.isMicOn = true
+//        participant.isCameraOn = true
     }
     
     @objc private func handleSettingChange() {
@@ -149,31 +154,31 @@ class LobbyViewController: UIViewController {
     }
 
     @objc private func handleRoomUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? Room.Update else { return }
-        
-        switch payload {
-        case let .didUpdateParticipants(participants):
-            guard participants.contains(where: { $0 === participant }) else { return }
-
-            configureVideoView()
-        default:
-            break
-        }
+//        guard let payload = notification.payload as? Room.Update else { return }
+//
+//        switch payload {
+//        case let .didUpdateParticipants(participants):
+//            guard participants.contains(where: { $0 === participant }) else { return }
+//
+//            configureVideoView()
+//        default:
+//            break
+//        }
     }
     
     private func configureVideoView() {
-        let config = VideoView.Config(
-            videoTrack: shouldRenderVideo ? participant.cameraTrack : nil,
-            shouldMirror: participant.shouldMirrorCameraVideo
-        )
-        videoView.configure(config: config)
+//        let config = VideoView.Config(
+//            videoTrack: shouldRenderVideo ? participant.cameraTrack : nil,
+//            shouldMirror: participant.shouldMirrorCameraVideo
+//        )
+//        videoView.configure(config: config)
     }
     
     private func refresh() {
-        loggedInUser.text = participant.identity
-        audioToggleButton.isSelected = !participant.isMicOn
-        videoToggleButton.isSelected = !participant.isCameraOn
-        flipCameraButton.isEnabled = participant.isCameraOn
+//        loggedInUser.text = participant.identity
+//        audioToggleButton.isSelected = !participant.isMicOn
+//        videoToggleButton.isSelected = !participant.isCameraOn
+//        flipCameraButton.isEnabled = participant.isCameraOn
     }
 
     @objc private func dismissKeyboard() {

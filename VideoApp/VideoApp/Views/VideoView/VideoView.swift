@@ -14,76 +14,76 @@
 //  limitations under the License.
 //
 
-import TwilioVideo
-import UIKit
-
-@IBDesignable
-class VideoView: NibView {
-    struct Config {
-        let videoTrack: VideoTrack?
-        let shouldMirror: Bool
-    }
-
-    @IBOutlet weak var videoView: TwilioVideo.VideoView!
-    @IBOutlet weak var errorView: UIView!
-    var shouldRenderVideo = true {
-        didSet {
-            guard let videoTrack = videoTrack else { return }
-            
-            if shouldRenderVideo {
-                guard !videoTrack.isRendered(by: videoView) else { return }
-                
-                videoTrack.addRenderer(videoView)
-                videoView.isHidden = !videoView.hasVideoData
-            } else {
-                videoTrack.removeRenderer(videoView)
-            }
-        }
-    }
-    private var videoTrack: VideoTrack?
-    
-    deinit {
-        videoTrack?.removeRenderer(videoView)
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        videoView.delegate = self
-    }
-
-    func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
-        videoView.shouldMirror = config.shouldMirror
-        videoView.contentMode = contentMode
-        errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false)
-
-        if let videoTrack = config.videoTrack, videoTrack.isEnabled {
-            if !videoTrack.isRendered(by: videoView) {
-                self.videoTrack?.removeRenderer(videoView)
-                self.videoTrack = videoTrack
-                videoView.isHidden = true
-                
-                if shouldRenderVideo {
-                    videoTrack.addRenderer(videoView)
-                    videoView.isHidden = !videoView.hasVideoData
-                }
-            }
-        } else {
-            videoTrack?.removeRenderer(videoView)
-            videoTrack = nil
-            videoView.isHidden = true
-        }
-    }
-}
-
-extension VideoView: TwilioVideo.VideoViewDelegate {
-    func videoViewDidReceiveData(view: TwilioVideo.VideoView) {
-        videoView.isHidden = false
-    }
-}
-
-private extension VideoTrack {
-    func isRendered(by renderer: VideoRenderer) -> Bool {
-        renderers.first(where: { $0 === renderer }) != nil
-    }
-}
+//import TwilioVideo
+//import UIKit
+//
+//@IBDesignable
+//class VideoView: NibView {
+//    struct Config {
+//        let videoTrack: VideoTrack?
+//        let shouldMirror: Bool
+//    }
+//
+//    @IBOutlet weak var videoView: TwilioVideo.VideoView!
+//    @IBOutlet weak var errorView: UIView!
+//    var shouldRenderVideo = true {
+//        didSet {
+//            guard let videoTrack = videoTrack else { return }
+//            
+//            if shouldRenderVideo {
+//                guard !videoTrack.isRendered(by: videoView) else { return }
+//                
+//                videoTrack.addRenderer(videoView)
+//                videoView.isHidden = !videoView.hasVideoData
+//            } else {
+//                videoTrack.removeRenderer(videoView)
+//            }
+//        }
+//    }
+//    private var videoTrack: VideoTrack?
+//    
+//    deinit {
+//        videoTrack?.removeRenderer(videoView)
+//    }
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        
+//        videoView.delegate = self
+//    }
+//
+//    func configure(config: Config, contentMode: UIView.ContentMode = .scaleAspectFit) {
+//        videoView.shouldMirror = config.shouldMirror
+//        videoView.contentMode = contentMode
+//        errorView.isHidden = !(config.videoTrack?.isSwitchedOff ?? false)
+//
+//        if let videoTrack = config.videoTrack, videoTrack.isEnabled {
+//            if !videoTrack.isRendered(by: videoView) {
+//                self.videoTrack?.removeRenderer(videoView)
+//                self.videoTrack = videoTrack
+//                videoView.isHidden = true
+//                
+//                if shouldRenderVideo {
+//                    videoTrack.addRenderer(videoView)
+//                    videoView.isHidden = !videoView.hasVideoData
+//                }
+//            }
+//        } else {
+//            videoTrack?.removeRenderer(videoView)
+//            videoTrack = nil
+//            videoView.isHidden = true
+//        }
+//    }
+//}
+//
+//extension VideoView: TwilioVideo.VideoViewDelegate {
+//    func videoViewDidReceiveData(view: TwilioVideo.VideoView) {
+//        videoView.isHidden = false
+//    }
+//}
+//
+//private extension VideoTrack {
+//    func isRendered(by renderer: VideoRenderer) -> Bool {
+//        renderers.first(where: { $0 === renderer }) != nil
+//    }
+//}

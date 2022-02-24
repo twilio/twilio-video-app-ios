@@ -14,13 +14,13 @@
 //  limitations under the License.
 //
 
-import TwilioVideo
-
-protocol VideoTrack: AnyObject {
-    var isSwitchedOff: Bool { get }
-    var isEnabled: Bool { get }
-    var priority: Track.Priority? { get set }
-    var renderers: [VideoRenderer] { get }
-    func addRenderer(_ renderer: VideoRenderer)
-    func removeRenderer(_ renderer: VideoRenderer)
-}
+//import TwilioVideo
+//
+//protocol VideoTrack: AnyObject {
+//    var isSwitchedOff: Bool { get }
+//    var isEnabled: Bool { get }
+//    var priority: Track.Priority? { get set }
+//    var renderers: [VideoRenderer] { get }
+//    func addRenderer(_ renderer: VideoRenderer)
+//    func removeRenderer(_ renderer: VideoRenderer)
+//}

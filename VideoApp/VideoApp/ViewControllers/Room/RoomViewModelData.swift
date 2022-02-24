@@ -14,21 +14,21 @@
 //  limitations under the License.
 //
 
-import Foundation
-
-struct RoomViewModelData {
-    struct MainParticipant {
-        let identity: String
-        let videoConfig: VideoView.Config
-        
-        init(participant: VideoApp.Participant, videoTrack: VideoTrack?) {
-            identity = participant.identity
-            videoConfig = .init(videoTrack: videoTrack, shouldMirror: participant.shouldMirrorCameraVideo)
-        }
-    }
-    
-    let roomName: String
-    let participants: [Participant]
-    let mainParticipant: MainParticipant
-    let isRecording: Bool
-}
+//import Foundation
+//
+//struct RoomViewModelData {
+//    struct MainParticipant {
+//        let identity: String
+//        let videoConfig: VideoView.Config
+//        
+//        init(participant: VideoApp.Participant, videoTrack: VideoTrack?) {
+//            identity = participant.identity
+//            videoConfig = .init(videoTrack: videoTrack, shouldMirror: participant.shouldMirrorCameraVideo)
+//        }
+//    }
+//    
+//    let roomName: String
+//    let participants: [Participant]
+//    let mainParticipant: MainParticipant
+//    let isRecording: Bool
+//}

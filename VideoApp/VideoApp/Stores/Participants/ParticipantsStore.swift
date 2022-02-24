@@ -14,90 +14,90 @@
 //  limitations under the License.
 //
 
-import IGListDiffKit
-
-class ParticipantsStore {
-    enum Update {
-        case didUpdateParticipant(index: Int)
-        case didUpdateList(diff: ListIndexSetResult)
-    }
-
-    private(set) var participants: [Participant] = []
-    private let room: Room
-    private let notificationCenter: NotificationCenter
-    
-    init(room: Room, notificationCenter: NotificationCenter) {
-        self.room = room
-        self.notificationCenter = notificationCenter
-        insert(participants: [room.localParticipant] + room.remoteParticipants)
-        notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
-    }
-
-    @objc private func handleRoomUpdate(_ notification: Notification) {
-        guard let payload = notification.payload as? Room.Update else { return }
-        
-        switch payload {
-        case .didStartConnecting, .didConnect, .didFailToConnect, .didDisconnect, .didStartRecording, .didStopRecording: break
-        case let .didAddRemoteParticipants(participants): insert(participants: participants)
-        case let .didRemoveRemoteParticipants(participants): delete(participants: participants)
-        case let .didUpdateParticipants(participants): update(participants: participants)
-        }
-    }
-
-    private func insert(participants: [Participant]) {
-        var new = self.participants
-        
-        participants.forEach { participant in
-            let index: Int
-            
-            if !participant.isRemote {
-                index = 0
-            } else if participant.isDominantSpeaker {
-                index = new.dominantSpeakerIndex
-            } else {
-                index = new.endIndex
-            }
-            
-            new.insert(participant, at: index)
-        }
-        
-        postDiff(new: new)
-    }
-    
-    private func delete(participants: [Participant]) {
-        let new = self.participants.filter { participant in
-            participants.first { $0 === participant } == nil
-        }
-
-        postDiff(new: new)
-    }
-
-    private func update(participants: [Participant]) {
-        participants.forEach { participant in
-            guard let index = self.participants.firstIndex(where: { $0 === participant }) else { return }
-            
-            post(.didUpdateParticipant(index: index))
-            
-            if participant.isDominantSpeaker && index != self.participants.dominantSpeakerIndex {
-                var new = self.participants
-                new.remove(at: index)
-                new.insert(participant, at: new.dominantSpeakerIndex)
-                postDiff(new: new)
-            }
-        }
-    }
-
-    private func postDiff(new: [Participant]) {
-        let diff = ListDiff(oldArray: self.participants, newArray: new, option: .equality)
-        self.participants = new
-        post(.didUpdateList(diff: diff))
-    }
-
-    private func post(_ update: Update) {
-        notificationCenter.post(name: .participantsStoreUpdate, object: self, payload: update)
-    }
-}
-
-private extension Array where Element == Participant {
-    var dominantSpeakerIndex: Int { firstIndex(where: { $0.isRemote }) ?? endIndex }
-}
+//import IGListDiffKit
+//
+//class ParticipantsStore {
+//    enum Update {
+//        case didUpdateParticipant(index: Int)
+//        case didUpdateList(diff: ListIndexSetResult)
+//    }
+//
+//    private(set) var participants: [Participant] = []
+//    private let room: Room
+//    private let notificationCenter: NotificationCenter
+//
+//    init(room: Room, notificationCenter: NotificationCenter) {
+//        self.room = room
+//        self.notificationCenter = notificationCenter
+//        insert(participants: [room.localParticipant] + room.remoteParticipants)
+//        notificationCenter.addObserver(self, selector: #selector(handleRoomUpdate(_:)), name: .roomUpdate, object: room)
+//    }
+//
+//    @objc private func handleRoomUpdate(_ notification: Notification) {
+//        guard let payload = notification.payload as? Room.Update else { return }
+//
+//        switch payload {
+//        case .didStartConnecting, .didConnect, .didFailToConnect, .didDisconnect, .didStartRecording, .didStopRecording: break
+//        case let .didAddRemoteParticipants(participants): insert(participants: participants)
+//        case let .didRemoveRemoteParticipants(participants): delete(participants: participants)
+//        case let .didUpdateParticipants(participants): update(participants: participants)
+//        }
+//    }
+//
+//    private func insert(participants: [Participant]) {
+//        var new = self.participants
+//
+//        participants.forEach { participant in
+//            let index: Int
+//
+//            if !participant.isRemote {
+//                index = 0
+//            } else if participant.isDominantSpeaker {
+//                index = new.dominantSpeakerIndex
+//            } else {
+//                index = new.endIndex
+//            }
+//
+//            new.insert(participant, at: index)
+//        }
+//
+//        postDiff(new: new)
+//    }
+//
+//    private func delete(participants: [Participant]) {
+//        let new = self.participants.filter { participant in
+//            participants.first { $0 === participant } == nil
+//        }
+//
+//        postDiff(new: new)
+//    }
+//
+//    private func update(participants: [Participant]) {
+//        participants.forEach { participant in
+//            guard let index = self.participants.firstIndex(where: { $0 === participant }) else { return }
+//
+//            post(.didUpdateParticipant(index: index))
+//
+//            if participant.isDominantSpeaker && index != self.participants.dominantSpeakerIndex {
+//                var new = self.participants
+//                new.remove(at: index)
+//                new.insert(participant, at: new.dominantSpeakerIndex)
+//                postDiff(new: new)
+//            }
+//        }
+//    }
+//
+//    private func postDiff(new: [Participant]) {
+//        let diff = ListDiff(oldArray: self.participants, newArray: new, option: .equality)
+//        self.participants = new
+//        post(.didUpdateList(diff: diff))
+//    }
+//
+//    private func post(_ update: Update) {
+//        notificationCenter.post(name: .participantsStoreUpdate, object: self, payload: update)
+//    }
+//}
+//
+//private extension Array where Element == Participant {
+//    var dominantSpeakerIndex: Int { firstIndex(where: { $0.isRemote }) ?? endIndex }
+//}

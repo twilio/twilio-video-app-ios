@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqf-hp-6pe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqf-hp-6pe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -317,7 +317,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-At-G0j" userLabel="Local Video View" customClass="VideoView" customModule="VideoApp" customModuleProvider="target">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-At-G0j" userLabel="Local Video View">
                                 <rect key="frame" x="0.0" y="24" width="414" height="838"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -458,7 +458,6 @@
                         <outlet property="loggedInUser" destination="3lB-l1-eHH" id="BBT-Ga-TCn"/>
                         <outlet property="roomTextField" destination="d96-2z-6r8" id="yBH-U8-ZKb"/>
                         <outlet property="videoToggleButton" destination="VHq-hM-JN4" id="sWe-1v-RIB"/>
-                        <outlet property="videoView" destination="GiF-At-G0j" id="vAv-Qh-pw2"/>
                         <segue destination="HNa-RJ-vcm" kind="show" identifier="roomSegue" animates="NO" id="k0D-SG-DDn"/>
                     </connections>
                 </viewController>
@@ -716,7 +715,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="44" id="Xsg-MM-ii1" customClass="HeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xsg-MM-ii1" id="tfq-qU-wn8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -749,7 +748,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackStatsCell" rowHeight="22" id="QNL-nm-c9g" customClass="TrackStatsTableViewCell">
-                                <rect key="frame" x="0.0" y="68.5" width="414" height="22"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QNL-nm-c9g" id="uDJ-3s-aGy">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>

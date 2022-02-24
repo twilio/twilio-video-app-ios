@@ -186,7 +186,7 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 }
 
 - (void)roomDidChange {
-    self.room = ((Room *)self.videoAppRoom).room;
+//    self.room = ((Room *)self.videoAppRoom).room;
 }
 
 - (void)removeStatsUnavailableView {

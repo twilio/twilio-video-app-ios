@@ -14,22 +14,22 @@
 //  limitations under the License.
 //
 
-import Foundation
-
-class RoomViewModelFactory {
-    func makeRoomViewModel(roomName: String, room: Room) -> RoomViewModel {
-        let participantsStore = ParticipantsStore(room: room, notificationCenter: .default)
-        let mainParticipantStore = MainParticipantStore(
-            room: room,
-            participantsStore: participantsStore,
-            notificationCenter: .default
-        )
-        return RoomViewModel(
-            roomName: roomName,
-            room: room,
-            participantsStore: participantsStore,
-            mainParticipantStore: mainParticipantStore,
-            notificationCenter: .default
-        )
-    }
-}
+//import Foundation
+//
+//class RoomViewModelFactory {
+//    func makeRoomViewModel(roomName: String, room: Room) -> RoomViewModel {
+//        let participantsStore = ParticipantsStore(room: room, notificationCenter: .default)
+//        let mainParticipantStore = MainParticipantStore(
+//            room: room,
+//            participantsStore: participantsStore,
+//            notificationCenter: .default
+//        )
+//        return RoomViewModel(
+//            roomName: roomName,
+//            room: room,
+//            participantsStore: participantsStore,
+//            mainParticipantStore: mainParticipantStore,
+//            notificationCenter: .default
+//        )
+//    }
+//}

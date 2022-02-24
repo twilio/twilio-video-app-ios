@@ -312,6 +312,70 @@
 		DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */; };
 		DCDCD37724193042004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */; };
+		DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */; };
+		DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */; };
+		DCE1A9F327C7E556004680CA /* CardButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */; };
+		DCE1A9F427C7E556004680CA /* CardButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */; };
+		DCE1A9F527C7E556004680CA /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EA27C7E556004680CA /* TitleStyle.swift */; };
+		DCE1A9F627C7E556004680CA /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EA27C7E556004680CA /* TitleStyle.swift */; };
+		DCE1A9F727C7E556004680CA /* FormStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EB27C7E556004680CA /* FormStack.swift */; };
+		DCE1A9F827C7E556004680CA /* FormStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EB27C7E556004680CA /* FormStack.swift */; };
+		DCE1A9F927C7E556004680CA /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */; };
+		DCE1A9FA27C7E556004680CA /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */; };
+		DCE1A9FB27C7E556004680CA /* FormTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */; };
+		DCE1A9FC27C7E556004680CA /* FormTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */; };
+		DCE1A9FD27C7E556004680CA /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */; };
+		DCE1A9FE27C7E556004680CA /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */; };
+		DCE1A9FF27C7E556004680CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EF27C7E556004680CA /* Color.swift */; };
+		DCE1AA0027C7E556004680CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EF27C7E556004680CA /* Color.swift */; };
+		DCE1AA0127C7E556004680CA /* TipStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9F027C7E556004680CA /* TipStyle.swift */; };
+		DCE1AA0227C7E556004680CA /* TipStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9F027C7E556004680CA /* TipStyle.swift */; };
+		DCE1AA1727C7E58A004680CA /* StreamToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */; };
+		DCE1AA1827C7E58A004680CA /* StreamToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */; };
+		DCE1AA1927C7E58A004680CA /* SpeakerGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */; };
+		DCE1AA1A27C7E58A004680CA /* SpeakerGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */; };
+		DCE1AA1B27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */; };
+		DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */; };
+		DCE1AA1D27C7E58A004680CA /* StreamToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0727C7E58A004680CA /* StreamToolbar.swift */; };
+		DCE1AA1E27C7E58A004680CA /* StreamToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0727C7E58A004680CA /* StreamToolbar.swift */; };
+		DCE1AA1F27C7E58A004680CA /* PresentationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */; };
+		DCE1AA2027C7E58A004680CA /* PresentationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */; };
+		DCE1AA2127C7E58A004680CA /* PresentationLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */; };
+		DCE1AA2227C7E58A004680CA /* PresentationLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */; };
+		DCE1AA2327C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */; };
+		DCE1AA2427C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */; };
+		DCE1AA2527C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
+		DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
+		DCE1AA2927C7E58A004680CA /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* StreamView.swift */; };
+		DCE1AA2A27C7E58A004680CA /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* StreamView.swift */; };
+		DCE1AA2B27C7E58A004680CA /* LiveBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */; };
+		DCE1AA2C27C7E58A004680CA /* LiveBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */; };
+		DCE1AA2D27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */; };
+		DCE1AA2E27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */; };
+		DCE1AA2F27C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
+		DCE1AA3027C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
+		DCE1AA3127C7E58A004680CA /* SpeakerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */; };
+		DCE1AA3227C7E58A004680CA /* SpeakerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */; };
+		DCE1AA3327C7E58A004680CA /* StreamStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */; };
+		DCE1AA3427C7E58A004680CA /* StreamStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */; };
+		DCE1AA3527C7E58A004680CA /* DisplayNameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */; };
+		DCE1AA3627C7E58A004680CA /* DisplayNameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */; };
+		DCE1AA3727C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */; };
+		DCE1AA3827C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */; };
+		DCE1AA4227C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */; };
+		DCE1AA4327C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */; };
+		DCE1AA4627C7E5E0004680CA /* LocalParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */; };
+		DCE1AA4727C7E5E0004680CA /* LocalParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */; };
+		DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
+		DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
+		DCE1AA5027C7F95B004680CA /* StreamConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */; };
+		DCE1AA5127C7F95B004680CA /* StreamConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */; };
+		DCE1AA5227C7F95B004680CA /* StreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4E27C7F95B004680CA /* StreamManager.swift */; };
+		DCE1AA5327C7F95B004680CA /* StreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4E27C7F95B004680CA /* StreamManager.swift */; };
+		DCE1AA5427C7F95B004680CA /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* StreamViewModel.swift */; };
+		DCE1AA5527C7F95B004680CA /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* StreamViewModel.swift */; };
+		DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
+		DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -616,6 +680,38 @@
 		DCD7676D23DFE74D00A2939C /* MockUserActivityStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserActivityStoreFactory.swift; sourceTree = "<group>"; };
 		DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOptionsFactory.swift; sourceTree = "<group>"; };
 		DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStore.swift; sourceTree = "<group>"; };
+		DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButtonLabel.swift; sourceTree = "<group>"; };
+		DCE1A9EA27C7E556004680CA /* TitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
+		DCE1A9EB27C7E556004680CA /* FormStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStack.swift; sourceTree = "<group>"; };
+		DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldStyle.swift; sourceTree = "<group>"; };
+		DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
+		DCE1A9EF27C7E556004680CA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DCE1A9F027C7E556004680CA /* TipStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipStyle.swift; sourceTree = "<group>"; };
+		DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamToolbarButton.swift; sourceTree = "<group>"; };
+		DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridView.swift; sourceTree = "<group>"; };
+		DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
+		DCE1AA0727C7E58A004680CA /* StreamToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamToolbar.swift; sourceTree = "<group>"; };
+		DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVideoView.swift; sourceTree = "<group>"; };
+		DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationLayoutView.swift; sourceTree = "<group>"; };
+		DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationLayoutViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationStatusView.swift; sourceTree = "<group>"; };
+		DCE1AA0E27C7E58A004680CA /* StreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
+		DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBadge.swift; sourceTree = "<group>"; };
+		DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffscreenSpeakersView.swift; sourceTree = "<group>"; };
+		DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerVideoView.swift; sourceTree = "<group>"; };
+		DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamStatusView.swift; sourceTree = "<group>"; };
+		DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayNameFactory.swift; sourceTree = "<group>"; };
+		DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerVideoViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteParticipantManager.swift; sourceTree = "<group>"; };
+		DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalParticipantManager.swift; sourceTree = "<group>"; };
+		DCE1AA4027C7E5E0004680CA /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
+		DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamConfig.swift; sourceTree = "<group>"; };
+		DCE1AA4E27C7F95B004680CA /* StreamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamManager.swift; sourceTree = "<group>"; };
+		DCE1AA4F27C7F95B004680CA /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerSettingsManager.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -744,6 +840,7 @@
 				DC9A5DE5245CB15200E4B079 /* Video */,
 				24491F791E37F89F00028B24 /* ViewControllers */,
 				24A723E81ECE1D2A00486E7A /* Views */,
+				DCE1A9E527C7E28E004680CA /* SwiftUI */,
 				241282461E36A6AB002198BE /* Assets.xcassets */,
 				24C5217720FFAD030018E2D8 /* Bridging-Header.h */,
 				2412824B1E36A6AB002198BE /* Info.plist */,
@@ -1377,6 +1474,109 @@
 				DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */,
 			);
 			path = TwilioAccessToken;
+			sourceTree = "<group>";
+		};
+		DCE1A9E527C7E28E004680CA /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA3B27C7E5B4004680CA /* Managers */,
+				DCE1A9E627C7E519004680CA /* Views */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		DCE1A9E627C7E519004680CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA0327C7E58A004680CA /* Stream */,
+				DCE1A9E727C7E556004680CA /* Style */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCE1A9E727C7E556004680CA /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */,
+				DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */,
+				DCE1A9EA27C7E556004680CA /* TitleStyle.swift */,
+				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
+				DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */,
+				DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */,
+				DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */,
+				DCE1A9EF27C7E556004680CA /* Color.swift */,
+				DCE1A9F027C7E556004680CA /* TipStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		DCE1AA0327C7E58A004680CA /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */,
+				DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */,
+				DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */,
+				DCE1AA0727C7E58A004680CA /* StreamToolbar.swift */,
+				DCE1AA0827C7E58A004680CA /* PresentationLayout */,
+				DCE1AA0E27C7E58A004680CA /* StreamView.swift */,
+				DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */,
+				DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */,
+				DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */,
+				DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */,
+				DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */,
+				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
+				DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		DCE1AA0827C7E58A004680CA /* PresentationLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */,
+				DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */,
+				DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */,
+				DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */,
+			);
+			path = PresentationLayout;
+			sourceTree = "<group>";
+		};
+		DCE1AA3B27C7E5B4004680CA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA3C27C7E5E0004680CA /* Room */,
+				DCE1AA5627C7FCE2004680CA /* SpeakerSettings */,
+				DCE1AA4C27C7F95B004680CA /* Stream */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DCE1AA3C27C7E5E0004680CA /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */,
+				DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */,
+				DCE1AA4027C7E5E0004680CA /* RoomManager.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		DCE1AA4C27C7F95B004680CA /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */,
+				DCE1AA4E27C7F95B004680CA /* StreamManager.swift */,
+				DCE1AA4F27C7F95B004680CA /* StreamViewModel.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		DCE1AA5627C7FCE2004680CA /* SpeakerSettings */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */,
+			);
+			path = SpeakerSettings;
 			sourceTree = "<group>";
 		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
@@ -2210,20 +2410,29 @@
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
+				DCE1AA2327C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCE1AA1727C7E58A004680CA /* StreamToolbarButton.swift in Sources */,
+				DCE1A9FD27C7E556004680CA /* ErrorAlert.swift in Sources */,
 				DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
+				DCE1A9FB27C7E556004680CA /* FormTextFieldStyle.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */,
+				DCE1AA1D27C7E58A004680CA /* StreamToolbar.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
 				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
+				DCE1AA4227C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */,
+				DCE1AA3127C7E58A004680CA /* SpeakerVideoView.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
+				DCE1AA0127C7E556004680CA /* TipStyle.swift in Sources */,
 				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DCE1AA3327C7E58A004680CA /* StreamStatusView.swift in Sources */,
 				DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */,
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
@@ -2238,11 +2447,14 @@
 				8A84724E26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift in Sources */,
 				DC0446D023A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
 				DC0446CC23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
+				DCE1AA2527C7E58A004680CA /* PresentationStatusView.swift in Sources */,
 				DCD7675723DF554A00A2939C /* UserActivityStore.swift in Sources */,
 				DCEDB3292464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E06245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
 				DC82A35D23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
+				DCE1AA5227C7F95B004680CA /* StreamManager.swift in Sources */,
+				DCE1AA5027C7F95B004680CA /* StreamConfig.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC9A5E0A245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
@@ -2252,6 +2464,8 @@
 				DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
+				DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
+				DCE1AA1F27C7E58A004680CA /* PresentationVideoView.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4C2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
@@ -2270,9 +2484,13 @@
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
+				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
+				DCE1A9F527C7E556004680CA /* TitleStyle.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
+				DCE1AA1927C7E58A004680CA /* SpeakerGridView.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
+				DCE1A9FF27C7E556004680CA /* Color.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
@@ -2280,6 +2498,8 @@
 				DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */,
+				DCE1A9F727C7E556004680CA /* FormStack.swift in Sources */,
 				DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				DCEDB37B24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
@@ -2287,21 +2507,26 @@
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
+				DCE1AA2127C7E58A004680CA /* PresentationLayoutView.swift in Sources */,
 				8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCE1A9F327C7E556004680CA /* CardButtonLabel.swift in Sources */,
 				DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */,
+				DCE1A9F927C7E556004680CA /* ProgressHUD.swift in Sources */,
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DCACF1D124EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */,
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
+				DCE1AA1B27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
+				DCE1AA2D27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E482463345F00E4B079 /* LobbyViewController.swift in Sources */,
@@ -2319,12 +2544,16 @@
 				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
 				DC9A5E1E2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
+				DCE1AA3727C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
+				DCE1AA2B27C7E58A004680CA /* LiveBadge.swift in Sources */,
 				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
+				DCE1AA2927C7E58A004680CA /* StreamView.swift in Sources */,
 				DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DCE1AA5427C7F95B004680CA /* StreamViewModel.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC12459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2333,10 +2562,12 @@
 				8A84724B26B36749004BBC79 /* VideoContentPreferencesMode.swift in Sources */,
 				DCACF1D424EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0E245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
+				DCE1AA3527C7E58A004680CA /* DisplayNameFactory.swift in Sources */,
 				DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC9A5DE3245CA2E000E4B079 /* NibView.swift in Sources */,
 				DC82A35423FDB6890081578C /* SDKLogLevel.swift in Sources */,
+				DCE1AA4627C7E5E0004680CA /* LocalParticipantManager.swift in Sources */,
 				DC8EAE4423BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -2346,6 +2577,7 @@
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */,
+				DCE1AA2F27C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */,
 				DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */,
@@ -2372,20 +2604,29 @@
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
+				DCE1AA2427C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
+				DCE1AA1827C7E58A004680CA /* StreamToolbarButton.swift in Sources */,
+				DCE1A9FE27C7E556004680CA /* ErrorAlert.swift in Sources */,
 				DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
 				DCC7E35F24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
+				DCE1A9FC27C7E556004680CA /* FormTextFieldStyle.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */,
+				DCE1AA1E27C7E58A004680CA /* StreamToolbar.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */,
 				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
+				DCE1AA4327C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */,
+				DCE1AA3227C7E58A004680CA /* SpeakerVideoView.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
+				DCE1AA0227C7E556004680CA /* TipStyle.swift in Sources */,
 				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
+				DCE1AA3427C7E58A004680CA /* StreamStatusView.swift in Sources */,
 				DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */,
 				DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1523861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
@@ -2400,11 +2641,14 @@
 				8A84724F26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift in Sources */,
 				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
 				DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
+				DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */,
 				DCD7675823DF554B00A2939C /* UserActivityStore.swift in Sources */,
 				DCEDB32A2464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E07245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
 				DC82A35E23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
+				DCE1AA5327C7F95B004680CA /* StreamManager.swift in Sources */,
+				DCE1AA5127C7F95B004680CA /* StreamConfig.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC9A5E0B245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,
@@ -2414,6 +2658,8 @@
 				DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
+				DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
+				DCE1AA2027C7E58A004680CA /* PresentationVideoView.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
@@ -2432,9 +2678,13 @@
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
+				DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
+				DCE1A9F627C7E556004680CA /* TitleStyle.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
+				DCE1AA1A27C7E58A004680CA /* SpeakerGridView.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
+				DCE1AA0027C7E556004680CA /* Color.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
@@ -2442,6 +2692,8 @@
 				DC2511B5248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
+				DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */,
+				DCE1A9F827C7E556004680CA /* FormStack.swift in Sources */,
 				DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				DCEDB37C24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
@@ -2449,21 +2701,26 @@
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
+				DCE1AA2227C7E58A004680CA /* PresentationLayoutView.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
+				DCE1A9F427C7E556004680CA /* CardButtonLabel.swift in Sources */,
 				DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */,
+				DCE1A9FA27C7E556004680CA /* ProgressHUD.swift in Sources */,
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DCACF1D224EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */,
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
+				DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
+				DCE1AA2E27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E492463345F00E4B079 /* LobbyViewController.swift in Sources */,
@@ -2481,12 +2738,16 @@
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
 				DC9A5E1F2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
+				DCE1AA3827C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
+				DCE1AA2C27C7E58A004680CA /* LiveBadge.swift in Sources */,
 				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
+				DCE1AA2A27C7E58A004680CA /* StreamView.swift in Sources */,
 				DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
+				DCE1AA5527C7F95B004680CA /* StreamViewModel.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				DC9A5DC22459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
@@ -2495,10 +2756,12 @@
 				8A84724C26B36749004BBC79 /* VideoContentPreferencesMode.swift in Sources */,
 				DCACF1D524EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0F245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
+				DCE1AA3627C7E58A004680CA /* DisplayNameFactory.swift in Sources */,
 				DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC9A5DE4245CA2E000E4B079 /* NibView.swift in Sources */,
 				DC82A35523FDB6890081578C /* SDKLogLevel.swift in Sources */,
+				DCE1AA4727C7E5E0004680CA /* LocalParticipantManager.swift in Sources */,
 				DC8EAE4523BA96C00045018F /* URLOpenerFactory.swift in Sources */,
 				DC8AA8D12367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461672385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
@@ -2508,6 +2771,7 @@
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */,
+				DCE1AA3027C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */,
 				DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */,

@@ -14,19 +14,19 @@
 //  limitations under the License.
 //
 
-import IGListDiffKit
-import TwilioVideo
-
-typealias NetworkQualityLevel = TwilioVideo.NetworkQualityLevel // So UI doesn't have to import TwilioVideo
-
-protocol Participant: ListDiffable {
-    var identity: String { get }
-    var cameraTrack: VideoTrack? { get }
-    var screenTrack: VideoTrack? { get }
-    var shouldMirrorCameraVideo: Bool { get }
-    var networkQualityLevel: NetworkQualityLevel { get }
-    var isRemote: Bool { get }
-    var isMicOn: Bool { get }
-    var isDominantSpeaker: Bool { get }
-    var isPinned: Bool { get set }
-}
+//import IGListDiffKit
+//import TwilioVideo
+//
+//typealias NetworkQualityLevel = TwilioVideo.NetworkQualityLevel // So UI doesn't have to import TwilioVideo
+//
+//protocol Participant: ListDiffable {
+//    var identity: String { get }
+//    var cameraTrack: VideoTrack? { get }
+//    var screenTrack: VideoTrack? { get }
+//    var shouldMirrorCameraVideo: Bool { get }
+//    var networkQualityLevel: NetworkQualityLevel { get }
+//    var isRemote: Bool { get }
+//    var isMicOn: Bool { get }
+//    var isDominantSpeaker: Bool { get }
+//    var isPinned: Bool { get set }
+//}
