@@ -89,7 +89,7 @@ struct StreamView: View {
                 .edgesIgnoringSafeArea([.horizontal, .bottom]) // So toolbar sides and bottom extend beyond safe area
 
                 if streamManager.state == .connecting {
-                    ProgressHUD()
+                    ProgressHUD(title: "Connecting...")
                 }
             }
         }

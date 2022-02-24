@@ -102,13 +102,7 @@ class LobbyViewController: UIViewController {
 //            statsViewController.videoAppRoom = room
 //            roomViewController.statsViewController = statsViewController
         case "showSettings":
-            let navigationController = segue.destination as! UINavigationController
-            let settingsViewController = navigationController.viewControllers.first as! SettingsViewController
-            settingsViewController.viewModel = GeneralSettingsViewModel(
-                appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
-                appSettingsStore: AppSettingsStore.shared,
-                authStore: AuthStore.shared
-            )
+            break
         default:
             break
         }

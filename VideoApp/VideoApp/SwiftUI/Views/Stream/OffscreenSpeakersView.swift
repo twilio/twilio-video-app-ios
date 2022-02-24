@@ -19,11 +19,11 @@ struct OffscreenSpeakersView: View {
     }
 }
 
-struct OffscreenSpeakersView_Previews: PreviewProvider {
-    static var previews: some View {
-        OffscreenSpeakersView()
-            .environmentObject(SpeakerGridViewModel.stub(offscreenSpeakerCount: 10))
-            .previewLayout(.sizeThatFits)
-            .fixedSize(horizontal: false, vertical: true)
-    }
-}
+//struct OffscreenSpeakersView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OffscreenSpeakersView()
+//            .environmentObject(SpeakerGridViewModel.stub(offscreenSpeakerCount: 10))
+//            .previewLayout(.sizeThatFits)
+//            .fixedSize(horizontal: false, vertical: true)
+//    }
+//}

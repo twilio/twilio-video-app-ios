@@ -37,31 +37,31 @@ struct PresentationLayoutView: View {
     }
 }
 
-struct PresentationLayoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            PresentationLayoutView(spacing: 6)
-                .previewDisplayName("Portrait")
-                .frame(width: 300, height: 600)
-            PresentationLayoutView(spacing: 6)
-                .previewDisplayName("Landscape")
-                .frame(width: 600, height: 300)
-        }
-        .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
-        .previewLayout(.sizeThatFits)
-    }
-}
-
-extension PresentationLayoutViewModel {
-    static func stub(
-        isPresenting: Bool = false,
-        dominantSpeakerDisplayName: String = "Bob",
-        presenterDisplayName: String = "Alice"
-    ) -> PresentationLayoutViewModel {
-        let viewModel = PresentationLayoutViewModel()
-        viewModel.isPresenting = isPresenting
-        viewModel.dominantSpeaker = SpeakerVideoViewModel(identity: dominantSpeakerDisplayName)
-        viewModel.presenter = Presenter(displayName: presenterDisplayName)
-        return viewModel
-    }
-}
+//struct PresentationLayoutView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            PresentationLayoutView(spacing: 6)
+//                .previewDisplayName("Portrait")
+//                .frame(width: 300, height: 600)
+//            PresentationLayoutView(spacing: 6)
+//                .previewDisplayName("Landscape")
+//                .frame(width: 600, height: 300)
+//        }
+//        .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
+//        .previewLayout(.sizeThatFits)
+//    }
+//}
+//
+//extension PresentationLayoutViewModel {
+//    static func stub(
+//        isPresenting: Bool = false,
+//        dominantSpeakerDisplayName: String = "Bob",
+//        presenterDisplayName: String = "Alice"
+//    ) -> PresentationLayoutViewModel {
+//        let viewModel = PresentationLayoutViewModel()
+//        viewModel.isPresenting = isPresenting
+//        viewModel.dominantSpeaker = SpeakerVideoViewModel(identity: dominantSpeakerDisplayName)
+//        viewModel.presenter = Presenter(displayName: presenterDisplayName)
+//        return viewModel
+//    }
+//}

@@ -60,28 +60,28 @@ struct SpeakerVideoView: View {
     }
 }
 
-struct SpeakerVideoView_Previews: PreviewProvider {
-    static var previews: some View {
-        let longIdentity = String(repeating: "Long ", count: 20)
-        
-        Group {
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel()))
-                .previewDisplayName("Not muted")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(identity: longIdentity)))
-                .previewDisplayName("Long identity")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(identity: longIdentity)))
-                .previewDisplayName("Long identity without host controls")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(isMuted: true)))
-                .previewDisplayName("Muted")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(isDominantSpeaker: true)))
-                .previewDisplayName("Dominant speaker")
-        }
-        .frame(width: 200, height: 200)
-        .previewLayout(.sizeThatFits)
-        .padding()
-    }
-}
-
+//struct SpeakerVideoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let longIdentity = String(repeating: "Long ", count: 20)
+//        
+//        Group {
+//            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel()))
+//                .previewDisplayName("Not muted")
+//            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(identity: longIdentity)))
+//                .previewDisplayName("Long identity")
+//            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(identity: longIdentity)))
+//                .previewDisplayName("Long identity without host controls")
+//            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(isMuted: true)))
+//                .previewDisplayName("Muted")
+//            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(isDominantSpeaker: true)))
+//                .previewDisplayName("Dominant speaker")
+//        }
+//        .frame(width: 200, height: 200)
+//        .previewLayout(.sizeThatFits)
+//        .padding()
+//    }
+//}
+//
 import TwilioVideo
 
 extension SpeakerVideoViewModel {

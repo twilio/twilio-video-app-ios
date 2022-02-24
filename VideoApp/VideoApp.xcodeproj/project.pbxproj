@@ -314,8 +314,6 @@
 		DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */; };
 		DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */; };
-		DCE1A9F327C7E556004680CA /* CardButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */; };
-		DCE1A9F427C7E556004680CA /* CardButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */; };
 		DCE1A9F527C7E556004680CA /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EA27C7E556004680CA /* TitleStyle.swift */; };
 		DCE1A9F627C7E556004680CA /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EA27C7E556004680CA /* TitleStyle.swift */; };
 		DCE1A9F727C7E556004680CA /* FormStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EB27C7E556004680CA /* FormStack.swift */; };
@@ -348,8 +346,6 @@
 		DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2927C7E58A004680CA /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* StreamView.swift */; };
 		DCE1AA2A27C7E58A004680CA /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* StreamView.swift */; };
-		DCE1AA2B27C7E58A004680CA /* LiveBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */; };
-		DCE1AA2C27C7E58A004680CA /* LiveBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */; };
 		DCE1AA2D27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */; };
 		DCE1AA2E27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */; };
 		DCE1AA2F27C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
@@ -376,6 +372,8 @@
 		DCE1AA5527C7F95B004680CA /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* StreamViewModel.swift */; };
 		DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
 		DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
+		DCE1AA5C27C82F55004680CA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */; };
+		DCE1AA5D27C82F55004680CA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -681,7 +679,6 @@
 		DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOptionsFactory.swift; sourceTree = "<group>"; };
 		DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStore.swift; sourceTree = "<group>"; };
 		DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
-		DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButtonLabel.swift; sourceTree = "<group>"; };
 		DCE1A9EA27C7E556004680CA /* TitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
 		DCE1A9EB27C7E556004680CA /* FormStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStack.swift; sourceTree = "<group>"; };
 		DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
@@ -698,7 +695,6 @@
 		DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationStatusView.swift; sourceTree = "<group>"; };
 		DCE1AA0E27C7E58A004680CA /* StreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
-		DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBadge.swift; sourceTree = "<group>"; };
 		DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffscreenSpeakersView.swift; sourceTree = "<group>"; };
 		DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerVideoView.swift; sourceTree = "<group>"; };
@@ -712,6 +708,7 @@
 		DCE1AA4E27C7F95B004680CA /* StreamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamManager.swift; sourceTree = "<group>"; };
 		DCE1AA4F27C7F95B004680CA /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerSettingsManager.swift; sourceTree = "<group>"; };
+		DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1488,6 +1485,8 @@
 		DCE1A9E627C7E519004680CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1AA5A27C82EBC004680CA /* Home */,
+				DCE1AA0827C7E58A004680CA /* PresentationLayout */,
 				DCE1AA0327C7E58A004680CA /* Stream */,
 				DCE1A9E727C7E556004680CA /* Style */,
 			);
@@ -1498,7 +1497,6 @@
 			isa = PBXGroup;
 			children = (
 				DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */,
-				DCE1A9E927C7E556004680CA /* CardButtonLabel.swift */,
 				DCE1A9EA27C7E556004680CA /* TitleStyle.swift */,
 				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
 				DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */,
@@ -1513,19 +1511,17 @@
 		DCE1AA0327C7E58A004680CA /* Stream */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */,
-				DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */,
-				DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */,
-				DCE1AA0727C7E58A004680CA /* StreamToolbar.swift */,
-				DCE1AA0827C7E58A004680CA /* PresentationLayout */,
-				DCE1AA0E27C7E58A004680CA /* StreamView.swift */,
-				DCE1AA0F27C7E58A004680CA /* LiveBadge.swift */,
+				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
 				DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */,
+				DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */,
 				DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */,
 				DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */,
-				DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */,
-				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
 				DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */,
+				DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */,
+				DCE1AA0727C7E58A004680CA /* StreamToolbar.swift */,
+				DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */,
+				DCE1AA0E27C7E58A004680CA /* StreamView.swift */,
+				DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */,
 			);
 			path = Stream;
 			sourceTree = "<group>";
@@ -1577,6 +1573,14 @@
 				DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */,
 			);
 			path = SpeakerSettings;
+			sourceTree = "<group>";
+		};
+		DCE1AA5A27C82EBC004680CA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
@@ -2405,6 +2409,7 @@
 				DCDCD37724193042004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
+				DCE1AA5C27C82F55004680CA /* HomeScreenView.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
@@ -2512,7 +2517,6 @@
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
-				DCE1A9F327C7E556004680CA /* CardButtonLabel.swift in Sources */,
 				DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCE1A9F927C7E556004680CA /* ProgressHUD.swift in Sources */,
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
@@ -2546,7 +2550,6 @@
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3727C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
-				DCE1AA2B27C7E58A004680CA /* LiveBadge.swift in Sources */,
 				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DCE1AA2927C7E58A004680CA /* StreamView.swift in Sources */,
@@ -2599,6 +2602,7 @@
 				DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
+				DCE1AA5D27C82F55004680CA /* HomeScreenView.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
@@ -2706,7 +2710,6 @@
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
-				DCE1A9F427C7E556004680CA /* CardButtonLabel.swift in Sources */,
 				DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */,
 				DCE1A9FA27C7E556004680CA /* ProgressHUD.swift in Sources */,
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
@@ -2740,7 +2743,6 @@
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3827C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
-				DCE1AA2C27C7E58A004680CA /* LiveBadge.swift in Sources */,
 				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DCE1AA2A27C7E58A004680CA /* StreamView.swift in Sources */,

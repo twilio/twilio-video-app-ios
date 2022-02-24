@@ -16,6 +16,29 @@
 
 import UIKit
 
+
+import SwiftUI
+
+struct SettingsView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UINavigationController {
+        let viewModel = GeneralSettingsViewModel(
+            appInfoStore: AppInfoStoreFactory().makeAppInfoStore(),
+            appSettingsStore: AppSettingsStore.shared,
+            authStore: AuthStore.shared
+        )
+        let settingsViewController = SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
+
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [settingsViewController]
+
+        return navigationController
+    }
+
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
+
+    }
+}
+
 class SettingsViewController: UITableViewController {
     var viewModel: SettingsViewModel!
     

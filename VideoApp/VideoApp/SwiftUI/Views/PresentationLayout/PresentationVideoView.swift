@@ -17,10 +17,10 @@ struct PresentationVideoView: View {
     }
 }
 
-struct PresentationVideoView_Previews: PreviewProvider {
-    static var previews: some View {
-        PresentationVideoView(videoTrack: .constant(nil))
-            .frame(height: 400)
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct PresentationVideoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PresentationVideoView(videoTrack: .constant(nil))
+//            .frame(height: 400)
+//            .previewLayout(.sizeThatFits)
+//    }
+//}
