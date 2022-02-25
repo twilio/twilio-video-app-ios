@@ -6,9 +6,9 @@ import TwilioVideo
 import Combine
 
 /// Subscribes to room and participant state changes to provide speaker state for the UI to display in a grid
-class SpeakerGridViewModel: ObservableObject {
-    @Published var onscreenSpeakers: [SpeakerVideoViewModel] = []
-    @Published var offscreenSpeakers: [SpeakerVideoViewModel] = []
+class GridLayoutViewModel: ObservableObject {
+    @Published var onscreenSpeakers: [ParticipantViewModel] = []
+    @Published var offscreenSpeakers: [ParticipantViewModel] = []
     private let maxOnscreenSpeakerCount = 6
     private var roomManager: RoomManager!
     private var subscriptions = Set<AnyCancellable>()
@@ -20,10 +20,10 @@ class SpeakerGridViewModel: ObservableObject {
             .sink { [weak self] in
                 guard let self = self else { return }
                 
-                self.addSpeaker(SpeakerVideoViewModel(participant: self.roomManager.localParticipant))
+                self.addSpeaker(ParticipantViewModel(participant: self.roomManager.localParticipant))
 
                 self.roomManager.remoteParticipants
-                    .map { SpeakerVideoViewModel(participant: $0) }
+                    .map { ParticipantViewModel(participant: $0) }
                     .forEach { self.addSpeaker($0) }
             }
             .store(in: &subscriptions)
@@ -39,7 +39,7 @@ class SpeakerGridViewModel: ObservableObject {
             .sink { [weak self] participant in
                 guard let self = self, !self.onscreenSpeakers.isEmpty else { return }
                 
-                self.onscreenSpeakers[0] = SpeakerVideoViewModel(participant: participant)
+                self.onscreenSpeakers[0] = ParticipantViewModel(participant: participant)
             }
             .store(in: &subscriptions)
 
@@ -47,7 +47,7 @@ class SpeakerGridViewModel: ObservableObject {
             .sink { [weak self] participant in
                 guard let self = self else { return }
 
-                self.addSpeaker(SpeakerVideoViewModel(participant: participant)) }
+                self.addSpeaker(ParticipantViewModel(participant: participant)) }
             .store(in: &subscriptions)
 
         roomManager.remoteParticipantDisconnectPublisher
@@ -58,11 +58,11 @@ class SpeakerGridViewModel: ObservableObject {
             .sink { [weak self] participant in
                 guard let self = self else { return }
 
-                self.updateSpeaker(SpeakerVideoViewModel(participant: participant)) }
+                self.updateSpeaker(ParticipantViewModel(participant: participant)) }
             .store(in: &subscriptions)
     }
     
-    private func addSpeaker(_ speaker: SpeakerVideoViewModel) {
+    private func addSpeaker(_ speaker: ParticipantViewModel) {
         if onscreenSpeakers.count < maxOnscreenSpeakerCount {
             onscreenSpeakers.append(speaker)
         } else {
@@ -82,7 +82,7 @@ class SpeakerGridViewModel: ObservableObject {
         }
     }
 
-    private func updateSpeaker(_ speaker: SpeakerVideoViewModel) {
+    private func updateSpeaker(_ speaker: ParticipantViewModel) {
         if let index = onscreenSpeakers.firstIndex(of: speaker) {
             onscreenSpeakers[index] = speaker
         } else if let index = offscreenSpeakers.firstIndex(of: speaker) {

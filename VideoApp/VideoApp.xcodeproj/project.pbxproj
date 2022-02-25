@@ -326,32 +326,32 @@
 		DCE1AA0027C7E556004680CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EF27C7E556004680CA /* Color.swift */; };
 		DCE1AA1727C7E58A004680CA /* RoomToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */; };
 		DCE1AA1827C7E58A004680CA /* RoomToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */; };
-		DCE1AA1927C7E58A004680CA /* SpeakerGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */; };
-		DCE1AA1A27C7E58A004680CA /* SpeakerGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */; };
+		DCE1AA1927C7E58A004680CA /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */; };
+		DCE1AA1A27C7E58A004680CA /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */; };
 		DCE1AA1B27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */; };
 		DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */; };
 		DCE1AA1D27C7E58A004680CA /* RoomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */; };
 		DCE1AA1E27C7E58A004680CA /* RoomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */; };
-		DCE1AA1F27C7E58A004680CA /* PresentationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */; };
-		DCE1AA2027C7E58A004680CA /* PresentationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */; };
-		DCE1AA2127C7E58A004680CA /* PresentationLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */; };
-		DCE1AA2227C7E58A004680CA /* PresentationLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */; };
-		DCE1AA2327C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */; };
-		DCE1AA2427C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */; };
+		DCE1AA1F27C7E58A004680CA /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationView.swift */; };
+		DCE1AA2027C7E58A004680CA /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationView.swift */; };
+		DCE1AA2127C7E58A004680CA /* FocusLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */; };
+		DCE1AA2227C7E58A004680CA /* FocusLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */; };
+		DCE1AA2327C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */; };
+		DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */; };
 		DCE1AA2527C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2927C7E58A004680CA /* RoomScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */; };
 		DCE1AA2A27C7E58A004680CA /* RoomScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */; };
-		DCE1AA2F27C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
-		DCE1AA3027C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
-		DCE1AA3127C7E58A004680CA /* SpeakerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */; };
-		DCE1AA3227C7E58A004680CA /* SpeakerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */; };
+		DCE1AA2F27C7E58A004680CA /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */; };
+		DCE1AA3027C7E58A004680CA /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */; };
+		DCE1AA3127C7E58A004680CA /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* ParticipantView.swift */; };
+		DCE1AA3227C7E58A004680CA /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* ParticipantView.swift */; };
 		DCE1AA3327C7E58A004680CA /* RoomStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */; };
 		DCE1AA3427C7E58A004680CA /* RoomStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */; };
 		DCE1AA3527C7E58A004680CA /* DisplayNameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */; };
 		DCE1AA3627C7E58A004680CA /* DisplayNameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */; };
-		DCE1AA3727C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */; };
-		DCE1AA3827C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */; };
+		DCE1AA3727C7E58A004680CA /* ParticipantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */; };
+		DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */; };
 		DCE1AA4227C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */; };
 		DCE1AA4327C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */; };
 		DCE1AA4627C7E5E0004680CA /* LocalParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */; };
@@ -675,19 +675,19 @@
 		DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		DCE1A9EF27C7E556004680CA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomToolbarButton.swift; sourceTree = "<group>"; };
-		DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridView.swift; sourceTree = "<group>"; };
+		DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
 		DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
 		DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomToolbar.swift; sourceTree = "<group>"; };
-		DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationVideoView.swift; sourceTree = "<group>"; };
-		DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationLayoutView.swift; sourceTree = "<group>"; };
-		DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationLayoutViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA0927C7E58A004680CA /* PresentationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
+		DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusLayoutView.swift; sourceTree = "<group>"; };
+		DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationStatusView.swift; sourceTree = "<group>"; };
 		DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScreenView.swift; sourceTree = "<group>"; };
-		DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridViewModel.swift; sourceTree = "<group>"; };
-		DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerVideoView.swift; sourceTree = "<group>"; };
+		DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA1227C7E58A004680CA /* ParticipantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomStatusView.swift; sourceTree = "<group>"; };
 		DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayNameFactory.swift; sourceTree = "<group>"; };
-		DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerVideoViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA4027C7E5E0004680CA /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
@@ -1072,13 +1072,13 @@
 			path = RoomStatus;
 			sourceTree = "<group>";
 		};
-		DC1D3CB027C955C8001FCB1A /* ParticipantVideoView */ = {
+		DC1D3CB027C955C8001FCB1A /* Participant */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */,
-				DCE1AA1527C7E58A004680CA /* SpeakerVideoViewModel.swift */,
+				DCE1AA1227C7E58A004680CA /* ParticipantView.swift */,
+				DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */,
 			);
-			path = ParticipantVideoView;
+			path = Participant;
 			sourceTree = "<group>";
 		};
 		DC338A2624367AD30093E855 /* Plans */ = {
@@ -1524,9 +1524,9 @@
 			isa = PBXGroup;
 			children = (
 				DCE1A9E727C7E556004680CA /* Core */,
+				DCE1AA0827C7E58A004680CA /* FocusLayout */,
 				DCE1AA0327C7E58A004680CA /* GridLayout */,
-				DC1D3CB027C955C8001FCB1A /* ParticipantVideoView */,
-				DCE1AA0827C7E58A004680CA /* PresentationLayout */,
+				DC1D3CB027C955C8001FCB1A /* Participant */,
 				DC1D3CAF27C9553F001FCB1A /* RoomStatus */,
 				DC1D3CAE27C95504001FCB1A /* RoomToolbar */,
 			);
@@ -1536,13 +1536,13 @@
 		DCE1A9E727C7E556004680CA /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
-				DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */,
-				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
-				DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */,
-				DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */,
-				DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */,
 				DCE1A9EF27C7E556004680CA /* Color.swift */,
+				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
+				DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */,
+				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
+				DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */,
+				DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */,
+				DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */,
 				DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */,
 			);
 			path = Core;
@@ -1551,21 +1551,21 @@
 		DCE1AA0327C7E58A004680CA /* GridLayout */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */,
-				DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */,
+				DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */,
+				DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */,
 			);
 			path = GridLayout;
 			sourceTree = "<group>";
 		};
-		DCE1AA0827C7E58A004680CA /* PresentationLayout */ = {
+		DCE1AA0827C7E58A004680CA /* FocusLayout */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA0A27C7E58A004680CA /* PresentationLayoutView.swift */,
-				DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */,
+				DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */,
+				DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */,
 				DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */,
-				DCE1AA0927C7E58A004680CA /* PresentationVideoView.swift */,
+				DCE1AA0927C7E58A004680CA /* PresentationView.swift */,
 			);
-			path = PresentationLayout;
+			path = FocusLayout;
 			sourceTree = "<group>";
 		};
 		DCE1AA3B27C7E5B4004680CA /* Managers */ = {
@@ -2427,7 +2427,7 @@
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCE1AA2327C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */,
+				DCE1AA2327C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCE1AA1727C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
 				DCE1A9FD27C7E556004680CA /* ErrorAlert.swift in Sources */,
@@ -2444,7 +2444,7 @@
 				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D0F23860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DCE1AA4227C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */,
-				DCE1AA3127C7E58A004680CA /* SpeakerVideoView.swift in Sources */,
+				DCE1AA3127C7E58A004680CA /* ParticipantView.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
@@ -2479,7 +2479,7 @@
 				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
 				DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
-				DCE1AA1F27C7E58A004680CA /* PresentationVideoView.swift in Sources */,
+				DCE1AA1F27C7E58A004680CA /* PresentationView.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4C2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
@@ -2501,7 +2501,7 @@
 				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
-				DCE1AA1927C7E58A004680CA /* SpeakerGridView.swift in Sources */,
+				DCE1AA1927C7E58A004680CA /* GridLayoutView.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCE1A9FF27C7E556004680CA /* Color.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
@@ -2520,7 +2520,7 @@
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
-				DCE1AA2127C7E58A004680CA /* PresentationLayoutView.swift in Sources */,
+				DCE1AA2127C7E58A004680CA /* FocusLayoutView.swift in Sources */,
 				8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
@@ -2555,7 +2555,7 @@
 				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
 				DC9A5E1E2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
-				DCE1AA3727C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */,
+				DCE1AA3727C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
 				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
@@ -2587,7 +2587,7 @@
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */,
-				DCE1AA2F27C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */,
+				DCE1AA2F27C7E58A004680CA /* GridLayoutViewModel.swift in Sources */,
 				DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */,
@@ -2615,7 +2615,7 @@
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCE1AA2427C7E58A004680CA /* PresentationLayoutViewModel.swift in Sources */,
+				DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCE1AA1827C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
 				DCE1A9FE27C7E556004680CA /* ErrorAlert.swift in Sources */,
@@ -2632,7 +2632,7 @@
 				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
 				DCE1AA4327C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */,
-				DCE1AA3227C7E58A004680CA /* SpeakerVideoView.swift in Sources */,
+				DCE1AA3227C7E58A004680CA /* ParticipantView.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
 				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
@@ -2667,7 +2667,7 @@
 				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
-				DCE1AA2027C7E58A004680CA /* PresentationVideoView.swift in Sources */,
+				DCE1AA2027C7E58A004680CA /* PresentationView.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
@@ -2689,7 +2689,7 @@
 				DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
-				DCE1AA1A27C7E58A004680CA /* SpeakerGridView.swift in Sources */,
+				DCE1AA1A27C7E58A004680CA /* GridLayoutView.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCE1AA0027C7E556004680CA /* Color.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
@@ -2708,7 +2708,7 @@
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
-				DCE1AA2227C7E58A004680CA /* PresentationLayoutView.swift in Sources */,
+				DCE1AA2227C7E58A004680CA /* FocusLayoutView.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */,
@@ -2743,7 +2743,7 @@
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
 				DC9A5E1F2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
-				DCE1AA3827C7E58A004680CA /* SpeakerVideoViewModel.swift in Sources */,
+				DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
 				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
 				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
@@ -2775,7 +2775,7 @@
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
 				DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */,
-				DCE1AA3027C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */,
+				DCE1AA3027C7E58A004680CA /* GridLayoutViewModel.swift in Sources */,
 				DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */,

@@ -5,7 +5,7 @@
 import TwilioVideo
 
 /// Speaker abstraction so the UI can handle local and remote participants the same way.
-struct SpeakerVideoViewModel {
+struct ParticipantViewModel {
     var identity = ""
     var displayName = ""
     var isYou = false
@@ -40,8 +40,8 @@ struct SpeakerVideoViewModel {
     }
 }
 
-extension SpeakerVideoViewModel: Hashable {
-    static func == (lhs: SpeakerVideoViewModel, rhs: SpeakerVideoViewModel) -> Bool {
+extension ParticipantViewModel: Hashable {
+    static func == (lhs: ParticipantViewModel, rhs: ParticipantViewModel) -> Bool {
         lhs.identity == rhs.identity
     }
 

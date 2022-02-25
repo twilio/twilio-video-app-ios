@@ -23,8 +23,8 @@ struct HomeScreenView: View {
 
     @StateObject private var roomScreenViewModel = RoomScreenViewModel()
     @StateObject private var speakerSettingsManager = SpeakerSettingsManager()
-    @StateObject private var speakerGridViewModel = SpeakerGridViewModel()
-    @StateObject private var presentationLayoutViewModel = PresentationLayoutViewModel()
+    @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
+    @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
 
     var body: some View {
         NavigationView {
@@ -56,8 +56,8 @@ struct HomeScreenView: View {
                     RoomScreenView(roomName: roomName)
                 }
                 .environmentObject(roomScreenViewModel)
-                .environmentObject(speakerGridViewModel)
-                .environmentObject(presentationLayoutViewModel)
+                .environmentObject(gridLayoutViewModel)
+                .environmentObject(focusLayoutViewModel)
                 .environmentObject(speakerSettingsManager)
                 .onAppear {
                     let localParticipant = LocalParticipantManager(identity: AuthStore.shared.userDisplayName)
@@ -65,8 +65,8 @@ struct HomeScreenView: View {
                     roomManager.configure(localParticipant: localParticipant)
                     roomScreenViewModel.configure(roomManager: roomManager, speakerSettingsManager: speakerSettingsManager)
                     speakerSettingsManager.configure(roomManager: roomManager)
-                    speakerGridViewModel.configure(roomManager: roomManager)
-                    presentationLayoutViewModel.configure(roomManager: roomManager)
+                    gridLayoutViewModel.configure(roomManager: roomManager)
+                    focusLayoutViewModel.configure(roomManager: roomManager)
                 }
             }
         }

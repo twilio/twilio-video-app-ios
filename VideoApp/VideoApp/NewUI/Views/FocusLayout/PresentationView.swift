@@ -5,7 +5,7 @@
 import SwiftUI
 import TwilioVideo
 
-struct PresentationVideoView: View {
+struct PresentationView: View {
     @Binding var videoTrack: VideoTrack?
 
     var body: some View {
@@ -17,9 +17,9 @@ struct PresentationVideoView: View {
     }
 }
 
-struct PresentationVideoView_Previews: PreviewProvider {
+struct PresentationView_Previews: PreviewProvider {
     static var previews: some View {
-        PresentationVideoView(videoTrack: .constant(nil))
+        PresentationView(videoTrack: .constant(nil))
             .frame(height: 400)
             .previewLayout(.sizeThatFits)
     }

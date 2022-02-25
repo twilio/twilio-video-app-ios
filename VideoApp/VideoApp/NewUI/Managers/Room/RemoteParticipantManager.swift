@@ -119,13 +119,3 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
         delegate?.participantDidChange(self)
     }
 }
-
-//extension RemoteParticipantManager: RemoteDataTrackDelegate {
-//    func remoteDataTrackDidReceiveData(remoteDataTrack: RemoteDataTrack, message: Data) {
-//        guard let message = try? JSONDecoder(keyDecodingStrategy: .convertFromSnakeCase).decode(RoomMessage.self, from: message) else {
-//            return
-//        }
-//
-//        delegate?.participant(self, didSendMessage: message)
-//    }
-//}

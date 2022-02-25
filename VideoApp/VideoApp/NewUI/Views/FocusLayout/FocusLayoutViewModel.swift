@@ -5,7 +5,7 @@
 import TwilioVideo
 import Combine
 
-class PresentationLayoutViewModel: ObservableObject {
+class FocusLayoutViewModel: ObservableObject {
     struct Presenter {
         var identity: String = ""
         var displayName: String = ""
@@ -14,7 +14,7 @@ class PresentationLayoutViewModel: ObservableObject {
 
     @Published var isPresenting = false
     @Published var presenter = Presenter()
-    @Published var dominantSpeaker = SpeakerVideoViewModel()
+    @Published var dominantSpeaker = ParticipantViewModel()
     private var roomManager: RoomManager!
     private var subscriptions = Set<AnyCancellable>()
 
@@ -46,7 +46,7 @@ class PresentationLayoutViewModel: ObservableObject {
         guard let presenter = findPresenter() else {
             isPresenting = false
             presenter = Presenter()
-            dominantSpeaker = SpeakerVideoViewModel()
+            dominantSpeaker = ParticipantViewModel()
             return
         }
 
@@ -68,21 +68,21 @@ class PresentationLayoutViewModel: ObservableObject {
         )
     }
     
-    private func findDominantSpeaker() -> SpeakerVideoViewModel {
+    private func findDominantSpeaker() -> ParticipantViewModel {
         if let activeDominantSpeaker = roomManager.remoteParticipants.first(where: { $0.isDominantSpeaker }) {
             // There is an active dominant speaker
-            return SpeakerVideoViewModel(participant: activeDominantSpeaker)
+            return ParticipantViewModel(participant: activeDominantSpeaker)
         } else if let previousDominantSpeaker = roomManager.remoteParticipants.first(where: { $0.identity == dominantSpeaker.identity }) {
             // The previous dominant speaker is still connected so use them
-            return SpeakerVideoViewModel(participant: previousDominantSpeaker)
+            return ParticipantViewModel(participant: previousDominantSpeaker)
         } else {
             // Dominant speaker is not yet known or the previous dominant speaker disconnected
             if let firstRemoteParticipant = roomManager.remoteParticipants.first {
                 // Keep it simple and just use first remote participant, someone will start talking soon
-                return SpeakerVideoViewModel(participant: firstRemoteParticipant)
+                return ParticipantViewModel(participant: firstRemoteParticipant)
             } else {
                 // Use local participant
-                return SpeakerVideoViewModel(participant: roomManager.localParticipant)
+                return ParticipantViewModel(participant: roomManager.localParticipant)
             }
         }
     }

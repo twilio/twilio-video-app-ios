@@ -4,8 +4,8 @@
 
 import SwiftUI
 
-struct PresentationLayoutView: View {
-    @EnvironmentObject var viewModel: PresentationLayoutViewModel
+struct FocusLayoutView: View {
+    @EnvironmentObject var viewModel: FocusLayoutViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let spacing: CGFloat
@@ -19,17 +19,17 @@ struct PresentationLayoutView: View {
             HStack(spacing: spacing) {
                 VStack(spacing: spacing) {
                     PresentationStatusView(presenterDisplayName: viewModel.presenter.displayName)
-                    SpeakerVideoView(speaker: $viewModel.dominantSpeaker)
+                    ParticipantView(speaker: $viewModel.dominantSpeaker)
 
                     if isPortraitOrientation {
-                        PresentationVideoView(videoTrack: $viewModel.presenter.presentationTrack)
+                        PresentationView(videoTrack: $viewModel.presenter.presentationTrack)
                     }
                 }
                 // For landscape orientation only use 30% of the width for stuff that isn't the presentation video
                 .frame(width: isPortraitOrientation ? nil : geometry.size.width * 0.3)
                 
                 if !isPortraitOrientation {
-                    PresentationVideoView(videoTrack: $viewModel.presenter.presentationTrack)
+                    PresentationView(videoTrack: $viewModel.presenter.presentationTrack)
                 }
             }
             .padding(.bottom, spacing)
@@ -37,30 +37,30 @@ struct PresentationLayoutView: View {
     }
 }
 
-struct PresentationLayoutView_Previews: PreviewProvider {
+struct FocusLayoutView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PresentationLayoutView(spacing: 6)
+            FocusLayoutView(spacing: 6)
                 .previewDisplayName("Portrait")
                 .frame(width: 300, height: 600)
-            PresentationLayoutView(spacing: 6)
+            FocusLayoutView(spacing: 6)
                 .previewDisplayName("Landscape")
                 .frame(width: 600, height: 300)
         }
-        .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
+        .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
         .previewLayout(.sizeThatFits)
     }
 }
 
-extension PresentationLayoutViewModel {
+extension FocusLayoutViewModel {
     static func stub(
         isPresenting: Bool = false,
         dominantSpeakerDisplayName: String = "Bob",
         presenterDisplayName: String = "Alice"
-    ) -> PresentationLayoutViewModel {
-        let viewModel = PresentationLayoutViewModel()
+    ) -> FocusLayoutViewModel {
+        let viewModel = FocusLayoutViewModel()
         viewModel.isPresenting = isPresenting
-        viewModel.dominantSpeaker = SpeakerVideoViewModel(identity: dominantSpeakerDisplayName)
+        viewModel.dominantSpeaker = ParticipantViewModel(identity: dominantSpeakerDisplayName)
         viewModel.presenter = Presenter(displayName: presenterDisplayName)
         return viewModel
     }

@@ -4,8 +4,8 @@
 
 import SwiftUI
 
-struct SpeakerVideoView: View {
-    @Binding var speaker: SpeakerVideoViewModel
+struct ParticipantView: View {
+    @Binding var speaker: ParticipantViewModel // TODO: Rename to participant from speaker
     
     var body: some View {
         ZStack {
@@ -60,20 +60,20 @@ struct SpeakerVideoView: View {
     }
 }
 
-struct SpeakerVideoView_Previews: PreviewProvider {
+struct ParticipantView_Previews: PreviewProvider {
     static var previews: some View {
         let longIdentity = String(repeating: "Long ", count: 20)
         
         Group {
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel()))
+            ParticipantView(speaker: .constant(ParticipantViewModel()))
                 .previewDisplayName("Not muted")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(identity: longIdentity)))
+            ParticipantView(speaker: .constant(ParticipantViewModel(identity: longIdentity)))
                 .previewDisplayName("Long identity")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(identity: longIdentity)))
+            ParticipantView(speaker: .constant(ParticipantViewModel(identity: longIdentity)))
                 .previewDisplayName("Long identity without host controls")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(isMuted: true)))
+            ParticipantView(speaker: .constant(ParticipantViewModel(isMuted: true)))
                 .previewDisplayName("Muted")
-            SpeakerVideoView(speaker: .constant(SpeakerVideoViewModel(isDominantSpeaker: true)))
+            ParticipantView(speaker: .constant(ParticipantViewModel(isDominantSpeaker: true)))
                 .previewDisplayName("Dominant speaker")
         }
         .frame(width: 200, height: 200)
@@ -85,7 +85,7 @@ struct SpeakerVideoView_Previews: PreviewProvider {
 // TODO: Move this...I think it's used in real production code
 import TwilioVideo
 
-extension SpeakerVideoViewModel {
+extension ParticipantViewModel {
     init(
         identity: String = "Alice",
         displayName: String? = nil,

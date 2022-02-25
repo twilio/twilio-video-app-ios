@@ -7,8 +7,8 @@ import SwiftUI
 struct RoomScreenView: View {
     @EnvironmentObject var viewModel: RoomScreenViewModel
     @EnvironmentObject var speakerSettingsManager: SpeakerSettingsManager
-    @EnvironmentObject var speakerGridViewModel: SpeakerGridViewModel
-    @EnvironmentObject var presentationLayoutViewModel: PresentationLayoutViewModel
+    @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
+    @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -31,10 +31,10 @@ struct RoomScreenView: View {
                             .padding(.bottom, spacing)
 
                         HStack(spacing: 0) {
-                            if presentationLayoutViewModel.isPresenting {
-                                PresentationLayoutView(spacing: spacing)
+                            if focusLayoutViewModel.isPresenting {
+                                FocusLayoutView(spacing: spacing)
                             } else {
-                                SpeakerGridView(spacing: spacing)
+                                GridLayoutView(spacing: spacing)
                             }
                         }
                     }
@@ -102,20 +102,20 @@ struct RoomScreenView_Previews: PreviewProvider {
             RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Grid layout")
                 .environmentObject(RoomScreenViewModel())
-                .environmentObject(SpeakerGridViewModel.stub())
-                .environmentObject(PresentationLayoutViewModel.stub())
+                .environmentObject(GridLayoutViewModel.stub())
+                .environmentObject(FocusLayoutViewModel.stub())
 
             RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Presentation layout")
                 .environmentObject(RoomScreenViewModel())
-                .environmentObject(SpeakerGridViewModel.stub())
-                .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
+                .environmentObject(GridLayoutViewModel.stub())
+                .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
 
             RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Connecting")
                 .environmentObject(RoomScreenViewModel(state: .connecting))
-                .environmentObject(SpeakerGridViewModel())
-                .environmentObject(PresentationLayoutViewModel.stub())
+                .environmentObject(GridLayoutViewModel())
+                .environmentObject(FocusLayoutViewModel.stub())
         }
         .environmentObject(SpeakerSettingsManager())
     }
