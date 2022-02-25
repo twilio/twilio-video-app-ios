@@ -4,7 +4,7 @@
 
 import Combine
 
-class StreamViewModel: ObservableObject {
+class RoomScreenViewModel: ObservableObject {
     enum AlertIdentifier: String, Identifiable {
         case error
         

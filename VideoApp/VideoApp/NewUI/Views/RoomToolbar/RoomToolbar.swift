@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct StreamToolbar<Content>: View where Content: View {
+struct RoomToolbar<Content>: View where Content: View {
     private let content: () -> Content
     
     init(@ViewBuilder content: @escaping () -> Content) {
@@ -21,11 +21,11 @@ struct StreamToolbar<Content>: View where Content: View {
     }
 }
 
-struct StreamToolbar_Previews: PreviewProvider {
+struct RoomToolbar_Previews: PreviewProvider {
     static var previews: some View {
-        StreamToolbar {
-            StreamToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
-            StreamToolbarButton(image: Image(systemName: "mic.slash.fill"))
+        RoomToolbar {
+            RoomToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
+            RoomToolbarButton(image: Image(systemName: "mic.slash.fill"))
         }
         .previewLayout(.sizeThatFits)
     }

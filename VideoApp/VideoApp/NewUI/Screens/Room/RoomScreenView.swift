@@ -4,8 +4,8 @@
 
 import SwiftUI
 
-struct StreamView: View {
-    @EnvironmentObject var viewModel: StreamViewModel
+struct RoomScreenView: View {
+    @EnvironmentObject var viewModel: RoomScreenViewModel
     @EnvironmentObject var streamManager: StreamManager
     @EnvironmentObject var speakerSettingsManager: SpeakerSettingsManager
     @EnvironmentObject var speakerGridViewModel: SpeakerGridViewModel
@@ -28,7 +28,7 @@ struct StreamView: View {
 
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        StreamStatusView(streamName: config.streamName, streamState: $streamManager.state)
+                        RoomStatusView(streamName: config.streamName, streamState: $streamManager.state)
                             .padding(.bottom, spacing)
 
                         HStack(spacing: 0) {
@@ -43,19 +43,19 @@ struct StreamView: View {
                     .padding(.trailing, geometry.safeAreaInsets.trailing.isZero ? spacing : geometry.safeAreaInsets.trailing)
                     .padding(.top, geometry.safeAreaInsets.top.isZero ? 3 : 0)
                     
-                    StreamToolbar {
-                        StreamToolbarButton(
+                    RoomToolbar {
+                        RoomToolbarButton(
                             image: Image(systemName: "arrow.left"),
                             role: .destructive
                         ) {
                             leaveStream()
                         }
-                        StreamToolbarButton(
+                        RoomToolbarButton(
                             image: Image(systemName: speakerSettingsManager.isMicOn ? "mic" : "mic.slash")
                         ) {
                             speakerSettingsManager.isMicOn.toggle()
                         }
-                        StreamToolbarButton(
+                        RoomToolbarButton(
                             image: Image(systemName: speakerSettingsManager.isCameraOn ? "video" : "video.slash")
                         ) {
                             speakerSettingsManager.isCameraOn.toggle()
@@ -97,29 +97,29 @@ struct StreamView: View {
     }
 }
 
-struct StreamView_Previews: PreviewProvider {
+struct RoomScreenView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            StreamView(config: .stub())
+            RoomScreenView(config: .stub())
                 .previewDisplayName("Grid layout")
                 .environmentObject(StreamManager())
                 .environmentObject(SpeakerGridViewModel.stub())
                 .environmentObject(PresentationLayoutViewModel.stub())
 
-            StreamView(config: .stub())
+            RoomScreenView(config: .stub())
                 .previewDisplayName("Presentation layout")
                 .environmentObject(StreamManager())
                 .environmentObject(SpeakerGridViewModel.stub())
                 .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
 
-            StreamView(config: .stub())
+            RoomScreenView(config: .stub())
                 .previewDisplayName("Connecting")
                 .environmentObject(StreamManager(state: .connecting))
                 .environmentObject(SpeakerGridViewModel())
                 .environmentObject(PresentationLayoutViewModel.stub())
         }
         .environmentObject(SpeakerSettingsManager())
-        .environmentObject(StreamViewModel())
+        .environmentObject(RoomScreenViewModel())
     }
 }
 
