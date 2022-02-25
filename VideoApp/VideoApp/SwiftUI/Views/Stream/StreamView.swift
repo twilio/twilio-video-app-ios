@@ -5,19 +5,11 @@
 import SwiftUI
 
 struct StreamView: View {
-    @StateObject private var viewModel = StreamViewModel()
-    @StateObject private var streamManager = StreamManager()
-    @StateObject private var speakerSettingsManager = SpeakerSettingsManager()
-    @StateObject private var speakerGridViewModel = SpeakerGridViewModel()
-    @StateObject private var presentationLayoutViewModel = PresentationLayoutViewModel()
-
-    
-    
-//    @EnvironmentObject var viewModel: StreamViewModel
-//    @EnvironmentObject var streamManager: StreamManager
-//    @EnvironmentObject var speakerSettingsManager: SpeakerSettingsManager
-//    @EnvironmentObject var speakerGridViewModel: SpeakerGridViewModel
-//    @EnvironmentObject var presentationLayoutViewModel: PresentationLayoutViewModel
+    @EnvironmentObject var viewModel: StreamViewModel
+    @EnvironmentObject var streamManager: StreamManager
+    @EnvironmentObject var speakerSettingsManager: SpeakerSettingsManager
+    @EnvironmentObject var speakerGridViewModel: SpeakerGridViewModel
+    @EnvironmentObject var presentationLayoutViewModel: PresentationLayoutViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -45,18 +37,6 @@ struct StreamView: View {
                             } else {
                                 SpeakerGridView(spacing: spacing)
                             }
-
-                            if !isPortraitOrientation && !speakerGridViewModel.offscreenSpeakers.isEmpty {
-                                OffscreenSpeakersView()
-                                    .frame(width: 100)
-                                    .padding([.leading, .bottom], spacing)
-                            }
-                        }
-                        
-                        if isPortraitOrientation && !speakerGridViewModel.offscreenSpeakers.isEmpty {
-                            OffscreenSpeakersView()
-                                .padding(.bottom, spacing)
-                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading.isZero ? spacing : geometry.safeAreaInsets.leading)
@@ -93,25 +73,9 @@ struct StreamView: View {
                 }
             }
         }
-        .environmentObject(viewModel)
-        .environmentObject(streamManager)
-        .environmentObject(speakerGridViewModel)
-        .environmentObject(presentationLayoutViewModel)
-        .environmentObject(speakerSettingsManager)
         .onAppear {
-            let localParticipant = LocalParticipantManager(identity: AuthStore.shared.userDisplayName)
-            let roomManager = RoomManager()
-            roomManager.configure(localParticipant: localParticipant)
-            streamManager.configure(roomManager: roomManager)
-            streamManager.config = config
-            viewModel.configure(streamManager: streamManager, speakerSettingsManager: speakerSettingsManager)
-            speakerSettingsManager.configure(roomManager: roomManager)
-            speakerGridViewModel.configure(roomManager: roomManager)
-            presentationLayoutViewModel.configure(roomManager: roomManager)
-            
-            
-            
             app.isIdleTimerDisabled = true
+            streamManager.config = config
             streamManager.connect()
         }
         .onDisappear {
@@ -133,58 +97,42 @@ struct StreamView: View {
     }
 }
 
-//struct StreamView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            Group {
-//                StreamView()
-//                    .previewDisplayName("Host")
-//                    .environmentObject(StreamManager(config: .stub(role: .host)))
-//                StreamView()
-//                    .previewDisplayName("Speaker")
-//                    .environmentObject(StreamManager(config: .stub(role: .speaker)))
-//            }
-//            .environmentObject(SpeakerGridViewModel.stub())
-//            .environmentObject(PresentationLayoutViewModel.stub())
-//
-//            StreamView()
-//                .previewDisplayName("Offscreen Speakers")
-//                .environmentObject(StreamManager(config: .stub(role: .speaker)))
-//                .environmentObject(SpeakerGridViewModel.stub(offscreenSpeakerCount: 10))
-//                .environmentObject(PresentationLayoutViewModel.stub())
-//
-//            StreamView()
-//                .previewDisplayName("Presentation")
-//                .environmentObject(StreamManager(config: .stub(role: .speaker)))
-//                .environmentObject(SpeakerGridViewModel.stub())
-//                .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
-//
-//            Group {
-//                StreamView()
-//                    .previewDisplayName("Viewer")
-//                    .environmentObject(StreamManager(config: .stub(role: .viewer)))
-//                StreamView()
-//                    .previewDisplayName("Joining")
-//                    .environmentObject(StreamManager(config: .stub(role: .viewer), state: .connecting))
-//            }
-//            .environmentObject(SpeakerGridViewModel())
-//            .environmentObject(PresentationLayoutViewModel.stub())
-//        }
-//        .environmentObject(SpeakerSettingsManager())
-//        .environmentObject(StreamViewModel())
-//    }
-//}
+struct StreamView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            StreamView(config: .stub())
+                .previewDisplayName("Grid layout")
+                .environmentObject(StreamManager())
+                .environmentObject(SpeakerGridViewModel.stub())
+                .environmentObject(PresentationLayoutViewModel.stub())
 
-//extension StreamManager {
-//    convenience init(config: StreamConfig = .stub(), state: StreamManager.State = .connected) {
-//        self.init()
-//        self.config = config
-//        self.state = state
-//    }
-//}
-//
-//extension StreamConfig {
-//    static func stub(streamName: String = "Demo", userIdentity: String = "Alice", role: Role = .host) -> Self {
-//        StreamConfig(streamName: streamName, userIdentity: userIdentity, role: role)
-//    }
-//}
+            StreamView(config: .stub())
+                .previewDisplayName("Presentation layout")
+                .environmentObject(StreamManager())
+                .environmentObject(SpeakerGridViewModel.stub())
+                .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
+
+            StreamView(config: .stub())
+                .previewDisplayName("Connecting")
+                .environmentObject(StreamManager(state: .connecting))
+                .environmentObject(SpeakerGridViewModel())
+                .environmentObject(PresentationLayoutViewModel.stub())
+        }
+        .environmentObject(SpeakerSettingsManager())
+        .environmentObject(StreamViewModel())
+    }
+}
+
+extension StreamManager {
+    convenience init(config: StreamConfig = .stub(), state: StreamManager.State = .connected) {
+        self.init()
+        self.config = config
+        self.state = state
+    }
+}
+
+extension StreamConfig {
+    static func stub(streamName: String = "Demo", userIdentity: String = "Alice") -> Self {
+        StreamConfig(streamName: streamName, userIdentity: userIdentity)
+    }
+}

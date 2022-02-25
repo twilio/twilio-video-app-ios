@@ -55,37 +55,37 @@ struct SpeakerGridView: View {
     }
 }
 
-//struct SpeakerGridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            ForEach((1...6), id: \.self) {
-//                SpeakerGridView(spacing: 6)
-//                    .environmentObject(SpeakerGridViewModel.stub(onscreenSpeakerCount: $0))
-//            }
-//            .frame(width: 400, height: 700)
-//
-//            ForEach((1...6), id: \.self) {
-//                SpeakerGridView(spacing: 6)
-//                    .environmentObject(SpeakerGridViewModel.stub(onscreenSpeakerCount: $0))
-//            }
-//            .frame(width: 700, height: 300)
-//        }
-//        .previewLayout(.sizeThatFits)
-//    }
-//}
-//
-//extension SpeakerGridViewModel {
-//    static func stub(onscreenSpeakerCount: Int = 6, offscreenSpeakerCount: Int = 0) -> SpeakerGridViewModel {
-//        let viewModel = SpeakerGridViewModel()
-//
-//        viewModel.onscreenSpeakers = Array(1...onscreenSpeakerCount)
-//            .map { SpeakerVideoViewModel(identity: "Speaker \($0)") }
-//        
-//        if offscreenSpeakerCount > 1 {
-//            viewModel.offscreenSpeakers = Array(1...offscreenSpeakerCount)
-//                .map { SpeakerVideoViewModel(identity: "Offscreen \($0)") }
-//        }
-//        
-//        return viewModel
-//    }
-//}
+struct SpeakerGridView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ForEach((1...6), id: \.self) {
+                SpeakerGridView(spacing: 6)
+                    .environmentObject(SpeakerGridViewModel.stub(onscreenSpeakerCount: $0))
+            }
+            .frame(width: 400, height: 700)
+
+            ForEach((1...6), id: \.self) {
+                SpeakerGridView(spacing: 6)
+                    .environmentObject(SpeakerGridViewModel.stub(onscreenSpeakerCount: $0))
+            }
+            .frame(width: 700, height: 300)
+        }
+        .previewLayout(.sizeThatFits)
+    }
+}
+
+extension SpeakerGridViewModel {
+    static func stub(onscreenSpeakerCount: Int = 6, offscreenSpeakerCount: Int = 0) -> SpeakerGridViewModel {
+        let viewModel = SpeakerGridViewModel()
+
+        viewModel.onscreenSpeakers = Array(1...onscreenSpeakerCount)
+            .map { SpeakerVideoViewModel(identity: "Speaker \($0)") }
+        
+        if offscreenSpeakerCount > 1 {
+            viewModel.offscreenSpeakers = Array(1...offscreenSpeakerCount)
+                .map { SpeakerVideoViewModel(identity: "Offscreen \($0)") }
+        }
+        
+        return viewModel
+    }
+}

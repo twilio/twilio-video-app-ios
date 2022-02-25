@@ -314,8 +314,6 @@
 		DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */; };
 		DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */; };
 		DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */; };
-		DCE1A9F527C7E556004680CA /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EA27C7E556004680CA /* TitleStyle.swift */; };
-		DCE1A9F627C7E556004680CA /* TitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EA27C7E556004680CA /* TitleStyle.swift */; };
 		DCE1A9F727C7E556004680CA /* FormStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EB27C7E556004680CA /* FormStack.swift */; };
 		DCE1A9F827C7E556004680CA /* FormStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EB27C7E556004680CA /* FormStack.swift */; };
 		DCE1A9F927C7E556004680CA /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */; };
@@ -326,8 +324,6 @@
 		DCE1A9FE27C7E556004680CA /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */; };
 		DCE1A9FF27C7E556004680CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EF27C7E556004680CA /* Color.swift */; };
 		DCE1AA0027C7E556004680CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EF27C7E556004680CA /* Color.swift */; };
-		DCE1AA0127C7E556004680CA /* TipStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9F027C7E556004680CA /* TipStyle.swift */; };
-		DCE1AA0227C7E556004680CA /* TipStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9F027C7E556004680CA /* TipStyle.swift */; };
 		DCE1AA1727C7E58A004680CA /* StreamToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */; };
 		DCE1AA1827C7E58A004680CA /* StreamToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */; };
 		DCE1AA1927C7E58A004680CA /* SpeakerGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */; };
@@ -346,8 +342,6 @@
 		DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2927C7E58A004680CA /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* StreamView.swift */; };
 		DCE1AA2A27C7E58A004680CA /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* StreamView.swift */; };
-		DCE1AA2D27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */; };
-		DCE1AA2E27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */; };
 		DCE1AA2F27C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
 		DCE1AA3027C7E58A004680CA /* SpeakerGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */; };
 		DCE1AA3127C7E58A004680CA /* SpeakerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */; };
@@ -679,13 +673,11 @@
 		DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOptionsFactory.swift; sourceTree = "<group>"; };
 		DCDCD37524193042004A30FC /* TwilioAccessTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioAccessTokenStore.swift; sourceTree = "<group>"; };
 		DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
-		DCE1A9EA27C7E556004680CA /* TitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleStyle.swift; sourceTree = "<group>"; };
 		DCE1A9EB27C7E556004680CA /* FormStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStack.swift; sourceTree = "<group>"; };
 		DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldStyle.swift; sourceTree = "<group>"; };
 		DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		DCE1A9EF27C7E556004680CA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		DCE1A9F027C7E556004680CA /* TipStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipStyle.swift; sourceTree = "<group>"; };
 		DCE1AA0427C7E58A004680CA /* StreamToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamToolbarButton.swift; sourceTree = "<group>"; };
 		DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridView.swift; sourceTree = "<group>"; };
 		DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
@@ -695,7 +687,6 @@
 		DCE1AA0B27C7E58A004680CA /* PresentationLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationStatusView.swift; sourceTree = "<group>"; };
 		DCE1AA0E27C7E58A004680CA /* StreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
-		DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffscreenSpeakersView.swift; sourceTree = "<group>"; };
 		DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerGridViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerVideoView.swift; sourceTree = "<group>"; };
 		DCE1AA1327C7E58A004680CA /* StreamStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamStatusView.swift; sourceTree = "<group>"; };
@@ -1497,13 +1488,11 @@
 			isa = PBXGroup;
 			children = (
 				DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */,
-				DCE1A9EA27C7E556004680CA /* TitleStyle.swift */,
 				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
 				DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */,
 				DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */,
 				DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */,
 				DCE1A9EF27C7E556004680CA /* Color.swift */,
-				DCE1A9F027C7E556004680CA /* TipStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -1512,7 +1501,6 @@
 			isa = PBXGroup;
 			children = (
 				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
-				DCE1AA1027C7E58A004680CA /* OffscreenSpeakersView.swift */,
 				DCE1AA0527C7E58A004680CA /* SpeakerGridView.swift */,
 				DCE1AA1127C7E58A004680CA /* SpeakerGridViewModel.swift */,
 				DCE1AA1227C7E58A004680CA /* SpeakerVideoView.swift */,
@@ -2435,7 +2423,6 @@
 				DCE1AA3127C7E58A004680CA /* SpeakerVideoView.swift in Sources */,
 				DC44C2C323870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D42367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
-				DCE1AA0127C7E556004680CA /* TipStyle.swift in Sources */,
 				DC1C2F8F23AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
 				DCE1AA3327C7E58A004680CA /* StreamStatusView.swift in Sources */,
 				DC8EAE4923BA9F390045018F /* WindowSceneObserving.swift in Sources */,
@@ -2491,7 +2478,6 @@
 				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
-				DCE1A9F527C7E556004680CA /* TitleStyle.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCE1AA1927C7E58A004680CA /* SpeakerGridView.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
@@ -2530,7 +2516,6 @@
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
-				DCE1AA2D27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044685238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E482463345F00E4B079 /* LobbyViewController.swift in Sources */,
@@ -2628,7 +2613,6 @@
 				DCE1AA3227C7E58A004680CA /* SpeakerVideoView.swift in Sources */,
 				DC44C2C423870D0800205174 /* BasicCell.swift in Sources */,
 				DC8AA8D52367A399006C06D5 /* TestSceneDelegate.swift in Sources */,
-				DCE1AA0227C7E556004680CA /* TipStyle.swift in Sources */,
 				DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */,
 				DCE1AA3427C7E58A004680CA /* StreamStatusView.swift in Sources */,
 				DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */,
@@ -2684,7 +2668,6 @@
 				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
-				DCE1A9F627C7E556004680CA /* TitleStyle.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCE1AA1A27C7E58A004680CA /* SpeakerGridView.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
@@ -2723,7 +2706,6 @@
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
-				DCE1AA2E27C7E58A004680CA /* OffscreenSpeakersView.swift in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
 				DC044686238EF6C20072F597 /* Environment.swift in Sources */,
 				DC9A5E492463345F00E4B079 /* LobbyViewController.swift in Sources */,

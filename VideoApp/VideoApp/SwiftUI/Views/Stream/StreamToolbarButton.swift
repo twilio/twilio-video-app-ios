@@ -82,19 +82,19 @@ struct StreamToolbarButton: View {
     }
 }
 
-//struct StreamToolbarButton_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            StreamToolbarButton(image: Image(systemName: "mic.slash"))
-//                .previewDisplayName("Default")
-//            StreamToolbarButton(image: Image(systemName: "hand.raised"), role: .highlight)
-//                .previewDisplayName("Highlight")
-//            StreamToolbarButton(image: Image(systemName: "person.2"), shouldShowBadge: true)
-//                .previewDisplayName("Badge")
-//            StreamToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
-//                .previewDisplayName("Destructive")
-//        }
-//        .previewLayout(.sizeThatFits)
-//        .background(Color.background)
-//    }
-//}
+struct StreamToolbarButton_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            StreamToolbarButton(image: Image(systemName: "mic.slash"))
+                .previewDisplayName("Default")
+            StreamToolbarButton(image: Image(systemName: "hand.raised"), role: .highlight)
+                .previewDisplayName("Highlight")
+            StreamToolbarButton(image: Image(systemName: "person.2"), shouldShowBadge: true)
+                .previewDisplayName("Badge")
+            StreamToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
+                .previewDisplayName("Destructive")
+        }
+        .previewLayout(.sizeThatFits)
+        .background(Color.background)
+    }
+}

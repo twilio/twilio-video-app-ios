@@ -21,6 +21,12 @@ struct HomeScreenView: View {
     @State private var showSettings = false
     @State private var showRoom = false
 
+    @StateObject private var streamViewModel = StreamViewModel()
+    @StateObject private var streamManager = StreamManager()
+    @StateObject private var speakerSettingsManager = SpeakerSettingsManager()
+    @StateObject private var speakerGridViewModel = SpeakerGridViewModel()
+    @StateObject private var presentationLayoutViewModel = PresentationLayoutViewModel()
+
     var body: some View {
         NavigationView {
             FormStack {
@@ -47,7 +53,24 @@ struct HomeScreenView: View {
                 SettingsView()
             }
             .fullScreenCover(isPresented: $showRoom) {
-                StreamView(config: StreamConfig(streamName: roomName, userIdentity: AuthStore.shared.userDisplayName))
+                Group {
+                    StreamView(config: StreamConfig(streamName: roomName, userIdentity: AuthStore.shared.userDisplayName))
+                }
+                .environmentObject(streamViewModel)
+                .environmentObject(streamManager)
+                .environmentObject(speakerGridViewModel)
+                .environmentObject(presentationLayoutViewModel)
+                .environmentObject(speakerSettingsManager)
+                .onAppear {
+                    let localParticipant = LocalParticipantManager(identity: AuthStore.shared.userDisplayName)
+                    let roomManager = RoomManager()
+                    roomManager.configure(localParticipant: localParticipant)
+                    streamManager.configure(roomManager: roomManager)
+                    streamViewModel.configure(streamManager: streamManager, speakerSettingsManager: speakerSettingsManager)
+                    speakerSettingsManager.configure(roomManager: roomManager)
+                    speakerGridViewModel.configure(roomManager: roomManager)
+                    presentationLayoutViewModel.configure(roomManager: roomManager)
+                }
             }
         }
     }

@@ -21,14 +21,14 @@ struct PresentationStatusView: View {
     }
 }
 
-//struct PresentationStatusView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            PresentationStatusView(presenterDisplayName: "Alice")
-//                .previewDisplayName("Short name")
-//            PresentationStatusView(presenterDisplayName: "Someone with a long name that doesn't fit on one line")
-//                .previewDisplayName("Long name")
-//        }
-//        .previewLayout(.sizeThatFits)
-//    }
-//}
+struct PresentationStatusView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            PresentationStatusView(presenterDisplayName: "Alice")
+                .previewDisplayName("Short name")
+            PresentationStatusView(presenterDisplayName: "Someone with a long name that doesn't fit on one line")
+                .previewDisplayName("Long name")
+        }
+        .previewLayout(.sizeThatFits)
+    }
+}
