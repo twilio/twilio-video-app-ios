@@ -10,29 +10,27 @@ struct StreamStatusView: View {
     
     var body: some View {
         HStack {
-            Spacer(minLength: 20)
             Text(streamName)
                 .foregroundColor(.white)
                 .font(.system(size: 16))
                 .lineLimit(1)
+            Spacer(minLength: 20)
         }
         .background(Color.backgroundBrandStronger)
     }
 }
 
-//struct StreamStatusView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            StreamStatusView(streamName: "Room name", streamState: .constant(.connecting))
-//                .previewDisplayName("Loading")
-//            StreamStatusView(streamName: "Short room name", streamState: .constant(.connected))
-//                .previewDisplayName("Short Room Name")
-//            StreamStatusView(
-//                streamName: "A very long room name that doesn't fit completely",
-//                streamState: .constant(.connected)
-//            )
-//                .previewDisplayName("Long Room Name")
-//        }
-//        .previewLayout(.sizeThatFits)
-//    }
-//}
+struct StreamStatusView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            StreamStatusView(streamName: "Short room name", streamState: .constant(.connected))
+                .previewDisplayName("Short Room Name")
+            StreamStatusView(
+                streamName: "A very long room name that does not fit and is truncated",
+                streamState: .constant(.connected)
+            )
+                .previewDisplayName("Long Room Name")
+        }
+        .previewLayout(.sizeThatFits)
+    }
+}

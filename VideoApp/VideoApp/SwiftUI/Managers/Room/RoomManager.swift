@@ -30,19 +30,14 @@ class RoomManager: NSObject {
     }
     
     func connect(roomName: String, accessToken: String) {
-        let options = ConnectOptions(token: accessToken) { builder in
-            builder.roomName = roomName
-            builder.audioTracks = [self.localParticipant.micTrack].compactMap { $0 }
-            builder.videoTracks = [self.localParticipant.cameraTrack].compactMap { $0 }
-            builder.isDominantSpeakerEnabled = true
-            builder.bandwidthProfileOptions = BandwidthProfileOptions(
-                videoOptions: VideoBandwidthProfileOptions { builder in
-                    builder.mode = .grid
-                    builder.dominantSpeakerPriority = .high
-                }
-            )
-            builder.preferredVideoCodecs = [Vp8Codec(simulcast: true)]
-        }
+        let connectOptionsFactory = ConnectOptionsFactory()
+        
+        let options = connectOptionsFactory.makeConnectOptions(
+            accessToken: accessToken,
+            roomName: roomName,
+            audioTracks: [localParticipant.micTrack].compactMap { $0 },
+            videoTracks: [localParticipant.cameraTrack].compactMap { $0 }
+        )
 
         room = TwilioVideoSDK.connect(options: options, delegate: self)
     }
