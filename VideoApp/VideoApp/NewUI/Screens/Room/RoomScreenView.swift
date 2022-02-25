@@ -6,14 +6,13 @@ import SwiftUI
 
 struct RoomScreenView: View {
     @EnvironmentObject var viewModel: RoomScreenViewModel
-    @EnvironmentObject var streamManager: StreamManager
     @EnvironmentObject var speakerSettingsManager: SpeakerSettingsManager
     @EnvironmentObject var speakerGridViewModel: SpeakerGridViewModel
     @EnvironmentObject var presentationLayoutViewModel: PresentationLayoutViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    let config: StreamConfig
+    let roomName: String
     private let app = UIApplication.shared
     private let spacing: CGFloat = 6
     
@@ -28,7 +27,7 @@ struct RoomScreenView: View {
 
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        RoomStatusView(streamName: config.streamName, streamState: $streamManager.state)
+                        RoomStatusView(streamName: roomName)
                             .padding(.bottom, spacing)
 
                         HStack(spacing: 0) {
@@ -68,15 +67,15 @@ struct RoomScreenView: View {
                 }
                 .edgesIgnoringSafeArea([.horizontal, .bottom]) // So toolbar sides and bottom extend beyond safe area
 
-                if streamManager.state == .connecting {
+                if viewModel.state == .connecting {
                     ProgressHUD(title: "Connecting...")
                 }
             }
         }
         .onAppear {
             app.isIdleTimerDisabled = true
-            streamManager.config = config
-            streamManager.connect()
+            viewModel.roomName = roomName
+            viewModel.connect()
         }
         .onDisappear {
             app.isIdleTimerDisabled = false
@@ -92,7 +91,7 @@ struct RoomScreenView: View {
     }
     
     private func leaveStream() {
-        streamManager.disconnect()
+        viewModel.disconnect()
         presentationMode.wrappedValue.dismiss()
     }
 }
@@ -100,39 +99,31 @@ struct RoomScreenView: View {
 struct RoomScreenView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomScreenView(config: .stub())
+            RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Grid layout")
-                .environmentObject(StreamManager())
+                .environmentObject(RoomScreenViewModel())
                 .environmentObject(SpeakerGridViewModel.stub())
                 .environmentObject(PresentationLayoutViewModel.stub())
 
-            RoomScreenView(config: .stub())
+            RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Presentation layout")
-                .environmentObject(StreamManager())
+                .environmentObject(RoomScreenViewModel())
                 .environmentObject(SpeakerGridViewModel.stub())
                 .environmentObject(PresentationLayoutViewModel.stub(isPresenting: true))
 
-            RoomScreenView(config: .stub())
+            RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Connecting")
-                .environmentObject(StreamManager(state: .connecting))
+                .environmentObject(RoomScreenViewModel(state: .connecting))
                 .environmentObject(SpeakerGridViewModel())
                 .environmentObject(PresentationLayoutViewModel.stub())
         }
         .environmentObject(SpeakerSettingsManager())
-        .environmentObject(RoomScreenViewModel())
     }
 }
 
-extension StreamManager {
-    convenience init(config: StreamConfig = .stub(), state: StreamManager.State = .connected) {
+extension RoomScreenViewModel {
+    convenience init(state: RoomScreenViewModel.State = .connected) {
         self.init()
-        self.config = config
         self.state = state
-    }
-}
-
-extension StreamConfig {
-    static func stub(streamName: String = "Demo", userIdentity: String = "Alice") -> Self {
-        StreamConfig(streamName: streamName, userIdentity: userIdentity)
     }
 }

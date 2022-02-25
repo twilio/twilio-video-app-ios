@@ -22,7 +22,6 @@ struct HomeScreenView: View {
     @State private var showRoom = false
 
     @StateObject private var roomScreenViewModel = RoomScreenViewModel()
-    @StateObject private var streamManager = StreamManager()
     @StateObject private var speakerSettingsManager = SpeakerSettingsManager()
     @StateObject private var speakerGridViewModel = SpeakerGridViewModel()
     @StateObject private var presentationLayoutViewModel = PresentationLayoutViewModel()
@@ -54,10 +53,9 @@ struct HomeScreenView: View {
             }
             .fullScreenCover(isPresented: $showRoom) {
                 Group {
-                    RoomScreenView(config: StreamConfig(streamName: roomName, userIdentity: AuthStore.shared.userDisplayName))
+                    RoomScreenView(roomName: roomName)
                 }
                 .environmentObject(roomScreenViewModel)
-                .environmentObject(streamManager)
                 .environmentObject(speakerGridViewModel)
                 .environmentObject(presentationLayoutViewModel)
                 .environmentObject(speakerSettingsManager)
@@ -65,8 +63,7 @@ struct HomeScreenView: View {
                     let localParticipant = LocalParticipantManager(identity: AuthStore.shared.userDisplayName)
                     let roomManager = RoomManager()
                     roomManager.configure(localParticipant: localParticipant)
-                    streamManager.configure(roomManager: roomManager)
-                    roomScreenViewModel.configure(streamManager: streamManager, speakerSettingsManager: speakerSettingsManager)
+                    roomScreenViewModel.configure(roomManager: roomManager, speakerSettingsManager: speakerSettingsManager)
                     speakerSettingsManager.configure(roomManager: roomManager)
                     speakerGridViewModel.configure(roomManager: roomManager)
                     presentationLayoutViewModel.configure(roomManager: roomManager)

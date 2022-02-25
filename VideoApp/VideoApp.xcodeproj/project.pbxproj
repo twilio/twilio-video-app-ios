@@ -358,10 +358,6 @@
 		DCE1AA4727C7E5E0004680CA /* LocalParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */; };
 		DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
 		DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
-		DCE1AA5027C7F95B004680CA /* StreamConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */; };
-		DCE1AA5127C7F95B004680CA /* StreamConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */; };
-		DCE1AA5227C7F95B004680CA /* StreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4E27C7F95B004680CA /* StreamManager.swift */; };
-		DCE1AA5327C7F95B004680CA /* StreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4E27C7F95B004680CA /* StreamManager.swift */; };
 		DCE1AA5427C7F95B004680CA /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */; };
 		DCE1AA5527C7F95B004680CA /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */; };
 		DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
@@ -695,8 +691,6 @@
 		DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA4027C7E5E0004680CA /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
-		DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamConfig.swift; sourceTree = "<group>"; };
-		DCE1AA4E27C7F95B004680CA /* StreamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamManager.swift; sourceTree = "<group>"; };
 		DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScreenViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerSettingsManager.swift; sourceTree = "<group>"; };
 		DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -1057,8 +1051,6 @@
 			children = (
 				DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */,
 				DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */,
-				DCE1AA4D27C7F95B004680CA /* StreamConfig.swift */,
-				DCE1AA4E27C7F95B004680CA /* StreamManager.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1588,8 +1580,9 @@
 		DCE1AA3C27C7E5E0004680CA /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */,
+				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
 				DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */,
+				DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */,
 				DCE1AA4027C7E5E0004680CA /* RoomManager.swift */,
 			);
 			path = Room;
@@ -1652,7 +1645,6 @@
 				DC9A5DC4245A0B5F00E4B079 /* Room.swift */,
 				DCEDB3232464D7EE006AF70D /* RoomFactory.swift */,
 				DCEDB31F2464CF90006AF70D /* RoomState.swift */,
-				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -2477,8 +2469,6 @@
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E06245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
 				DC82A35D23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
-				DCE1AA5227C7F95B004680CA /* StreamManager.swift in Sources */,
-				DCE1AA5027C7F95B004680CA /* StreamConfig.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC9A5E0A245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
@@ -2667,8 +2657,6 @@
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
 				DC9A5E07245DDC1000E4B079 /* RoomViewModelData.swift in Sources */,
 				DC82A35E23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
-				DCE1AA5327C7F95B004680CA /* StreamManager.swift in Sources */,
-				DCE1AA5127C7F95B004680CA /* StreamConfig.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC9A5E0B245DFFC100E4B079 /* ParticipantsStore.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,

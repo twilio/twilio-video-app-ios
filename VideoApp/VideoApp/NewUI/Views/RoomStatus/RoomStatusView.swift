@@ -6,7 +6,6 @@ import SwiftUI
 
 struct RoomStatusView: View {
     let streamName: String
-    @Binding var streamState: StreamManager.State
     
     var body: some View {
         HStack {
@@ -23,12 +22,9 @@ struct RoomStatusView: View {
 struct RoomStatusView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomStatusView(streamName: "Short room name", streamState: .constant(.connected))
+            RoomStatusView(streamName: "Short room name")
                 .previewDisplayName("Short Room Name")
-            RoomStatusView(
-                streamName: "A very long room name that does not fit and is truncated",
-                streamState: .constant(.connected)
-            )
+            RoomStatusView(streamName: "A very long room name that does not fit and is truncated")
                 .previewDisplayName("Long Room Name")
         }
         .frame(width: 400)

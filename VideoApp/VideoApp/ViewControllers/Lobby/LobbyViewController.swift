@@ -131,9 +131,9 @@ class LobbyViewController: UIViewController {
         dismissKeyboard()
 //        performSegue(withIdentifier: "roomSegue", sender: self)
         
-        let config = StreamConfig(streamName: roomName, userIdentity: AuthStore.shared.userDisplayName)
-        let controller = UIHostingController(rootView: RoomScreenView(config: config))
-        present(controller, animated: true)
+//        let config = StreamConfig(streamName: roomName, userIdentity: AuthStore.shared.userDisplayName)
+//        let controller = UIHostingController(rootView: RoomScreenView(config: config))
+//        present(controller, animated: true)
     }
     
     private func resetRoom() {
