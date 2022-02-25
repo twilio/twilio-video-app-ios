@@ -16,11 +16,7 @@
 
 import Foundation
 
-protocol TwilioAccessTokenStoreReading: AnyObject {
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void)
-}
-
-class TwilioAccessTokenStore: TwilioAccessTokenStoreReading {
+class TwilioAccessTokenStore {
     private let api: APIRequesting
     private let appSettingsStore: AppSettingsStoreWriting
     private let authStore: AuthStoreWriting
@@ -38,25 +34,27 @@ class TwilioAccessTokenStore: TwilioAccessTokenStoreReading {
         self.remoteConfigStore = remoteConfigStore
     }
     
-    func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
-        authStore.refreshIDToken { [weak self] in
-            guard let self = self else { return }
-
-            let request = CreateTwilioAccessTokenRequest(
-                passcode: self.authStore.passcode ?? "",
-                userIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.authStore.userDisplayName,
-                createRoom: true,
-                roomName: roomName
-            )
-            
-            self.api.request(request) { [weak self] result in
+    func fetchTwilioAccessToken(roomName: String) async throws -> String {
+        try await withCheckedThrowingContinuation { continuation in
+            authStore.refreshIDToken { [weak self] in
                 guard let self = self else { return }
+
+                let request = CreateTwilioAccessTokenRequest(
+                    passcode: self.authStore.passcode ?? "",
+                    userIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.authStore.userDisplayName,
+                    createRoom: true,
+                    roomName: roomName
+                )
                 
-                if let roomType = try? result.get().roomType {
-                    self.remoteConfigStore.roomType = roomType
+                self.api.request(request) { [weak self] result in
+                    guard let self = self else { return }
+                    
+                    if let roomType = try? result.get().roomType {
+                        self.remoteConfigStore.roomType = roomType
+                    }
+                    
+                    continuation.resume(with: result.map { $0.token })
                 }
-                
-                completion(result.map { $0.token })
             }
         }
     }

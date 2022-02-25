@@ -69,7 +69,15 @@ class RoomScreenViewModel: ObservableObject {
         state = .connecting
         speakerSettingsManager.isMicOn = true
         speakerSettingsManager.isCameraOn = true
-        fetchAccessToken()
+
+        Task {
+            do {
+                let accessToken = try await accessTokenStore.fetchTwilioAccessToken(roomName: roomName)
+                roomManager.connect(roomName: roomName, accessToken: accessToken)
+            } catch {
+                handleError(error)
+            }
+        }
     }
     
     func disconnect() {
@@ -77,21 +85,5 @@ class RoomScreenViewModel: ObservableObject {
         state = .disconnected
         speakerSettingsManager.isMicOn = false
         speakerSettingsManager.isCameraOn = false
-    }
- 
-    // TODO: async/await
-    private func fetchAccessToken() {
-        accessTokenStore.fetchTwilioAccessToken(roomName: roomName) { [weak self] result in
-            switch result {
-            case let .success(accessToken):
-                self?.connectRoom(accessToken: accessToken)
-            case let .failure(error):
-                self?.handleError(error)
-            }
-        }
-    }
-    
-    private func connectRoom(accessToken: String) {
-        roomManager.connect(roomName: roomName, accessToken: accessToken)
     }
 }
