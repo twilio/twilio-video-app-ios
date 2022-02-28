@@ -28,7 +28,9 @@ class LocalParticipantManager: NSObject {
                 self.micTrack = micTrack
                 participant?.publishAudioTrack(micTrack)
             } else {
-                guard let micTrack = micTrack else { return }
+                guard let micTrack = micTrack else {
+                    return
+                }
                 
                 participant?.unpublishAudioTrack(micTrack)
                 self.micTrack = nil
@@ -37,44 +39,32 @@ class LocalParticipantManager: NSObject {
             changePublisher.send(self)
         }
     }
-    var isCameraOn = false {
-        didSet {
-            guard oldValue != isCameraOn else { return }
-            
-            if isCameraOn {
-                let sourceOptions = CameraSourceOptions { builder in
-                    guard let scene = self.app.windows.filter({ $0.isKeyWindow }).first?.windowScene else { return }
-                    
-                    builder.orientationTracker = UserInterfaceTracker(scene: scene)
-                }
-                
+    var isCameraOn: Bool {
+        get {
+            cameraManager?.track.isEnabled ?? false
+        }
+        set {
+            if newValue {
                 guard
-                    let cameraSource = CameraSource(options: sourceOptions, delegate: self),
-                    let captureDevice = CameraSource.captureDevice(position: .front),
-                    let cameraTrack = LocalVideoTrack(source: cameraSource, enabled: true, name: TrackName.camera)
+                    cameraManager == nil,
+                    let cameraManager = CameraManager(position: .front)
                 else {
                     return
                 }
                 
-                cameraSource.startCapture(device: captureDevice) { _, _, error in
-                    if let error = error {
-                        print("Start capture error: \(error)")
-                    }
-                }
-
-                participant?.publishVideoTrack(cameraTrack)
-                self.cameraSource = cameraSource
-                self.cameraTrack = cameraTrack
+                self.cameraManager = cameraManager
+                cameraManager.delegate = self
+                let publicationOptions = LocalTrackPublicationOptions(priority: .low)
+                participant?.publishVideoTrack(cameraManager.track, publicationOptions: publicationOptions)
             } else {
-                if let cameraTrack = cameraTrack {
-                    participant?.unpublishVideoTrack(cameraTrack)
+                guard let cameraManager = cameraManager else {
+                    return
                 }
                 
-                cameraSource?.stopCapture()
-                cameraSource = nil
-                cameraTrack = nil
+                participant?.unpublishVideoTrack(cameraManager.track)
+                self.cameraManager = nil
             }
-
+            
             changePublisher.send(self)
         }
     }
@@ -83,10 +73,9 @@ class LocalParticipantManager: NSObject {
             participant?.delegate = self
         }
     }
+    var cameraTrack: LocalVideoTrack? { cameraManager?.track }
     private(set) var micTrack: LocalAudioTrack?
-    private(set) var cameraTrack: LocalVideoTrack?
-    private let app = UIApplication.shared
-    private var cameraSource: CameraSource?
+    private var cameraManager: CameraManager?
     
     init(identity: String) {
         self.identity = identity
@@ -111,14 +100,14 @@ extension LocalParticipantManager: LocalParticipantDelegate {
     }
 }
 
-extension LocalParticipantManager: CameraSourceDelegate {
-    func cameraSourceWasInterrupted(source: CameraSource, reason: AVCaptureSession.InterruptionReason) {
-        cameraTrack?.isEnabled = false
+extension LocalParticipantManager: CameraManagerDelegate {
+    func trackSourceWasInterrupted(track: LocalVideoTrack) {
+        track.isEnabled = false
         changePublisher.send(self)
     }
 
-    func cameraSourceInterruptionEnded(source: CameraSource) {
-        cameraTrack?.isEnabled = true
+    func trackSourceInterruptionEnded(track: LocalVideoTrack) {
+        track.isEnabled = true
         changePublisher.send(self)
     }
 }
