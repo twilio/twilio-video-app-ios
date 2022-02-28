@@ -11,7 +11,7 @@ protocol RemoteParticipantManagerDelegate: AnyObject {
 /// Determines remote participant state and sends updates to delegate.
 ///
 /// Also stores dominant speaker state received by the room so that participants contain all participant state
-/// which is what the UI needs. See `isDominantSpeaker` and `dominantSpeakerStartTime`.
+/// which is better for the UI. See `isDominantSpeaker` and `dominantSpeakerStartTime`.
 class RemoteParticipantManager: NSObject {
     var identity: String { participant.identity }
     var isMicOn: Bool {

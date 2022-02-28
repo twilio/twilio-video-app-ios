@@ -5,7 +5,7 @@
 import Combine
 import TwilioVideo
 
-/// Configures the video room connection and uses publishers to notify subscribers of state changes.
+/// Manages the video room connection and uses publishers to notify subscribers of state changes.
 class RoomManager: NSObject {
     // MARK: Publishers
     let roomConnectPublisher = PassthroughSubject<Void, Never>()
@@ -15,12 +15,10 @@ class RoomManager: NSObject {
 
     /// Send remote participant updates from `RoomManager` instead of `RemoteParticipantManager` so that
     /// one publisher can provide updates for all remote participants. Otherwise subscribers would need to make
-    /// subscription changes whenever a remote participant connects or disconnects.
+    /// subscription changes whenever a remote participant connects and disconnects.
     let remoteParticipantChangePublisher = PassthroughSubject<RemoteParticipantManager, Never>()
     // MARK: -
 
-    var roomSID: String? { room?.sid }
-    var roomName: String? { room?.name }
     private(set) var localParticipant: LocalParticipantManager!
     private(set) var remoteParticipants: [RemoteParticipantManager] = []
     private var room: Room?
@@ -30,9 +28,7 @@ class RoomManager: NSObject {
     }
     
     func connect(roomName: String, accessToken: String) {
-        let connectOptionsFactory = ConnectOptionsFactory()
-        
-        let options = connectOptionsFactory.makeConnectOptions(
+        let options = ConnectOptionsFactory().makeConnectOptions(
             accessToken: accessToken,
             roomName: roomName,
             audioTracks: [localParticipant.micTrack].compactMap { $0 },
@@ -85,7 +81,9 @@ extension RoomManager: RoomDelegate {
     }
     
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
-        guard let index = remoteParticipants.firstIndex(where: { $0.identity == participant.identity }) else { return }
+        guard let index = remoteParticipants.firstIndex(where: { $0.identity == participant.identity }) else {
+            return
+        }
 
         remoteParticipantDisconnectPublisher.send(remoteParticipants.remove(at: index))
     }
