@@ -17,5 +17,3 @@ struct PrimaryButtonStyle: ButtonStyle {
             .font(.body.bold())
      }
 }
-
-// Todo: Add preview

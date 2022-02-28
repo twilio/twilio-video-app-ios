@@ -19,7 +19,7 @@ struct FocusLayoutView: View {
             HStack(spacing: spacing) {
                 VStack(spacing: spacing) {
                     PresentationStatusView(presenterDisplayName: viewModel.presenter.displayName)
-                    ParticipantView(speaker: $viewModel.dominantSpeaker)
+                    ParticipantView(viewModel: $viewModel.dominantSpeaker)
 
                     if isPortraitOrientation {
                         PresentationView(videoTrack: $viewModel.presenter.presentationTrack)
@@ -60,7 +60,7 @@ extension FocusLayoutViewModel {
     ) -> FocusLayoutViewModel {
         let viewModel = FocusLayoutViewModel()
         viewModel.isPresenting = isPresenting
-        viewModel.dominantSpeaker = ParticipantViewModel(identity: dominantSpeakerDisplayName)
+        viewModel.dominantSpeaker = ParticipantViewModel.stub(identity: dominantSpeakerDisplayName)
         viewModel.presenter = Presenter(displayName: presenterDisplayName)
         return viewModel
     }

@@ -26,7 +26,6 @@ class TestAppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    @available(iOS 13, *)
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,

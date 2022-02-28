@@ -26,5 +26,3 @@ extension Color {
     static var shadowLow: Color { Color("ShadowLow") }
     static var textWeak: Color { Color("TextWeak") }
 }
-
-// TODO: Maybe add preview

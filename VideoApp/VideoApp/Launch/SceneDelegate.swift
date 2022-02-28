@@ -16,7 +16,6 @@
 
 import UIKit
 
-@available(iOS 13, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var launchFlow: LaunchFlow?
     var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()

@@ -30,5 +30,6 @@ struct ProgressHUD: View {
 struct ProgressHUD_Previews: PreviewProvider {
     static var previews: some View {
         ProgressHUD(title: "Title")
+        ProgressHUD()
     }
 }

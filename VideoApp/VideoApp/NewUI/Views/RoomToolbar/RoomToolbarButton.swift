@@ -33,18 +33,16 @@ struct RoomToolbarButton: View {
         Button(action: {
             action()
         }) {
-            VStack(spacing: 4) {
-                ZStack {
-                    role.imageBackgroundColor
-                        .clipShape(Circle())
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(10)
-                        .foregroundColor(role.imageForegroundColor)
-                }
-                .frame(width: 44, height: 44)
+            ZStack {
+                role.imageBackgroundColor
+                    .clipShape(Circle())
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(10)
+                    .foregroundColor(role.imageForegroundColor)
             }
+            .frame(width: 44, height: 44)
             .padding(.top, 14)
             .frame(width: 60)
             .foregroundColor(.backgroundStrongest)

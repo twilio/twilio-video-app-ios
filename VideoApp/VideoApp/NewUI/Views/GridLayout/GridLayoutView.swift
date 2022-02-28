@@ -45,7 +45,7 @@ struct GridLayoutView: View {
                 GeometryReader { geometry in
                     LazyVGrid(columns: columns, spacing: spacing) {
                         ForEach($viewModel.onscreenSpeakers, id: \.self) { $speaker in
-                            ParticipantView(speaker: $speaker)
+                            ParticipantView(viewModel: $speaker)
                                 .frame(height: geometry.size.height / CGFloat(rowCount) - spacing)
                         }
                     }
@@ -79,11 +79,11 @@ extension GridLayoutViewModel {
         let viewModel = GridLayoutViewModel()
 
         viewModel.onscreenSpeakers = Array(1...onscreenSpeakerCount)
-            .map { ParticipantViewModel(identity: "Speaker \($0)") }
+            .map { ParticipantViewModel.stub(identity: "Speaker \($0)") }
         
         if offscreenSpeakerCount > 1 {
             viewModel.offscreenSpeakers = Array(1...offscreenSpeakerCount)
-                .map { ParticipantViewModel(identity: "Offscreen \($0)") }
+                .map { ParticipantViewModel.stub(identity: "Offscreen \($0)") }
         }
         
         return viewModel

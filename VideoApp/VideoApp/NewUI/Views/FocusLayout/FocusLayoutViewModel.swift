@@ -63,7 +63,7 @@ class FocusLayoutViewModel: ObservableObject {
         
         return Presenter(
             identity: presenter.identity,
-            displayName: DisplayNameFactory().makeDisplayName(identity: presenter.identity),
+            displayName: presenter.identity,
             presentationTrack: presenter.presentationTrack!
         )
     }

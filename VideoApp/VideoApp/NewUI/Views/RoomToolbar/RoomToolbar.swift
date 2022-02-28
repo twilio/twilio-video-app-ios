@@ -25,7 +25,7 @@ struct RoomToolbar_Previews: PreviewProvider {
     static var previews: some View {
         RoomToolbar {
             RoomToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
-            RoomToolbarButton(image: Image(systemName: "mic.slash.fill"))
+            RoomToolbarButton(image: Image(systemName: "mic.fill"))
         }
         .previewLayout(.sizeThatFits)
     }

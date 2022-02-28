@@ -23,9 +23,9 @@ struct RoomStatusView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             RoomStatusView(streamName: "Short room name")
-                .previewDisplayName("Short Room Name")
+                .previewDisplayName("Short room name")
             RoomStatusView(streamName: "A very long room name that does not fit and is truncated")
-                .previewDisplayName("Long Room Name")
+                .previewDisplayName("Long room name")
         }
         .frame(width: 400)
         .previewLayout(.sizeThatFits)

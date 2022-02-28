@@ -17,7 +17,7 @@ struct ParticipantViewModel {
 
     init(participant: LocalParticipantManager) {
         identity = participant.identity
-        displayName = DisplayNameFactory().makeDisplayName(identity: participant.identity, isYou: true)
+        displayName = "You"
         isYou = true
         isMuted = !participant.isMicOn
 
@@ -32,7 +32,7 @@ struct ParticipantViewModel {
     
     init(participant: RemoteParticipantManager) {
         identity = participant.identity
-        displayName = DisplayNameFactory().makeDisplayName(identity: participant.identity, isYou: false)
+        displayName = participant.identity
         isMuted = !participant.isMicOn
         isDominantSpeaker = participant.isDominantSpeaker
         dominantSpeakerStartTime = participant.dominantSpeakerStartTime

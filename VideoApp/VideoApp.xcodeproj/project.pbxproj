@@ -65,8 +65,6 @@
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
-		DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
-		DC2511B5248921CD00C776D6 /* ParticipantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */; };
 		DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
@@ -171,16 +169,8 @@
 		DC8EAE4A23BA9F390045018F /* WindowSceneObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4723BA9F390045018F /* WindowSceneObserving.swift */; };
 		DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
 		DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8EAE4B23BA9F5E0045018F /* WindowSceneObserverFactory.swift */; };
-		DC9A5DC12459F1D100E4B079 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DBF2459F1D100E4B079 /* Participant.swift */; };
-		DC9A5DC22459F1D100E4B079 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DBF2459F1D100E4B079 /* Participant.swift */; };
-		DC9A5DC6245A0B5F00E4B079 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC4245A0B5F00E4B079 /* Room.swift */; };
-		DC9A5DC7245A0B5F00E4B079 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC4245A0B5F00E4B079 /* Room.swift */; };
 		DC9A5DCB245A215000E4B079 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC9245A215000E4B079 /* RoomViewController.swift */; };
 		DC9A5DCC245A215000E4B079 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DC9245A215000E4B079 /* RoomViewController.swift */; };
-		DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */; };
-		DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */; };
-		DC9A5DD3245B332D00E4B079 /* RemoteParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */; };
-		DC9A5DD4245B332D00E4B079 /* RemoteParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */; };
 		DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
 		DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */; };
 		DC9A5DE3245CA2E000E4B079 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5DE1245CA2E000E4B079 /* NibView.swift */; };
@@ -197,16 +187,12 @@
 		DC9A5E0F245F611D00E4B079 /* MainParticipantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E0C245F611D00E4B079 /* MainParticipantStore.swift */; };
 		DC9A5E122460CE9800E4B079 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5E102460CE9800E4B079 /* ParticipantCell.xib */; };
 		DC9A5E132460CE9800E4B079 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9A5E102460CE9800E4B079 /* ParticipantCell.xib */; };
-		DC9A5E1E2461C0A100E4B079 /* MicTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */; };
-		DC9A5E1F2461C0A100E4B079 /* MicTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */; };
 		DC9A5E26246207E600E4B079 /* CameraSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */; };
 		DC9A5E27246207E600E4B079 /* CameraSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */; };
 		DC9A5E2A24620B6D00E4B079 /* CameraTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */; };
 		DC9A5E2B24620B6D00E4B079 /* CameraTrackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */; };
 		DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2C2462153000E4B079 /* CameraManager.swift */; };
 		DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E2C2462153000E4B079 /* CameraManager.swift */; };
-		DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */; };
-		DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */; };
 		DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */; };
 		DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */; };
 		DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A5E3A2463161400E4B079 /* CircleView.swift */; };
@@ -348,8 +334,6 @@
 		DCE1AA3227C7E58A004680CA /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* ParticipantView.swift */; };
 		DCE1AA3327C7E58A004680CA /* RoomStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */; };
 		DCE1AA3427C7E58A004680CA /* RoomStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */; };
-		DCE1AA3527C7E58A004680CA /* DisplayNameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */; };
-		DCE1AA3627C7E58A004680CA /* DisplayNameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */; };
 		DCE1AA3727C7E58A004680CA /* ParticipantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */; };
 		DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */; };
 		DCE1AA4227C7E5E0004680CA /* RemoteParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */; };
@@ -382,24 +366,12 @@
 		DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */; };
 		DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31B2464C4CC006AF70D /* TrackName.swift */; };
 		DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31B2464C4CC006AF70D /* TrackName.swift */; };
-		DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31F2464CF90006AF70D /* RoomState.swift */; };
-		DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB31F2464CF90006AF70D /* RoomState.swift */; };
-		DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3232464D7EE006AF70D /* RoomFactory.swift */; };
-		DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3232464D7EE006AF70D /* RoomFactory.swift */; };
 		DCEDB3292464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
 		DCEDB32A2464EB0B006AF70D /* RoomViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */; };
 		DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
 		DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
 		DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
-		DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
-		DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB348246F16AD006AF70D /* VideoTrack.swift */; };
-		DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
-		DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB34C246F16C6006AF70D /* VideoSource.swift */; };
-		DCEDB352246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
-		DCEDB353246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */; };
-		DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
-		DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */; };
 		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
@@ -522,7 +494,6 @@
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
-		DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDelegate.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
@@ -577,11 +548,7 @@
 		DC8EAE4F23BBA6790045018F /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		DC9A4C8723D0BC2C00D37CEC /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		DC9A4C9123D161A200D37CEC /* TestSecrets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestSecrets.json; path = ../../../IOSVideoAppSecrets/TestSecrets.json; sourceTree = "<group>"; };
-		DC9A5DBF2459F1D100E4B079 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
-		DC9A5DC4245A0B5F00E4B079 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		DC9A5DC9245A215000E4B079 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
-		DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalParticipant.swift; sourceTree = "<group>"; };
-		DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteParticipant.swift; sourceTree = "<group>"; };
 		DC9A5DD5245B7F8600E4B079 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
 		DC9A5DE1245CA2E000E4B079 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		DC9A5DFB245CB66800E4B079 /* VideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
@@ -590,11 +557,9 @@
 		DC9A5E08245DFFC100E4B079 /* ParticipantsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsStore.swift; sourceTree = "<group>"; };
 		DC9A5E0C245F611D00E4B079 /* MainParticipantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainParticipantStore.swift; sourceTree = "<group>"; };
 		DC9A5E102460CE9800E4B079 /* ParticipantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantCell.xib; sourceTree = "<group>"; };
-		DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTrackFactory.swift; sourceTree = "<group>"; };
 		DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSourceFactory.swift; sourceTree = "<group>"; };
 		DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTrackFactory.swift; sourceTree = "<group>"; };
 		DC9A5E2C2462153000E4B079 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
-		DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManagerFactory.swift; sourceTree = "<group>"; };
 		DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfigFactory.swift; sourceTree = "<group>"; };
 		DC9A5E3A2463161400E4B079 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DC9A5E3E2463239D00E4B079 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
@@ -686,7 +651,6 @@
 		DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA1227C7E58A004680CA /* ParticipantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomStatusView.swift; sourceTree = "<group>"; };
-		DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayNameFactory.swift; sourceTree = "<group>"; };
 		DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalParticipantManager.swift; sourceTree = "<group>"; };
@@ -708,15 +672,9 @@
 		DCEC3D1223861C9800EBDEBF /* SelectOptionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEC3D1A23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoCodecViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB31B2464C4CC006AF70D /* TrackName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackName.swift; sourceTree = "<group>"; };
-		DCEDB31F2464CF90006AF70D /* RoomState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomState.swift; sourceTree = "<group>"; };
-		DCEDB3232464D7EE006AF70D /* RoomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFactory.swift; sourceTree = "<group>"; };
 		DCEDB3272464EB0B006AF70D /* RoomViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewHelpers.swift; sourceTree = "<group>"; };
 		DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexSetHelpers.swift; sourceTree = "<group>"; };
-		DCEDB348246F16AD006AF70D /* VideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrack.swift; sourceTree = "<group>"; };
-		DCEDB34C246F16C6006AF70D /* VideoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSource.swift; sourceTree = "<group>"; };
-		DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteVideoTrack.swift; sourceTree = "<group>"; };
-		DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVideoTrack.swift; sourceTree = "<group>"; };
 		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
 		DCEDB35C24733641006AF70D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -819,7 +777,6 @@
 				24A723E41ECE1CBD00486E7A /* Models */,
 				DCAEBEE32376011D00141D2D /* Stores */,
 				DCAEBEE42376049700141D2D /* Storyboards */,
-				DC9A5DE5245CB15200E4B079 /* Video */,
 				24491F791E37F89F00028B24 /* ViewControllers */,
 				24A723E81ECE1D2A00486E7A /* Views */,
 				DCE1A9E527C7E28E004680CA /* NewUI */,
@@ -1051,6 +1008,7 @@
 			children = (
 				DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */,
 				DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */,
+				DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1079,6 +1037,30 @@
 				DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */,
 			);
 			path = Participant;
+			sourceTree = "<group>";
+		};
+		DC1D3CB127CD4388001FCB1A /* LocalParticipant */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */,
+			);
+			path = LocalParticipant;
+			sourceTree = "<group>";
+		};
+		DC1D3CB227CD439A001FCB1A /* RemoteParticipant */ = {
+			isa = PBXGroup;
+			children = (
+				DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */,
+			);
+			path = RemoteParticipant;
+			sourceTree = "<group>";
+		};
+		DC1D3CB327CD440C001FCB1A /* TrackName */ = {
+			isa = PBXGroup;
+			children = (
+				DCEDB31B2464C4CC006AF70D /* TrackName.swift */,
+			);
+			path = TrackName;
 			sourceTree = "<group>";
 		};
 		DC338A2624367AD30093E855 /* Plans */ = {
@@ -1266,16 +1248,6 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
-		DC9A5DE5245CB15200E4B079 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				DCEDB3172464BDCA006AF70D /* Participants */,
-				DCEDB3182464BDDE006AF70D /* Room */,
-				DCEDB3192464C46E006AF70D /* Tracks */,
-			);
-			path = Video;
-			sourceTree = "<group>";
-		};
 		DC9A5DE8245CB1D600E4B079 /* VideoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1297,21 +1269,12 @@
 		DC9A5E30246215A700E4B079 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */,
 				DC9A5E2C2462153000E4B079 /* CameraManager.swift */,
-				DC9A5E322462211D00E4B079 /* CameraManagerFactory.swift */,
 				DC9A5E24246207E600E4B079 /* CameraSourceFactory.swift */,
 				DC9A5E2824620B6D00E4B079 /* CameraTrackFactory.swift */,
-				DC9A5E3624622C6100E4B079 /* CameraConfigFactory.swift */,
 			);
 			path = Camera;
-			sourceTree = "<group>";
-		};
-		DC9A5E31246215C200E4B079 /* Mic */ = {
-			isa = PBXGroup;
-			children = (
-				DC9A5E1C2461C0A100E4B079 /* MicTrackFactory.swift */,
-			);
-			path = Mic;
 			sourceTree = "<group>";
 		};
 		DC9C77282500061900AC68FD /* RemoteConfig */ = {
@@ -1513,7 +1476,7 @@
 		DCE1A9E527C7E28E004680CA /* NewUI */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA3B27C7E5B4004680CA /* Managers */,
+				DCE1AA3B27C7E5B4004680CA /* TwilioVideo */,
 				DC1D3CAB27C95407001FCB1A /* Screens */,
 				DCE1A9E627C7E519004680CA /* Views */,
 			);
@@ -1537,7 +1500,6 @@
 			isa = PBXGroup;
 			children = (
 				DCE1A9EF27C7E556004680CA /* Color.swift */,
-				DCE1AA1427C7E58A004680CA /* DisplayNameFactory.swift */,
 				DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */,
 				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
 				DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */,
@@ -1568,32 +1530,25 @@
 			path = FocusLayout;
 			sourceTree = "<group>";
 		};
-		DCE1AA3B27C7E5B4004680CA /* Managers */ = {
+		DCE1AA3B27C7E5B4004680CA /* TwilioVideo */ = {
 			isa = PBXGroup;
 			children = (
+				DC9A5E30246215A700E4B079 /* Camera */,
+				DC1D3CB127CD4388001FCB1A /* LocalParticipant */,
+				DC1D3CB227CD439A001FCB1A /* RemoteParticipant */,
 				DCE1AA3C27C7E5E0004680CA /* Room */,
-				DCE1AA5627C7FCE2004680CA /* SpeakerSettings */,
+				DC1D3CB327CD440C001FCB1A /* TrackName */,
 			);
-			path = Managers;
+			path = TwilioVideo;
 			sourceTree = "<group>";
 		};
 		DCE1AA3C27C7E5E0004680CA /* Room */ = {
 			isa = PBXGroup;
 			children = (
 				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
-				DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */,
-				DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */,
 				DCE1AA4027C7E5E0004680CA /* RoomManager.swift */,
 			);
 			path = Room;
-			sourceTree = "<group>";
-		};
-		DCE1AA5627C7FCE2004680CA /* SpeakerSettings */ = {
-			isa = PBXGroup;
-			children = (
-				DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */,
-			);
-			path = SpeakerSettings;
 			sourceTree = "<group>";
 		};
 		DCE965B9237492410002EC78 /* Video-InternalTests */ = {
@@ -1626,49 +1581,6 @@
 			);
 			name = IOSVideoAppSecrets;
 			path = ../../IOSVideoAppSecrets;
-			sourceTree = "<group>";
-		};
-		DCEDB3172464BDCA006AF70D /* Participants */ = {
-			isa = PBXGroup;
-			children = (
-				DC9A5DCD245B0E6100E4B079 /* LocalParticipant.swift */,
-				DC9A5DBF2459F1D100E4B079 /* Participant.swift */,
-				DC2511B2248921CD00C776D6 /* ParticipantDelegate.swift */,
-				DC9A5DD1245B332D00E4B079 /* RemoteParticipant.swift */,
-			);
-			path = Participants;
-			sourceTree = "<group>";
-		};
-		DCEDB3182464BDDE006AF70D /* Room */ = {
-			isa = PBXGroup;
-			children = (
-				DC9A5DC4245A0B5F00E4B079 /* Room.swift */,
-				DCEDB3232464D7EE006AF70D /* RoomFactory.swift */,
-				DCEDB31F2464CF90006AF70D /* RoomState.swift */,
-			);
-			path = Room;
-			sourceTree = "<group>";
-		};
-		DCEDB3192464C46E006AF70D /* Tracks */ = {
-			isa = PBXGroup;
-			children = (
-				DCEDB31A2464C4B9006AF70D /* Core */,
-				DC9A5E31246215C200E4B079 /* Mic */,
-				DC9A5E30246215A700E4B079 /* Camera */,
-			);
-			path = Tracks;
-			sourceTree = "<group>";
-		};
-		DCEDB31A2464C4B9006AF70D /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				DCEDB354246F1702006AF70D /* LocalVideoTrack.swift */,
-				DCEDB350246F16E2006AF70D /* RemoteVideoTrack.swift */,
-				DCEDB31B2464C4CC006AF70D /* TrackName.swift */,
-				DCEDB34C246F16C6006AF70D /* VideoSource.swift */,
-				DCEDB348246F16AD006AF70D /* VideoTrack.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		DCEDB33324651140006AF70D /* Participants */ = {
@@ -2425,7 +2337,6 @@
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
-				DCEDB34A246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCE1AA2327C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -2436,7 +2347,6 @@
 				DCE1A9FB27C7E556004680CA /* FormTextFieldStyle.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
-				DCEDB3212464CF90006AF70D /* RoomState.swift in Sources */,
 				DCE1AA1D27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
@@ -2455,8 +2365,6 @@
 				DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
 				DCA65020240D91CA0038DEE1 /* CreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
-				DCEDB352246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */,
-				DC9A5DD3245B332D00E4B079 /* RemoteParticipant.swift in Sources */,
 				DC8EAE3423BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */,
 				DC44C2EB23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -2475,7 +2383,6 @@
 				DC9A5DD7245B90BA00E4B079 /* ParticipantCell.swift in Sources */,
 				DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
 				DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */,
-				DC9A5E342462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
 				DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
@@ -2483,7 +2390,6 @@
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4C2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
-				DC9A5DC6245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
@@ -2497,7 +2403,6 @@
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
-				DCEDB356246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2508,7 +2413,6 @@
 				DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */,
 				DCF4615A2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1862405BD68009DEA70 /* API.swift in Sources */,
-				DC2511B4248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */,
@@ -2553,26 +2457,21 @@
 				DCC7E35A2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4D23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
-				DC9A5E1E2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3727C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
-				DCEDB3252464D7EE006AF70D /* RoomFactory.swift in Sources */,
-				DC9A5DCF245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DCE1AA2927C7E58A004680CA /* RoomScreenView.swift in Sources */,
 				DC9A5E01245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DCE1AA5427C7F95B004680CA /* RoomScreenViewModel.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
-				DC9A5DC12459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
 				DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00122F1FBA52C4004A587E /* HeaderTableViewCell.m in Sources */,
 				8A84724B26B36749004BBC79 /* VideoContentPreferencesMode.swift in Sources */,
 				DCACF1D424EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0E245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
-				DCE1AA3527C7E58A004680CA /* DisplayNameFactory.swift in Sources */,
 				DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC9A5DE3245CA2E000E4B079 /* NibView.swift in Sources */,
@@ -2588,7 +2487,6 @@
 				DC9A5E3C2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E402463239E00E4B079 /* ToggleButton.swift in Sources */,
 				DCE1AA2F27C7E58A004680CA /* GridLayoutViewModel.swift in Sources */,
-				DCEDB34E246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32D2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
@@ -2613,7 +2511,6 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
-				DCEDB34B246F16AD006AF70D /* VideoTrack.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
@@ -2624,7 +2521,6 @@
 				DCE1A9FC27C7E556004680CA /* FormTextFieldStyle.swift in Sources */,
 				DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3572406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
-				DCEDB3222464CF90006AF70D /* RoomState.swift in Sources */,
 				DCE1AA1E27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
@@ -2643,8 +2539,6 @@
 				DC82A36623FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
 				DCA6501F240D91C90038DEE1 /* CreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8C23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
-				DCEDB353246F16E2006AF70D /* RemoteVideoTrack.swift in Sources */,
-				DC9A5DD4245B332D00E4B079 /* RemoteParticipant.swift in Sources */,
 				DC8EAE3523BA71990045018F /* LaunchStoresFactory.swift in Sources */,
 				DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */,
 				DC44C2EC23876B4700205174 /* EditTextSegueSender.swift in Sources */,
@@ -2663,7 +2557,6 @@
 				DC9A5DD8245B90BB00E4B079 /* ParticipantCell.swift in Sources */,
 				DCEDB36424743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */,
 				DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */,
-				DC9A5E352462211D00E4B079 /* CameraManagerFactory.swift in Sources */,
 				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
@@ -2671,7 +2564,6 @@
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
-				DC9A5DC7245A0B5F00E4B079 /* Room.swift in Sources */,
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
@@ -2685,7 +2577,6 @@
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
 				DCEDB378247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
-				DCEDB357246F1702006AF70D /* LocalVideoTrack.swift in Sources */,
 				DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
@@ -2696,7 +2587,6 @@
 				DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
 				DCB7C1872405BD68009DEA70 /* API.swift in Sources */,
-				DC2511B5248921CD00C776D6 /* ParticipantDelegate.swift in Sources */,
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */,
@@ -2741,26 +2631,21 @@
 				DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
-				DC9A5E1F2461C0A100E4B079 /* MicTrackFactory.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
-				DCEDB3262464D7EE006AF70D /* RoomFactory.swift in Sources */,
-				DC9A5DD0245B0E6100E4B079 /* LocalParticipant.swift in Sources */,
 				DCE1AA2A27C7E58A004680CA /* RoomScreenView.swift in Sources */,
 				DC9A5E02245CB67600E4B079 /* VideoView.swift in Sources */,
 				DC386DD32458DC05009E994A /* RoomViewModel.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
 				DCE1AA5527C7F95B004680CA /* RoomScreenViewModel.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
-				DC9A5DC22459F1D100E4B079 /* Participant.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
 				DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
 				4B00126C1FBA52E5004A587E /* HeaderTableViewCell.m in Sources */,
 				8A84724C26B36749004BBC79 /* VideoContentPreferencesMode.swift in Sources */,
 				DCACF1D524EAF1F000D3C264 /* SettingsViewControllerFactory.swift in Sources */,
 				DC9A5E0F245F611D00E4B079 /* MainParticipantStore.swift in Sources */,
-				DCE1AA3627C7E58A004680CA /* DisplayNameFactory.swift in Sources */,
 				DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */,
 				DCEC3CFA2385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */,
 				DC9A5DE4245CA2E000E4B079 /* NibView.swift in Sources */,
@@ -2776,7 +2661,6 @@
 				DC9A5E3D2463161400E4B079 /* CircleView.swift in Sources */,
 				DC9A5E412463239E00E4B079 /* ToggleButton.swift in Sources */,
 				DCE1AA3027C7E58A004680CA /* GridLayoutViewModel.swift in Sources */,
-				DCEDB34F246F16C6006AF70D /* VideoSource.swift in Sources */,
 				DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */,
 				DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,

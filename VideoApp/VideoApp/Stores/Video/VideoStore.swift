@@ -27,7 +27,7 @@ class VideoStore: VideoStoreWriting {
     private let appSettingsStore: AppSettingsStoreWriting
     private let environmentVariableStore: EnvironmentVariableStoreWriting
     private let notificationCenter: NotificationCenterProtocol
-        
+
     init(
         appSettingsStore: AppSettingsStoreWriting,
         environmentVariableStore: EnvironmentVariableStoreWriting,
@@ -46,7 +46,6 @@ class VideoStore: VideoStoreWriting {
         }
     }
     
-    @available(iOS 13, *)
     func interfaceOrientationDidChange(windowScene: UIWindowScene) {
         UserInterfaceTracker.sceneInterfaceOrientationDidChange(windowScene)
     }

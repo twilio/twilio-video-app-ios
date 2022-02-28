@@ -17,6 +17,5 @@
 import UIKit
 
 protocol WindowSceneObserving: AnyObject {
-    @available(iOS 13, *)
     func interfaceOrientationDidChange(windowScene: UIWindowScene)
 }
