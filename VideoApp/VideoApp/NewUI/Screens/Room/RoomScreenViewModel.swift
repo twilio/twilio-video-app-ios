@@ -23,12 +23,10 @@ class RoomScreenViewModel: ObservableObject {
     private(set) var error: Error?
     private var roomManager: RoomManager!
     private var accessTokenStore: TwilioAccessTokenStore!
-    private var speakerSettingsManager: SpeakerSettingsManager!
     private var subscriptions = Set<AnyCancellable>()
 
-    func configure(roomManager: RoomManager, speakerSettingsManager: SpeakerSettingsManager) {
+    func configure(roomManager: RoomManager) {
         self.roomManager = roomManager
-        self.speakerSettingsManager = speakerSettingsManager
 
         // TODO: Move?
         accessTokenStore = TwilioAccessTokenStore(
@@ -67,8 +65,8 @@ class RoomScreenViewModel: ObservableObject {
         }
 
         state = .connecting
-        speakerSettingsManager.isMicOn = true
-        speakerSettingsManager.isCameraOn = true
+        roomManager.localParticipant.isMicOn = true
+        roomManager.localParticipant.isCameraOn = true
 
         Task {
             do {
@@ -83,7 +81,7 @@ class RoomScreenViewModel: ObservableObject {
     func disconnect() {
         roomManager.disconnect()
         state = .disconnected
-        speakerSettingsManager.isMicOn = false
-        speakerSettingsManager.isCameraOn = false
+        roomManager.localParticipant.isMicOn = false
+        roomManager.localParticipant.isCameraOn = false
     }
 }

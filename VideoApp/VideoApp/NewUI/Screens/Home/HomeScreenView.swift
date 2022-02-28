@@ -22,7 +22,7 @@ struct HomeScreenView: View {
     @State private var showRoom = false
 
     @StateObject private var roomScreenViewModel = RoomScreenViewModel()
-    @StateObject private var speakerSettingsManager = SpeakerSettingsManager()
+    @StateObject private var localParticipant = LocalParticipantManager()
     @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
     @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
 
@@ -58,13 +58,12 @@ struct HomeScreenView: View {
                 .environmentObject(roomScreenViewModel)
                 .environmentObject(gridLayoutViewModel)
                 .environmentObject(focusLayoutViewModel)
-                .environmentObject(speakerSettingsManager)
+                .environmentObject(localParticipant)
                 .onAppear {
-                    let localParticipant = LocalParticipantManager(identity: AuthStore.shared.userDisplayName)
+                    localParticipant.configure(identity: AuthStore.shared.userDisplayName)
                     let roomManager = RoomManager()
                     roomManager.configure(localParticipant: localParticipant)
-                    roomScreenViewModel.configure(roomManager: roomManager, speakerSettingsManager: speakerSettingsManager)
-                    speakerSettingsManager.configure(roomManager: roomManager)
+                    roomScreenViewModel.configure(roomManager: roomManager)
                     gridLayoutViewModel.configure(roomManager: roomManager)
                     focusLayoutViewModel.configure(roomManager: roomManager)
                 }

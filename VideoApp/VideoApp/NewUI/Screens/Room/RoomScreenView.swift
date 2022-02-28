@@ -6,7 +6,7 @@ import SwiftUI
 
 struct RoomScreenView: View {
     @EnvironmentObject var viewModel: RoomScreenViewModel
-    @EnvironmentObject var speakerSettingsManager: SpeakerSettingsManager
+    @EnvironmentObject var localParticipantManager: LocalParticipantManager
     @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
     @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -50,14 +50,14 @@ struct RoomScreenView: View {
                             leaveStream()
                         }
                         RoomToolbarButton(
-                            image: Image(systemName: speakerSettingsManager.isMicOn ? "mic" : "mic.slash")
+                            image: Image(systemName: localParticipantManager.isMicOn ? "mic" : "mic.slash")
                         ) {
-                            speakerSettingsManager.isMicOn.toggle()
+                            localParticipantManager.isMicOn.toggle()
                         }
                         RoomToolbarButton(
-                            image: Image(systemName: speakerSettingsManager.isCameraOn ? "video" : "video.slash")
+                            image: Image(systemName: localParticipantManager.isCameraOn ? "video" : "video.slash")
                         ) {
-                            speakerSettingsManager.isCameraOn.toggle()
+                            localParticipantManager.isCameraOn.toggle()
                         }
                     }
                     
@@ -117,7 +117,7 @@ struct RoomScreenView_Previews: PreviewProvider {
                 .environmentObject(GridLayoutViewModel())
                 .environmentObject(FocusLayoutViewModel.stub())
         }
-        .environmentObject(SpeakerSettingsManager())
+        .environmentObject(LocalParticipantManager())
     }
 }
 

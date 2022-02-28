@@ -8,20 +8,17 @@ import TwilioVideo
 /// Maintains local participant state and uses a publisher to notify subscribers of state changes.
 ///
 /// The microphone and camera may be configured before and after connecting to a video room.
-class LocalParticipantManager: NSObject {
+class LocalParticipantManager: NSObject, ObservableObject {
     let changePublisher = PassthroughSubject<LocalParticipantManager, Never>()
     let errorPublisher = PassthroughSubject<Error, Never>()
-    let identity: String
-    var isMicOn: Bool {
-        get {
-            micTrack?.isEnabled ?? false
-        }
-        set {
-            if newValue {
-                guard
-                    micTrack == nil,
-                    let micTrack = LocalAudioTrack(options: nil, enabled: true, name: TrackName.mic)
-                else {
+    @Published var isMicOn = false {
+        didSet {
+            guard oldValue != isMicOn else {
+                return
+            }
+
+            if isMicOn {
+                guard let micTrack = LocalAudioTrack(options: nil, enabled: true, name: TrackName.mic) else {
                     return
                 }
                 
@@ -39,16 +36,12 @@ class LocalParticipantManager: NSObject {
             changePublisher.send(self)
         }
     }
-    var isCameraOn: Bool {
-        get {
-            cameraManager?.track.isEnabled ?? false
-        }
-        set {
-            if newValue {
-                guard
-                    cameraManager == nil,
-                    let cameraManager = CameraManager(position: .front)
-                else {
+    @Published var isCameraOn = false {
+        didSet {
+            guard oldValue != isCameraOn else { return }
+
+            if isCameraOn {
+                guard let cameraManager = CameraManager(position: .front) else {
                     return
                 }
                 
@@ -74,10 +67,11 @@ class LocalParticipantManager: NSObject {
         }
     }
     var cameraTrack: LocalVideoTrack? { cameraManager?.track }
+    private(set) var identity: String!
     private(set) var micTrack: LocalAudioTrack?
     private var cameraManager: CameraManager?
     
-    init(identity: String) {
+    func configure(identity: String) {
         self.identity = identity
     }
 }

@@ -344,8 +344,6 @@
 		DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
 		DCE1AA5427C7F95B004680CA /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */; };
 		DCE1AA5527C7F95B004680CA /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */; };
-		DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
-		DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */; };
 		DCE1AA5C27C82F55004680CA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */; };
 		DCE1AA5D27C82F55004680CA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
@@ -656,7 +654,6 @@
 		DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA4027C7E5E0004680CA /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 		DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScreenViewModel.swift; sourceTree = "<group>"; };
-		DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerSettingsManager.swift; sourceTree = "<group>"; };
 		DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
@@ -1008,7 +1005,6 @@
 			children = (
 				DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */,
 				DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */,
-				DCE1AA5727C7FCE2004680CA /* SpeakerSettingsManager.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -2385,7 +2381,6 @@
 				DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
-				DCE1AA5827C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
 				DCE1AA1F27C7E58A004680CA /* PresentationView.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
@@ -2559,7 +2554,6 @@
 				DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
-				DCE1AA5927C7FCE2004680CA /* SpeakerSettingsManager.swift in Sources */,
 				DCE1AA2027C7E58A004680CA /* PresentationView.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
