@@ -19,22 +19,13 @@ class RoomScreenViewModel: ObservableObject {
     
     @Published var alertIdentifier: AlertIdentifier?
     @Published var state = State.disconnected
-    var roomName: String!
     private(set) var error: Error?
+    private let accessTokenStore = TwilioAccessTokenStore()
     private var roomManager: RoomManager!
-    private var accessTokenStore: TwilioAccessTokenStore!
     private var subscriptions = Set<AnyCancellable>()
 
     func configure(roomManager: RoomManager) {
         self.roomManager = roomManager
-
-        // TODO: Move?
-        accessTokenStore = TwilioAccessTokenStore(
-            api: API.shared,
-            appSettingsStore: AppSettingsStore.shared,
-            authStore: AuthStore.shared,
-            remoteConfigStore: RemoteConfigStoreFactory().makeRemoteConfigStore()
-        )
 
         roomManager.roomConnectPublisher
             .sink { [weak self] in self?.state = .connected }
@@ -42,7 +33,9 @@ class RoomScreenViewModel: ObservableObject {
 
         roomManager.roomDisconnectPublisher
             .sink { [weak self] error in
-                guard let error = error else { return }
+                guard let error = error else {
+                    return
+                }
                 
                 self?.handleError(error)
             }
@@ -59,7 +52,7 @@ class RoomScreenViewModel: ObservableObject {
         alertIdentifier = .error
     }
 
-    func connect() {
+    func connect(roomName: String) {
         guard roomManager != nil else {
             return /// When not configured do nothing so `PreviewProvider` doesn't crash.
         }

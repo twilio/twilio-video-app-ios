@@ -17,23 +17,11 @@
 import Foundation
 
 class TwilioAccessTokenStore {
-    private let api: APIRequesting
-    private let appSettingsStore: AppSettingsStoreWriting
-    private let authStore: AuthStoreWriting
-    private let remoteConfigStore: RemoteConfigStoreWriting
+    private let api = API.shared
+    private let appSettingsStore = AppSettingsStore.shared
+    private let authStore = AuthStore.shared
+    private let remoteConfigStore = RemoteConfigStoreFactory().makeRemoteConfigStore()
 
-    init(
-        api: APIRequesting,
-        appSettingsStore: AppSettingsStoreWriting,
-        authStore: AuthStoreWriting,
-        remoteConfigStore: RemoteConfigStoreWriting
-    ) {
-        self.api = api
-        self.appSettingsStore = appSettingsStore
-        self.authStore = authStore
-        self.remoteConfigStore = remoteConfigStore
-    }
-    
     func fetchTwilioAccessToken(roomName: String) async throws -> String {
         try await withCheckedThrowingContinuation { continuation in
             authStore.refreshIDToken { [weak self] in

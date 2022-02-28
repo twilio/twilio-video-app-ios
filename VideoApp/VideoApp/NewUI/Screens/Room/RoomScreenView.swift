@@ -6,7 +6,7 @@ import SwiftUI
 
 struct RoomScreenView: View {
     @EnvironmentObject var viewModel: RoomScreenViewModel
-    @EnvironmentObject var localParticipantManager: LocalParticipantManager
+    @EnvironmentObject var localParticipant: LocalParticipantManager
     @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
     @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -47,17 +47,18 @@ struct RoomScreenView: View {
                             image: Image(systemName: "arrow.left"),
                             role: .destructive
                         ) {
-                            leaveStream()
+                            viewModel.disconnect()
+                            presentationMode.wrappedValue.dismiss()
                         }
                         RoomToolbarButton(
-                            image: Image(systemName: localParticipantManager.isMicOn ? "mic" : "mic.slash")
+                            image: Image(systemName: localParticipant.isMicOn ? "mic" : "mic.slash")
                         ) {
-                            localParticipantManager.isMicOn.toggle()
+                            localParticipant.isMicOn.toggle()
                         }
                         RoomToolbarButton(
-                            image: Image(systemName: localParticipantManager.isCameraOn ? "video" : "video.slash")
+                            image: Image(systemName: localParticipant.isCameraOn ? "video" : "video.slash")
                         ) {
-                            localParticipantManager.isCameraOn.toggle()
+                            localParticipant.isCameraOn.toggle()
                         }
                     }
                     
@@ -74,8 +75,7 @@ struct RoomScreenView: View {
         }
         .onAppear {
             app.isIdleTimerDisabled = true
-            viewModel.roomName = roomName
-            viewModel.connect()
+            viewModel.connect(roomName: roomName)
         }
         .onDisappear {
             app.isIdleTimerDisabled = false
@@ -89,11 +89,6 @@ struct RoomScreenView: View {
             }
         }
     }
-    
-    private func leaveStream() {
-        viewModel.disconnect()
-        presentationMode.wrappedValue.dismiss()
-    }
 }
 
 struct RoomScreenView_Previews: PreviewProvider {
@@ -101,20 +96,20 @@ struct RoomScreenView_Previews: PreviewProvider {
         Group {
             RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Grid layout")
-                .environmentObject(RoomScreenViewModel())
+                .environmentObject(RoomScreenViewModel.stub())
                 .environmentObject(GridLayoutViewModel.stub())
                 .environmentObject(FocusLayoutViewModel.stub())
 
             RoomScreenView(roomName: "Demo")
-                .previewDisplayName("Presentation layout")
-                .environmentObject(RoomScreenViewModel())
+                .previewDisplayName("Focus layout")
+                .environmentObject(RoomScreenViewModel.stub())
                 .environmentObject(GridLayoutViewModel.stub())
                 .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
 
             RoomScreenView(roomName: "Demo")
                 .previewDisplayName("Connecting")
-                .environmentObject(RoomScreenViewModel(state: .connecting))
-                .environmentObject(GridLayoutViewModel())
+                .environmentObject(RoomScreenViewModel.stub(state: .connecting))
+                .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: 0))
                 .environmentObject(FocusLayoutViewModel.stub())
         }
         .environmentObject(LocalParticipantManager())
@@ -122,8 +117,9 @@ struct RoomScreenView_Previews: PreviewProvider {
 }
 
 extension RoomScreenViewModel {
-    convenience init(state: RoomScreenViewModel.State = .connected) {
-        self.init()
-        self.state = state
+    static func stub(state: State = .connected) -> RoomScreenViewModel {
+        let viewModel = RoomScreenViewModel()
+        viewModel.state = state
+        return viewModel
     }
 }
