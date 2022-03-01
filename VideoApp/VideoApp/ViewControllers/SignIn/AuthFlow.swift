@@ -50,9 +50,9 @@ class AuthFlow {
         navigationVC.dismiss(animated: true) {
             navigationVC.popToRootViewController(animated: true)
             
-            let controller = UIHostingController(rootView: HomeScreenView())
-            controller.modalPresentationStyle = .fullScreen
-            navigationVC.present(controller, animated: true)
+            let homeController = UIHostingController(rootView: HomeScreenView())
+            homeController.modalPresentationStyle = .fullScreen
+            navigationVC.present(homeController, animated: true)
         }
     }
 

@@ -65,6 +65,8 @@
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1D3CB527CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */; };
 		DC1D3CB627CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */; };
+		DC1D3CB927CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
+		DC1D3CBA27CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
@@ -472,6 +474,7 @@
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
 		DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScreenViewDependencyContainer.swift; sourceTree = "<group>"; };
+		DC1D3CB827CEC100001FCB1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
@@ -935,6 +938,7 @@
 			children = (
 				DC1D3CAC27C9544C001FCB1A /* Home */,
 				DC1D3CAD27C95458001FCB1A /* Room */,
+				DC1D3CB727CEC0A9001FCB1A /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1005,6 +1009,14 @@
 				DCEDB31B2464C4CC006AF70D /* TrackName.swift */,
 			);
 			path = TrackName;
+			sourceTree = "<group>";
+		};
+		DC1D3CB727CEC0A9001FCB1A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DC1D3CB827CEC100001FCB1A /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		DC338A2624367AD30093E855 /* Plans */ = {
@@ -2278,6 +2290,7 @@
 				DCE1AA2527C7E58A004680CA /* PresentationStatusView.swift in Sources */,
 				DCD7675723DF554A00A2939C /* UserActivityStore.swift in Sources */,
 				DCAEBF312383560500141D2D /* EditTextCell.swift in Sources */,
+				DC1D3CB927CEC100001FCB1A /* SettingsView.swift in Sources */,
 				DC82A35D23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
 				DCAEBF15238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */,
@@ -2443,6 +2456,7 @@
 				DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */,
 				DCD7675823DF554B00A2939C /* UserActivityStore.swift in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
+				DC1D3CBA27CEC100001FCB1A /* SettingsView.swift in Sources */,
 				DC82A35E23FDB9420081578C /* SDKLogLevelSettingsViewModel.swift in Sources */,
 				DCAEBF16238331A800141D2D /* SwitchCell.swift in Sources */,
 				DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */,
