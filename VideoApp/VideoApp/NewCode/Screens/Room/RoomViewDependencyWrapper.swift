@@ -16,21 +16,25 @@
 
 import SwiftUI
 
-// 1. Want to inject for previews
-// 2. Get code out of home screen
-// 3. Deallocate dependencies when room screen is dismissed
-struct RoomScreenViewDependencyContainer: View {
+/// Setup dependencies for `RoomView`.
+///
+/// This seems kind of odd but it is the best solution I have come up with so far. By using a wrapper like this
+/// I can inject dependencies into `RoomView` as `@EnvironmentObject` which works well for UI previews. If I
+/// had `RoomView` create the dependencies with `@StateObject` it would be more difficult to configure the
+/// UI previews. If I had `HomeView` create the dependencies, they would not get deallocated when `RoomView`
+/// goes away. Also `HomeView` shouldn't have to do complex dependency setup for other screens.
+struct RoomViewDependencyWrapper: View {
     let roomName: String
     @StateObject private var localParticipant = LocalParticipantManager()
-    @StateObject private var roomScreenViewModel = RoomScreenViewModel()
+    @StateObject private var roomViewModel = RoomViewModel()
     @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
     @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
 
     var body: some View {
         Group {
-            RoomScreenView(roomName: roomName)
+            RoomView(roomName: roomName)
         }
-        .environmentObject(roomScreenViewModel)
+        .environmentObject(roomViewModel)
         .environmentObject(gridLayoutViewModel)
         .environmentObject(focusLayoutViewModel)
         .environmentObject(localParticipant)
@@ -38,7 +42,7 @@ struct RoomScreenViewDependencyContainer: View {
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             let roomManager = RoomManager()
             roomManager.configure(localParticipant: localParticipant)
-            roomScreenViewModel.configure(roomManager: roomManager)
+            roomViewModel.configure(roomManager: roomManager)
             gridLayoutViewModel.configure(roomManager: roomManager)
             focusLayoutViewModel.configure(roomManager: roomManager)
         }

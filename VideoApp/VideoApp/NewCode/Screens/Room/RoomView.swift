@@ -16,8 +16,9 @@
 
 import SwiftUI
 
-struct RoomScreenView: View {
-    @EnvironmentObject var viewModel: RoomScreenViewModel
+/// Room screen that is shown when a user connects to a video room.
+struct RoomView: View {
+    @EnvironmentObject var viewModel: RoomViewModel
     @EnvironmentObject var localParticipant: LocalParticipantManager
     @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
     @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
@@ -103,24 +104,24 @@ struct RoomScreenView: View {
     }
 }
 
-struct RoomScreenView_Previews: PreviewProvider {
+struct RoomView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomScreenView(roomName: "Demo")
+            RoomView(roomName: "Demo")
                 .previewDisplayName("Grid layout")
-                .environmentObject(RoomScreenViewModel.stub())
+                .environmentObject(RoomViewModel.stub())
                 .environmentObject(GridLayoutViewModel.stub())
                 .environmentObject(FocusLayoutViewModel.stub())
 
-            RoomScreenView(roomName: "Demo")
+            RoomView(roomName: "Demo")
                 .previewDisplayName("Focus layout")
-                .environmentObject(RoomScreenViewModel.stub())
+                .environmentObject(RoomViewModel.stub())
                 .environmentObject(GridLayoutViewModel.stub())
                 .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
 
-            RoomScreenView(roomName: "Demo")
+            RoomView(roomName: "Demo")
                 .previewDisplayName("Connecting")
-                .environmentObject(RoomScreenViewModel.stub(state: .connecting))
+                .environmentObject(RoomViewModel.stub(state: .connecting))
                 .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: 0))
                 .environmentObject(FocusLayoutViewModel.stub())
         }
@@ -128,9 +129,9 @@ struct RoomScreenView_Previews: PreviewProvider {
     }
 }
 
-extension RoomScreenViewModel {
-    static func stub(state: State = .connected) -> RoomScreenViewModel {
-        let viewModel = RoomScreenViewModel()
+extension RoomViewModel {
+    static func stub(state: State = .connected) -> RoomViewModel {
+        let viewModel = RoomViewModel()
         viewModel.state = state
         return viewModel
     }

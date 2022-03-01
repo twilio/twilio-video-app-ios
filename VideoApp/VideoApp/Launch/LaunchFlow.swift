@@ -54,7 +54,7 @@ class LaunchFlowImpl: LaunchFlow {
         navigationController.hidesBarsOnSwipe = false
 
         if authStore.isSignedIn {
-            let homeController = UIHostingController(rootView: HomeScreenView())
+            let homeController = UIHostingController(rootView: HomeView())
             homeController.modalPresentationStyle = .fullScreen
             navigationController.present(homeController, animated: true)
         } else {

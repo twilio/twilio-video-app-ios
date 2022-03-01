@@ -16,7 +16,8 @@
 
 import SwiftUI
 
-struct HomeScreenView: View {
+/// Main home screen for the app.
+struct HomeView: View {
     @State private var roomName = ""
     @State private var showSettings = false
     @State private var showRoom = false
@@ -47,14 +48,14 @@ struct HomeScreenView: View {
                 SettingsView()
             }
             .fullScreenCover(isPresented: $showRoom) {
-                RoomScreenViewDependencyContainer(roomName: roomName)
+                RoomViewDependencyWrapper(roomName: roomName)
             }
         }
     }
 }
 
-struct HomeScreenView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView()
+        HomeView()
     }
 }

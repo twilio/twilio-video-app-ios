@@ -16,7 +16,7 @@
 
 import Combine
 
-class RoomScreenViewModel: ObservableObject {
+class RoomViewModel: ObservableObject {
     enum State {
         case disconnected
         case connecting

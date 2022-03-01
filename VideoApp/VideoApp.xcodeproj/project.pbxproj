@@ -63,8 +63,8 @@
 		DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
 		DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
-		DC1D3CB527CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */; };
-		DC1D3CB627CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */; };
+		DC1D3CB527CE9788001FCB1A /* RoomViewDependencyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */; };
+		DC1D3CB627CE9788001FCB1A /* RoomViewDependencyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */; };
 		DC1D3CB927CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
 		DC1D3CBA27CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
@@ -310,8 +310,8 @@
 		DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */; };
 		DCE1AA2527C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
-		DCE1AA2927C7E58A004680CA /* RoomScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */; };
-		DCE1AA2A27C7E58A004680CA /* RoomScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */; };
+		DCE1AA2927C7E58A004680CA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomView.swift */; };
+		DCE1AA2A27C7E58A004680CA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomView.swift */; };
 		DCE1AA2F27C7E58A004680CA /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */; };
 		DCE1AA3027C7E58A004680CA /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */; };
 		DCE1AA3127C7E58A004680CA /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* ParticipantView.swift */; };
@@ -326,10 +326,10 @@
 		DCE1AA4727C7E5E0004680CA /* LocalParticipantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */; };
 		DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
 		DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4027C7E5E0004680CA /* RoomManager.swift */; };
-		DCE1AA5427C7F95B004680CA /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */; };
-		DCE1AA5527C7F95B004680CA /* RoomScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */; };
-		DCE1AA5C27C82F55004680CA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */; };
-		DCE1AA5D27C82F55004680CA /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */; };
+		DCE1AA5427C7F95B004680CA /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomViewModel.swift */; };
+		DCE1AA5527C7F95B004680CA /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA4F27C7F95B004680CA /* RoomViewModel.swift */; };
+		DCE1AA5C27C82F55004680CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeView.swift */; };
+		DCE1AA5D27C82F55004680CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA5B27C82F55004680CA /* HomeView.swift */; };
 		DCE965BB237492410002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */; };
 		DCE965C9237498F50002EC78 /* AppInfoStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE965C8237498F50002EC78 /* AppInfoStoreSpec.swift */; };
 		DCEC3CF92385F8CA00EBDEBF /* EditTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3CF72385F8CA00EBDEBF /* EditTextViewModel.swift */; };
@@ -473,7 +473,7 @@
 		DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
-		DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScreenViewDependencyContainer.swift; sourceTree = "<group>"; };
+		DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewDependencyWrapper.swift; sourceTree = "<group>"; };
 		DC1D3CB827CEC100001FCB1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
@@ -619,7 +619,7 @@
 		DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusLayoutView.swift; sourceTree = "<group>"; };
 		DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationStatusView.swift; sourceTree = "<group>"; };
-		DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScreenView.swift; sourceTree = "<group>"; };
+		DCE1AA0E27C7E58A004680CA /* RoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA1227C7E58A004680CA /* ParticipantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomStatusView.swift; sourceTree = "<group>"; };
@@ -627,8 +627,8 @@
 		DCE1AA3D27C7E5E0004680CA /* RemoteParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA3F27C7E5E0004680CA /* LocalParticipantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalParticipantManager.swift; sourceTree = "<group>"; };
 		DCE1AA4027C7E5E0004680CA /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
-		DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScreenViewModel.swift; sourceTree = "<group>"; };
-		DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		DCE1AA4F27C7F95B004680CA /* RoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA5B27C82F55004680CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DCE965B8237492410002EC78 /* Video-InternalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE965BA237492410002EC78 /* AppInfoStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreSpec.swift; sourceTree = "<group>"; };
 		DCE965BC237492410002EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -749,7 +749,7 @@
 				DCAEBEE42376049700141D2D /* Storyboards */,
 				24491F791E37F89F00028B24 /* ViewControllers */,
 				24A723E81ECE1D2A00486E7A /* Views */,
-				DCE1A9E527C7E28E004680CA /* NewUI */,
+				DCE1A9E527C7E28E004680CA /* NewCode */,
 				241282461E36A6AB002198BE /* Assets.xcassets */,
 				24C5217720FFAD030018E2D8 /* Bridging-Header.h */,
 				2412824B1E36A6AB002198BE /* Info.plist */,
@@ -946,7 +946,7 @@
 		DC1D3CAC27C9544C001FCB1A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA5B27C82F55004680CA /* HomeScreenView.swift */,
+				DCE1AA5B27C82F55004680CA /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -954,9 +954,9 @@
 		DC1D3CAD27C95458001FCB1A /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */,
-				DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */,
-				DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */,
+				DCE1AA0E27C7E58A004680CA /* RoomView.swift */,
+				DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */,
+				DCE1AA4F27C7F95B004680CA /* RoomViewModel.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1409,14 +1409,14 @@
 			path = TwilioAccessToken;
 			sourceTree = "<group>";
 		};
-		DCE1A9E527C7E28E004680CA /* NewUI */ = {
+		DCE1A9E527C7E28E004680CA /* NewCode */ = {
 			isa = PBXGroup;
 			children = (
 				DCE1AA3B27C7E5B4004680CA /* TwilioVideo */,
 				DC1D3CAB27C95407001FCB1A /* Screens */,
 				DCE1A9E627C7E519004680CA /* Views */,
 			);
-			path = NewUI;
+			path = NewCode;
 			sourceTree = "<group>";
 		};
 		DCE1A9E627C7E519004680CA /* Views */ = {
@@ -2249,7 +2249,7 @@
 				DCDCD37724193042004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DC0446DC23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
-				DCE1AA5C27C82F55004680CA /* HomeScreenView.swift in Sources */,
+				DCE1AA5C27C82F55004680CA /* HomeView.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
@@ -2328,7 +2328,7 @@
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */,
-				DC1D3CB527CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */,
+				DC1D3CB527CE9788001FCB1A /* RoomViewDependencyWrapper.swift in Sources */,
 				DCE1A9F727C7E556004680CA /* FormStack.swift in Sources */,
 				DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
@@ -2371,9 +2371,9 @@
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3727C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
-				DCE1AA2927C7E58A004680CA /* RoomScreenView.swift in Sources */,
+				DCE1AA2927C7E58A004680CA /* RoomView.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
-				DCE1AA5427C7F95B004680CA /* RoomScreenViewModel.swift in Sources */,
+				DCE1AA5427C7F95B004680CA /* RoomViewModel.swift in Sources */,
 				DC044696238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3C23BA88850045018F /* URLOpening.swift in Sources */,
 				DC9A5E3824622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
@@ -2415,7 +2415,7 @@
 				DCDCD37824193042004A30FC /* TwilioAccessTokenStore.swift in Sources */,
 				DC0446DD23A40E3E0072F597 /* Storage.swift in Sources */,
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
-				DCE1AA5D27C82F55004680CA /* HomeScreenView.swift in Sources */,
+				DCE1AA5D27C82F55004680CA /* HomeView.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
@@ -2494,7 +2494,7 @@
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */,
-				DC1D3CB627CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */,
+				DC1D3CB627CE9788001FCB1A /* RoomViewDependencyWrapper.swift in Sources */,
 				DCE1A9F827C7E556004680CA /* FormStack.swift in Sources */,
 				DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
@@ -2537,9 +2537,9 @@
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
-				DCE1AA2A27C7E58A004680CA /* RoomScreenView.swift in Sources */,
+				DCE1AA2A27C7E58A004680CA /* RoomView.swift in Sources */,
 				DCA80B2A236B821E009141C9 /* LaunchFlow.swift in Sources */,
-				DCE1AA5527C7F95B004680CA /* RoomScreenViewModel.swift in Sources */,
+				DCE1AA5527C7F95B004680CA /* RoomViewModel.swift in Sources */,
 				DC044697238F1FAA0072F597 /* User.swift in Sources */,
 				DC8EAE3D23BA88850045018F /* URLOpening.swift in Sources */,
 				DC9A5E3924622C6100E4B079 /* CameraConfigFactory.swift in Sources */,
