@@ -8,7 +8,6 @@ import Combine
 class FocusLayoutViewModel: ObservableObject {
     struct Presenter {
         var identity: String = ""
-        var displayName: String = ""
         var presentationTrack: VideoTrack?
     }
 
@@ -53,7 +52,7 @@ class FocusLayoutViewModel: ObservableObject {
         isPresenting = true
         self.presenter = presenter
         dominantSpeaker = findDominantSpeaker()
-        dominantSpeaker.isDominantSpeaker = false // No need to distinguish in the UI since only 1 speaker is shown
+        dominantSpeaker.isDominantSpeaker = false // No need to distinguish in the UI since only 1 participant is shown
     }
     
     private func findPresenter() -> Presenter? {
@@ -61,11 +60,7 @@ class FocusLayoutViewModel: ObservableObject {
             return nil
         }
         
-        return Presenter(
-            identity: presenter.identity,
-            displayName: presenter.identity,
-            presentationTrack: presenter.presentationTrack!
-        )
+        return Presenter(identity: presenter.identity, presentationTrack: presenter.presentationTrack!)
     }
     
     private func findDominantSpeaker() -> ParticipantViewModel {
@@ -78,7 +73,7 @@ class FocusLayoutViewModel: ObservableObject {
         } else {
             // Dominant speaker is not yet known or the previous dominant speaker disconnected
             if let firstRemoteParticipant = roomManager.remoteParticipants.first {
-                // Keep it simple and just use first remote participant, someone will start talking soon
+                // Keep it simple and just use first remote participant because someone will start talking soon
                 return ParticipantViewModel(participant: firstRemoteParticipant)
             } else {
                 // Use local participant

@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+/// Displays the dominant speaker and presentation track.
 struct FocusLayoutView: View {
     @EnvironmentObject var viewModel: FocusLayoutViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -18,7 +19,7 @@ struct FocusLayoutView: View {
         GeometryReader { geometry in
             HStack(spacing: spacing) {
                 VStack(spacing: spacing) {
-                    PresentationStatusView(presenterDisplayName: viewModel.presenter.displayName)
+                    PresentationStatusView(presenterIdentity: viewModel.presenter.identity)
                     ParticipantView(viewModel: $viewModel.dominantSpeaker)
 
                     if isPortraitOrientation {
@@ -55,13 +56,13 @@ struct FocusLayoutView_Previews: PreviewProvider {
 extension FocusLayoutViewModel {
     static func stub(
         isPresenting: Bool = false,
-        dominantSpeakerDisplayName: String = "Bob",
-        presenterDisplayName: String = "Alice"
+        dominantSpeakerIdentity: String = "Bob",
+        presenterIdentity: String = "Alice"
     ) -> FocusLayoutViewModel {
         let viewModel = FocusLayoutViewModel()
         viewModel.isPresenting = isPresenting
-        viewModel.dominantSpeaker = ParticipantViewModel.stub(identity: dominantSpeakerDisplayName)
-        viewModel.presenter = Presenter(displayName: presenterDisplayName)
+        viewModel.dominantSpeaker = ParticipantViewModel.stub(identity: dominantSpeakerIdentity)
+        viewModel.presenter = Presenter(identity: presenterIdentity)
         return viewModel
     }
 }

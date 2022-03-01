@@ -81,10 +81,6 @@ struct ParticipantView_Previews: PreviewProvider {
 }
 
 extension ParticipantViewModel {
-    init() {
-        
-    }
-    
     static func stub(
         identity: String = "Alice",
         isMuted: Bool = false,

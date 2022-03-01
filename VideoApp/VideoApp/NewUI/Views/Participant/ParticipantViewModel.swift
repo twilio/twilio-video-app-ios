@@ -4,7 +4,7 @@
 
 import TwilioVideo
 
-/// Speaker abstraction so the UI can handle local and remote participants the same way.
+/// Participant abstraction so the UI can handle local and remote participants the same way.
 struct ParticipantViewModel {
     var identity = ""
     var displayName = ""
@@ -14,6 +14,11 @@ struct ParticipantViewModel {
     var isDominantSpeaker = false
     var cameraTrack: VideoTrack?
     var shouldMirrorCameraVideo = false
+
+    /// The UI sometimes needs an empty participant.
+    init() {
+        
+    }
 
     init(participant: LocalParticipantManager) {
         identity = participant.identity

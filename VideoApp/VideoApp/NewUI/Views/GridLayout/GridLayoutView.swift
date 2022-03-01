@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+/// Displays participants in a video grid layout.
 struct GridLayoutView: View {
     @EnvironmentObject var viewModel: GridLayoutViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -16,17 +17,17 @@ struct GridLayoutView: View {
 
     private var rowCount: Int {
         if isPortraitOrientation {
-            return (viewModel.onscreenSpeakers.count + viewModel.onscreenSpeakers.count % columnCount) / columnCount
+            return (viewModel.onscreenParticipants.count + viewModel.onscreenParticipants.count % columnCount) / columnCount
         } else {
-            return viewModel.onscreenSpeakers.count < 5 ? 1 : 2
+            return viewModel.onscreenParticipants.count < 5 ? 1 : 2
         }
     }
     
     private var columnCount: Int {
         if isPortraitOrientation {
-            return viewModel.onscreenSpeakers.count < 4 ? 1 : 2
+            return viewModel.onscreenParticipants.count < 4 ? 1 : 2
         } else {
-            return (viewModel.onscreenSpeakers.count + viewModel.onscreenSpeakers.count % rowCount) / rowCount
+            return (viewModel.onscreenParticipants.count + viewModel.onscreenParticipants.count % rowCount) / rowCount
         }
     }
     
@@ -39,12 +40,12 @@ struct GridLayoutView: View {
     
     var body: some View {
         VStack {
-            if viewModel.onscreenSpeakers.isEmpty {
+            if viewModel.onscreenParticipants.isEmpty {
                 Spacer()
             } else {
                 GeometryReader { geometry in
                     LazyVGrid(columns: columns, spacing: spacing) {
-                        ForEach($viewModel.onscreenSpeakers, id: \.self) { $speaker in
+                        ForEach($viewModel.onscreenParticipants, id: \.self) { $speaker in
                             ParticipantView(viewModel: $speaker)
                                 .frame(height: geometry.size.height / CGFloat(rowCount) - spacing)
                         }
@@ -75,16 +76,11 @@ struct GridLayoutView_Previews: PreviewProvider {
 }
 
 extension GridLayoutViewModel {
-    static func stub(onscreenSpeakerCount: Int = 6, offscreenSpeakerCount: Int = 0) -> GridLayoutViewModel {
+    static func stub(onscreenSpeakerCount: Int = 6) -> GridLayoutViewModel {
         let viewModel = GridLayoutViewModel()
 
-        viewModel.onscreenSpeakers = Array(1...onscreenSpeakerCount)
-            .map { ParticipantViewModel.stub(identity: "Speaker \($0)") }
-        
-        if offscreenSpeakerCount > 1 {
-            viewModel.offscreenSpeakers = Array(1...offscreenSpeakerCount)
-                .map { ParticipantViewModel.stub(identity: "Offscreen \($0)") }
-        }
+        viewModel.onscreenParticipants = Array(1...onscreenSpeakerCount)
+            .map { ParticipantViewModel.stub(identity: "Participant \($0)") }
         
         return viewModel
     }
