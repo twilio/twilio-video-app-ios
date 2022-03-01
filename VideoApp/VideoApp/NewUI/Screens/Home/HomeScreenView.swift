@@ -21,11 +21,6 @@ struct HomeScreenView: View {
     @State private var showSettings = false
     @State private var showRoom = false
 
-    @StateObject private var roomScreenViewModel = RoomScreenViewModel()
-    @StateObject private var localParticipant = LocalParticipantManager()
-    @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
-    @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
-
     var body: some View {
         NavigationView {
             FormStack {
@@ -52,21 +47,7 @@ struct HomeScreenView: View {
                 SettingsView()
             }
             .fullScreenCover(isPresented: $showRoom) {
-                Group {
-                    RoomScreenView(roomName: roomName)
-                }
-                .environmentObject(roomScreenViewModel)
-                .environmentObject(gridLayoutViewModel)
-                .environmentObject(focusLayoutViewModel)
-                .environmentObject(localParticipant)
-                .onAppear {
-                    localParticipant.configure(identity: AuthStore.shared.userDisplayName)
-                    let roomManager = RoomManager()
-                    roomManager.configure(localParticipant: localParticipant)
-                    roomScreenViewModel.configure(roomManager: roomManager)
-                    gridLayoutViewModel.configure(roomManager: roomManager)
-                    focusLayoutViewModel.configure(roomManager: roomManager)
-                }
+                RoomScreenViewDependencyContainer(roomName: roomName)
             }
         }
     }

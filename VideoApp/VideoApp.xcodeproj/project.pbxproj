@@ -63,6 +63,8 @@
 		DC1C2F9023AC30070044FB4D /* AppInfoStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */; };
 		DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
 		DC1C2F9423AC34B30044FB4D /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */; };
+		DC1D3CB527CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */; };
+		DC1D3CB627CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC386DD22458DC05009E994A /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC386DD02458DC05009E994A /* RoomViewModel.swift */; };
@@ -491,6 +493,7 @@
 		DC1C2F8923A6E7270044FB4D /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		DC1C2F8D23AC30070044FB4D /* AppInfoStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStoreFactory.swift; sourceTree = "<group>"; };
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
+		DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScreenViewDependencyContainer.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
@@ -1004,6 +1007,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE1AA0E27C7E58A004680CA /* RoomScreenView.swift */,
+				DC1D3CB427CE9787001FCB1A /* RoomScreenViewDependencyContainer.swift */,
 				DCE1AA4F27C7F95B004680CA /* RoomScreenViewModel.swift */,
 			);
 			path = Room;
@@ -2411,6 +2415,7 @@
 				4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3C2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCE1AA4827C7E5E0004680CA /* RoomManager.swift in Sources */,
+				DC1D3CB527CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */,
 				DCE1A9F727C7E556004680CA /* FormStack.swift in Sources */,
 				DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
@@ -2584,6 +2589,7 @@
 				4B0012661FBA52E5004A587E /* TrackStatsTableViewCell.m in Sources */,
 				DCAEBF3D2384448500141D2D /* SelectOptionViewController.swift in Sources */,
 				DCE1AA4927C7E5E0004680CA /* RoomManager.swift in Sources */,
+				DC1D3CB627CE9788001FCB1A /* RoomScreenViewDependencyContainer.swift in Sources */,
 				DCE1A9F827C7E556004680CA /* FormStack.swift in Sources */,
 				DCEDB380247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */,
