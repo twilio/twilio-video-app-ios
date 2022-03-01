@@ -39,8 +39,8 @@
 		8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
 		8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
 		93223A7F4DEC256BF49177A0 /* Pods_Video_Internal_Video_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAD7F49B9C6F06A36CDD692 /* Pods_Video_Internal_Video_Community.framework */; };
-		DC044685238EF6C20072F597 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* Environment.swift */; };
-		DC044686238EF6C20072F597 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* Environment.swift */; };
+		DC044685238EF6C20072F597 /* TwilioEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* TwilioEnvironment.swift */; };
+		DC044686238EF6C20072F597 /* TwilioEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* TwilioEnvironment.swift */; };
 		DC044692238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
 		DC044693238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
 		DC044696238F1FAA0072F597 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044694238F1FAA0072F597 /* User.swift */; };
@@ -454,7 +454,7 @@
 		CF3A673FFFA1998DACFEFE3C /* Pods_Video_Internal_Video_InternalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Video_Internal_Video_InternalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90DE0A39F48B889AB2E6C96 /* Pods-Video-Internal-Video-InternalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Video-Internal-Video-InternalTests.debug.xcconfig"; path = "Target Support Files/Pods-Video-Internal-Video-InternalTests/Pods-Video-Internal-Video-InternalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC04467B238DD55C0072F597 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
-		DC044683238EF6C20072F597 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DC044683238EF6C20072F597 /* TwilioEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioEnvironment.swift; sourceTree = "<group>"; };
 		DC044690238F1E3C0072F597 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		DC044694238F1FAA0072F597 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DC04469C238F29500072F597 /* UserStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoreSpec.swift; sourceTree = "<group>"; };
@@ -1051,11 +1051,11 @@
 				DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */,
 				DCEDB36924743D1D006AF70D /* BandwidthProfileMode.swift */,
 				8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */,
-				DC044683238EF6C20072F597 /* Environment.swift */,
 				DC82A34E23FC9AAA0081578C /* JSONContainer.swift */,
 				DC0446DA23A40E3E0072F597 /* Storage.swift */,
 				DCEDB371247442D9006AF70D /* TrackPriority.swift */,
 				DCEDB37924744734006AF70D /* TrackSwitchOffMode.swift */,
+				DC044683238EF6C20072F597 /* TwilioEnvironment.swift */,
 				DCAEBF5223849C1C00141D2D /* VideoCodec.swift */,
 				8A84724A26B36749004BBC79 /* VideoContentPreferencesMode.swift */,
 				DC82A35223FDB6890081578C /* SDKLogLevel.swift */,
@@ -2343,7 +2343,7 @@
 				DC82A3992404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4D23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
-				DC044685238EF6C20072F597 /* Environment.swift in Sources */,
+				DC044685238EF6C20072F597 /* TwilioEnvironment.swift in Sources */,
 				DCC7E36F24085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift in Sources */,
 				DCF461622385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */,
@@ -2508,7 +2508,7 @@
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
-				DC044686238EF6C20072F597 /* Environment.swift in Sources */,
+				DC044686238EF6C20072F597 /* TwilioEnvironment.swift in Sources */,
 				DCC7E37024085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift in Sources */,
 				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
 				DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */,

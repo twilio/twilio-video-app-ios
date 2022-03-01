@@ -16,7 +16,7 @@
 
 import Foundation
 
-enum BackendEnvironment: String, SettingOptions {
+enum TwilioEnvironment: String, SettingOptions {
     case production
     case staging
     case development

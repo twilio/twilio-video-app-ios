@@ -186,6 +186,7 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 }
 
 - (void)roomDidChange {
+// TODO: Fix this when we add a new way to access stats
 //    self.room = ((Room *)self.videoAppRoom).room;
 }
 

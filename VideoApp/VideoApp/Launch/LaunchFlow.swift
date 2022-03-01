@@ -14,8 +14,8 @@
 //  limitations under the License.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 protocol LaunchFlow {
     func start()
@@ -54,9 +54,9 @@ class LaunchFlowImpl: LaunchFlow {
         navigationController.hidesBarsOnSwipe = false
 
         if authStore.isSignedIn {
-            let controller = UIHostingController(rootView: HomeScreenView())
-            controller.modalPresentationStyle = .fullScreen
-            navigationController.present(controller, animated: true)
+            let homeController = UIHostingController(rootView: HomeScreenView())
+            homeController.modalPresentationStyle = .fullScreen
+            navigationController.present(homeController, animated: true)
         } else {
             navigationController.topViewController?.performSegue(
                 withIdentifier: signInSegueIdentifierFactory.makeSignInSegueIdentifier(),
