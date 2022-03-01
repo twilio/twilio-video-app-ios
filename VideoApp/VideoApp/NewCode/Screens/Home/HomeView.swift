@@ -19,8 +19,8 @@ import SwiftUI
 /// Main home screen for the app.
 struct HomeView: View {
     @State private var roomName = ""
-    @State private var showSettings = false
-    @State private var showRoom = false
+    @State private var isShowingSettings = false
+    @State private var isShowingRoom = false
 
     var body: some View {
         NavigationView {
@@ -32,7 +32,7 @@ struct HomeView: View {
 
                 VStack {
                     Button("Continue") {
-                        showRoom = true
+                        isShowingRoom = true
                     }
                     .buttonStyle(PrimaryButtonStyle(isEnabled: !roomName.isEmpty))
                     .disabled(roomName.isEmpty)
@@ -40,14 +40,14 @@ struct HomeView: View {
             }
             .navigationBarTitle("Join room", displayMode: .inline)
             .toolbar {
-                Button(action: { showSettings.toggle() }) {
+                Button(action: { isShowingSettings.toggle() }) {
                     Image(systemName: "gear")
                 }
             }
-            .sheet(isPresented: $showSettings) {
+            .sheet(isPresented: $isShowingSettings) {
                 SettingsView()
             }
-            .fullScreenCover(isPresented: $showRoom) {
+            .fullScreenCover(isPresented: $isShowingRoom) {
                 RoomViewDependencyWrapper(roomName: roomName)
             }
         }

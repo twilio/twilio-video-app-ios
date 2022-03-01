@@ -93,12 +93,9 @@ struct RoomView: View {
         .onDisappear {
             app.isIdleTimerDisabled = false
         }
-        .alert(item: $viewModel.alertIdentifier) { alertIdentifier in
-            switch alertIdentifier {
-            case .error:
-                return Alert(error: viewModel.error!) {
-                    presentationMode.wrappedValue.dismiss()
-                }
+        .alert(isPresented: $viewModel.isShowingError) {
+            Alert(error: viewModel.error!) {
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }

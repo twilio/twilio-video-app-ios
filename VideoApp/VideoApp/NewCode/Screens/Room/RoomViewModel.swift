@@ -23,14 +23,8 @@ class RoomViewModel: ObservableObject {
         case connected
     }
 
-    enum AlertIdentifier: String, Identifiable {
-        case error
-        
-        var id: String { rawValue }
-    }
-    
-    @Published var alertIdentifier: AlertIdentifier?
     @Published var state = State.disconnected
+    @Published var isShowingError = false
     private(set) var error: Error?
     private let accessTokenStore = TwilioAccessTokenStore()
     private var roomManager: RoomManager!
@@ -61,7 +55,7 @@ class RoomViewModel: ObservableObject {
     private func handleError(_ error: Error) {
         disconnect()
         self.error = error
-        alertIdentifier = .error
+        isShowingError = true
     }
 
     func connect(roomName: String) {
