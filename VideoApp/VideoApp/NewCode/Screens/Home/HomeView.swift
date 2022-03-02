@@ -32,6 +32,7 @@ struct HomeView: View {
 
                 VStack {
                     Button("Continue") {
+                        hideKeyboard()
                         isShowingRoom = true
                     }
                     .buttonStyle(PrimaryButtonStyle(isEnabled: !roomName.isEmpty))

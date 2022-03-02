@@ -67,6 +67,8 @@
 		DC1D3CB627CE9788001FCB1A /* RoomViewDependencyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */; };
 		DC1D3CB927CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
 		DC1D3CBA27CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
+		DC1D3CBC27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
+		DC1D3CBD27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
@@ -474,6 +476,7 @@
 		DC1C2F9123AC34B30044FB4D /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
 		DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewDependencyWrapper.swift; sourceTree = "<group>"; };
 		DC1D3CB827CEC100001FCB1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A292437E7380093E855 /* StatusCheck.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusCheck.xctestplan; sourceTree = "<group>"; };
@@ -1436,6 +1439,7 @@
 				DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */,
 				DCE1A9EB27C7E556004680CA /* FormStack.swift */,
 				DCE1A9ED27C7E556004680CA /* FormTextFieldStyle.swift */,
+				DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */,
 				DCE1A9E827C7E556004680CA /* PrimaryButtonStyle.swift */,
 				DCE1A9EC27C7E556004680CA /* ProgressHUD.swift */,
 				DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */,
@@ -2359,6 +2363,7 @@
 				DC1C2F7F23A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5423849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2D236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
+				DC1D3CBC27CFD459001FCB1A /* HideKeyboard.swift in Sources */,
 				DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCD940B2243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
@@ -2525,6 +2530,7 @@
 				DC1C2F8023A445740044FB4D /* Notifications.swift in Sources */,
 				DCAEBF5523849C1C00141D2D /* VideoCodec.swift in Sources */,
 				DCA80B2E236C77C6009141C9 /* LaunchFlowFactory.swift in Sources */,
+				DC1D3CBD27CFD459001FCB1A /* HideKeyboard.swift in Sources */,
 				DCA5394E235F740200CA26FB /* AuthStore.swift in Sources */,
 				24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */,
 				DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
