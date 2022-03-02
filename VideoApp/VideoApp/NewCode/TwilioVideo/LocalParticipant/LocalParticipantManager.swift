@@ -19,7 +19,7 @@ import TwilioVideo
 
 /// Maintains local participant state and uses a publisher to notify subscribers of state changes.
 ///
-/// The microphone and camera may be configured before and after connecting to a video room.
+/// The microphone and camera may be configured before or after connecting to a video room.
 class LocalParticipantManager: NSObject, ObservableObject {
     let changePublisher = PassthroughSubject<LocalParticipantManager, Never>()
     let errorPublisher = PassthroughSubject<Error, Never>()

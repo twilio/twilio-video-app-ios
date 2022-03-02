@@ -23,10 +23,10 @@ struct SettingsView: UIViewControllerRepresentable {
             appSettingsStore: AppSettingsStore.shared,
             authStore: AuthStore.shared
         )
-        let settingsViewController = SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
+        let settingsController = SettingsViewControllerFactory().makeSettingsViewController(viewModel: viewModel)
 
         let navigationController = UINavigationController()
-        navigationController.viewControllers = [settingsViewController]
+        navigationController.viewControllers = [settingsController]
 
         return navigationController
     }

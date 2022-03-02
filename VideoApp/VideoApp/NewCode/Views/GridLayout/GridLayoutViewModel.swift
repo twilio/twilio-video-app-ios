@@ -17,7 +17,7 @@
 import TwilioVideo
 import Combine
 
-/// Subscribes to room and participant state changes to provide participant state for the UI to display in a grid
+/// Subscribes to room and participant state changes to provide participant state for the UI to display in a grid.
 class GridLayoutViewModel: ObservableObject {
     @Published var onscreenParticipants: [ParticipantViewModel] = []
     @Published var offscreenParticipants: [ParticipantViewModel] = []

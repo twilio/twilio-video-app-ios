@@ -19,8 +19,8 @@ import SwiftUI
 /// Main home screen for the app.
 struct HomeView: View {
     @State private var roomName = ""
-    @State private var isShowingSettings = false
     @State private var isShowingRoom = false
+    @State private var isShowingSettings = false
 
     var body: some View {
         NavigationView {

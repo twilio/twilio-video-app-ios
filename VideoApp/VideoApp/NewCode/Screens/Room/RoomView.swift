@@ -19,9 +19,9 @@ import SwiftUI
 /// Room screen that is shown when a user connects to a video room.
 struct RoomView: View {
     @EnvironmentObject var viewModel: RoomViewModel
-    @EnvironmentObject var localParticipant: LocalParticipantManager
     @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
     @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
+    @EnvironmentObject var localParticipant: LocalParticipantManager
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -87,7 +87,7 @@ struct RoomView: View {
             }
         }
         .onAppear {
-            app.isIdleTimerDisabled = true
+            app.isIdleTimerDisabled = true // Disable lock screen
             viewModel.connect(roomName: roomName)
         }
         .onDisappear {

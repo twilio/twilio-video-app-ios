@@ -19,16 +19,16 @@ import SwiftUI
 /// Setup dependencies for `RoomView`.
 ///
 /// This seems kind of odd but it is the best solution I have come up with so far. By using a wrapper like this
-/// I can inject dependencies into `RoomView` as `@EnvironmentObject` which works well for UI previews. If I
-/// had `RoomView` create the dependencies with `@StateObject` it would be more difficult to configure the
-/// UI previews. If I had `HomeView` create the dependencies, they would not get deallocated when `RoomView`
+/// dependencies are injected into `RoomView` as `@EnvironmentObject` which works well for UI previews. If
+/// `RoomView` created the dependencies with `@StateObject` it would be more difficult to configure the
+/// UI previews. If `HomeView` created the dependencies, they would not get deallocated when `RoomView`
 /// goes away. Also `HomeView` shouldn't have to do complex dependency setup for other screens.
 struct RoomViewDependencyWrapper: View {
     let roomName: String
-    @StateObject private var localParticipant = LocalParticipantManager()
     @StateObject private var roomViewModel = RoomViewModel()
     @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
     @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
+    @StateObject private var localParticipant = LocalParticipantManager()
 
     var body: some View {
         Group {
