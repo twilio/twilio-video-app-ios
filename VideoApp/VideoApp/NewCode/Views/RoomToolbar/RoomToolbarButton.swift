@@ -67,7 +67,7 @@ struct RoomToolbarButton_Previews: PreviewProvider {
         Group {
             RoomToolbarButton(image: Image(systemName: "mic.slash"))
                 .previewDisplayName("Default")
-            RoomToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
+            RoomToolbarButton(image: Image(systemName: "phone.down.fill"), role: .destructive)
                 .previewDisplayName("Destructive")
         }
         .previewLayout(.sizeThatFits)

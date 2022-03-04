@@ -30,7 +30,10 @@ struct ParticipantView: View {
                 .padding()
 
             if viewModel.cameraTrack != nil {
+                /// Use opacity to hide the view so that the view is not completely removed from the hierarchy. Otherwise
+                /// the view would stop rendering the video track which would cause the video track to never get switched back on.
                 SwiftUIVideoView(videoTrack: $viewModel.cameraTrack, shouldMirror: $viewModel.shouldMirrorCameraVideo)
+                    .opacity(viewModel.isCameraTrackSwitchedOff ? 0 : 1)
             }
 
             VStack {

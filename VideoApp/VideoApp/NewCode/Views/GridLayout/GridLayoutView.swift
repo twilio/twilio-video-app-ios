@@ -27,19 +27,23 @@ struct GridLayoutView: View {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
     }
 
+    private var gridItemCount: Int {
+        viewModel.pages[0].participants.count
+    }
+    
     private var rowCount: Int {
         if isPortraitOrientation {
-            return (viewModel.onscreenParticipants.count + viewModel.onscreenParticipants.count % columnCount) / columnCount
+            return (gridItemCount + gridItemCount % columnCount) / columnCount
         } else {
-            return viewModel.onscreenParticipants.count < 5 ? 1 : 2
+            return gridItemCount < 5 ? 1 : 2
         }
     }
     
     private var columnCount: Int {
         if isPortraitOrientation {
-            return viewModel.onscreenParticipants.count < 4 ? 1 : 2
+            return gridItemCount < 4 ? 1 : 2
         } else {
-            return (viewModel.onscreenParticipants.count + viewModel.onscreenParticipants.count % rowCount) / rowCount
+            return (gridItemCount + gridItemCount % rowCount) / rowCount
         }
     }
     
@@ -52,17 +56,24 @@ struct GridLayoutView: View {
     
     var body: some View {
         VStack {
-            if viewModel.onscreenParticipants.isEmpty {
+            if viewModel.pages.isEmpty {
                 Spacer()
             } else {
-                GeometryReader { geometry in
-                    LazyVGrid(columns: columns, spacing: spacing) {
-                        ForEach($viewModel.onscreenParticipants, id: \.self) { $speaker in
-                            ParticipantView(viewModel: $speaker)
-                                .frame(height: geometry.size.height / CGFloat(rowCount) - spacing)
+                TabView {
+                    ForEach($viewModel.pages, id: \.self) { $page in
+                        GeometryReader { geometry in
+                            LazyVGrid(columns: columns, spacing: spacing) {
+                                ForEach($page.participants, id: \.self) { $participant in
+                                    ParticipantView(viewModel: $participant)
+                                        .frame(height: geometry.size.height / CGFloat(rowCount) - spacing)
+                                }
+                            }
+                            .padding(.horizontal, spacing)
                         }
+                        .padding(.bottom, 40) // Space for page index dots
                     }
                 }
+                .tabViewStyle(PageTabViewStyle())
             }
         }
     }
@@ -71,29 +82,41 @@ struct GridLayoutView: View {
 struct GridLayoutView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ForEach((1...6), id: \.self) {
+            ForEach((1...6), id: \.self) { _ in
                 GridLayoutView(spacing: 6)
-                    .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: $0))
+                    .environmentObject(GridLayoutViewModel.stub())
             }
             .frame(width: 400, height: 700)
 
-            ForEach((1...6), id: \.self) {
+            ForEach((1...6), id: \.self) { _ in
                 GridLayoutView(spacing: 6)
-                    .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: $0))
+                    .environmentObject(GridLayoutViewModel.stub())
             }
             .frame(width: 700, height: 300)
         }
+        .background(Color.backgroundBrandStronger)
         .previewLayout(.sizeThatFits)
     }
 }
 
 extension GridLayoutViewModel {
-    static func stub(onscreenSpeakerCount: Int = 6) -> GridLayoutViewModel {
+    static func stub(pageCount: Int = 2) -> GridLayoutViewModel {
         let viewModel = GridLayoutViewModel()
 
-        viewModel.onscreenParticipants = Array(1...onscreenSpeakerCount)
-            .map { ParticipantViewModel.stub(identity: "Participant \($0)") }
+        if pageCount > 0 {
+            viewModel.pages = Array(1...pageCount)
+                .map { Page.stub(identifier: $0) }
+        }
         
         return viewModel
+    }
+}
+
+extension GridLayoutViewModel.Page {
+    static func stub(identifier: Int) -> GridLayoutViewModel.Page {
+        let participants = Array(1...6)
+            .map { ParticipantViewModel.stub(identity: "Participant \($0)") }
+        
+        return GridLayoutViewModel.Page(identifier: identifier, participants: participants)
     }
 }

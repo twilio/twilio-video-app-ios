@@ -32,25 +32,13 @@ class RemoteParticipantManager: NSObject {
         return track.isTrackSubscribed && track.isTrackEnabled
     }
     var cameraTrack: VideoTrack? {
-        guard
-            let publication = participant.remoteVideoTracks.first(where: { $0.trackName.contains(TrackName.camera) }),
-            let track = publication.remoteTrack,
-            track.isEnabled
-        else {
-            return nil
-        }
-        
-        return track
+        participant.videoTrack(TrackName.camera)
+    }
+    var isCameraTrackSwitchedOff: Bool {
+        participant.videoTrack(TrackName.camera)?.isSwitchedOff ?? false
     }
     var presentationTrack: VideoTrack? {
-        guard
-            let publication = participant.remoteVideoTracks.first(where: { $0.trackName.contains(TrackName.screen) }),
-            let track = publication.remoteTrack
-        else {
-            return nil
-        }
-        
-        return track
+        participant.videoTrack(TrackName.screen)
     }
     var isDominantSpeaker = false {
         didSet {
@@ -101,6 +89,14 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
         delegate?.participantDidChange(self)
     }
 
+    func remoteParticipantSwitchedOnVideoTrack(participant: RemoteParticipant, track: RemoteVideoTrack) {
+        delegate?.participantDidChange(self)
+    }
+
+    func remoteParticipantSwitchedOffVideoTrack(participant: RemoteParticipant, track: RemoteVideoTrack) {
+        delegate?.participantDidChange(self)
+    }
+    
     func didSubscribeToAudioTrack(
         audioTrack: RemoteAudioTrack,
         publication: RemoteAudioTrackPublication,
@@ -129,5 +125,11 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
         publication: RemoteAudioTrackPublication
     ) {
         delegate?.participantDidChange(self)
+    }
+}
+
+extension RemoteParticipant {
+    func videoTrack(_ trackName: String) -> RemoteVideoTrack? {
+        remoteVideoTracks.first { $0.trackName.contains(trackName) }?.remoteTrack
     }
 }

@@ -45,7 +45,7 @@ struct FocusLayoutView: View {
                     PresentationView(videoTrack: $viewModel.presenter.presentationTrack)
                 }
             }
-            .padding(.bottom, spacing)
+            .padding([.bottom, .horizontal], spacing)
         }
     }
 }
