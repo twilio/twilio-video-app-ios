@@ -81,16 +81,20 @@ struct GridLayoutView: View {
 
 struct GridLayoutView_Previews: PreviewProvider {
     static var previews: some View {
+        let participantCounts = [1, 2, 3, 4, 5, 6, 7, 100]
+        
         Group {
-            ForEach((1...6), id: \.self) { _ in
+            ForEach(participantCounts, id: \.self) {
                 GridLayoutView(spacing: 6)
-                    .environmentObject(GridLayoutViewModel.stub())
+                    .previewDisplayName("Portrait \($0)")
+                    .environmentObject(GridLayoutViewModel.stub(participantCount: $0))
             }
             .frame(width: 400, height: 700)
 
-            ForEach((1...6), id: \.self) { _ in
+            ForEach(participantCounts, id: \.self) {
                 GridLayoutView(spacing: 6)
-                    .environmentObject(GridLayoutViewModel.stub())
+                    .previewDisplayName("Landscape \($0)")
+                    .environmentObject(GridLayoutViewModel.stub(participantCount: $0))
             }
             .frame(width: 700, height: 300)
         }
@@ -100,23 +104,12 @@ struct GridLayoutView_Previews: PreviewProvider {
 }
 
 extension GridLayoutViewModel {
-    static func stub(pageCount: Int = 2) -> GridLayoutViewModel {
+    static func stub(participantCount: Int = 6) -> GridLayoutViewModel {
         let viewModel = GridLayoutViewModel()
-
-        if pageCount > 0 {
-            viewModel.pages = Array(1...pageCount)
-                .map { Page.stub(identifier: $0) }
-        }
+        
+        Array(1...participantCount)
+            .forEach { viewModel.addParticipant(.stub(identity: "Participant \($0)")) }
         
         return viewModel
-    }
-}
-
-extension GridLayoutViewModel.Page {
-    static func stub(identifier: Int) -> GridLayoutViewModel.Page {
-        let participants = Array(1...6)
-            .map { ParticipantViewModel.stub(identity: "Participant \($0)") }
-        
-        return GridLayoutViewModel.Page(identifier: identifier, participants: participants)
     }
 }

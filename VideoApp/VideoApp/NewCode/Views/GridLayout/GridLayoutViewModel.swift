@@ -89,7 +89,7 @@ class GridLayoutViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
-    private func addParticipant(_ participant: ParticipantViewModel) {
+    func addParticipant(_ participant: ParticipantViewModel) {
         if !pages.isEmpty && pages.last!.participants.count < maxParticipantsPerPage {
             pages[pages.count - 1].participants.append(participant)
         } else {

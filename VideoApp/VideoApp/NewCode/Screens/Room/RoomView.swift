@@ -119,7 +119,7 @@ struct RoomView_Previews: PreviewProvider {
             RoomView(roomName: "Demo")
                 .previewDisplayName("Connecting")
                 .environmentObject(RoomViewModel.stub(state: .connecting))
-                .environmentObject(GridLayoutViewModel.stub(pageCount: 0))
+                .environmentObject(GridLayoutViewModel.stub(participantCount: 0))
                 .environmentObject(FocusLayoutViewModel.stub())
         }
         .environmentObject(LocalParticipantManager())
