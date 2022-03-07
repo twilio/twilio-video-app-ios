@@ -14,6 +14,7 @@
 //  limitations under the License.
 //
 
+import SwiftUI
 import UIKit
 
 class AuthFlow {
@@ -48,7 +49,10 @@ class AuthFlow {
 
         navigationVC.dismiss(animated: true) {
             navigationVC.popToRootViewController(animated: true)
-            navigationVC.viewControllers.first?.performSegue(withIdentifier: "lobbySegue", sender: self)
+            
+            let homeController = UIHostingController(rootView: HomeView())
+            homeController.modalPresentationStyle = .fullScreen
+            navigationVC.present(homeController, animated: true)
         }
     }
 

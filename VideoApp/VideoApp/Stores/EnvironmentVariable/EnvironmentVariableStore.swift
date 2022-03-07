@@ -17,17 +17,17 @@
 import Foundation
 
 protocol EnvironmentVariableStoreWriting: AnyObject {
-    var twilioEnvironment: Environment? { get set }
+    var twilioEnvironment: TwilioEnvironment? { get set }
 }
 
 class EnvironmentVariableStore: EnvironmentVariableStoreWriting {
-    var twilioEnvironment: Environment? {
+    var twilioEnvironment: TwilioEnvironment? {
         get { fatalError() }
         set { setenv("TWILIO_ENVIRONMENT", newValue?.environmentVariableValue, 1) }
     }
 }
 
-private extension Environment {
+private extension TwilioEnvironment {
     var environmentVariableValue: String {
         switch self {
         case .production: return "Production"

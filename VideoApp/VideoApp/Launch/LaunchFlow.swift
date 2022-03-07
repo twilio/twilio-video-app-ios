@@ -14,6 +14,7 @@
 //  limitations under the License.
 //
 
+import SwiftUI
 import UIKit
 
 protocol LaunchFlow {
@@ -52,8 +53,16 @@ class LaunchFlowImpl: LaunchFlow {
         navigationController.barHideOnSwipeGestureRecognizer.isEnabled = false
         navigationController.hidesBarsOnSwipe = false
 
-        let segueIdentifier = authStore.isSignedIn ? "lobbySegue" : signInSegueIdentifierFactory.makeSignInSegueIdentifier()
-        navigationController.topViewController?.performSegue(withIdentifier: segueIdentifier, sender: self)
+        if authStore.isSignedIn {
+            let homeController = UIHostingController(rootView: HomeView())
+            homeController.modalPresentationStyle = .fullScreen
+            navigationController.present(homeController, animated: true)
+        } else {
+            navigationController.topViewController?.performSegue(
+                withIdentifier: signInSegueIdentifierFactory.makeSignInSegueIdentifier(),
+                sender: self
+            )
+        }
         
         deepLinkStore.didReceiveDeepLink = { [weak self] in
             self?.start()

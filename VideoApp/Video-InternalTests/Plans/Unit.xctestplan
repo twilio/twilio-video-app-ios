@@ -9,15 +9,7 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : {
-      "targets" : [
-        {
-          "containerPath" : "container:VideoApp.xcodeproj",
-          "identifier" : "4B0012221FBA52C4004A587E",
-          "name" : "Video-Internal"
-        }
-      ]
-    },
+    "codeCoverage" : false,
     "targetForVariableExpansion" : {
       "containerPath" : "container:VideoApp.xcodeproj",
       "identifier" : "4B0012221FBA52C4004A587E",
