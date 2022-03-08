@@ -43,12 +43,10 @@ struct RoomView: View {
                         RoomStatusView(streamName: roomName)
                             .padding(.bottom, spacing)
 
-                        HStack(spacing: 0) {
-                            if focusLayoutViewModel.isPresenting {
-                                FocusLayoutView(spacing: spacing)
-                            } else {
-                                GridLayoutView(spacing: spacing)
-                            }
+                        if focusLayoutViewModel.isPresenting {
+                            FocusLayoutView(spacing: spacing)
+                        } else {
+                            GridLayoutView(spacing: spacing)
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)

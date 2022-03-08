@@ -81,7 +81,7 @@ struct GridLayoutView: View {
 
 struct GridLayoutView_Previews: PreviewProvider {
     static var previews: some View {
-        let participantCounts = [1, 2, 3, 4, 5, 6, 7, 100]
+        let participantCounts = [0, 1, 2, 3, 4, 5, 6, 7, 100]
         
         Group {
             ForEach(participantCounts, id: \.self) {
@@ -104,11 +104,12 @@ struct GridLayoutView_Previews: PreviewProvider {
 }
 
 extension GridLayoutViewModel {
-    static func stub(participantCount: Int = 6) -> GridLayoutViewModel {
+    static func stub(participantCount: Int = 20) -> GridLayoutViewModel {
         let viewModel = GridLayoutViewModel()
         
-        Array(1...participantCount)
-            .forEach { viewModel.addParticipant(.stub(identity: "Participant \($0)")) }
+        if participantCount > 0 {
+            Array(1...participantCount).forEach { viewModel.addParticipant(.stub(identity: "Participant \($0)")) }
+        }
         
         return viewModel
     }

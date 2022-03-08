@@ -36,7 +36,7 @@ struct RoomToolbar<Content>: View where Content: View {
 struct RoomToolbar_Previews: PreviewProvider {
     static var previews: some View {
         RoomToolbar {
-            RoomToolbarButton(image: Image(systemName: "arrow.left"), role: .destructive)
+            RoomToolbarButton(image: Image(systemName: "phone.down.fill"), role: .destructive)
             RoomToolbarButton(image: Image(systemName: "mic.fill"))
         }
         .previewLayout(.sizeThatFits)

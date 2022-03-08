@@ -115,7 +115,7 @@ class GridLayoutViewModel: ObservableObject {
             return
         }
 
-        if indexPath.section == .zero {
+        if indexPath.section == 0 {
             pages[indexPath.section].participants[indexPath.item] = participant
         } else {
             pages[indexPath.section].participants[indexPath.item] = participant
