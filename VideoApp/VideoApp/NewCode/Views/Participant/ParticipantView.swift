@@ -30,8 +30,10 @@ struct ParticipantView: View {
                 .padding()
 
             if viewModel.cameraTrack != nil {
-                /// Use opacity to hide the view so that the view is not completely removed from the hierarchy. Otherwise
-                /// the view would stop rendering the video track which would cause the video track to never get switched back on.
+                /// Use opacity to hide the view when the server switches the track off due to bandwidth constraints. This will keep
+                /// the view in the hierarchy which will signal to the server that the UI wants to render this video. The server will
+                /// switch the track on when bandwidth constraints allow. If the view was completely removed from the hierarchy
+                /// the server would never switch the track on.
                 SwiftUIVideoView(videoTrack: $viewModel.cameraTrack, shouldMirror: $viewModel.shouldMirrorCameraVideo)
                     .opacity(viewModel.isCameraTrackSwitchedOff ? 0 : 1)
             }
