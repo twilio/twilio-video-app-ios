@@ -32,7 +32,7 @@ class GridLayoutViewModel: ObservableObject {
     }
 
     @Published var pages: [Page] = []
-    private let maxParticipantsPerPage = 6
+    let maxParticipantsPerPage = 6
     private var roomManager: RoomManager!
     private var subscriptions = Set<AnyCancellable>()
 
@@ -97,8 +97,13 @@ class GridLayoutViewModel: ObservableObject {
         
         if indexPath.section == 0 && pages.count > 1 {
             /// Handle special case to minimize changes to first page
-            pages[0].participants.remove(at: indexPath.item)
-            pages[0].participants.insert(pages[1].participants[0], at: indexPath.item)
+            pages.removeParticipant(at: indexPath, shouldShift: false)
+            pages.insertParticipant(
+                pages[1].participants[0],
+                at: indexPath,
+                maxParticipantsPerPage: maxParticipantsPerPage,
+                shouldShift: false
+            )
             pages.removeParticipant(at: IndexPath(item: 0, section: 1))
         } else {
             pages.removeParticipant(at: indexPath)
@@ -123,9 +128,17 @@ class GridLayoutViewModel: ObservableObject {
                 let oldestDominantSpeaker = pages[0].participants[1...] // Skip local user at 0
                     .sorted { $0.dominantSpeakerStartTime < $1.dominantSpeakerStartTime }
                     .first!
-                let oldestDominantSpeakerIndex = pages[0].participants.firstIndex(of: oldestDominantSpeaker)!
-                pages[0].participants.remove(at: oldestDominantSpeakerIndex)
-                pages[0].participants.insert(participant, at: oldestDominantSpeakerIndex)
+                let oldestDominantSpeakerIndexPath = IndexPath(
+                    item: pages[0].participants.firstIndex(of: oldestDominantSpeaker)!,
+                    section: 0
+                )
+                pages.removeParticipant(at: oldestDominantSpeakerIndexPath, shouldShift: false)
+                pages.insertParticipant(
+                    participant,
+                    at: oldestDominantSpeakerIndexPath,
+                    maxParticipantsPerPage: maxParticipantsPerPage,
+                    shouldShift: false
+                )
                 pages.removeParticipant(at: indexPath)
                 pages.insertParticipant(
                     oldestDominantSpeaker,
@@ -163,21 +176,27 @@ private extension Array where Element == GridLayoutViewModel.Page {
     mutating func insertParticipant(
         _ participant: ParticipantViewModel,
         at indexPath: IndexPath,
-        maxParticipantsPerPage: Int
+        maxParticipantsPerPage: Int,
+        shouldShift: Bool = true
     ) {
         if indexPath.section == endIndex {
             let newPage = GridLayoutViewModel.Page(identifier: indexPath.section, participants: [participant])
             append(newPage)
         } else {
             self[indexPath.section].participants.insert(participant, at: indexPath.item)
-            shiftRight(pageIndex: indexPath.section, maxParticipantsPerPage: maxParticipantsPerPage)
+            
+            if shouldShift {
+                shiftRight(pageIndex: indexPath.section, maxParticipantsPerPage: maxParticipantsPerPage)
+            }
         }
     }
 
-    mutating func removeParticipant(at indexPath: IndexPath) {
+    mutating func removeParticipant(at indexPath: IndexPath, shouldShift: Bool = true) {
         self[indexPath.section].participants.remove(at: indexPath.item)
         
-        shiftLeft(pageIndex: indexPath.section)
+        if shouldShift {
+            shiftLeft(pageIndex: indexPath.section)
+        }
     }
 
     private mutating func shiftLeft(pageIndex: Int) {
