@@ -16,7 +16,33 @@
 
 import Combine
 
-/// Subscribes to room and participant state changes to provide participant state for the UI to display in a grid.
+/// Manages grid layout state changes.
+///
+/// The UI requires an array of pages in order to support pagination. Each page has an array of participants that can hold
+/// up to the max number of participants per page. There is some special handling for the first page to display the most recent
+/// dominant speakers and minimize ordering changes.
+///
+/// When a new participant connects to the video room they are added as the last participant on the last page.
+///
+/// When a participant that is not on the first page becomes dominant speaker they are moved to the position of the oldest
+/// dominant speaker that is on the first page. The oldest dominant speaker on the first page is moved to the start of the second
+/// page. Participants are then shifted across pages until all pages are full except possibly the last page.
+///
+/// When a participant is already on the first page and they become dominant speaker, the participant is updated in place
+/// and there are no grid position changes.
+///
+/// When a participant on the first page disconnects from the video room, they are removed from the page. If there is more than
+/// one page, the first participant on the second page is moved to the first page at the index where the participant was
+/// disconnected. If there are more than two pages, participants are shifted left across pages until only the last page has less
+/// than the max number of participants per page. This special handling for a participant that disconnects from the first page
+/// minimizes ordering changes on the first page.
+///
+/// When a participant that is not on the first page disconnects from the video room, they are removed from the page. If the
+/// participant was not on the last page, participants are shifted left across pages until only the last page has less
+/// than the max number of participants per page.
+///
+/// Some participant state, such as mute status, does not impact grid ordering. The participant will be updated in place so the
+/// UI can update the view for that participant.
 class GridLayoutViewModel: ObservableObject {
     struct Page: Hashable {
         let identifier: Int
@@ -96,7 +122,7 @@ class GridLayoutViewModel: ObservableObject {
         }
         
         if indexPath.section == 0 && pages.count > 1 {
-            /// Handle special case to minimize changes to first page
+            /// Special case to minimize ordering changes on the first page
             pages.removeParticipant(at: indexPath, shouldShift: false)
             pages.insertParticipant(
                 pages[1].participants[0],
@@ -120,11 +146,8 @@ class GridLayoutViewModel: ObservableObject {
         } else {
             pages[indexPath.section].participants[indexPath.item] = participant
 
-            // If an offscreen participant becomes dominant speaker move them to onscreen participants.
-            // The oldest dominant speaker that is onscreen is moved to the start of offscreen participants.
-            // The new dominant speaker is moved onscreen where the oldest dominant speaker was located.
-            // This approach always keeps the most recent dominant speakers visible.
             if participant.isDominantSpeaker {
+                /// Always keep the most recent dominant speakers on the first page
                 let oldestDominantSpeaker = pages[0].participants[1...] // Skip local user at 0
                     .sorted { $0.dominantSpeakerStartTime < $1.dominantSpeakerStartTime }
                     .first!
@@ -150,7 +173,13 @@ class GridLayoutViewModel: ObservableObject {
     }
 }
 
-// TODO: Explain recursive solution.
+/// Handles CRUD operations for participants that are distributed across multiple pages.
+///
+/// The operations ensure that participants are shifted across pages as necessary so that all pages are full except possibly
+/// the last page.
+///
+/// The solution is recursive to keep things as simple as possible. There should not be any performance issues because
+/// a video room does not allow a massive number of participants to be connected.
 private extension Array where Element == GridLayoutViewModel.Page {
     func indexPathOfParticipant(identity: String) -> IndexPath? {
         for (section, page) in enumerated() {
