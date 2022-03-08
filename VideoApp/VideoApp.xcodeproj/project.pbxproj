@@ -148,6 +148,7 @@
 		DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
 		DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
+		DC8A5EB727D66A3D008F7FBA /* GridLayoutViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8CC236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
@@ -515,6 +516,7 @@
 		DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
+		DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModelSpec.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
@@ -1188,6 +1190,7 @@
 				DCACF1D624EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
 				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
+				DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */,
 				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
 				DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */,
 				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
@@ -2613,6 +2616,7 @@
 				DCACF1E324EF1C2F00D3C264 /* MockAppInfoStore.swift in Sources */,
 				DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */,
 				DCACF1E124EF1C0900D3C264 /* MockUserDefaults.swift in Sources */,
+				DC8A5EB727D66A3D008F7FBA /* GridLayoutViewModelSpec.swift in Sources */,
 				DC5CC387249C0D3900355CC6 /* MockUserActivityStoreFactory.swift in Sources */,
 				DC9C7732250043A600AC68FD /* RemoteConfigStoreSpec.swift in Sources */,
 				DC5CC37C249C0D3900355CC6 /* MockAuthStore.swift in Sources */,

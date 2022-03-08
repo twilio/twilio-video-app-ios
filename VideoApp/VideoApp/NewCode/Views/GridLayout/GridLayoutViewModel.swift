@@ -74,7 +74,7 @@ class GridLayoutViewModel: ObservableObject {
             .store(in: &subscriptions)
 
         roomManager.remoteParticipantDisconnectPublisher
-            .sink { [weak self] participant in self?.removeParticipant(with: participant.identity) }
+            .sink { [weak self] participant in self?.removeParticipant(identity: participant.identity) }
             .store(in: &subscriptions)
 
         roomManager.remoteParticipantChangePublisher
@@ -90,12 +90,19 @@ class GridLayoutViewModel: ObservableObject {
         pages.appendParticipant(participant, maxParticipantsPerPage: maxParticipantsPerPage)
     }
     
-    func removeParticipant(with identity: String) {
+    func removeParticipant(identity: String) {
         guard let indexPath = pages.indexPathOfParticipant(identity: identity) else {
             return
         }
         
-        pages.removeParticipant(at: indexPath)
+        if indexPath.section == 0 && pages.count > 1 {
+            /// Handle special case to minimize changes to first page
+            pages[0].participants.remove(at: indexPath.item)
+            pages[0].participants.insert(pages[1].participants[0], at: indexPath.item)
+            pages.removeParticipant(at: IndexPath(item: 0, section: 1))
+        } else {
+            pages.removeParticipant(at: indexPath)
+        }
     }
 
     func updateParticipant(_ participant: ParticipantViewModel) {
@@ -117,12 +124,8 @@ class GridLayoutViewModel: ObservableObject {
                     .sorted { $0.dominantSpeakerStartTime < $1.dominantSpeakerStartTime }
                     .first!
                 let oldestDominantSpeakerIndex = pages[0].participants.firstIndex(of: oldestDominantSpeaker)!
-                pages.removeParticipant(at: IndexPath(item: oldestDominantSpeakerIndex, section: 0))
-                pages.insertParticipant(
-                    participant,
-                    at: IndexPath(item: oldestDominantSpeakerIndex, section: 0),
-                    maxParticipantsPerPage: maxParticipantsPerPage
-                )
+                pages[0].participants.remove(at: oldestDominantSpeakerIndex)
+                pages[0].participants.insert(participant, at: oldestDominantSpeakerIndex)
                 pages.removeParticipant(at: indexPath)
                 pages.insertParticipant(
                     oldestDominantSpeaker,
@@ -199,7 +202,7 @@ private extension Array where Element == GridLayoutViewModel.Page {
             )
             append(newPage)
         } else {
-            self[pageIndex + 1].participants.insert(self[pageIndex].participants.last!, at: 0)
+            self[pageIndex + 1].participants.insert(self[pageIndex].participants.removeLast(), at: 0)
             shiftRight(pageIndex: pageIndex + 1, maxParticipantsPerPage: maxParticipantsPerPage)
         }
     }

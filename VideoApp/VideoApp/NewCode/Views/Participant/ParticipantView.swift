@@ -99,13 +99,15 @@ extension ParticipantViewModel {
     static func stub(
         identity: String = "Alice",
         isMuted: Bool = false,
-        isDominantSpeaker: Bool = false
+        isDominantSpeaker: Bool = false,
+        dominantSpeakerStartTime: Date = .distantPast
     ) -> ParticipantViewModel {
         var viewModel = ParticipantViewModel()
         viewModel.isMuted = isMuted
         viewModel.identity = identity
         viewModel.displayName = identity
         viewModel.isDominantSpeaker = isDominantSpeaker
+        viewModel.dominantSpeakerStartTime = dominantSpeakerStartTime
         return viewModel
     }
 }
