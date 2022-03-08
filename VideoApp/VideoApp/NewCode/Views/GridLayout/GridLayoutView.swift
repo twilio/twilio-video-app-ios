@@ -22,6 +22,7 @@ struct GridLayoutView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let spacing: CGFloat
+    private let pageIndexHeight: CGFloat = 40
 
     private var isPortraitOrientation: Bool {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
@@ -70,7 +71,7 @@ struct GridLayoutView: View {
                             }
                             .padding(.horizontal, spacing)
                         }
-                        .padding(.bottom, 40) // Space for page index dots
+                        .padding(.bottom, pageIndexHeight) /// Display the index below the grid
                     }
                 }
                 .tabViewStyle(PageTabViewStyle())
@@ -81,7 +82,7 @@ struct GridLayoutView: View {
 
 struct GridLayoutView_Previews: PreviewProvider {
     static var previews: some View {
-        let participantCounts = [0, 1, 2, 3, 4, 5, 6, 7, 100]
+        let participantCounts = [1, 2, 3, 4, 5, 6, 7, 100, 0]
         
         Group {
             ForEach(participantCounts, id: \.self) {
@@ -98,7 +99,7 @@ struct GridLayoutView_Previews: PreviewProvider {
             }
             .frame(width: 700, height: 300)
         }
-        .background(Color.backgroundBrandStronger)
+        .background(Color.backgroundBrandStronger) // So page index is visible
         .previewLayout(.sizeThatFits)
     }
 }
