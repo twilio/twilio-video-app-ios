@@ -32,20 +32,19 @@ class GridLayoutViewModelSpec: QuickSpec {
                     sut.addParticipant(.stub(identity: "foo"))
                     
                     expect(sut.pages.count).to(equal(1))
-                    expect(sut.pages[0].participants.count).to(equal(1))
-                    expect(sut.pages[0].participants[0].identity).to(equal("foo"))
+                    expect(sut.pages[0].participants.map { $0.identity }).to(equal(["foo"]))
                 }
             }
             
             context("when the last page is full") {
                 it("adds the participant to a new page") {
-                    Array(1...sut.maxParticipantsPerPage + 1)
-                        .forEach { sut.addParticipant(.stub(identity: "Participant \($0)")) }
-
+                    Array(1...6).forEach { sut.addParticipant(.stub(identity: String($0))) }
+                                                             
+                    sut.addParticipant(.stub(identity: "foo"))
+                                                             
                     expect(sut.pages.count).to(equal(2))
-                    expect(sut.pages[0].participants.count).to(equal(6))
-                    expect(sut.pages[1].participants.count).to(equal(1))
-                    expect(sut.pages[1].participants[0].identity).to(equal("Participant 7"))
+                    expect(sut.pages[0].participants.map { $0.identity }).to(equal(["1", "2", "3", "4", "5", "6"]))
+                    expect(sut.pages[1].participants.map { $0.identity }).to(equal(["foo"]))
                 }
             }
             
@@ -56,39 +55,40 @@ class GridLayoutViewModelSpec: QuickSpec {
                     sut.addParticipant(.stub(identity: "bar"))
                     
                     expect(sut.pages.count).to(equal(1))
-                    expect(sut.pages[0].participants.count).to(equal(2))
-                    expect(sut.pages[0].participants[1].identity).to(equal("bar"))
-
+                    expect(sut.pages[0].participants.map { $0.identity }).to(equal(["foo", "bar"]))
                 }
             }
         }
         
         describe("removeParticipant") {
-            context("when the participant is on the first page and there are 2 pages") {
-                it("replaces the user with the first participant from the second page") {
+            context("when there are 2 pages and the participant is on the first page") {
+                it("replaces the participant on the first page with the first participant on the second page") {
                     Array(1...12).forEach { sut.addParticipant(.stub(identity: String($0))) }
 
                     sut.removeParticipant(identity: "3")
                     
+                    expect(sut.pages.count).to(equal(2))
                     expect(sut.pages[0].participants.map { $0.identity }).to(equal(["1", "2", "7", "4", "5", "6"]))
                     expect(sut.pages[1].participants.map { $0.identity }).to(equal(["8", "9", "10", "11", "12"]))
                 }
             }
             
-            context("when the participant is on the second page and there are 3 pages") {
-                it("removes the user and shifts newer participants forward") {
+            context("when there are 3 pages and the participant is on the second page") {
+                it("removes the user and shifts following participants forward") {
                     Array(1...18).forEach { sut.addParticipant(.stub(identity: String($0))) }
 
                     sut.removeParticipant(identity: "7")
                     
-                    expect(sut.pages[1].participants.map { $0.identity }).to(equal(Array(8...13).map { String($0) }))
-                    expect(sut.pages[2].participants.map { $0.identity }).to(equal(Array(14...18).map { String($0) }))
+                    expect(sut.pages.count).to(equal(3))
+                    expect(sut.pages[0].participants.map { $0.identity }).to(equal(["1", "2", "3", "4", "5", "6"]))
+                    expect(sut.pages[1].participants.map { $0.identity }).to(equal(["8", "9", "10", "11", "12", "13"]))
+                    expect(sut.pages[2].participants.map { $0.identity }).to(equal(["14", "15", "16", "17", "18"]))
                 }
             }
             
             context("when there is 1 participant on the last page") {
                 it("removes the last page") {
-                    sut.pages = [GridLayoutViewModel.Page(identifier: 0, participants: [.stub(identity: "foo")])]
+                    sut.addParticipant(.stub(identity: "foo"))
                     
                     sut.removeParticipant(identity: "foo")
                     
@@ -123,11 +123,11 @@ class GridLayoutViewModelSpec: QuickSpec {
                 }
                 
                 it("moves the last participant on the second page to the start of the third page") {
+                    expect(sut.pages.count).to(equal(3))
                     expect(sut.pages[2].participants.map { $0.identity }).to(equal(["12", "13", "14", "16", "17", "18"]))
                 }
             }
             
-            // inserParticipant create new page
             context("when the second page only has 1 participant and they become dominant spekaer") {
                 beforeEach {
                     Array(1...7).forEach { sut.addParticipant(.stub(identity: String($0), dominantSpeakerStartTime: Date())) }
@@ -140,12 +140,12 @@ class GridLayoutViewModelSpec: QuickSpec {
                     expect(sut.pages[0].participants.map { $0.identity }).to(equal(["1", "2", "7", "4", "5", "6"]))
                 }
 
-                it("moves the oldest dominant speaker on the first page to the second page") {
+                it("moves the oldest dominant speaker on the first page to the start of the second page") {
+                    expect(sut.pages.count).to(equal(2))
                     expect(sut.pages[1].participants.map { $0.identity }).to(equal(["3"]))
                 }
             }
             
-            // shiftRight new page
             context("when the third page only has 1 participant and they become dominant speaker") {
                 beforeEach {
                     Array(1...13).forEach { sut.addParticipant(.stub(identity: String($0), dominantSpeakerStartTime: Date())) }
@@ -158,11 +158,12 @@ class GridLayoutViewModelSpec: QuickSpec {
                     expect(sut.pages[0].participants.map { $0.identity }).to(equal(["1", "2", "13", "4", "5", "6"]))
                 }
 
-                it("moves the oldest dominant speaker on the first page to the second page") {
+                it("moves the oldest dominant speaker on the first page to the start of the second page") {
                     expect(sut.pages[1].participants.map { $0.identity }).to(equal(["3", "7", "8", "9", "10", "11"]))
                 }
 
-                it("shifts the last participant from page 2 to page 3") {
+                it("shifts the last participant on the second page to the start of the third page") {
+                    expect(sut.pages.count).to(equal(3))
                     expect(sut.pages[2].participants.map { $0.identity }).to(equal(["12"]))
                 }
             }

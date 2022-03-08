@@ -32,7 +32,7 @@ class GridLayoutViewModel: ObservableObject {
     }
 
     @Published var pages: [Page] = []
-    let maxParticipantsPerPage = 6
+    private let maxParticipantsPerPage = 6
     private var roomManager: RoomManager!
     private var subscriptions = Set<AnyCancellable>()
 
