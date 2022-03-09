@@ -78,6 +78,9 @@ class LocalParticipantManager: NSObject, ObservableObject {
             cameraManager?.position = cameraPosition
         }
     }
+    var networkQualityLevel: NetworkQualityLevel {
+        participant?.networkQualityLevel ?? .unknown
+    }
     var participant: LocalParticipant? {
         didSet {
             participant?.delegate = self
@@ -108,6 +111,13 @@ extension LocalParticipantManager: LocalParticipantDelegate {
         error: Error
     ) {
         errorPublisher.send(error)
+    }
+    
+    func localParticipantNetworkQualityLevelDidChange(
+        participant: LocalParticipant,
+        networkQualityLevel: NetworkQualityLevel
+    ) {
+        changePublisher.send(self)
     }
 }
 

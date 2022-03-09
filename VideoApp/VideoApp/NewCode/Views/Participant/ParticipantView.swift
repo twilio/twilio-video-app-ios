@@ -15,6 +15,7 @@
 //
 
 import SwiftUI
+import TwilioVideo
 
 struct ParticipantView: View {
     @Binding var viewModel: ParticipantViewModel
@@ -52,15 +53,24 @@ struct ParticipantView: View {
                     }
                 }
                 Spacer()
+                
                 HStack(alignment: .bottom) {
-                    Text(viewModel.displayName)
-                        .lineLimit(1)
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(Color.backgroundBrandStronger.opacity(0.7))
-                        .cornerRadius(2)
-                        .font(.system(size: 14))
+                    HStack(spacing: 12) {
+                        Text(viewModel.displayName)
+                            .lineLimit(1)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14))
+                        
+                        if viewModel.networkQualityLevel.rawValue >= 0 {
+                            NetworkQualityView(level: viewModel.networkQualityLevel)
+                                .frame(height: 12)
+                        }
+                    }
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Color.backgroundBrandStronger.opacity(0.7))
+                    .cornerRadius(2)
+                    
                     Spacer()
                 }
                 .padding(4)
@@ -102,7 +112,8 @@ extension ParticipantViewModel {
         identity: String = "Alice",
         isMuted: Bool = false,
         isDominantSpeaker: Bool = false,
-        dominantSpeakerStartTime: Date = .distantPast
+        dominantSpeakerStartTime: Date = .distantPast,
+        networkQualityLevel: NetworkQualityLevel = .five
     ) -> ParticipantViewModel {
         var viewModel = ParticipantViewModel()
         viewModel.isMuted = isMuted
@@ -110,6 +121,7 @@ extension ParticipantViewModel {
         viewModel.displayName = identity
         viewModel.isDominantSpeaker = isDominantSpeaker
         viewModel.dominantSpeakerStartTime = dominantSpeakerStartTime
+        viewModel.networkQualityLevel = networkQualityLevel
         return viewModel
     }
 }

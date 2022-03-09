@@ -47,6 +47,9 @@ class RemoteParticipantManager: NSObject {
         }
     }
     var dominantSpeakerStartTime: Date = .distantPast
+    var networkQualityLevel: NetworkQualityLevel {
+        participant.networkQualityLevel
+    }
     private let participant: RemoteParticipant
     private weak var delegate: RemoteParticipantManagerDelegate?
 
@@ -123,6 +126,13 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
     func remoteParticipantDidDisableAudioTrack(
         participant: RemoteParticipant,
         publication: RemoteAudioTrackPublication
+    ) {
+        delegate?.participantDidChange(self)
+    }
+    
+    func remoteParticipantNetworkQualityLevelDidChange(
+        participant: RemoteParticipant,
+        networkQualityLevel: NetworkQualityLevel
     ) {
         delegate?.participantDidChange(self)
     }

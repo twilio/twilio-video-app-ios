@@ -149,6 +149,7 @@
 		DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC8A5EB727D66A3D008F7FBA /* GridLayoutViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */; };
+		DC8A5EBA27D95230008F7FBA /* NetworkQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8CC236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
@@ -517,6 +518,7 @@
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
 		DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModelSpec.swift; sourceTree = "<group>"; };
+		DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualityView.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
@@ -1171,6 +1173,14 @@
 			path = AppCenter;
 			sourceTree = "<group>";
 		};
+		DC8A5EB827D951C8008F7FBA /* NetworkQuality */ = {
+			isa = PBXGroup;
+			children = (
+				DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */,
+			);
+			path = NetworkQuality;
+			sourceTree = "<group>";
+		};
 		DC8EAE2C23AC3D610045018F /* Specs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1428,6 +1438,7 @@
 				DCE1A9E727C7E556004680CA /* Core */,
 				DCE1AA0827C7E58A004680CA /* FocusLayout */,
 				DCE1AA0327C7E58A004680CA /* GridLayout */,
+				DC8A5EB827D951C8008F7FBA /* NetworkQuality */,
 				DC1D3CB027C955C8001FCB1A /* Participant */,
 				DC1D3CAF27C9553F001FCB1A /* RoomStatus */,
 				DC1D3CAE27C95504001FCB1A /* RoomToolbar */,
@@ -2269,6 +2280,7 @@
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCE1AA1D27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
+				DC8A5EBA27D95230008F7FBA /* NetworkQualityView.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
 				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,

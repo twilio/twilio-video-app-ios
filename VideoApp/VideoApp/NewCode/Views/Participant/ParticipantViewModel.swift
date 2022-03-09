@@ -27,6 +27,7 @@ struct ParticipantViewModel {
     var cameraTrack: VideoTrack?
     var isCameraTrackSwitchedOff = false
     var shouldMirrorCameraVideo = false
+    var networkQualityLevel: NetworkQualityLevel = .unknown
 
     /// The UI sometimes needs an empty participant.
     init() {
@@ -46,6 +47,7 @@ struct ParticipantViewModel {
         }
         
         shouldMirrorCameraVideo = true
+        networkQualityLevel = participant.networkQualityLevel
     }
     
     init(participant: RemoteParticipantManager) {
@@ -56,6 +58,7 @@ struct ParticipantViewModel {
         dominantSpeakerStartTime = participant.dominantSpeakerStartTime
         cameraTrack = participant.cameraTrack
         isCameraTrackSwitchedOff = participant.isCameraTrackSwitchedOff
+        networkQualityLevel = participant.networkQualityLevel
     }
 }
 
