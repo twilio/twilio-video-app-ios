@@ -17,6 +17,7 @@
 import SwiftUI
 
 struct RoomStatusView: View {
+    @EnvironmentObject var localParticipant: LocalParticipantManager
     let streamName: String
     
     var body: some View {
@@ -26,6 +27,16 @@ struct RoomStatusView: View {
                 .font(.system(size: 16))
                 .lineLimit(1)
             Spacer(minLength: 20)
+            Button {
+                localParticipant.cameraPosition = localParticipant.cameraPosition == .front ? .back : .front
+            } label: {
+                Image(systemName: "arrow.triangle.2.circlepath.camera")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(10)
+                    .frame(width: 44, height: 44)
+                    .foregroundColor(.white)
+            }
         }
         .background(Color.backgroundBrandStronger)
     }
