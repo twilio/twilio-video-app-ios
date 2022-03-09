@@ -41,7 +41,7 @@ struct RoomView: View {
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {
                         RoomStatusView(streamName: roomName)
-                            .padding(.bottom, spacing)
+                            .padding([.bottom, .horizontal], spacing)
 
                         if focusLayoutViewModel.isPresenting {
                             FocusLayoutView(spacing: spacing)
