@@ -52,6 +52,14 @@ struct HomeView: View {
                 RoomViewDependencyWrapper(roomName: roomName)
             }
         }
+        .onAppear {
+            if let deepLink = DeepLinkStore.shared.consumeDeepLink() {
+                switch deepLink {
+                case let .room(roomName):
+                    self.roomName = roomName
+                }
+            }
+        }
     }
 }
 
