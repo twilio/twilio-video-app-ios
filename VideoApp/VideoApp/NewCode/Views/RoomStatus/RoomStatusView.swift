@@ -18,15 +18,21 @@ import SwiftUI
 
 struct RoomStatusView: View {
     @EnvironmentObject var localParticipant: LocalParticipantManager
-    let streamName: String
-    
+    @EnvironmentObject var roomManager: RoomManager
+    let roomName: String
+
     var body: some View {
-        HStack {
-            Text(streamName)
+        HStack(spacing: 15) {
+            Text(roomName)
                 .foregroundColor(.white)
                 .font(.system(size: 16))
                 .lineLimit(1)
-            Spacer(minLength: 20)
+
+            if roomManager.isRecording {
+                RecordingBadge()
+            }
+            
+            Spacer()
             Button {
                 localParticipant.cameraPosition = localParticipant.cameraPosition == .front ? .back : .front
             } label: {
@@ -45,12 +51,31 @@ struct RoomStatusView: View {
 struct RoomStatusView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomStatusView(streamName: "Short room name")
-                .previewDisplayName("Short room name")
-            RoomStatusView(streamName: "A very long room name that does not fit and is truncated")
-                .previewDisplayName("Long room name")
+            Group {
+                RoomStatusView(roomName: "Short room name")
+                    .previewDisplayName("Short room name")
+                RoomStatusView(roomName: "A very long room name that does not fit and is truncated")
+                    .previewDisplayName("Long room name")
+            }
+            .environmentObject(RoomManager.stub(isRecording: false))
+
+            Group {
+                RoomStatusView(roomName: "Short room name")
+                    .previewDisplayName("Recording and short room name")
+                RoomStatusView(roomName: "A very long room name that does not fit and is truncated")
+                    .previewDisplayName("Recording and long room name")
+            }
+            .environmentObject(RoomManager.stub())
         }
         .frame(width: 400)
         .previewLayout(.sizeThatFits)
+    }
+}
+
+extension RoomManager {
+    static func stub(isRecording: Bool = true) -> RoomManager {
+        let roomManager = RoomManager()
+        roomManager.isRecording = isRecording
+        return roomManager
     }
 }

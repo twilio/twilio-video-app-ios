@@ -150,6 +150,8 @@
 		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC8A5EB727D66A3D008F7FBA /* GridLayoutViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */; };
 		DC8A5EBA27D95230008F7FBA /* NetworkQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */; };
+		DC8A5EBC27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */; };
+		DC8A5EBD27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */; };
 		DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */; };
 		DC8AA8CC236795FA006C06D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8AA8CA236795FA006C06D5 /* main.swift */; };
@@ -519,6 +521,7 @@
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
 		DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModelSpec.swift; sourceTree = "<group>"; };
 		DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualityView.swift; sourceTree = "<group>"; };
+		DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingBadge.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
 		DC8AA8CA236795FA006C06D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC8AA8CE2367A10E006C06D5 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
@@ -978,6 +981,7 @@
 		DC1D3CAF27C9553F001FCB1A /* RoomStatus */ = {
 			isa = PBXGroup;
 			children = (
+				DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */,
 				DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */,
 			);
 			path = RoomStatus;
@@ -2406,6 +2410,7 @@
 				DC8AA8D02367A10E006C06D5 /* TestAppDelegate.swift in Sources */,
 				DCF461662385B17A00DD8FEA /* AdvancedSettingsViewControllerFactory.swift in Sources */,
 				DC1C2F8723A6E7050044FB4D /* DispatchQueueProtocol.swift in Sources */,
+				DC8A5EBC27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */,
 				DCACF1CE24EAEAD600D3C264 /* InternalSettingsViewModel.swift in Sources */,
 				DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
@@ -2551,6 +2556,7 @@
 				DCD940B3243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift in Sources */,
 				DCC7E35B2407081F00431AC3 /* SignInSegueIdentifierFactory.swift in Sources */,
 				DC85CA4E23CCD39400BF016F /* AppCenterStore.swift in Sources */,
+				DC8A5EBD27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */,
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */,

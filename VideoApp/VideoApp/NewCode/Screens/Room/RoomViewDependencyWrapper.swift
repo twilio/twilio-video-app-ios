@@ -29,6 +29,7 @@ struct RoomViewDependencyWrapper: View {
     @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
     @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
     @StateObject private var localParticipant = LocalParticipantManager()
+    @StateObject private var roomManager = RoomManager()
 
     var body: some View {
         Group {
@@ -38,9 +39,9 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(gridLayoutViewModel)
         .environmentObject(focusLayoutViewModel)
         .environmentObject(localParticipant)
+        .environmentObject(roomManager)
         .onAppear {
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
-            let roomManager = RoomManager()
             roomManager.configure(localParticipant: localParticipant)
             roomViewModel.configure(roomManager: roomManager)
             gridLayoutViewModel.configure(roomManager: roomManager)

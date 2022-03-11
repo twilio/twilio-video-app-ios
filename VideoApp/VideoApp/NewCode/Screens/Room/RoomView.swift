@@ -40,7 +40,7 @@ struct RoomView: View {
 
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        RoomStatusView(streamName: roomName)
+                        RoomStatusView(roomName: roomName)
                             .padding(.horizontal, spacing)
 
                         if focusLayoutViewModel.isPresenting {
@@ -102,23 +102,25 @@ struct RoomView: View {
 struct RoomView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomView(roomName: "Demo")
-                .previewDisplayName("Grid layout")
-                .environmentObject(RoomViewModel.stub())
-                .environmentObject(GridLayoutViewModel.stub())
-                .environmentObject(FocusLayoutViewModel.stub())
+            Group {
+                RoomView(roomName: "Demo")
+                    .previewDisplayName("Grid layout")
+                    .environmentObject(FocusLayoutViewModel.stub())
 
-            RoomView(roomName: "Demo")
-                .previewDisplayName("Focus layout")
-                .environmentObject(RoomViewModel.stub())
-                .environmentObject(GridLayoutViewModel.stub())
-                .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
+                RoomView(roomName: "Demo")
+                    .previewDisplayName("Focus layout")
+                    .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
+            }
+            .environmentObject(RoomViewModel.stub())
+            .environmentObject(GridLayoutViewModel.stub())
+            .environmentObject(RoomManager.stub())
 
             RoomView(roomName: "Demo")
                 .previewDisplayName("Connecting")
                 .environmentObject(RoomViewModel.stub(state: .connecting))
                 .environmentObject(GridLayoutViewModel.stub(participantCount: 0))
                 .environmentObject(FocusLayoutViewModel.stub())
+                .environmentObject(RoomManager.stub(isRecording: false))
         }
         .environmentObject(LocalParticipantManager())
     }

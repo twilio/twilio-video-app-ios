@@ -35,6 +35,8 @@ extension Color {
     static var borderSuccessWeak: Color { Color("BorderSuccessWeak") }
     static var borderWeaker: Color { Color("BorderWeaker") }
     static var iconPurple: Color { Color("IconPurple") }
+    static var recordingDotBright: Color { Color("RecordingDotBright") }
+    static var recordingDotDark: Color { Color("RecordingDotDark") }
     static var shadowLow: Color { Color("ShadowLow") }
     static var textWeak: Color { Color("TextWeak") }
 }
