@@ -20,7 +20,7 @@ import GoogleSignIn
 class InternalAuthStore: NSObject, AuthStoreWriting {
     weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { firebaseAuth.currentUser != nil }
-    var passcode: String? { fatalError("Passcode not supported by Firebase auth.") }
+    var passcode: String? { nil } // Not used for internal auth
     var userDisplayName: String { firebaseAuth.currentUser?.displayName ?? firebaseAuth.currentUser?.email ?? "Unknown" }
     private let api: APIConfiguring
     private let appSettingsStore: AppSettingsStoreWriting
@@ -115,9 +115,9 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
 private extension Environment {
     var host: String {
         switch self {
-        case .production: return "app.video.bytwilio.com/api/v1"
-        case .staging: return "app.stage.video.bytwilio.com/api/v1"
-        case .development: return "app.dev.video.bytwilio.com/api/v1"
+        case .production: return "twilio-video-react.appspot.com"
+        case .staging: return "stage-dot-twilio-video-react.appspot.com"
+        case .development: return "dev-dot-twilio-video-react.appspot.com"
         }
     }
 }

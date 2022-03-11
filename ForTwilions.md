@@ -13,6 +13,7 @@ Twilio employees should follow these instructions for internal testing.
 ### Secrets
 
 1. Ask a buddy for `IOSVideoAppSecrets.tar` and extract to the root directory of repo.
+1. Follow [iOS Fastlane Match Setup](https://wiki.hq.twilio.com/display/SDK/iOS+Fastlane+Match+Setup) instructions to set up Fastlane Match.
 
 ### Run
 

@@ -20,10 +20,8 @@ class AuthStoreFactory {
     func makeAuthStore() -> AuthStoreWriting {
         switch AppInfoStoreFactory().makeAppInfoStore().appInfo.target {
         case .videoInternal:
-            API.shared.errorResponseDecoder = InternalAPIErrorResponseDecoder()
             return InternalAuthStore(api: API.shared, appSettingsStore: AppSettingsStore.shared)
         case .videoCommunity:
-            API.shared.errorResponseDecoder = CommunityAPIErrorResponseDecoder()
             return CommunityAuthStore(
                 api: API.shared,
                 appSettingsStore: AppSettingsStore.shared,

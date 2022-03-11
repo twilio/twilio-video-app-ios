@@ -16,16 +16,19 @@
 
 import Foundation
 
-class CommunityAPIErrorResponseDecoder: APIErrorResponseDecoder {
-    func decode(data: Data) -> APIError {
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+struct CreateTwilioAccessTokenResponse: Decodable {
+    enum RoomType: String, Codable { // Codable because it's persisted to track changes
+        case go = "go"
+        case group
+        case groupSmall = "group-small"
+        case peerToPeer = "peer-to-peer"
+        case unknown
 
-        do {
-            let errorResponse = try jsonDecoder.decode(APIErrorResponse.self, from: data)
-            return APIError(message: errorResponse.error.message)
-        } catch {
-            return .decodeError
+        init(from decoder: Decoder) throws {
+            self = try RoomType(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
         }
     }
+
+    let token: String
+    let roomType: RoomType?
 }

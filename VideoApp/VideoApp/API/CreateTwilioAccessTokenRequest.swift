@@ -20,19 +20,20 @@ struct CreateTwilioAccessTokenRequest: APIRequest {
     struct Parameters: Encodable {
         let passcode: String
         let userIdentity: String
-        let roomName: String
+        let roomName: String?
+        let createRoom: Bool
     }
 
     let path = "token"
-    let method = APIHTTPMethod.post
     let parameters: Parameters
     let responseType = CreateTwilioAccessTokenResponse.self
 
-    init(passcode: String, userIdentity: String, roomName: String) {
+    init(passcode: String, userIdentity: String, createRoom: Bool, roomName: String? = nil) {
         parameters = Parameters(
-            passcode: PasscodeComponents(string: passcode).passcode,
+            passcode: (try? PasscodeComponents(string: passcode))?.passcode ?? "",
             userIdentity: userIdentity,
-            roomName: roomName
+            roomName: roomName,
+            createRoom: createRoom
         )
     }
 }

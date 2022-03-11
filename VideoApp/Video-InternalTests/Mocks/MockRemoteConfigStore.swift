@@ -20,13 +20,13 @@ class MockRemoteConfigStore: RemoteConfigStoreWriting {
 
     var invokedRoomTypeSetter = false
     var invokedRoomTypeSetterCount = 0
-    var invokedRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
-    var invokedRoomTypeList = [CommunityCreateTwilioAccessTokenResponse.RoomType]()
+    var invokedRoomType: CreateTwilioAccessTokenResponse.RoomType?
+    var invokedRoomTypeList = [CreateTwilioAccessTokenResponse.RoomType]()
     var invokedRoomTypeGetter = false
     var invokedRoomTypeGetterCount = 0
-    var stubbedRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType!
+    var stubbedRoomType: CreateTwilioAccessTokenResponse.RoomType!
 
-    var roomType: CommunityCreateTwilioAccessTokenResponse.RoomType {
+    var roomType: CreateTwilioAccessTokenResponse.RoomType {
         set {
             invokedRoomTypeSetter = true
             invokedRoomTypeSetterCount += 1

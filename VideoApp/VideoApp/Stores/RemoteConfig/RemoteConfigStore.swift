@@ -17,11 +17,11 @@
 import Foundation
 
 protocol RemoteConfigStoreReading: AnyObject {
-    var roomType: CommunityCreateTwilioAccessTokenResponse.RoomType { get }
+    var roomType: CreateTwilioAccessTokenResponse.RoomType { get }
 }
 
 protocol RemoteConfigStoreWriting: RemoteConfigStoreReading {
-    var roomType: CommunityCreateTwilioAccessTokenResponse.RoomType { get set }
+    var roomType: CreateTwilioAccessTokenResponse.RoomType { get set }
 }
 
 class RemoteConfigStore: RemoteConfigStoreWriting {
@@ -33,19 +33,14 @@ class RemoteConfigStore: RemoteConfigStoreWriting {
         self.appInfoStore = appInfoStore
     }
     
-    var roomType: CommunityCreateTwilioAccessTokenResponse.RoomType {
+    var roomType: CreateTwilioAccessTokenResponse.RoomType {
         get {
             guard let remoteRoomType = appSettingsStore.remoteRoomType else {
                 switch appInfoStore.appInfo.target {
                 case .videoCommunity:
                     return .peerToPeer
                 case .videoInternal:
-                    switch appSettingsStore.topology {
-                    case .go: return .go
-                    case .group: return .group
-                    case .groupSmall: return .groupSmall
-                    case .peerToPeer: return .peerToPeer
-                    }
+                    return .group
                 }
             }
             

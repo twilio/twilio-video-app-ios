@@ -19,7 +19,7 @@ import Quick
 
 @testable import VideoApp
 
-class CommunityCreateTwilioAccessTokenResponseSpec: QuickSpec {
+class CreateTwilioAccessTokenResponseSpec: QuickSpec {
     override func spec() {
         describe("init") {
             context("when room_type does not match any case") {
@@ -28,7 +28,7 @@ class CommunityCreateTwilioAccessTokenResponseSpec: QuickSpec {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     
-                    expect(try! decoder.decode(CommunityCreateTwilioAccessTokenResponse.self, from: json).roomType).to(equal(.unknown))
+                    expect(try! decoder.decode(CreateTwilioAccessTokenResponse.self, from: json).roomType).to(equal(.unknown))
                 }
             }
         }

@@ -62,28 +62,6 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
-    var invokedTopologySetter = false
-    var invokedTopologySetterCount = 0
-    var invokedTopology: Topology?
-    var invokedTopologyList = [Topology]()
-    var invokedTopologyGetter = false
-    var invokedTopologyGetterCount = 0
-    var stubbedTopology: Topology!
-
-    var topology: Topology {
-        set {
-            invokedTopologySetter = true
-            invokedTopologySetterCount += 1
-            invokedTopology = newValue
-            invokedTopologyList.append(newValue)
-        }
-        get {
-            invokedTopologyGetter = true
-            invokedTopologyGetterCount += 1
-            return stubbedTopology
-        }
-    }
-
     var invokedUserIdentitySetter = false
     var invokedUserIdentitySetterCount = 0
     var invokedUserIdentity: String?
@@ -328,13 +306,13 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
 
     var invokedRemoteRoomTypeSetter = false
     var invokedRemoteRoomTypeSetterCount = 0
-    var invokedRemoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType?
-    var invokedRemoteRoomTypeList = [CommunityCreateTwilioAccessTokenResponse.RoomType?]()
+    var invokedRemoteRoomType: CreateTwilioAccessTokenResponse.RoomType?
+    var invokedRemoteRoomTypeList = [CreateTwilioAccessTokenResponse.RoomType?]()
     var invokedRemoteRoomTypeGetter = false
     var invokedRemoteRoomTypeGetterCount = 0
-    var stubbedRemoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType!
+    var stubbedRemoteRoomType: CreateTwilioAccessTokenResponse.RoomType!
 
-    var remoteRoomType: CommunityCreateTwilioAccessTokenResponse.RoomType? {
+    var remoteRoomType: CreateTwilioAccessTokenResponse.RoomType? {
         set {
             invokedRemoteRoomTypeSetter = true
             invokedRemoteRoomTypeSetterCount += 1

@@ -72,6 +72,7 @@ If the max number of participants is exceeded, then the video app will present a
 1. In Xcode navigate to the [Signing & Capabilities pane](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) of the project editor for the `Video-Community` target.
 1. Change `Team` to your team.
 1. Change `Bundle identifier` to something unique.
+1. Check `Automatically manage signing`
 
 ### Run
 

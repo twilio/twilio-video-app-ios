@@ -11,10 +11,39 @@
 
 ### Dependency Upgrades
 
-- `TwilioVideo` has been updated from 4.6.2 to 4.7.0. [#178](https://github.com/twilio/twilio-video-app-ios/pull/178)
+- `TwilioVideo` has been updated from 5.0.0 to 5.1.0.
 
 -----------
 
+## 0.89 (February 14, 2022)
+
+### Dependency Upgrades
+
+- `TwilioVideo` has been updated from 4.6.3 to 5.0.0. [#187](https://github.com/twilio/twilio-video-app-ios/pull/187)
+
+## 0.88 (January 13, 2022)
+
+### Maintenance
+
+- Updated the internal build variant to use the same REST interface for the token endpoint as the community build. 
+- Removed topology setting that was only used by internal build.
+- Simplified error handling for REST requests.
+
+-----------
+
+## 0.87 (December 13, 2021)
+
+### Dependency Upgrades
+
+- `TwilioVideo` has been updated from 4.6.2 to 4.6.3. [#180](https://github.com/twilio/twilio-video-app-ios/pull/180)
+
+-----------
+
+## 0.86 (December 10, 2021)
+
+- Updated repo to use Fastlane match for provisioning.
+
+-----------
 ## 0.85 (November 5, 2021)
 
 ### Dependency Upgrades
