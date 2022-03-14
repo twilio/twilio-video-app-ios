@@ -22,24 +22,29 @@ struct GridLayoutView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let spacing: CGFloat
+    private let pageIndexHeight: CGFloat = 40
 
     private var isPortraitOrientation: Bool {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
     }
 
+    private var gridItemCount: Int {
+        viewModel.pages[0].participants.count
+    }
+    
     private var rowCount: Int {
         if isPortraitOrientation {
-            return (viewModel.onscreenParticipants.count + viewModel.onscreenParticipants.count % columnCount) / columnCount
+            return (gridItemCount + gridItemCount % columnCount) / columnCount
         } else {
-            return viewModel.onscreenParticipants.count < 5 ? 1 : 2
+            return gridItemCount < 5 ? 1 : 2
         }
     }
     
     private var columnCount: Int {
         if isPortraitOrientation {
-            return viewModel.onscreenParticipants.count < 4 ? 1 : 2
+            return gridItemCount < 4 ? 1 : 2
         } else {
-            return (viewModel.onscreenParticipants.count + viewModel.onscreenParticipants.count % rowCount) / rowCount
+            return (gridItemCount + gridItemCount % rowCount) / rowCount
         }
     }
     
@@ -52,17 +57,24 @@ struct GridLayoutView: View {
     
     var body: some View {
         VStack {
-            if viewModel.onscreenParticipants.isEmpty {
+            if viewModel.pages.isEmpty {
                 Spacer()
             } else {
-                GeometryReader { geometry in
-                    LazyVGrid(columns: columns, spacing: spacing) {
-                        ForEach($viewModel.onscreenParticipants, id: \.self) { $speaker in
-                            ParticipantView(viewModel: $speaker)
-                                .frame(height: geometry.size.height / CGFloat(rowCount) - spacing)
+                TabView {
+                    ForEach($viewModel.pages, id: \.self) { $page in
+                        GeometryReader { geometry in
+                            LazyVGrid(columns: columns, spacing: spacing) {
+                                ForEach($page.participants, id: \.self) { $participant in
+                                    ParticipantView(viewModel: $participant)
+                                        .frame(height: geometry.size.height / CGFloat(rowCount) - spacing)
+                                }
+                            }
+                            .padding(.horizontal, spacing)
                         }
+                        .padding(.bottom, pageIndexHeight) /// Display the index below the grid
                     }
                 }
+                .tabViewStyle(PageTabViewStyle())
             }
         }
     }
@@ -70,29 +82,35 @@ struct GridLayoutView: View {
 
 struct GridLayoutView_Previews: PreviewProvider {
     static var previews: some View {
+        let participantCounts = [1, 2, 3, 4, 5, 6, 7, 100, 0]
+        
         Group {
-            ForEach((1...6), id: \.self) {
+            ForEach(participantCounts, id: \.self) {
                 GridLayoutView(spacing: 6)
-                    .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: $0))
+                    .previewDisplayName("Portrait \($0)")
+                    .environmentObject(GridLayoutViewModel.stub(participantCount: $0))
             }
             .frame(width: 400, height: 700)
 
-            ForEach((1...6), id: \.self) {
+            ForEach(participantCounts, id: \.self) {
                 GridLayoutView(spacing: 6)
-                    .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: $0))
+                    .previewDisplayName("Landscape \($0)")
+                    .environmentObject(GridLayoutViewModel.stub(participantCount: $0))
             }
             .frame(width: 700, height: 300)
         }
+        .background(Color.backgroundBrandStronger) // So page index is visible
         .previewLayout(.sizeThatFits)
     }
 }
 
 extension GridLayoutViewModel {
-    static func stub(onscreenSpeakerCount: Int = 6) -> GridLayoutViewModel {
+    static func stub(participantCount: Int = 20) -> GridLayoutViewModel {
         let viewModel = GridLayoutViewModel()
-
-        viewModel.onscreenParticipants = Array(1...onscreenSpeakerCount)
-            .map { ParticipantViewModel.stub(identity: "Participant \($0)") }
+        
+        if participantCount > 0 {
+            Array(1...participantCount).forEach { viewModel.addParticipant(.stub(identity: "Participant \($0)")) }
+        }
         
         return viewModel
     }

@@ -43,21 +43,19 @@ struct RoomView: View {
                         RoomStatusView(streamName: roomName)
                             .padding(.bottom, spacing)
 
-                        HStack(spacing: 0) {
-                            if focusLayoutViewModel.isPresenting {
-                                FocusLayoutView(spacing: spacing)
-                            } else {
-                                GridLayoutView(spacing: spacing)
-                            }
+                        if focusLayoutViewModel.isPresenting {
+                            FocusLayoutView(spacing: spacing)
+                        } else {
+                            GridLayoutView(spacing: spacing)
                         }
                     }
-                    .padding(.leading, geometry.safeAreaInsets.leading.isZero ? spacing : geometry.safeAreaInsets.leading)
-                    .padding(.trailing, geometry.safeAreaInsets.trailing.isZero ? spacing : geometry.safeAreaInsets.trailing)
+                    .padding(.leading, geometry.safeAreaInsets.leading)
+                    .padding(.trailing, geometry.safeAreaInsets.trailing)
                     .padding(.top, geometry.safeAreaInsets.top.isZero ? 3 : 0)
                     
                     RoomToolbar {
                         RoomToolbarButton(
-                            image: Image(systemName: "arrow.left"),
+                            image: Image(systemName: "phone.down.fill"),
                             role: .destructive
                         ) {
                             viewModel.disconnect()
@@ -119,7 +117,7 @@ struct RoomView_Previews: PreviewProvider {
             RoomView(roomName: "Demo")
                 .previewDisplayName("Connecting")
                 .environmentObject(RoomViewModel.stub(state: .connecting))
-                .environmentObject(GridLayoutViewModel.stub(onscreenSpeakerCount: 0))
+                .environmentObject(GridLayoutViewModel.stub(participantCount: 0))
                 .environmentObject(FocusLayoutViewModel.stub())
         }
         .environmentObject(LocalParticipantManager())
