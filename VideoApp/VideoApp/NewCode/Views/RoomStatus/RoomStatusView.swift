@@ -53,9 +53,9 @@ struct RoomStatusView: View {
 struct RoomStatusView_Previews: PreviewProvider {
     static var previews: some View {
         let roomNames = ["Short room name", "Long room name that is truncated because it does not fit"]
-
-        ForEach([false, true], id: \.self) { isCameraOn in
-            ForEach([false, true], id: \.self) { isRecording in
+        
+        ForEach([false, true], id: \.self) { isRecording in
+            ForEach([false, true], id: \.self) { isCameraOn in
                 ForEach(roomNames, id: \.self) { roomName in
                     RoomStatusView(roomName: roomName)
                         .environmentObject(RoomManager.stub(isRecording: isRecording))
@@ -70,7 +70,7 @@ struct RoomStatusView_Previews: PreviewProvider {
 }
 
 extension RoomManager {
-    static func stub(isRecording: Bool = true) -> RoomManager {
+    static func stub(isRecording: Bool = false) -> RoomManager {
         let roomManager = RoomManager()
         roomManager.isRecording = isRecording
         return roomManager
