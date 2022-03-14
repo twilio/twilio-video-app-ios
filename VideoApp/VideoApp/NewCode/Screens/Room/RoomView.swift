@@ -122,7 +122,7 @@ struct RoomView_Previews: PreviewProvider {
                 .environmentObject(FocusLayoutViewModel.stub())
                 .environmentObject(RoomManager.stub(isRecording: false))
         }
-        .environmentObject(LocalParticipantManager())
+        .environmentObject(LocalParticipantManager.stub())
     }
 }
 

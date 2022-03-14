@@ -33,42 +33,39 @@ struct RoomStatusView: View {
             }
             
             Spacer()
-            Button {
-                localParticipant.cameraPosition = localParticipant.cameraPosition == .front ? .back : .front
-            } label: {
-                Image(systemName: "arrow.triangle.2.circlepath.camera")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(10)
-                    .frame(width: 44, height: 44)
-                    .foregroundColor(.white)
+            
+            if localParticipant.isCameraOn {
+                Button {
+                    localParticipant.cameraPosition = localParticipant.cameraPosition == .front ? .back : .front
+                } label: {
+                    Image(systemName: "arrow.triangle.2.circlepath.camera")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(11)
+                        .foregroundColor(.white)
+                }
             }
         }
-        .background(Color.backgroundBrandStronger)
+        .frame(height: 44) // So buttons are easy to tap
     }
 }
 
 struct RoomStatusView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            Group {
-                RoomStatusView(roomName: "Short room name")
-                    .previewDisplayName("Short room name")
-                RoomStatusView(roomName: "A very long room name that does not fit and is truncated")
-                    .previewDisplayName("Long room name")
-            }
-            .environmentObject(RoomManager.stub(isRecording: false))
+        let roomNames = ["Short room name", "Long room name that is truncated because it does not fit"]
 
-            Group {
-                RoomStatusView(roomName: "Short room name")
-                    .previewDisplayName("Recording and short room name")
-                RoomStatusView(roomName: "A very long room name that does not fit and is truncated")
-                    .previewDisplayName("Recording and long room name")
+        ForEach([false, true], id: \.self) { isCameraOn in
+            ForEach([false, true], id: \.self) { isRecording in
+                ForEach(roomNames, id: \.self) { roomName in
+                    RoomStatusView(roomName: roomName)
+                        .environmentObject(RoomManager.stub(isRecording: isRecording))
+                        .environmentObject(LocalParticipantManager.stub(isCameraOn: isCameraOn))
+                        .frame(width: 400)
+                        .background(Color.backgroundBrandStronger)
+                        .previewLayout(.sizeThatFits)
+                }
             }
-            .environmentObject(RoomManager.stub())
         }
-        .frame(width: 400)
-        .previewLayout(.sizeThatFits)
     }
 }
 
@@ -77,5 +74,14 @@ extension RoomManager {
         let roomManager = RoomManager()
         roomManager.isRecording = isRecording
         return roomManager
+    }
+}
+
+extension LocalParticipantManager {
+    static func stub(isCameraOn: Bool = true, isMicOn: Bool = true) -> LocalParticipantManager {
+        let localParticipant = LocalParticipantManager()
+        localParticipant.isCameraOn = isCameraOn
+        localParticipant.isMicOn = isMicOn
+        return localParticipant
     }
 }
