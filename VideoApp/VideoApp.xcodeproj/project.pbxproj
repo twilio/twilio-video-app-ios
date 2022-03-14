@@ -381,6 +381,7 @@
 		DCEDB384247489A0006AF70D /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB381247489A0006AF70D /* SettingOptions.swift */; };
 		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
+		DCEDC62C27DFE7B900BD7C75 /* NetworkQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -2475,6 +2476,7 @@
 				8A84724F26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift in Sources */,
 				DC0446D123A2F01A0072F597 /* DeveloperSettingsViewControllerFactory.swift in Sources */,
 				DC0446CD23A2EE340072F597 /* DeveloperSettingsViewModel.swift in Sources */,
+				DCEDC62C27DFE7B900BD7C75 /* NetworkQualityView.swift in Sources */,
 				DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */,
 				DCD7675823DF554B00A2939C /* UserActivityStore.swift in Sources */,
 				DCAEBF322383560500141D2D /* EditTextCell.swift in Sources */,
