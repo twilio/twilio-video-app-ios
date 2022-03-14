@@ -65,9 +65,9 @@ struct RoomToolbarButton: View {
 struct RoomToolbarButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomToolbarButton(image: Image(systemName: "mic.slash"))
+            RoomToolbarButton(image: Image(systemName: "suit.heart"))
                 .previewDisplayName("Default")
-            RoomToolbarButton(image: Image(systemName: "phone.down.fill"), role: .destructive)
+            RoomToolbarButton(image: Image(systemName: "suit.club"), role: .destructive)
                 .previewDisplayName("Destructive")
         }
         .previewLayout(.sizeThatFits)
