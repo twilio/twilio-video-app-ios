@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.91 (March 15, 2022)
+
+### New Feature
+
+- Extend the `VideoCodec` enumeration to include `.auto` (which maps to `VideoEncodingMode.auto` in the SDK). 
+- Introduce `VideoSize` - a setting to select the size of video published from the camera
+- The settings `.vp8SimulcastVGA` and `.vp8SimulcastHD` are condensed into `.vp8Simulcast`. 
+- The `Video-Internal` target now enables `.auto` by default by setting the new Connect Option `videoEncodingMode` to `.auto`.
+
+### Dependency Upgrades
+
+- `TwilioVideo` has been updated from 5.0.0 to 5.1.0. https://github.com/twilio/twilio-video-ios/releases/tag/5.1.0
+
+-----------
+
 ## 0.89 (February 14, 2022)
 
 ### Dependency Upgrades

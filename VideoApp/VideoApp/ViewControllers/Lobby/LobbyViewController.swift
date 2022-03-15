@@ -144,7 +144,13 @@ class LobbyViewController: UIViewController {
     }
     
     @objc private func handleSettingChange() {
-        resetRoom() // Pick up settings like identity and video codec
+        switch room.state {
+        case .connected, .connecting:
+            break
+        case .disconnected:
+            resetRoom() // Pick up settings like identity and video codec
+        }
+            
         refresh()
     }
 

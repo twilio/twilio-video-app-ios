@@ -62,6 +62,28 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
+    var invokedVideoSizeSetter = false
+    var invokedVideoSizeSetterCount = 0
+    var invokedVideoSize: VideoSize?
+    var invokedVideoSizeList = [VideoSize]()
+    var invokedVideoSizeGetter = false
+    var invokedVideoSizeGetterCount = 0
+    var stubbedVideoSize: VideoSize!
+
+    var videoSize: VideoSize {
+        set {
+            invokedVideoSizeSetter = true
+            invokedVideoSizeSetterCount += 1
+            invokedVideoSize = newValue
+            invokedVideoSizeList.append(newValue)
+        }
+        get {
+            invokedVideoSizeGetter = true
+            invokedVideoSizeGetterCount += 1
+            return stubbedVideoSize
+        }
+    }
+
     var invokedUserIdentitySetter = false
     var invokedUserIdentitySetterCount = 0
     var invokedUserIdentity: String?

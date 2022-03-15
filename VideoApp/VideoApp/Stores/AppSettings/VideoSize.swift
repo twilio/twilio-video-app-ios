@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2019 Twilio, Inc.
+//  Copyright (C) 2021 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,18 +16,14 @@
 
 import Foundation
 
-enum VideoCodec: String, SettingOptions {
-    case auto
-    case h264
-    case vp8
-    case vp8Simulcast
+enum VideoSize: String, SettingOptions {
+    case vga
+    case quarterHD
 
     var title: String {
         switch self {
-        case .auto: return "Auto"
-        case .h264: return "H.264"
-        case .vp8: return "VP8"
-        case .vp8Simulcast: return "VP8 Simulcast"
+        case .vga: return "VGA"
+        case .quarterHD: return "qHD"
         }
     }
 }

@@ -39,6 +39,11 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                             selectedOption: appSettingsStore.videoCodec.title,
                             viewModelFactory: selectVideoCodecViewModelFactory
                         ),
+                        .optionList(
+                            title: "Video Size",
+                            selectedOption: appSettingsStore.videoSize.title,
+                            viewModelFactory: selectVideoSizeViewModelFactory
+                        ),
                         .toggle(
                             title: "TURN Media Relay",
                             isOn: appSettingsStore.isTURNMediaRelayOn,
@@ -96,6 +101,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
     private let developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory
     private let sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory
     private let selectVideoCodecViewModelFactory: SelectOptionViewModelFactory
+    private let selectVideoSizeViewModelFactory: SelectOptionViewModelFactory
     private let bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory
     private let internalSettingsViewControllerFactory: InternalSettingsViewControllerFactory
 
@@ -107,6 +113,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory,
         sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory,
         selectVideoCodecViewModelFactory: SelectOptionViewModelFactory,
+        selectVideoSizeViewModelFactory: SelectOptionViewModelFactory,
         bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory,
         internalSettingsViewControllerFactory: InternalSettingsViewControllerFactory
     ) {
@@ -117,6 +124,7 @@ class AdvancedSettingsViewModel: SettingsViewModel {
         self.developerSettingsViewControllerFactory = developerSettingsViewControllerFactory
         self.sdkLogLevelSettingsViewControllerFactory = sdkLogLevelSettingsViewControllerFactory
         self.selectVideoCodecViewModelFactory = selectVideoCodecViewModelFactory
+        self.selectVideoSizeViewModelFactory = selectVideoSizeViewModelFactory
         self.bandwidthProfileSettingsViewControllerFactory = bandwidthProfileSettingsViewControllerFactory
         self.internalSettingsViewControllerFactory = internalSettingsViewControllerFactory
     }
