@@ -48,15 +48,8 @@ class RemoteConfigStore: RemoteConfigStoreWriting {
         }
         set {
             guard newValue != appSettingsStore.remoteRoomType else { return }
-            
-            // TODO: Fix auto here.
-            switch newValue {
-            case .group, .groupSmall, .unknown:
-                appSettingsStore.videoCodec = .vp8Simulcast
-            case .peerToPeer, .go:
-                appSettingsStore.videoCodec = .vp8
-            }
 
+            appSettingsStore.videoCodec = .auto
             appSettingsStore.remoteRoomType = newValue
         }
     }
