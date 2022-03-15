@@ -40,7 +40,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
 class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
     @Storage(key: makeKey("videoCodec"), defaultValue: defaultVideoCodec) var videoCodec: VideoCodec
-    @Storage(key: makeKey("videoSize"), defaultValue: defaultVideoSize) var videoSize: VideoSize
+    @Storage(key: makeKey("videoSize"), defaultValue: .vga) var videoSize: VideoSize
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
     @Storage(key: makeKey("areInsightsEnabled"), defaultValue: true) var areInsightsEnabled: Bool
@@ -65,13 +65,9 @@ class AppSettingsStore: AppSettingsStoreWriting {
     private let notificationCenter: NotificationCenterProtocol
     private let queue: DispatchQueueProtocol
     private let userDefaults: UserDefaultsProtocol
-    private static var defaultVideoSize: VideoSize {
-        return .vga
-    }
     private static var defaultVideoCodec: VideoCodec {
         switch appInfoStore.appInfo.target {
         case .videoInternal: return .auto
-        // TODO: Simulcast is required for CTSO & VCP to function effectively. Ideally select ".auto" here.
         case .videoCommunity: return .vp8
         }
     }

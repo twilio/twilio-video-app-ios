@@ -31,7 +31,6 @@ class CameraConfigFactory {
             // and models that don't have 1024 x 768.
             let hdDimensions = CMVideoDimensions(width: 900, height: 720)
 
-            // TODO: Is this useful when size is an explicit setting already?
             switch remoteConfigStore.roomType {
             case .peerToPeer, .go: return hdDimensions
             case .group, .groupSmall, .unknown: break

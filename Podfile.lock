@@ -148,7 +148,7 @@ DEPENDENCIES:
   - KeychainAccess (~> 4)
   - Nimble (~> 9)
   - Quick (~> 3)
-  - TwilioVideo (= 5.1.0)
+  - TwilioVideo (~> 5)
 
 SPEC REPOS:
   trunk:
@@ -207,6 +207,6 @@ SPEC CHECKSUMS:
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   TwilioVideo: 6c5322304f5705b6ebb6cbdc22c42148cb93ee1d
 
-PODFILE CHECKSUM: 309d9852162c0c61698d2db4442ec7e4dda5c74e
+PODFILE CHECKSUM: c5821d1ea6d67e5a0cb43072e951b8299ffdcedb
 
 COCOAPODS: 1.10.2

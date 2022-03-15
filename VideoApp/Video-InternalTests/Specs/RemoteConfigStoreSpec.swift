@@ -82,7 +82,7 @@ class RemoteConfigStoreSpec: QuickSpec {
                         it("sets videoCodec setting to vp8SimulcastVGA") {
                             sut.roomType = .group
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8Simulcast))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.group))
                         }
                     }
@@ -91,7 +91,7 @@ class RemoteConfigStoreSpec: QuickSpec {
                         it("sets videoCodec setting to vp8SimulcastVGA") {
                             sut.roomType = .groupSmall
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8Simulcast))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.groupSmall))
                         }
                     }
@@ -100,7 +100,7 @@ class RemoteConfigStoreSpec: QuickSpec {
                         it("sets videoCodec setting to vp8SimulcastVGA") {
                             sut.roomType = .unknown
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8SimulcastVGA))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8Simulcast))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.unknown))
                         }
                     }
