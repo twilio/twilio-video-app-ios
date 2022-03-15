@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.86 (November 12, 2021)
+## 0.90 (March 14, 2022)
 
 ### New Feature
 
@@ -11,7 +11,7 @@
 
 ### Dependency Upgrades
 
-- `TwilioVideo` has been updated from 5.0.0 to 5.1.0.
+- `TwilioVideo` has been updated from 5.0.0 to 5.1.0. https://github.com/twilio/twilio-video-ios/releases/tag/5.1.0
 
 -----------
 
