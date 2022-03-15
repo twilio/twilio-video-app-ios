@@ -28,6 +28,7 @@ struct RoomView: View {
     let roomName: String
     private let app = UIApplication.shared
     private let spacing: CGFloat = 6
+    @State private var isShowingStats = false
     
     private var isPortraitOrientation: Bool {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
@@ -71,6 +72,19 @@ struct RoomView: View {
                         ) {
                             localParticipant.isCameraOn.toggle()
                         }
+
+                        Menu {
+                            Button(
+                                action: { isShowingStats = true },
+                                label: { Label("Stats", systemImage: "binoculars") }
+                            )
+                        } label: {
+                            RoomToolbarButton(
+                                image: Image(systemName: "ellipsis")
+                            ) {
+
+                            }
+                        }
                     }
                     
                     // For toolbar bottom that is below safe area
@@ -90,6 +104,9 @@ struct RoomView: View {
         }
         .onDisappear {
             app.isIdleTimerDisabled = false
+        }
+        .sheet(isPresented: $isShowingStats) {
+            StatsView()
         }
         .alert(isPresented: $viewModel.isShowingError) {
             Alert(error: viewModel.error!) {

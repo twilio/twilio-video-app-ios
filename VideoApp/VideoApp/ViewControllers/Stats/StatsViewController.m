@@ -69,28 +69,10 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 @synthesize room = _room;
 
 - (void)setRoom:(TVIRoom *)room {
-    if (room == _room) {
-        return;
-    }
+//    if (room == _room) {
+//        return;
+//    }
     _room = room;
-
-    if (self.statsTimer != nil) {
-        [self.statsTimer invalidate];
-        self.statsTimer = nil;
-    }
-
-    if (room) {
-        self.statsProcessingQueue = [[NSOperationQueue alloc] init];
-        self.statsProcessingQueue.maxConcurrentOperationCount = 1;
-        if (_statsViewDisplayed) {
-            self.statsTimer = [NSTimer timerWithTimeInterval:kStatsTimerInterval target:self selector:@selector(statsTimerFired) userInfo:nil repeats:YES];
-            [[NSRunLoop currentRunLoop] addTimer:self.statsTimer forMode:NSRunLoopCommonModes];
-            [self.statsTimer fire];
-        }
-    } else {
-        [self.statsProcessingQueue cancelAllOperations];
-        self.statsProcessingQueue = nil;
-    }
 }
 
 - (void)viewDidLoad {
@@ -142,6 +124,28 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
                                              selector:@selector(roomDidChange)
                                                  name:SwiftToObjc.roomUpdateNotificationName
                                                object:nil];
+    
+
+
+    self.room = (TVIRoom *)self.videoAppRoom;
+
+    if (self.statsTimer != nil) {
+        [self.statsTimer invalidate];
+        self.statsTimer = nil;
+    }
+
+    if (self.room) {
+        self.statsProcessingQueue = [[NSOperationQueue alloc] init];
+        self.statsProcessingQueue.maxConcurrentOperationCount = 1;
+//        if (_statsViewDisplayed) {
+            self.statsTimer = [NSTimer timerWithTimeInterval:kStatsTimerInterval target:self selector:@selector(statsTimerFired) userInfo:nil repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:self.statsTimer forMode:NSRunLoopCommonModes];
+            [self.statsTimer fire];
+//        }
+    } else {
+        [self.statsProcessingQueue cancelAllOperations];
+        self.statsProcessingQueue = nil;
+    }
 }
 
 - (void)dealloc {
@@ -186,8 +190,7 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 }
 
 - (void)roomDidChange {
-// TODO: Fix this when we add a new way to access stats
-//    self.room = ((Room *)self.videoAppRoom).room;
+    self.room = (TVIRoom *)self.videoAppRoom;
 }
 
 - (void)removeStatsUnavailableView {

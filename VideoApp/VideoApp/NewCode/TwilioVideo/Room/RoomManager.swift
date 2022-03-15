@@ -34,7 +34,7 @@ class RoomManager: NSObject, ObservableObject {
     @Published var isRecording = false
     private(set) var localParticipant: LocalParticipantManager!
     private(set) var remoteParticipants: [RemoteParticipantManager] = []
-    private var room: Room?
+    private(set) var room: Room? // Only exposed for stats
 
     func configure(localParticipant: LocalParticipantManager) {
         self.localParticipant = localParticipant
