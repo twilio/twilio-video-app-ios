@@ -43,7 +43,6 @@ class LaunchFlowImpl: LaunchFlow {
     
     func start() {
         authStore.delegate = authFlow
-        authStore.start()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window.rootViewController = storyboard.instantiateInitialViewController()

@@ -79,46 +79,46 @@ class RemoteConfigStoreSpec: QuickSpec {
                     }
                     
                     context("when newValue is group") {
-                        it("sets videoCodec setting to vp8SimulcastVGA") {
+                        it("sets videoCodec setting to auto") {
                             sut.roomType = .group
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8Simulcast))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.auto))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.group))
                         }
                     }
 
                     context("when newValue is groupSmall") {
-                        it("sets videoCodec setting to vp8SimulcastVGA") {
+                        it("sets videoCodec setting to auto") {
                             sut.roomType = .groupSmall
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8Simulcast))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.auto))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.groupSmall))
                         }
                     }
 
                     context("when newValue is unknown") {
-                        it("sets videoCodec setting to vp8SimulcastVGA") {
+                        it("sets videoCodec setting to auto") {
                             sut.roomType = .unknown
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8Simulcast))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.auto))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.unknown))
                         }
                     }
 
                     context("when newValue is peerToPeer") {
-                        it("sets videoCodec setting to vp8") {
+                        it("sets videoCodec setting to auto") {
                             sut.roomType = .peerToPeer
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.auto))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.peerToPeer))
                         }
                     }
 
                     context("when newValue is go") {
-                        it("sets videoCodec setting to vp8") {
+                        it("sets videoCodec setting to auto") {
                             sut.roomType = .go
 
-                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.vp8))
+                            expect(mockAppSettingsStore.invokedVideoCodec).to(equal(.auto))
                             expect(mockAppSettingsStore.invokedRemoteRoomType).to(equal(.go))
                         }
                     }
