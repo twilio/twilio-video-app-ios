@@ -53,7 +53,7 @@ class LocalParticipantManager: NSObject, ObservableObject {
             guard oldValue != isCameraOn else { return }
 
             if isCameraOn {
-                guard let cameraManager = CameraManager(position: .front) else {
+                guard let cameraManager = CameraManager(position: cameraPosition) else {
                     return
                 }
                 
@@ -72,6 +72,14 @@ class LocalParticipantManager: NSObject, ObservableObject {
             
             changePublisher.send(self)
         }
+    }
+    @Published var cameraPosition: AVCaptureDevice.Position = .front {
+        didSet {
+            cameraManager?.position = cameraPosition
+        }
+    }
+    var networkQualityLevel: NetworkQualityLevel {
+        participant?.networkQualityLevel ?? .unknown
     }
     var participant: LocalParticipant? {
         didSet {
@@ -103,6 +111,13 @@ extension LocalParticipantManager: LocalParticipantDelegate {
         error: Error
     ) {
         errorPublisher.send(error)
+    }
+    
+    func localParticipantNetworkQualityLevelDidChange(
+        participant: LocalParticipant,
+        networkQualityLevel: NetworkQualityLevel
+    ) {
+        changePublisher.send(self)
     }
 }
 

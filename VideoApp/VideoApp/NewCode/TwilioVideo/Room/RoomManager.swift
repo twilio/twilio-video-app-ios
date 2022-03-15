@@ -18,7 +18,7 @@ import Combine
 import TwilioVideo
 
 /// Manages the video room connection and uses publishers to notify subscribers of state changes.
-class RoomManager: NSObject {
+class RoomManager: NSObject, ObservableObject {
     // MARK: Publishers
     let roomConnectPublisher = PassthroughSubject<Void, Never>()
     let roomDisconnectPublisher = PassthroughSubject<Error?, Never>()
@@ -31,6 +31,7 @@ class RoomManager: NSObject {
     let remoteParticipantChangePublisher = PassthroughSubject<RemoteParticipantManager, Never>()
     // MARK: -
 
+    @Published var isRecording = false
     private(set) var localParticipant: LocalParticipantManager!
     private(set) var remoteParticipants: [RemoteParticipantManager] = []
     private var room: Room?
@@ -60,6 +61,7 @@ class RoomManager: NSObject {
         room = nil
         localParticipant.participant = nil
         remoteParticipants.removeAll()
+        isRecording = false
     }
     
     private func handleError(_ error: Error) {
@@ -105,6 +107,14 @@ extension RoomManager: RoomDelegate {
         // participant state. This is better for the UI.
         remoteParticipants.first { $0.isDominantSpeaker }?.isDominantSpeaker = false // Old speaker
         remoteParticipants.first { $0.identity == participant?.identity }?.isDominantSpeaker = true // New speaker
+    }
+
+    func roomDidStartRecording(room: TwilioVideo.Room) {
+        isRecording = true
+    }
+    
+    func roomDidStopRecording(room: TwilioVideo.Room) {
+        isRecording = false
     }
 }
 

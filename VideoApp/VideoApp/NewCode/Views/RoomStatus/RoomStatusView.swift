@@ -17,29 +17,71 @@
 import SwiftUI
 
 struct RoomStatusView: View {
-    let streamName: String
-    
+    @EnvironmentObject var localParticipant: LocalParticipantManager
+    @EnvironmentObject var roomManager: RoomManager
+    let roomName: String
+
     var body: some View {
-        HStack {
-            Text(streamName)
+        HStack(spacing: 15) {
+            Text(roomName)
                 .foregroundColor(.white)
                 .font(.system(size: 16))
                 .lineLimit(1)
-            Spacer(minLength: 20)
+
+            if roomManager.isRecording {
+                RecordingBadge()
+            }
+            
+            Spacer()
+            
+            if localParticipant.isCameraOn {
+                Button {
+                    localParticipant.cameraPosition = localParticipant.cameraPosition == .front ? .back : .front
+                } label: {
+                    Image(systemName: "arrow.triangle.2.circlepath.camera")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(11)
+                        .foregroundColor(.white)
+                }
+            }
         }
-        .background(Color.backgroundBrandStronger)
+        .frame(height: 44) // So buttons are easy to tap
     }
 }
 
 struct RoomStatusView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            RoomStatusView(streamName: "Short room name")
-                .previewDisplayName("Short room name")
-            RoomStatusView(streamName: "A very long room name that does not fit and is truncated")
-                .previewDisplayName("Long room name")
+        let roomNames = ["Short room name", "Long room name that is truncated because it does not fit"]
+        
+        ForEach([false, true], id: \.self) { isRecording in
+            ForEach([false, true], id: \.self) { isCameraOn in
+                ForEach(roomNames, id: \.self) { roomName in
+                    RoomStatusView(roomName: roomName)
+                        .environmentObject(RoomManager.stub(isRecording: isRecording))
+                        .environmentObject(LocalParticipantManager.stub(isCameraOn: isCameraOn))
+                        .frame(width: 400)
+                        .background(Color.backgroundBrandStronger)
+                        .previewLayout(.sizeThatFits)
+                }
+            }
         }
-        .frame(width: 400)
-        .previewLayout(.sizeThatFits)
+    }
+}
+
+extension RoomManager {
+    static func stub(isRecording: Bool = false) -> RoomManager {
+        let roomManager = RoomManager()
+        roomManager.isRecording = isRecording
+        return roomManager
+    }
+}
+
+extension LocalParticipantManager {
+    static func stub(isCameraOn: Bool = true, isMicOn: Bool = true) -> LocalParticipantManager {
+        let localParticipant = LocalParticipantManager()
+        localParticipant.isCameraOn = isCameraOn
+        localParticipant.isMicOn = isMicOn
+        return localParticipant
     }
 }
