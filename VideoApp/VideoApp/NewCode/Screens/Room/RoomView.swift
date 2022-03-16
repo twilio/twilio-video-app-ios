@@ -22,14 +22,13 @@ struct RoomView: View {
     @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
     @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
     @EnvironmentObject var localParticipant: LocalParticipantManager
-    @EnvironmentObject var roomManager: RoomManager
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let roomName: String
+    @State var isShowingStats = false
     private let app = UIApplication.shared
     private let spacing: CGFloat = 6
-    @State private var isShowingStats = false
     
     private var isPortraitOrientation: Bool {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
@@ -80,11 +79,7 @@ struct RoomView: View {
                                 label: { Label("Stats", systemImage: "binoculars") }
                             )
                         } label: {
-                            RoomToolbarButton(
-                                image: Image(systemName: "ellipsis")
-                            ) {
-
-                            }
+                            RoomToolbarButton(image: Image(systemName: "ellipsis"))
                         }
                     }
                     
@@ -94,11 +89,7 @@ struct RoomView: View {
                 }
                 .edgesIgnoringSafeArea([.horizontal, .bottom]) // So toolbar sides and bottom extend beyond safe area
 
-                HStack {
-                    Spacer(minLength: geometry.size.width / 3)
-                    StatsView(room: $roomManager.room)
-                }
-                .opacity(isShowingStats ? 1 : 0)
+                StatsContainerView(isShowingStats: $isShowingStats)
                 
                 if viewModel.state == .connecting {
                     ProgressHUD(title: "Connecting...")
@@ -122,21 +113,27 @@ struct RoomView: View {
 
 struct RoomView_Previews: PreviewProvider {
     static var previews: some View {
+        let roomName = "Demo"
+        
         Group {
             Group {
-                RoomView(roomName: "Demo")
+                RoomView(roomName: roomName)
                     .previewDisplayName("Grid layout")
                     .environmentObject(FocusLayoutViewModel.stub())
 
-                RoomView(roomName: "Demo")
+                RoomView(roomName: roomName)
                     .previewDisplayName("Focus layout")
                     .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
+
+                RoomView(roomName: roomName, isShowingStats: true)
+                    .previewDisplayName("Stats")
+                    .environmentObject(FocusLayoutViewModel.stub())
             }
             .environmentObject(RoomViewModel.stub())
             .environmentObject(GridLayoutViewModel.stub())
             .environmentObject(RoomManager.stub(isRecording: true))
 
-            RoomView(roomName: "Demo")
+            RoomView(roomName: roomName)
                 .previewDisplayName("Connecting")
                 .environmentObject(RoomViewModel.stub(state: .connecting))
                 .environmentObject(GridLayoutViewModel.stub(participantCount: 0))

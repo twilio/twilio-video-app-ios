@@ -384,6 +384,8 @@
 		DCEDC62C27DFE7B900BD7C75 /* NetworkQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */; };
 		DCEDC62F27E0FFF500BD7C75 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */; };
 		DCEDC63027E0FFF500BD7C75 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */; };
+		DCEDC63227E24D9500BD7C75 /* StatsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */; };
+		DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -669,6 +671,7 @@
 		DCEDB381247489A0006AF70D /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
 		DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerView.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1585,6 +1588,7 @@
 		DCEDC62D27E0FFD500BD7C75 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */,
 				DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */,
 			);
 			path = Stats;
@@ -2382,6 +2386,7 @@
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DCE1AA1B27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
+				DCEDC63227E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */,
@@ -2552,6 +2557,7 @@
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
+				DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */,
