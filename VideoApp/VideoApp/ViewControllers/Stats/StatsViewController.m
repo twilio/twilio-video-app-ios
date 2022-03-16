@@ -19,18 +19,14 @@
 #import <mach/mach.h>
 #import <mach/processor_info.h>
 #import <mach/mach_host.h>
-#import <TwilioVideo/TwilioVideo.h>
 
 #import "HeaderTableViewCell.h"
 #import "StatsUIModel.h"
 #import "TrackStatsTableViewCell.h"
-#import "VideoApp-Swift.h"
 
 static const NSTimeInterval kStatsTimerInterval = 2.0;
 
 @interface StatsViewController ()
-
-@property (nonatomic, assign, getter=isStatsViewDisplayed) BOOL statsViewDisplayed;
 
 @property (nonatomic, assign, getter=isStatCollectionEnabled) BOOL statCollectionEnabled;
 @property (nonatomic, strong) IBOutlet UIView *disabledView;
@@ -38,11 +34,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 @property (nonatomic, weak) IBOutlet UILabel *disabledViewLable2;
 @property (nonatomic, strong) NSLayoutConstraint *disabledViewXConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *disabledViewYConstraint;
-
-@property (nonatomic, strong) NSLayoutConstraint *leftConstraint;
-@property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
-@property (nonatomic, strong) NSLayoutConstraint *widthConstraint;
-@property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
 
 @property (nonatomic, strong) UIView *grayView;
 
@@ -122,11 +113,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
                                              selector:@selector(thermalStateDidChange:)
                                                  name:NSProcessInfoThermalStateDidChangeNotification
                                                object:nil];
-//
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(roomDidChange)
-//                                                 name:SwiftToObjc.roomUpdateNotificationName
-//                                               object:nil];
 }
 
 - (void)dealloc {
@@ -137,10 +123,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
     }
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-//
-//- (void)roomDidChange {
-//    self.room = (TVIRoom *)self.videoAppRoom;
-//}
 
 - (void)removeStatsUnavailableView {
     [NSLayoutConstraint deactivateConstraints:@[ self.disabledViewXConstraint, self.disabledViewYConstraint ]];

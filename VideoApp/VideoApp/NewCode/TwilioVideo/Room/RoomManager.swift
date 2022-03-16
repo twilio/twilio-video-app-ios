@@ -18,7 +18,7 @@ import Combine
 import TwilioVideo
 
 /// Manages the video room connection and uses publishers to notify subscribers of state changes.
-class RoomManager: NSObject, ObservableObject {
+@MainActor class RoomManager: NSObject, ObservableObject {
     // MARK: Publishers
     let roomConnectPublisher = PassthroughSubject<Void, Never>()
     let roomDisconnectPublisher = PassthroughSubject<Error?, Never>()
@@ -119,7 +119,7 @@ extension RoomManager: RoomDelegate {
 }
 
 extension RoomManager: RemoteParticipantManagerDelegate {
-    func participantDidChange(_ participant: RemoteParticipantManager) {
+    nonisolated func participantDidChange(_ participant: RemoteParticipantManager) {
         remoteParticipantChangePublisher.send(participant)
     }
 }

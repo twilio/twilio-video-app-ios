@@ -14,15 +14,11 @@
 //  limitations under the License.
 //
 
+#import <TwilioVideo/TwilioVideo.h>
 #import <UIKit/UIKit.h>
-
-@class StatsUIModel;
-@class TVIRoom;
 
 @interface StatsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) TVIRoom *room;
-
-- (void)updateStatsUIWithModels:(NSArray<StatsUIModel *> *)statsUIModels;
 
 @end

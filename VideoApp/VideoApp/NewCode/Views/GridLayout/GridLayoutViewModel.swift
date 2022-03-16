@@ -43,7 +43,7 @@ import Combine
 ///
 /// Some participant state, such as mute status, does not impact grid ordering. The participant will be updated in place so the
 /// UI can update the view for that participant.
-class GridLayoutViewModel: ObservableObject {
+@MainActor class GridLayoutViewModel: ObservableObject {
     struct Page: Hashable {
         let identifier: Int
         var participants: [ParticipantViewModel]

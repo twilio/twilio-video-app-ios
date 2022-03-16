@@ -17,7 +17,7 @@
 import TwilioVideo
 import Combine
 
-class FocusLayoutViewModel: ObservableObject {
+@MainActor class FocusLayoutViewModel: ObservableObject {
     struct Presenter {
         var identity: String = ""
         var presentationTrack: VideoTrack?

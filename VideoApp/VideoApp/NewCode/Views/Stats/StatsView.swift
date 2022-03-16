@@ -22,8 +22,8 @@ struct StatsView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> StatsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let statsViewController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController
-        return statsViewController
+        let statsController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController
+        return statsController
     }
 
     func updateUIViewController(_ uiViewController: StatsViewController, context: Context) {
