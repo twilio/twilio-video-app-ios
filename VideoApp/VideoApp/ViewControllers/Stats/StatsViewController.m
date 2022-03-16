@@ -30,7 +30,7 @@ static const CGFloat kGapWidth = 0.15;
 static const CGFloat kAnimationDuration = 0.35;
 static const NSTimeInterval kStatsTimerInterval = 2.0;
 
-@interface StatsViewController () <UIGestureRecognizerDelegate>
+@interface StatsViewController ()
 
 @property (nonatomic, assign, getter=isStatsViewDisplayed) BOOL statsViewDisplayed;
 
@@ -40,9 +40,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 @property (nonatomic, weak) IBOutlet UILabel *disabledViewLable2;
 @property (nonatomic, strong) NSLayoutConstraint *disabledViewXConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *disabledViewYConstraint;
-
-@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *swipeGestureRecognizer;
-@property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 
 @property (nonatomic, strong) NSLayoutConstraint *leftConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
@@ -60,7 +57,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 @property (nonatomic, assign) NSProcessInfoThermalState lastThermalState;
 @property (nonatomic, strong) TVIIceCandidatePairStats *lastPairStats;
 @property (nonatomic, strong) NSDate *lastPairDate;
-@property (nonatomic, strong) TVIRoom *room;
 
 @end
 
@@ -69,10 +65,26 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 @synthesize room = _room;
 
 - (void)setRoom:(TVIRoom *)room {
-//    if (room == _room) {
-//        return;
-//    }
+    if (room == _room) {
+        return;
+    }
     _room = room;
+
+    if (self.statsTimer != nil) {
+        [self.statsTimer invalidate];
+        self.statsTimer = nil;
+    }
+
+    if (room) {
+        self.statsProcessingQueue = [[NSOperationQueue alloc] init];
+        self.statsProcessingQueue.maxConcurrentOperationCount = 1;
+        self.statsTimer = [NSTimer timerWithTimeInterval:kStatsTimerInterval target:self selector:@selector(statsTimerFired) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.statsTimer forMode:NSRunLoopCommonModes];
+        [self.statsTimer fire];
+    } else {
+        [self.statsProcessingQueue cancelAllOperations];
+        self.statsProcessingQueue = nil;
+    }
 }
 
 - (void)viewDidLoad {
@@ -83,13 +95,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 
     self.grayView = [[UIView alloc] init];
     self.grayView.backgroundColor = [UIColor grayColor];
-
-    self.swipeGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-    self.swipeGestureRecognizer.edges = UIRectEdgeRight;
-    self.swipeGestureRecognizer.delegate = self;
-
-    self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    self.panGestureRecognizer.enabled = NO;
 
     // Configure the disabled view stuffs
     self.disabledView.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0];
@@ -119,33 +124,11 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
                                              selector:@selector(thermalStateDidChange:)
                                                  name:NSProcessInfoThermalStateDidChangeNotification
                                                object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(roomDidChange)
-                                                 name:SwiftToObjc.roomUpdateNotificationName
-                                               object:nil];
-    
-
-
-    self.room = (TVIRoom *)self.videoAppRoom;
-
-    if (self.statsTimer != nil) {
-        [self.statsTimer invalidate];
-        self.statsTimer = nil;
-    }
-
-    if (self.room) {
-        self.statsProcessingQueue = [[NSOperationQueue alloc] init];
-        self.statsProcessingQueue.maxConcurrentOperationCount = 1;
-//        if (_statsViewDisplayed) {
-            self.statsTimer = [NSTimer timerWithTimeInterval:kStatsTimerInterval target:self selector:@selector(statsTimerFired) userInfo:nil repeats:YES];
-            [[NSRunLoop currentRunLoop] addTimer:self.statsTimer forMode:NSRunLoopCommonModes];
-            [self.statsTimer fire];
-//        }
-    } else {
-        [self.statsProcessingQueue cancelAllOperations];
-        self.statsProcessingQueue = nil;
-    }
+//
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(roomDidChange)
+//                                                 name:SwiftToObjc.roomUpdateNotificationName
+//                                               object:nil];
 }
 
 - (void)dealloc {
@@ -156,42 +139,10 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
     }
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-- (void)addAsSwipeableViewToParentViewController:(UIViewController *)parentViewController {
-    if (parentViewController != nil) {
-        UIView *parentView = parentViewController.view;
-
-        [parentView addSubview:self.view];
-        [parentView addGestureRecognizer:self.swipeGestureRecognizer];
-        [parentView addGestureRecognizer:self.panGestureRecognizer];
-
-        [parentViewController.navigationController.barHideOnSwipeGestureRecognizer addTarget:self action:@selector(navBarHiddenHandler:)];
-        [parentViewController.navigationController.barHideOnTapGestureRecognizer addTarget:self action:@selector(navBarHiddenHandler:)];
-
-        // Configure layout constraints for the stats view
-        self.view.translatesAutoresizingMaskIntoConstraints = NO;
-        self.widthConstraint = [self.view.widthAnchor constraintEqualToAnchor:parentView.widthAnchor constant:-(parentView.frame.size.width * kGapWidth)];
-        self.leftConstraint = [self.view.leftAnchor constraintEqualToAnchor:parentView.leftAnchor constant:parentView.frame.size.width];
-        self.heightConstraint = [self.view.heightAnchor constraintEqualToAnchor:parentView.heightAnchor];
-        self.bottomConstraint = [self.view.bottomAnchor constraintEqualToAnchor:parentView.bottomAnchor];
-
-        NSArray *layoutConstraints = @[ self.widthConstraint,
-                                        self.heightConstraint,
-                                        self.leftConstraint,
-                                        self.bottomConstraint ];
-
-        [NSLayoutConstraint activateConstraints:layoutConstraints];
-        [parentViewController addChildViewController:self];
-        [self didMoveToParentViewController:parentViewController];
-
-        [self adjustConstraintsForNavBar:NO];
-        [self adjustConstraintsForStatusBar:NO];
-    }
-}
-
-- (void)roomDidChange {
-    self.room = (TVIRoom *)self.videoAppRoom;
-}
+//
+//- (void)roomDidChange {
+//    self.room = (TVIRoom *)self.videoAppRoom;
+//}
 
 - (void)removeStatsUnavailableView {
     [NSLayoutConstraint deactivateConstraints:@[ self.disabledViewXConstraint, self.disabledViewYConstraint ]];
@@ -213,60 +164,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 
     [self.view addSubview:self.disabledView];
     [NSLayoutConstraint activateConstraints:@[ self.disabledViewXConstraint, self.disabledViewYConstraint ]];
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    if (self.isStatsViewDisplayed) {
-        self.leftConstraint.constant = size.width * kGapWidth;
-    } else {
-        self.leftConstraint.constant = size.width;
-    }
-
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        // You get a noticable flicker when these are applied.
-        // But because they way they currently are calculated, the values necessary are only
-        // known after the rotation has completed. Still looking for a better solution, but this
-        // gets more accurate handling for rotation than we had prior.
-        [self adjustConstraintsForStatusBar:YES];
-        [self adjustConstraintsForNavBar:YES];
-    }];
-
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-}
-
-- (void)navBarHiddenHandler:(id)sender {
-    if ([sender isKindOfClass:[UIGestureRecognizer class]] &&
-        ((UIGestureRecognizer *)sender).state != UIGestureRecognizerStateEnded) {
-        return;
-    }
-
-    [self adjustConstraintsForNavBar:YES];
-}
-
-- (void)adjustConstraintsForNavBar:(BOOL)shouldAnimate {
-    if (self.parentViewController.navigationController.isNavigationBarHidden) {
-        self.heightConstraint.constant = 0;
-    } else {
-        self.heightConstraint.constant = -(self.parentViewController.navigationController.navigationBar.frame.size.height);
-    }
-
-    if (shouldAnimate) {
-        [UIView animateWithDuration:kAnimationDuration animations:^{
-            [self.parentViewController.view layoutIfNeeded];
-        }];
-    }
-}
-
-- (void)adjustConstraintsForStatusBar:(BOOL)shouldAnimate {
-    CGFloat statusBarHeight = self.view.window.windowScene.statusBarManager.isStatusBarHidden ? 0 : self.view.window.windowScene.statusBarManager.statusBarFrame.size.height;
-    [self.tableView setContentInset:UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)];
-
-    if (shouldAnimate) {
-        [UIView animateWithDuration:kAnimationDuration animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
 }
 
 - (void)updateStatsUIWithModels:(NSArray<StatsUIModel *> *)statsUIModels {
@@ -333,128 +230,6 @@ static const NSTimeInterval kStatsTimerInterval = 2.0;
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
-}
-
-#pragma mark - Gesture Recognizer actions
-
-- (void)swipe:(UIScreenEdgePanGestureRecognizer *)gestureRecognizer {
-    UIView *parentView = self.parentViewController.view;
-
-    switch (gestureRecognizer.state) {
-        case UIGestureRecognizerStateBegan:
-            self.grayView.alpha = 0.0;
-            [parentView insertSubview:self.grayView belowSubview:self.view];
-            [self applyFullConstraintsToView:self.grayView];
-            break;
-        case UIGestureRecognizerStateChanged:
-            [self moveWithPoint:[gestureRecognizer translationInView:parentView]];
-            [gestureRecognizer setTranslation:CGPointZero inView:parentView];
-            break;
-        case UIGestureRecognizerStateEnded:
-            if ([gestureRecognizer velocityInView:parentView].x > 0) {
-                [self parentViewDisplayed];
-            } else {
-                [self statsViewDisplayed];
-            }
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)pan:(UIPanGestureRecognizer *)gestureRecognizer {
-    UIView *parentView = self.parentViewController.view;
-
-    switch (gestureRecognizer.state) {
-        case UIGestureRecognizerStateChanged:
-            [self moveWithPoint:[gestureRecognizer translationInView:parentView]];
-            [gestureRecognizer setTranslation:CGPointZero inView:parentView];
-            break;
-        case UIGestureRecognizerStateEnded:
-            if ([gestureRecognizer velocityInView:parentView].x < 0) {
-                [self statsViewDisplayed];
-            } else {
-                [self parentViewDisplayed];
-            }
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)applyFullConstraintsToView:(UIView *)view {
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-
-    UIView *parentView = self.parentViewController.view;
-
-    NSArray *layoutConstraints = @[ [view.leftAnchor constraintEqualToAnchor:parentView.leftAnchor],
-                                    [view.rightAnchor constraintEqualToAnchor:parentView.rightAnchor],
-                                    [view.topAnchor constraintEqualToAnchor:parentView.topAnchor],
-                                    [view.bottomAnchor constraintEqualToAnchor:parentView.bottomAnchor] ];
-
-    [NSLayoutConstraint activateConstraints:layoutConstraints];
-}
-
-- (void)moveWithPoint:(CGPoint)point {
-    UIView *parentView = self.parentViewController.view;
-    UIView *topView = self.view;
-
-    CGFloat gap = parentView.frame.size.width * kGapWidth;
-
-    if (topView != nil) {
-        CGPoint center = topView.center;
-        center.x = MIN(MAX(topView.center.x + point.x, parentView.center.x + gap), parentView.frame.size.width + topView.frame.size.width / 2);
-        topView.center = center;
-        CGFloat alpha = ((parentView.frame.origin.x + gap) - (topView.frame.origin.x)) / (parentView.frame.size.width - gap);
-        self.grayView.alpha = (alpha + 1) * 0.75;
-    }
-}
-
-- (void)statsViewDisplayed {
-    UIView *parentView = self.parentViewController.view;
-
-    self.leftConstraint.constant = parentView.frame.size.width * kGapWidth;
-    CGRect frame = self.view.frame;
-    frame.origin.x = self.leftConstraint.constant;
-
-    if (self.statsTimer == nil) {
-        self.statsTimer = [NSTimer timerWithTimeInterval:kStatsTimerInterval target:self selector:@selector(statsTimerFired) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:self.statsTimer forMode:NSRunLoopCommonModes];
-        [self.statsTimer fire];
-    }
-
-    [UIView animateWithDuration:kAnimationDuration
-                     animations:^{
-                         self.view.frame = frame;
-                         self.grayView.alpha = 0.75;
-                         [parentView layoutIfNeeded];
-                     } completion:^(BOOL finished) {
-                         self.parentViewController.navigationController.hidesBarsOnSwipe = NO;
-                         self.panGestureRecognizer.enabled = YES;
-                         self.statsViewDisplayed = YES;
-                     }];
-}
-
-- (void)parentViewDisplayed {
-    UIView *parentView = self.parentViewController.view;
-
-    self.leftConstraint.constant = parentView.frame.size.width;
-    CGRect frame = self.view.frame;
-    frame.origin.x = self.leftConstraint.constant;
-
-    [UIView animateWithDuration:kAnimationDuration
-                     animations:^{
-                         self.view.frame = frame;
-                         self.grayView.alpha = 0.0;
-                         [parentView layoutIfNeeded];
-                     } completion:^(BOOL finished) {
-                         [self.grayView removeFromSuperview];
-                         self.parentViewController.navigationController.hidesBarsOnSwipe = YES;
-                         self.panGestureRecognizer.enabled = NO;
-                         self.statsViewDisplayed = NO;
-                         [self.statsTimer invalidate];
-                         self.statsTimer = nil;
-                     }];
 }
 
 #pragma mark - Stats

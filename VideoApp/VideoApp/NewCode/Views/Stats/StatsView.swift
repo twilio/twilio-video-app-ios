@@ -15,19 +15,18 @@
 //
 
 import SwiftUI
+import TwilioVideo
 
 struct StatsView: UIViewControllerRepresentable {
-    @EnvironmentObject var roomManager: RoomManager
+    @Binding var room: Room?
 
     func makeUIViewController(context: Context) -> StatsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let statsViewController = storyboard.instantiateViewController(withIdentifier: "statsViewController") as! StatsViewController
-        statsViewController.videoAppRoom = roomManager.room
-        
         return statsViewController
     }
 
     func updateUIViewController(_ uiViewController: StatsViewController, context: Context) {
-
+        uiViewController.room = room
     }
 }

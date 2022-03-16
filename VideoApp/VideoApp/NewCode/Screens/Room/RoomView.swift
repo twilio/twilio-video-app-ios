@@ -22,6 +22,7 @@ struct RoomView: View {
     @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
     @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
     @EnvironmentObject var localParticipant: LocalParticipantManager
+    @EnvironmentObject var roomManager: RoomManager
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -93,6 +94,12 @@ struct RoomView: View {
                 }
                 .edgesIgnoringSafeArea([.horizontal, .bottom]) // So toolbar sides and bottom extend beyond safe area
 
+                HStack {
+                    Spacer(minLength: geometry.size.width / 3)
+                    StatsView(room: $roomManager.room)
+                }
+                .opacity(isShowingStats ? 1 : 0)
+                
                 if viewModel.state == .connecting {
                     ProgressHUD(title: "Connecting...")
                 }
@@ -104,9 +111,6 @@ struct RoomView: View {
         }
         .onDisappear {
             app.isIdleTimerDisabled = false
-        }
-        .sheet(isPresented: $isShowingStats) {
-            StatsView()
         }
         .alert(isPresented: $viewModel.isShowingError) {
             Alert(error: viewModel.error!) {
