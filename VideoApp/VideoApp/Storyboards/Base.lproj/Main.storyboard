@@ -500,7 +500,6 @@
         <!--Navigation Controller-->
         <scene sceneID="f3T-pt-STw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dYf-5k-BIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="LfN-ah-df2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fXC-Iz-gGq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -510,6 +509,7 @@
                         <segue destination="PPP-5k-Y6L" kind="relationship" relationship="rootViewController" id="HzD-nL-gcR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYf-5k-BIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-762" y="1649"/>
         </scene>
