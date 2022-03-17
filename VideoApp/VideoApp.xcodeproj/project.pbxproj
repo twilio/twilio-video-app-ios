@@ -357,8 +357,6 @@
 		DCEDB32E2464F815006AF70D /* UICollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */; };
 		DCEDB3312464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
 		DCEDB3322464F9BA006AF70D /* IndexSetHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */; };
-		DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
-		DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35824730476006AF70D /* SwiftToObjc.swift */; };
 		DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
 		DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB35C24733641006AF70D /* LoginViewController.swift */; };
 		DCEDB36324743A15006AF70D /* BandwidthProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */; };
@@ -382,6 +380,10 @@
 		DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */; };
 		DCEDC62C27DFE7B900BD7C75 /* NetworkQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */; };
+		DCEDC62F27E0FFF500BD7C75 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */; };
+		DCEDC63027E0FFF500BD7C75 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */; };
+		DCEDC63227E24D9500BD7C75 /* StatsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */; };
+		DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -654,7 +656,6 @@
 		DCEDB31B2464C4CC006AF70D /* TrackName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackName.swift; sourceTree = "<group>"; };
 		DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewHelpers.swift; sourceTree = "<group>"; };
 		DCEDB32F2464F9BA006AF70D /* IndexSetHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexSetHelpers.swift; sourceTree = "<group>"; };
-		DCEDB35824730476006AF70D /* SwiftToObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToObjc.swift; sourceTree = "<group>"; };
 		DCEDB35C24733641006AF70D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCEDB36124743A15006AF70D /* BandwidthProfileSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewModel.swift; sourceTree = "<group>"; };
 		DCEDB36524743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthProfileSettingsViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -666,6 +667,8 @@
 		DCEDB37D247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTrackSwitchOffModeViewModelFactory.swift; sourceTree = "<group>"; };
 		DCEDB381247489A0006AF70D /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
+		DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerView.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -1057,7 +1060,6 @@
 				DC1C2F7D23A445740044FB4D /* Notifications.swift */,
 				DC9A5E5224638A9C00E4B079 /* ShowError.swift */,
 				DC44C2E123875C4F00205174 /* StringHelpers.swift */,
-				DCEDB35824730476006AF70D /* SwiftToObjc.swift */,
 				DCEDB32B2464F815006AF70D /* UICollectionViewHelpers.swift */,
 				243CDB4922665F1800637B6B /* UIColorHelpers.swift */,
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
@@ -1447,6 +1449,7 @@
 				DC1D3CB027C955C8001FCB1A /* Participant */,
 				DC1D3CAF27C9553F001FCB1A /* RoomStatus */,
 				DC1D3CAE27C95504001FCB1A /* RoomToolbar */,
+				DCEDC62D27E0FFD500BD7C75 /* Stats */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1576,6 +1579,15 @@
 				8A84724D26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift */,
 			);
 			path = BandwidthProfile;
+			sourceTree = "<group>";
+		};
+		DCEDC62D27E0FFD500BD7C75 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */,
+				DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -2271,7 +2283,6 @@
 				DC8AA8CC236795FA006C06D5 /* main.swift in Sources */,
 				DCE1AA5C27C82F55004680CA /* HomeView.swift in Sources */,
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
-				DCEDB35A24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCE1AA2327C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
@@ -2370,6 +2381,7 @@
 				DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675B23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DCE1AA1B27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
+				DCEDC63227E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */,
@@ -2392,6 +2404,7 @@
 				DCB64B502409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1822405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
 				DCE1AA3727C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
+				DCEDC62F27E0FFF500BD7C75 /* StatsView.swift in Sources */,
 				DC9C772D2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
 				DCE1AA2927C7E58A004680CA /* RoomView.swift in Sources */,
 				DCA80B29236B821E009141C9 /* LaunchFlow.swift in Sources */,
@@ -2440,7 +2453,6 @@
 				DC8AA8CD236795FA006C06D5 /* main.swift in Sources */,
 				DCE1AA5D27C82F55004680CA /* HomeView.swift in Sources */,
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
-				DCEDB35B24730476006AF70D /* SwiftToObjc.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
 				DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
@@ -2539,6 +2551,7 @@
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
+				DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
 				DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */,
@@ -2561,6 +2574,7 @@
 				DC8A5EBD27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */,
 				DCB64B512409976F00E090BE /* APIRequest.swift in Sources */,
 				DCB7C1832405BD2C009DEA70 /* PasscodeComponents.swift in Sources */,
+				DCEDC63027E0FFF500BD7C75 /* StatsView.swift in Sources */,
 				DCE1AA3827C7E58A004680CA /* ParticipantViewModel.swift in Sources */,
 				DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */,
 				DCE1AA2A27C7E58A004680CA /* RoomView.swift in Sources */,

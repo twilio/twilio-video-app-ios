@@ -14,18 +14,11 @@
 //  limitations under the License.
 //
 
+#import <TwilioVideo/TwilioVideo.h>
 #import <UIKit/UIKit.h>
-
-@class StatsUIModel;
-@class TVIRoom;
 
 @interface StatsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-// Had to use NSObject and cast later because of a strange Swift bridging dependency cycle
-@property (nonatomic, strong) NSObject *videoAppRoom;
-
-- (void)addAsSwipeableViewToParentViewController:(UIViewController *)parentViewController;
-
-- (void)updateStatsUIWithModels:(NSArray<StatsUIModel *> *)statsUIModels;
+@property (nonatomic, strong) TVIRoom *room;
 
 @end
