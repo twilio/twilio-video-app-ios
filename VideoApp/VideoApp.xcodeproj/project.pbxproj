@@ -384,6 +384,14 @@
 		DCEDC63027E0FFF500BD7C75 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */; };
 		DCEDC63227E24D9500BD7C75 /* StatsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */; };
 		DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */; };
+		DCEDC63627E38C4B00BD7C75 /* MediaSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63527E38C4B00BD7C75 /* MediaSetupView.swift */; };
+		DCEDC63827E38D3700BD7C75 /* MediaSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63727E38D3700BD7C75 /* MediaSetupViewModel.swift */; };
+		DCEDC63927E38D3700BD7C75 /* MediaSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63727E38D3700BD7C75 /* MediaSetupViewModel.swift */; };
+		DCEDC63A27E38D3E00BD7C75 /* MediaSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63527E38C4B00BD7C75 /* MediaSetupView.swift */; };
+		DCEDC63C27E3CF6B00BD7C75 /* MicToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63B27E3CF6B00BD7C75 /* MicToggleButton.swift */; };
+		DCEDC63D27E3CF6B00BD7C75 /* MicToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63B27E3CF6B00BD7C75 /* MicToggleButton.swift */; };
+		DCEDC63F27E3D0DE00BD7C75 /* CameraToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63E27E3D0DE00BD7C75 /* CameraToggleButton.swift */; };
+		DCEDC64027E3D0DE00BD7C75 /* CameraToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEDC63E27E3D0DE00BD7C75 /* CameraToggleButton.swift */; };
 		DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */; };
 		DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4615023859BA400DD8FEA /* AppInfo.swift */; };
@@ -669,6 +677,10 @@
 		DCEDB385247489DA006AF70D /* SelectSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSettingViewModel.swift; sourceTree = "<group>"; };
 		DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		DCEDC63127E24D9400BD7C75 /* StatsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerView.swift; sourceTree = "<group>"; };
+		DCEDC63527E38C4B00BD7C75 /* MediaSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSetupView.swift; sourceTree = "<group>"; };
+		DCEDC63727E38D3700BD7C75 /* MediaSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSetupViewModel.swift; sourceTree = "<group>"; };
+		DCEDC63B27E3CF6B00BD7C75 /* MicToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicToggleButton.swift; sourceTree = "<group>"; };
+		DCEDC63E27E3D0DE00BD7C75 /* CameraToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraToggleButton.swift; sourceTree = "<group>"; };
 		DCF4614B238598C700DD8FEA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DCF4615023859BA400DD8FEA /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DCF4615423859BB800DD8FEA /* AppInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoStore.swift; sourceTree = "<group>"; };
@@ -949,6 +961,7 @@
 			isa = PBXGroup;
 			children = (
 				DC1D3CAC27C9544C001FCB1A /* Home */,
+				DCEDC63427E38C1900BD7C75 /* MediaSetup */,
 				DC1D3CAD27C95458001FCB1A /* Room */,
 				DC1D3CB727CEC0A9001FCB1A /* Settings */,
 			);
@@ -976,6 +989,8 @@
 		DC1D3CAE27C95504001FCB1A /* RoomToolbar */ = {
 			isa = PBXGroup;
 			children = (
+				DCEDC63E27E3D0DE00BD7C75 /* CameraToggleButton.swift */,
+				DCEDC63B27E3CF6B00BD7C75 /* MicToggleButton.swift */,
 				DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */,
 				DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */,
 			);
@@ -1588,6 +1603,15 @@
 				DCEDC62E27E0FFF500BD7C75 /* StatsView.swift */,
 			);
 			path = Stats;
+			sourceTree = "<group>";
+		};
+		DCEDC63427E38C1900BD7C75 /* MediaSetup */ = {
+			isa = PBXGroup;
+			children = (
+				DCEDC63527E38C4B00BD7C75 /* MediaSetupView.swift */,
+				DCEDC63727E38D3700BD7C75 /* MediaSetupViewModel.swift */,
+			);
+			path = MediaSetup;
 			sourceTree = "<group>";
 		};
 		DCF4614F23859B9A00DD8FEA /* AppInfo */ = {
@@ -2290,12 +2314,14 @@
 				DCE1AA1727C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
 				DCE1A9FD27C7E556004680CA /* ErrorAlert.swift in Sources */,
 				DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */,
+				DCEDC63827E38D3700BD7C75 /* MediaSetupViewModel.swift in Sources */,
 				DCC7E35E24070C5200431AC3 /* AuthFlowFactory.swift in Sources */,
 				DCE1A9FB27C7E556004680CA /* FormTextFieldStyle.swift in Sources */,
 				DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */,
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCE1AA1D27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
+				DCEDC63F27E3D0DE00BD7C75 /* CameraToggleButton.swift in Sources */,
 				DC8A5EBA27D95230008F7FBA /* NetworkQualityView.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9A5E442463247700E4B079 /* CircleButton.swift in Sources */,
@@ -2330,6 +2356,7 @@
 				DCEDB383247489A0006AF70D /* SettingOptions.swift in Sources */,
 				DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4023BA926E0045018F /* VideoStore.swift in Sources */,
+				DCEDC63C27E3CF6B00BD7C75 /* MicToggleButton.swift in Sources */,
 				DCE1AA1F27C7E58A004680CA /* PresentationView.swift in Sources */,
 				DC8EAE3023BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */,
@@ -2349,6 +2376,7 @@
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
+				DCEDC63627E38C4B00BD7C75 /* MediaSetupView.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCE1AA1927C7E58A004680CA /* GridLayoutView.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
@@ -2467,6 +2495,7 @@
 				DCE1AA1E27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
+				DCEDC64027E3D0DE00BD7C75 /* CameraToggleButton.swift in Sources */,
 				DC9A5E452463247700E4B079 /* CircleButton.swift in Sources */,
 				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2501,6 +2530,7 @@
 				DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */,
 				DC8EAE4123BA926E0045018F /* VideoStore.swift in Sources */,
 				DCE1AA2027C7E58A004680CA /* PresentationView.swift in Sources */,
+				DCEDC63D27E3CF6B00BD7C75 /* MicToggleButton.swift in Sources */,
 				DC8EAE3123BA5EC80045018F /* AppDelegate.swift in Sources */,
 				4B0012631FBA52E5004A587E /* StatsViewController.m in Sources */,
 				DC9A5E4D2463575F00E4B079 /* UserStoreFactory.swift in Sources */,
@@ -2542,6 +2572,7 @@
 				DCE1AA2227C7E58A004680CA /* FocusLayoutView.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
+				DCEDC63A27E38D3E00BD7C75 /* MediaSetupView.swift in Sources */,
 				DCC7E36C24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AF236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
 				DCB64B572409BC4E00E090BE /* APIConfig.swift in Sources */,
@@ -2549,6 +2580,7 @@
 				DCEC3D082386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DCACF1D224EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */,
 				DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */,
+				DCEDC63927E38D3700BD7C75 /* MediaSetupViewModel.swift in Sources */,
 				DCD7675C23DF56FE00A2939C /* UserActivityStoreFactory.swift in Sources */,
 				DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */,
 				DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
@@ -2718,6 +2750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2780,6 +2813,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

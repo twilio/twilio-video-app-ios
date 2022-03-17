@@ -62,17 +62,9 @@ struct RoomView: View {
                             viewModel.disconnect()
                             presentationMode.wrappedValue.dismiss()
                         }
-                        RoomToolbarButton(
-                            image: Image(systemName: localParticipant.isMicOn ? "mic" : "mic.slash")
-                        ) {
-                            localParticipant.isMicOn.toggle()
-                        }
-                        RoomToolbarButton(
-                            image: Image(systemName: localParticipant.isCameraOn ? "video" : "video.slash")
-                        ) {
-                            localParticipant.isCameraOn.toggle()
-                        }
-
+                        MicToggleButton()
+                        CameraToggleButton()
+                        
                         Menu {
                             Button(
                                 action: { isShowingStats = true },
