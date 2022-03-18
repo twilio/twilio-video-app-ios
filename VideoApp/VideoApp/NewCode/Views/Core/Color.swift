@@ -20,9 +20,9 @@ import SwiftUI
 extension Color {
     static var background: Color { Color("Background") }
     static var backgroundBodyInverse: Color { Color("BackgroundBodyInverse") }
-    static var backgroundBrand: Color { Color("BackgroundBrand") }
     static var backgroundDestructive: Color { Color("BackgroundDestructive") }
     static var backgroundHighlight: Color { Color("BackgroundHighlight") }
+    static var backgroundInverseStrong: Color { Color("BackgroundInverseStrong") }
     static var backgroundLiveBadge: Color { Color("BackgroundLiveBadge") }
     static var backgroundPrimary: Color { Color("BackgroundPrimary") }
     static var backgroundPrimaryWeak: Color { Color("BackgroundPrimaryWeak") }

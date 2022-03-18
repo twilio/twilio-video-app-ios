@@ -21,7 +21,7 @@ struct PresentationStatusView: View {
     
     var body: some View {
         ZStack {
-            Color.backgroundBrand
+            Color.backgroundInverseStrong
             Text(presenterIdentity + " is presenting.")
                 .foregroundColor(.white)
                 .font(.system(size: 13, weight: .bold))

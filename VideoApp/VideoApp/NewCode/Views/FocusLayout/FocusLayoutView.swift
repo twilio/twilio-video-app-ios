@@ -31,17 +31,20 @@ struct FocusLayoutView: View {
         GeometryReader { geometry in
             HStack(spacing: spacing) {
                 VStack(spacing: spacing) {
-                    PresentationStatusView(presenterIdentity: viewModel.presenter.identity)
+                    if viewModel.isPresenting {
+                        PresentationStatusView(presenterIdentity: viewModel.presenter.identity)
+                    }
+                    
                     ParticipantView(viewModel: $viewModel.dominantSpeaker)
 
-                    if isPortraitOrientation {
+                    if isPortraitOrientation && viewModel.isPresenting {
                         PresentationView(videoTrack: $viewModel.presenter.presentationTrack)
                     }
                 }
                 // For landscape orientation only use 30% of the width for stuff that isn't the presentation video
-                .frame(width: isPortraitOrientation ? nil : geometry.size.width * 0.3)
+                .frame(width: isPortraitOrientation || !viewModel.isPresenting ? nil : geometry.size.width * 0.3)
                 
-                if !isPortraitOrientation {
+                if !isPortraitOrientation && viewModel.isPresenting {
                     PresentationView(videoTrack: $viewModel.presenter.presentationTrack)
                 }
             }
@@ -52,16 +55,15 @@ struct FocusLayoutView: View {
 
 struct FocusLayoutView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            FocusLayoutView(spacing: 6)
-                .previewDisplayName("Portrait")
-                .frame(width: 300, height: 600)
-            FocusLayoutView(spacing: 6)
-                .previewDisplayName("Landscape")
-                .frame(width: 600, height: 300)
+        ForEach([false, true], id: \.self) { isPresenting in
+            ForEach([[300.0, 600.0], [600.0, 300.0]], id: \.self) { size in
+                FocusLayoutView(spacing: 6)
+                    .previewDisplayName(isPresenting ? "Presenting" : "Not presenting")
+                    .frame(width: size[0], height: size[1])
+                    .environmentObject(FocusLayoutViewModel.stub(isPresenting: isPresenting))
+                    .previewLayout(.sizeThatFits)
+            }
         }
-        .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
-        .previewLayout(.sizeThatFits)
     }
 }
 
