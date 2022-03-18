@@ -24,11 +24,11 @@ import SwiftUI
 /// UI previews. If `HomeView` created the dependencies, they would not get deallocated when `RoomView`
 /// goes away. Also `HomeView` shouldn't have to do complex dependency setup for other screens.
 struct RoomViewDependencyWrapper: View {
+    @EnvironmentObject var localParticipant: LocalParticipantManager
     let roomName: String
     @StateObject private var roomViewModel = RoomViewModel()
     @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
     @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
-    @StateObject private var localParticipant = LocalParticipantManager()
     @StateObject private var roomManager = RoomManager()
 
     var body: some View {
@@ -38,10 +38,8 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(roomViewModel)
         .environmentObject(gridLayoutViewModel)
         .environmentObject(focusLayoutViewModel)
-        .environmentObject(localParticipant)
         .environmentObject(roomManager)
         .onAppear {
-            localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             roomManager.configure(localParticipant: localParticipant)
             roomViewModel.configure(roomManager: roomManager)
             gridLayoutViewModel.configure(roomManager: roomManager)

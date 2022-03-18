@@ -18,32 +18,43 @@ import SwiftUI
 
 /// Main home screen for the app.
 struct HomeView: View {
+    @StateObject private var localParticipant = LocalParticipantManager()
+    @StateObject private var mediaSetupViewModel = MediaSetupViewModel()
     @State private var roomName = ""
+    @State private var isShowingMediaSetup = false
     @State private var isShowingRoom = false
     @State private var isShowingSettings = false
+    @State private var isMediaSetup = false
 
     var body: some View {
         NavigationView {
             FormStack {
+                Text("Enter the name of a room you'd like to join.")
+                
                 TextField("Room name", text: $roomName)
                     .textFieldStyle(FormTextFieldStyle())
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
 
-                VStack {
-                    Button("Continue") {
-                        hideKeyboard()
-                        isShowingRoom = true
-                    }
-                    .buttonStyle(PrimaryButtonStyle(isEnabled: !roomName.isEmpty))
-                    .disabled(roomName.isEmpty)
+                Button("Continue") {
+                    hideKeyboard()
+                    isShowingMediaSetup = true
                 }
+                .buttonStyle(PrimaryButtonStyle(isEnabled: !roomName.isEmpty))
+                .disabled(roomName.isEmpty)
             }
-            .navigationBarTitle("Join room", displayMode: .inline)
+            .navigationBarTitle("Join a room", displayMode: .inline)
             .toolbar {
                 Button(action: { isShowingSettings.toggle() }) {
                     Image(systemName: "gear")
                 }
+            }
+            .sheet(isPresented: $isShowingMediaSetup) {
+                MediaSetupView(roomName: roomName, isMediaSetup: $isMediaSetup)
+                    .environmentObject(mediaSetupViewModel)
+                    .onDisappear {
+                        isShowingRoom = isMediaSetup
+                    }
             }
             .sheet(isPresented: $isShowingSettings) {
                 SettingsView()
@@ -53,6 +64,9 @@ struct HomeView: View {
             }
         }
         .onAppear {
+            localParticipant.configure(identity: AuthStore.shared.userDisplayName)
+            mediaSetupViewModel.configure(localParticipant: localParticipant)
+
             if let deepLink = DeepLinkStore.shared.consumeDeepLink() {
                 switch deepLink {
                 case let .room(roomName):
@@ -60,6 +74,7 @@ struct HomeView: View {
                 }
             }
         }
+        .environmentObject(localParticipant)
     }
 }
 

@@ -64,8 +64,6 @@ import Combine
         }
 
         state = .connecting
-        roomManager.localParticipant.isMicOn = true
-        roomManager.localParticipant.isCameraOn = true
 
         Task {
             do {

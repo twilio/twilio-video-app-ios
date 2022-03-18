@@ -27,6 +27,7 @@ struct ParticipantViewModel {
     var cameraTrack: VideoTrack?
     var isCameraTrackSwitchedOff = false
     var shouldMirrorCameraVideo = false
+    var shouldFillCameraVideo = false
     var networkQualityLevel: NetworkQualityLevel = .unknown
 
     /// The UI sometimes needs an empty participant.
@@ -34,9 +35,9 @@ struct ParticipantViewModel {
         
     }
 
-    init(participant: LocalParticipantManager) {
+    init(participant: LocalParticipantManager, shouldDisplayFullName: Bool = false) {
         identity = participant.identity
-        displayName = "You"
+        displayName = shouldDisplayFullName ? identity : "You"
         isYou = true
         isMuted = !participant.isMicOn
 
@@ -58,6 +59,7 @@ struct ParticipantViewModel {
         dominantSpeakerStartTime = participant.dominantSpeakerStartTime
         cameraTrack = participant.cameraTrack
         isCameraTrackSwitchedOff = participant.isCameraTrackSwitchedOff
+        shouldFillCameraVideo = true
         networkQualityLevel = participant.networkQualityLevel
     }
 }
