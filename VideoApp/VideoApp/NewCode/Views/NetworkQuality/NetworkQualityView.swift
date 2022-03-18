@@ -42,7 +42,7 @@ struct NetworkQualityView_Previews: PreviewProvider {
                 .previewDisplayName("\(index) bars")
         }
         .frame(width: 50)
-        .background(Color.backgroundBodyInverse)
+        .background(Color.roomBackground)
         .previewLayout(.sizeThatFits)
     }
 }

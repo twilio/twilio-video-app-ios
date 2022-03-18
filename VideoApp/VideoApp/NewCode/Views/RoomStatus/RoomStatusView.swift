@@ -61,7 +61,7 @@ struct RoomStatusView_Previews: PreviewProvider {
                         .environmentObject(RoomManager.stub(isRecording: isRecording))
                         .environmentObject(LocalParticipantManager.stub(isCameraOn: isCameraOn))
                         .frame(width: 400)
-                        .background(Color.backgroundBodyInverse)
+                        .background(Color.roomBackground)
                         .previewLayout(.sizeThatFits)
                 }
             }

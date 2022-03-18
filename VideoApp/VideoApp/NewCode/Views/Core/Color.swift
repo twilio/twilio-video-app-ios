@@ -37,6 +37,7 @@ extension Color {
     static var iconPurple: Color { Color("IconPurple") }
     static var recordingDotBright: Color { Color("RecordingDotBright") }
     static var recordingDotDark: Color { Color("RecordingDotDark") }
+    static var roomBackground: Color { backgroundBodyInverse }
     static var shadowLow: Color { Color("ShadowLow") }
     static var textWeak: Color { Color("TextWeak") }
 }
