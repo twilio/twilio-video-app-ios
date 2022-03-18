@@ -37,7 +37,7 @@ struct RoomView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.backgroundBrandStronger.ignoresSafeArea()
+                Color.backgroundBodyInverse.ignoresSafeArea()
 
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {

@@ -46,7 +46,7 @@ struct RecordingBadge_Previews: PreviewProvider {
     static var previews: some View {
         RecordingBadge()
             .padding()
-            .background(Color.backgroundBrandStronger)
+            .background(Color.backgroundBodyInverse)
             .previewLayout(.sizeThatFits)
     }
 }

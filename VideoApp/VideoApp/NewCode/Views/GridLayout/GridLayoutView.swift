@@ -99,7 +99,7 @@ struct GridLayoutView_Previews: PreviewProvider {
             }
             .frame(width: 700, height: 300)
         }
-        .background(Color.backgroundBrandStronger) // So page index is visible
+        .background(Color.backgroundBodyInverse) // So page index is visible
         .previewLayout(.sizeThatFits)
     }
 }
