@@ -29,6 +29,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             FormStack {
+                Text("Twilio Programmable Video")
+                    .font(.title.bold())
+                    .multilineTextAlignment(.center)
+                    .padding(.top, -40) /// A little clunky but `FormStack` needs some work
+                
                 Text("Enter the name of a room you'd like to join.")
                 
                 TextField("Room name", text: $roomName)
@@ -43,7 +48,6 @@ struct HomeView: View {
                 .buttonStyle(PrimaryButtonStyle(isEnabled: !roomName.isEmpty))
                 .disabled(roomName.isEmpty)
             }
-            .navigationBarTitle("Join a room", displayMode: .inline)
             .toolbar {
                 Button(action: { isShowingSettings.toggle() }) {
                     Image(systemName: "gear")

@@ -49,7 +49,7 @@ struct MediaSetupView: View {
                     Spacer()
                     Spacer()
                     
-                    Button("Join now") {
+                    Button("Join Now") {
                         isMediaSetup = true
                         presentationMode.wrappedValue.dismiss()
                     }
