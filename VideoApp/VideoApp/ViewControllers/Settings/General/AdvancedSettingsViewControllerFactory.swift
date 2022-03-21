@@ -26,6 +26,7 @@ class AdvancedSettingsViewControllerFactory: ViewControllerFactory {
             developerSettingsViewControllerFactory: DeveloperSettingsViewControllerFactory(),
             sdkLogLevelSettingsViewControllerFactory: SDKLogLevelSettingsViewControllerFactory(),
             selectVideoCodecViewModelFactory: SelectVideoCodecViewModelFactory(),
+            selectVideoSizeViewModelFactory: SelectVideoSizeViewModelFactory(),
             bandwidthProfileSettingsViewControllerFactory: BandwidthProfileSettingsViewControllerFactory(),
             internalSettingsViewControllerFactory: InternalSettingsViewControllerFactory()
         )

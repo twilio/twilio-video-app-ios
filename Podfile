@@ -1,4 +1,4 @@
-source 'https://cdn.cocoapods.org/'
+source 'https://cdn.cocoapods.org'
 
 platform :ios, '14.5'
 inhibit_all_warnings!

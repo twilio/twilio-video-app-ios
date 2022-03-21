@@ -30,17 +30,17 @@ class CameraConfigFactory {
             // 1024 x 768 squarish crop (1.25:1) on most iPhones. 1280 x 720 squarish crop (1.25:1) on the iPhone X
             // and models that don't have 1024 x 768.
             let hdDimensions = CMVideoDimensions(width: 900, height: 720)
-            
+
             switch remoteConfigStore.roomType {
             case .peerToPeer, .go: return hdDimensions
             case .group, .groupSmall, .unknown: break
             }
             
-            switch appSettingsStore.videoCodec {
-            case .h264, .vp8, .vp8SimulcastVGA:
+            switch appSettingsStore.videoSize {
+            case .vga:
                 // 640 x 480 squarish crop (1.13:1)
                 return CMVideoDimensions(width: 544, height: 480)
-            case .vp8SimulcastHD:
+            case .quarterHD:
                 return hdDimensions
             }
         }
@@ -48,8 +48,9 @@ class CameraConfigFactory {
             switch appSettingsStore.videoCodec {
             case .h264, .vp8:
                 return 20
-            case .vp8SimulcastVGA, .vp8SimulcastHD:
-                return 24 // With simulcast enabled there are 3 temporal layers, allowing a frame rate of {f, f/2, f/4}
+            case .auto, .vp8Simulcast:
+                // With simulcast enabled there are 3 temporal layers, allowing a frame rate of {f, f/2, f/4}
+                return 24
             }
         }
         let cropRatio = CGFloat(targetSize.width) / CGFloat(targetSize.height)

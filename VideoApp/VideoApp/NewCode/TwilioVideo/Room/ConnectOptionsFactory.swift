@@ -28,10 +28,11 @@ class ConnectOptionsFactory: NSObject {
         ConnectOptions(token: accessToken) { builder in
             var videoBitrate: UInt {
                 switch self.appSettingsStore.videoCodec {
+                // Automatic encoding and video bitrate controls are mutually exclusive.
+                case .auto: return 0
                 case .h264: return 1_200
                 case .vp8: return 1_200
-                case .vp8SimulcastVGA: return 0
-                case .vp8SimulcastHD: return 1_600
+                case .vp8Simulcast: return self.appSettingsStore.videoSize == .quarterHD ? 1_600 : 0
                 }
             }
 
@@ -55,7 +56,13 @@ class ConnectOptionsFactory: NSObject {
                     builder.contentPreferencesMode = TwilioVideo.VideoContentPreferencesMode(setting: self.appSettingsStore.videoContentPreferencesMode)
                 }
             )
-            builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
+                        
+            // At the moment automatic encoding is mutually exclusive with manual video bitrate and codec controls.
+            if self.appSettingsStore.videoCodec == .auto {
+                builder.videoEncodingMode = .auto
+            } else {
+                builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
+            }
             builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
 
             if self.appSettingsStore.isTURNMediaRelayOn {
@@ -70,9 +77,10 @@ class ConnectOptionsFactory: NSObject {
 private extension TwilioVideo.VideoCodec {
     static func make(setting: VideoCodec) -> TwilioVideo.VideoCodec {
         switch setting {
+        case .auto: return Vp8Codec(simulcast: true)
         case .h264: return H264Codec()
         case .vp8: return Vp8Codec(simulcast: false)
-        case .vp8SimulcastVGA, .vp8SimulcastHD: return Vp8Codec(simulcast: true)
+        case .vp8Simulcast: return Vp8Codec(simulcast: true)
         }
     }
 }

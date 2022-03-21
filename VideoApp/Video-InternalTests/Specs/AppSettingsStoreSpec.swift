@@ -47,7 +47,7 @@ class AppSettingsStoreSpec: QuickSpec {
                 it("is defaulted to vp8SimulcastVGA") {
                     mockAppInfoStore.stubbedAppInfo = .stub(target: .videoInternal)
                     
-                    expect(makeSUT().videoCodec).to(equal(.vp8SimulcastVGA))
+                    expect(makeSUT().videoCodec).to(equal(.auto))
                 }
             }
             
