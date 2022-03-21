@@ -41,7 +41,7 @@ struct RoomStatusView: View {
                     Image(systemName: "arrow.triangle.2.circlepath.camera")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(11)
+                        .padding(13)
                         .foregroundColor(.white)
                 }
             }
@@ -61,7 +61,7 @@ struct RoomStatusView_Previews: PreviewProvider {
                         .environmentObject(RoomManager.stub(isRecording: isRecording))
                         .environmentObject(LocalParticipantManager.stub(isCameraOn: isCameraOn))
                         .frame(width: 400)
-                        .background(Color.backgroundBrandStronger)
+                        .background(Color.roomBackground)
                         .previewLayout(.sizeThatFits)
                 }
             }

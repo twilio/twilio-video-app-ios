@@ -19,10 +19,10 @@ import SwiftUI
 // Colors defined at https://paste.twilio.design/tokens/
 extension Color {
     static var background: Color { Color("Background") }
-    static var backgroundBrand: Color { Color("BackgroundBrand") }
-    static var backgroundBrandStronger: Color { Color("BackgroundBrandStronger") }
+    static var backgroundBodyInverse: Color { Color("BackgroundBodyInverse") }
     static var backgroundDestructive: Color { Color("BackgroundDestructive") }
     static var backgroundHighlight: Color { Color("BackgroundHighlight") }
+    static var backgroundInverseStrong: Color { Color("BackgroundInverseStrong") }
     static var backgroundLiveBadge: Color { Color("BackgroundLiveBadge") }
     static var backgroundPrimary: Color { Color("BackgroundPrimary") }
     static var backgroundPrimaryWeak: Color { Color("BackgroundPrimaryWeak") }
@@ -37,6 +37,7 @@ extension Color {
     static var iconPurple: Color { Color("IconPurple") }
     static var recordingDotBright: Color { Color("RecordingDotBright") }
     static var recordingDotDark: Color { Color("RecordingDotDark") }
+    static var roomBackground: Color { backgroundBodyInverse }
     static var shadowLow: Color { Color("ShadowLow") }
     static var textWeak: Color { Color("TextWeak") }
 }

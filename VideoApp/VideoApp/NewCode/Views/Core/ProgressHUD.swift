@@ -21,8 +21,8 @@ struct ProgressHUD: View {
     
     var body: some View {
         ZStack {
-            Color.backgroundBrandStronger
-                .opacity(0.8)
+            Color.backgroundBodyInverse
+                .opacity(0.6)
             VStack(spacing: 40) {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .green))

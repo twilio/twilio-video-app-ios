@@ -19,14 +19,10 @@ import SwiftUI
 /// Room screen that is shown when a user connects to a video room.
 struct RoomView: View {
     @EnvironmentObject var viewModel: RoomViewModel
-    @EnvironmentObject var gridLayoutViewModel: GridLayoutViewModel
-    @EnvironmentObject var focusLayoutViewModel: FocusLayoutViewModel
-    @EnvironmentObject var localParticipant: LocalParticipantManager
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let roomName: String
-    @State var isShowingStats = false
     private let app = UIApplication.shared
     private let spacing: CGFloat = 6
     
@@ -37,17 +33,18 @@ struct RoomView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.backgroundBrandStronger.ignoresSafeArea()
+                Color.roomBackground.ignoresSafeArea()
 
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {
                         RoomStatusView(roomName: roomName)
                             .padding(.horizontal, spacing)
 
-                        if focusLayoutViewModel.isPresenting {
-                            FocusLayoutView(spacing: spacing)
-                        } else {
+                        switch viewModel.layout {
+                        case .grid:
                             GridLayoutView(spacing: spacing)
+                        case .focus:
+                            FocusLayoutView(spacing: spacing)
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)
@@ -67,9 +64,22 @@ struct RoomView: View {
                         
                         Menu {
                             Button(
-                                action: { isShowingStats = true },
+                                action: { viewModel.isShowingStats = true },
                                 label: { Label("Stats", systemImage: "binoculars") }
                             )
+
+                            switch viewModel.layout {
+                            case .grid:
+                                Button(
+                                    action: { viewModel.switchToLayout(.focus) },
+                                    label: { Label("Switch to Focus Layout", systemImage: "person") }
+                                )
+                            case .focus:
+                                Button(
+                                    action: { viewModel.switchToLayout(.grid) },
+                                    label: { Label("Switch to Grid Layout", systemImage: "square.grid.2x2") }
+                                )
+                            }
                         } label: {
                             RoomToolbarButton(image: Image(systemName: "ellipsis"))
                         }
@@ -81,7 +91,7 @@ struct RoomView: View {
                 }
                 .edgesIgnoringSafeArea([.horizontal, .bottom]) // So toolbar sides and bottom extend beyond safe area
 
-                StatsContainerView(isShowingStats: $isShowingStats)
+                StatsContainerView(isShowingStats: $viewModel.isShowingStats)
                 
                 if viewModel.state == .connecting {
                     ProgressHUD(title: "Connecting...")
@@ -111,17 +121,19 @@ struct RoomView_Previews: PreviewProvider {
             Group {
                 RoomView(roomName: roomName)
                     .previewDisplayName("Grid layout")
+                    .environmentObject(RoomViewModel.stub())
                     .environmentObject(FocusLayoutViewModel.stub())
 
                 RoomView(roomName: roomName)
                     .previewDisplayName("Focus layout")
+                    .environmentObject(RoomViewModel.stub(layout: .focus))
                     .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
 
-                RoomView(roomName: roomName, isShowingStats: true)
+                RoomView(roomName: roomName)
                     .previewDisplayName("Stats")
+                    .environmentObject(RoomViewModel.stub(isShowingStats: true))
                     .environmentObject(FocusLayoutViewModel.stub())
             }
-            .environmentObject(RoomViewModel.stub())
             .environmentObject(GridLayoutViewModel.stub())
             .environmentObject(RoomManager.stub(isRecording: true))
 
@@ -137,9 +149,15 @@ struct RoomView_Previews: PreviewProvider {
 }
 
 extension RoomViewModel {
-    static func stub(state: State = .connected) -> RoomViewModel {
+    static func stub(
+        state: State = .connected,
+        layout: Layout = .grid,
+        isShowingStats: Bool = false
+    ) -> RoomViewModel {
         let viewModel = RoomViewModel()
         viewModel.state = state
+        viewModel.layout = layout
+        viewModel.isShowingStats = isShowingStats
         return viewModel
     }
 }

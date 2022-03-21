@@ -54,17 +54,22 @@ class FocusLayoutViewModel: ObservableObject {
     }
 
     private func update() {
-        guard let presenter = findPresenter() else {
-            isPresenting = false
-            presenter = Presenter()
-            dominantSpeaker = ParticipantViewModel()
-            return
-        }
-
-        isPresenting = true
-        self.presenter = presenter
         dominantSpeaker = findDominantSpeaker()
         dominantSpeaker.isDominantSpeaker = false // No need to distinguish in the UI since only 1 participant is shown
+
+        if let presenter = findPresenter() {
+            self.presenter = presenter
+
+            if !isPresenting {
+                isPresenting = true
+            }
+        } else {
+            presenter = Presenter()
+            
+            if isPresenting {
+                isPresenting = false
+            }
+        }
     }
     
     private func findPresenter() -> Presenter? {

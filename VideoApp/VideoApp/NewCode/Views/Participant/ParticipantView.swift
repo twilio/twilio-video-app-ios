@@ -55,7 +55,7 @@ struct ParticipantView: View {
                         Image(systemName: "mic.slash")
                             .foregroundColor(.white)
                             .padding(9)
-                            .background(Color.backgroundBrandStronger.opacity(0.4))
+                            .background(Color.roomBackground.opacity(0.4))
                             .clipShape(Circle())
                             .padding(8)
                     }
@@ -76,7 +76,7 @@ struct ParticipantView: View {
                     }
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
-                    .background(Color.backgroundBrandStronger.opacity(0.7))
+                    .background(Color.roomBackground.opacity(0.7))
                     .cornerRadius(2)
                     
                     Spacer()
