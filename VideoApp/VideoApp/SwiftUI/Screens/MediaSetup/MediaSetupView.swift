@@ -29,10 +29,8 @@ struct MediaSetupView: View {
                 Color.background.ignoresSafeArea()
 
                 VStack {
-                    Spacer()
-                    
                     Text("Join " + roomName)
-                        .font(.system(size: 20))
+                        .font(.title2)
                     
                     ParticipantView(viewModel: $viewModel.participant)
                         .aspectRatio(1, contentMode: .fit)
