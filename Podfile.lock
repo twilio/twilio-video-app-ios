@@ -125,7 +125,6 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.0)
-  - IGListDiffKit (4.0.0)
   - KeychainAccess (4.2.2)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -144,7 +143,6 @@ DEPENDENCIES:
   - Firebase/Crashlytics (~> 8)
   - FirebaseUI/Auth (~> 12)
   - FirebaseUI/Google (~> 12)
-  - IGListDiffKit (~> 4)
   - KeychainAccess (~> 4)
   - Nimble (~> 9)
   - Quick (~> 3)
@@ -171,7 +169,6 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
-    - IGListDiffKit
     - KeychainAccess
     - nanopb
     - Nimble
@@ -199,7 +196,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
-  IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
@@ -207,6 +203,6 @@ SPEC CHECKSUMS:
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   TwilioVideo: 6c5322304f5705b6ebb6cbdc22c42148cb93ee1d
 
-PODFILE CHECKSUM: 7790bc37b497844c665dec6103b8769e6ebed5a4
+PODFILE CHECKSUM: 11a5b5f527166ffe8d59a68571900b7246058db7
 
 COCOAPODS: 1.10.2
