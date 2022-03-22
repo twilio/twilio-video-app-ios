@@ -14,7 +14,6 @@ target 'Video-Internal' do
   pod 'Firebase/Crashlytics', '~> 8'
   pod 'FirebaseUI/Auth', '~> 12'
   pod 'FirebaseUI/Google', '~> 12'
-  pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
   pod 'TwilioVideo', '~> 5'
 

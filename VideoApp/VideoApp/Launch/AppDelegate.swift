@@ -18,8 +18,6 @@ import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
-    var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
-    var userActivityStoreFactory: UserActivityStoreFactory = UserActivityStoreFactoryImpl()
 
     func application(
         _ application: UIApplication,
@@ -38,17 +36,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         configuration.delegateClass = SceneDelegate.self
         return configuration
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return urlOpenerFactory.makeURLOpener().openURL(url)
-    }
-
-    func application(
-        _ application: UIApplication,
-        continue userActivity: NSUserActivity,
-        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
-    ) -> Bool {
-        return userActivityStoreFactory.makeUserActivityStore().continueUserActivity(userActivity)
     }
 }
