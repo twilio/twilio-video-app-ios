@@ -747,9 +747,9 @@
 				DC7790CA236B6B3800973B86 /* Launch */,
 				DCAEBEE32376011D00141D2D /* Stores */,
 				DCAEBEE42376049700141D2D /* Storyboards */,
-				24491F791E37F89F00028B24 /* ViewControllers */,
-				24A723E81ECE1D2A00486E7A /* Views */,
-				DCE1A9E527C7E28E004680CA /* NewCode */,
+				DCE1A9E527C7E28E004680CA /* SwiftUI */,
+				DCE1AA3B27C7E5B4004680CA /* TwilioVideo */,
+				24491F791E37F89F00028B24 /* UIKit */,
 				241282461E36A6AB002198BE /* Assets.xcassets */,
 				24C5217720FFAD030018E2D8 /* Bridging-Header.h */,
 				2412824B1E36A6AB002198BE /* Info.plist */,
@@ -758,14 +758,14 @@
 			path = VideoApp;
 			sourceTree = "<group>";
 		};
-		24491F791E37F89F00028B24 /* ViewControllers */ = {
+		24491F791E37F89F00028B24 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				DCAEBF4B2384880300141D2D /* Settings */,
 				DC0446C623A2D6DC0072F597 /* SignIn */,
 				DC0446C523A2D6180072F597 /* Stats */,
 			);
-			path = ViewControllers;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		24693EEA1E393F1B00F21DDC /* API */ = {
@@ -781,14 +781,6 @@
 				DCB64B61240D90CD00E090BE /* CreateTwilioAccessTokenResponse.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		24A723E81ECE1D2A00486E7A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DC0446C723A2D7720072F597 /* Cells */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		24F2990C1E37AF86001A389B /* Frameworks */ = {
@@ -1315,6 +1307,7 @@
 		DCAEBF4E2384887B00141D2D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DC0446C723A2D7720072F597 /* Cells */,
 				DCAEBF4D2384886200141D2D /* EditText */,
 				DCAEBF4C2384881100141D2D /* SelectOption */,
 				DCAEBF4F2384889800141D2D /* Settings */,
@@ -1404,14 +1397,13 @@
 			path = TwilioAccessToken;
 			sourceTree = "<group>";
 		};
-		DCE1A9E527C7E28E004680CA /* NewCode */ = {
+		DCE1A9E527C7E28E004680CA /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA3B27C7E5B4004680CA /* TwilioVideo */,
 				DC1D3CAB27C95407001FCB1A /* Screens */,
 				DCE1A9E627C7E519004680CA /* Views */,
 			);
-			path = NewCode;
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		DCE1A9E627C7E519004680CA /* Views */ = {
