@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.93 (March 23, 2022)
+
+### New Features
+
+- Started using `SwiftUI` to build a better app with a lot less code. If you want to use code from this repo in a `UIKit` app, see [these tips](https://github.com/twilio/twilio-video-app-ios#swiftui). 
+- Added speaker grid layout to show participant video in a grid. The grid supports pagination and users can swipe to switch between grid pages. The most recent dominant speakers are automatically displayed on the first page of the grid.
+- Added focus layout that displays the most recent dominant speaker. If a user is sharing their screen it also displays the screen presentation.
+- Removed old video layout that had a main video view and list of participants. This is replaced by the new grid and focus layouts.
+- New UI styling for all features except sign in and app settings.
+
 ## 0.91 (March 15, 2022)
 
 ### New Feature
