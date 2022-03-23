@@ -18,7 +18,7 @@ This app is a sample video conferencing app that uses the [Twilio Programmable V
 
 iOS Deployment Target | Xcode Version | Swift Language Version
 ------------ | ------------- | -------------
-12.0 | 12.0 | Swift 5
+14.5 | 13.2 | Swift 5
 
 ## Getting Started
 
@@ -98,6 +98,18 @@ The passcode will expire after one week. Follow the steps below to sign in with 
 1. [Generate a new passcode](#deploy-twilio-access-token-server).
 1. In the app tap `Settings > Sign Out`.
 1. Repeat the [steps above](#start-video-conference).
+
+## SwiftUI
+
+This app uses [SwiftUI](https://developer.apple.com/documentation/swiftui/). `SwiftUI` and [Combine](https://developer.apple.com/documentation/combine/receiving-and-handling-events-with-combine) work particularly well for the video collaboration features in this app, which involve a lot of real-time state changes. `SwiftUI` has allowed us to build a better app with a lot less code. 
+
+If your app uses `UIKit` or an older version of `SwiftUI`, you should still be able to use a lot of code from this repo in your app. Here are some tips:
+
+- [UIKit can display SwiftUI views](https://developer.apple.com/documentation/swiftui/swiftui-views-displayed-by-other-ui-frameworks) and [SwiftUI can display UIKit views](https://developer.apple.com/documentation/swiftui/other-ui-framework-views-displayed-by-swiftui), so you may be able to use `SwiftUI` code from this repo even if your app is currently all `UIKit`.
+- Use the [before-swift-ui](https://github.com/twilio/twilio-video-app-ios/tree/before-swift-ui) tag to view the app source prior to converting from `UIKit` to `SwiftUI`. It has a lot of the same video collaboration features but the UI isn't as nice.
+- If you can use `SwiftUI` but have to support iOS 13, most of the app should work well. The main issue will be `LazyVGrid` requires iOS 14. However our usage of `LazyVGrid` is very basic with no scrolling so it shouldn't be a lot of work to replace it with a custom grid built with `HStack` and `VStack`.
+- If you don't want to use `SwiftUI` but can use `Combine` (requires iOS 13), you should be able to use all of the view models and `TwilioVideo` integration code. For the UI, replace the `SwiftUI` code with your own `UIKit` implementation. The `Combine` interface provided by the view models and `TwilioVideo` integration layer should be nice for `UIKit` to use.
+- If you need to support older than iOS 13, you will have to replace the `SwiftUI` code with your own `UIKit` implementation, and replace the `Combine` code used in the view models and `TwilioVideo` integration layer with something else. It shouldn't be a lot of work to replace `Combine` with `NotificationCenter` or a [multicast delegate](https://betterprogramming.pub/implement-a-multicast-delegate-design-pattern-in-swift-5-72079d695cfe). 
 
 ## Tests
 
