@@ -7,18 +7,14 @@ This app is a sample video conferencing app that uses the [Twilio Programmable V
 ## Features
 
 - [x] Video conferencing with real-time video and audio
+- [x] Speaker grid layout
+- [x] Presentation layout
 - [x] Enable/disable camera
 - [x] Mute/unmute mic
 - [x] Switch between front and back camera
 - [x] [Dominant speaker](https://www.twilio.com/docs/video/detecting-dominant-speaker) indicator
 - [x] [Network quality](https://www.twilio.com/docs/video/using-network-quality-api) indicator
 - [x] [Bandwidth Profile API](https://www.twilio.com/docs/video/tutorials/using-bandwidth-profile-api)
-
-## Requirements
-
-iOS Deployment Target | Xcode Version | Swift Language Version
------------- | ------------- | -------------
-14.5 | 13.2 | Swift 5
 
 ## Getting Started
 
@@ -72,7 +68,7 @@ If the max number of participants is exceeded, then the video app will present a
 1. In Xcode navigate to the [Signing & Capabilities pane](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) of the project editor for the `Video-Community` target.
 1. Change `Team` to your team.
 1. Change `Bundle identifier` to something unique.
-1. Check `Automatically manage signing`
+1. Check `Automatically manage signing`.
 
 ### Run
 
@@ -91,7 +87,8 @@ For each device:
 1. Enter the passcode from [Deploy Twilio Access Token Server](#deploy-twilio-access-token-server) in the `Passcode` field.
 1. Tap `Sign in`.
 1. Enter a room name.
-1. Tap `Join`.
+1. Tap `Continue`.
+1. Configure the camera and microphone and tap `Join Now`.
 
 The passcode will expire after one week. Follow the steps below to sign in with a new passcode.
 
