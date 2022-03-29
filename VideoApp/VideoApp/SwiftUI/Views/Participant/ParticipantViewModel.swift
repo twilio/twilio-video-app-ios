@@ -35,9 +35,9 @@ struct ParticipantViewModel {
         
     }
 
-    init(participant: LocalParticipantManager, shouldDisplayFullName: Bool = false) {
+    init(participant: LocalParticipantManager, shouldHideYou: Bool = false) {
         identity = participant.identity
-        displayName = shouldDisplayFullName ? identity : "You"
+        displayName = identity + (shouldHideYou ? "" : " (You)")
         isYou = true
         isMuted = !participant.isMicOn
 
