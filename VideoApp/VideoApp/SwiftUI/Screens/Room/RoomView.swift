@@ -72,12 +72,12 @@ struct RoomView: View {
                             case .grid:
                                 Button(
                                     action: { viewModel.switchToLayout(.focus) },
-                                    label: { Label("Switch to Focus Layout", systemImage: "person") }
+                                    label: { Label("Switch to Presenter View", systemImage: "person") }
                                 )
                             case .focus:
                                 Button(
                                     action: { viewModel.switchToLayout(.grid) },
-                                    label: { Label("Switch to Grid Layout", systemImage: "square.grid.2x2") }
+                                    label: { Label("Switch to Grid View", systemImage: "square.grid.2x2") }
                                 )
                             }
                         } label: {
@@ -94,7 +94,7 @@ struct RoomView: View {
                 StatsContainerView(isShowingStats: $viewModel.isShowingStats)
                 
                 if viewModel.state == .connecting {
-                    ProgressHUD(title: "Connecting...")
+                    ProgressHUD(title: "Joining Meeting")
                 }
             }
         }

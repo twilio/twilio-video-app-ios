@@ -36,7 +36,9 @@ struct ParticipantView: View {
                 /// switch the track on when bandwidth constraints allow. If the video was completely removed from the hierarchy
                 /// the server would never switch the track on.
                 ZStack {
-                    Color.black // For black bars
+                    if !viewModel.shouldFillCameraVideo {
+                        Color.black // For black bars
+                    }
 
                     SwiftUIVideoView(
                         videoTrack: $viewModel.cameraTrack,

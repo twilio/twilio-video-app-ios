@@ -25,7 +25,7 @@ class MediaSetupViewModel: ObservableObject {
         self.localParticipant = localParticipant
 
         localParticipant.changePublisher
-            .map { ParticipantViewModel(participant: $0, shouldDisplayFullName: true) }
+            .map { ParticipantViewModel(participant: $0, shouldHideYou: true) }
             .sink { [weak self] participant in self?.participant = participant }
             .store(in: &subscriptions)
     }
