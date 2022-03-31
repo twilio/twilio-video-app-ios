@@ -20,13 +20,13 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
 
     var invokedEnvironmentSetter = false
     var invokedEnvironmentSetterCount = 0
-    var invokedEnvironment: Environment?
-    var invokedEnvironmentList = [Environment]()
+    var invokedEnvironment: TwilioEnvironment?
+    var invokedEnvironmentList = [TwilioEnvironment]()
     var invokedEnvironmentGetter = false
     var invokedEnvironmentGetterCount = 0
-    var stubbedEnvironment: Environment!
+    var stubbedEnvironment: TwilioEnvironment!
 
-    var environment: Environment {
+    var environment: TwilioEnvironment {
         set {
             invokedEnvironmentSetter = true
             invokedEnvironmentSetterCount += 1

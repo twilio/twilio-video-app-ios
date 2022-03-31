@@ -112,7 +112,7 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
     }
 }
 
-private extension Environment {
+private extension TwilioEnvironment {
     var host: String {
         switch self {
         case .production: return "twilio-video-react.appspot.com"

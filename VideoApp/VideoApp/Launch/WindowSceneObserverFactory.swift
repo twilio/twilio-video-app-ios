@@ -16,12 +16,10 @@
 
 import Foundation
 
-@available(iOS 13, *)
 protocol WindowSceneObserverFactory: AnyObject {
     func makeWindowSceneObserver() -> WindowSceneObserving
 }
 
-@available(iOS 13, *)
 class WindowSceneObserverFactoryImpl: WindowSceneObserverFactory {
     func makeWindowSceneObserver() -> WindowSceneObserving {
         return VideoStore.shared

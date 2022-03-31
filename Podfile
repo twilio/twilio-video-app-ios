@@ -1,6 +1,6 @@
 source 'https://cdn.cocoapods.org'
 
-platform :ios, '12.2'
+platform :ios, '14.5'
 inhibit_all_warnings!
 use_frameworks!
 workspace 'VideoApp'
@@ -14,7 +14,6 @@ target 'Video-Internal' do
   pod 'Firebase/Crashlytics', '~> 8'
   pod 'FirebaseUI/Auth', '~> 12'
   pod 'FirebaseUI/Google', '~> 12'
-  pod 'IGListDiffKit', '~> 4'
   pod 'KeychainAccess', '~> 4'
   pod 'TwilioVideo', '~> 5'
 

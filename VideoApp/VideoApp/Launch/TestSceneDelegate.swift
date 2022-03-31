@@ -16,7 +16,6 @@
 
 import UIKit
 
-@available(iOS 13, *)
 class TestSceneDelegate: UIResponder, UIWindowSceneDelegate {
     
 }

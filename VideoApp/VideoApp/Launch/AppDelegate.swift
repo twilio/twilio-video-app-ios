@@ -17,12 +17,7 @@
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var launchFlow: LaunchFlow?
-    var launchFlowFactory: LaunchFlowFactory = LaunchFlowFactoryImpl()
     var launchStoresFactory: LaunchStoresFactory = LaunchStoresFactoryImpl()
-    var urlOpenerFactory: URLOpenerFactory = URLOpenerFactoryImpl()
-    var userActivityStoreFactory: UserActivityStoreFactory = UserActivityStoreFactoryImpl()
-    var window: UIWindow?
 
     func application(
         _ application: UIApplication,
@@ -30,18 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
 
-        if #available(iOS 13, *) {
-            // Do nothing because SceneDelegate will handle it
-        } else {
-            window = UIWindow(frame: UIScreen.main.bounds)
-            launchFlow = launchFlowFactory.makeLaunchFlow(window: window!)
-            launchFlow?.start()
-        }
-
         return true
     }
 
-    @available(iOS 13, *)
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,
@@ -50,17 +36,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         configuration.delegateClass = SceneDelegate.self
         return configuration
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return urlOpenerFactory.makeURLOpener().openURL(url)
-    }
-
-    func application(
-        _ application: UIApplication,
-        continue userActivity: NSUserActivity,
-        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
-    ) -> Bool {
-        return userActivityStoreFactory.makeUserActivityStore().continueUserActivity(userActivity)
     }
 }

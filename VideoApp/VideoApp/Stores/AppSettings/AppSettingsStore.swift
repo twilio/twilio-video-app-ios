@@ -17,7 +17,7 @@
 import Foundation
 
 protocol AppSettingsStoreWriting: LaunchStore {
-    var environment: Environment { get set }
+    var environment: TwilioEnvironment { get set }
     var videoCodec: VideoCodec { get set }
     var videoSize: VideoSize { get set }
     var userIdentity: String { get set }
@@ -38,7 +38,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
 }
 
 class AppSettingsStore: AppSettingsStoreWriting {
-    @Storage(key: makeKey("environment"), defaultValue: Environment.production) var environment: Environment
+    @Storage(key: makeKey("environment"), defaultValue: TwilioEnvironment.production) var environment: TwilioEnvironment
     @Storage(key: makeKey("videoCodec"), defaultValue: defaultVideoCodec) var videoCodec: VideoCodec
     @Storage(key: makeKey("videoSize"), defaultValue: .vga) var videoSize: VideoSize
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
