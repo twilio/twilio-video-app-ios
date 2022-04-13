@@ -24,7 +24,7 @@ platform :ios do
     tag = ENV["CIRCLE_TAG"]
     project_path = "VideoApp/VideoApp.xcodeproj"
 
-    if get_version_number(xcodeproj: project_path) != tag
+    if get_version_number(xcodeproj: project_path, target: "Video-Internal") != tag
       increment_version_number(version_number: tag, xcodeproj: project_path)
       commit_version_bump(message: "Increment version number [skip ci]", xcodeproj: project_path)
       push_to_git_remote(remote_branch: ENV["CIRCLE_BRANCH"])
