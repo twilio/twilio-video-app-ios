@@ -29,7 +29,7 @@ platform :ios do
       commit_version_bump(message: "Increment version number [skip ci]", xcodeproj: project_path)
       # push_to_git_remote(remote_branch: "master")
       # push_to_git_remote(remote_branch: "task/tag-release")
-      sh("git", "push", "origin", "task/tag-release")
+      sh("git", "push", "origin", "task/tag-release") # test
     end
 
     gym(
