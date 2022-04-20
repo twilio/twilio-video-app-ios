@@ -28,7 +28,7 @@ platform :ios do
       increment_version_number(version_number: tag, xcodeproj: project_path)
       commit_version_bump(message: "Increment version number [skip ci]", xcodeproj: project_path)
       # push_to_git_remote(remote_branch: "master")
-      push_to_git_remote(remote_branch: "task/tag-release")
+      push_to_git_remote(local_branch: "HEAD", remote_branch: "task/tag-release")
       # sh("git", "push", "origin", "task/tag-release") # test
     end
 
