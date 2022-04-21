@@ -20,11 +20,9 @@ Twilio employees should follow these instructions for internal testing.
 1. Select `Video-Internal` scheme.
 1. Run `⌘R` the app.
 
-## UI Tests
+## Release
 
-For UI tests use:
-
-- `Video-InternalUITests` scheme.
-- `Video-InternalUITests` target. 
-- `UI` test plan.
-- [Nimble](https://github.com/Quick/Quick) for assertions.
+1. Merge work to `master` branch.
+1. Make sure `CHANGELOG.md` contains the correct release notes.
+1. Create a release in GitHub. Use app version for the tag name, such as `1.8.2`. Copy release notes from `CHANGELOG.md`. 
+1. CI will automatically build the release and upload it to App Center. 

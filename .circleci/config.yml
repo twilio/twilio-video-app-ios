@@ -108,6 +108,7 @@ workflows:
       #     filters: *test_filters
       - deploy_internal_app_beta:
           filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
             branches:
-              only:
-                - master
+              ignore: /.*/

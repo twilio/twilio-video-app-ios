@@ -20,9 +20,8 @@ extension AppInfo {
     static func stub(
         appCenterAppSecret: String = "",
         version: String = "",
-        build: String = "",
         target: Target = .videoInternal
     ) -> AppInfo {
-        .init(appCenterAppSecret: appCenterAppSecret, version: version, build: build, target: target)
+        .init(appCenterAppSecret: appCenterAppSecret, version: version, target: target)
     }
 }

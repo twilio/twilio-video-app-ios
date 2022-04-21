@@ -34,12 +34,6 @@ class AppInfoStoreSpec: QuickSpec {
                 }
             }
 
-            describe("build") {
-                it("is not empty") {
-                    expect(sut.appInfo.build.isEmpty).to(beFalse())
-                }
-            }
-
             describe("target") {
                 it("is videoInternal") {
                     expect(sut.appInfo.target).to(equal(.videoInternal))
