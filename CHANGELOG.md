@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.9 (April 21, 2022)
+
+### Maintenance
+
+- Improve release process used for internal testing.
+- Use semantic versioning for the app version number.
+
 ## 0.95 (March 31, 2022)
 
 ### New Features
