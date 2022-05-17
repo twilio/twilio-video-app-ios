@@ -15,7 +15,6 @@ platform :ios do
       project: project_path,
       scheme: options[:scheme], 
       testplan: options [:test_plan], 
-      device: "iPhone 13",
       skip_slack: true
     )
   end
