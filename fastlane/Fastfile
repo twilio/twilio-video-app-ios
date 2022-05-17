@@ -7,6 +7,9 @@ platform :ios do
   enterprise_app_identifiers = "com.twilio.video-app-internal"
   project_path = "VideoApp/VideoApp.xcodeproj"
 
+  # Had to add this when we switched to SPM but not sure why it was timing out
+  ENV[FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT] = 120
+
   lane :test do |options|
     scan(
       project: project_path,
@@ -19,9 +22,6 @@ platform :ios do
 
   lane :beta do
     tag = ENV["CIRCLE_TAG"]
-
-    # Had to add this when we switched to SPM but not sure why it was timing out
-    ENV[FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT] = 120
 
     if get_version_number(xcodeproj: project_path, target: "Video-Internal") != tag
       ensure_git_status_clean
