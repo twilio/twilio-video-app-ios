@@ -8,7 +8,7 @@ platform :ios do
   project_path = "VideoApp/VideoApp.xcodeproj"
 
   # Had to add this when we switched to SPM but not sure why it was timing out
-  ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = 120
+  ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 
   lane :test do |options|
     scan(
