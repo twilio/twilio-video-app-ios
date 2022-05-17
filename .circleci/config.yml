@@ -10,7 +10,7 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "13.2.1"
+      xcode: "13.3.1"
 
 commands:
   setup:
@@ -29,8 +29,8 @@ commands:
           paths:
             - vendor/bundle
       - run:
-          name: Setup internal pod repo
-          command: sh .circleci/setup_internal_pod_repo.sh
+          name: Setup Artifactory auth
+          command: sh .circleci/setup_artifactory_auth.sh
   store_scan_artifacts:
     steps:
       - store_artifacts:
@@ -47,13 +47,6 @@ commands:
       - run:
           name: Test
           command: bundle exec fastlane test scheme:<< parameters.scheme >> test_plan:<< parameters.test_plan >>
-      - store_scan_artifacts
-  status_check:
-    steps:
-      - setup
-      - run:
-          name: Status check
-          command: bundle exec fastlane status_check
       - store_scan_artifacts
   beta:
     steps:
@@ -87,10 +80,6 @@ jobs:
       - test:
           scheme: Video-Internal
           test_plan: UI
-  status_check:
-    executor: macos_executor
-    steps:
-      - status_check
   deploy_internal_app_beta:
     executor: macos_executor
     steps:

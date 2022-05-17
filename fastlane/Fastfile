@@ -7,9 +7,6 @@ platform :ios do
   enterprise_app_identifiers = "com.twilio.video-app-internal"
 
   lane :test do |options|
-    cocoapods
-    ensure_git_status_clean
-
     scan(
       scheme: options[:scheme], 
       testplan: options[:test_plan], 
@@ -19,12 +16,11 @@ platform :ios do
   end
 
   lane :beta do
-    cocoapods
-    ensure_git_status_clean
     tag = ENV["CIRCLE_TAG"]
     project_path = "VideoApp/VideoApp.xcodeproj"
 
     if get_version_number(xcodeproj: project_path, target: "Video-Internal") != tag
+      ensure_git_status_clean
       increment_version_number(version_number: tag, xcodeproj: project_path)
       commit_version_bump(message: "Increment version number [skip ci]", xcodeproj: project_path)
       push_to_git_remote(local_branch: "HEAD", remote_branch: "master")

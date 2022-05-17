@@ -57,11 +57,6 @@ After running the command [to deploy a Twilio Access Token Server](#deploy-twili
 
 If the max number of participants is exceeded, then the video app will present an error for all room types.
 
-### Install Dependencies
-
-1. Install [CocoaPods](https://cocoapods.org).
-1. Run `pod install`.
-
 ### Configure Signing
 
 1. Open `VideoApp.xcworkspace` with Xcode.

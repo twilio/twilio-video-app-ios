@@ -124,9 +124,7 @@ private extension TwilioEnvironment {
 
 private extension AuthError {
     init(firebaseAuthError: Error) {
-        guard let code = AuthErrorCode(rawValue: (firebaseAuthError as NSError).code) else { self = .unknown; return }
-        
-        switch code {
+        switch AuthErrorCode(_nsError: firebaseAuthError as NSError).code {
         case .userDisabled: self = .userDisabled
         case .invalidEmail: self = .invalidEmail
         case .userNotFound, .wrongPassword: self = .wrongPassword

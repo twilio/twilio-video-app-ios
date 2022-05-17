@@ -42,9 +42,6 @@
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:Video-InternalUITests/Plans/StatusCheck.xctestplan">
-         </TestPlanReference>
-         <TestPlanReference
             reference = "container:Video-InternalUITests/Plans/UI.xctestplan">
          </TestPlanReference>
       </TestPlans>
