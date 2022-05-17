@@ -5,9 +5,11 @@ default_platform :ios
 platform :ios do
   development_app_identifiers = ["com.twilio.video-app-internal", "com.twilio.video-app-community", "com.twilio.Video-InternalUITests"]
   enterprise_app_identifiers = "com.twilio.video-app-internal"
+  project_path = "VideoApp/VideoApp.xcodeproj"
 
   lane :test do |options|
     scan(
+      project: project_path,
       scheme: options[:scheme], 
       testplan: options[:test_plan], 
       device: "iPhone 12",
@@ -17,7 +19,6 @@ platform :ios do
 
   lane :beta do
     tag = ENV["CIRCLE_TAG"]
-    project_path = "VideoApp/VideoApp.xcodeproj"
 
     if get_version_number(xcodeproj: project_path, target: "Video-Internal") != tag
       ensure_git_status_clean
