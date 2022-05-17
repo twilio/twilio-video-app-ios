@@ -11,8 +11,8 @@ platform :ios do
     scan(
       project: project_path,
       scheme: options[:scheme], 
-      testplan: options[:test_plan], 
-      device: "iPhone 12",
+      testplan: options [:test_plan], 
+      device: "iPhone 13",
       skip_slack: true
     )
   end
