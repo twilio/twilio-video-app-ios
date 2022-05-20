@@ -40,11 +40,16 @@ struct RoomView: View {
                         RoomStatusView(roomName: roomName)
                             .padding(.horizontal, spacing)
 
-                        switch viewModel.layout {
-                        case .grid:
-                            GridLayoutView(spacing: spacing)
-                        case .focus:
-                            FocusLayoutView(spacing: spacing)
+                        ZStack {
+                            switch viewModel.layout {
+                            case .grid:
+                                GridLayoutView(spacing: spacing)
+                            case .focus:
+                                FocusLayoutView(spacing: spacing)
+                            }
+
+                            TranscriptView()
+                                .padding(.bottom, 80)
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)
@@ -145,6 +150,7 @@ struct RoomView_Previews: PreviewProvider {
                 .environmentObject(RoomManager.stub())
         }
         .environmentObject(LocalParticipantManager.stub())
+        .environmentObject(TranscriptManager.stub(transcript: [TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0)]))
     }
 }
 

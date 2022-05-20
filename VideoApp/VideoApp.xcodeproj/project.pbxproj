@@ -69,6 +69,12 @@
 		DC1D3CBD27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
+		DC36268A2837F17600FA511B /* TranscriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626892837F17600FA511B /* TranscriptManager.swift */; };
+		DC36268B2837F17600FA511B /* TranscriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626892837F17600FA511B /* TranscriptManager.swift */; };
+		DC36268D2837F3B200FA511B /* TranscriptMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36268C2837F3B200FA511B /* TranscriptMessage.swift */; };
+		DC36268E2837F3B200FA511B /* TranscriptMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36268C2837F3B200FA511B /* TranscriptMessage.swift */; };
+		DC3626912838009400FA511B /* TranscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626902838009400FA511B /* TranscriptView.swift */; };
+		DC362693283803F700FA511B /* TranscriptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC362692283803F700FA511B /* TranscriptViewModel.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
@@ -484,6 +490,10 @@
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
+		DC3626892837F17600FA511B /* TranscriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptManager.swift; sourceTree = "<group>"; };
+		DC36268C2837F3B200FA511B /* TranscriptMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptMessage.swift; sourceTree = "<group>"; };
+		DC3626902838009400FA511B /* TranscriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptView.swift; sourceTree = "<group>"; };
+		DC362692283803F700FA511B /* TranscriptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewModel.swift; sourceTree = "<group>"; };
 		DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
 		DC3C32DB241812B400F56AFB /* APIURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURLFactory.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
@@ -1004,6 +1014,14 @@
 			path = Plans;
 			sourceTree = "<group>";
 		};
+		DC36268F2838000800FA511B /* Transcript */ = {
+			isa = PBXGroup;
+			children = (
+				DC3626902838009400FA511B /* TranscriptView.swift */,
+			);
+			path = Transcript;
+			sourceTree = "<group>";
+		};
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1406,6 +1424,7 @@
 				DC1D3CAF27C9553F001FCB1A /* RoomStatus */,
 				DC1D3CAE27C95504001FCB1A /* RoomToolbar */,
 				DCEDC62D27E0FFD500BD7C75 /* Stats */,
+				DC36268F2838000800FA511B /* Transcript */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1462,6 +1481,9 @@
 			children = (
 				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
 				DCE1AA4027C7E5E0004680CA /* RoomManager.swift */,
+				DC3626892837F17600FA511B /* TranscriptManager.swift */,
+				DC36268C2837F3B200FA511B /* TranscriptMessage.swift */,
+				DC362692283803F700FA511B /* TranscriptViewModel.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -1819,7 +1841,9 @@
 				DCC7E3562406ED3900431AC3 /* UserDefaultsProtocol.swift in Sources */,
 				DCE1AA1D27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CA2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
+				DC36268A2837F17600FA511B /* TranscriptManager.swift in Sources */,
 				DCEDC63F27E3D0DE00BD7C75 /* CameraToggleButton.swift in Sources */,
+				DC3626912838009400FA511B /* TranscriptView.swift in Sources */,
 				DC8A5EBA27D95230008F7FBA /* NetworkQualityView.swift in Sources */,
 				DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
 				DC9C772A2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
@@ -1834,6 +1858,7 @@
 				8A25B9E02739C9EC00B49A86 /* SelectVideoSizeViewModelFactory.swift in Sources */,
 				DC1C2F9323AC34B30044FB4D /* BundleProtocol.swift in Sources */,
 				DCEC3D1423861C9800EBDEBF /* SelectOptionViewModelFactory.swift in Sources */,
+				DC362693283803F700FA511B /* TranscriptViewModel.swift in Sources */,
 				DC82A36523FF2EB60081578C /* SDKLogLevelSettingsViewControllerFactory.swift in Sources */,
 				DCA65020240D91CA0038DEE1 /* CreateTwilioAccessTokenResponse.swift in Sources */,
 				DC1C2F8B23A6E7270044FB4D /* NotificationCenterProtocol.swift in Sources */,
@@ -1908,6 +1933,7 @@
 				DCEDC63227E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
 				DC82A39124008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36B24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
+				DC36268D2837F3B200FA511B /* TranscriptMessage.swift in Sources */,
 				8A25B9DD2739C2BB00B49A86 /* VideoSize.swift in Sources */,
 				DCEDB31D2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39524008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
@@ -1988,6 +2014,7 @@
 				DCE1AA1E27C7E58A004680CA /* RoomToolbar.swift in Sources */,
 				DC44C2CB2387118400205174 /* UITableViewCellHelpers.swift in Sources */,
 				DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */,
+				DC36268B2837F17600FA511B /* TranscriptManager.swift in Sources */,
 				DCEDC64027E3D0DE00BD7C75 /* CameraToggleButton.swift in Sources */,
 				DC9C772B2500063200AC68FD /* RemoteConfigStore.swift in Sources */,
 				DCEC3D1023860BBC00EBDEBF /* UITableViewHelpers.swift in Sources */,
@@ -2077,6 +2104,7 @@
 				DCEDC63327E24D9500BD7C75 /* StatsContainerView.swift in Sources */,
 				DC82A39224008AFE0081578C /* SelectSDKLogLevelViewModelFactory.swift in Sources */,
 				DCEDB36C24743D1D006AF70D /* BandwidthProfileMode.swift in Sources */,
+				DC36268E2837F3B200FA511B /* TranscriptMessage.swift in Sources */,
 				8A25B9DE2739C2BB00B49A86 /* VideoSize.swift in Sources */,
 				DCEDB31E2464C4CD006AF70D /* TrackName.swift in Sources */,
 				DC82A39624008DCB0081578C /* SDKLogLevelOptionListFactory.swift in Sources */,
