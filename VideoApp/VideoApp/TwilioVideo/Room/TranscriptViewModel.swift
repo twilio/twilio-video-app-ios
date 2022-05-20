@@ -12,6 +12,7 @@ struct TranscriptViewModel: Hashable {
     let userIdentity: String
     let message: String
     let id: Int
+    let date = Date()
     
     init?(transcriptMessage: TranscriptMessage) {
         guard

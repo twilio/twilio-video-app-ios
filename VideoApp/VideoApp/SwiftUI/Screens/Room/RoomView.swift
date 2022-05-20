@@ -25,6 +25,7 @@ struct RoomView: View {
     let roomName: String
     private let app = UIApplication.shared
     private let spacing: CGFloat = 6
+    @State private var isShowingCaptions = false
     
     private var isPortraitOrientation: Bool {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
@@ -48,8 +49,10 @@ struct RoomView: View {
                                 FocusLayoutView(spacing: spacing)
                             }
 
-                            TranscriptView()
-                                .padding(.bottom, 80)
+                            if isShowingCaptions {
+                                TranscriptView()
+                                    .padding(.bottom, 80)
+                            }
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)
@@ -73,6 +76,16 @@ struct RoomView: View {
                                 label: { Label("Stats", systemImage: "binoculars") }
                             )
 
+                            Button(
+                                action: { isShowingCaptions.toggle() },
+                                label: {
+                                    Label(
+                                        isShowingCaptions ? "Hide Captions" : "Show Captions",
+                                        systemImage: "captions.bubble"
+                                    )
+                                }
+                            )
+                            
                             switch viewModel.layout {
                             case .grid:
                                 Button(

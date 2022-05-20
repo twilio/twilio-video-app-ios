@@ -14,16 +14,28 @@
 //  limitations under the License.
 //
 
-import Foundation
+import Combine
 import TwilioVideo
 
 class TranscriptManager: NSObject, ObservableObject {
     @Published var transcript: [TranscriptViewModel] = []
-    
+    private var subscriptions = Set<AnyCancellable>()
+
     var participant: RemoteParticipant? {
         didSet {
-            oldValue?.delegate = nil
-            participant?.delegate = self
+            oldValue?.delegate = nil // TODO: remove data track also
+            subscriptions.removeAll()
+            
+            if let participant = participant {
+                participant.delegate = self
+                
+                Timer.publish(every: 1, on: .main, in: .default)
+                    .autoconnect()
+                    .sink { [weak self] date in
+                        self?.transcript.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
+                    }
+                    .store(in: &subscriptions)
+            }
         }
     }
 }
@@ -38,7 +50,7 @@ extension TranscriptManager: RemoteParticipantDelegate {
     }
 }
 
-// TODO: Send data
+// TODO: Send data instead of string
 extension TranscriptManager: RemoteDataTrackDelegate {
     func remoteDataTrackDidReceiveString(remoteDataTrack: RemoteDataTrack, message: String) {
         guard
@@ -49,18 +61,14 @@ extension TranscriptManager: RemoteDataTrackDelegate {
             return
         }
 
-        // Try to match ID
-
-        
-        
-        // Otherwise append to end
-        
-        
-        // But max out at 4...could be smarter
-        
-        
-        // Turn captions on and off
-        
-        transcript = [viewModel]
+        if let index = transcript.firstIndex(where: { $0.id == viewModel.id }) {
+            transcript[index] = viewModel
+        } else {
+            transcript.append(viewModel)
+            
+            if transcript.count > 4 {
+                transcript.removeFirst()
+            }
+        }
     }
 }
