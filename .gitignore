@@ -30,9 +30,6 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
-# CocoaPods
-/Pods/
-
 # fastlane
 /fastlane/report.xml
 /fastlane/test_output

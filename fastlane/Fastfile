@@ -5,26 +5,25 @@ default_platform :ios
 platform :ios do
   development_app_identifiers = ["com.twilio.video-app-internal", "com.twilio.video-app-community", "com.twilio.Video-InternalUITests"]
   enterprise_app_identifiers = "com.twilio.video-app-internal"
+  project_path = "VideoApp/VideoApp.xcodeproj"
+
+  # Had to add this when we switched to SPM but not sure why it was timing out
+  ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 
   lane :test do |options|
-    cocoapods
-    ensure_git_status_clean
-
     scan(
+      project: project_path,
       scheme: options[:scheme], 
-      testplan: options[:test_plan], 
-      device: "iPhone 12",
+      testplan: options [:test_plan], 
       skip_slack: true
     )
   end
 
   lane :beta do
-    cocoapods
-    ensure_git_status_clean
     tag = ENV["CIRCLE_TAG"]
-    project_path = "VideoApp/VideoApp.xcodeproj"
 
     if get_version_number(xcodeproj: project_path, target: "Video-Internal") != tag
+      ensure_git_status_clean
       increment_version_number(version_number: tag, xcodeproj: project_path)
       commit_version_bump(message: "Increment version number [skip ci]", xcodeproj: project_path)
       push_to_git_remote(local_branch: "HEAD", remote_branch: "master")
