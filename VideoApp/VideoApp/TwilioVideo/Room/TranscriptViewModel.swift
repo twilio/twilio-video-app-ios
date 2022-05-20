@@ -11,7 +11,7 @@ import Foundation
 struct TranscriptViewModel: Hashable {
     let userIdentity: String
     let message: String
-    let id: Int
+    let id: Int // TODO: Use string
     let date = Date()
     
     init?(transcriptMessage: TranscriptMessage) {

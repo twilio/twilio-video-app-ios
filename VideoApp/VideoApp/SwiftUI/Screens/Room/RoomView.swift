@@ -50,8 +50,12 @@ struct RoomView: View {
                             }
 
                             if isShowingCaptions {
-                                TranscriptView()
-                                    .padding(.bottom, 80)
+                                VStack {
+                                    Spacer()
+                                    TranscriptView()
+                                        .padding(.horizontal, 30)
+                                        .padding(.bottom, 80)
+                                }
                             }
                         }
                     }

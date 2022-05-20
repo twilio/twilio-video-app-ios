@@ -12,23 +12,34 @@ struct TranscriptView: View {
     @EnvironmentObject var transcriptManager: TranscriptManager
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            ForEach($transcriptManager.transcript, id: \.self) { $message in
-                Text(message.userIdentity + ": " + message.message)
-                    .padding(5)
-                    .foregroundColor(.white)
-                    .background(Color.black.opacity(0.7))
+        HStack {
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach($transcriptManager.transcript, id: \.self) { $message in
+                    Text(message.userIdentity + ": " + message.message)
+                        .padding(5)
+                        .foregroundColor(.white)
+                        .background(Color.black.opacity(0.7))
+                }
             }
+            Spacer()
         }
     }
 }
 
 struct TranscriptView_Previews: PreviewProvider {
     static var previews: some View {
-        TranscriptView()
-            .environmentObject(TranscriptManager.stub(transcript: [TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0)]))
+        Group {
+            TranscriptView()
+                .environmentObject(TranscriptManager.stub(transcript: [TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0)]))
+            TranscriptView()
+                .environmentObject(TranscriptManager.stub(transcript: [
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0),
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0),
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo asdf asdf asd fssd asdf asdf asd fasd siasdf", id: 0),
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0)
+                ]))
+        }
+        .previewLayout(.sizeThatFits)
     }
 }
 
