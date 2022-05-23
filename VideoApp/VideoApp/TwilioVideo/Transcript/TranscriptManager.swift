@@ -23,7 +23,8 @@ class TranscriptManager: NSObject, ObservableObject {
 
     var participant: RemoteParticipant? {
         didSet {
-            oldValue?.delegate = nil // TODO: remove data track also
+            oldValue?.delegate = nil
+            oldValue?.remoteDataTracks.forEach { $0.remoteTrack?.delegate = nil }
             subscriptions.removeAll()
             
             if let participant = participant {
@@ -50,7 +51,6 @@ extension TranscriptManager: RemoteParticipantDelegate {
     }
 }
 
-// TODO: Send data instead of string
 extension TranscriptManager: RemoteDataTrackDelegate {
     func remoteDataTrackDidReceiveString(remoteDataTrack: RemoteDataTrack, message: String) {
         guard
@@ -66,7 +66,7 @@ extension TranscriptManager: RemoteDataTrackDelegate {
         } else {
             transcript.append(viewModel)
             
-            if transcript.count > 4 {
+            if transcript.count > 3 {
                 transcript.removeFirst()
             }
         }

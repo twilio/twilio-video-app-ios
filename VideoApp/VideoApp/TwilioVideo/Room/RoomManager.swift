@@ -63,6 +63,7 @@ class RoomManager: NSObject, ObservableObject {
         room = nil
         localParticipant.participant = nil
         remoteParticipants.removeAll()
+        transcriptManager.participant = nil
         isRecording = false
     }
     

@@ -1022,6 +1022,16 @@
 			path = Transcript;
 			sourceTree = "<group>";
 		};
+		DC362694283BE09200FA511B /* Transcript */ = {
+			isa = PBXGroup;
+			children = (
+				DC3626892837F17600FA511B /* TranscriptManager.swift */,
+				DC36268C2837F3B200FA511B /* TranscriptMessage.swift */,
+				DC362692283803F700FA511B /* TranscriptViewModel.swift */,
+			);
+			path = Transcript;
+			sourceTree = "<group>";
+		};
 		DC44C2CC23871C2000205174 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1472,6 +1482,7 @@
 				DC1D3CB227CD439A001FCB1A /* RemoteParticipant */,
 				DCE1AA3C27C7E5E0004680CA /* Room */,
 				DC1D3CB327CD440C001FCB1A /* TrackName */,
+				DC362694283BE09200FA511B /* Transcript */,
 			);
 			path = TwilioVideo;
 			sourceTree = "<group>";
@@ -1481,9 +1492,6 @@
 			children = (
 				DCD940B0243B9B7A00D9ECC5 /* ConnectOptionsFactory.swift */,
 				DCE1AA4027C7E5E0004680CA /* RoomManager.swift */,
-				DC3626892837F17600FA511B /* TranscriptManager.swift */,
-				DC36268C2837F3B200FA511B /* TranscriptMessage.swift */,
-				DC362692283803F700FA511B /* TranscriptViewModel.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";

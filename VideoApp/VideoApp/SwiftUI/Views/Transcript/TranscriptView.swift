@@ -30,13 +30,13 @@ struct TranscriptView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             TranscriptView()
-                .environmentObject(TranscriptManager.stub(transcript: [TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0)]))
+                .environmentObject(TranscriptManager.stub(transcript: [TranscriptViewModel(userIdentity: "Bob", message: "Foo")]))
             TranscriptView()
                 .environmentObject(TranscriptManager.stub(transcript: [
-                    TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0),
-                    TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0),
-                    TranscriptViewModel(userIdentity: "Bob", message: "Foo asdf asdf asd fssd asdf asdf asd fasd siasdf", id: 0),
-                    TranscriptViewModel(userIdentity: "Bob", message: "Foo", id: 0)
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo"),
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo"),
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo asdf asdf asd fssd asdf asdf asd fasd siasdf"),
+                    TranscriptViewModel(userIdentity: "Bob", message: "Foo")
                 ]))
         }
         .previewLayout(.sizeThatFits)
@@ -48,5 +48,13 @@ extension TranscriptManager {
         let manager = TranscriptManager()
         manager.transcript = transcript
         return manager
+    }
+}
+
+extension TranscriptViewModel {
+    init(userIdentity: String, message: String, id: String = UUID().uuidString) {
+        self.userIdentity = userIdentity
+        self.message = message
+        self.id = id
     }
 }

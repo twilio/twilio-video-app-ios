@@ -25,7 +25,7 @@ struct TranscriptMessage: Decodable {
                         let Transcript: String
                     }
                     
-                    let ResultId: Int
+                    let ResultId: String
                     let Alternatives: [Alternative]
                 }
                 
