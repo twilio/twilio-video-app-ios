@@ -25,7 +25,6 @@ struct RoomView: View {
     let roomName: String
     private let app = UIApplication.shared
     private let spacing: CGFloat = 6
-    @State private var isShowingCaptions = false
     
     private var isPortraitOrientation: Bool {
         verticalSizeClass == .regular && horizontalSizeClass == .compact
@@ -49,7 +48,7 @@ struct RoomView: View {
                                 FocusLayoutView(spacing: spacing)
                             }
 
-                            if isShowingCaptions {
+                            if viewModel.isShowingCaptions {
                                 VStack {
                                     Spacer()
                                     TranscriptView()
@@ -81,10 +80,10 @@ struct RoomView: View {
                             )
 
                             Button(
-                                action: { isShowingCaptions.toggle() },
+                                action: { viewModel.isShowingCaptions.toggle() },
                                 label: {
                                     Label(
-                                        isShowingCaptions ? "Hide Captions" : "Show Captions",
+                                        viewModel.isShowingCaptions ? "Hide Captions" : "Show Captions",
                                         systemImage: "captions.bubble"
                                     )
                                 }
@@ -143,12 +142,12 @@ struct RoomView_Previews: PreviewProvider {
             Group {
                 RoomView(roomName: roomName)
                     .previewDisplayName("Grid layout")
-                    .environmentObject(RoomViewModel.stub())
+                    .environmentObject(RoomViewModel.stub(isShowingCaptions: true))
                     .environmentObject(FocusLayoutViewModel.stub())
 
                 RoomView(roomName: roomName)
                     .previewDisplayName("Focus layout")
-                    .environmentObject(RoomViewModel.stub(layout: .focus))
+                    .environmentObject(RoomViewModel.stub(layout: .focus, isShowingCaptions: true))
                     .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
 
                 RoomView(roomName: roomName)
@@ -167,7 +166,7 @@ struct RoomView_Previews: PreviewProvider {
                 .environmentObject(RoomManager.stub())
         }
         .environmentObject(LocalParticipantManager.stub())
-        .environmentObject(TranscriptManager.stub(transcript: [TranscriptViewModel(userIdentity: "Bob", message: "Foo")]))
+        .environmentObject(TranscriptManager.stub())
     }
 }
 
@@ -175,11 +174,13 @@ extension RoomViewModel {
     static func stub(
         state: State = .connected,
         layout: Layout = .grid,
+        isShowingCaptions: Bool = false,
         isShowingStats: Bool = false
     ) -> RoomViewModel {
         let viewModel = RoomViewModel()
         viewModel.state = state
         viewModel.layout = layout
+        viewModel.isShowingCaptions = isShowingCaptions
         viewModel.isShowingStats = isShowingStats
         return viewModel
     }

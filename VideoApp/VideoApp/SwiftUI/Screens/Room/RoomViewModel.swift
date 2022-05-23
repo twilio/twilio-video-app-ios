@@ -31,6 +31,7 @@ import Combine
     @Published var state = State.disconnected
     @Published var layout: Layout = .grid
     @Published var isShowingStats = false
+    @Published var isShowingCaptions = false
     @Published var isShowingError = false
     private(set) var error: Error?
     private let accessTokenStore = TwilioAccessTokenStore()
