@@ -51,7 +51,7 @@ struct RoomView: View {
                             if viewModel.isShowingCaptions {
                                 VStack {
                                     Spacer()
-                                    TranscriptView()
+                                    CaptionsView()
                                         .padding(.horizontal, 30)
                                         .padding(.bottom, 80)
                                 }
@@ -166,7 +166,7 @@ struct RoomView_Previews: PreviewProvider {
                 .environmentObject(RoomManager.stub())
         }
         .environmentObject(LocalParticipantManager.stub())
-        .environmentObject(TranscriptManager.stub())
+        .environmentObject(CaptionsManager.stub())
     }
 }
 

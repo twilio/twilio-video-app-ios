@@ -16,21 +16,21 @@
 
 import Foundation
 
-struct TranscriptViewModel: Hashable {
+struct Caption: Hashable {
     let id: String
     let userIdentity: String
     let message: String
     let date = Date()
     
-    init?(transcriptMessage: TranscriptMessage) {
+    init?(transcription: Transcription) {
         guard
-            let result = transcriptMessage.transcriptionResponse.TranscriptEvent.Transcript.Results.first,
+            let result = transcription.transcriptionResponse.TranscriptEvent.Transcript.Results.first,
             let transcript = result.Alternatives.first?.Transcript
         else {
             return nil
         }
 
-        userIdentity = transcriptMessage.participantIdentity
+        userIdentity = transcription.participantIdentity
         message = transcript
         id = result.ResultId
     }

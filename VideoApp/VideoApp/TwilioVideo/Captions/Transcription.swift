@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct TranscriptMessage: Decodable {
+struct Transcription: Decodable {
     struct TranscriptionResponse: Decodable {
         struct TranscriptEvent: Decodable {
             struct Transcript: Decodable {

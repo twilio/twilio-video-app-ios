@@ -35,11 +35,11 @@ class RoomManager: NSObject, ObservableObject {
     @Published var room: Room? // Only exposed for stats
     private(set) var localParticipant: LocalParticipantManager!
     private(set) var remoteParticipants: [RemoteParticipantManager] = []
-    private var transcriptManager: TranscriptManager!
+    private var captionsManager: CaptionsManager!
 
-    func configure(localParticipant: LocalParticipantManager, transcriptManager: TranscriptManager!) {
+    func configure(localParticipant: LocalParticipantManager, captionsManager: CaptionsManager!) {
         self.localParticipant = localParticipant
-        self.transcriptManager = transcriptManager
+        self.captionsManager = captionsManager
     }
     
     func connect(roomName: String, accessToken: String) {
@@ -63,7 +63,7 @@ class RoomManager: NSObject, ObservableObject {
         room = nil
         localParticipant.participant = nil
         remoteParticipants.removeAll()
-        transcriptManager.participant = nil
+        captionsManager.transcriber = nil
         isRecording = false
     }
     
@@ -81,7 +81,7 @@ extension RoomManager: RoomDelegate {
             .map { RemoteParticipantManager(participant: $0, delegate: self) }
         
         if let transcriber = room.remoteParticipants.first(where: { $0.isTranscriber }) {
-            transcriptManager.participant = transcriber
+            captionsManager.transcriber = transcriber
         }
         
         roomConnectPublisher.send()
@@ -99,7 +99,7 @@ extension RoomManager: RoomDelegate {
     
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         if participant.isTranscriber {
-            transcriptManager.participant = participant
+            captionsManager.transcriber = participant
         } else {
             let participant = RemoteParticipantManager(participant: participant, delegate: self)
             remoteParticipants.append(participant)
@@ -109,7 +109,7 @@ extension RoomManager: RoomDelegate {
     
     func participantDidDisconnect(room: Room, participant: RemoteParticipant) {
         if participant.isTranscriber {
-            transcriptManager.participant = nil
+            captionsManager.transcriber = nil
         } else if let index = remoteParticipants.firstIndex(where: { $0.identity == participant.identity }) {
             remoteParticipantDisconnectPublisher.send(remoteParticipants.remove(at: index))
         }

@@ -17,23 +17,26 @@
 import Combine
 import TwilioVideo
 
-class TranscriptManager: NSObject, ObservableObject {
-    @Published var transcript: [TranscriptViewModel] = []
+/// Receive captions on a data track from the `media-transcriber` participant. Discard old captions
+/// when time has elapsed or space for new captions is needed. The `media-transcriber` participant
+/// is only for receiving captions and should not be visible in the UI.
+class CaptionsManager: NSObject, ObservableObject {
+    @Published var captions: [Caption] = []
     private var subscriptions = Set<AnyCancellable>()
 
-    var participant: RemoteParticipant? {
+    var transcriber: RemoteParticipant? {
         didSet {
             oldValue?.delegate = nil
             oldValue?.remoteDataTracks.forEach { $0.remoteTrack?.delegate = nil }
             subscriptions.removeAll()
             
-            if let participant = participant {
-                participant.delegate = self
+            if let transcriber = transcriber {
+                transcriber.delegate = self
                 
                 Timer.publish(every: 1, on: .main, in: .default)
                     .autoconnect()
                     .sink { [weak self] date in
-                        self?.transcript.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
+                        self?.captions.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
                     }
                     .store(in: &subscriptions)
             }
@@ -41,7 +44,7 @@ class TranscriptManager: NSObject, ObservableObject {
     }
 }
 
-extension TranscriptManager: RemoteParticipantDelegate {
+extension CaptionsManager: RemoteParticipantDelegate {
     func didSubscribeToDataTrack(
         dataTrack: RemoteDataTrack,
         publication: RemoteDataTrackPublication,
@@ -51,23 +54,23 @@ extension TranscriptManager: RemoteParticipantDelegate {
     }
 }
 
-extension TranscriptManager: RemoteDataTrackDelegate {
+extension CaptionsManager: RemoteDataTrackDelegate {
     func remoteDataTrackDidReceiveString(remoteDataTrack: RemoteDataTrack, message: String) {
         guard
             let data = message.data(using: .utf8),
-            let message = try? JSONDecoder().decode(TranscriptMessage.self, from: data),
-            let viewModel = TranscriptViewModel(transcriptMessage: message)
+            let transcription = try? JSONDecoder().decode(Transcription.self, from: data),
+            let caption = Caption(transcription: transcription)
         else {
             return
         }
 
-        if let index = transcript.firstIndex(where: { $0.id == viewModel.id }) {
-            transcript[index] = viewModel
+        if let index = captions.firstIndex(where: { $0.id == caption.id }) {
+            captions[index] = caption
         } else {
-            transcript.append(viewModel)
+            captions.append(caption)
             
-            if transcript.count > 3 {
-                transcript.removeFirst()
+            if captions.count > 3 {
+                captions.removeFirst()
             }
         }
     }

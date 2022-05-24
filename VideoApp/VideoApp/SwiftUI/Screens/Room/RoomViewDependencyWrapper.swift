@@ -30,7 +30,7 @@ struct RoomViewDependencyWrapper: View {
     @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
     @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
     @StateObject private var roomManager = RoomManager()
-    @StateObject private var transcriptManager = TranscriptManager()
+    @StateObject private var captionsManager = CaptionsManager()
 
     init(roomName: String) {
         /// This custom init is only to fix warning.
@@ -47,9 +47,9 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(gridLayoutViewModel)
         .environmentObject(focusLayoutViewModel)
         .environmentObject(roomManager)
-        .environmentObject(transcriptManager)
+        .environmentObject(captionsManager)
         .onAppear {
-            roomManager.configure(localParticipant: localParticipant, transcriptManager: transcriptManager)
+            roomManager.configure(localParticipant: localParticipant, captionsManager: captionsManager)
             roomViewModel.configure(roomManager: roomManager, focusLayoutViewModel: focusLayoutViewModel)
             gridLayoutViewModel.configure(roomManager: roomManager)
             focusLayoutViewModel.configure(roomManager: roomManager)

@@ -16,14 +16,14 @@
 
 import SwiftUI
 
-struct TranscriptView: View {
-    @EnvironmentObject var transcriptManager: TranscriptManager
+struct CaptionsView: View {
+    @EnvironmentObject var captionsManager: CaptionsManager
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
-                ForEach($transcriptManager.transcript, id: \.self) { $message in
-                    Text(message.userIdentity + ": " + message.message)
+                ForEach($captionsManager.captions, id: \.self) { $caption in
+                    Text(caption.userIdentity + ": " + caption.message)
                         .font(.caption)
                         .padding(5)
                         .foregroundColor(.white)
@@ -35,17 +35,17 @@ struct TranscriptView: View {
     }
 }
 
-struct TranscriptView_Previews: PreviewProvider {
+struct CaptionsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TranscriptView()
-                .environmentObject(TranscriptManager.stub(transcript: [
+            CaptionsView()
+                .environmentObject(CaptionsManager.stub(captions: [
                     .stub(userIdentity: "Bob", message: "Foo"),
                     .stub(userIdentity: "Alice", message: String(repeating: "caption ", count: 30)),
                     .stub(userIdentity: "Bob", message: "Bar")
                 ]))
-            TranscriptView()
-                .environmentObject(TranscriptManager.stub(transcript: [
+            CaptionsView()
+                .environmentObject(CaptionsManager.stub(captions: [
                     .stub(userIdentity: "Bob", message: "Just one line")
                 ]))
         }
@@ -53,24 +53,24 @@ struct TranscriptView_Previews: PreviewProvider {
     }
 }
 
-extension TranscriptManager {
-    static func stub(transcript: [TranscriptViewModel] = [
+extension CaptionsManager {
+    static func stub(captions: [Caption] = [
         .stub(userIdentity: "Bob", message: "This is a short caption."),
         .stub(userIdentity: "Alice", message: String(repeating: "caption ", count: 30))
-    ]) -> TranscriptManager {
-        let manager = TranscriptManager()
-        manager.transcript = transcript
-        return manager
+    ]) -> CaptionsManager {
+        let captionsManager = CaptionsManager()
+        captionsManager.captions = captions
+        return captionsManager
     }
 }
 
-extension TranscriptViewModel {
+extension Caption {
     static func stub(
         id: String = UUID().uuidString,
         userIdentity: String = "Bob",
         message: String = "Hello"
-    ) -> TranscriptViewModel {
-        TranscriptViewModel(id: id, userIdentity: userIdentity, message: message)
+    ) -> Caption {
+        Caption(id: id, userIdentity: userIdentity, message: message)
     }
     
     private init(id: String = UUID().uuidString, userIdentity: String, message: String) {
