@@ -37,6 +37,7 @@
 		8A84724F26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A84724D26B3D1DF004BBC79 /* SelectVideoContentPreferencesModeViewModelFactory.swift */; };
 		8AC4999B232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
 		8AC4999C232A18D2005A4B35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC49999232A18D2005A4B35 /* SceneDelegate.swift */; };
+		DC00D724283D4538005B8004 /* CaptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626902838009400FA511B /* CaptionsView.swift */; };
 		DC044685238EF6C20072F597 /* TwilioEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* TwilioEnvironment.swift */; };
 		DC044686238EF6C20072F597 /* TwilioEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044683238EF6C20072F597 /* TwilioEnvironment.swift */; };
 		DC044692238F1E3C0072F597 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC044690238F1E3C0072F597 /* UserStore.swift */; };
@@ -2121,6 +2122,7 @@
 				DC82A39A2404950B0081578C /* PasscodeSignInViewController.swift in Sources */,
 				4B0012691FBA52E5004A587E /* StatsUIModel.m in Sources */,
 				DC8EAE4E23BA9F5E0045018F /* WindowSceneObserverFactory.swift in Sources */,
+				DC00D724283D4538005B8004 /* CaptionsView.swift in Sources */,
 				DC044686238EF6C20072F597 /* TwilioEnvironment.swift in Sources */,
 				DCC7E37024085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift in Sources */,
 				DCF461632385B13000DD8FEA /* AdvancedSettingsViewModel.swift in Sources */,
