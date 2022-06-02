@@ -39,8 +39,6 @@ platform :ios do
       }
     ) 
 
-    upload_symbols_to_crashlytics()
-
     release = get_github_release(
       url: "twilio/twilio-video-app-ios", 
       version: tag,
@@ -53,6 +51,7 @@ platform :ios do
       app_name: "Ahoy-Video-App-Internal",
       destinations: "Testers",
       file: "Video-Internal.ipa",
+      dsym: "Video-Internal.dSYM.zip",
       notify_testers: true,
       release_notes: release["body"]      
     )
