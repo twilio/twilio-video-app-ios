@@ -51,7 +51,6 @@ platform :ios do
       app_name: "Ahoy-Video-App-Internal",
       destinations: "Testers",
       file: "Video-Internal.ipa",
-      dsym: "Video-Internal.dSYM.zip",
       notify_testers: true,
       release_notes: release["body"]      
     )
