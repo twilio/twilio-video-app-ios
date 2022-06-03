@@ -1,10 +1,11 @@
 # Change Log
 
-## 0.1.10 (May 20, 2022)
+## 0.1.15 (June 3, 2022)
 
 ### Maintenance
 
 - Switch from CocoaPods to Swift Package Manager.
+- Burned some app version numbers getting CI to build the release using Swift Package Manager.
 
 ## 0.1.9 (April 21, 2022)
 
