@@ -28,20 +28,37 @@ import Combine
         case focus
     }
 
+    enum AlertIdentifier: String, Identifiable {
+        case fatalError
+        case informativeError
+        
+        var id: String { rawValue }
+    }
+    
     @Published var state = State.disconnected
     @Published var layout: Layout = .grid
     @Published var isShowingStats = false
-    @Published var isShowingCaptions = false
-    @Published var isShowingError = false
+    @Published var isShowingCaptions = false {
+        didSet {
+            captionsManager.isCaptionsEnabled = isShowingCaptions
+        }
+    }
+    @Published var alertIdentifier: AlertIdentifier?
     private(set) var error: Error?
     private let accessTokenStore = TwilioAccessTokenStore()
     private var isAutoLayoutSwitchingEnabled = true
     private var roomManager: RoomManager!
+    private var captionsManager: CaptionsManager!
     private var focusLayoutViewModel: FocusLayoutViewModel!
     private var subscriptions = Set<AnyCancellable>()
 
-    func configure(roomManager: RoomManager, focusLayoutViewModel: FocusLayoutViewModel) {
+    func configure(
+        roomManager: RoomManager,
+        captionsManager: CaptionsManager,
+        focusLayoutViewModel: FocusLayoutViewModel
+    ) {
         self.roomManager = roomManager
+        self.captionsManager = captionsManager
         self.focusLayoutViewModel = focusLayoutViewModel
 
         roomManager.roomConnectPublisher
@@ -57,6 +74,17 @@ import Combine
             .sink { [weak self] error in self?.handleError(error) }
             .store(in: &subscriptions)
         
+        captionsManager.$error
+            .sink { [weak self] error in
+                guard let self = self, let error = error, self.isShowingCaptions else {
+                    return
+                }
+
+                self.error = error
+                self.alertIdentifier = .informativeError
+            }
+            .store(in: &subscriptions)
+
         focusLayoutViewModel.$isPresenting
             .sink { [weak self] isPresenting in self?.handleIsPresentingChange(isPresenting: isPresenting) }
             .store(in: &subscriptions)
@@ -121,6 +149,6 @@ import Combine
     private func handleError(_ error: Error) {
         disconnect()
         self.error = error
-        isShowingError = true
+        alertIdentifier = .fatalError
     }
 }

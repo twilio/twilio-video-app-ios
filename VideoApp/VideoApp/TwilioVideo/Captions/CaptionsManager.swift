@@ -22,23 +22,46 @@ import TwilioVideo
 /// is only for receiving captions and should not be visible in the UI.
 class CaptionsManager: NSObject, ObservableObject {
     @Published var captions: [Caption] = []
-    private var subscriptions = Set<AnyCancellable>()
+    @Published var error: Error? = nil
+
+    var isCaptionsEnabled = false {
+        didSet {
+            guard oldValue != isCaptionsEnabled else { return }
+
+            setup()
+        }
+    }
 
     var transcriber: RemoteParticipant? {
         didSet {
-            oldValue?.delegate = nil
-            oldValue?.remoteDataTracks.forEach { $0.remoteTrack?.delegate = nil }
-            subscriptions.removeAll()
+            guard oldValue != transcriber else { return }
+
+            oldValue?.removeDelegates() /// In case the transcriber disconnected which should not happen
+            setup()
+        }
+    }
+
+    private var subscriptions = Set<AnyCancellable>()
+
+    private func setup() {
+        transcriber?.removeDelegates()
+        error = nil
+        captions.removeAll()
+        subscriptions.removeAll()
+
+        if let transcriber = transcriber, isCaptionsEnabled {
+            transcriber.delegate = self
             
-            if let transcriber = transcriber {
-                transcriber.delegate = self
-                
-                Timer.publish(every: 1, on: .main, in: .default)
-                    .autoconnect()
-                    .sink { [weak self] date in
-                        self?.captions.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
-                    }
-                    .store(in: &subscriptions)
+            Timer.publish(every: 1, on: .main, in: .default)
+                .autoconnect()
+                .sink { [weak self] date in
+                    self?.captions.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
+                }
+                .store(in: &subscriptions)
+            
+            if transcriber.remoteDataTracks.first(where: { $0.remoteTrack?.isTranscriberError ?? false }) != nil {
+                /// Using the presence of this data track to signal the transcriber is not working correctly
+                error = VideoAppError.transcriberError
             }
         }
     }
@@ -50,7 +73,22 @@ extension CaptionsManager: RemoteParticipantDelegate {
         publication: RemoteDataTrackPublication,
         participant: RemoteParticipant
     ) {
-        dataTrack.delegate = self
+        if dataTrack.isTranscriberError {
+            /// Using the presence of this data track to signal the transcriber is not working correctly
+            error = VideoAppError.transcriberError
+        } else {
+            dataTrack.delegate = self
+        }
+    }
+    
+    func didUnsubscribeFromDataTrack(
+        dataTrack: RemoteDataTrack,
+        publication: RemoteDataTrackPublication,
+        participant: RemoteParticipant
+    ) {
+        if dataTrack.isTranscriberError {
+            error = nil
+        }
     }
 }
 
@@ -58,20 +96,36 @@ extension CaptionsManager: RemoteDataTrackDelegate {
     func remoteDataTrackDidReceiveString(remoteDataTrack: RemoteDataTrack, message: String) {
         guard
             let data = message.data(using: .utf8),
-            let transcription = try? JSONDecoder().decode(Transcription.self, from: data),
-            let caption = Caption(transcription: transcription)
+            let transcription = try? JSONDecoder().decode(Transcription.self, from: data)
         else {
             return
         }
-
-        if let index = captions.firstIndex(where: { $0.id == caption.id }) {
-            captions[index] = caption
-        } else {
-            captions.append(caption)
-            
-            if captions.count > 3 {
-                captions.removeFirst()
+        
+        transcription.transcriptionResponse.TranscriptEvent.Transcript.Results
+            .compactMap { Caption(result: $0) }
+            .forEach { caption in
+                if let index = captions.firstIndex(where: { $0.id == caption.id }) {
+                    captions[index] = caption
+                } else {
+                    captions.append(caption)
+                    
+                    if captions.count > 3 {
+                        captions.removeFirst()
+                    }
+                }
             }
-        }
+    }
+}
+
+private extension RemoteParticipant {
+    func removeDelegates() {
+        delegate = nil
+        remoteDataTracks.forEach { $0.remoteTrack?.delegate = nil }
+    }
+}
+
+private extension RemoteDataTrack {
+    var isTranscriberError: Bool {
+        name == "transcriber-error"
     }
 }

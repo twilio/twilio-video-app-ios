@@ -129,6 +129,8 @@
 		DC5CC39F249C0F5900355CC6 /* TestSecrets.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C9123D161A200D37CEC /* TestSecrets.json */; };
 		DC5CC3A0249C0F5900355CC6 /* TestSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestSecrets.swift */; };
 		DC5CC3A1249C0F5900355CC6 /* TestSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestSecretsStore.swift */; };
+		DC674A2D285A3E220010A15B /* VideoAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC674A2C285A3E220010A15B /* VideoAppError.swift */; };
+		DC674A2E285A3E220010A15B /* VideoAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC674A2C285A3E220010A15B /* VideoAppError.swift */; };
 		DC699C7C282DB045009D3C1A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C7B282DB045009D3C1A /* FirebaseAuth */; };
 		DC699C7E282DB045009D3C1A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C7D282DB045009D3C1A /* FirebaseCrashlytics */; };
 		DC699C80282DB07D009D3C1A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C7F282DB07D009D3C1A /* FirebaseAnalyticsSwift */; };
@@ -510,6 +512,7 @@
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
 		DC5CC38D249C0EC000355CC6 /* Video-InternalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5CC391249C0EC000355CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC674A2C285A3E220010A15B /* VideoAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAppError.swift; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
 		DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariableStore.swift; sourceTree = "<group>"; };
 		DC78CAB924352FEE006D3FAA /* RoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTests.swift; sourceTree = "<group>"; };
@@ -1046,6 +1049,7 @@
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
 				DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */,
 				DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */,
+				DC674A2C285A3E220010A15B /* VideoAppError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1924,6 +1928,7 @@
 				DCEDB37F247447D3006AF70D /* SelectTrackSwitchOffModeViewModelFactory.swift in Sources */,
 				DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */,
 				DCEDB37B24744734006AF70D /* TrackSwitchOffMode.swift in Sources */,
+				DC674A2D285A3E220010A15B /* VideoAppError.swift in Sources */,
 				DCEDB373247442D9006AF70D /* TrackPriority.swift in Sources */,
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
@@ -2097,6 +2102,7 @@
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
+				DC674A2E285A3E220010A15B /* VideoAppError.swift in Sources */,
 				DCE1AA2227C7E58A004680CA /* FocusLayoutView.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
