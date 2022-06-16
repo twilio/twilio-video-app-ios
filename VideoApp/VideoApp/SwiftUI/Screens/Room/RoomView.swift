@@ -40,11 +40,22 @@ struct RoomView: View {
                         RoomStatusView(roomName: roomName)
                             .padding(.horizontal, spacing)
 
-                        switch viewModel.layout {
-                        case .grid:
-                            GridLayoutView(spacing: spacing)
-                        case .focus:
-                            FocusLayoutView(spacing: spacing)
+                        ZStack {
+                            switch viewModel.layout {
+                            case .grid:
+                                GridLayoutView(spacing: spacing)
+                            case .focus:
+                                FocusLayoutView(spacing: spacing)
+                            }
+
+                            if viewModel.isShowingCaptions {
+                                VStack {
+                                    Spacer()
+                                    CaptionsView()
+                                        .padding(.horizontal, 30)
+                                        .padding(.bottom, 80)
+                                }
+                            }
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)
@@ -68,6 +79,16 @@ struct RoomView: View {
                                 label: { Label("Stats", systemImage: "binoculars") }
                             )
 
+                            Button(
+                                action: { viewModel.isShowingCaptions.toggle() },
+                                label: {
+                                    Label(
+                                        viewModel.isShowingCaptions ? "Hide Captions" : "Show Captions",
+                                        systemImage: "captions.bubble"
+                                    )
+                                }
+                            )
+                            
                             switch viewModel.layout {
                             case .grid:
                                 Button(
@@ -121,12 +142,12 @@ struct RoomView_Previews: PreviewProvider {
             Group {
                 RoomView(roomName: roomName)
                     .previewDisplayName("Grid layout")
-                    .environmentObject(RoomViewModel.stub())
+                    .environmentObject(RoomViewModel.stub(isShowingCaptions: true))
                     .environmentObject(FocusLayoutViewModel.stub())
 
                 RoomView(roomName: roomName)
                     .previewDisplayName("Focus layout")
-                    .environmentObject(RoomViewModel.stub(layout: .focus))
+                    .environmentObject(RoomViewModel.stub(layout: .focus, isShowingCaptions: true))
                     .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
 
                 RoomView(roomName: roomName)
@@ -145,6 +166,7 @@ struct RoomView_Previews: PreviewProvider {
                 .environmentObject(RoomManager.stub())
         }
         .environmentObject(LocalParticipantManager.stub())
+        .environmentObject(CaptionsManager.stub())
     }
 }
 
@@ -152,11 +174,13 @@ extension RoomViewModel {
     static func stub(
         state: State = .connected,
         layout: Layout = .grid,
+        isShowingCaptions: Bool = false,
         isShowingStats: Bool = false
     ) -> RoomViewModel {
         let viewModel = RoomViewModel()
         viewModel.state = state
         viewModel.layout = layout
+        viewModel.isShowingCaptions = isShowingCaptions
         viewModel.isShowingStats = isShowingStats
         return viewModel
     }

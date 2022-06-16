@@ -21,7 +21,13 @@ class InternalAuthStore: NSObject, AuthStoreWriting {
     weak var delegate: AuthStoreWritingDelegate?
     var isSignedIn: Bool { firebaseAuth.currentUser != nil }
     var passcode: String? { nil } // Not used for internal auth
-    var userDisplayName: String { firebaseAuth.currentUser?.displayName ?? firebaseAuth.currentUser?.email ?? "Unknown" }
+    var userDisplayName: String {
+        guard appSettingsStore.userIdentity.isEmpty else {
+            return appSettingsStore.userIdentity
+        }
+        
+        return firebaseAuth.currentUser?.displayName ?? firebaseAuth.currentUser?.email ?? "Unknown"
+    }
     private let api: APIConfiguring
     private let appSettingsStore: AppSettingsStoreWriting
     private var firebaseAuth: Auth { return Auth.auth() }
