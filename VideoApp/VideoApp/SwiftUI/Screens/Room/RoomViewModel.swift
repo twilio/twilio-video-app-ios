@@ -76,12 +76,10 @@ import Combine
         
         captionsManager.$error
             .sink { [weak self] error in
-                guard let self = self, let error = error, self.isShowingCaptions else {
-                    return
-                }
+                guard let error = error else { return }
 
-                self.error = error
-                self.alertIdentifier = .informativeError
+                self?.error = error
+                self?.alertIdentifier = .informativeError
             }
             .store(in: &subscriptions)
 
