@@ -96,7 +96,11 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
         delegate?.participantDidChange(self)
     }
 
-    func remoteParticipantSwitchedOffVideoTrack(participant: RemoteParticipant, track: RemoteVideoTrack) {
+    func remoteParticipantSwitchedOffVideoTrack(
+        participant: RemoteParticipant,
+        track: RemoteVideoTrack,
+        reason: Track.SwitchOffReason
+    ) {
         delegate?.participantDidChange(self)
     }
     

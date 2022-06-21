@@ -55,8 +55,8 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                         ),
                         .toggle(
                             title: "Insights",
-                            isOn: appSettingsStore.areInsightsEnabled,
-                            updateHandler: { self.appSettingsStore.areInsightsEnabled = $0 }
+                            isOn: appSettingsStore.isInsightsEnabled,
+                            updateHandler: { self.appSettingsStore.isInsightsEnabled = $0 }
                         )
                     ]
                 ),

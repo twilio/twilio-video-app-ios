@@ -22,7 +22,7 @@ protocol AppSettingsStoreWriting: LaunchStore {
     var videoSize: VideoSize { get set }
     var userIdentity: String { get set }
     var isTURNMediaRelayOn: Bool { get set }
-    var areInsightsEnabled: Bool { get set }
+    var isInsightsEnabled: Bool { get set }
     var coreSDKLogLevel: SDKLogLevel { get set }
     var platformSDKLogLevel: SDKLogLevel { get set }
     var signalingSDKLogLevel: SDKLogLevel { get set }
@@ -43,7 +43,7 @@ class AppSettingsStore: AppSettingsStoreWriting {
     @Storage(key: makeKey("videoSize"), defaultValue: .vga) var videoSize: VideoSize
     @Storage(key: makeKey("userIdentity"), defaultValue: "") var userIdentity: String
     @Storage(key: makeKey("isTURNMediaRelayOn"), defaultValue: false) var isTURNMediaRelayOn: Bool
-    @Storage(key: makeKey("areInsightsEnabled"), defaultValue: true) var areInsightsEnabled: Bool
+    @Storage(key: makeKey("isInsightsEnabled"), defaultValue: true) var isInsightsEnabled: Bool
     @Storage(key: makeKey("coreSDKLogLevel"), defaultValue: SDKLogLevel.info) var coreSDKLogLevel: SDKLogLevel
     @Storage(key: makeKey("platformSDKLogLevel"), defaultValue: SDKLogLevel.info) var platformSDKLogLevel: SDKLogLevel
     @Storage(key: makeKey("signalingSDKLogLevel"), defaultValue: SDKLogLevel.error) var signalingSDKLogLevel: SDKLogLevel

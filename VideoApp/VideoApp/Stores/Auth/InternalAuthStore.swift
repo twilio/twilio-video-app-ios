@@ -117,7 +117,7 @@ private extension TwilioEnvironment {
         switch self {
         case .production: return "twilio-video-react.appspot.com"
         case .staging: return "stage-dot-twilio-video-react.appspot.com"
-        case .development: return "dev-dot-twilio-video-react.appspot.com"
+        case .development: return "large-rooms-dev-dot-twilio-video-react.appspot.com"
         }
     }
 }
