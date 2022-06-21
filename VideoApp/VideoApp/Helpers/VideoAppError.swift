@@ -1,5 +1,5 @@
 //
-//  Copyright (C) 2022 Twilio, Inc.
+//  Copyright (C) 2020 Twilio, Inc.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -16,19 +16,16 @@
 
 import Foundation
 
-struct Caption: Hashable {
-    let id: String
-    let userIdentity: String
-    let message: String
-    let date = Date()
-    
-    init?(result: Transcription.TranscriptionResponse.TranscriptEvent.Transcript.Result) {
-        guard let transcript = result.Alternatives.first?.Transcript else {
-            return nil
-        }
+enum VideoAppError: Error {
+    case transcriberError
+    case mediaTranscriberNotConnected
+}
 
-        userIdentity = result.ParticipantIdentity
-        message = transcript
-        id = result.ResultId
+extension VideoAppError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .transcriberError: return "Transcriber error."
+        case .mediaTranscriberNotConnected: return "Media transcriber not connected."
+        }
     }
 }

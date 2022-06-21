@@ -93,12 +93,12 @@ struct RoomView: View {
                             case .grid:
                                 Button(
                                     action: { viewModel.switchToLayout(.focus) },
-                                    label: { Label("Switch to Presenter View", systemImage: "person") }
+                                    label: { Label("Presenter View", systemImage: "person") }
                                 )
                             case .focus:
                                 Button(
                                     action: { viewModel.switchToLayout(.grid) },
-                                    label: { Label("Switch to Grid View", systemImage: "square.grid.2x2") }
+                                    label: { Label("Grid View", systemImage: "square.grid.2x2") }
                                 )
                             }
                         } label: {
@@ -126,9 +126,14 @@ struct RoomView: View {
         .onDisappear {
             app.isIdleTimerDisabled = false
         }
-        .alert(isPresented: $viewModel.isShowingError) {
-            Alert(error: viewModel.error!) {
-                presentationMode.wrappedValue.dismiss()
+        .alert(item: $viewModel.alertIdentifier) { alertIdentifier in
+            switch alertIdentifier {
+            case .fatalError:
+                return Alert(error: viewModel.error!) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            case .informativeError:
+                return Alert(error: viewModel.error!)
             }
         }
     }

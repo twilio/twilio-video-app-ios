@@ -50,7 +50,11 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(captionsManager)
         .onAppear {
             roomManager.configure(localParticipant: localParticipant, captionsManager: captionsManager)
-            roomViewModel.configure(roomManager: roomManager, focusLayoutViewModel: focusLayoutViewModel)
+            roomViewModel.configure(
+                roomManager: roomManager,
+                captionsManager: captionsManager,
+                focusLayoutViewModel: focusLayoutViewModel
+            )
             gridLayoutViewModel.configure(roomManager: roomManager)
             focusLayoutViewModel.configure(roomManager: roomManager)
         }
