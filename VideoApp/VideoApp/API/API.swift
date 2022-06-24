@@ -73,17 +73,17 @@ class API: APIConfiguring, APIRequesting {
                 case let .success(response):
                     completion(.success(response))
                 case let .failure(error):
-                    guard let data = response.data else {
-                        completion(.failure(.message(message: error.localizedDescription)))
+                    guard
+                        let data = response.data,
+                        let errorResponse = try? self.jsonDecoder.decode(APIErrorResponse.self, from: data)
+                    else {
+                        /// Not a server error or we were unable to decode the server error, so use the error from the networking library.
+                        completion(.failure(.message(message: error.errorDescription ?? error.localizedDescription)))
                         return
                     }
-                    
-                    do {
-                        let errorResponse = try self.jsonDecoder.decode(APIErrorResponse.self, from: data)
-                        completion(.failure(.message(message: errorResponse.error.explanation)))
-                    } catch {
-                        completion(.failure(.message(message: error.localizedDescription)))
-                    }
+
+                    /// Use error details from the server.
+                    completion(.failure(.message(message: errorResponse.error.explanation)))
                 }
             }
     }

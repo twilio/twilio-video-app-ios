@@ -17,6 +17,7 @@
 import Foundation
 
 enum VideoAppError: Error {
+    case stringIsNotUTF8
     case transcriberError
     case mediaTranscriberNotConnected
 }
@@ -24,6 +25,7 @@ enum VideoAppError: Error {
 extension VideoAppError: LocalizedError {
     var errorDescription: String? {
         switch self {
+        case .stringIsNotUTF8: return "String is not UTF8."
         case .transcriberError: return "Transcriber error."
         case .mediaTranscriberNotConnected: return "Media transcriber not connected."
         }

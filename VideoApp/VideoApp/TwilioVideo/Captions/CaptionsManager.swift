@@ -28,7 +28,7 @@ class CaptionsManager: NSObject, ObservableObject {
         didSet {
             guard oldValue != isCaptionsEnabled else { return }
 
-            setup()
+            reset()
         }
     }
 
@@ -36,34 +36,47 @@ class CaptionsManager: NSObject, ObservableObject {
         didSet {
             guard oldValue != transcriber else { return }
 
-            oldValue?.removeDelegates() /// In case the transcriber disconnected which should not happen
-            setup()
+            oldValue?.removeDelegates()
+            reset()
         }
     }
 
     private var subscriptions = Set<AnyCancellable>()
 
-    private func setup() {
+    private func reset() {
         transcriber?.removeDelegates()
         error = nil
         captions.removeAll()
         subscriptions.removeAll()
 
-        if let transcriber = transcriber, isCaptionsEnabled {
-            transcriber.delegate = self
-            
-            Timer.publish(every: 1, on: .main, in: .default)
-                .autoconnect()
-                .sink { [weak self] date in
-                    self?.captions.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
-                }
-                .store(in: &subscriptions)
-            
-            if transcriber.remoteDataTracks.first(where: { $0.remoteTrack?.isTranscriberError ?? false }) != nil {
-                /// Using the presence of this data track to signal the transcriber is not working correctly
-                error = VideoAppError.transcriberError
-            }
+        guard isCaptionsEnabled else {
+            return
         }
+        
+        guard let transcriber = transcriber else {
+            handleError(VideoAppError.mediaTranscriberNotConnected)
+            return
+        }
+        
+        guard !transcriber.hasTranscriberError else {
+            handleError(VideoAppError.transcriberError)
+            return
+        }
+        
+        transcriber.delegate = self
+        transcriber.remoteDataTracks.forEach { $0.remoteTrack?.delegate = self }
+        
+        Timer.publish(every: 1, on: .main, in: .default)
+            .autoconnect()
+            .sink { [weak self] date in
+                self?.captions.removeAll(where: { date.timeIntervalSince($0.date) > 10 })
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func handleError(_ error: Error) {
+        isCaptionsEnabled = false /// Do this first because it will cause the error to be cleared
+        self.error = error
     }
 }
 
@@ -74,33 +87,29 @@ extension CaptionsManager: RemoteParticipantDelegate {
         participant: RemoteParticipant
     ) {
         if dataTrack.isTranscriberError {
-            /// Using the presence of this data track to signal the transcriber is not working correctly
-            error = VideoAppError.transcriberError
+            handleError(VideoAppError.transcriberError)
         } else {
             dataTrack.delegate = self
-        }
-    }
-    
-    func didUnsubscribeFromDataTrack(
-        dataTrack: RemoteDataTrack,
-        publication: RemoteDataTrackPublication,
-        participant: RemoteParticipant
-    ) {
-        if dataTrack.isTranscriberError {
-            error = nil
         }
     }
 }
 
 extension CaptionsManager: RemoteDataTrackDelegate {
     func remoteDataTrackDidReceiveString(remoteDataTrack: RemoteDataTrack, message: String) {
-        guard
-            let data = message.data(using: .utf8),
-            let transcription = try? JSONDecoder().decode(Transcription.self, from: data)
-        else {
+        guard let data = message.data(using: .utf8) else {
+            handleError(VideoAppError.stringIsNotUTF8)
             return
         }
+
+        let transcription: Transcription
         
+        do {
+            transcription = try JSONDecoder().decode(Transcription.self, from: data)
+        } catch {
+            handleError(error)
+            return
+        }
+
         transcription.transcriptionResponse.TranscriptEvent.Transcript.Results
             .compactMap { Caption(result: $0) }
             .forEach { caption in
@@ -118,6 +127,10 @@ extension CaptionsManager: RemoteDataTrackDelegate {
 }
 
 private extension RemoteParticipant {
+    var hasTranscriberError: Bool {
+        remoteDataTracks.first { $0.remoteTrack?.isTranscriberError ?? false } == nil
+    }
+    
     func removeDelegates() {
         delegate = nil
         remoteDataTracks.forEach { $0.remoteTrack?.delegate = nil }
@@ -126,6 +139,7 @@ private extension RemoteParticipant {
 
 private extension RemoteDataTrack {
     var isTranscriberError: Bool {
+        /// Use the presence of this data track to signal the transcriber is not working correctly
         name == "transcriber-error"
     }
 }
