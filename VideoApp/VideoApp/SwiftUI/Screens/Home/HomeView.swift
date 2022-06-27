@@ -68,6 +68,7 @@ struct HomeView: View {
             }
         }
         .onAppear {
+            CallKitManager.shared.setupAudio()
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             mediaSetupViewModel.configure(localParticipant: localParticipant)
 

@@ -282,6 +282,7 @@
 		DCC7E37024085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift */; };
 		DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
+		DCC89D2C286649FC00B3DD84 /* CallKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC89D2B286649FC00B3DD84 /* CallKitManager.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
@@ -591,6 +592,7 @@
 		DCC7E36924085AD800431AC3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DCC7E36D24085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
 		DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		DCC89D2B286649FC00B3DD84 /* CallKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitManager.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -1350,6 +1352,14 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
+		DCC89D2A286649EE00B3DD84 /* CallKit */ = {
+			isa = PBXGroup;
+			children = (
+				DCC89D2B286649FC00B3DD84 /* CallKitManager.swift */,
+			);
+			path = CallKit;
+			sourceTree = "<group>";
+		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
 			isa = PBXGroup;
 			children = (
@@ -1448,6 +1458,7 @@
 		DCE1AA3B27C7E5B4004680CA /* TwilioVideo */ = {
 			isa = PBXGroup;
 			children = (
+				DCC89D2A286649EE00B3DD84 /* CallKit */,
 				DC9A5E30246215A700E4B079 /* Camera */,
 				DC1D3CB127CD4388001FCB1A /* LocalParticipant */,
 				DC1D3CB227CD439A001FCB1A /* RemoteParticipant */,
@@ -1869,6 +1880,7 @@
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCC89D2C286649FC00B3DD84 /* CallKitManager.swift in Sources */,
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,

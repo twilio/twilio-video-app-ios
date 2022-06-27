@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
-
+        
+        _ = CallKitManager.shared
+        
         return true
     }
 

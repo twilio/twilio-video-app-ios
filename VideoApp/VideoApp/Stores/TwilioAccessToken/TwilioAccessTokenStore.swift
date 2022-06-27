@@ -45,4 +45,28 @@ class TwilioAccessTokenStore {
             }
         }
     }
+    
+    func fetchTwilioAccessTokenOld(roomName: String, completion: @escaping (Result<String, Error>) -> Void) {
+        authStore.refreshIDToken { [weak self] in
+            let request = CreateTwilioAccessTokenRequest(
+                passcode: self?.authStore.passcode ?? "",
+                userIdentity: self?.appSettingsStore.userIdentity.nilIfEmpty ?? self?.authStore.userDisplayName ?? "",
+                createRoom: true,
+                roomName: roomName
+            )
+            
+            self?.api.request(request) { result in
+                if let roomType = try? result.get().roomType {
+                    self?.remoteConfigStore.roomType = roomType
+                }
+                
+                switch result {
+                case let .success(response):
+                    completion(.success(response.token))
+                case let .failure(error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }

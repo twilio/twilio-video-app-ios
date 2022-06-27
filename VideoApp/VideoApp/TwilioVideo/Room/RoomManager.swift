@@ -16,6 +16,7 @@
 
 import Combine
 import TwilioVideo
+import Foundation
 
 /// Manages the video room connection and uses publishers to notify subscribers of state changes.
 class RoomManager: NSObject, ObservableObject {
@@ -40,10 +41,11 @@ class RoomManager: NSObject, ObservableObject {
         self.localParticipant = localParticipant
     }
     
-    func connect(roomName: String, accessToken: String) {
+    func connect(roomName: String, accessToken: String, uuid: UUID) {
         let options = ConnectOptionsFactory().makeConnectOptions(
             accessToken: accessToken,
             roomName: roomName,
+            uuid: uuid,
             audioTracks: [localParticipant.micTrack].compactMap { $0 },
             videoTracks: [localParticipant.cameraTrack].compactMap { $0 }
         )

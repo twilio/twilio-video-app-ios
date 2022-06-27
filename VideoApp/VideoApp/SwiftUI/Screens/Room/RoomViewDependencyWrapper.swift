@@ -51,6 +51,7 @@ struct RoomViewDependencyWrapper: View {
             roomViewModel.configure(roomManager: roomManager, focusLayoutViewModel: focusLayoutViewModel)
             gridLayoutViewModel.configure(roomManager: roomManager)
             focusLayoutViewModel.configure(roomManager: roomManager)
+            CallKitManager.shared.roomManager = roomManager
         }
     }
 }

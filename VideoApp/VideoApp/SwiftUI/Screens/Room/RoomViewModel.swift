@@ -68,18 +68,25 @@ import Combine
 
         state = .connecting
 
-        Task {
-            do {
-                let accessToken = try await accessTokenStore.fetchTwilioAccessToken(roomName: roomName)
-                roomManager.connect(roomName: roomName, accessToken: accessToken)
-            } catch {
-                handleError(error)
-            }
-        }
+        // How to handle failures?
+        CallKitManager.shared.startCall(roomName: roomName)
+        
+//        Task {
+//            do {
+//                let accessToken = try await accessTokenStore.fetchTwilioAccessToken(roomName: roomName)
+//                roomManager.connect(roomName: roomName, accessToken: accessToken)
+//            } catch {
+//                handleError(error)
+//            }
+//        }
     }
     
     func disconnect() {
-        roomManager.disconnect()
+        if let uuid = roomManager.room?.uuid {
+            CallKitManager.shared.endCall(uuid: uuid)
+        }
+        
+//        roomManager.disconnect()
         state = .disconnected
         roomManager.localParticipant.isMicOn = false
         roomManager.localParticipant.isCameraOn = false
