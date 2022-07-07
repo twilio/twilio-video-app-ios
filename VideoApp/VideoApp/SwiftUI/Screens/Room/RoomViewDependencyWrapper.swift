@@ -27,8 +27,8 @@ struct RoomViewDependencyWrapper: View {
     @EnvironmentObject var localParticipant: LocalParticipantManager
     let roomName: String
     @StateObject private var roomViewModel: RoomViewModel
-    @StateObject private var gridLayoutViewModel = GridLayoutViewModel()
-    @StateObject private var focusLayoutViewModel = FocusLayoutViewModel()
+    @StateObject private var galleryLayoutViewModel = GalleryLayoutViewModel()
+    @StateObject private var speakerLayoutViewModel = SpeakerLayoutViewModel()
     @StateObject private var roomManager = RoomManager()
 
     init(roomName: String) {
@@ -43,14 +43,14 @@ struct RoomViewDependencyWrapper: View {
             RoomView(roomName: roomName)
         }
         .environmentObject(roomViewModel)
-        .environmentObject(gridLayoutViewModel)
-        .environmentObject(focusLayoutViewModel)
+        .environmentObject(galleryLayoutViewModel)
+        .environmentObject(speakerLayoutViewModel)
         .environmentObject(roomManager)
         .onAppear {
             roomManager.configure(localParticipant: localParticipant)
-            roomViewModel.configure(roomManager: roomManager, focusLayoutViewModel: focusLayoutViewModel)
-            gridLayoutViewModel.configure(roomManager: roomManager)
-            focusLayoutViewModel.configure(roomManager: roomManager)
+            roomViewModel.configure(roomManager: roomManager, speakerLayoutViewModel: speakerLayoutViewModel)
+            galleryLayoutViewModel.configure(roomManager: roomManager)
+            speakerLayoutViewModel.configure(roomManager: roomManager)
         }
     }
 }

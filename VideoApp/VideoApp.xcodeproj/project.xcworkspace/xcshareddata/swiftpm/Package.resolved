@@ -212,8 +212,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/twilio/twilio-video-ios",
       "state" : {
-        "revision" : "3d852e74c0e9b5357e8a5537405e5c642cc4e0ea",
-        "version" : "5.1.0"
+        "revision" : "21805ce89585481405bb914922be288d47c1fc62",
+        "version" : "5.1.1"
       }
     }
   ],
