@@ -17,8 +17,8 @@
 import SwiftUI
 
 /// Displays participants in a video grid layout.
-struct GridLayoutView: View {
-    @EnvironmentObject var viewModel: GridLayoutViewModel
+struct GalleryLayoutView: View {
+    @EnvironmentObject var viewModel: GalleryLayoutViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let spacing: CGFloat
@@ -80,22 +80,22 @@ struct GridLayoutView: View {
     }
 }
 
-struct GridLayoutView_Previews: PreviewProvider {
+struct GalleryLayoutView_Previews: PreviewProvider {
     static var previews: some View {
         let participantCounts = [1, 2, 3, 4, 5, 6, 7, 100, 0]
         
         Group {
             ForEach(participantCounts, id: \.self) {
-                GridLayoutView(spacing: 6)
+                GalleryLayoutView(spacing: 6)
                     .previewDisplayName("Portrait \($0)")
-                    .environmentObject(GridLayoutViewModel.stub(participantCount: $0))
+                    .environmentObject(GalleryLayoutViewModel.stub(participantCount: $0))
             }
             .frame(width: 400, height: 700)
 
             ForEach(participantCounts, id: \.self) {
-                GridLayoutView(spacing: 6)
+                GalleryLayoutView(spacing: 6)
                     .previewDisplayName("Landscape \($0)")
-                    .environmentObject(GridLayoutViewModel.stub(participantCount: $0))
+                    .environmentObject(GalleryLayoutViewModel.stub(participantCount: $0))
             }
             .frame(width: 700, height: 300)
         }
@@ -104,9 +104,9 @@ struct GridLayoutView_Previews: PreviewProvider {
     }
 }
 
-extension GridLayoutViewModel {
-    static func stub(participantCount: Int = 20) -> GridLayoutViewModel {
-        let viewModel = GridLayoutViewModel()
+extension GalleryLayoutViewModel {
+    static func stub(participantCount: Int = 20) -> GalleryLayoutViewModel {
+        let viewModel = GalleryLayoutViewModel()
         
         if participantCount > 0 {
             Array(1...participantCount).forEach { viewModel.addParticipant(.stub(identity: "Participant \($0)")) }

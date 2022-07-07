@@ -41,10 +41,10 @@ struct RoomView: View {
                             .padding(.horizontal, spacing)
 
                         switch viewModel.layout {
-                        case .grid:
-                            GridLayoutView(spacing: spacing)
-                        case .focus:
-                            FocusLayoutView(spacing: spacing)
+                        case .gallery:
+                            GalleryLayoutView(spacing: spacing)
+                        case .speaker:
+                            SpeakerLayoutView(spacing: spacing)
                         }
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)
@@ -69,15 +69,15 @@ struct RoomView: View {
                             )
 
                             switch viewModel.layout {
-                            case .grid:
+                            case .gallery:
                                 Button(
-                                    action: { viewModel.switchToLayout(.focus) },
-                                    label: { Label("Switch to Presenter View", systemImage: "person") }
+                                    action: { viewModel.switchToLayout(.speaker) },
+                                    label: { Label("Speaker View", systemImage: "person") }
                                 )
-                            case .focus:
+                            case .speaker:
                                 Button(
-                                    action: { viewModel.switchToLayout(.grid) },
-                                    label: { Label("Switch to Grid View", systemImage: "square.grid.2x2") }
+                                    action: { viewModel.switchToLayout(.gallery) },
+                                    label: { Label("Gallery View", systemImage: "square.grid.2x2") }
                                 )
                             }
                         } label: {
@@ -120,28 +120,28 @@ struct RoomView_Previews: PreviewProvider {
         Group {
             Group {
                 RoomView(roomName: roomName)
-                    .previewDisplayName("Grid layout")
+                    .previewDisplayName("Gallery layout")
                     .environmentObject(RoomViewModel.stub())
-                    .environmentObject(FocusLayoutViewModel.stub())
+                    .environmentObject(SpeakerLayoutViewModel.stub())
 
                 RoomView(roomName: roomName)
-                    .previewDisplayName("Focus layout")
-                    .environmentObject(RoomViewModel.stub(layout: .focus))
-                    .environmentObject(FocusLayoutViewModel.stub(isPresenting: true))
+                    .previewDisplayName("Speaker layout")
+                    .environmentObject(RoomViewModel.stub(layout: .speaker))
+                    .environmentObject(SpeakerLayoutViewModel.stub(isPresenting: true))
 
                 RoomView(roomName: roomName)
                     .previewDisplayName("Stats")
                     .environmentObject(RoomViewModel.stub(isShowingStats: true))
-                    .environmentObject(FocusLayoutViewModel.stub())
+                    .environmentObject(SpeakerLayoutViewModel.stub())
             }
-            .environmentObject(GridLayoutViewModel.stub())
+            .environmentObject(GalleryLayoutViewModel.stub())
             .environmentObject(RoomManager.stub(isRecording: true))
 
             RoomView(roomName: roomName)
                 .previewDisplayName("Connecting")
                 .environmentObject(RoomViewModel.stub(state: .connecting))
-                .environmentObject(GridLayoutViewModel.stub(participantCount: 0))
-                .environmentObject(FocusLayoutViewModel.stub())
+                .environmentObject(GalleryLayoutViewModel.stub(participantCount: 0))
+                .environmentObject(SpeakerLayoutViewModel.stub())
                 .environmentObject(RoomManager.stub())
         }
         .environmentObject(LocalParticipantManager.stub())
@@ -151,7 +151,7 @@ struct RoomView_Previews: PreviewProvider {
 extension RoomViewModel {
     static func stub(
         state: State = .connected,
-        layout: Layout = .grid,
+        layout: Layout = .gallery,
         isShowingStats: Bool = false
     ) -> RoomViewModel {
         let viewModel = RoomViewModel()

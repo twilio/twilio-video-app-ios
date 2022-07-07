@@ -16,7 +16,7 @@
 
 import Combine
 
-/// Manages grid layout state changes.
+/// Manages gallery layout state changes.
 ///
 /// The UI requires an array of pages in order to support pagination. Each page has an array of participants that can hold
 /// up to the max number of participants per page. There is some special handling for the first page to display the most recent
@@ -43,7 +43,7 @@ import Combine
 ///
 /// Some participant state, such as mute status, does not impact grid ordering. The participant will be updated in place so the
 /// UI can update the view for that participant.
-class GridLayoutViewModel: ObservableObject {
+class GalleryLayoutViewModel: ObservableObject {
     struct Page: Hashable {
         let identifier: Int
         var participants: [ParticipantViewModel]
@@ -180,7 +180,7 @@ class GridLayoutViewModel: ObservableObject {
 ///
 /// The solution is recursive to keep things as simple as possible. There should not be any performance issues because
 /// a video room does not allow a massive number of participants to be connected.
-private extension Array where Element == GridLayoutViewModel.Page {
+private extension Array where Element == GalleryLayoutViewModel.Page {
     func indexPathOfParticipant(identity: String) -> IndexPath? {
         for (section, page) in enumerated() {
             for (item, participant) in page.participants.enumerated() {
@@ -197,7 +197,7 @@ private extension Array where Element == GridLayoutViewModel.Page {
         if !isEmpty && last!.participants.count < maxParticipantsPerPage {
             self[endIndex - 1].participants.append(participant)
         } else {
-            let newPage = GridLayoutViewModel.Page(identifier: endIndex, participants: [participant])
+            let newPage = GalleryLayoutViewModel.Page(identifier: endIndex, participants: [participant])
             append(newPage)
         }
     }
@@ -209,7 +209,7 @@ private extension Array where Element == GridLayoutViewModel.Page {
         shouldShift: Bool = true
     ) {
         if indexPath.section == endIndex {
-            let newPage = GridLayoutViewModel.Page(identifier: indexPath.section, participants: [participant])
+            let newPage = GalleryLayoutViewModel.Page(identifier: indexPath.section, participants: [participant])
             append(newPage)
         } else {
             self[indexPath.section].participants.insert(participant, at: indexPath.item)
@@ -244,7 +244,7 @@ private extension Array where Element == GridLayoutViewModel.Page {
         }
         
         if pageIndex == endIndex - 1 {
-            let newPage = GridLayoutViewModel.Page(
+            let newPage = GalleryLayoutViewModel.Page(
                 identifier: pageIndex + 1,
                 participants: [self[pageIndex].participants.removeLast()]
             )

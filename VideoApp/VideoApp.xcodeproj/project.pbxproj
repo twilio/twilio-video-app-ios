@@ -155,7 +155,7 @@
 		DC85CA5D23CCDACC00BF016F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */; };
 		DC85CA6223CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
 		DC85CA6323CE4FCA00BF016F /* AppCenterStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */; };
-		DC8A5EB727D66A3D008F7FBA /* GridLayoutViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */; };
+		DC8A5EB727D66A3D008F7FBA /* GalleryLayoutViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB627D66A3D008F7FBA /* GalleryLayoutViewModelSpec.swift */; };
 		DC8A5EBA27D95230008F7FBA /* NetworkQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */; };
 		DC8A5EBC27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */; };
 		DC8A5EBD27DAB5C5008F7FBA /* RecordingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */; };
@@ -308,24 +308,24 @@
 		DCE1AA0027C7E556004680CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1A9EF27C7E556004680CA /* Color.swift */; };
 		DCE1AA1727C7E58A004680CA /* RoomToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */; };
 		DCE1AA1827C7E58A004680CA /* RoomToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */; };
-		DCE1AA1927C7E58A004680CA /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */; };
-		DCE1AA1A27C7E58A004680CA /* GridLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */; };
+		DCE1AA1927C7E58A004680CA /* GalleryLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* GalleryLayoutView.swift */; };
+		DCE1AA1A27C7E58A004680CA /* GalleryLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0527C7E58A004680CA /* GalleryLayoutView.swift */; };
 		DCE1AA1B27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */; };
 		DCE1AA1C27C7E58A004680CA /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */; };
 		DCE1AA1D27C7E58A004680CA /* RoomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */; };
 		DCE1AA1E27C7E58A004680CA /* RoomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */; };
 		DCE1AA1F27C7E58A004680CA /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationView.swift */; };
 		DCE1AA2027C7E58A004680CA /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0927C7E58A004680CA /* PresentationView.swift */; };
-		DCE1AA2127C7E58A004680CA /* FocusLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */; };
-		DCE1AA2227C7E58A004680CA /* FocusLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */; };
-		DCE1AA2327C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */; };
-		DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */; };
+		DCE1AA2127C7E58A004680CA /* SpeakerLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* SpeakerLayoutView.swift */; };
+		DCE1AA2227C7E58A004680CA /* SpeakerLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0A27C7E58A004680CA /* SpeakerLayoutView.swift */; };
+		DCE1AA2327C7E58A004680CA /* SpeakerLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* SpeakerLayoutViewModel.swift */; };
+		DCE1AA2427C7E58A004680CA /* SpeakerLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0B27C7E58A004680CA /* SpeakerLayoutViewModel.swift */; };
 		DCE1AA2527C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2627C7E58A004680CA /* PresentationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */; };
 		DCE1AA2927C7E58A004680CA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomView.swift */; };
 		DCE1AA2A27C7E58A004680CA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA0E27C7E58A004680CA /* RoomView.swift */; };
-		DCE1AA2F27C7E58A004680CA /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */; };
-		DCE1AA3027C7E58A004680CA /* GridLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */; };
+		DCE1AA2F27C7E58A004680CA /* GalleryLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GalleryLayoutViewModel.swift */; };
+		DCE1AA3027C7E58A004680CA /* GalleryLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1127C7E58A004680CA /* GalleryLayoutViewModel.swift */; };
 		DCE1AA3127C7E58A004680CA /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* ParticipantView.swift */; };
 		DCE1AA3227C7E58A004680CA /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1227C7E58A004680CA /* ParticipantView.swift */; };
 		DCE1AA3327C7E58A004680CA /* RoomStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */; };
@@ -516,7 +516,7 @@
 		DC85CA4B23CCD39400BF016F /* AppCenterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStore.swift; sourceTree = "<group>"; };
 		DC85CA5B23CCDACC00BF016F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC85CA6023CE4FC900BF016F /* AppCenterStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterStoreFactory.swift; sourceTree = "<group>"; };
-		DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModelSpec.swift; sourceTree = "<group>"; };
+		DC8A5EB627D66A3D008F7FBA /* GalleryLayoutViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryLayoutViewModelSpec.swift; sourceTree = "<group>"; };
 		DC8A5EB927D95230008F7FBA /* NetworkQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualityView.swift; sourceTree = "<group>"; };
 		DC8A5EBB27DAB5C4008F7FBA /* RecordingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingBadge.swift; sourceTree = "<group>"; };
 		DC8AA8AC236228A3006C06D5 /* AuthStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStoreFactory.swift; sourceTree = "<group>"; };
@@ -611,15 +611,15 @@
 		DCE1A9EE27C7E556004680CA /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		DCE1A9EF27C7E556004680CA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DCE1AA0427C7E58A004680CA /* RoomToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomToolbarButton.swift; sourceTree = "<group>"; };
-		DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutView.swift; sourceTree = "<group>"; };
+		DCE1AA0527C7E58A004680CA /* GalleryLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryLayoutView.swift; sourceTree = "<group>"; };
 		DCE1AA0627C7E58A004680CA /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
 		DCE1AA0727C7E58A004680CA /* RoomToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomToolbar.swift; sourceTree = "<group>"; };
 		DCE1AA0927C7E58A004680CA /* PresentationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
-		DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusLayoutView.swift; sourceTree = "<group>"; };
-		DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusLayoutViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA0A27C7E58A004680CA /* SpeakerLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerLayoutView.swift; sourceTree = "<group>"; };
+		DCE1AA0B27C7E58A004680CA /* SpeakerLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationStatusView.swift; sourceTree = "<group>"; };
 		DCE1AA0E27C7E58A004680CA /* RoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
-		DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutViewModel.swift; sourceTree = "<group>"; };
+		DCE1AA1127C7E58A004680CA /* GalleryLayoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryLayoutViewModel.swift; sourceTree = "<group>"; };
 		DCE1AA1227C7E58A004680CA /* ParticipantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DCE1AA1327C7E58A004680CA /* RoomStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomStatusView.swift; sourceTree = "<group>"; };
 		DCE1AA1527C7E58A004680CA /* ParticipantViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantViewModel.swift; sourceTree = "<group>"; };
@@ -1155,7 +1155,7 @@
 				DCACF1D624EEE08000D3C264 /* CreateAccessTokenResponseSpec.swift */,
 				DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */,
 				DCD7676523DFDA1700A2939C /* DeepLinkStoreSpec.swift */,
-				DC8A5EB627D66A3D008F7FBA /* GridLayoutViewModelSpec.swift */,
+				DC8A5EB627D66A3D008F7FBA /* GalleryLayoutViewModelSpec.swift */,
 				DCB64B46240969B400E090BE /* PasscodeComponentsSpec.swift */,
 				DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */,
 				DCD7676723DFDEEA00A2939C /* UserActivityStoreSpec.swift */,
@@ -1399,12 +1399,12 @@
 			isa = PBXGroup;
 			children = (
 				DCE1A9E727C7E556004680CA /* Core */,
-				DCE1AA0827C7E58A004680CA /* FocusLayout */,
-				DCE1AA0327C7E58A004680CA /* GridLayout */,
+				DCE1AA0327C7E58A004680CA /* GalleryLayout */,
 				DC8A5EB827D951C8008F7FBA /* NetworkQuality */,
 				DC1D3CB027C955C8001FCB1A /* Participant */,
 				DC1D3CAF27C9553F001FCB1A /* RoomStatus */,
 				DC1D3CAE27C95504001FCB1A /* RoomToolbar */,
+				DCE1AA0827C7E58A004680CA /* SpeakerLayout */,
 				DCEDC62D27E0FFD500BD7C75 /* Stats */,
 			);
 			path = Views;
@@ -1425,24 +1425,24 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		DCE1AA0327C7E58A004680CA /* GridLayout */ = {
+		DCE1AA0327C7E58A004680CA /* GalleryLayout */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA0527C7E58A004680CA /* GridLayoutView.swift */,
-				DCE1AA1127C7E58A004680CA /* GridLayoutViewModel.swift */,
+				DCE1AA0527C7E58A004680CA /* GalleryLayoutView.swift */,
+				DCE1AA1127C7E58A004680CA /* GalleryLayoutViewModel.swift */,
 			);
-			path = GridLayout;
+			path = GalleryLayout;
 			sourceTree = "<group>";
 		};
-		DCE1AA0827C7E58A004680CA /* FocusLayout */ = {
+		DCE1AA0827C7E58A004680CA /* SpeakerLayout */ = {
 			isa = PBXGroup;
 			children = (
-				DCE1AA0A27C7E58A004680CA /* FocusLayoutView.swift */,
-				DCE1AA0B27C7E58A004680CA /* FocusLayoutViewModel.swift */,
 				DCE1AA0C27C7E58A004680CA /* PresentationStatusView.swift */,
 				DCE1AA0927C7E58A004680CA /* PresentationView.swift */,
+				DCE1AA0A27C7E58A004680CA /* SpeakerLayoutView.swift */,
+				DCE1AA0B27C7E58A004680CA /* SpeakerLayoutViewModel.swift */,
 			);
-			path = FocusLayout;
+			path = SpeakerLayout;
 			sourceTree = "<group>";
 		};
 		DCE1AA3B27C7E5B4004680CA /* TwilioVideo */ = {
@@ -1807,7 +1807,7 @@
 				DCEC3CFD2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3823BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB36724743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCE1AA2327C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
+				DCE1AA2327C7E58A004680CA /* SpeakerLayoutViewModel.swift in Sources */,
 				DCF4615E2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCE1AA1727C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
 				DCE1A9FD27C7E556004680CA /* ErrorAlert.swift in Sources */,
@@ -1874,7 +1874,7 @@
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCEDC63627E38C4B00BD7C75 /* MediaSetupView.swift in Sources */,
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
-				DCE1AA1927C7E58A004680CA /* GridLayoutView.swift in Sources */,
+				DCE1AA1927C7E58A004680CA /* GalleryLayoutView.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCE1A9FF27C7E556004680CA /* Color.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
@@ -1893,7 +1893,7 @@
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
-				DCE1AA2127C7E58A004680CA /* FocusLayoutView.swift in Sources */,
+				DCE1AA2127C7E58A004680CA /* SpeakerLayoutView.swift in Sources */,
 				8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
@@ -1952,7 +1952,7 @@
 				DCACF1CE24EAEAD600D3C264 /* InternalSettingsViewModel.swift in Sources */,
 				DCC7E36224082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1D2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
-				DCE1AA2F27C7E58A004680CA /* GridLayoutViewModel.swift in Sources */,
+				DCE1AA2F27C7E58A004680CA /* GalleryLayoutViewModel.swift in Sources */,
 				DC9A5E5424638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0B238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */,
@@ -1976,7 +1976,7 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
-				DCE1AA2427C7E58A004680CA /* FocusLayoutViewModel.swift in Sources */,
+				DCE1AA2427C7E58A004680CA /* SpeakerLayoutViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCE1AA1827C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
 				DCE1A9FE27C7E556004680CA /* ErrorAlert.swift in Sources */,
@@ -2041,7 +2041,7 @@
 				DCE1A9F227C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
 				DCAEBF41238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
-				DCE1AA1A27C7E58A004680CA /* GridLayoutView.swift in Sources */,
+				DCE1AA1A27C7E58A004680CA /* GalleryLayoutView.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCE1AA0027C7E556004680CA /* Color.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
@@ -2060,7 +2060,7 @@
 				DC44C2E823876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
-				DCE1AA2227C7E58A004680CA /* FocusLayoutView.swift in Sources */,
+				DCE1AA2227C7E58A004680CA /* SpeakerLayoutView.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCEDC63A27E38D3E00BD7C75 /* MediaSetupView.swift in Sources */,
@@ -2121,7 +2121,7 @@
 				DCACF1CF24EAEAD600D3C264 /* InternalSettingsViewModel.swift in Sources */,
 				DCC7E36324082EB300431AC3 /* AuthError.swift in Sources */,
 				DCAEBF1E2383342C00141D2D /* DestructiveButtonCell.swift in Sources */,
-				DCE1AA3027C7E58A004680CA /* GridLayoutViewModel.swift in Sources */,
+				DCE1AA3027C7E58A004680CA /* GalleryLayoutViewModel.swift in Sources */,
 				DC9A5E5524638A9C00E4B079 /* ShowError.swift in Sources */,
 				DCEC3D0C238608B500EBDEBF /* EditUserIdentityViewModelFactory.swift in Sources */,
 				DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */,
@@ -2168,7 +2168,7 @@
 				DCACF1E324EF1C2F00D3C264 /* MockAppInfoStore.swift in Sources */,
 				DC5CC383249C0D3900355CC6 /* MockLaunchStoresFactory.swift in Sources */,
 				DCACF1E124EF1C0900D3C264 /* MockUserDefaults.swift in Sources */,
-				DC8A5EB727D66A3D008F7FBA /* GridLayoutViewModelSpec.swift in Sources */,
+				DC8A5EB727D66A3D008F7FBA /* GalleryLayoutViewModelSpec.swift in Sources */,
 				DC9C7732250043A600AC68FD /* RemoteConfigStoreSpec.swift in Sources */,
 				DC5CC37C249C0D3900355CC6 /* MockAuthStore.swift in Sources */,
 				DC5CC377249C0D0300355CC6 /* UserActivityStoreSpec.swift in Sources */,
