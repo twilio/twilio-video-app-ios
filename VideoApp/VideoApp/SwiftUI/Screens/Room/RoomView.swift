@@ -19,6 +19,7 @@ import SwiftUI
 /// Room screen that is shown when a user connects to a video room.
 struct RoomView: View {
     @EnvironmentObject var viewModel: RoomViewModel
+    @EnvironmentObject var localParticipant: LocalParticipantManager
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -63,6 +64,11 @@ struct RoomView: View {
                         CameraToggleButton()
                         
                         Menu {
+                            Button(
+                                action: { localParticipant.shareScreen() },
+                                label: { Label("Share Screen", systemImage: "square.and.arrow.up") }
+                            )
+
                             Button(
                                 action: { viewModel.isShowingStats = true },
                                 label: { Label("Stats", systemImage: "binoculars") }

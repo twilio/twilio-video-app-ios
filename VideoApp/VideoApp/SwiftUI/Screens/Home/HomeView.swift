@@ -68,7 +68,10 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            localParticipant.configure(identity: AuthStore.shared.userDisplayName)
+            localParticipant.configure(
+                // This is a temp minor bug fix unrelated to screen share
+                identity: AppSettingsStore.shared.userIdentity.nilIfEmpty ?? AuthStore.shared.userDisplayName
+            )
             mediaSetupViewModel.configure(localParticipant: localParticipant)
 
             if let deepLink = DeepLinkStore.shared.consumeDeepLink() {

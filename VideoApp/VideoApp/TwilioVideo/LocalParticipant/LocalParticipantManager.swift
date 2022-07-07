@@ -94,6 +94,20 @@ class LocalParticipantManager: NSObject, ObservableObject {
     func configure(identity: String) {
         self.identity = identity
     }
+    
+    // Some quick test code without much error handling
+    func shareScreen() {
+        guard
+            let source = AppScreenSource(),
+            let track = LocalVideoTrack(source: source, enabled: true, name: TrackName.screen)
+        else {
+            return
+        }
+        
+        source.startCapture() // Production code should implement completion to handle error
+        
+        participant?.publishVideoTrack(track)
+    }
 }
 
 extension LocalParticipantManager: LocalParticipantDelegate {
