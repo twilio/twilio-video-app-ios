@@ -22,7 +22,7 @@ import TwilioVideo
 /// is only for receiving captions and should not be visible in the UI.
 class CaptionsManager: NSObject, ObservableObject {
     @Published var captions: [Caption] = []
-    @Published var error: Error? = nil
+    let errorPublisher = PassthroughSubject<Error, Never>()
 
     var isCaptionsEnabled = false {
         didSet {
@@ -45,7 +45,6 @@ class CaptionsManager: NSObject, ObservableObject {
 
     private func reset() {
         transcriber?.removeDelegates()
-        error = nil
         captions.removeAll()
         subscriptions.removeAll()
 
@@ -75,8 +74,8 @@ class CaptionsManager: NSObject, ObservableObject {
     }
     
     private func handleError(_ error: Error) {
-        isCaptionsEnabled = false /// Do this first because it will cause the error to be cleared
-        self.error = error
+        isCaptionsEnabled = false
+        errorPublisher.send(error)
     }
 }
 
@@ -128,7 +127,7 @@ extension CaptionsManager: RemoteDataTrackDelegate {
 
 private extension RemoteParticipant {
     var hasTranscriberError: Bool {
-        remoteDataTracks.first { $0.remoteTrack?.isTranscriberError ?? false } == nil
+        remoteDataTracks.compactMap { $0.remoteTrack }.first { $0.isTranscriberError } != nil
     }
     
     func removeDelegates() {

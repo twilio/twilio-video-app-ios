@@ -74,12 +74,11 @@ import Combine
             .sink { [weak self] error in self?.handleError(error) }
             .store(in: &subscriptions)
         
-        captionsManager.$error
+        captionsManager.errorPublisher
             .sink { [weak self] error in
-                guard let error = error else { return }
-
                 self?.error = error
                 self?.alertIdentifier = .informativeError
+                self?.isShowingCaptions = false
             }
             .store(in: &subscriptions)
 
@@ -106,6 +105,7 @@ import Combine
     }
     
     func disconnect() {
+        captionsManager.isCaptionsEnabled = false
         roomManager.disconnect()
         state = .disconnected
         roomManager.localParticipant.isMicOn = false
