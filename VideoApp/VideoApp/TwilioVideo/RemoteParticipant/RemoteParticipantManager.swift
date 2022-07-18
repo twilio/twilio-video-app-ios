@@ -93,10 +93,12 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
     }
 
     func remoteParticipantSwitchedOnVideoTrack(participant: RemoteParticipant, track: RemoteVideoTrack) {
+        print("TCR track switched on")
         delegate?.participantDidChange(self)
     }
 
     func remoteParticipantSwitchedOffVideoTrack(participant: RemoteParticipant, track: RemoteVideoTrack) {
+        print("TCR track switched off")
         delegate?.participantDidChange(self)
     }
     

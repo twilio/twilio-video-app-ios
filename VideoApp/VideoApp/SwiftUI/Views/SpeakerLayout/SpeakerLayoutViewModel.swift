@@ -70,6 +70,26 @@ class SpeakerLayoutViewModel: ObservableObject {
                 isPresenting = false
             }
         }
+        
+        if let track = roomManager.remoteParticipants.first?.cameraTrack {
+            guard track.renderers.first(where: { $0 === PictureInPictureControllerStorage.shared.videoRenderer }) == nil else {
+                return
+            }
+
+            track.addRenderer(PictureInPictureControllerStorage.shared.videoRenderer)
+        }
+
+//        if let track = roomManager.localParticipant.cameraTrack {
+//            guard track.renderers.first(where: { $0 === PictureInPictureControllerStorage.shared.videoRenderer }) == nil else {
+//                return
+//            }
+//
+//            if let renderer = PictureInPictureControllerStorage.shared.videoRenderer {
+//                print("TCR pip renderer")
+//                track.addRenderer(renderer)
+//            }
+//        }
+
     }
     
     private func findPresenter() -> Presenter? {

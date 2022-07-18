@@ -35,17 +35,22 @@ struct RoomView: View {
             ZStack {
                 Color.roomBackground.ignoresSafeArea()
 
+                PictureInPictureSourceView()
+                
+//                SwiftUITestView()
+
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {
                         RoomStatusView(roomName: roomName)
                             .padding(.horizontal, spacing)
 
-                        switch viewModel.layout {
-                        case .gallery:
-                            GalleryLayoutView(spacing: spacing)
-                        case .speaker:
-                            SpeakerLayoutView(spacing: spacing)
-                        }
+//                        switch viewModel.layout {
+//                        case .gallery:
+//                            GalleryLayoutView(spacing: spacing)
+//                        case .speaker:
+//                            SpeakerLayoutView(spacing: spacing)
+//                        }
+                        Spacer()
                     }
                     .padding(.leading, geometry.safeAreaInsets.leading)
                     .padding(.trailing, geometry.safeAreaInsets.trailing)
@@ -64,7 +69,11 @@ struct RoomView: View {
                         
                         Menu {
                             Button(
-                                action: { viewModel.isShowingStats = true },
+                                action: {
+//                                    viewModel.isShowingStats = true
+                                    PictureInPictureControllerStorage.shared.controller!.startPictureInPicture()
+                                    
+                                },
                                 label: { Label("Stats", systemImage: "binoculars") }
                             )
 

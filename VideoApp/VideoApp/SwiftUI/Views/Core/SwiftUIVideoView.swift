@@ -31,7 +31,7 @@ struct SwiftUIVideoView: UIViewRepresentable {
 
     func updateUIView(_ uiView: VideoTrackStoringVideoView, context: Context) {
         uiView.videoTrack = videoTrack
-        uiView.shouldMirror = shouldMirror
+//        uiView.shouldMirror = shouldMirror
     }
     
     static func dismantleUIView(_ uiView: VideoTrackStoringVideoView, coordinator: ()) {
@@ -50,6 +50,8 @@ class VideoTrackStoringVideoView: VideoView {
     var videoTrack: VideoTrack? {
         didSet {
             guard oldValue != videoTrack else { return }
+            
+            print("TCR SwiftUI renderer")
             
             oldValue?.removeRenderer(self)
             
