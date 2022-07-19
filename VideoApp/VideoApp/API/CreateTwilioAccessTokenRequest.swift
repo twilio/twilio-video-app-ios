@@ -22,6 +22,7 @@ struct CreateTwilioAccessTokenRequest: APIRequest {
         let userIdentity: String
         let roomName: String?
         let createRoom: Bool
+        let createConversation = true /// For captions beta so that the server can store the media processor SID
     }
 
     let path = "token"

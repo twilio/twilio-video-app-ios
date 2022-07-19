@@ -26,7 +26,7 @@ struct Transcription: Decodable {
                     }
                     
                     let ResultId: String
-                    let ParticipantIdentity: String
+                    let Identity: String
                     let Alternatives: [Alternative]
                 }
                 

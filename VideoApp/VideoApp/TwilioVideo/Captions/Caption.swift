@@ -27,7 +27,7 @@ struct Caption: Hashable {
             return nil
         }
 
-        userIdentity = result.ParticipantIdentity
+        userIdentity = result.Identity
         message = transcript
         id = result.ResultId
     }
