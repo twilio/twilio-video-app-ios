@@ -40,6 +40,10 @@ import Combine
     @Published var isShowingStats = false
     @Published var isShowingCaptions = false {
         didSet {
+            guard captionsManager != nil else {
+                return /// When not configured do nothing so preview doesn't crash
+            }
+
             captionsManager.isCaptionsEnabled = isShowingCaptions
         }
     }
