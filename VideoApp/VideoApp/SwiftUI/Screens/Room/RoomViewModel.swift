@@ -24,24 +24,24 @@ import Combine
     }
     
     enum Layout {
-        case grid
-        case focus
+        case gallery
+        case speaker
     }
 
     @Published var state = State.disconnected
-    @Published var layout: Layout = .grid
+    @Published var layout: Layout = .gallery
     @Published var isShowingStats = false
     @Published var isShowingError = false
     private(set) var error: Error?
     private let accessTokenStore = TwilioAccessTokenStore()
     private var isAutoLayoutSwitchingEnabled = true
     private var roomManager: RoomManager!
-    private var focusLayoutViewModel: FocusLayoutViewModel!
+    private var speakerLayoutViewModel: SpeakerLayoutViewModel!
     private var subscriptions = Set<AnyCancellable>()
 
-    func configure(roomManager: RoomManager, focusLayoutViewModel: FocusLayoutViewModel) {
+    func configure(roomManager: RoomManager, speakerLayoutViewModel: SpeakerLayoutViewModel) {
         self.roomManager = roomManager
-        self.focusLayoutViewModel = focusLayoutViewModel
+        self.speakerLayoutViewModel = speakerLayoutViewModel
 
         roomManager.roomConnectPublisher
             .sink { [weak self] in self?.state = .connected }
@@ -56,7 +56,7 @@ import Combine
             .sink { [weak self] error in self?.handleError(error) }
             .store(in: &subscriptions)
         
-        focusLayoutViewModel.$isPresenting
+        speakerLayoutViewModel.$isPresenting
             .sink { [weak self] isPresenting in self?.handleIsPresentingChange(isPresenting: isPresenting) }
             .store(in: &subscriptions)
     }
@@ -97,29 +97,29 @@ import Combine
         self.layout = layout
 
         switch layout {
-        case .grid:
+        case .gallery:
             break
-        case .focus:
-            /// Turn auto layout back on when there is a presentation and the user switched back to focus layout
-            isAutoLayoutSwitchingEnabled = focusLayoutViewModel.isPresenting
+        case .speaker:
+            /// Turn auto layout back on when there is a presentation and the user switched back to speaker layout
+            isAutoLayoutSwitchingEnabled = speakerLayoutViewModel.isPresenting
         }
     }
     
     private func handleIsPresentingChange(isPresenting: Bool) {
         if isPresenting {
             switch layout {
-            case .grid:
-                /// The grid does not show the presentation at all so we have to auto switch to
-                /// focus to inform the user that a presentation has started
+            case .gallery:
+                /// The gallery layout does not show the presentation at all so we have to auto switch
+                /// to speaker layout to inform the user that a presentation has started
                 isAutoLayoutSwitchingEnabled = true
-            case .focus:
+            case .speaker:
                 break
             }
 
-            layout = .focus
+            layout = .speaker
         } else {
             if isAutoLayoutSwitchingEnabled {
-                layout = .grid
+                layout = .gallery
             }
         }
     }
