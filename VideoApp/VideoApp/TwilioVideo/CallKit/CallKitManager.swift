@@ -52,9 +52,7 @@ class CallKitManager: NSObject {
         super.init()
 
         provider.setDelegate(self, queue: nil)
-    }
-    
-    func setupAudio() {
+
         TwilioVideoSDK.audioDevice = audioDevice
     }
     
