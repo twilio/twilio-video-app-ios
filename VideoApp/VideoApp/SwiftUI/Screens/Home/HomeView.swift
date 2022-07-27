@@ -57,6 +57,7 @@ struct HomeView: View {
             .sheet(isPresented: $isShowingMediaSetup) {
                 MediaSetupView(roomName: roomName, isMediaSetup: $isMediaSetup)
                     .environmentObject(mediaSetupViewModel)
+                    .environmentObject(callManager)
                     .onDisappear {
                         isShowingRoom = isMediaSetup
                     }
@@ -72,6 +73,7 @@ struct HomeView: View {
         .onAppear {
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             mediaSetupViewModel.configure(localParticipant: localParticipant)
+            callManager.localParticipant = localParticipant
 
             if let deepLink = DeepLinkStore.shared.consumeDeepLink() {
                 switch deepLink {

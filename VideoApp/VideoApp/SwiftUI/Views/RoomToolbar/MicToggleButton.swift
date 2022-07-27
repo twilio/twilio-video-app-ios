@@ -25,7 +25,7 @@ struct MicToggleButton: View {
             image: Image(systemName: localParticipant.isMicOn ? "mic" : "mic.slash")
         ) {
             // Go through call manager to modify so that it uses CallKit if a call is in progress
-            callManager.updateMute(isMuted: localParticipant.isMicOn)
+            callManager.setMute(isMuted: localParticipant.isMicOn)
         }
     }
 }

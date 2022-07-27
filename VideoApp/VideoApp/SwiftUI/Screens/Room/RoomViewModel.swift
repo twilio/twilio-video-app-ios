@@ -16,12 +16,11 @@
 
 import Combine
 
-@MainActor class RoomViewModel: ObservableObject {
+class RoomViewModel: ObservableObject {
     enum State {
         case disconnected
         case connecting
         case connected
-        case ended
     }
     
     enum Layout {
@@ -31,23 +30,17 @@ import Combine
 
     @Published var state = State.disconnected
     @Published var layout: Layout = .gallery
+    @Published var isShowingRoom = true
     @Published var isShowingStats = false
     @Published var isShowingError = false
     private(set) var error: Error?
-    private let accessTokenStore = TwilioAccessTokenStore()
     private var isAutoLayoutSwitchingEnabled = true
     private var callManager: CallManager!
-    private var roomManager: RoomManager!
     private var speakerLayoutViewModel: SpeakerLayoutViewModel!
     private var subscriptions = Set<AnyCancellable>()
 
-    func configure(
-        callManager: CallManager,
-        roomManager: RoomManager,
-        speakerLayoutViewModel: SpeakerLayoutViewModel
-    ) {
+    func configure(callManager: CallManager, speakerLayoutViewModel: SpeakerLayoutViewModel) {
         self.callManager = callManager
-        self.roomManager = roomManager
         self.speakerLayoutViewModel = speakerLayoutViewModel
 
         callManager.connectPublisher
@@ -56,35 +49,33 @@ import Combine
 
         callManager.disconnectPublisher
             .sink { [ weak self] error in
+                self?.state = .disconnected
+
                 if let error = error {
-                    self?.handleError(error)
+                    self?.error = error
+                    self?.isShowingError = true
                 } else {
-                    self?.state = .ended
+                    self?.isShowingRoom = false
                 }
             }
             .store(in: &subscriptions)
-        
-        roomManager.localParticipant.errorPublisher
-            .sink { [weak self] error in self?.handleError(error) }
-            .store(in: &subscriptions)
-        
+
         speakerLayoutViewModel.$isPresenting
             .sink { [weak self] isPresenting in self?.handleIsPresentingChange(isPresenting: isPresenting) }
             .store(in: &subscriptions)
     }
     
     func connect(roomName: String) {
-        guard roomManager != nil else {
+        guard callManager != nil else {
             return /// When not configured do nothing so `PreviewProvider` doesn't crash.
         }
 
         state = .connecting
-        callManager.startCall(roomName: roomName)
+        callManager.connect(roomName: roomName)
     }
     
     func disconnect() {
-        callManager.endCall()
-        state = .disconnected
+        callManager.disconnect()
     }
 
     /// A user can manually switch layout to override auto layout.
@@ -117,11 +108,5 @@ import Combine
                 layout = .gallery
             }
         }
-    }
-
-    private func handleError(_ error: Error) {
-        disconnect()
-        self.error = error
-        isShowingError = true
     }
 }

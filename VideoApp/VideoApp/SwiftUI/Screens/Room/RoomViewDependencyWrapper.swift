@@ -50,11 +50,7 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(roomManager)
         .onAppear {
             roomManager.configure(localParticipant: localParticipant)
-            roomViewModel.configure(
-                callManager: callManager,
-                roomManager: roomManager,
-                speakerLayoutViewModel: speakerLayoutViewModel
-            )
+            roomViewModel.configure(callManager: callManager, speakerLayoutViewModel: speakerLayoutViewModel)
             galleryLayoutViewModel.configure(roomManager: roomManager)
             speakerLayoutViewModel.configure(roomManager: roomManager)
             callManager.configure(roomManager: roomManager)

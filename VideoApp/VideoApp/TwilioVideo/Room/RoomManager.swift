@@ -20,14 +20,9 @@ import Foundation
 
 /// Manages the video room connection and uses publishers to notify subscribers of state changes.
 class RoomManager: NSObject, ObservableObject {
-    struct DisconnectOutput {
-        let uuid: UUID?
-        let error: Error?
-    }
-    
     // MARK: Publishers
     let roomConnectPublisher = PassthroughSubject<Void, Never>()
-    let roomDisconnectPublisher = PassthroughSubject<DisconnectOutput, Never>()
+    let roomDisconnectPublisher = PassthroughSubject<Error?, Never>()
     let remoteParticipantConnectPublisher = PassthroughSubject<RemoteParticipantManager, Never>()
     let remoteParticipantDisconnectPublisher = PassthroughSubject<RemoteParticipantManager, Never>()
 
@@ -59,12 +54,8 @@ class RoomManager: NSObject, ObservableObject {
     }
 
     func disconnect() {
-        let uuid = room?.uuid
         cleanUp()
-        
-        // Intentional disconnect so no error
-        let output = DisconnectOutput(uuid: uuid, error: nil)
-        roomDisconnectPublisher.send(output)
+        roomDisconnectPublisher.send(nil) /// Intentional disconnect so no error
     }
     
     private func cleanUp() {
@@ -76,11 +67,8 @@ class RoomManager: NSObject, ObservableObject {
     }
     
     private func handleError(_ error: Error) {
-        let uuid = room?.uuid
         cleanUp()
-        
-        let output = DisconnectOutput(uuid: uuid, error: error)
-        roomDisconnectPublisher.send(output)
+        roomDisconnectPublisher.send(error)
     }
 }
 

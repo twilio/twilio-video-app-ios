@@ -21,28 +21,30 @@ import TwilioVideo
 class CallManager: NSObject, ObservableObject {
     let connectPublisher = PassthroughSubject<Void, Never>()
     let disconnectPublisher = PassthroughSubject<Error?, Never>()
-
-    private let controller = CXCallController()
+    private let controller = CXCallController(queue: .main)
     private let provider: CXProvider
     private let audioDevice = DefaultAudioDevice()
     private let accessTokenStore = TwilioAccessTokenStore()
     private var roomManager: RoomManager!
+    var localParticipant: LocalParticipantManager! // TODO: Fix
+    private var callUUID: UUID?
     private var subscriptions = Set<AnyCancellable>()
 
     override init() {
-        let providerConfiguration = CXProviderConfiguration()
-        providerConfiguration.maximumCallGroups = 1
-        providerConfiguration.maximumCallsPerCallGroup = 1
-        providerConfiguration.supportsVideo = true
-        providerConfiguration.supportedHandleTypes = [.generic]
-
-        if let iconMaskImage = UIImage(named: "CallKitIcon") {
-            providerConfiguration.iconTemplateImageData = iconMaskImage.pngData()
-        }
-
-        // TODO: Handle end call from system call screen
+        let configuration = CXProviderConfiguration()
         
-        provider = CXProvider(configuration: providerConfiguration)
+        /// This app only supports 1 video call at a time
+        configuration.maximumCallGroups = 1
+        configuration.maximumCallsPerCallGroup = 1
+
+        configuration.supportsVideo = true
+        configuration.supportedHandleTypes = [.generic]
+
+        if let icon = UIImage(named: "CallKitIcon") {
+            configuration.iconTemplateImageData = icon.pngData()
+        }
+        
+        provider = CXProvider(configuration: configuration)
 
         super.init()
 
@@ -56,30 +58,44 @@ class CallManager: NSObject, ObservableObject {
         
         roomManager.roomConnectPublisher
             .sink { [weak self] in
-                guard let uuid = roomManager.room?.uuid else { return }
+                guard let self = self else { return }
                 
-                self?.provider.reportOutgoingCall(with: uuid, connectedAt: nil)
-                self?.connectPublisher.send()
+                self.provider.reportOutgoingCall(with: self.callUUID!, connectedAt: nil)
+                self.connectPublisher.send()
             }
             .store(in: &subscriptions)
         
         roomManager.roomDisconnectPublisher
-            .sink { [ weak self] disconnectOutput in // TODO: Improve
-                guard let error = disconnectOutput.error, let uuid = disconnectOutput.uuid else {
-                    return
-                }
-
-                self?.provider.reportCall(with: uuid, endedAt: nil, reason: .failed)
-                self?.handleError(error)
+            .sink { [ weak self] error in
+                guard let self = self, let error = error else { return }
+                
+                self.provider.reportCall(with: self.callUUID!, endedAt: nil, reason: .failed)
+                self.handleError(error)
             }
             .store(in: &subscriptions)
     }
     
-    func startCall(roomName: String) {
+    // TODO: Explain mute bug
+    func connect(roomName: String) {
         let handle = CXHandle(type: .generic, value: roomName)
-        let action = CXStartCallAction(call: UUID(), handle: handle)
-        action.isVideo = true
-        let transaction = CXTransaction(action: action)
+
+        let callUUID = UUID()
+        let startCallAction = CXStartCallAction(call: callUUID, handle: handle)
+        startCallAction.isVideo = true
+        self.callUUID = callUUID
+
+        let transaction = CXTransaction(action: startCallAction)
+                
+        controller.request(transaction) { [weak self] error in
+            if let error = error {
+                self?.handleError(error)
+            }
+        }
+    }
+
+    func disconnect() {
+        let endCallAction = CXEndCallAction(call: callUUID!)
+        let transaction = CXTransaction(action: endCallAction)
         
         controller.request(transaction) { [weak self] error in
             if let error = error {
@@ -87,42 +103,30 @@ class CallManager: NSObject, ObservableObject {
             }
         }
     }
-    
-    func endCall() {
-        guard let uuid = roomManager.room?.uuid else { return }
-        
-        let action = CXEndCallAction(call: uuid)
-        let transaction = CXTransaction(action: action)
-        
-        controller.request(transaction) { [weak self] error in
-            if let error = error {
-                self?.handleError(error)
-            }
-        }
-    }
-    
-    func updateMute(isMuted: Bool) {
-        if let uuid = roomManager.room?.uuid {
-            /// A call is in progress so go through CallKit
-            let muteAction = CXSetMutedCallAction(call: uuid, muted: isMuted)
-            let transaction = CXTransaction(action: muteAction)
+
+    func setMute(isMuted: Bool) {
+        if let callUUID = callUUID {
+            /// A call is in progress so control mute mute via CallKit
+            let setMutedCallAction = CXSetMutedCallAction(call: callUUID, muted: isMuted)
+            let transaction = CXTransaction(action: setMutedCallAction)
 
             controller.request(transaction) { error in
                 if let error = error {
-                    print("Mute error: \(error)") // TODO: Do something with this error?
+                    print(error)
                 }
             }
         } else {
-            /// Not connected so bypass CallKit
-            roomManager.localParticipant.isMicOn = !isMuted
+            /// Don't use CallKit when setting up media before joining a call
+            localParticipant.isMicOn = !isMuted
         }
     }
     
     private func cleanUp() {
+        callUUID = nil
         audioDevice.isEnabled = false
         roomManager.disconnect()
-        roomManager.localParticipant.isMicOn = false // TODO: local participant environment object?
-        roomManager.localParticipant.isCameraOn = false
+        localParticipant.isMicOn = false
+        localParticipant.isCameraOn = false
     }
     
     private func handleError(_ error: Error) {
@@ -139,8 +143,7 @@ extension CallManager: CXProviderDelegate {
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
         action.fulfill()
         provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: nil)
-        
-        // TODO: Fix this
+
         accessTokenStore.fetchTwilioAccessTokenOld(roomName: action.handle.value) { [weak self] result in
             switch result {
             case let .success(token):
@@ -153,7 +156,7 @@ extension CallManager: CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        guard roomManager.room?.uuid == action.callUUID else {
+        guard action.callUUID == callUUID else {
             action.fail()
             return
         }
@@ -164,21 +167,17 @@ extension CallManager: CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {
-        guard action.callUUID == roomManager.room?.uuid else {
+        guard action.callUUID == callUUID else {
             action.fail()
             return
         }
         
-        roomManager.localParticipant.handleHold(isOnHold: action.isOnHold)
+        localParticipant.handleHold(isOnHold: action.isOnHold)
         action.fulfill()
-
-        print("set held call action")
-        
-        // TODO: Make sure recent call deep link works
     }
 
     func provider(_ provider: CXProvider, perform action: CXSetMutedCallAction) {
-        roomManager.localParticipant.isMicOn = !action.isMuted
+        localParticipant.isMicOn = !action.isMuted
         action.fulfill()
     }
 
