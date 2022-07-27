@@ -110,6 +110,11 @@ struct RoomView: View {
                 presentationMode.wrappedValue.dismiss()
             }
         }
+        .onChange(of: viewModel.state) { state in
+            if state == .ended {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 

@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         launchStoresFactory.makeLaunchStores().forEach { $0.start() }
         
-        _ = CallKitManager.shared
-        
         return true
     }
 

@@ -25,6 +25,7 @@ struct HomeView: View {
     @State private var isShowingRoom = false
     @State private var isShowingSettings = false
     @State private var isMediaSetup = false
+    @StateObject private var callManager = CallManager()
 
     var body: some View {
         NavigationView {
@@ -65,10 +66,10 @@ struct HomeView: View {
             }
             .fullScreenCover(isPresented: $isShowingRoom) {
                 RoomViewDependencyWrapper(roomName: roomName)
+                    .environmentObject(callManager)
             }
         }
         .onAppear {
-//            CallKitManager.shared.setupAudio()
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             mediaSetupViewModel.configure(localParticipant: localParticipant)
 

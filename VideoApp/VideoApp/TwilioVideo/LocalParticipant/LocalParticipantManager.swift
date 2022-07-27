@@ -94,6 +94,11 @@ class LocalParticipantManager: NSObject, ObservableObject {
     func configure(identity: String) {
         self.identity = identity
     }
+    
+    func handleHold(isOnHold: Bool) {
+        micTrack?.isEnabled = !isOnHold
+        cameraTrack?.isEnabled = !isOnHold
+    }
 }
 
 extension LocalParticipantManager: LocalParticipantDelegate {

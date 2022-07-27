@@ -25,6 +25,7 @@ import SwiftUI
 /// goes away. Also `HomeView` shouldn't have to do complex dependency setup for other screens.
 struct RoomViewDependencyWrapper: View {
     @EnvironmentObject var localParticipant: LocalParticipantManager
+    @EnvironmentObject var callManager: CallManager
     let roomName: String
     @StateObject private var roomViewModel: RoomViewModel
     @StateObject private var galleryLayoutViewModel = GalleryLayoutViewModel()
@@ -46,12 +47,17 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(galleryLayoutViewModel)
         .environmentObject(speakerLayoutViewModel)
         .environmentObject(roomManager)
+        .environmentObject(roomManager)
         .onAppear {
             roomManager.configure(localParticipant: localParticipant)
-            roomViewModel.configure(roomManager: roomManager, speakerLayoutViewModel: speakerLayoutViewModel)
+            roomViewModel.configure(
+                callManager: callManager,
+                roomManager: roomManager,
+                speakerLayoutViewModel: speakerLayoutViewModel
+            )
             galleryLayoutViewModel.configure(roomManager: roomManager)
             speakerLayoutViewModel.configure(roomManager: roomManager)
-            CallKitManager.shared.roomManager = roomManager
+            callManager.configure(roomManager: roomManager)
         }
     }
 }
