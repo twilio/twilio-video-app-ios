@@ -15,6 +15,7 @@
 //
 
 import Foundation
+import Intents
 
 protocol UserActivityStoreWriting: AnyObject {
     @discardableResult func continueUserActivity(_ userActivity: NSUserActivity) -> Bool
@@ -28,9 +29,20 @@ class UserActivityStore: UserActivityStoreWriting {
     }
     
     @discardableResult func continueUserActivity(_ userActivity: NSUserActivity) -> Bool {
-        guard let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) else { return false }
-        
-        deepLinkStore.cache(deepLink: deepLink)
+        if let startCallHandle = userActivity.startCallHandle {
+            deepLinkStore.cache(deepLink: .room(roomName: startCallHandle))
+        } else if let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) {
+            deepLinkStore.cache(deepLink: deepLink)
+        } else {
+            return false
+        }
+
         return true
+    }
+}
+
+private extension NSUserActivity {
+    var startCallHandle: String? {
+        (interaction?.intent as? INStartVideoCallIntent)?.contacts?.first?.personHandle?.value
     }
 }

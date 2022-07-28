@@ -18,15 +18,28 @@ import CallKit
 import Combine
 import TwilioVideo
 
+/// This is the interface the UI should use to start or end a video call.
+///
+/// CallKit is used to integrate the Twilio video call with the system call interface. Most importantly,
+/// this ensures that the app will not be suspended when it is running in the background, even if
+/// the app is not playing or capturing audio. CallKit also increases the audio priority so the app
+/// is not interrupted by media apps. Interruptions from calling apps are also handled better,
+/// allowing the video call to be placed on hold instead of dropping the video call with no warning
+/// to the user.
 class CallManager: NSObject, ObservableObject {
     let connectPublisher = PassthroughSubject<Void, Never>()
     let disconnectPublisher = PassthroughSubject<Error?, Never>()
+    
+    /// CallKit
     private let controller = CXCallController(queue: .main)
     private let provider: CXProvider
+    
+    /// Twilio video
     private let audioDevice = DefaultAudioDevice()
     private let accessTokenStore = TwilioAccessTokenStore()
     private var roomManager: RoomManager!
     private var localParticipant: LocalParticipantManager { roomManager.localParticipant }
+
     private var callUUID: UUID?
     private var subscriptions = Set<AnyCancellable>()
 
@@ -67,7 +80,10 @@ class CallManager: NSObject, ObservableObject {
         
         roomManager.roomDisconnectPublisher
             .sink { [ weak self] error in
-                guard let self = self, let error = error else { return }
+                guard let self = self, let error = error else {
+                    /// Only have to handle the error case for this
+                    return
+                }
                 
                 self.provider.reportCall(with: self.callUUID!, endedAt: nil, reason: .failed)
                 self.handleError(error)
@@ -105,13 +121,14 @@ class CallManager: NSObject, ObservableObject {
 
     func setMute(isMuted: Bool) {
         if let callUUID = callUUID {
-            /// A call is in progress so control mute via CallKit
+            /// A call is in progress so control mute via CallKit. This will ensure that the system
+            /// call screen displays the correct mute status.
             let setMutedCallAction = CXSetMutedCallAction(call: callUUID, muted: isMuted)
             let transaction = CXTransaction(action: setMutedCallAction)
 
             controller.request(transaction) { error in
                 if let error = error {
-                    print(error)
+                    print("Error requesting mute: \(error)")
                 }
             }
         } else {
@@ -146,6 +163,7 @@ extension CallManager: CXProviderDelegate {
         accessTokenStore.fetchTwilioAccessToken(roomName: action.handle.value) { [weak self] result in
             switch result {
             case let .success(token):
+                /// Connect to the Twilio video room
                 self?.roomManager.connect(roomName: action.handle.value, accessToken: token, uuid: action.callUUID)
             case let .failure(error):
                 provider.reportCall(with: action.callUUID, endedAt: nil, reason: .failed)

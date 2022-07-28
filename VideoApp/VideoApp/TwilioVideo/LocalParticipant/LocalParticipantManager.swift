@@ -22,7 +22,6 @@ import TwilioVideo
 /// The microphone and camera may be configured before or after connecting to a video room.
 class LocalParticipantManager: NSObject, ObservableObject {
     let changePublisher = PassthroughSubject<LocalParticipantManager, Never>()
-    let errorPublisher = PassthroughSubject<Error, Never>()
     @Published var isMicOn = false {
         didSet {
             guard oldValue != isMicOn else {
@@ -107,7 +106,7 @@ extension LocalParticipantManager: LocalParticipantDelegate {
         videoTrack: LocalVideoTrack,
         error: Error
     ) {
-        errorPublisher.send(error)
+        print("Failed to publish video track: \(error)")
     }
     
     func localParticipantDidFailToPublishAudioTrack(
@@ -115,7 +114,7 @@ extension LocalParticipantManager: LocalParticipantDelegate {
         audioTrack: LocalAudioTrack,
         error: Error
     ) {
-        errorPublisher.send(error)
+        print("Failed to publish audio track: \(error)")
     }
     
     func localParticipantNetworkQualityLevelDidChange(
