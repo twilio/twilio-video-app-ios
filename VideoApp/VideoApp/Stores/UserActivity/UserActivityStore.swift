@@ -28,9 +28,6 @@ class UserActivityStore: UserActivityStoreWriting {
     }
     
     @discardableResult func continueUserActivity(_ userActivity: NSUserActivity) -> Bool {
-//        userActivity.startCallHandle
-        
-        
         guard let url = userActivity.webpageURL, let deepLink = DeepLink(url: url) else { return false }
         
         deepLinkStore.cache(deepLink: deepLink)

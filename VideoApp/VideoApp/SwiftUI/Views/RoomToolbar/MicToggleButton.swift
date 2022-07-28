@@ -17,8 +17,8 @@
 import SwiftUI
 
 struct MicToggleButton: View {
-    @EnvironmentObject var localParticipant: LocalParticipantManager
     @EnvironmentObject var callManager: CallManager
+    @EnvironmentObject var localParticipant: LocalParticipantManager
     
     var body: some View {
         RoomToolbarButton(
