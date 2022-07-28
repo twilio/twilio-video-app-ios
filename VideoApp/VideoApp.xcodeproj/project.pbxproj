@@ -95,6 +95,7 @@
 		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
+		DC529FF7289333A2005E5803 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC89D2B286649FC00B3DD84 /* CallManager.swift */; };
 		DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
 		DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */; };
 		DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */; };
@@ -1993,6 +1994,7 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
+				DC529FF7289333A2005E5803 /* CallManager.swift in Sources */,
 				DCE1AA2427C7E58A004680CA /* SpeakerLayoutViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCE1AA1827C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
