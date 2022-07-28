@@ -18,6 +18,8 @@ import SwiftUI
 
 /// Main home screen for the app.
 struct HomeView: View {
+    @StateObject private var callManager = CallManager()
+    @StateObject private var roomManager = RoomManager()
     @StateObject private var localParticipant = LocalParticipantManager()
     @StateObject private var mediaSetupViewModel = MediaSetupViewModel()
     @State private var roomName = ""
@@ -25,7 +27,6 @@ struct HomeView: View {
     @State private var isShowingRoom = false
     @State private var isShowingSettings = false
     @State private var isMediaSetup = false
-    @StateObject private var callManager = CallManager()
 
     var body: some View {
         NavigationView {
@@ -57,7 +58,6 @@ struct HomeView: View {
             .sheet(isPresented: $isShowingMediaSetup) {
                 MediaSetupView(roomName: roomName, isMediaSetup: $isMediaSetup)
                     .environmentObject(mediaSetupViewModel)
-                    .environmentObject(callManager)
                     .onDisappear {
                         isShowingRoom = isMediaSetup
                     }
@@ -67,13 +67,13 @@ struct HomeView: View {
             }
             .fullScreenCover(isPresented: $isShowingRoom) {
                 RoomViewDependencyWrapper(roomName: roomName)
-                    .environmentObject(callManager)
             }
         }
         .onAppear {
+            callManager.configure(roomManager: roomManager)
+            roomManager.configure(localParticipant: localParticipant)
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             mediaSetupViewModel.configure(localParticipant: localParticipant)
-            callManager.localParticipant = localParticipant
 
             if let deepLink = DeepLinkStore.shared.consumeDeepLink() {
                 switch deepLink {
@@ -82,6 +82,8 @@ struct HomeView: View {
                 }
             }
         }
+        .environmentObject(callManager)
+        .environmentObject(roomManager)
         .environmentObject(localParticipant)
     }
 }

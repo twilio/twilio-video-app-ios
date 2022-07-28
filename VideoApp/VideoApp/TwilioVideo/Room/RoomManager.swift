@@ -16,7 +16,6 @@
 
 import Combine
 import TwilioVideo
-import Foundation
 
 /// Manages the video room connection and uses publishers to notify subscribers of state changes.
 class RoomManager: NSObject, ObservableObject {
@@ -55,7 +54,7 @@ class RoomManager: NSObject, ObservableObject {
 
     func disconnect() {
         cleanUp()
-        roomDisconnectPublisher.send(nil) /// Intentional disconnect so no error
+        roomDisconnectPublisher.send(nil) // Intentional disconnect so no error
     }
     
     private func cleanUp() {

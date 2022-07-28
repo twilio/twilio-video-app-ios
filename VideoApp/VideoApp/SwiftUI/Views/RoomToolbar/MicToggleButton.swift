@@ -18,13 +18,13 @@ import SwiftUI
 
 struct MicToggleButton: View {
     @EnvironmentObject var localParticipant: LocalParticipantManager
-    @EnvironmentObject var callManager: CallManager // TODO: Inject earlier
+    @EnvironmentObject var callManager: CallManager
     
     var body: some View {
         RoomToolbarButton(
             image: Image(systemName: localParticipant.isMicOn ? "mic" : "mic.slash")
         ) {
-            // Go through call manager to modify so that it uses CallKit if a call is in progress
+            /// This will handle CallKit correctly if a call is active
             callManager.setMute(isMuted: localParticipant.isMicOn)
         }
     }

@@ -15,7 +15,6 @@
 //
 
 import TwilioVideo
-import Foundation
 
 class ConnectOptionsFactory: NSObject {
     private let appSettingsStore: AppSettingsStoreWriting = AppSettingsStore.shared

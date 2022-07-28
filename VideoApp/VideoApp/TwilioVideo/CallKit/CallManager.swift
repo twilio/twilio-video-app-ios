@@ -26,7 +26,7 @@ class CallManager: NSObject, ObservableObject {
     private let audioDevice = DefaultAudioDevice()
     private let accessTokenStore = TwilioAccessTokenStore()
     private var roomManager: RoomManager!
-    var localParticipant: LocalParticipantManager! // TODO: Fix
+    private var localParticipant: LocalParticipantManager { roomManager.localParticipant }
     private var callUUID: UUID?
     private var subscriptions = Set<AnyCancellable>()
 
@@ -75,7 +75,6 @@ class CallManager: NSObject, ObservableObject {
             .store(in: &subscriptions)
     }
     
-    // TODO: Explain mute bug
     func connect(roomName: String) {
         let handle = CXHandle(type: .generic, value: roomName)
 
@@ -106,7 +105,7 @@ class CallManager: NSObject, ObservableObject {
 
     func setMute(isMuted: Bool) {
         if let callUUID = callUUID {
-            /// A call is in progress so control mute mute via CallKit
+            /// A call is in progress so control mute via CallKit
             let setMutedCallAction = CXSetMutedCallAction(call: callUUID, muted: isMuted)
             let transaction = CXTransaction(action: setMutedCallAction)
 
@@ -144,7 +143,7 @@ extension CallManager: CXProviderDelegate {
         action.fulfill()
         provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: nil)
 
-        accessTokenStore.fetchTwilioAccessTokenOld(roomName: action.handle.value) { [weak self] result in
+        accessTokenStore.fetchTwilioAccessToken(roomName: action.handle.value) { [weak self] result in
             switch result {
             case let .success(token):
                 self?.roomManager.connect(roomName: action.handle.value, accessToken: token, uuid: action.callUUID)
@@ -172,7 +171,7 @@ extension CallManager: CXProviderDelegate {
             return
         }
         
-        localParticipant.handleHold(isOnHold: action.isOnHold)
+        localParticipant.setHold(isOnHold: action.isOnHold)
         action.fulfill()
     }
 
@@ -186,6 +185,6 @@ extension CallManager: CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
-        audioDevice.isEnabled = false // TODO: Not sure this is needed
+        audioDevice.isEnabled = false
     }
 }
