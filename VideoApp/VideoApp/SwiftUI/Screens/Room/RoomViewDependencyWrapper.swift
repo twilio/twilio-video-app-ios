@@ -24,19 +24,13 @@ import SwiftUI
 /// UI previews. If `HomeView` created the dependencies, they would not get deallocated when `RoomView`
 /// goes away. Also `HomeView` shouldn't have to do complex dependency setup for other screens.
 struct RoomViewDependencyWrapper: View {
+    @EnvironmentObject var callManager: CallManager
+    @EnvironmentObject var roomManager: RoomManager
     @EnvironmentObject var localParticipant: LocalParticipantManager
     let roomName: String
-    @StateObject private var roomViewModel: RoomViewModel
+    @StateObject private var roomViewModel = RoomViewModel()
     @StateObject private var galleryLayoutViewModel = GalleryLayoutViewModel()
     @StateObject private var speakerLayoutViewModel = SpeakerLayoutViewModel()
-    @StateObject private var roomManager = RoomManager()
-
-    init(roomName: String) {
-        /// This custom init is only to fix warning.
-        /// https://stackoverflow.com/questions/71396296/how-do-i-fix-expression-requiring-global-actor-mainactor-cannot-appear-in-def
-        self.roomName = roomName
-        self._roomViewModel = StateObject(wrappedValue: RoomViewModel())
-    }
     
     var body: some View {
         Group {
@@ -45,10 +39,8 @@ struct RoomViewDependencyWrapper: View {
         .environmentObject(roomViewModel)
         .environmentObject(galleryLayoutViewModel)
         .environmentObject(speakerLayoutViewModel)
-        .environmentObject(roomManager)
         .onAppear {
-            roomManager.configure(localParticipant: localParticipant)
-            roomViewModel.configure(roomManager: roomManager, speakerLayoutViewModel: speakerLayoutViewModel)
+            roomViewModel.configure(callManager: callManager, speakerLayoutViewModel: speakerLayoutViewModel)
             galleryLayoutViewModel.configure(roomManager: roomManager)
             speakerLayoutViewModel.configure(roomManager: roomManager)
         }

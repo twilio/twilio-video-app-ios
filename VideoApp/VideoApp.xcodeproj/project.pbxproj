@@ -73,6 +73,8 @@
 		DC39248B2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
 		DC3C32DD241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
 		DC3C32DE241812B400F56AFB /* APIURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C32DB241812B400F56AFB /* APIURLFactory.swift */; };
+		DC40859F2890406A002D34C9 /* VideoAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40859E2890406A002D34C9 /* VideoAppError.swift */; };
+		DC4085A02890406A002D34C9 /* VideoAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40859E2890406A002D34C9 /* VideoAppError.swift */; };
 		DC44C2BB238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BC238704FB00205174 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44C2B8238704FB00205174 /* RightDetailCell.swift */; };
 		DC44C2BE238704FB00205174 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC44C2B9238704FB00205174 /* RightDetailCell.xib */; };
@@ -93,6 +95,7 @@
 		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
+		DC529FF7289333A2005E5803 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC89D2B286649FC00B3DD84 /* CallManager.swift */; };
 		DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
 		DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */; };
 		DC5CC374249C0D0300355CC6 /* CommunityAuthStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB64B58240D624600E090BE /* CommunityAuthStoreSpec.swift */; };
@@ -282,6 +285,7 @@
 		DCC7E37024085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E36D24085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift */; };
 		DCC7E37724085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
 		DCC7E37824085BE200431AC3 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */; };
+		DCC89D2C286649FC00B3DD84 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC89D2B286649FC00B3DD84 /* CallManager.swift */; };
 		DCD7674C23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7674D23DA336600A2939C /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674A23DA336600A2939C /* DeepLink.swift */; };
 		DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */; };
@@ -486,6 +490,7 @@
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
 		DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEnvironmentViewModelFactory.swift; sourceTree = "<group>"; };
 		DC3C32DB241812B400F56AFB /* APIURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURLFactory.swift; sourceTree = "<group>"; };
+		DC40859E2890406A002D34C9 /* VideoAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAppError.swift; sourceTree = "<group>"; };
 		DC44C2B8238704FB00205174 /* RightDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		DC44C2B9238704FB00205174 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		DC44C2C023870D0800205174 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
@@ -591,6 +596,7 @@
 		DCC7E36924085AD800431AC3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DCC7E36D24085B7200431AC3 /* CreateTwilioAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTwilioAccessTokenRequest.swift; sourceTree = "<group>"; };
 		DCC7E37524085BE200431AC3 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		DCC89D2B286649FC00B3DD84 /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		DCD7674A23DA336600A2939C /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkSpec.swift; sourceTree = "<group>"; };
 		DCD7675023DBA3AA00A2939C /* DeepLinkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkStore.swift; sourceTree = "<group>"; };
@@ -1016,6 +1022,7 @@
 				DC44C2C82387118400205174 /* UITableViewCellHelpers.swift */,
 				DCEC3D0D23860BBC00EBDEBF /* UITableViewHelpers.swift */,
 				DCC7E3542406ED3900431AC3 /* UserDefaultsProtocol.swift */,
+				DC40859E2890406A002D34C9 /* VideoAppError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1350,6 +1357,14 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
+		DCC89D2A286649EE00B3DD84 /* CallKit */ = {
+			isa = PBXGroup;
+			children = (
+				DCC89D2B286649FC00B3DD84 /* CallManager.swift */,
+			);
+			path = CallKit;
+			sourceTree = "<group>";
+		};
 		DCD7674923DA334600A2939C /* DeepLink */ = {
 			isa = PBXGroup;
 			children = (
@@ -1448,6 +1463,7 @@
 		DCE1AA3B27C7E5B4004680CA /* TwilioVideo */ = {
 			isa = PBXGroup;
 			children = (
+				DCC89D2A286649EE00B3DD84 /* CallKit */,
 				DC9A5E30246215A700E4B079 /* Camera */,
 				DC1D3CB127CD4388001FCB1A /* LocalParticipant */,
 				DC1D3CB227CD439A001FCB1A /* RemoteParticipant */,
@@ -1869,6 +1885,7 @@
 				DCEDB36F24743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675223DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,
 				DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */,
+				DCC89D2C286649FC00B3DD84 /* CallManager.swift in Sources */,
 				DCEDB377247443E3006AF70D /* SelectDominantSpeakerPriorityViewModelFactory.swift in Sources */,
 				DCE1A9F127C7E556004680CA /* PrimaryButtonStyle.swift in Sources */,
 				DC4568872385D5490069BB5A /* ViewControllerFactory.swift in Sources */,
@@ -1899,6 +1916,7 @@
 				DCC7E36B24085AD800431AC3 /* APIError.swift in Sources */,
 				DC8AA8AE236228A3006C06D5 /* AuthStoreFactory.swift in Sources */,
 				DCB64B562409BC4E00E090BE /* APIConfig.swift in Sources */,
+				DC40859F2890406A002D34C9 /* VideoAppError.swift in Sources */,
 				DCE1A9F927C7E556004680CA /* ProgressHUD.swift in Sources */,
 				DCEC3D072386085B00EBDEBF /* EditTextViewModelFactory.swift in Sources */,
 				DCACF1D124EAED9000D3C264 /* InternalSettingsViewControllerFactory.swift in Sources */,
@@ -1976,6 +1994,7 @@
 				DCEC3CFE2385FB0C00EBDEBF /* EditIUserdentityViewModel.swift in Sources */,
 				DC8EAE3923BA75C00045018F /* LaunchStore.swift in Sources */,
 				DCEDB36824743BB5006AF70D /* BandwidthProfileSettingsViewControllerFactory.swift in Sources */,
+				DC529FF7289333A2005E5803 /* CallManager.swift in Sources */,
 				DCE1AA2427C7E58A004680CA /* SpeakerLayoutViewModel.swift in Sources */,
 				DCF4615F2385B10200DD8FEA /* GeneralSettingsViewModel.swift in Sources */,
 				DCE1AA1827C7E58A004680CA /* RoomToolbarButton.swift in Sources */,
@@ -2033,6 +2052,7 @@
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,
 				DCA53956235F89BE00CA26FB /* CommunityAuthStore.swift in Sources */,
+				DC4085A02890406A002D34C9 /* VideoAppError.swift in Sources */,
 				DCAEBF392383581F00141D2D /* EditTextViewController.swift in Sources */,
 				DCEDB37024743DD4006AF70D /* SelectBandwidthProfileModeViewModelFactory.swift in Sources */,
 				DCD7675323DBA3AA00A2939C /* DeepLinkStore.swift in Sources */,

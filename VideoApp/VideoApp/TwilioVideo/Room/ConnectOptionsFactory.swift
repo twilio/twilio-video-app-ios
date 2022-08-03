@@ -22,6 +22,7 @@ class ConnectOptionsFactory: NSObject {
     func makeConnectOptions(
         accessToken: String,
         roomName: String,
+        uuid: UUID,
         audioTracks: [LocalAudioTrack],
         videoTracks: [TwilioVideo.LocalVideoTrack]
     ) -> ConnectOptions {
@@ -37,6 +38,7 @@ class ConnectOptionsFactory: NSObject {
             }
 
             builder.roomName = roomName
+            builder.uuid = uuid
             builder.audioTracks = audioTracks
             builder.videoTracks = videoTracks
             builder.isDominantSpeakerEnabled = true

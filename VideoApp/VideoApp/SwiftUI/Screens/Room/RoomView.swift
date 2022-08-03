@@ -57,7 +57,6 @@ struct RoomView: View {
                             role: .destructive
                         ) {
                             viewModel.disconnect()
-                            presentationMode.wrappedValue.dismiss()
                         }
                         MicToggleButton()
                         CameraToggleButton()
@@ -107,6 +106,11 @@ struct RoomView: View {
         }
         .alert(isPresented: $viewModel.isShowingError) {
             Alert(error: viewModel.error!) {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
+        .onChange(of: viewModel.isShowingRoom) { isShowingRoom in
+            if !isShowingRoom {
                 presentationMode.wrappedValue.dismiss()
             }
         }
