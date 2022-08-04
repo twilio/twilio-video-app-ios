@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IconMask-40.png",
+      "filename" : "CallKitIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IconMask-80.png",
+      "filename" : "CallKitIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IconMask-120.png",
+      "filename" : "CallKitIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
