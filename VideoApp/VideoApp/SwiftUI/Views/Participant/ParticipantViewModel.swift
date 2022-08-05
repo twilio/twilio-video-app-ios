@@ -25,7 +25,7 @@ struct ParticipantViewModel {
     var dominantSpeakerStartTime: Date = .distantPast
     var isDominantSpeaker = false
     var cameraTrack: VideoTrack?
-    var isCameraTrackSwitchedOff = false
+    var isCameraTrackSwitchedOffByServer = false
     var shouldMirrorCameraVideo = false
     var shouldFillCameraVideo = false
     var networkQualityLevel: NetworkQualityLevel = .unknown
@@ -58,7 +58,7 @@ struct ParticipantViewModel {
         isDominantSpeaker = participant.isDominantSpeaker
         dominantSpeakerStartTime = participant.dominantSpeakerStartTime
         cameraTrack = participant.cameraTrack
-        isCameraTrackSwitchedOff = participant.isCameraTrackSwitchedOff
+        isCameraTrackSwitchedOffByServer = participant.isCameraTrackSwitchedOffByServer
         shouldFillCameraVideo = true
         networkQualityLevel = participant.networkQualityLevel
     }

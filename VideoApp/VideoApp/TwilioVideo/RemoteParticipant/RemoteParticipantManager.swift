@@ -32,10 +32,19 @@ class RemoteParticipantManager: NSObject {
         return track.isTrackSubscribed && track.isTrackEnabled
     }
     var cameraTrack: VideoTrack? {
-        participant.videoTrack(TrackName.camera)
+        guard
+            let track = participant.videoTrack(TrackName.camera),
+            !track.isSwitchedOffByUser
+        else {
+            return nil
+        }
+
+        return participant.videoTrack(TrackName.camera)
     }
-    var isCameraTrackSwitchedOff: Bool {
-        participant.videoTrack(TrackName.camera)?.isSwitchedOff ?? false
+    var isCameraTrackSwitchedOffByServer: Bool {
+        guard let track = participant.videoTrack(TrackName.camera) else { return false }
+        
+        return track.isSwitchedOff && !track.isSwitchedOffByUser
     }
     var presentationTrack: VideoTrack? {
         participant.videoTrack(TrackName.screen)
@@ -142,8 +151,24 @@ extension RemoteParticipantManager: RemoteParticipantDelegate {
     }
 }
 
-extension RemoteParticipant {
+private extension RemoteParticipant {
     func videoTrack(_ trackName: String) -> RemoteVideoTrack? {
         remoteVideoTracks.first { $0.trackName.contains(trackName) }?.remoteTrack
+    }
+}
+
+private extension RemoteVideoTrack {
+    var isSwitchedOffByUser: Bool {
+        guard let switchOffReason = switchOffReason else { return false }
+        
+        switch switchOffReason {
+        case .disabledByPublisher:
+            return true
+        case .maxBandwidthReached, .maxTracksReached, .mediaStreamTrackChanging, .networkCongestion, .disabledBySubscriber:
+            return false
+        default:
+            /// Waiting on an SDK fix so that we don't need this default case
+            return false
+        }
     }
 }
