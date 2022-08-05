@@ -18,12 +18,12 @@ import Nimble
 import Quick
 @testable import VideoApp
 
-class GridLayoutViewModelSpec: QuickSpec {
+class GalleryLayoutViewModelSpec: QuickSpec {
     override func spec() {
-        var sut: GridLayoutViewModel!
+        var sut: GalleryLayoutViewModel!
         
         beforeEach {
-            sut = GridLayoutViewModel()
+            sut = GalleryLayoutViewModel()
         }
         
         describe("addParticipant") {

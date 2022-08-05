@@ -21,27 +21,26 @@ class TwilioAccessTokenStore {
     private let appSettingsStore = AppSettingsStore.shared
     private let authStore = AuthStore.shared
     private let remoteConfigStore = RemoteConfigStoreFactory().makeRemoteConfigStore()
+    
+    func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
+        authStore.refreshIDToken { [weak self] in
+            guard let self = self else { return }
 
-    func fetchTwilioAccessToken(roomName: String) async throws -> String {
-        try await withCheckedThrowingContinuation { continuation in
-            /// Switch to main thread because some legacy code like `AuthStore` assumes it is called from main thread
-            DispatchQueue.main.async { [weak self] in
-                self?.authStore.refreshIDToken {
-                    let request = CreateTwilioAccessTokenRequest(
-                        passcode: self?.authStore.passcode ?? "",
-                        userIdentity: self?.appSettingsStore.userIdentity.nilIfEmpty ?? self?.authStore.userDisplayName ?? "",
-                        createRoom: true,
-                        roomName: roomName
-                    )
-                    
-                    self?.api.request(request) { result in
-                        if let roomType = try? result.get().roomType {
-                            self?.remoteConfigStore.roomType = roomType
-                        }
-                        
-                        continuation.resume(with: result.map { $0.token })
-                    }
+            let request = CreateTwilioAccessTokenRequest(
+                passcode: self.authStore.passcode ?? "",
+                userIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.authStore.userDisplayName,
+                createRoom: true,
+                roomName: roomName
+            )
+
+            self.api.request(request) { [weak self] result in
+                guard let self = self else { return }
+
+                if let roomType = try? result.get().roomType {
+                    self.remoteConfigStore.roomType = roomType
                 }
+
+                completion(result.map { $0.token })
             }
         }
     }

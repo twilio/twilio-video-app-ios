@@ -17,8 +17,8 @@
 import SwiftUI
 
 /// Displays the dominant speaker and presentation track.
-struct FocusLayoutView: View {
-    @EnvironmentObject var viewModel: FocusLayoutViewModel
+struct SpeakerLayoutView: View {
+    @EnvironmentObject var viewModel: SpeakerLayoutViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     let spacing: CGFloat
@@ -53,27 +53,27 @@ struct FocusLayoutView: View {
     }
 }
 
-struct FocusLayoutView_Previews: PreviewProvider {
+struct SpeakerLayoutView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach([false, true], id: \.self) { isPresenting in
             ForEach([[300.0, 600.0], [600.0, 300.0]], id: \.self) { size in
-                FocusLayoutView(spacing: 6)
+                SpeakerLayoutView(spacing: 6)
                     .previewDisplayName(isPresenting ? "Presenting" : "Not presenting")
                     .frame(width: size[0], height: size[1])
-                    .environmentObject(FocusLayoutViewModel.stub(isPresenting: isPresenting))
+                    .environmentObject(SpeakerLayoutViewModel.stub(isPresenting: isPresenting))
                     .previewLayout(.sizeThatFits)
             }
         }
     }
 }
 
-extension FocusLayoutViewModel {
+extension SpeakerLayoutViewModel {
     static func stub(
         isPresenting: Bool = false,
         dominantSpeakerIdentity: String = "Bob",
         presenterIdentity: String = "Alice"
-    ) -> FocusLayoutViewModel {
-        let viewModel = FocusLayoutViewModel()
+    ) -> SpeakerLayoutViewModel {
+        let viewModel = SpeakerLayoutViewModel()
         viewModel.isPresenting = isPresenting
         viewModel.dominantSpeaker = ParticipantViewModel.stub(identity: dominantSpeakerIdentity)
         viewModel.presenter = Presenter(identity: presenterIdentity)

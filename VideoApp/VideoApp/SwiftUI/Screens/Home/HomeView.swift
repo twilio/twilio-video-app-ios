@@ -18,6 +18,8 @@ import SwiftUI
 
 /// Main home screen for the app.
 struct HomeView: View {
+    @StateObject private var callManager = CallManager()
+    @StateObject private var roomManager = RoomManager()
     @StateObject private var localParticipant = LocalParticipantManager()
     @StateObject private var mediaSetupViewModel = MediaSetupViewModel()
     @State private var roomName = ""
@@ -68,6 +70,8 @@ struct HomeView: View {
             }
         }
         .onAppear {
+            callManager.configure(roomManager: roomManager)
+            roomManager.configure(localParticipant: localParticipant)
             localParticipant.configure(identity: AuthStore.shared.userDisplayName)
             mediaSetupViewModel.configure(localParticipant: localParticipant)
 
@@ -78,6 +82,8 @@ struct HomeView: View {
                 }
             }
         }
+        .environmentObject(callManager)
+        .environmentObject(roomManager)
         .environmentObject(localParticipant)
     }
 }
