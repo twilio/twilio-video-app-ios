@@ -128,25 +128,25 @@ class MockAppSettingsStore: AppSettingsStoreWriting {
         }
     }
 
-    var invokedAreInsightsEnabledSetter = false
-    var invokedAreInsightsEnabledSetterCount = 0
-    var invokedAreInsightsEnabled: Bool?
-    var invokedAreInsightsEnabledList = [Bool]()
-    var invokedAreInsightsEnabledGetter = false
-    var invokedAreInsightsEnabledGetterCount = 0
-    var stubbedAreInsightsEnabled: Bool! = false
+    var invokedIsInsightsEnabledSetter = false
+    var invokedIsInsightsEnabledSetterCount = 0
+    var invokedIsInsightsEnabled: Bool?
+    var invokedIsInsightsEnabledList = [Bool]()
+    var invokedIsInsightsEnabledGetter = false
+    var invokedIsInsightsEnabledGetterCount = 0
+    var stubbedIsInsightsEnabled: Bool! = false
 
-    var areInsightsEnabled: Bool {
+    var isInsightsEnabled: Bool {
         set {
-            invokedAreInsightsEnabledSetter = true
-            invokedAreInsightsEnabledSetterCount += 1
-            invokedAreInsightsEnabled = newValue
-            invokedAreInsightsEnabledList.append(newValue)
+            invokedIsInsightsEnabledSetter = true
+            invokedIsInsightsEnabledSetterCount += 1
+            invokedIsInsightsEnabled = newValue
+            invokedIsInsightsEnabledList.append(newValue)
         }
         get {
-            invokedAreInsightsEnabledGetter = true
-            invokedAreInsightsEnabledGetterCount += 1
-            return stubbedAreInsightsEnabled
+            invokedIsInsightsEnabledGetter = true
+            invokedIsInsightsEnabledGetterCount += 1
+            return stubbedIsInsightsEnabled
         }
     }
 

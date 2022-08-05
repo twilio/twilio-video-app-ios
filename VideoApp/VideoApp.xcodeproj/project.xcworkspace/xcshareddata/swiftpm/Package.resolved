@@ -208,12 +208,12 @@
       }
     },
     {
-      "identity" : "twilio-video-ios",
+      "identity" : "twilio-video-ios-internal-package",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/twilio/twilio-video-ios",
+      "location" : "git@github.com:twilio/twilio-video-ios-internal-package.git",
       "state" : {
-        "revision" : "21805ce89585481405bb914922be288d47c1fc62",
-        "version" : "5.1.1"
+        "revision" : "1e0748fa89c59f9a465e30d12f4261dbdc29b53f",
+        "version" : "6.0.0-rc3"
       }
     }
   ],

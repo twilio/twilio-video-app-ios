@@ -37,13 +37,14 @@ class ConnectOptionsFactory: NSObject {
                 }
             }
 
+            builder.defaultRspVersion = 3
             builder.roomName = roomName
             builder.uuid = uuid
             builder.audioTracks = audioTracks
             builder.videoTracks = videoTracks
             builder.isDominantSpeakerEnabled = true
             builder.isNetworkQualityEnabled = true
-            builder.areInsightsEnabled = self.appSettingsStore.areInsightsEnabled
+            builder.isInsightsEnabled = self.appSettingsStore.isInsightsEnabled
             builder.networkQualityConfiguration = NetworkQualityConfiguration(
                 localVerbosity: .minimal,
                 remoteVerbosity: .minimal
