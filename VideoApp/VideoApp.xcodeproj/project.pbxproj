@@ -2767,7 +2767,7 @@
 			repositoryURL = "git@github.com:twilio/twilio-video-ios-internal-package.git";
 			requirement = {
 				kind = exactVersion;
-				version = "6.0.0-rc1";
+				version = "6.0.0-rc3";
 			};
 		};
 		DC699C78282DB045009D3C1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
