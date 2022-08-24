@@ -69,6 +69,8 @@ struct HomeView: View {
                 RoomViewDependencyWrapper(roomName: roomName)
             }
         }
+        // Note: StackNavigationViewStyle is deprecated from iOS 16.0 onwards. Use NavigationStack view instead.
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             callManager.configure(roomManager: roomManager)
             roomManager.configure(localParticipant: localParticipant)
