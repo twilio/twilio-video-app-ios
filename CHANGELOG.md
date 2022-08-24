@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.16 (August 24, 2022)
+
+Bug Fixes
+
+- Max video bandwidth limits are now applied to each simulcast layer when simulcast is enabled, and the expected behavior for max video bitrates with simulcast is better documented.
+- Fixed several bugs that could cause crashes and deadlocks when a Room is disconnected / destroyed.
+- Fixed a use-after-free bug associated with tasks posted to TaskQueue that could lead to undefined behavior.
+- Fixed a bug which could cause a crash in IceConnectionActivityMonitor when reconnecting to or disconnecting from a Room.
+- Fixed a race condition where subscribed callbacks for Remote Participant could be raised for tracks that have been ended.
+
 ## 0.1.15 (June 3, 2022)
 
 ### Maintenance
