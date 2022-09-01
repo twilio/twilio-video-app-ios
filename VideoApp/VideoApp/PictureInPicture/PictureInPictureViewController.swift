@@ -9,6 +9,7 @@
 import AVKit
 import Combine
 import UIKit
+import TwilioVideo
 
 class PictureInPictureViewController: UIViewController {
     @IBOutlet weak var videoView: VideoTrackStoringVideoView!
@@ -24,11 +25,8 @@ class PictureInPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let sampleBufferVideoCallView = ExampleSampleBufferView(
-//            frame: CGRect(x: 0, y: 0, width: 100, height: 200)
-//        )
 
-        let sampleBufferVideoCallView = ExampleSampleBufferView()
+        let sampleBufferVideoCallView = SampleBufferVideoView()
             
     
         sampleBufferVideoCallView.contentMode = .scaleAspectFit
@@ -42,6 +40,9 @@ class PictureInPictureViewController: UIViewController {
 //        pipVideoCallViewController.preferredContentSize = CGSize(width: 1080, height: 1920)
         
         pipVideoCallViewController.view.addSubview(sampleBufferVideoCallView)
+        
+        let placeholderView = PIPPlaceholderView()
+        pipVideoCallViewController.view.addSubview(placeholderView)
 
 //        sampleBufferVideoCallView.translatesAutoresizingMaskIntoConstraints = false
 //        let constraints = [
