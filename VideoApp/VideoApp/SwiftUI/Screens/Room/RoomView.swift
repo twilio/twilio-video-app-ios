@@ -19,6 +19,7 @@ import SwiftUI
 /// Room screen that is shown when a user connects to a video room.
 struct RoomView: View {
     @EnvironmentObject var viewModel: RoomViewModel
+    @EnvironmentObject var speakerLayoutViewModel: SpeakerLayoutViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -34,6 +35,9 @@ struct RoomView: View {
         GeometryReader { geometry in
             ZStack {
                 Color.roomBackground.ignoresSafeArea()
+                
+                // TODO: Improve layout?
+                PictureInPictureSourceView(participant: $speakerLayoutViewModel.dominantSpeaker)
 
                 VStack(spacing: 0) {
                     VStack(spacing: 0) {

@@ -32,10 +32,10 @@ struct MediaSetupView: View {
                     Text("Join " + roomName)
                         .font(.title2)
                     
-//                    ParticipantView(viewModel: $viewModel.participant)
-//                        .aspectRatio(1, contentMode: .fit)
-//                        .padding(.horizontal, 70)
-//                        .padding(.vertical)
+                    ParticipantView(viewModel: $viewModel.participant)
+                        .aspectRatio(1, contentMode: .fit)
+                        .padding(.horizontal, 70)
+                        .padding(.vertical)
 
                     HStack {
                         Spacer()

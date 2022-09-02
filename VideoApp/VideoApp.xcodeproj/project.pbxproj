@@ -67,6 +67,8 @@
 		DC1D3CBA27CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
 		DC1D3CBC27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
 		DC1D3CBD27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
+		DC243F8028C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */; };
+		DC243F8128C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
@@ -518,6 +520,7 @@
 		DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewDependencyWrapper.swift; sourceTree = "<group>"; };
 		DC1D3CB827CEC100001FCB1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureInPictureSourceView.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
@@ -1243,6 +1246,7 @@
 				DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */,
 				DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */,
 				DC4F28BD28B80EDB00112FA8 /* PIPPlaceholderView.swift */,
+				DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */,
 			);
 			path = PictureInPicture;
 			sourceTree = "<group>";
@@ -1960,6 +1964,7 @@
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
+				DC243F8028C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */,
 				DCA29FB628A1769B00BAA147 /* PictureInPictureViewController.swift in Sources */,
 				DCE1AA2127C7E58A004680CA /* SpeakerLayoutView.swift in Sources */,
 				8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
@@ -2134,6 +2139,7 @@
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCE1AA2227C7E58A004680CA /* SpeakerLayoutView.swift in Sources */,
+				DC243F8128C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */,
 				DCA29FB728A1769B00BAA147 /* PictureInPictureViewController.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,

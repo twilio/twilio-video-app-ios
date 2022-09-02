@@ -10,26 +10,20 @@ import UIKit
 
 class PIPPlaceholderView: UIView {
     let label = UILabel()
-    private var count = 0
-    private var timer: Timer?
     
     required init?(coder aDecoder: NSCoder) {
-        // This example does not support storyboards.
-        assert(false, "Unsupported.")
-        return nil
+        fatalError()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = .green
+        backgroundColor = UIColor(named: "BackgroundStronger")
         
         addSubview(label)
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.count += 1
-            self.label.text = "Hello \(self.count)"
-        }
+        label.textColor = .white
+        label.textAlignment = .center
     }
         
     override func didMoveToSuperview() {
@@ -40,7 +34,7 @@ class PIPPlaceholderView: UIView {
             leadingAnchor.constraint(equalTo: superview.leadingAnchor),
             trailingAnchor.constraint(equalTo: superview.trailingAnchor),
             topAnchor.constraint(equalTo: superview.topAnchor),
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -200)
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
 
@@ -52,7 +46,9 @@ class PIPPlaceholderView: UIView {
             bottomAnchor.constraint(equalTo: label.bottomAnchor)
         ]
         NSLayoutConstraint.activate(labelConstraints)
-        
-
+    }
+    
+    func configure(particiipant: ParticipantViewModel) {
+        label.text = particiipant.displayName
     }
 }
