@@ -52,3 +52,40 @@ class PIPPlaceholderView: UIView {
         label.text = particiipant.displayName
     }
 }
+
+import UIKit
+
+class PIPContainerView: UIView {
+    let placeholder = PIPPlaceholderView()
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        addSubview(placeholder)
+
+    }
+        
+    override func didMoveToSuperview() {
+        guard let superview = superview else { return }
+
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraints = [
+            leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            topAnchor.constraint(equalTo: superview.topAnchor),
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    func configure(particiipant: ParticipantViewModel) {
+        placeholder.configure(particiipant: particiipant)
+
+    }
+}

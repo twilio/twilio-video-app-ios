@@ -844,6 +844,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		DC006CCD28D0E71300D234E5 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */,
+				DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		DC04468F238F1E2D0072F597 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -1243,10 +1252,9 @@
 		DCA29FB428A1765C00BAA147 /* PictureInPicture */ = {
 			isa = PBXGroup;
 			children = (
-				DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */,
-				DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */,
 				DC4F28BD28B80EDB00112FA8 /* PIPPlaceholderView.swift */,
 				DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */,
+				DC006CCD28D0E71300D234E5 /* Test */,
 			);
 			path = PictureInPicture;
 			sourceTree = "<group>";

@@ -46,7 +46,7 @@ struct SwiftUIVideoView: UIViewRepresentable {
 ///
 /// It also provides a `VideoTrack` reference to `SwiftUIVideoView` so that `SwiftUIVideoView` can
 /// remove the `VideoView` from the `VideoTrack` when `dismantleUIView` is called.`
-class VideoTrackStoringVideoView: VideoView {
+class VideoTrackStoringVideoView: SampleBufferVideoView {
     var videoTrack: VideoTrack? {
         didSet {
             guard oldValue != videoTrack else { return }

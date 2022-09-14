@@ -64,6 +64,17 @@ class PictureInPictureSetupView: UIView {
         pipVideoCallViewController.view.addSubview(placeholderView)
 
         pipVideoCallViewController.view.addSubview(videoView)
+        
+        videoView.translatesAutoresizingMaskIntoConstraints = false;
+        
+        let constraints = [
+            videoView.leadingAnchor.constraint(equalTo: pipVideoCallViewController.view.leadingAnchor),
+            videoView.trailingAnchor.constraint(equalTo: pipVideoCallViewController.view.trailingAnchor),
+            videoView.topAnchor.constraint(equalTo: pipVideoCallViewController.view.topAnchor),
+            videoView.bottomAnchor.constraint(equalTo: pipVideoCallViewController.view.bottomAnchor)
+        ]
+
+        NSLayoutConstraint.activate(constraints)
 
         let pipContentSource = AVPictureInPictureController.ContentSource(
             activeVideoCallSourceView: self,
@@ -83,7 +94,7 @@ class PictureInPictureSetupView: UIView {
         placeholderView.configure(particiipant: participant)
         
         videoView.videoTrack = participant.cameraTrack
-        videoView.alpha = participant.isCameraTrackSwitchedOff || participant.cameraTrack == nil ? 0 : 1
+//        videoView.alpha = participant.isCameraTrackSwitchedOff || participant.cameraTrack == nil ? 0 : 1
     }
 }
 
