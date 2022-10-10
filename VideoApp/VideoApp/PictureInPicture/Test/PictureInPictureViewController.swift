@@ -24,37 +24,29 @@ class PictureInPictureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        let sampleBufferVideoCallView = SampleBufferVideoView()
-            
     
+        let sampleBufferVideoCallView = SampleBufferVideoView()
         sampleBufferVideoCallView.contentMode = .scaleAspectFit
 
-        
-        
         pipVideoCallViewController = AVPictureInPictureVideoCallViewController()
         
         // Pretty much just for aspect ratio, normally used for pop-over
-        pipVideoCallViewController.preferredContentSize = CGSize(width: 100, height: 200)
+        pipVideoCallViewController.preferredContentSize = CGSize(width: 200, height: 400)
 //        pipVideoCallViewController.preferredContentSize = CGSize(width: 1080, height: 1920)
         
         pipVideoCallViewController.view.addSubview(sampleBufferVideoCallView)
-        
-        let placeholderView = PIPPlaceholderView()
-        pipVideoCallViewController.view.addSubview(placeholderView)
 
-//        sampleBufferVideoCallView.translatesAutoresizingMaskIntoConstraints = false
-//        let constraints = [
-//            sampleBufferVideoCallView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            sampleBufferVideoCallView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            sampleBufferVideoCallView.topAnchor.constraint(equalTo: view.topAnchor),
-//            sampleBufferVideoCallView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//        ]
-//        NSLayoutConstraint.activate(constraints)
+        sampleBufferVideoCallView.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            sampleBufferVideoCallView.leadingAnchor.constraint(equalTo: pipVideoCallViewController.view.leadingAnchor),
+            sampleBufferVideoCallView.trailingAnchor.constraint(equalTo: pipVideoCallViewController.view.trailingAnchor),
+            sampleBufferVideoCallView.topAnchor.constraint(equalTo: pipVideoCallViewController.view.topAnchor),
+            sampleBufferVideoCallView.bottomAnchor.constraint(equalTo: pipVideoCallViewController.view.bottomAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
 
 
-//        sampleBufferVideoCallView.bounds = pipVideoCallViewController.view.frame
+        sampleBufferVideoCallView.bounds = pipVideoCallViewController.view.frame
 
         let pipContentSource = AVPictureInPictureController.ContentSource(
             activeVideoCallSourceView: videoView,
