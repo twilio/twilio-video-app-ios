@@ -55,6 +55,7 @@ struct HomeView: View {
                     isShowingPictureInPicture = true
                 }
                 .buttonStyle(.borderedProminent)
+                .hidden()
             }
             .toolbar {
                 Button(action: { isShowingSettings.toggle() }) {
