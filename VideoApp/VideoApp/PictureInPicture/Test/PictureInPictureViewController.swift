@@ -31,8 +31,8 @@ class PictureInPictureViewController: UIViewController {
         pipVideoCallViewController = AVPictureInPictureVideoCallViewController()
         
         // Pretty much just for aspect ratio, normally used for pop-over
-        pipVideoCallViewController.preferredContentSize = CGSize(width: 200, height: 400)
-//        pipVideoCallViewController.preferredContentSize = CGSize(width: 1080, height: 1920)
+        //pipVideoCallViewController.preferredContentSize = CGSize(width: 200, height: 400)
+        pipVideoCallViewController.preferredContentSize = CGSize(width: 1080, height: 1920)
         
         pipVideoCallViewController.view.addSubview(sampleBufferVideoCallView)
 

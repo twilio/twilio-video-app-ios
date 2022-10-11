@@ -40,12 +40,9 @@ class RoomManager: NSObject, ObservableObject {
         self.localParticipant = localParticipant
     }
     
-    func connect(roomName: String, accessToken: String, uuid: UUID) {
-        let t = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2RkOGU1OWMzMzJlNWQzYWRhN2JhOWUxYmM1NWNhMjc5LTE2NjU0MzQ2MTQiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJkYXMiLCJ2aWRlbyI6eyJyb29tIjoidGNyIn19LCJpYXQiOjE2NjU0MzQ2MTQsImV4cCI6MTY2NTQzODIxNCwiaXNzIjoiU0tkZDhlNTljMzMyZTVkM2FkYTdiYTllMWJjNTVjYTI3OSIsInN1YiI6IkFDOGUyYzM0OWI3NWQwOTI5NWMzYmFjZTFmYjA5ODAwMzIifQ.ol7sFZuU9013fwWoY9e9XK6OmLpyrZX68OtgWRUc3ls"
-        
-        
+    func connect(roomName: String, accessToken: String, uuid: UUID) {        
         let options = ConnectOptionsFactory().makeConnectOptions(
-            accessToken: t,
+            accessToken: accessToken,
             roomName: roomName,
             uuid: uuid,
             audioTracks: [localParticipant.micTrack].compactMap { $0 },
