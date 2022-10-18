@@ -40,7 +40,7 @@ class RoomManager: NSObject, ObservableObject {
         self.localParticipant = localParticipant
     }
     
-    func connect(roomName: String, accessToken: String, uuid: UUID) {
+    func connect(roomName: String, accessToken: String, uuid: UUID) {        
         let options = ConnectOptionsFactory().makeConnectOptions(
             accessToken: accessToken,
             roomName: roomName,

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24C5217A20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
 		24C5217B20FFAD030018E2D8 /* EmailPasswordLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */; };
+		2FAF8BA028F7351600285505 /* TwilioVideo in Frameworks */ = {isa = PBXBuildFile; productRef = 2FAF8B9F28F7351600285505 /* TwilioVideo */; };
 		4B0012261FBA52C4004A587E /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E21ECE1C8500486E7A /* StatsViewController.m */; };
 		4B0012291FBA52C4004A587E /* TrackStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */; };
 		4B00122C1FBA52C4004A587E /* StatsUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A723E61ECE1CBD00486E7A /* StatsUIModel.m */; };
@@ -128,8 +129,6 @@
 		DC5CC39F249C0F5900355CC6 /* TestSecrets.json in Resources */ = {isa = PBXBuildFile; fileRef = DC9A4C9123D161A200D37CEC /* TestSecrets.json */; };
 		DC5CC3A0249C0F5900355CC6 /* TestSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A2239716860072F597 /* TestSecrets.swift */; };
 		DC5CC3A1249C0F5900355CC6 /* TestSecretsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0446A0239716530072F597 /* TestSecretsStore.swift */; };
-		DC5E3D9F28B6D21B009E3CF2 /* TwilioVideo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA29FBE28A1B66C00BAA147 /* TwilioVideo.xcframework */; };
-		DC5E3DA028B6D21B009E3CF2 /* TwilioVideo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCA29FBE28A1B66C00BAA147 /* TwilioVideo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC699C7C282DB045009D3C1A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C7B282DB045009D3C1A /* FirebaseAuth */; };
 		DC699C7E282DB045009D3C1A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C7D282DB045009D3C1A /* FirebaseCrashlytics */; };
 		DC699C80282DB07D009D3C1A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C7F282DB07D009D3C1A /* FirebaseAnalyticsSwift */; };
@@ -145,8 +144,6 @@
 		DC699C97282EB231009D3C1A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DC699C96282EB231009D3C1A /* FirebaseAnalytics */; };
 		DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
 		DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76FD00241054FC001B2FFC /* EnvironmentVariableStore.swift */; };
-		DC777A5A28B0272500FD9925 /* TwilioVideo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA29FBE28A1B66C00BAA147 /* TwilioVideo.xcframework */; };
-		DC777A5B28B0272500FD9925 /* TwilioVideo.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCA29FBE28A1B66C00BAA147 /* TwilioVideo.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC82A35023FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
 		DC82A35123FC9AAA0081578C /* JSONContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A34E23FC9AAA0081578C /* JSONContainer.swift */; };
 		DC82A35423FDB6890081578C /* SDKLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC82A35223FDB6890081578C /* SDKLogLevel.swift */; };
@@ -456,18 +453,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DC5E3DA028B6D21B009E3CF2 /* TwilioVideo.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC777A5C28B0272500FD9925 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DC777A5B28B0272500FD9925 /* TwilioVideo.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +475,7 @@
 		24A723EC1ECE1D2A00486E7A /* TrackStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsTableViewCell.m; sourceTree = "<group>"; };
 		24C5217720FFAD030018E2D8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		24C5217820FFAD030018E2D8 /* EmailPasswordLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginViewController.swift; sourceTree = "<group>"; };
+		2FFFBC0628ECE5B000210E81 /* TwilioVideo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TwilioVideo.xcframework; path = "../../video-ios-internal/temp/Artifacts/Debug/Dynamic/TwilioVideo.xcframework"; sourceTree = "<group>"; };
 		4B00124E1FBA52C4004A587E /* Video-Internal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Internal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B00128B1FBA52E5004A587E /* Video-Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video-Community.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A206F0D263912B600EFCD97 /* ClientTrackSwitchOffControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTrackSwitchOffControl.swift; sourceTree = "<group>"; };
@@ -588,7 +574,6 @@
 		DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStoreSpec.swift; sourceTree = "<group>"; };
 		DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureInPictureViewController.swift; sourceTree = "<group>"; };
 		DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPictureInPictureInPictureView.swift; sourceTree = "<group>"; };
-		DCA29FBE28A1B66C00BAA147 /* TwilioVideo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TwilioVideo.xcframework; path = "../../twilio-video-ios-internal/temp/Artifacts/Debug/Dynamic/TwilioVideo.xcframework"; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* InternalAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -721,10 +706,10 @@
 			files = (
 				DCB3BAD6282DA2B300AF7072 /* AppCenterDistribute in Frameworks */,
 				DC699C87282DB4E9009D3C1A /* GoogleSignIn in Frameworks */,
+				2FAF8BA028F7351600285505 /* TwilioVideo in Frameworks */,
 				DC699C97282EB231009D3C1A /* FirebaseAnalytics in Frameworks */,
 				DC699C7C282DB045009D3C1A /* FirebaseAuth in Frameworks */,
 				DCB3BAD0282DA20000AF7072 /* Alamofire in Frameworks */,
-				DC777A5A28B0272500FD9925 /* TwilioVideo.xcframework in Frameworks */,
 				DC699C7E282DB045009D3C1A /* FirebaseCrashlytics in Frameworks */,
 				DCB3BADB282DA30B00AF7072 /* KeychainAccess in Frameworks */,
 			);
@@ -739,7 +724,6 @@
 				DCB3BAD3282DA23200AF7072 /* Alamofire in Frameworks */,
 				DC699C82282DB084009D3C1A /* FirebaseCrashlytics in Frameworks */,
 				DCB3BADD282DA31400AF7072 /* KeychainAccess in Frameworks */,
-				DC5E3D9F28B6D21B009E3CF2 /* TwilioVideo.xcframework in Frameworks */,
 				DC699C84282DB08B009D3C1A /* FirebaseAuth in Frameworks */,
 				DC699C80282DB07D009D3C1A /* FirebaseAnalyticsSwift in Frameworks */,
 			);
@@ -1404,7 +1388,7 @@
 		DCB3BAD1282DA23200AF7072 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DCA29FBE28A1B66C00BAA147 /* TwilioVideo.xcframework */,
+				2FFFBC0628ECE5B000210E81 /* TwilioVideo.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1628,7 +1612,6 @@
 				4B0012231FBA52C4004A587E /* Sources */,
 				4B0012351FBA52C4004A587E /* Frameworks */,
 				4B0012401FBA52C4004A587E /* Resources */,
-				DC777A5C28B0272500FD9925 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1643,6 +1626,7 @@
 				DC699C7D282DB045009D3C1A /* FirebaseCrashlytics */,
 				DC699C86282DB4E9009D3C1A /* GoogleSignIn */,
 				DC699C96282EB231009D3C1A /* FirebaseAnalytics */,
+				2FAF8B9F28F7351600285505 /* TwilioVideo */,
 			);
 			productName = VideoApp;
 			productReference = 4B00124E1FBA52C4004A587E /* Video-Internal.app */;
@@ -1797,6 +1781,7 @@
 				DC699C85282DB4E9009D3C1A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				DC699C8A282EAD46009D3C1A /* XCRemoteSwiftPackageReference "Quick" */,
 				DC699C8F282EAE21009D3C1A /* XCRemoteSwiftPackageReference "Nimble" */,
+				2FAF8B9E28F7351600285505 /* XCRemoteSwiftPackageReference "twilio-video-ios" */,
 			);
 			productRefGroup = 241282381E36A6AB002198BE /* Products */;
 			projectDirPath = "";
@@ -2832,6 +2817,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2FAF8B9E28F7351600285505 /* XCRemoteSwiftPackageReference "twilio-video-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:twilio/twilio-video-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		DC699C78282DB045009D3C1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -2891,6 +2884,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2FAF8B9F28F7351600285505 /* TwilioVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FAF8B9E28F7351600285505 /* XCRemoteSwiftPackageReference "twilio-video-ios" */;
+			productName = TwilioVideo;
+		};
 		DC699C7B282DB045009D3C1A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC699C78282DB045009D3C1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
