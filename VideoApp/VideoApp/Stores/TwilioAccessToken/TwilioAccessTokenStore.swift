@@ -23,25 +23,25 @@ class TwilioAccessTokenStore {
     private let remoteConfigStore = RemoteConfigStoreFactory().makeRemoteConfigStore()
     
     func fetchTwilioAccessToken(roomName: String, completion: @escaping (Result<String, APIError>) -> Void) {
-        authStore.refreshIDToken { [weak self] in
-            guard let self = self else { return }
-
-            let request = CreateTwilioAccessTokenRequest(
-                passcode: self.authStore.passcode ?? "",
-                userIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.authStore.userDisplayName,
-                createRoom: true,
-                roomName: roomName
-            )
-
-            self.api.request(request) { [weak self] result in
-                guard let self = self else { return }
-
-                if let roomType = try? result.get().roomType {
-                    self.remoteConfigStore.roomType = roomType
-                }
-
-                completion(result.map { $0.token })
-            }
-        }
+//        authStore.refreshIDToken { [weak self] in
+//            guard let self = self else { return }
+//
+//            let request = CreateTwilioAccessTokenRequest(
+//                passcode: self.authStore.passcode ?? "",
+//                userIdentity: self.appSettingsStore.userIdentity.nilIfEmpty ?? self.authStore.userDisplayName,
+//                createRoom: true,
+//                roomName: roomName
+//            )
+//
+//            self.api.request(request) { [weak self] result in
+//                guard let self = self else { return }
+//
+//                if let roomType = try? result.get().roomType {
+//                    self.remoteConfigStore.roomType = roomType
+//                }
+//
+//                completion(result.map { $0.token })
+//            }
+//        }
     }
 }

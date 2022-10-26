@@ -160,16 +160,20 @@ extension CallManager: CXProviderDelegate {
         action.fulfill()
         provider.reportOutgoingCall(with: action.callUUID, startedConnectingAt: nil)
 
-        accessTokenStore.fetchTwilioAccessToken(roomName: action.handle.value) { [weak self] result in
-            switch result {
-            case let .success(token):
-                /// Connect to the Twilio video room
-                self?.roomManager.connect(roomName: action.handle.value, accessToken: token, uuid: action.callUUID)
-            case let .failure(error):
-                provider.reportCall(with: action.callUUID, endedAt: nil, reason: .failed)
-                self?.handleError(error)
-            }
-        }
+        let t = "Add token herre to etst with actual rooom"
+        
+    /// Connect to the Twilio video room
+    self.roomManager.connect(roomName: action.handle.value, accessToken: t, uuid: action.callUUID)
+        
+//        accessTokenStore.fetchTwilioAccessToken(roomName: action.handle.value) { [weak self] result in
+//            switch result {
+//            case let .success(token):
+//
+//            case let .failure(error):
+//                provider.reportCall(with: action.callUUID, endedAt: nil, reason: .failed)
+//                self?.handleError(error)
+//            }
+//        }
     }
 
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {

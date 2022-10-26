@@ -40,9 +40,10 @@ class RoomManager: NSObject, ObservableObject {
         self.localParticipant = localParticipant
     }
     
-    func connect(roomName: String, accessToken: String, uuid: UUID) {        
+    func connect(roomName: String, accessToken: String, uuid: UUID) {
+        let tok = "Piyyush add the token here"
         let options = ConnectOptionsFactory().makeConnectOptions(
-            accessToken: accessToken,
+            accessToken: tok,
             roomName: roomName,
             uuid: uuid,
             audioTracks: [localParticipant.micTrack].compactMap { $0 },

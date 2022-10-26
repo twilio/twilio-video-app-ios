@@ -17,7 +17,7 @@
 import Foundation
 
 enum TrackName {
-    static let camera = "camera"
+    static let camera = "video"
     static let screen = "screen"
     static let mic = "microphone"
 }

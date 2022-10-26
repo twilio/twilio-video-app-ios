@@ -12,7 +12,7 @@ import UIKit
 import TwilioVideo
 
 class PictureInPictureViewController: UIViewController {
-    @IBOutlet weak var videoView: VideoTrackStoringVideoView!
+    @IBOutlet weak var videoView: VideoTrackStoringSampleBufferVideoView!
 
     var callManager: CallManager!
     var roomManager: RoomManager!
@@ -88,8 +88,6 @@ class PictureInPictureViewController: UIViewController {
     @IBAction func stopPictureInPictureButtonTap(_ sender: Any) {
         pipController.stopPictureInPicture()
     }
-    
-    
 }
 
 extension PictureInPictureViewController: AVPictureInPictureControllerDelegate {

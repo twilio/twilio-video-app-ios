@@ -52,17 +52,17 @@ class LaunchFlowImpl: LaunchFlow {
         let navigationController = window.rootViewController as! UINavigationController
         navigationController.barHideOnSwipeGestureRecognizer.isEnabled = false
         navigationController.hidesBarsOnSwipe = false
-
-        if authStore.isSignedIn {
+        
+//        if authStore.isSignedIn {
             let homeController = UIHostingController(rootView: HomeView())
             homeController.modalPresentationStyle = .fullScreen
             navigationController.present(homeController, animated: true)
-        } else {
-            navigationController.topViewController?.performSegue(
-                withIdentifier: signInSegueIdentifierFactory.makeSignInSegueIdentifier(),
-                sender: self
-            )
-        }
+//        } else {
+//            navigationController.topViewController?.performSegue(
+//                withIdentifier: signInSegueIdentifierFactory.makeSignInSegueIdentifier(),
+//                sender: self
+//            )
+//        }
         
         deepLinkStore.didReceiveDeepLink = { [weak self] in
             self?.start()
