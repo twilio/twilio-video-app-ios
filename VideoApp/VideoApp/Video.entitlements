@@ -6,5 +6,7 @@
 	<array>
 		<string>applinks:twilio-video-react.appspot.com</string>
 	</array>
+    <key>com.apple.developer.avfoundation.multitasking-camera-access</key>
+    <true/>
 </dict>
 </plist>
