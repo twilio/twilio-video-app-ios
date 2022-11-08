@@ -2964,6 +2964,16 @@
 			package = DCB3BAD9282DA30B00AF7072 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
+		DCB3BADF282DA34400AF7072 /* TwilioVideo */ = 
+			isa = XCSwiftPackageProductDependency;
+			package = DCB3BADE282DA34400AF7072 /* XCRemoteSwiftPackageReference "twilio-video-ios" */;
+			productName = TwilioVideo;
+		};
+		DCB3BAE1282DA35100AF7072 /* TwilioVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCB3BADE282DA34400AF7072 /* XCRemoteSwiftPackageReference "twilio-video-ios" */;
+			productName = TwilioVideo;
+		};
 /* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2412822F1E36A6AB002198BE /* Project object */;
