@@ -67,6 +67,8 @@
 		DC1D3CBA27CEC100001FCB1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CB827CEC100001FCB1A /* SettingsView.swift */; };
 		DC1D3CBC27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
 		DC1D3CBD27CFD459001FCB1A /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */; };
+		DC243F8028C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */; };
+		DC243F8128C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */; };
 		DC2511AC2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC2511AD2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */; };
 		DC39248A2416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3924872416A1D80068E33F /* SelectEnvironmentViewModelFactory.swift */; };
@@ -95,6 +97,8 @@
 		DC4568882385D5490069BB5A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4568852385D5490069BB5A /* ViewControllerFactory.swift */; };
 		DC4E4E2023577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
 		DC4E4E2123577EA700C5D313 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */; };
+		DC4F28BE28B80EDB00112FA8 /* PIPPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F28BD28B80EDB00112FA8 /* PIPPlaceholderView.swift */; };
+		DC4F28BF28B80EDB00112FA8 /* PIPPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F28BD28B80EDB00112FA8 /* PIPPlaceholderView.swift */; };
 		DC529FF7289333A2005E5803 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC89D2B286649FC00B3DD84 /* CallManager.swift */; };
 		DC5CC370249C0D0300355CC6 /* UserStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04469C238F29500072F597 /* UserStoreSpec.swift */; };
 		DC5CC372249C0D0300355CC6 /* DeepLinkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7674E23DA350A00A2939C /* DeepLinkSpec.swift */; };
@@ -204,6 +208,10 @@
 		DC9C772E2500092100AC68FD /* RemoteConfigStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */; };
 		DC9C773025003D5400AC68FD /* MockRemoteConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C772F25003D5400AC68FD /* MockRemoteConfigStore.swift */; };
 		DC9C7732250043A600AC68FD /* RemoteConfigStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */; };
+		DCA29FB628A1769B00BAA147 /* PictureInPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */; };
+		DCA29FB728A1769B00BAA147 /* PictureInPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */; };
+		DCA29FB928A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */; };
+		DCA29FBA28A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */; };
 		DCA53949235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394A235F53E700CA26FB /* InternalAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53947235F53E700CA26FB /* InternalAuthStore.swift */; };
 		DCA5394D235F740200CA26FB /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5394B235F740200CA26FB /* AuthStore.swift */; };
@@ -485,6 +493,7 @@
 		DC1D3CB427CE9787001FCB1A /* RoomViewDependencyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewDependencyWrapper.swift; sourceTree = "<group>"; };
 		DC1D3CB827CEC100001FCB1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DC1D3CBB27CFD458001FCB1A /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureInPictureSourceView.swift; sourceTree = "<group>"; };
 		DC2511AA2478213400C776D6 /* EditMaxSubscriptionBitrateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaxSubscriptionBitrateViewModel.swift; sourceTree = "<group>"; };
 		DC338A2724367AEC0093E855 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		DC338A2A2437E7380093E855 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
@@ -501,6 +510,7 @@
 		DC44C2E923876B4700205174 /* EditTextSegueSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextSegueSender.swift; sourceTree = "<group>"; };
 		DC4568852385D5490069BB5A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		DC4E4E1E23577EA700C5D313 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
+		DC4F28BD28B80EDB00112FA8 /* PIPPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPPlaceholderView.swift; sourceTree = "<group>"; };
 		DC5CC38D249C0EC000355CC6 /* Video-InternalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Video-InternalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5CC391249C0EC000355CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6EABBE2357CAC50064E9E0 /* MockAppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSettingsStore.swift; sourceTree = "<group>"; };
@@ -549,6 +559,8 @@
 		DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStoreFactory.swift; sourceTree = "<group>"; };
 		DC9C772F25003D5400AC68FD /* MockRemoteConfigStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRemoteConfigStore.swift; sourceTree = "<group>"; };
 		DC9C7731250043A600AC68FD /* RemoteConfigStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigStoreSpec.swift; sourceTree = "<group>"; };
+		DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureInPictureViewController.swift; sourceTree = "<group>"; };
+		DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPictureInPictureInPictureView.swift; sourceTree = "<group>"; };
 		DCA53947235F53E700CA26FB /* InternalAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAuthStore.swift; sourceTree = "<group>"; };
 		DCA5394B235F740200CA26FB /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		DCA5394F235F765D00CA26FB /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
@@ -765,6 +777,7 @@
 				DC44C2CC23871C2000205174 /* Helpers */,
 				DCE9B05D235A46EA008E5B5B /* IOSVideoAppSecrets */,
 				DC7790CA236B6B3800973B86 /* Launch */,
+				DCA29FB428A1765C00BAA147 /* PictureInPicture */,
 				DCAEBEE32376011D00141D2D /* Stores */,
 				DCAEBEE42376049700141D2D /* Storyboards */,
 				DCE1A9E527C7E28E004680CA /* SwiftUI */,
@@ -801,6 +814,15 @@
 				DCB64B61240D90CD00E090BE /* CreateTwilioAccessTokenResponse.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		DC006CCD28D0E71300D234E5 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DCA29FB528A1769A00BAA147 /* PictureInPictureViewController.swift */,
+				DCA29FB828A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		DC04468F238F1E2D0072F597 /* User */ = {
@@ -1197,6 +1219,16 @@
 				DC9C772C2500092100AC68FD /* RemoteConfigStoreFactory.swift */,
 			);
 			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		DCA29FB428A1765C00BAA147 /* PictureInPicture */ = {
+			isa = PBXGroup;
+			children = (
+				DC4F28BD28B80EDB00112FA8 /* PIPPlaceholderView.swift */,
+				DC243F7F28C13D4200100C6B /* PictureInPictureSourceView.swift */,
+				DC006CCD28D0E71300D234E5 /* Test */,
+			);
+			path = PictureInPicture;
 			sourceTree = "<group>";
 		};
 		DCA53946235F534400CA26FB /* Auth */ = {
@@ -1877,6 +1909,7 @@
 				DC0446B923A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0224105500001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB387247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
+				DCA29FB928A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift in Sources */,
 				DCB7C18A2405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCF4615623859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35E24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -1893,6 +1926,7 @@
 				DCAEBF40238444D500141D2D /* SelectOptionViewModel.swift in Sources */,
 				DCE1AA1927C7E58A004680CA /* GalleryLayoutView.swift in Sources */,
 				DCEC3D1C23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
+				DC4F28BE28B80EDB00112FA8 /* PIPPlaceholderView.swift in Sources */,
 				DCE1A9FF27C7E556004680CA /* Color.swift in Sources */,
 				DCF4615223859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2E2462153000E4B079 /* CameraManager.swift in Sources */,
@@ -1910,6 +1944,8 @@
 				DC44C2E723876AFB00205174 /* SelectOptionSegueSender.swift in Sources */,
 				DCB7C18F2405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E323875C4F00205174 /* StringHelpers.swift in Sources */,
+				DC243F8028C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */,
+				DCA29FB628A1769B00BAA147 /* PictureInPictureViewController.swift in Sources */,
 				DCE1AA2127C7E58A004680CA /* SpeakerLayoutView.swift in Sources */,
 				8A206F40263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614D238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
@@ -2048,6 +2084,7 @@
 				DC0446BA23A182980072F597 /* CrashReportStore.swift in Sources */,
 				DC76FD0324105501001B2FFC /* EnvironmentVariableStore.swift in Sources */,
 				DCEDB388247489DA006AF70D /* SelectSettingViewModel.swift in Sources */,
+				DCA29FBA28A179CB00BAA147 /* SwiftUIPictureInPictureInPictureView.swift in Sources */,
 				DCB7C18B2405BE40009DEA70 /* KeychainStore.swift in Sources */,
 				DCF4615723859BB800DD8FEA /* AppInfoStore.swift in Sources */,
 				DCEDB35F24733641006AF70D /* LoginViewController.swift in Sources */,
@@ -2064,6 +2101,7 @@
 				DCE1AA1A27C7E58A004680CA /* GalleryLayoutView.swift in Sources */,
 				DCEC3D1D23861E1700EBDEBF /* SelectVideoCodecViewModelFactory.swift in Sources */,
 				DCE1AA0027C7E556004680CA /* Color.swift in Sources */,
+				DC4F28BF28B80EDB00112FA8 /* PIPPlaceholderView.swift in Sources */,
 				DCF4615323859BA400DD8FEA /* AppInfo.swift in Sources */,
 				DC9A5E2F2462153000E4B079 /* CameraManager.swift in Sources */,
 				DCF4615B2385A51700DD8FEA /* SettingsViewController.swift in Sources */,
@@ -2081,6 +2119,8 @@
 				DCB7C1902405C0BE009DEA70 /* KeychainStorage.swift in Sources */,
 				DC44C2E423875C4F00205174 /* StringHelpers.swift in Sources */,
 				DCE1AA2227C7E58A004680CA /* SpeakerLayoutView.swift in Sources */,
+				DC243F8128C13D4200100C6B /* PictureInPictureSourceView.swift in Sources */,
+				DCA29FB728A1769B00BAA147 /* PictureInPictureViewController.swift in Sources */,
 				8A206F41263919CA00EFCD97 /* SelectClientTrackSwitchOffControlViewModelFactory.swift in Sources */,
 				DCF4614E238598C700DD8FEA /* SettingsViewModel.swift in Sources */,
 				DCEDC63A27E38D3E00BD7C75 /* MediaSetupView.swift in Sources */,
@@ -2301,7 +2341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
@@ -2358,7 +2398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "";
 				PACKAGE_ROOT = "$(SRCROOT)/..";
@@ -2389,7 +2429,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = VideoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2427,7 +2467,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = VideoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2465,7 +2505,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = VideoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2501,7 +2541,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = VideoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2823,7 +2863,7 @@
 			repositoryURL = "https://github.com/twilio/twilio-video-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
+				minimumVersion = 5.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

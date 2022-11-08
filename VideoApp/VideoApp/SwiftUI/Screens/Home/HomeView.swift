@@ -26,6 +26,7 @@ struct HomeView: View {
     @State private var isShowingMediaSetup = false
     @State private var isShowingRoom = false
     @State private var isShowingSettings = false
+    @State private var isShowingPictureInPicture = false
     @State private var isMediaSetup = false
 
     var body: some View {
@@ -49,6 +50,12 @@ struct HomeView: View {
                 }
                 .buttonStyle(PrimaryButtonStyle(isEnabled: !roomName.isEmpty))
                 .disabled(roomName.isEmpty)
+
+                Button("PiP Test") {
+                    isShowingPictureInPicture = true
+                }
+                .buttonStyle(.borderedProminent)
+                .hidden()
             }
             .toolbar {
                 Button(action: { isShowingSettings.toggle() }) {
@@ -64,6 +71,9 @@ struct HomeView: View {
             }
             .sheet(isPresented: $isShowingSettings) {
                 SettingsView()
+            }
+            .sheet(isPresented: $isShowingPictureInPicture) {
+                SwiftUIPictureInPictureView()
             }
             .fullScreenCover(isPresented: $isShowingRoom) {
                 RoomViewDependencyWrapper(roomName: roomName)

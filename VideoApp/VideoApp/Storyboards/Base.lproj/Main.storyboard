@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqf-hp-6pe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21208.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqf-hp-6pe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21191"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -318,7 +317,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="44" id="Xsg-MM-ii1" customClass="HeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xsg-MM-ii1" id="tfq-qU-wn8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -351,7 +350,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackStatsCell" rowHeight="22" id="QNL-nm-c9g" customClass="TrackStatsTableViewCell">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="22"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QNL-nm-c9g" id="uDJ-3s-aGy">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
@@ -484,6 +483,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3A-G4-hfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1303" y="1256"/>
+        </scene>
+        <!--Picture In Picture View Controller-->
+        <scene sceneID="R49-B6-yBo">
+            <objects>
+                <viewController storyboardIdentifier="PictureInPictureViewController" id="VJt-vY-1pt" customClass="PictureInPictureViewController" customModule="VideoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d3Z-fl-p6h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XjM-wN-58z">
+                                <rect key="frame" x="0.0" y="240.5" width="414" height="425.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PiP Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Be-vJ-E0E">
+                                        <rect key="frame" x="176.5" y="0.0" width="61" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfS-8r-UYj" customClass="VideoTrackStoringVideoView" customModule="VideoApp" customModuleProvider="target">
+                                        <rect key="frame" x="103.5" y="40.5" width="207" height="276"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hfS-8r-UYj" secondAttribute="height" multiplier="480:640" id="NbA-DA-7gr"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tW3-Qd-oYD">
+                                        <rect key="frame" x="162" y="336.5" width="90" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start PiP"/>
+                                        <connections>
+                                            <action selector="startPipButtonTap:" destination="VJt-vY-1pt" eventType="touchUpInside" id="P12-VT-RmN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2J-jE-iTp">
+                                        <rect key="frame" x="163" y="391" width="88.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Stop PiP"/>
+                                        <connections>
+                                            <action selector="stopPictureInPictureButtonTap:" destination="VJt-vY-1pt" eventType="touchUpInside" id="6Di-ll-V4W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hfS-8r-UYj" firstAttribute="width" secondItem="XjM-wN-58z" secondAttribute="width" multiplier="0.5" id="9do-Df-9jv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wxj-wR-KyA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XjM-wN-58z" firstAttribute="leading" secondItem="Wxj-wR-KyA" secondAttribute="leading" id="K5X-fZ-rqR"/>
+                            <constraint firstItem="XjM-wN-58z" firstAttribute="centerY" secondItem="Wxj-wR-KyA" secondAttribute="centerY" id="chN-Uu-tTK"/>
+                            <constraint firstItem="Wxj-wR-KyA" firstAttribute="trailing" secondItem="XjM-wN-58z" secondAttribute="trailing" id="zDe-5F-Knx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="hfS-8r-UYj" id="i1N-RQ-WVE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAh-wF-UVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746" y="2955"/>
         </scene>
         <!--Options-->
         <scene sceneID="GWF-HR-Ptl">
