@@ -18,11 +18,16 @@ import TwilioVideo
 
 class CameraSourceFactory {
     private let remoteConfigStore: RemoteConfigStoreReading = RemoteConfigStoreFactory().makeRemoteConfigStore()
+    private let appSettingStore: AppSettingsStoreWriting = AppSettingsStore.shared
     
     func makeCameraSource() -> CameraSource? {
         let options = CameraSourceOptions() { builder in
             if let scene = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.windowScene {
                 builder.orientationTracker = UserInterfaceTracker(scene: scene)
+            }
+            
+            if #available(iOS 16.0, *) {
+                builder.enableCameraMultitasking = self.appSettingStore.isCameraMultitaskingEnabled
             }
             
             switch self.remoteConfigStore.roomType {

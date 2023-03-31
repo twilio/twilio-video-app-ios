@@ -57,6 +57,11 @@ class AdvancedSettingsViewModel: SettingsViewModel {
                             title: "Insights",
                             isOn: appSettingsStore.areInsightsEnabled,
                             updateHandler: { self.appSettingsStore.areInsightsEnabled = $0 }
+                        ),
+                        .toggle(
+                            title: "Enable Camera Multitasking",
+                            isOn: appSettingsStore.isCameraMultitaskingEnabled,
+                            updateHandler: { self.appSettingsStore.isCameraMultitaskingEnabled = $0 }
                         )
                     ]
                 ),
