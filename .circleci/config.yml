@@ -10,7 +10,8 @@ aliases:
 executors:
   macos_executor:
     macos:
-      xcode: "13.3.1"
+      xcode: "14.2.0"
+    resource_class: macos.m1.medium.gen1
 
 commands:
   setup:
