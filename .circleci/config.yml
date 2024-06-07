@@ -23,7 +23,7 @@ commands:
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
-          name: Install gems  
+          name: Install gems
           command: bundle check || bundle install --path vendor/bundle
       - save_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
@@ -94,8 +94,8 @@ workflows:
           filters: *test_filters
       - test_internal_app:
           filters: *test_filters
-      # - run_ui_tests:
-      #     filters: *test_filters
+       - run_ui_tests:
+           filters: *test_filters
       - deploy_internal_app_beta:
           filters:
             tags:
