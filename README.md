@@ -1,8 +1,5 @@
 # Twilio Video iOS App
 
-> [!WARNING]  
-> We are no longer allowing new customers to onboard to Twilio Video. Effective **December 5th, 2026**, Twilio Video will End of Life (EOL) and will cease to function for all customers. Additional information on this EOL is available in our Help Center [here](https://help.twilio.com/articles/24158233644443-Programmable-Video-End-of-Life-Extension)).
-
 This app is a sample video conferencing app that uses the [Twilio Programmable Video SDK](https://www.twilio.com/docs/video/ios). The open source app can be easily configured by developers to try out real-time video and audio features. 
 
 ![App Preview](https://user-images.githubusercontent.com/12685223/94631109-cfca1c80-0284-11eb-8b72-c97276cf34e4.png)
