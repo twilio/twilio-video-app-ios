@@ -41,22 +41,6 @@ If any errors occur after running a [Twilio CLI RTC Plugin](https://github.com/t
 1. Run `twilio rtc:apps:video:delete` to delete any existing authentication servers.
 1. Run `twilio rtc:apps:video:deploy --authentication passcode` to deploy a new authentication server.
 
-#### App Behavior with Different Room Types
-
-**NOTE:** Usage charges will apply for most room types. See [pricing](https://www.twilio.com/video/pricing) for more information.
-
-After running the command [to deploy a Twilio Access Token Server](#deploy-twilio-access-token-server), the room type will be returned in the command line output. Each room type provides a different video experience. More details about these room types can be found [here](https://www.twilio.com/docs/video/tutorials/understanding-video-rooms). The rest of this section explains how these room types affect the behavior of the video app.
-
-*Group* - The Group room type allows up to fifty participants to join a video room in the app. The Network Quality Level (NQL) indicators and dominant speaker are demonstrated with this room type. Also, the VP8 video codec with simulcast enabled along with a bandwidth profile are set by default in order to provide an optimal group video app experience.
-
-*Small Group* - The Small Group room type provides an identical group video app experience except for a smaller limit of four participants.
-
-*Peer-to-peer* - Although up to ten participants can join a room using the Peer-to-peer (P2P) room type, it is ideal for a one to one video experience. The NQL indicators, bandwidth profiles, and dominant speaker cannot be used with this room type. Thus, they are not demonstrated in the video app. Also, the VP8 video codec with simulcast disabled and 720p minimum video capturing dimensions are also set by default in order to provide an optimal one to one video app experience. If more than ten participants join a room with this room type, then the video app will present an error.
-
-*Go* - The Go room type provides a similar Peer-to-peer video app experience except for a smaller limit of two participants. If more than two participants join a room with this room type, then the video app will present an error.
-
-If the max number of participants is exceeded, then the video app will present an error for all room types.
-
 ### Configure Signing
 
 1. Open `VideoApp/VideoApp.xcodeproj` with Xcode.
@@ -73,7 +57,7 @@ If the max number of participants is exceeded, then the video app will present a
 
 The `Video-Internal` scheme uses authentication that is only available to Twilio employees in order to make internal testing easier. 
 
-### Start Video Conference
+### Start Video Call
 
 For each device:
 
@@ -90,6 +74,9 @@ The passcode will expire after one week. Follow the steps below to sign in with 
 1. [Generate a new passcode](#deploy-twilio-access-token-server).
 1. In the app tap `Settings > Sign Out`.
 1. Repeat the [steps above](#start-video-conference).
+
+**NOTE:** Usage charges will apply for video calls. See [pricing](https://www.twilio.com/video/pricing) for more information.
+
 
 ## SwiftUI
 
