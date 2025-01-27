@@ -2847,7 +2847,7 @@
 			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 5.0.3;
 			};
 		};
 		DCB3BAD9282DA30B00AF7072 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
@@ -2863,7 +2863,7 @@
 			repositoryURL = "https://github.com/twilio/twilio-video-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.2;
+				minimumVersion = 5.8.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
