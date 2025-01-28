@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.22 (January 28, 2025)
+
+### Maintenance
+
+- Added config file command to update Fastlane.
+
 ## 0.1.21 (January 27, 2025)
 
 ### Maintenance
