@@ -54,7 +54,9 @@ commands:
       - setup
       - run:
           name: Setup code signing
-          command: bundle exec fastlane ci_match_install
+          command: |
+            gem update fastlane
+            bundle exec fastlane ci_match_install
       - run:
           name: Deploy to App Center
           command: bundle exec fastlane beta
@@ -98,7 +100,5 @@ workflows:
       #     filters: *test_filters
       - deploy_internal_app_beta:
           filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
             branches:
-              ignore: /.*/
+              only: VBLOCKS-3970-update-fastlane
