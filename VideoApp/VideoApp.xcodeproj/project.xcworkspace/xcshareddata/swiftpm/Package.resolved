@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/microsoft/appcenter-sdk-apple",
       "state" : {
-        "revision" : "8354a50fe01a7e54e196d3b5493b5ab53dd5866a",
-        "version" : "4.4.2"
+        "revision" : "9308921a2f6ef828cf9fae898ea4f080a81cdf11",
+        "version" : "5.0.6"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/microsoft/PLCrashReporter.git",
       "state" : {
-        "revision" : "6b27393cad517c067dceea85fadf050e70c4ceaa",
-        "version" : "1.10.1"
+        "revision" : "6752f71de206f6a53fa6a758c3660fd9a7fe7527",
+        "version" : "1.11.2"
       }
     },
     {
@@ -212,8 +212,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/twilio/twilio-video-ios",
       "state" : {
-        "revision" : "1cf453f4a2de505f7346fde6085c299144f05941",
-        "version" : "5.8.2"
+        "revision" : "a8ecab26529d90ac6dfe586a61d66b1b476217e0",
+        "version" : "5.8.4"
       }
     }
   ],

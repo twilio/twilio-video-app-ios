@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.21 (January 27, 2025)
+
+### Maintenance
+
+- Updated minimum AppCenter SDK version to 5.0.3.
+- Updated Video iOS SDK version to 5.8.4.
+
 ## 0.1.20 (May 9, 2024)
 
 ### Maintenance
