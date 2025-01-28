@@ -55,7 +55,7 @@ commands:
       - run:
           name: Setup code signing
           command: |
-            gem update fastlane
+            bundle update fastlane
             bundle exec fastlane ci_match_install
       - run:
           name: Deploy to App Center
