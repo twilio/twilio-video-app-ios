@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.1.22 (January 28, 2025)
+## 0.1.23 (January 29, 2025)
 
 ### Maintenance
 
