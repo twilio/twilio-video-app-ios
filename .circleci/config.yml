@@ -22,7 +22,7 @@ commands:
           command: base64 -D \<<< $SECRETS_TAR | tar -x
       - run:
           name: Install Firebase secrets
-          command: base64 -D $FIREBASE_IOS_AHOY_APP_SECRET -o voice-app-ead2b0c2da6d.json
+          command: echo $FIREBASE_IOS_AHOY_APP_SECRET | base64 -D -o voice-app-ead2b0c2da6d.json
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
