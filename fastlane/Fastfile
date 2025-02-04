@@ -45,14 +45,11 @@ platform :ios do
       api_token: ENV["GITHUB_API_TOKEN"]
     )
 
-    appcenter_upload(
-      api_token: ENV["APP_CENTER_API_KEY"],
-      owner_name: ENV["APP_CENTER_OWNER_NAME"],
-      app_name: "Ahoy-Video-App-Internal",
-      destinations: "Testers",
-      file: "Video-Internal.ipa",
-      notify_testers: true,
-      release_notes: release["body"]      
+    release = firebase_app_distribution(
+      app: "1:598997417277:ios:331beb8321cfc1a6459954",
+      service_credentials_file: "voice-app-ead2b0c2da6d.json",
+      ipa_path: "Video-Internal.ipa",
+      release_notes: release["body"]   
     )
   end
 
