@@ -23,6 +23,9 @@ commands:
       - run:
           name: Install Firebase secrets
           command: echo $FIREBASE_IOS_AHOY_APP_SECRET | base64 -D -o voice-app-ead2b0c2da6d.json
+      - run:
+          name: Install Firebase Service plist
+          command: echo $FIREBASE_IOS_AHOY_APP_PLIST | base64 -D -o GoogleService-Info.plist
       - restore_cache:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
       - run:
