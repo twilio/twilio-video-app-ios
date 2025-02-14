@@ -46,8 +46,9 @@ platform :ios do
     )
 
     release = firebase_app_distribution(
-      app: "1:598997417277:ios:331beb8321cfc1a6459954",
+      app: "1:285008367772:ios:92b7a4b16f0e25a2be5d59",
       service_credentials_file: "voice-app-ead2b0c2da6d.json",
+      googleservice_info_plist_path: "GoogleService-Info.plist",
       ipa_path: "Video-Internal.ipa",
       release_notes: release["body"]   
     )
