@@ -22,7 +22,7 @@ commands:
           command: base64 -D \<<< $SECRETS_TAR | tar -x
       - run:
           name: Install Firebase secrets
-          command: echo $FIREBASE_IOS_AHOY_APP_SECRET | base64 -D -o voice-app-ead2b0c2da6d.json
+          command: echo $FIREBASE_IOS_AHOY_APP_SECRET | base64 -D -o video-app-79418-6d9ef31a3fac.json
       - run:
           name: Install Firebase Service plist
           command: echo $FIREBASE_IOS_AHOY_APP_PLIST | base64 -D -o GoogleService-Info.plist
