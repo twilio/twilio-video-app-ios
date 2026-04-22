@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.25 (April 22, 2026)
+
+### Bug Fix
+
+- Removed hardcoded 16 kbps audio bitrate cap. Audio bitrate now defaults to 0 (uncapped), allowing Opus to use WebRTC defaults and enabling FEC to function effectively under packet loss.
+
 ## 0.1.24 (February 12, 2025)
 
 ### Maintenance
