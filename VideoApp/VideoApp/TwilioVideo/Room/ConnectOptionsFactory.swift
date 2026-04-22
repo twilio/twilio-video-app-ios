@@ -65,7 +65,7 @@ class ConnectOptionsFactory: NSObject {
             } else {
                 builder.preferredVideoCodecs = [TwilioVideo.VideoCodec.make(setting: self.appSettingsStore.videoCodec)]
             }
-            builder.encodingParameters = EncodingParameters(audioBitrate: 16, videoBitrate: videoBitrate)
+            builder.encodingParameters = EncodingParameters(audioBitrate: 0, videoBitrate: videoBitrate)
 
             if self.appSettingsStore.isTURNMediaRelayOn {
                 builder.iceOptions = IceOptions() { builder in
