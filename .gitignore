@@ -36,6 +36,8 @@ playground.xcworkspace
 
 # Secrets
 IOSVideoAppSecrets*
+video-app-*.json
+fastlane/gc_keys.json
 
 # CI
 /.bundle/
