@@ -4,5 +4,5 @@ type("development")
 username(ENV["FASTLANE_MATCH_USERNAME"])
 
 storage_mode("google_cloud")
-google_cloud_bucket_name("twilio-ios-certificates")
-google_cloud_project_id("voice-app-8586f")
+google_cloud_bucket_name("GCLOUD_BUCKET_NAME")
+google_cloud_project_id("GCLOUD_PROJECT_ID")
