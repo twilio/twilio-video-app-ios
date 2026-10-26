@@ -49,13 +49,26 @@ platform :ios do
       app: "1:285008367772:ios:92b7a4b16f0e25a2be5d59",
       service_credentials_file: "video-app-79418-6d9ef31a3fac.json",
       ipa_path: "Video-Internal.ipa",
-      release_notes: release["body"]   
+      release_notes: release["body"]
+    )
+  end
+
+  desc "Publish Video-Internal.ipa to Firebase - temporary lane for local releases until CI moves to Buildkite"
+  desc "Release notes default to the latest CHANGELOG.md section; override with release_notes:\"...\""
+  lane :distribute_to_firebase do |options|
+    # Lane code runs from the fastlane folder, so CHANGELOG.md is one level up
+    latest_changelog_section = File.read("../CHANGELOG.md").split(/^## /)[1]
+    release_notes = options[:release_notes] || latest_changelog_section.lines.drop(1).join.strip
+
+    firebase_app_distribution(
+      app: "1:285008367772:ios:92b7a4b16f0e25a2be5d59",
+      service_credentials_file: "video-app-79418-6d9ef31a3fac.json",
+      ipa_path: "Video-Internal.ipa",
+      release_notes: release_notes
     )
   end
 
   lane :ci_match_install do
-    setup_circle_ci
-
     get_app_store_connect_api_key
 
     match(

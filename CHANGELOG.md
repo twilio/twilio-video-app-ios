@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.25 (October 22, 2026)
+
+### Maintenance
+
+- Updated Video iOS SDK version to 5.11.3
+
 ## 0.1.24 (February 12, 2025)
 
 ### Maintenance

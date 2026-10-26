@@ -31,6 +31,16 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
+### ios distribute_to_firebase
+
+```sh
+[bundle exec] fastlane ios distribute_to_firebase
+```
+
+Publish Video-Internal.ipa to Firebase - temporary lane for local releases until CI moves to Buildkite
+
+Release notes default to the latest CHANGELOG.md section; override with release_notes:"..."
+
 ### ios ci_match_install
 
 ```sh
